@@ -17,7 +17,6 @@ const WebsiteMediaMetric = () => {
         <PageTraffics />
         <Box my={"2rem"} />
       </div>
-
       <div className={styles.col} style={{ marginLeft: 20 }}>
         <Box my={"2rem"} />
         <TopCountry className={styles.card} />
