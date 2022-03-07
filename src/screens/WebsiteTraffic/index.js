@@ -16,7 +16,9 @@ const WebsiteMediaMetric = () => {
         <Box my={"2rem"} />
         <PageTraffics />
         <Box my={"2rem"} />
+        
       </div>
+
 
       <div className={styles.col} style={{ marginLeft: 20 }}>
 
