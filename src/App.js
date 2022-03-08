@@ -9,57 +9,49 @@ import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
-import { Authenticator, Heading, useTheme, Text } from "@aws-amplify/ui-react";
+import { Authenticator, Heading, useTheme, Theme } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+
+const theme = {
+  name: "my-theme",
+  tokens: {
+    colors: {
+      font: {
+        primary: { value: "#000" },
+      },
+    },
+  },
+};
 
 function App() {
-  const components = {
-    VerifyUser: {
-      Header() {
-        const { tokens } = useTheme();
-        return (
-          <Heading
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-            level={3}
-          >
-            Enter Information:
-          </Heading>
-        );
-      },
-      Footer() {
-        return <Text>Footer Information</Text>;
-      },
-    },
-
-    ConfirmVerifyUser: {
-      Header() {
-        const { tokens } = useTheme();
-        return (
-          <Heading
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-            level={3}
-          >
-            Enter Information:
-          </Heading>
-        );
-      },
-      Footer() {
-        return <Text>Footer Information</Text>;
-      },
-    },
-  };
-
   return (
     <>
-      <Authenticator components={components} hideSignUp={false}>
+      <Authenticator theme={theme} variation="modal" hideSignUp={true}>
         {({ signOut, user }) => (
           <Routes>
-            <Route path="/" element={<Page title="Website Metrics  👩🏻‍💻" desc="Track Beckett's website behavior for all your online marketing efforts" />}>
+            <Route
+              path="/"
+              element={
+                <Page
+                  user={user}
+                  signOut={signOut}
+                  title="Website Metrics  👩🏻‍💻"
+                  desc="Track Beckett's website behavior for all your online marketing efforts"
+                />
+              }
+            >
               <Route index element={<WebsiteMediaMetric />} />
             </Route>
             <Route
               path="dashboard"
-              element={<Page title="Card Market Analysis 📈" />}
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Card Market Analysis 📈"
+                />
+              }
             >
               <Route
                 path="/dashboard/market-analysis"
@@ -68,7 +60,13 @@ function App() {
             </Route>
             <Route
               path="dashboard"
-              element={<Page title="Comics Market Analysis 💥" />}
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Comics Market Analysis 💥"
+                />
+              }
             >
               <Route
                 path="/dashboard/comic-market-analysis"
@@ -77,7 +75,13 @@ function App() {
             </Route>
             <Route
               path="dashboard"
-              element={<Page title="World Domination Index 🌎" />}
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="World Domination Index 🌎"
+                />
+              }
             >
               <Route
                 path="/dashboard/social-media-analysis"
@@ -86,7 +90,13 @@ function App() {
             </Route>
             <Route
               path="dashboard"
-              element={<Page title="Grading Score Cards ☕️" />}
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Grading Score Cards ☕️"
+                />
+              }
             >
               <Route path="/dashboard/web-analysis" element={<Home />} />
             </Route>

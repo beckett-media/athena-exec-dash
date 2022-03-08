@@ -2,54 +2,54 @@
   {
     "data": {
       "03/02/2022": {
-        "positive": 1,
-        "negative": 1,
-        "neutral": 30,
-        "numPosts": 32
+        "positive": 0,
+        "negative": 0,
+        "neutral": 17,
+        "numPosts": 17
       },
       "03/03/2022": {
         "positive": 0,
         "negative": 1,
-        "neutral": 40,
-        "numPosts": 41
+        "neutral": 10,
+        "numPosts": 11
       },
       "03/04/2022": {
-        "positive": 1,
+        "positive": 0,
         "negative": 0,
-        "neutral": 72,
-        "numPosts": 73
+        "neutral": 23,
+        "numPosts": 23
       },
       "03/05/2022": {
         "positive": 0,
         "negative": 1,
-        "neutral": 45,
-        "numPosts": 46
+        "neutral": 13,
+        "numPosts": 14
       },
       "03/06/2022": {
-        "positive": 0,
-        "negative": 2,
-        "neutral": 32,
-        "numPosts": 34
+        "positive": 1,
+        "negative": 0,
+        "neutral": 3,
+        "numPosts": 4
       },
       "03/07/2022": {
-        "positive": 2,
-        "negative": 3,
-        "neutral": 94,
-        "numPosts": 99
+        "positive": 0,
+        "negative": 2,
+        "neutral": 22,
+        "numPosts": 24
       },
       "03/08/2022": {
-        "positive": 1,
-        "negative": 2,
-        "neutral": 25,
-        "numPosts": 28
+        "positive": 0,
+        "negative": 0,
+        "neutral": 10,
+        "numPosts": 10
       }
     },
     "indicators": {
-      "perc_inc": -0.12,
-      "weekly_neutral": 338,
-      "weekly_positive": 5,
-      "weekly_negative": 10,
-      "weekly_total": 353
+      "perc_inc": -0.41,
+      "weekly_neutral": 98,
+      "weekly_positive": 1,
+      "weekly_negative": 4,
+      "weekly_total": 103
     }
   }
 ]
