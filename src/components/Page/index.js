@@ -6,17 +6,18 @@ import Sidebar from "../Sidebar";
 import Header from "../Header";
 import { Heading } from "@chakra-ui/react";
 
-const Page = ({ wide, title, desc }) => {
+const Page = ({ wide, title, desc, user, signOut }) => {
   const [visible, setVisible] = useState(false);
 
   return (
     <>
       <div className={styles.page}>
         <Sidebar
+          signOut={signOut}
           className={cn(styles.sidebar, { [styles.visible]: visible })}
           onClose={() => setVisible(false)}
         />
-        <Header onOpen={() => setVisible(true)} />
+        <Header user={user} onOpen={() => setVisible(true)} />
         <div className={styles.inner}>
           <div
             className={cn(styles.container, {

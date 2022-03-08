@@ -44,7 +44,7 @@ const SentimentAnalysis = ({ className }) => {
       classTitle={cn("title-green", styles.cardTitle)}
       classCardHead={styles.cardHead}
     >
-      <div className={styles.chart}>
+      <div className={styles.chart} style={{ height: "25rem" }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             width={500}

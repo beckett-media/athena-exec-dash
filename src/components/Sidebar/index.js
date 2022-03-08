@@ -8,8 +8,18 @@ import Image from "../Image";
 
 const navigation = [
   {
-    title: "Card Grading",
+    title: "Website Metrics",
     icon: "home",
+    url: "/",
+  },
+  {
+    title: "Social Media Metrics",
+    icon: "activity",
+    url: "/dashboard/social-media-analysis",
+  },
+  {
+    title: "Card Grading",
+    icon: "filter",
     // url: "/dashboard/web-analysis",
     url: "/dashboard/web-analysis",
   },
@@ -23,19 +33,9 @@ const navigation = [
     icon: "grid",
     url: "/dashboard/comic-market-analysis",
   },
-  {
-    title: "Social Media Metrics",
-    icon: "activity",
-    url: "/dashboard/social-media-analysis",
-  },
-  {
-    title: "Website Metrics",
-    icon: "filter",
-    url: "/",
-  },
 ];
 
-const Sidebar = ({ className, onClose }) => {
+const Sidebar = ({ className, onClose, signOut }) => {
   const [visible, setVisible] = useState(false);
   const exact = true;
 
@@ -76,7 +76,7 @@ const Sidebar = ({ className, onClose }) => {
         </div>
 
         <div className={styles.foot}>
-          <button className={styles.link}>
+          <button className={styles.link} onClick={signOut}>
             <Icon name="lock" size="24" />
             Logout
           </button>

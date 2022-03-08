@@ -1,15 +1,20 @@
 [
   {
     "country": {
-      "Canada": { "mentions": 9 },
-      "France": { "mentions": 1 },
-      "Japan": { "mentions": 3 },
-      "Mexico": { "mentions": 2 },
-      "Russia": { "mentions": 1 },
-      "Singa": { "mentions": 6 },
-      "UK": { "mentions": 3 },
-      "USA": { "mentions": 52 },
-      "Vietnam": { "mentions": 1 }
+      "Australia": { "mentions": 2 },
+      "Canada": { "mentions": 1 },
+      "Germany": { "mentions": 1 },
+      "India": { "mentions": 7 },
+      "Isle of Man": { "mentions": 1 },
+      "Italy": { "mentions": 1 },
+      "Japan": { "mentions": 1 },
+      "Netherlands": { "mentions": 2 },
+      "Nigeria": { "mentions": 1 },
+      "Philippines": { "mentions": 1 },
+      "Puerto Rico": { "mentions": 1 },
+      "Singapore": { "mentions": 1 },
+      "UK": { "mentions": 1 },
+      "USA": { "mentions": 41 }
     }
   }
 ]

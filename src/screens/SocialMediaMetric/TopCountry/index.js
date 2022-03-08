@@ -38,7 +38,7 @@ const TopCountry = ({ className }) => {
       title="Geographic Breakdown"
       classTitle="title-purple"
     >
-      <div className={styles.chart}>
+      <div className={styles.chart} style={{ height: "30rem" }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={500}
@@ -64,14 +64,15 @@ const TopCountry = ({ className }) => {
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fontWeight: "500", fill: "#6F767E" }}
-              padding={{ left: 10 }}
             />
             <YAxis
               type="category"
               dataKey="name"
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fontWeight: "500", fill: "#6F767E" }}
+              tick={{ fontSize: 11, fontWeight: "500", fill: "#6F767E" }}
+              //show all names of countries
+              interval={0}
             />
             <Tooltip
               contentStyle={{
