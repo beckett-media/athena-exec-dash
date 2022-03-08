@@ -5,8 +5,9 @@ import "./styles/app.sass";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import { AmplifyProvider } from "@aws-amplify/ui-react";
 //amplify
-import Amplify  from "aws-amplify";
+import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
@@ -15,7 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider>
-        <App />
+        <AmplifyProvider>
+          <App />
+        </AmplifyProvider>
       </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>,

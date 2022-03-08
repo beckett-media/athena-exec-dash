@@ -16,14 +16,14 @@
       "03/04/2022": {
         "positive": 0,
         "negative": 0,
-        "neutral": 23,
-        "numPosts": 23
+        "neutral": 24,
+        "numPosts": 24
       },
       "03/05/2022": {
         "positive": 0,
         "negative": 1,
-        "neutral": 13,
-        "numPosts": 14
+        "neutral": 12,
+        "numPosts": 13
       },
       "03/06/2022": {
         "positive": 1,
@@ -38,18 +38,18 @@
         "numPosts": 24
       },
       "03/08/2022": {
-        "positive": 0,
+        "positive": 1,
         "negative": 0,
-        "neutral": 10,
-        "numPosts": 10
+        "neutral": 13,
+        "numPosts": 14
       }
     },
     "indicators": {
-      "perc_inc": -0.41,
-      "weekly_neutral": 98,
-      "weekly_positive": 1,
+      "perc_inc": -0.17647058823529413,
+      "weekly_neutral": 101,
+      "weekly_positive": 2,
       "weekly_negative": 4,
-      "weekly_total": 103
+      "weekly_total": 107
     }
   }
 ]
