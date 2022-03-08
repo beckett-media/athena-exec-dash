@@ -15,28 +15,67 @@ import {
   useTheme,
   Theme,
   View,
+  Image,
 } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
+import "./utils-auth/auth.css";
 
 const components = {
   Header() {
-    const { tokens } = useTheme();
-
     return (
-      <View textAlign="center" padding={tokens.space.large}>
+      <View textAlign="center" style={{ marginBotton: 20 }}>
         <Image
-          alt="Amplify logo"
-          src="https://docs.amplify.aws/assets/logo-dark.svg"
+          alt="Beckett logo"
+          src={require("./utils-auth/Beckett-Logo-Full-Wordmark-White-LG.png")}
         />
       </View>
     );
+  },
+
+  Footer() {
+    return (
+      <View textAlign="center" marginTop="20px">
+        <Text>&copy; 2022 Beckett Media All Rights Reserved</Text>
+      </View>
+    );
+  },
+
+  SignIn: {
+    Header() {
+      return (
+        <Heading style={{ marginTop: 30 }} textAlign={"center"} level={4}>
+          Sign in to your account
+        </Heading>
+      );
+    },
+  },
+};
+
+const formFields = {
+  signIn: {
+    username: {
+      labelHidden: false,
+      placeholder: "Email",
+      isRequired: true,
+      label: "Email:",
+    },
+    password: {
+      labelHidden: false,
+      placeholder: "Password",
+      isRequired: true,
+      label: "Password:",
+    },
   },
 };
 
 function App() {
   return (
-    <Authenticator hideSignUp={true}>
+    <Authenticator
+      hideSignUp={true}
+      components={components}
+      formFields={formFields}
+    >
       {({ signOut, user }) => (
         <Routes>
           <Route
