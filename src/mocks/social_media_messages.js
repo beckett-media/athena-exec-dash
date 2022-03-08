@@ -1,5 +1,771 @@
 export const SocialMedia = [
   {
+    username: "bluechipcard",
+    datetime: "2022-03-08T13:12:37.000+0000",
+    message:
+      "1977 Topps Star Wars Trading Ca #thehobby https://t.co/tXVxcKyxHX",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490872718274793473?token=c42d0b6fd4e54de90a5f7cf2ddaaac52ebb6be0ada6c7514257950ed99c6a896",
+    platform: "twitter",
+  },
+  {
+    username: "bluechipcard",
+    datetime: "2022-03-08T12:53:25.000+0000",
+    message:
+      "1968 MILTON BRADLEY 177 NOLAN R #thehobby https://t.co/xtozF0Yzp7",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490872718274793473?token=c42d0b6fd4e54de90a5f7cf2ddaaac52ebb6be0ada6c7514257950ed99c6a896",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-08T12:50:21.000+0000",
+    message:
+      "1991 Topps Kirk Gibson Trading Card #thehobby https://t.co/HeNazwcbAm",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "Dana Hanson",
+    datetime: "2022-03-08T12:05:43.000+0000",
+    message:
+      "..., but imagine being able to sell a single baseball card for enough to go pay for a brand new car in cash. That\u2019s exactly how much this particular card is worth. 4. 1951 Bowman #253 Mickey Mantle PSA 8 ($148,000) Here you have another 1951 card that\u2019s worth a significant amount of money, at least according to most people. There are a few things that...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "247sportscard",
+    datetime: "2022-03-08T11:45:15.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tucker #thehobby https://t.co/FnHyYlSQrf",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1473706972805570563?token=9745a9dea2b94963e04b6291fb6086d5615c3dc881bd94a3558e79c759921639",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-08T10:18:53.000+0000",
+    message:
+      "1998 Topps Finest Refractor Mar #whodoyoucollect https://t.co/fUC9xw8Lzp",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-08T10:08:03.000+0000",
+    message:
+      "1987 Donruss Mark McGwire Rookie Ba #thehobby https://t.co/OUmkbMATrx",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "CardCrawler",
+    datetime: "2022-03-08T09:45:48.000+0000",
+    message:
+      "1910 All Star Baseball card rare HO #thehobby https://t.co/smMrqEKMmA",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1287939753959198721?token=5b13acf61dccd1589c1953ab8deb33185b80222f044eb14ae07df2abea09316c",
+    platform: "twitter",
+  },
+  {
+    username: "cardminer",
+    datetime: "2022-03-08T07:36:44.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tucker #whodoyoucollect https://t.co/ofEUyURPDy",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480591075786080261?token=3c7b75e4c1151038e119ef9cc7e16c7103a10b03e42e12d597d366e7d2ba779b",
+    platform: "twitter",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T07:26:12.000+0000",
+    message:
+      "A Pokemon Trading Card Game collector shocked fans when he revealed the devastating damage binders can cause Pokemon cards. The YouTuber explained the best way to store your TCG items. When the Pokemon TCG launched in the 90s, no one could have guessed that the pieces of cardboard could someday be worth thousands of dollars. With the hobby's...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-08T07:16:27.000+0000",
+    message:
+      "1991 Topps Kirk Gibson Trading #whodoyoucollect https://t.co/7zPBGagjc9",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "Deertick",
+    datetime: "2022-03-08T06:54:00.000+0000",
+    message:
+      "Quote: Originally Posted by drcy It's true that it appears to be a baseball card thing, likely made for price guides. It's a spot between common players and stars. The first time I heard a collector refer to a baseball card as \"gem mint,\" I thought he was making a joke. I also remember when PSA & SGC were still something of a novelty. Joke? Oh, they were dead serious. And for something so serious you need protection!",
+    avatar: NaN,
+    platform: "forum",
+  },
+  {
+    username: "Cardfinder123",
+    datetime: "2022-03-08T06:40:45.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tu #whodoyoucollect https://t.co/4SuZL4Gs83",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490774538937933829?token=64621ea1582d3f127d47f8c30c4f6e3b8c54734f6b2ff97b1eccbb40988ae896",
+    platform: "twitter",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T05:51:02.000+0000",
+    message:
+      "...monster es evolving skies aa Alternate art eeveelutions slyveon flareon eevee vaporeon jolteon espeon umbreon glaceon leafeon tcg trading card game sword and shield brilliant stars charizard pikachu Brand new",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "247sportscard",
+    datetime: "2022-03-08T05:29:44.000+0000",
+    message:
+      "1978 Topps Dale Murphy Atlanta 708 #thehobby https://t.co/GBHayj6X69",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1473706972805570563?token=9745a9dea2b94963e04b6291fb6086d5615c3dc881bd94a3558e79c759921639",
+    platform: "twitter",
+  },
+  {
+    username: "pokemonsfanclub",
+    datetime: "2022-03-08T04:08:52.000+0000",
+    message:
+      "United We Stand #en001 Top 10 Strongest Pok\u00e9mon Cards A recent rare Yu-Gi-Oh! card thats strong, but few, in numbers Sold for $6,500 in December 2020 Image: wherebare27/eBay The first card on this list is the one released most recently, which is unusual as rare and valuable Yu-Gi-Oh! cards are often older releases. In an effort to raise spirits during the COVID-19 pandemic, Konami launched the Remote Duel at Home promo, a promotional sweepstake in North America where 300 Secret Rare copies of the spell card United We Stand were handed to fortunate housebound duelists. In order to be eligible, duelists had to interact with either of the official Yu-Gi-Oh! TCG Twitter or Instagram accounts, providing a photo of their remote duel setup along with the hashtag #YGORemoteDuel. United We Stand #EN001 is an equip spell that boosts a monsters attack and defence by 800 points for each monster that you control. This means that if you have all five monster zones used, you can potentially boost your monsters attack by 4000, allowing you to bring down your opponents life points in one or two turns . The choice of card is fittingly apt by Konami, as the whole world is united together in an effort to fight the global pandemic. Show off how you are playing #YuGiOh at home for the chance to win an exclusive Secret Rare version of United We Stand with blue foil lettering! Use hashtag #YGORemoteDuel with a photo of your Dueling setup at home to enter. Yu-Gi-Oh! TCG A charmingly expensive Yu-Gi-Oh! card Sold for $6,600 in May 2021 What Are The Different Types Of Pokmon Cards There are three different types of cards you will find in a deck of Pokemon Cards: Character Cards: Each Pokemon card you purchase belongs to a particular type such as Fire, Water, Psychic, Normal or Dragon. How much energy your card holds is entirely dependent on how evolved it is basic form, Stage One form or Stage Two form. Legendary pokemon cards are the most powerful cards in the entire range and mostly a much-needed desire for any kid. They only found in booster packs. Energy Cards: The Energy Cards boosts your other pokemon cards energy from time to time throughout the game. You will find energy cards in almost any pack of pokemon cards you buy. There are also few special energy cards which provide special power to your card, depending on the type of card you have. Trainer Cards: Trainer cards are those cards you use for supporters and stadiums you can opt for during the battle. The rules of these cards are indicated at the bottom. Are Any 2021 Pokmon Cards Worth Anything Some of those Pokemon cards are extremely valuable, with the most expensive Pokemon card in the world selling for $375,000 at the PWCC Marketplace in 2021 $15,000 more than the previous record holder. That\u2019s right. Some people are willing to pay for a cardboard Pikachu or Charizard rather than an entire house. Also Check: How To Make An Excellent Throw In Pokemon Go What Is The Strongest Pokmon Card All Pokemon cards have strengths and weaknesses, but in terms of raw power, the two Mega Charizard EXs from the Flashfire expansion are the strongest. Their attacks both do 300 base damage which is the highest in the game, as of 2014. To give a perspective, currently the Pokemon card with the highest HP is Wailord-EX at 250 HP. The Mega Charizard-EXs are strong enough to one shot everything in the game right now. There are a few Pokemon cards that have attacks that can do extra damage if certain conditions are met. In theory, some of these cards have the highest damage potential, although the conditions for pulling off the maximum amount of damage are not easy to accomplish. It is likely that there will be stronger cards in the future because trading card companies create stronger cards to drive sells. Reshiram And Charizard Gx This is openly known to be the best Charizard card made to date, and it\u2019s easy to see why. Just check out that ridiculous HP and the mind-boggling attacks under it. Outrage is a solid \u201ceye for an eye\u201d move where it only gets stronger when your opponent attacks it. Flare Strike deals a mighty blow that can pretty much take out any standard basic Pok\u00e9mon. However, Double Blaze GX is the stuff of nightmares. In fact, it\u2019s so insane that it can only be used once per game, so use it wisely. With the potential to deal 300 damage, this move bypasses any effects on your opponent\u2019s Active Pok\u00e9mon. Read Also: Tyranitar Pokemon Shield Xy Evolutions Booster Boxes Best Modern Booster Box for Old School Artwork You knew it was coming! XY Evolutions is the hottest modern Pokemon booster box in recent memory. It just goes to show how nostalgic the original artwork is for people, and what it means to open packs containing these card designs again. Whats interesting about the set is that its actually pretty poorly printed. Youll often find cards that are well off-centre. But what may seem like a flaw, has actually played to its advantage. This is because when youre lucky enough to grade a card in a PSA 10, its worth a considerable amount of money. Why? Because there just arent that many of them, compared to the flood of PSA 9s! Take for example, our king and chief the holographic Charizard. Look at the PSA report below. There are approximately 20 times as many PSA 9s as there are 10s! Its no wonder that despite only being a few years old, top graded versions are going for thousands of pounds. This is why Evolutions is a booster box worth buying. Sure, its a bit like a spin at the roulette table, but you could theoretically pull one card that is worth 5 times the value of the entire box! Its crazy! Plus you get to experience the buzz of seeing all your old friends again. O.G. Bulba, Squirtle, Pika, theyre all there! Or, if youre a fan of sealed product, you could lock it away for a decade and sit on it as an investment piece. Whatever you decide to do with it, snap up an XY Evolutions Booster Box while you still can. What Were You Expecting Rayquaza is already a pretty powerful Pok\u00e9mon. Then give him an attack that will do 200 points of damage? Thats what you get with Rayquaza C Lv. Xs final attack. It does take some time to get the energy necessary for it, but a couple of rounds is worth the wait when considering the payout. One of the most satisfying parts of playing a game is finding a strategy that works for you. For players who liked to rely on luck, this was a great way to win until they changed the rule. Also Check: Target Restock Pokemon Cards Lucario & Melmetal Gx Lucario & Melmetal GX Card This Pokemon is a solid wall of defense. It has one of the few GX attacks in the game that stays active after youve used it. This attack says that your Pok\u00e9mon take 30 less from attacks for the rest of the game. Lucario & Melmetals Steel Fist attack is good, too. For two energy, you can do 50 damage and search your deck for a metal energy to attach to any of your Pokemon. Lucametals Heavy Impact attack takes a lot of energy and doesnt do that much damage. Usually this would be a problem, but since the Pokemon will be alive for a while, you definitely have the time to use this attack. Best Pokmon Tcg Cards Visiting The Best Pok\u00e9mon Card Collection in Australia! With all that in mind, here are ten of the best Pok\u00e9mon cards from throughout the trading card games long history and many expansions. They include the powerful and the beautiful, the common and the rare, the familiar and the more obscure. The one thing they have in common, though, is youve gotcha catch em all. You May Like: Bagon In Emerald St Edition Shadowless Chansey Sold: in 2020 Price: $36,877 The Charizard card can be on top of the most expensive Pok\u00e9mon cards. But the majority of the other holographic cards in this very first set have sold for astonishing prices. The GEM-MT 10 Shadowless Chansey is one such rare item. In 2020, it was sold at a cost of more than $35,000, which made this card become one of the most valuable Pokemon cards. There are more than 47 pieces like this in the world. Pikachu And Zekrom Tag Team The thing that makes the Pikachu and Zekrom Tag Team card so useful is how well it\u2019s able to make sure that all the bases are covered. The card has an ability that basically sets up its big attack, which allows you to search for three Electric Energy, add them to your card, and then shuffle, and once that\u2019s done, you do 200 damage to the opponent\u2019s active Pokemon and 170 to any benched Pokemon you want. This is one mascot card you don\u2019t want to miss. Don\u2019t Miss: Pokemon Go Mysterious Component Best Pokemon Card Ever 2020 Have a kid whos a hardcore fan of Pokemon? You wont believe how excited he can be when you give him one of the following Pokemon cards The anime Pok\u00e9mon was so famous more than 20 years ago that even today it has a great number of fans around the world, from adults to kids, and it is still airing in some countries while also having an incredible set of video games anyone can play. Apart from this, the anime also offers a fantastic card game where you can play with the creatures you like the most, resembling the original battles from the animation. Yet, there are tons of cards out there to choose, and if you want to pick the perfect one for your kid you may need to know more. As we know not every parent is well-versed on the stuff their kids like, weve made a list with some of the most valuable and exciting cards from this game. Take a peek and choose the one you think will make your child happier What Is The Most Powerful Pokemon Arceus doesnt surprise when it comes to topping the list of the most powerful Pokemon. It is a Generation IV Mythical Pok\u00e9mon of the Normal type. This Pok\u00e9mon is regarded as the founder of the Pok\u00e9mon universe. It has the highest base statistics of any non-Mega Pok\u00e9mon and is the most powerful Pok\u00e9mon in the universe. You May Like: How To Get A Super Rocket Radar In Pokemon Go The 20 Most Powerful Pokmon Of All The Strongest Pokemon with the highest power level and proves to be the strongest. Many powerful Pok\u00e9mon are out there. In this article, you will come to know about the Pok\u00e9mon that comes out on top! So, let\u2019s get started with the discussion. Is necrozma the strongest Pokemon ? Arceus of the Type Normal is the Strongest Pokemon to date. It. The Raid Battles in the Pok\u00e9mon Trading Card Game are a new feature that can be played at home by printing out cards from the Official Site, or at your local Pok\u00e9mon League or local game store and is a new way to play the Pok\u00e9mon Trading Card Game. To play, you need to set up your game board and have up to 4 players participate Moltres & Zapdos & Articuno Gx Moltres & Zapdos & Articuno GX from Hidden Fates. Sky Legends GX deals 110 damage to three of your opponents Pokemon for a total of 330 damage. This attack costs four energy. Moltres & Zapdos & Articuno GX is a colorless type with 300 HP. It also has the Trinity Burn attack, which deals 210 damage for four energy. Don\u2019t Miss: How To Randomize Pokemon Y Top 10 Strongest Pokmon Cards Heat up your summer with Pok\u00e9mon\u2019s new strategic team battle game offering 5-on-5 team battles. This weeklong event features Bidoof that know special attacks, Shiny Bidoof, and lots more Bidoofery. Discover fun coloring pages, origami, puzzles, mazes, and moreall in one place. Find out which cards from the Black & White Series still shine. 20. Chandelure. Chandelure happens to be one of my favorite shiny sprites of all time, but that\u2019s not what we\u2019re here to talk about.. In terms of ability, Chandelure has an insanely high special attack. It\u2019s one of the strongest ghost attackers in the series, and it has access to an incredible move set to back up that claim with STAB attacks Shop for pokemon game cards online at Target. Choose from contactless Same Day Delivery, Drive Up and more Top 10 Strongest Pokemon Strongest Pokemon card ever!!! 1ArceusArceus is a legendary Pok\u00e9mon from the P\u00f3kemon series. He first appeared in the 18th Pok\u00e9mon movie alongside other Legendary Pok\u00e9mon. It\u2019s not surprising, considering that there\u2019s going to be an upcoming Pokemon game with Arceus as the main antagonist. He was probably the one who possessed all those Pokemon to become violent, as what I\u2019ve seen in recent trailers. Seriously, Arceus has the power to do just that? \u201cPokemon are terrifying creatures!\u201d Now, let\u2019s see if it rings true. It\u2019s justified to be the strongest of all pokemon because it created the rest of them. Also those shards are really helpful and kickass I don\u2019t believe that arceus is number 1. I thought arceus would be third or second. He is the strongest sayian in historyWithout him no one can get destroyed. He has more than thousand forms. Arceus the god pokemon with his signature move Judgment. Excluding megas, he has the highest stat total. When the creation trio were fighting Arceus , they can\u2019t lay a finger on him! Even with Dialga in the battle, the tables won\u2019t turn!",
+    avatar: NaN,
+    platform: "tumblr",
+  },
+  {
+    username: "cardradar1",
+    datetime: "2022-03-08T03:49:56.000+0000",
+    message:
+      "1968 Topps Nolan Ryan ROOKIE 17 #sportscardsforsale https://t.co/FPsA2qnrY9",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1489682227390820357?token=75330058bd2dc339875a00c899458ccb800ad3c161ae75417815863ad28aac52",
+    platform: "twitter",
+  },
+  {
+    username: "hermanotarjeta",
+    datetime: "2022-03-08T03:09:00.000+0000",
+    message:
+      "This was obviously going to happen to some of us and will continue but I was just curious how much has the lockout changed your buying habits already (if at all?) Don't get me wrong I'm not a whale spending wise and I'm only one person. But I spend anywhere from one to a few thousand a month on cards generally. Sealed product mostly to open. I am a collector and if my cards have some investment value that's fine my kids can benefit some day but that is not my purpose for collecting. The lockout (with now missing games) seems to be the nail in the coffin for me. I'm not angry about it I have no plans to stop collecting baseball long-term but they seem to be organically losing my attention. With the PSA slow downs (I have 100s of cards in grading), basketball being so behind on printing products and my second choice for sports cards it's been a perfect storm for me to just passively move into other areas of collecting. Without baseball games on the horizon I've been funneling my money into Pok\u00e9mon / MTG cards for fun. And I had never once in my life purchased these products before the last few months. My young son seems to like the Pok\u00e9mon with me and there has been a few crossover (Godzilla and D&D) themed MTG sets I've been buying up that are nostalgic from my childhood. Anyone else noticing a major shift in their collecting and if so what are you doing differently?\nQuote: : This might ruffle some feathers - but if the lockout is already affecting you, then you weren't much of a baseball card fan to begin with. There's a rich history of baseball out there. If modern is bugging you, then pivot to another time period and collect there. Vintage is a good answer. I think this will be a good mini boom for vintage. But for me personally I have hit a lot of those goals years ago and I'm also a collector who has learned over time now that I like to pack pull most of my own collection. As dumb and limiting as that is I kind of have always let the packs dictate what my collection is. Of course there are some outliers and key cards in the hobby I never had a chance to pull. So I do not mind picking up singles of cards I never had a chance to pull from a pack like very key vintage cards. Ones I wasn't even alive or collecting at the time. And I have picked those up over the years for sure. When I do that I prefer to do it at a show and ask/hear the story if there is one where the dealer got it. But again I have picked most of those up over years of collecting. But when I think about my driving force of nostalgia for this hobby I guess it's listening to games on the radio/tv and opening packs. Without the other half of that starting it its beginning to affect my buying habits is all.",
+    avatar: NaN,
+    platform: "forum",
+  },
+  {
+    username: "SeasonsGala",
+    datetime: "2022-03-08T03:04:05.000+0000",
+    message:
+      "Graded 2011 Topps Update Anthony Rizzo #US55 Rookie RC Baseball Card PSA 10 Gem ...\ud83d\udc49 https://t.co/JSsCj3fbQs https://t.co/r1Y6AU2weS",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/360376907?token=b2c3467948b1e1df4415969b3b676b71e5a03082cda309fc1458006542bf9c92",
+    platform: "twitter",
+  },
+  {
+    username: "CardPromoter",
+    datetime: "2022-03-08T02:42:12.000+0000",
+    message:
+      "1910 All Star Baseball card rare HO #thehobby https://t.co/poEYlRe49W",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445007523023568902?token=c0aac81e34af6f580dd27a35fcb8761c588c661427d2c4bb1d5399bc537ab6f3",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-08T01:32:52.000+0000",
+    message:
+      "1975 Topps 228 George Brett Royals #thehobby https://t.co/Hdap4we0iw",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "CardGuide_",
+    datetime: "2022-03-08T01:31:27.000+0000",
+    message:
+      "1968 Topps Nolan Ryan ROOKIE 177 PS #thehobby https://t.co/JZ0pDUekJ2",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480588547610533888?token=ba8d0c8455e3cadd23a950e5eec00fa745f3ecbbfb4237c41def1df3f49041ba",
+    platform: "twitter",
+  },
+  {
+    username: "cardminer",
+    datetime: "2022-03-08T01:09:52.000+0000",
+    message:
+      "1968 Topps Nolan Ryan ROOKIE 177 PS #whodoyoucollect https://t.co/4RWFnGZlVa",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480591075786080261?token=3c7b75e4c1151038e119ef9cc7e16c7103a10b03e42e12d597d366e7d2ba779b",
+    platform: "twitter",
+  },
+  {
+    username: "CardGuide_",
+    datetime: "2022-03-08T00:49:56.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tucker #thehobby https://t.co/n9G8wQJHMC",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480588547610533888?token=ba8d0c8455e3cadd23a950e5eec00fa745f3ecbbfb4237c41def1df3f49041ba",
+    platform: "twitter",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-08T00:36:10.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-08T00:24:56.000+0000",
+    message:
+      "1990 Topps 336 Ken Griffey Jr All S #thehobby https://t.co/ARDZfV3psL",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-08T00:22:52.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Etrigone",
+    datetime: "2022-03-08T00:13:39.000+0000",
+    message:
+      'I certainly love the idea. Back when Neil Gaiman was actively working on The Sandman, or a little after, a friend asked what it was about (not being comic book types). They got offended by me including "christian mythology" as part of the description. Although, come to think of it, I think I initially said "Abrahamic ...", they looked confused and I broke it down some including the previous definition.',
+    avatar:
+      "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_4.png",
+    platform: "reddit",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:55:22.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:36:16.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:25:54.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:23:14.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:23:09.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:22:49.000+0000",
+    message:
+      "...Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. Story continues A judge said in December that the card was being held by...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:21:35.000+0000",
+    message:
+      "...since 2018. The application stated that his business had 10 employees and gross revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:19:35.000+0000",
+    message:
+      "...money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge denied him a bond...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:18:03.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-07T23:18:01.000+0000",
+    message:
+      "...$235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:16:39.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:15:22.000+0000",
+    message:
+      "...and gross revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:14:30.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:14:26.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:14:14.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:54.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:54.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:37.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:36.000+0000",
+    message:
+      "..., Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:33.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:13:31.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "By Hayley Fowler By Julia Marnin",
+    datetime: "2022-03-07T23:13:28.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:12:54.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:12:28.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:12:11.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:12:00.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:11:46.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler, Jessica Banov",
+    datetime: "2022-03-07T23:11:39.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:11:35.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:11:33.000+0000",
+    message:
+      "...revenue of $235,000 in the year before the pandemic. Prosecutors said the Small Business Administration subsequently awarded Oudomsine an $85,000 loan. In January 2021, Oudomsine is accused of using the bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:11:05.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Hayley Fowler",
+    datetime: "2022-03-07T23:10:35.000+0000",
+    message:
+      "...bulk of that money to purchase a Charizard Pokemon trading card for $57,789 \u2014 which the government said he has agreed to forfeit as part of the court proceedings against him. A judge said in December that the card was being held by a relative in Atlanta, Georgia, and Oudomsine had \u201coffered no explanation for his failure\u201d to surrender it. The judge...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "cardboardpromos",
+    datetime: "2022-03-07T22:41:07.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tucker #thehobby https://t.co/I9omfrbhyw",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445002414600372228?token=799f18ebbc0d29f8e8dcc93c1512e54e7d9274fbf6618cc49ae95bdc354a0e2a",
+    platform: "twitter",
+  },
+  {
+    username: "cardrecommender",
+    datetime: "2022-03-07T22:19:10.000+0000",
+    message:
+      "2019 Topps Stadium Club Kyle Tu #whodoyoucollect https://t.co/QZ8JLZGUBO",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490435214761500674?token=bde446a9e236ff3ddaf5d43f68f327f4c76306bb07247e8b70ceb10f429be6a5",
+    platform: "twitter",
+  },
+  {
+    username: "CardsNon",
+    datetime: "2022-03-07T22:15:34.000+0000",
+    message:
+      "1966 SUPERMAN #33 Card PSA 8 Superman Leads In , Trading Card https://t.co/kTzFlLlVwc eBay",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1395447656223100928?token=94a2229b77b250fb1d7d0f582d148efb0e821eedbd7cb9bf54eb55d89138b851",
+    platform: "twitter",
+  },
+  {
+    username: "cardradar1",
+    datetime: "2022-03-07T20:18:34.000+0000",
+    message:
+      "2007 Upper Deck SP Rookie Editi #sportscardsforsale https://t.co/a4I7JJX644",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1489682227390820357?token=75330058bd2dc339875a00c899458ccb800ad3c161ae75417815863ad28aac52",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-07T20:08:40.000+0000",
+    message:
+      "1975 Topps 228 George Brett Roy #whodoyoucollect https://t.co/f4DnNlbxQL",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "CardGuide_",
+    datetime: "2022-03-07T20:02:23.000+0000",
+    message:
+      "1991 Topps Kirk Gibson Trading Card #thehobby https://t.co/OU5CIUxTFq",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480588547610533888?token=ba8d0c8455e3cadd23a950e5eec00fa745f3ecbbfb4237c41def1df3f49041ba",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-07T20:00:05.000+0000",
+    message:
+      "2013 Bowman Mike Trout Baseball Car #thehobby https://t.co/YXHrmhf7UB",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "sportscardcoder",
+    datetime: "2022-03-07T19:47:50.000+0000",
+    message:
+      "1991 Topps Kirk Gibson Trading #whodoyoucollect https://t.co/4th2ZeImV3",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490515468976807939?token=c3784fbc2e183814d47128bd6864f0b739f4a52c1da727054e18223a6466cadc",
+    platform: "twitter",
+  },
+  {
+    username: "auction report",
+    datetime: "2022-03-07T19:20:43.000+0000",
+    message:
+      "A Julius Erving trading card shattered a sales record Sunday night with a $132,000 sale at PWCC Marketplace\u2019s Weekly Sunday Auction. The 1974 Topps Basketball Julius Erving #200 that set the new high sales mark is the only PSA 10 Gem Mint in existence. It boasts completely untouched edges along with four pin-point sharp corners. [\u2026]",
+    avatar: NaN,
+    platform: "blog",
+  },
+  {
+    username: "ourbranchesbend",
+    datetime: "2022-03-07T19:08:59.000+0000",
+    message:
+      "I'll clarify that the stimulus money was just a part of the additional money available to spend on Pokemon cards and other hobbies. Instead of being able to go anywhere like we normally do and interact outside our homes, a lot of people got back into hobbies because what else are you to do being at home locked down? Poketubers played a huge part in Pokemon cards being scalped and invested in. For 15 years Pokemon cards were not moving much. Only the graded grail cards and trophy cards were shown significant interest as grading cards became more of a thing people got into. I blame the taking part in grading cards and people overpaying for graded cards as the reason for why the boom happened. People saw oh if I grade my childhood collection and they come back a PSA 10, I'm rich. PSA was not backed up in 2019. It started to get crazy after the Logic purchase of a Charizard and Logan Paul. Hidden Fates only initially rubbed the sticks together.",
+    avatar:
+      "https://styles.redditmedia.com/t5_3pg7j2/styles/profileIcon_snoodb2135f1-ff01-4414-93c2-bffbed4a8880-headshot.png?width=256&height=256&crop=256:256,smart&s=e994511960f52b34d53c33cae42a47d410b5d929",
+    platform: "reddit",
+  },
+  {
+    username: "moneyballinvest",
+    datetime: "2022-03-07T16:58:33.000+0000",
+    message:
+      "Went to a trading card show on Saturday night. Bunch of people had soccer and F1 cards. Really cool to see the hobby expand! #tradingcards #thehobby #cards #PSA",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1263289382720745472?token=6e189183f380617ac37d4617849d44ffd4d754a2e5189c9dd0737685817c1ea8",
+    platform: "twitter",
+  },
+  {
+    username: "bluechipcard",
+    datetime: "2022-03-07T16:45:56.000+0000",
+    message:
+      "1968 MILTON BRADLEY 177 NOLAN R #whodoyoucollect https://t.co/6v6sWIKzoI",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490872718274793473?token=c42d0b6fd4e54de90a5f7cf2ddaaac52ebb6be0ada6c7514257950ed99c6a896",
+    platform: "twitter",
+  },
+  {
+    username: "84baseballcards",
+    datetime: "2022-03-07T16:35:39.000+0000",
+    message:
+      "RT @FSBreakdown $20 - 2019 Topps National Baseball Card Day. Rhys Hoskins #21 PSA 9. Phillies. Shipping $4. PayPal Only @HobbyConnector @sports_sell @84baseballcards @DailySportcards #518Stacks #thehobby #baseballcards DM to Claim! https://t.co/R7avOfNL5A",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/874301879429279745?token=2c3d03aa2a3ee7e4ee8c0117fa5c9703f5faeedf20ab46cda91f8009a5e18cb2",
+    platform: "twitter",
+  },
+  {
+    username: "247sportscard",
+    datetime: "2022-03-07T16:12:36.000+0000",
+    message:
+      "1991 Topps Kirk Gibson Trading Card #thehobby https://t.co/dMIrV7aB29",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1473706972805570563?token=9745a9dea2b94963e04b6291fb6086d5615c3dc881bd94a3558e79c759921639",
+    platform: "twitter",
+  },
+  {
+    username: "SportsSell3",
+    datetime: "2022-03-07T15:42:22.000+0000",
+    message:
+      "RT @FSBreakdown $20 - 2019 Topps National Baseball Card Day. Rhys Hoskins #21 PSA 9. Phillies. Shipping $4. PayPal Only @HobbyConnector @sports_sell @84baseballcards @DailySportcards #518Stacks #thehobby #baseballcards DM to Claim! https://t.co/R7avOfNL5A",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1462669658817904644?token=9ebfb5d8794146a089748390fb8bd87242ac801e7a6840a0338d180ad1e3f3ae",
+    platform: "twitter",
+  },
+  {
+    username: "sports_sell",
+    datetime: "2022-03-07T15:40:32.000+0000",
+    message:
+      "RT @FSBreakdown $20 - 2019 Topps National Baseball Card Day. Rhys Hoskins #21 PSA 9. Phillies. Shipping $4. PayPal Only @HobbyConnector @sports_sell @84baseballcards @DailySportcards #518Stacks #thehobby #baseballcards DM to Claim! https://t.co/R7avOfNL5A",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1274482734451142656?token=84462e24f42a1149c98fed23077e21595acfd439394b8dd256f676d1b51a2b11",
+    platform: "twitter",
+  },
+  {
+    username: "HobbyConnector",
+    datetime: "2022-03-07T15:40:24.000+0000",
+    message:
+      "RT @FSBreakdown $20 - 2019 Topps National Baseball Card Day. Rhys Hoskins #21 PSA 9. Phillies. Shipping $4. PayPal Only @HobbyConnector @sports_sell @84baseballcards @DailySportcards #518Stacks #thehobby #baseballcards DM to Claim! https://t.co/R7avOfNL5A",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/407647770?token=568dd79e8369db1dafa722c7c8f7df399bbafbcec16e33ed52048236109c0e18",
+    platform: "twitter",
+  },
+  {
+    username: "FSBreakdown",
+    datetime: "2022-03-07T15:40:01.000+0000",
+    message:
+      "$20 - 2019 Topps National Baseball Card Day. Rhys Hoskins #21 PSA 9. Phillies. Shipping $4. PayPal Only @HobbyConnector @sports_sell @84baseballcards @DailySportcards #518Stacks #thehobby #baseballcards DM to Claim! https://t.co/R7avOfNL5A",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/876547389276004352?token=d8173a582f10462a848703835db246dd308074c78cf50409bc15a8d4d3ed876e",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-07T15:34:04.000+0000",
+    message:
+      "1998 Topps Finest Refractor Mar #whodoyoucollect https://t.co/lEdsdX8S0i",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "cardradar1",
+    datetime: "2022-03-07T15:16:08.000+0000",
+    message:
+      "1951 Bowman George Kell PSA 6 B #sportscardsforsale https://t.co/5CgMI5h9Dm",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1489682227390820357?token=75330058bd2dc339875a00c899458ccb800ad3c161ae75417815863ad28aac52",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T15:15:00.000+0000",
+    message:
+      "Fernando Valenzuela 1984 Fleer Signed Autographed PSA/DNA 9 Baseball Card. \ud83d\udd17https://t.co/6osu9FTCP3 #Dodgers #thehobby #sportscards #tradingcards https://t.co/qW1aawYp8a",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
+    platform: "twitter",
+  },
+  {
+    username: "SportsCardBOT",
+    datetime: "2022-03-07T15:14:27.000+0000",
+    message:
+      "RT @CardsStew Fernando Valenzuela 1985 Topps Tiffany #440 PSA 10 Baseball Card. \ud83d\udd17https://t.co/CgOLFhzF3E #thehobby #sportscards #Dodgers #tradingcards https://t.co/9F9ZvJDap9",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1011652219266093056?token=b1961969e424ebcdf7ab63b618e4d45bb4511fb46c28b1b1a89dc13d9503cbfa",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T15:00:02.000+0000",
+    message:
+      "Fernando Valenzuela 1985 Topps Tiffany #440 PSA 10 Baseball Card. \ud83d\udd17https://t.co/CgOLFhzF3E #thehobby #sportscards #Dodgers #tradingcards https://t.co/9F9ZvJDap9",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T14:45:00.000+0000",
+    message:
+      "Mike Piazza 1997 Finest Rare Gold Embossed Die Cut Refractor PSA 9 Baseball Card. \ud83d\udd17https://t.co/S0XZZcmH02 #thehobby #tradingcards #sportscards #Dodgers https://t.co/ONmHtnaTfP",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T14:30:00.000+0000",
+    message:
+      "Mike Piazza 1993 Finest Refractor Rookie #199 PSA 9 Baseball Card. \ud83d\udd17https://t.co/tdMC1dnJuf #sportscards #thehobby #dodgers #tradingcards https://t.co/P6GLPkqbKo",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
+    platform: "twitter",
+  },
+  {
+    username: "bluechipcard",
+    datetime: "2022-03-07T14:25:45.000+0000",
+    message:
+      "1977 Topps Star Wars Trading Ca #whodoyoucollect https://t.co/RktzDu92Cg",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490872718274793473?token=c42d0b6fd4e54de90a5f7cf2ddaaac52ebb6be0ada6c7514257950ed99c6a896",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T14:15:00.000+0000",
+    message:
+      "Babe Ruth 2002 Donruss Diamond Kings Gold Foil /100 #127 PSA 9 Baseball Card. \ud83d\udd17https://t.co/Y1h59iG3B8 #Yankees #thehobby #sportscards #tradingcards https://t.co/2K1mADxohQ",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
+    platform: "twitter",
+  },
+  {
+    username: "Dana Hanson",
+    datetime: "2022-03-07T14:04:57.000+0000",
+    message:
+      "...matter of fact, it was actually Mays himself who made the winning catch, a very difficult catch by all accounts. Experts recall him being forced to reach over his shoulder in order to catch the ball, something that very few players could have accomplished successfully. Despite that fact, this is not the most highly sought-after trading card...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "pokecollectoramy",
+    datetime: "2022-03-07T13:34:19.000+0000",
+    message:
+      "Mar 7, 2022 11:50:32 GMT -6 @lordpokesmoke said: Dec 2, 2017 8:27:59 GMT -6 @quuador said:Anyone correct me if I'm wrong, but as far as I know PSA grading started at 00000001 and just went upwards, regardless of which TCG or card gets graded. I think some old Baseball card got the nr. 1 and is worth so much more just for that grading number alone than the same card graded with a higher number. So I'm also interested in your question as to what the lowest graded Pok\u00e9mon card is (as in: the first Pok\u00e9mon card ever graded with PSA), but the number itself doesn't have any special meaning for what I know. King Pok\u00e9mon smpratte Correct me if I'm wrong, please. I've only graded once and don't know that much about it (except for what I've read here on the forum), but you are some of the experts when it comes to PSA-grading here. Greetz, Quuador I thought they did skip around for certain cards though? I swear I\u2019ve seen a sports card with the 80 million cert around the time people were getting high 40 million certs in returns. However I can\u2019t for the life of me find any proof of this now so it\u2019s possible my mind is playing tricks on me. And I can\u2019t remember seeing any Pok\u00e9mon cards in the 30 million cert ranges but if you go to the PSA certification lookup there are sports cards there. Just messing around and typing in random numbers it seems like they stop in the high 31900000 certs and jump to the 40 mil certs. Edit: if you go type in numbers in the 80 and 90 million cert ranges on the cert lookup it comes back with sports cards as well Just got this back last week, 80m cert. Was a bit confused why as well lol",
+    avatar: NaN,
+    platform: "forum",
+  },
+  {
+    username: "lordpokesmoke",
+    datetime: "2022-03-07T12:50:32.000+0000",
+    message:
+      "Dec 2, 2017 8:27:59 GMT -6 @quuador said: Dec 2, 2017 3:31:12 GMT -6 @guangsta said:Nice! So how do the serial numbers work? 01 designates Pokemon? Other numbers the set? Cos those numbers are already huge...so I don\u2019t see it starting at 01000.. right? Anyone correct me if I'm wrong, but as far as I know PSA grading started at 00000001 and just went upwards, regardless of which TCG or card gets graded. I think some old Baseball card got the nr. 1 and is worth so much more just for that grading number alone than the same card graded with a higher number. So I'm also interested in your question as to what the lowest graded Pok\u00e9mon card is (as in: the first Pok\u00e9mon card ever graded with PSA), but the number itself doesn't have any special meaning for what I know. King Pok\u00e9mon smpratte Correct me if I'm wrong, please. I've only graded once and don't know that much about it (except for what I've read here on the forum), but you are some of the experts when it comes to PSA-grading here. Greetz, Quuador I thought they did skip around for certain cards though? I swear I\u2019ve seen a sports card with the 80 million cert around the time people were getting high 40 million certs in returns. However I can\u2019t for the life of me find any proof of this now so it\u2019s possible my mind is playing tricks on me. And I can\u2019t remember seeing any Pok\u00e9mon cards in the 30 million cert ranges but if you go to the PSA certification lookup there are sports cards there. Just messing around and typing in random numbers it seems like they stop in the high 31900000 certs and jump to the 40 mil certs. Edit: if you go type in numbers in the 80 and 90 million cert ranges on the cert lookup it comes back with sports cards as well",
+    avatar: NaN,
+    platform: "forum",
+  },
+  {
     username: "cardradar1",
     datetime: "2022-03-07T12:45:03.000+0000",
     message:
@@ -176,6 +942,14 @@ export const SocialMedia = [
     platform: "news",
   },
   {
+    username: "mwash1983",
+    datetime: "2022-03-07T05:56:00.000+0000",
+    message:
+      "This was obviously going to happen to some of us and will continue but I was just curious how much has the lockout changed your buying habits already (if at all?) Don't get me wrong I'm not a whale spending wise and I'm only one person. But I spend anywhere from one to a few thousand a month on cards generally. Sealed product mostly to open. I am a collector and if my cards have some investment value that's fine my kids can benefit some day but that is not my purpose for collecting. The lockout (with now missing games) seems to be the nail in the coffin for me. I'm not angry about it I have no plans to stop collecting baseball long-term but they seem to be organically losing my attention. With the PSA slow downs (I have 100s of cards in grading), basketball being so behind on printing products and my second choice for sports cards it's been a perfect storm for me to just passively move into other areas of collecting. Without baseball games on the horizon I've been funneling my money into Pok\u00e9mon / MTG cards for fun. And I had never once in my life purchased these products before the last few months. My young son seems to like the Pok\u00e9mon with me and there has been a few crossover (Godzilla and D&D) themed MTG sets I've been buying up that are nostalgic from my childhood. Anyone else noticing a major shift in their collecting and if so what are you doing differently?\nQuote: : This might ruffle some feathers - but if the lockout is already affecting you, then you weren't much of a baseball card fan to begin with. There's a rich history of baseball out there. If modern is bugging you, then pivot to another time period and collect there. agreed! vintage is the way to go.",
+    avatar: NaN,
+    platform: "forum",
+  },
+  {
     username: "crown_royal_23",
     datetime: "2022-03-07T05:51:48.000+0000",
     message:
@@ -200,6 +974,14 @@ export const SocialMedia = [
       "...toys, movies, games, and, of course, trading cards. The Pok\u00e9mon trading card game (TCG) is a collecting card game based on the Pok\u00e9mon franchise. Collectors battle their opponents with their cards to play the game, each with strengths and weaknesses. While some people appear to play the game, much more people collect the cards than utilize them...",
     avatar: NaN,
     platform: "news",
+  },
+  {
+    username: "Archangel1775",
+    datetime: "2022-03-07T04:48:00.000+0000",
+    message:
+      "Looking to move as a lot - $750 delivered. Graded (11 Total - all PSA 10 except 1) 2020 Topps Series 1 PSA 10 x 3 2020 Topps Opening Day PSA 10 x 1 2020 Topps Chrome PSA 10 x 2 2020 Topps Chrome Freshman Flash PSA 10 x 1 2020 Topps Chrome SP PSA 10 x 1 2020 Topps Chrome Refractor PSA 10 x 1 2020 Topps Chrome Pink Refractor PSA 10 x 1 2020 Topps Chrome Prism Refractor PSA 9 x 1 Raw (nicer stuff) 2020 Sapphire 2020 X-Fractor 2020 Prism Refractor 2020 Pink Refractor 2020 Refractor x 2 2020 Topps Chrome Complete Sets Relic 2020 Topps Update Variation x 1 2020 Topps Update Target Red x 1 (hard to find) Raw (lower end) 2020 Topps Series 1 x 22 2020 Topps Update x 21 2020 Silver Pack x 1 2020 Topps Update Medallion x 1 2020 Topps Heritage x 7 2020 Heritage Purple x 1 2020 Heritage Sticker x 3 2020 Heritage Scratch Off (unscratched) x 1 2020 1985 Design x 5 2020 1985 Design Chrome x 4 2020 Turkey Red x 1 2020 Turkey Red Chrome x 1 2020 Turkey Red Update x 1 2020 Turkey Red Update Chrome x 1 2020 Archives x 3 2020 Archives Rookie All Star x 2 2020 Gallery x 1 2020 Gallery Nat'l Baseball Card Day x 3 2020 Bowman Chrome x 3 2020 Bowman x 1 2020 Bowman ROY Favorite Mojo x 1 2020 Stadium Club Base x 3 2020 Stadium Club Black Foil x 1 2020 Stadium Club Inserts x 4 ( ITW & Power Zone) 2020 Gypsy Fortune Teller x 1\nNice collection!",
+    avatar: NaN,
+    platform: "forum",
   },
   {
     username: "3VintageClassic",
@@ -235,6 +1017,14 @@ export const SocialMedia = [
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445007523023568902?token=c0aac81e34af6f580dd27a35fcb8761c588c661427d2c4bb1d5399bc537ab6f3",
     platform: "twitter",
+  },
+  {
+    username: "clocsta2323",
+    datetime: "2022-03-07T00:28:00.000+0000",
+    message:
+      "This was obviously going to happen to some of us and will continue but I was just curious how much has the lockout changed your buying habits already (if at all?) Don't get me wrong I'm not a whale spending wise and I'm only one person. But I spend anywhere from one to a few thousand a month on cards generally. Sealed product mostly to open. I am a collector and if my cards have some investment value that's fine my kids can benefit some day but that is not my purpose for collecting. The lockout (with now missing games) seems to be the nail in the coffin for me. I'm not angry about it I have no plans to stop collecting baseball long-term but they seem to be organically losing my attention. With the PSA slow downs (I have 100s of cards in grading), basketball being so behind on printing products and my second choice for sports cards it's been a perfect storm for me to just passively move into other areas of collecting. Without baseball games on the horizon I've been funneling my money into Pok\u00e9mon / MTG cards for fun. And I had never once in my life purchased these products before the last few months. My young son seems to like the Pok\u00e9mon with me and there has been a few crossover (Godzilla and D&D) themed MTG sets I've been buying up that are nostalgic from my childhood. Anyone else noticing a major shift in their collecting and if so what are you doing differently?\nThis might ruffle some feathers - but if the lockout is already affecting you, then you weren't much of a baseball card fan to begin with. There's a rich history of baseball out there. If modern is bugging you, then pivot to another time period and collect there.",
+    avatar: NaN,
+    platform: "forum",
   },
   {
     username: "featuredcards_",
@@ -361,6 +1151,14 @@ export const SocialMedia = [
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1254151386952019968?token=4d8872ec1e9c748b7ef56048af2b6dbb940615c545478ca9bb142ba380200b2e",
     platform: "twitter",
+  },
+  {
+    username: "TKChicago",
+    datetime: "2022-03-06T21:43:00.000+0000",
+    message:
+      "Looking to move as a lot - $750 delivered. Graded (11 Total - all PSA 10 except 1) 2020 Topps Series 1 PSA 10 x 3 2020 Topps Opening Day PSA 10 x 1 2020 Topps Chrome PSA 10 x 2 2020 Topps Chrome Freshman Flash PSA 10 x 1 2020 Topps Chrome SP PSA 10 x 1 2020 Topps Chrome Refractor PSA 10 x 1 2020 Topps Chrome Pink Refractor PSA 10 x 1 2020 Topps Chrome Prism Refractor PSA 9 x 1 Raw (nicer stuff) 2020 Sapphire 2020 X-Fractor 2020 Prism Refractor 2020 Pink Refractor 2020 Refractor x 2 2020 Topps Chrome Complete Sets Relic 2020 Topps Update Variation x 1 2020 Topps Update Target Red x 1 (hard to find) Raw (lower end) 2020 Topps Series 1 x 22 2020 Topps Update x 21 2020 Silver Pack x 1 2020 Topps Update Medallion x 1 2020 Topps Heritage x 7 2020 Heritage Purple x 1 2020 Heritage Sticker x 3 2020 Heritage Scratch Off (unscratched) x 1 2020 1985 Design x 5 2020 1985 Design Chrome x 4 2020 Turkey Red x 1 2020 Turkey Red Chrome x 1 2020 Turkey Red Update x 1 2020 Turkey Red Update Chrome x 1 2020 Archives x 3 2020 Archives Rookie All Star x 2 2020 Gallery x 1 2020 Gallery Nat'l Baseball Card Day x 3 2020 Bowman Chrome x 3 2020 Bowman x 1 2020 Bowman ROY Favorite Mojo x 1 2020 Stadium Club Base x 3 2020 Stadium Club Black Foil x 1 2020 Stadium Club Inserts x 4 ( ITW & Power Zone) 2020 Gypsy Fortune Teller x 1",
+    avatar: NaN,
+    platform: "forum",
   },
   {
     username: "cardstoreteam",
@@ -2278,459 +3076,6 @@ export const SocialMedia = [
       "RT @Heritage_Sport This is the highest graded example of Sadaharu Oh\u2019s rarest rookie card, the Gold Border 1959 Hoshi Gangu in a PSA NM-MT 8. It sold for $52,800 this weekend, a world record price for any Japanese baseball card! https://t.co/8x0MxO5SOu https://t.co/4m9Uqa6q7d",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/62349483?token=9df01a5101716d7dc95f3261acfb9bb580243ca17b7396f3ee95108ef11d20a4",
-    platform: "twitter",
-  },
-  {
-    username: "julius_sphincter",
-    datetime: "2022-03-01T23:38:40.000+0000",
-    message:
-      'I was reading up and it seems like people say that if the card is just listed as "trading card", then only the auto was graded. But I also thought that if it was only the auto graded, it would say "Auto Grade Only". Also, I feel like every auto grade has said "auto 10" not "gem mint 10"',
-    avatar:
-      "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png",
-    platform: "reddit",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T22:51:25.000+0000",
-    message:
-      "1987 Donruss Mark McGwire Rooki #thehobby https://t.co/QTctEN1cnB",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T22:27:28.000+0000",
-    message:
-      "2019 Topps Archives Pete Alonso #whodoyoucollect https://t.co/RAJYyHgmQ8",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "CardGuide_",
-    datetime: "2022-03-01T19:06:46.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #thehobby https://t.co/VS1j3e4JJF",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480588547610533888?token=ba8d0c8455e3cadd23a950e5eec00fa745f3ecbbfb4237c41def1df3f49041ba",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T19:02:27.000+0000",
-    message:
-      "2019 Topps Archives Fernando Ta #thehobby https://t.co/PgdOIXjBIA",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "Rich Mueller",
-    datetime: "2022-03-01T18:40:08.000+0000",
-    message:
-      "Both Beckett and PSA were deluged with orders as trading card popularity grew just before and during the pandemic. Both companies shut down most services a year ago in an effort to catch up, while hiring additional staff and adding space. Beckett says that while it\u2019s opening Standard grading services, quantities will be limited and available on a...",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T18:07:06.000+0000",
-    message:
-      "1990 Topps 336 Ken Griffey Jr A #whodoyoucollect https://t.co/i5FzDwJ0c2",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "featuredcards_",
-    datetime: "2022-03-01T16:59:56.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/Hn8tPlarzq",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490511148675969027?token=a621db7d20fa300ab88767c41ab2341248ffb94c2dc6cb0d168484adade24a14",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T16:56:00.000+0000",
-    message:
-      "Trading Card Clark PSA DNA Cert #thehobby https://t.co/oysPRPyOuz",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T16:36:50.000+0000",
-    message:
-      "JACK FLAHERTY Rookie 2018 Topps #whodoyoucollect https://t.co/0S0Lvi7De9",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "PatrickQuinn07",
-    datetime: "2022-03-01T16:28:41.000+0000",
-    message:
-      "RT @Heritage_Sport This is the highest graded example of Sadaharu Oh\u2019s rarest rookie card, the Gold Border 1959 Hoshi Gangu in a PSA NM-MT 8. It sold for $52,800 this weekend, a world record price for any Japanese baseball card! https://t.co/8x0MxO5SOu https://t.co/4m9Uqa6q7d",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/78668547?token=f2113022d6bcae833786b7719026626a51b90835bc067b2ebf2f3961db5429a8",
-    platform: "twitter",
-  },
-  {
-    username: "Auctionreport",
-    datetime: "2022-03-01T16:25:49.000+0000",
-    message:
-      "RT @Heritage_Sport This is the highest graded example of Sadaharu Oh\u2019s rarest rookie card, the Gold Border 1959 Hoshi Gangu in a PSA NM-MT 8. It sold for $52,800 this weekend, a world record price for any Japanese baseball card! https://t.co/8x0MxO5SOu https://t.co/4m9Uqa6q7d",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/17595832?token=6810e17c90efb52df9796d479fa575c9943dd5687b26f70fe7e88b9aac36cf71",
-    platform: "twitter",
-  },
-  {
-    username: "Heritage_Sport",
-    datetime: "2022-03-01T16:24:54.000+0000",
-    message:
-      "This is the highest graded example of Sadaharu Oh\u2019s rarest rookie card, the Gold Border 1959 Hoshi Gangu in a PSA NM-MT 8. It sold for $52,800 this weekend, a world record price for any Japanese baseball card! https://t.co/8x0MxO5SOu https://t.co/4m9Uqa6q7d",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/730432555703402496?token=55b20f90ecaaf092f464582936144ef62d5a3d03b08f046816b49cb50e73eac2",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T16:04:11.000+0000",
-    message:
-      "Trading Card Clark PSA DNA Cert #whodoyoucollect https://t.co/314fczxF1x",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "SportsTradingC9",
-    datetime: "2022-03-01T16:00:06.000+0000",
-    message:
-      "2005 ANDY PETTITTE Signed Donruss Playoff Zenith ZB Baseball Card PSA/DNA 27/100 https://t.co/GNrE6y18VF eBay",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1373508144530219009?token=f4df1cda6de717d1d244f0a48e240ffa03d676d40c39f5b297bcb2ea2f0543b3",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T15:55:37.000+0000",
-    message:
-      "1990 Topps 336 Ken Griffey Jr A #thehobby https://t.co/UB9n0CalMf",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "cardrecommender",
-    datetime: "2022-03-01T15:01:08.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/RFDRxnK2lR",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490435214761500674?token=bde446a9e236ff3ddaf5d43f68f327f4c76306bb07247e8b70ceb10f429be6a5",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T14:53:08.000+0000",
-    message:
-      "2016 Topps Chrome Trevor Story #whodoyoucollect https://t.co/c969JCok42",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T13:57:27.000+0000",
-    message:
-      "1989 Donruss John Smoltz RC PSA #whodoyoucollect https://t.co/Hn7rHSvt2Q",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "cardboardpromos",
-    datetime: "2022-03-01T13:43:37.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #thehobby https://t.co/WqXQDF3P5S",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445002414600372228?token=799f18ebbc0d29f8e8dcc93c1512e54e7d9274fbf6618cc49ae95bdc354a0e2a",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T13:20:58.000+0000",
-    message:
-      "1985 Donruss John Franco RC PSA #whodoyoucollect https://t.co/jy3dGziAw9",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: NaN,
-    datetime: "2022-03-01T13:08:29.000+0000",
-    message:
-      "...Outsiders went two seasons before being cancelled, much to the chagrin of the fans all over the world. Then came one of the most unorthodox projects from Mooney yet. The short film Injustice for All was released in the form of an independent, dark and twisted new take on Batman comic book legends The Joker and Harley Quinn. In his usual multi-hat-wearing...",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T12:58:13.000+0000",
-    message:
-      "1987 Donruss Mark McGwire Rooki #thehobby https://t.co/vTPb2ccTVf",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "3VintageClassic",
-    datetime: "2022-03-01T12:51:41.000+0000",
-    message:
-      "es/1958-topps--all-star---herb-score-495-pitcher-psa-certified-b-7-jun-1933---d-11-nov-2008-at-age-75---autographed-baseball-card-cleveland-indians_14125563276_o https://t.co/YJN1RibXhb",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1254151386952019968?token=4d8872ec1e9c748b7ef56048af2b6dbb940615c545478ca9bb142ba380200b2e",
-    platform: "twitter",
-  },
-  {
-    username: "bluechipcard",
-    datetime: "2022-03-01T12:28:04.000+0000",
-    message:
-      "Roger Clemens 1985 Topps Rookie #thehobby https://t.co/zUCVr43nOL",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490872718274793473?token=c42d0b6fd4e54de90a5f7cf2ddaaac52ebb6be0ada6c7514257950ed99c6a896",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T12:15:41.000+0000",
-    message:
-      "1990 Topps 336 Ken Griffey Jr A #whodoyoucollect https://t.co/aZEzol1P73",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "Dana Hanson",
-    datetime: "2022-03-01T12:00:57.000+0000",
-    message:
-      "...won the Hank Aaron Award in both 2014 and 2019 and was named an All-Star nine times. If you\u2019re interested in learning more about his trading cards, you can look through the list below. It features the five most valuable Mike Trout baseball card s that have ever been sold. Of course, the list starts at number five and goes all the way to the most...",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T11:48:24.000+0000",
-    message:
-      "1985 Donruss John Franco RC PSA #thehobby https://t.co/DJlJY6aHeD",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T10:42:22.000+0000",
-    message:
-      "1989 Donruss John Smoltz RC PSA #thehobby https://t.co/Oev8NLpowp",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T09:59:21.000+0000",
-    message:
-      "1987 Donruss Mark McGwire Rooki #whodoyoucollect https://t.co/RV2ZlpSawO",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "cardwatch123",
-    datetime: "2022-03-01T09:43:28.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/SQVyLX1CQ7",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490865787665620992?token=0e12103abfac1ab422573f686630dd0dccf4e195e43dc798c7cd7d6a0ea8a6ba",
-    platform: "twitter",
-  },
-  {
-    username: "cardminer",
-    datetime: "2022-03-01T09:15:02.000+0000",
-    message:
-      "1957 TOPPS 328 BROOKS ROBINSON #whodoyoucollect https://t.co/c89XR9SfPX",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480591075786080261?token=3c7b75e4c1151038e119ef9cc7e16c7103a10b03e42e12d597d366e7d2ba779b",
-    platform: "twitter",
-  },
-  {
-    username: "3VintageClassic",
-    datetime: "2022-03-01T08:51:39.000+0000",
-    message:
-      "es/1958-topps---billy-loes-359-pitcher-psa-certified-b-13-dec-1929---d-15-jul-2010-at-age-80---autographed-baseball-card-baltimore-orioles_13096672505_o https://t.co/DjgupCPCkE",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1254151386952019968?token=4d8872ec1e9c748b7ef56048af2b6dbb940615c545478ca9bb142ba380200b2e",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T08:43:29.000+0000",
-    message:
-      "1998 Topps Finest Refractor Mar #thehobby https://t.co/v6xx2ACGLz",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "cardstoreteam",
-    datetime: "2022-03-01T08:03:13.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/knJrFCDkVI",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490519783405666305?token=7fc981443596c9c94c45c63f1cf63d710c6c30f21599143d2f00189a034bf2f2",
-    platform: "twitter",
-  },
-  {
-    username: "Cardfinder123",
-    datetime: "2022-03-01T08:00:58.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/leAFwrlpPB",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490774538937933829?token=64621ea1582d3f127d47f8c30c4f6e3b8c54734f6b2ff97b1eccbb40988ae896",
-    platform: "twitter",
-  },
-  {
-    username: "jabby",
-    datetime: "2022-03-01T07:42:02.000+0000",
-    message:
-      "I've never asked for extra pics of a 9 or 10 as I find them to be usually the most consistent in condition compared to lower PSA grades. Usually whatever a flaw a 9 has is pretty obvious (i.e. minor edge or corner chip, centering). If the flaw is on the surface it'll be usually very minor and very difficult to even show in pics in my experience. Of course none of these cards are truly flawless due to the manufacturing process it's almost impossible to find a truly pristine example of any trading card. I will ask for pics of a 7 or 8, particularly a holo card as they can either have very clean holos or very flawed holo surface in my experience. I've acquired a couple of 8s lately that look as good as my 9s on the surface but just have a bit more whitening on the back than a 9. It all depends, but again it's often obvious why it got less than a 9 with just a bit of inspection. I can definitely understand and respect asking for pics of a 9 or even a 10 - they usually cost quite a bit more - but I've never felt the need to yet. I think a 9 is one of the most satisfying grades, if you're fine with a couple of minor flaws you shouldn't be too worried I don't think.",
-    avatar: NaN,
-    platform: "forum",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T07:08:27.000+0000",
-    message:
-      "2019 Topps Archives Fernando Ta #whodoyoucollect https://t.co/ivnzJ0GjWf",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "CardGuide_",
-    datetime: "2022-03-01T05:05:09.000+0000",
-    message:
-      "PSA 9 Mint 2011 Bowman Chrome M #thehobby https://t.co/uWpVYYKrhb",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480588547610533888?token=ba8d0c8455e3cadd23a950e5eec00fa745f3ecbbfb4237c41def1df3f49041ba",
-    platform: "twitter",
-  },
-  {
-    username: "CardPromoter",
-    datetime: "2022-03-01T05:00:30.000+0000",
-    message:
-      "PSA 9 Mint 2011 Bowman Chrome M #thehobby https://t.co/FaSTSaZxIJ",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445007523023568902?token=c0aac81e34af6f580dd27a35fcb8761c588c661427d2c4bb1d5399bc537ab6f3",
-    platform: "twitter",
-  },
-  {
-    username: NaN,
-    datetime: "2022-03-01T04:26:31.000+0000",
-    message:
-      "...out here spending nearly $1 million on a single card, though.\u00a0 For more about Pok\u00e9mon cards, head to Game Informer\u2019s Pok\u00e9mon Trading Card Game hub where we have tons of stories about rare cards, new drops, and more. Check out this unboxing of the coolest cards in the Pok\u00e9mon Celebrations series after that.\u00a0 [Source: Kotaku ] What\u2019s the rarest...",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T04:23:20.000+0000",
-    message:
-      "1998 Topps Finest Refractor Mar #whodoyoucollect https://t.co/7XhRCtgV1T",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "cardminer",
-    datetime: "2022-03-01T03:14:38.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #whodoyoucollect https://t.co/vR9jkEEGCu",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480591075786080261?token=3c7b75e4c1151038e119ef9cc7e16c7103a10b03e42e12d597d366e7d2ba779b",
-    platform: "twitter",
-  },
-  {
-    username: NaN,
-    datetime: "2022-03-01T03:14:15.000+0000",
-    message:
-      "...more about Pok\u00e9mon cards, head to Game Informer's Pok\u00e9mon Trading Card Game hub where we have tons of stories about rare cards, new drops, and more. Check out this unboxing of the coolest cards in the Pok\u00e9mon Celebrations series after that. [Source: Kotaku ] What's the rarest Pok\u00e9mon card you own? Let us know in the comments below!",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T02:18:33.000+0000",
-    message:
-      "2015 Topps Chrome Albert Pujols #thehobby https://t.co/oljJQnXHo7",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T01:33:16.000+0000",
-    message:
-      "2019 Topps Archives Vladimir Gu #thehobby https://t.co/Qumv1jxuI3",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T00:51:45.000+0000",
-    message:
-      "1990 Topps 336 Ken Griffey Jr A #thehobby https://t.co/KxNh1IxYzn",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-01T00:47:58.000+0000",
-    message:
-      "2019 Topps Archives Pete Alonso #thehobby https://t.co/fHwfx5Tjen",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
-  },
-  {
-    username: "topfanscorner",
-    datetime: "2022-03-01T00:32:16.000+0000",
-    message:
-      "\ud83d\udc49 $299.99 \ud83d\udc48 Walter Payton Signed Chicago Bears 1991 Pro NFL Trading Card 1 PSA @topfanscorner #Walter #Payton #Signed #ChicagoBears #Pro #NFL #Football #NFLfans Hurry up to get it for the best price! https://t.co/GsNSvxkJRe",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1346507248659529745?token=da0ec4a7bc178e004afe6a109ccbcce56325a31a3e01e61a500527820a2d9e3e",
-    platform: "twitter",
-  },
-  {
-    username: "CardPromoter",
-    datetime: "2022-03-01T00:25:01.000+0000",
-    message:
-      "Baseball Card Auto Psa 10 /3539 #thehobby https://t.co/BhIOcykOhd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1445007523023568902?token=c0aac81e34af6f580dd27a35fcb8761c588c661427d2c4bb1d5399bc537ab6f3",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-01T00:11:48.000+0000",
-    message:
-      "2019 Topps Archives Pete Alonso #whodoyoucollect https://t.co/5hwolNflLY",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
     platform: "twitter",
   },
 ];
