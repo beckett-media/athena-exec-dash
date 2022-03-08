@@ -54,7 +54,7 @@ function App() {
       <Authenticator components={components} hideSignUp={false}>
         {({ signOut, user }) => (
           <Routes>
-            <Route path="/" element={<Page title="Website Metrics TEST 👩🏻‍💻" desc="Track Beckett's website behavior for all your online marketing efforts" />}>
+            <Route path="/" element={<Page title="Website Metrics  👩🏻‍💻" desc="Track Beckett's website behavior for all your online marketing efforts" />}>
               <Route index element={<WebsiteMediaMetric />} />
             </Route>
             <Route
