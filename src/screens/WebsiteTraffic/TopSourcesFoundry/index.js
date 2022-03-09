@@ -14,7 +14,7 @@ import {
 import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
 import Loading from "../../../components/LottieAnimation/Loading";
-import { Box, Input, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import Dropdown from "../../../components/Dropdown";
 
 const TopSource = ({ className, ...props }) => {
