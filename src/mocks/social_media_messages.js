@@ -1,11 +1,229 @@
 export const SocialMedia = [
   {
+    username: "Arnav Anand",
+    datetime: "2022-03-09T12:16:34.000+0000",
+    message:
+      "...). Like the Beta Black Lotus, it\u2019s another MTG Holy Grail card, on most every collector's wish list to complete, with Alpha print being the most coveted. Next in line was a Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Dana Hanson",
+    datetime: "2022-03-09T12:02:43.000+0000",
+    message:
+      "...making it a great card for collectors. Its value can only increase in the years to come. It is one of the most sort-after Clayton Kershaw Baseball Cards by collectors. 4. 2006 Bowman Sterling Prospect ($1000) Another expensive Clayton Kershaw baseball card is the 2006 Bowman Sterling Prospect. It has been graded PSA Gem Mint with a score of ten for...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-09T10:00:06.000+0000",
+    message:
+      "...Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector's MTG portfolio. In fourth place was a...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "blogruns",
+    datetime: "2022-03-09T09:52:09.000+0000",
+    message:
+      "Heritage Auctions\u2019 most recent March 4-5 sale garnered $3,789,153 USD. With the help of one particular rare Pok\u00e9mon card, which drew in just under 70 bids, the auction house was able to surpass previous records. A 1999 first-edition holographic Pok\u00e9mon Charizard trading card with a Gem Mint 10 grading sold for $336,000 USD, marking the most ever paid trading card at Heritage Auctions. The previous record was $300,000 USD for the same 1999 rare edition Charizard card. HA Trading Card Games Consignment Director Jesus Garcia said, \u201cThis auction, especially the trophy-level cards, did exceptionally well. This sale reinforced the fact that demand for Pok\u00e9mon cards continues its climb. We fully expected Pok\u00e9mon and Magic: The Gathering to fare well, and they did.\u201d The demand for the Pok\u00e9mon Charizard No. 4 First Edition Base Set Trading Card drew the event\u2019s top result due to the fact that it was from the Pok\u00e9mon trading card games\u2019 first English print run. Only 121 examples hold a Gem Mint 10 grade. Collectors also participated in competitive bids for a 1999 Pok\u00e9mon First Edition Base Set Sealed Booster Box which garnered 54 bids and later sold for $288,000 USD. Magic: The Gathering cards continued to prove its popularity, taking up the other top ten sales in the category. A 1993 Magic: The Gathering Alpha Edition Sealed Starter Deck sold for $90,000 USD while the highly coveted MTG Beta Edition Black Lotus (Wizards of the Coast, 1993) BGS MINT 9 sold for $66,000 USD. Heritage Auctions\u2019 next Trading Card Games Signature Auction will be held on June 11-12. In other trading card news, a man who obtained a $57K USD Pok\u00e9mon card using COVID relief funds is sentenced to prison. Click here to view full gallery at HYPEBEAST from HYPEBEAST https://ift.tt/YVybTJ8",
+    avatar: NaN,
+    platform: "tumblr",
+  },
+  {
+    username: "premiumfuture",
+    datetime: "2022-03-09T09:20:52.000+0000",
+    message:
+      "Rare First-Edition Pok\u00e9mon Charizard Card Sells for $336,000 USD at Heritage Auctions https://ift.tt/YVybTJ8 Heritage Auctions\u2019 most recent March 4-5 sale garnered $3,789,153 USD. With the help of one particular rare Pok\u00e9mon card, which drew in just under 70 bids, the auction house was able to surpass previous records. A 1999 first-edition holographic Pok\u00e9mon Charizard trading card with a Gem Mint 10 grading sold for $336,000 USD, marking the most ever paid trading card at Heritage Auctions. The previous record was $300,000 USD for the same 1999 rare edition Charizard card. HA Trading Card Games Consignment Director Jesus Garcia said, \u201cThis auction, especially the trophy-level cards, did exceptionally well. This sale reinforced the fact that demand for Pok\u00e9mon cards continues its climb. We fully expected Pok\u00e9mon and Magic: The Gathering to fare well, and they did.\u201d The demand for the Pok\u00e9mon Charizard No. 4 First Edition Base Set Trading Card drew the event\u2019s top result due to the fact that it was from the Pok\u00e9mon trading card games\u2019 first English print run. Only 121 examples hold a Gem Mint 10 grade. Collectors also participated in competitive bids for a 1999 Pok\u00e9mon First Edition Base Set Sealed Booster Box which garnered 54 bids and later sold for $288,000 USD. Magic: The Gathering cards continued to prove its popularity, taking up the other top ten sales in the category. A 1993 Magic: The Gathering Alpha Edition Sealed Starter Deck sold for $90,000 USD while the highly coveted MTG Beta Edition Black Lotus (Wizards of the Coast, 1993) BGS MINT 9 sold for $66,000 USD. Heritage Auctions\u2019 next Trading Card Games Signature Auction will be held on June 11-12. In other trading card news, a man who obtained a $57K USD Pok\u00e9mon card using COVID relief funds is sentenced to prison. Click here to view full gallery at HYPEBEAST",
+    avatar: NaN,
+    platform: "tumblr",
+  },
+  {
+    username: "Joyce Li",
+    datetime: "2022-03-09T09:09:53.000+0000",
+    message:
+      "...MTG Beta Edition Black Lotus (Wizards of the Coast, 1993) BGS MINT 9 sold for $66,000 USD. Heritage Auctions' next Trading Card Games Signature Auction will be held on June 11-12. In other trading card news, a man who obtained a $57K USD Pok\u00e9mon card using COVID relief funds is sentenced to prison",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Joyce Li",
+    datetime: "2022-03-09T09:06:27.000+0000",
+    message:
+      "...top ten sales in the category. A 1993 Magic: The Gathering Alpha Edition Sealed Starter Deck sold for $90,000 USD while the highly coveted MTG Beta Edition Black Lotus (Wizards of the Coast, 1993) BGS MINT 9 sold for $66,000 USD. Heritage Auctions' next Trading Card Games Signature Auction will be held on June 11-12. In other trading card news, a...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-09T08:51:04.000+0000",
+    message:
+      "...Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector\u2019s MTG portfolio. In fourth place was a...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-09T08:05:17.000+0000",
+    message:
+      "...Holy Grail card, on most every collector's wish list to complete, with Alpha print being the most coveted. Next in line was a Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Dinesh Kumar",
+    datetime: "2022-03-09T06:54:00.000+0000",
+    message:
+      "Tip-top among these was a Magic: The Gathering Beta Black Lotus card graded CGC 9 Mint. It finished at $45,000. The 427-lot auction also featured comic books and toys. Cranston, RI, USA, March 9, 2022 -- Magic: The Gathering (\u201cMTG\u201d) trading cards dominated the list of top lots in Bruneau & Co. Auctioneers\u2019 Winter Comic, TCG (Trading Card Games) & Toy auction held February 26th, as the top five offerings \u2013 all MTG cards from 1993 \u2013 combined to bring a total of $123,750. The auction was held online as well as in Bruneau & Co\u2019s gallery located in Cranston. Soaring to the winner\u2019s circle was a rare and highly desirable Magic: The Gathering Beta Black Lotus card, graded CGC 9 Mint, a Holy Grail item for MTG collectors. It sold within estimate for $45,000. The card is revered as the most powerful of the Power Nine and is idolized for its fast mana acceleration during play. It\u2019s also famous for the elegant artwork by Christopher Rush. \u201cIt was a phenomenal sale, and an absolute pleasure to get to handle such a wonderful collection of Magic: The Gathering cards\u201d said Travis Landry, a Bruneau & Co. auctioneer and the firm\u2019s Director of Pop Culture. \u201cOriginal Alpha and Beta cards do not come out of the woodwork that often ungraded, especially Power Nine. It was certainly a Trading Card Game dominated day.\u201d All the CGC graded MTG cards in the auction were from an original owner Virginia collection. The runner up card was a Magic: The Gathering Alpha Ancestral Recall card, graded CGC 9.5 Gem Mint ($38,750). Like the Beta Black Lotus, it\u2019s another MTG Holy Grail card, on most every collector's wish list to complete, with Alpha print being the most coveted. Next in line was a Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector\u2019s MTG portfolio. In fourth place was a Magic: The Gathering Beta Mox Sapphire trading card, graded CGC 9.5 Gem Mint, which sold within estimate for $14,375. The Mox gem artifact cards are an incredibly powerful set, rightfully earning their place in the Power Nine. This Mox Sapphire, a CGC 9.5 Beta print example, was one of the finest ones on the open market. Rounding out the top five was a Magic: The Gathering Beta Volcanic Island trading card, graded CGC 7 Near Mint. Volcanic Island is iconic in MTG lore, not only for being a dual land but exclusive to the Beta printing. The example in the auction proved to be something of a sleeper, sailing past its $5,000 high estimate to change hands for $9,375. \u201cThis was yet another auction proving that investing in Pop Culture collectibles such as comics and cards is a real addition to one\u2019s financial portfolio,\u201d said Kevin Bruneau, Bruneau & Co\u2019s president and an auctioneer. \u201cThe strength of the market reminds me of antiques twenty years ago.\u201d The auction was packed with 427 lots curated from collections and estates across the U.S. Following are additional highlights from the auction. Internet bidding was facilitated by the popular online platforms LiveAuctioneers.com, Invaluable.com and Bidsquare.com, as well as bidLIVE.Bruneauandco.com and the mobile app \u2018Bruneau & Co.\u2019 on iTunes or GooglePlay. Phone and absentee bids were also accepted. All prices quoted include the buyer\u2019s premium. One lot consisting of eight factory-sealed 1999 Pok\u00e9mon Base Unlimited Booster Pack cards in three-pack clamshells, for a total of 24 packs with eight of each pack artwork, realized $8,438. Some clamshells were yellowed from aging and sun, otherwise good condition. These are a unique piece of Pok\u00e9mon TCG history and would have been sold in a department store. A copy of Detective Comics #359 (DC Comics, Jan. 1967), CGC graded 8.0, the comic book featuring the origin and first appearance of Batgirl, plus an appearance by Killer Moth, climbed to $4,000. Also, a group of 107 Marvel Comics Spider-Man comic books, #21-#150, in conditions ranging from 4.0 to 7.0, went to a determined bidder for $3,875. Magic: The Gathering (known as Magic or MTG) is a tabletop and digital collectible card game created by Richard Garfield and released in 1993 by Wizards of the Coast (now a subsidiary of Hasbro). Magic was the first trading card game and had approximately 35 million players as of December 2018. Over 20 billion Magic cards were produced in the period from 2008 to 2016. New MTG cards are released on a regular basis through expansion sets. A worldwide community of professional Magic players has developed, as has a substantial resale market for Magic cards. Certain cards can be valuable due to their rarity in production and utility in gameplay, with card prices ranging from a few cents to tens of thousands of dollars. MTG cards are highly collectible. Bruneau & Co. Auctioneers will host a Comic Books Auction on BidLive.Bruneauandco.com on Wednesday, March 23rd at 6 pm Eastern; an online-only Estates Fine Art & Antiques Auction on Monday, March 28th, also at 6 pm; and a Pop Culture / Comics Auction on Saturday, May 7th. To learn more about Bruneau & Co. Auctioneers, please visit www.bruneauandco.com. About Bruneau & Co. Auctioneers:Bruneau & Co. Auctioneers is always accepting quality consignments for future auctions, with commissions as low as zero percent. Now would be a perfect time to clean out your attic. To contact Bruneau & Co. Auctioneers about consigning a single piece or an entire collection, you may send an e-mail to info@bruneauandco.com. Or, you can phone them at 401-533-9980. To learn more about Bruneau & Co. Auctioneers, please visit www.bruneauandco.com. Media Contact:Travis LandryBruneau & Co. Auctioneers63 Fourth AvenueCranston, RI 02910 USA401-533-9980info@bruneauandco.comhttps://www.bruneauandco.com",
+    avatar: NaN,
+    platform: "blog",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-09T01:37:08.000+0000",
+    message:
+      "...The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector\u2019s MTG portfolio. In fourth place was a Magic: The...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-09T01:23:40.000+0000",
+    message:
+      "...wish list to complete, with Alpha print being the most coveted. Next in line was a Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "dearly-beeloved",
+    datetime: "2022-03-09T01:10:51.000+0000",
+    message:
+      "there's this scene in the comic book about Beckett's time in Germany that I want to make a post and I am not sure whether it can go here or needs to go on my 18+ blog lmao",
+    avatar: NaN,
+    platform: "tumblr",
+  },
+  {
+    username: "RobbyB3ll4s",
+    datetime: "2022-03-08T23:48:28.000+0000",
+    message:
+      "In ''[[Star Wars: Battlefront II (2005 video game)|Star Wars Battlefront II]]'', ''[[Star Wars Battlefront: Renegade Squadron]]'' and ''[[Star Wars Battlefront: Elite Squadron]]'', Chewbacca is a playable hero on the rebels side. He is also playable the [[Star Wars Battlefront (2015 video game)|2015 reboot]] of the series, through the Death Star [[Downloadable content|DLC]],{{cite web|url=http://www.ign.com/articles/2016/07/16/star-wars-celebration-2016-chewbacca-and-bossk-confirmed-for-battlefront|title=Star Wars Celebration 2016: Chewbacca and Bossk Confirmed for Battlefront|first=Daniel|last=Krupa|work=ign.com|date=July 16, 2016|access-date=July 18, 2016}} and its [[Star Wars Battlefront II (2017 video game)|2017 sequel]]. In ''[[Star Wars: Battlefront II (2005 video game)|Star Wars Battlefront II]]'', ''[[Star Wars Battlefront: Renegade Squadron]]'' and ''[[Star Wars Battlefront: Elite Squadron]]'', Chewbacca is a playable hero on the rebels side. He is also playable the [[Star Wars Battlefront (2015 video game)|2015 reboot]] of the series, through the Death Star [[Downloadable content|DLC]],{{cite web|url=http://www.ign.com/articles/2016/07/16/star-wars-celebration-2016-chewbacca-and-bossk-confirmed-for-battlefront|title=Star Wars Celebration 2016: Chewbacca and Bossk Confirmed for Battlefront|first=Daniel|last=Krupa|work=ign.com|date=July 16, 2016|access-date=July 18, 2016}} and its [[Star Wars Battlefront II (2017 video game)|2017 sequel]]. ), nicknamed \" Chewie \", is a fictional character in the Star Wars franchise. He is a wookiee , a tall, hirsute, bipedal, intelligent species originating from the fictional planet of Kashyyyk . Chewbacca is the loyal friend and first mate of Han Solo , and serves as co-pilot on Solo's spaceship, the Millennium Falcon ; together they help the Rebel Alliance defeat the Galactic Empire and restore freedom to the galaxy . [1] In the original trilogy , Chewbacca is portrayed by Peter Mayhew . Mayhew shares the role with his body double, Joonas Suotamo , in the first episode of the sequel trilogy , Star Wars: The Force Awakens . Suotamo took over the role in the next episode, The Last Jedi , [2] and reprised it in the anthology film Solo: A Star Wars Story and the final sequel trilogy film, The Rise of Skywalker . The character has also appeared in numerous works within the Expanded Universe , consisting of television series, books, comics, and video games. Chewbacca, a 200-year-old wookiee , becomes a young Han Solo 's companion after they both escape Imperial captivity on Mimban. After a series of adventures on Vandor and Kessel , Chewbacca embarks on the smuggling trade, serving as Han's co-pilot on the Millennium Falcon for the rest of Han's life. [1] Standing 8 feet (2.4 m) tall, Chewbacca is covered with long hair and wears only a bandolier . His weapon of choice is the Wookiee bowcaster (a crossbow -shaped directed-energy weapon ). [3] Chewbacca speaks only in his native language, Shyriiwook (which sounds like animal sound growls); he is able to understand English, but is physically unable to speak it. Chewbacca was named one of the \"greatest sidekicks \" in film history by Entertainment Weekly . [4] In France , in the original Star Wars film , his name was changed to \" Chiktabba \" and his nickname to \" Chiko \", [5] because the English name was similar to \"chewing tobacco\", which in French is \"tabac \u00e0 m\u00e2cher\" or \"tabac \u00e0 chiquer\", similar to \"Chiquetabac\". In the other episodes, his name was \"Chewbacca\". In the Italian-language editions, Chewbacca is named \" Chewbecca \" ( Italian pronunciation: Chewbacca's creation as a \"gentle, hairy , non-English-speaking co-pilot\" was inspired by George Lucas seeing his own dog sitting up on the passenger seat of his car. [7] It is said that Chewbacca's name is derived from \u0441\u043e\u0431\u0430\u043a\u0430 (sobaka), the Russian word for dog . [8] In his first six screen appearances, Chewbacca was played by Peter Mayhew , who was chosen for his height of 7'3\" (2.2 m). [9] Five similar costumes were created for Mayhew: in the three original films and a holiday special , the suits were made of yak hair and mohair . In Revenge of the Sith (2005), the suit was made of more comfortable materials, though Mayhew's filming only lasted a day. Only Mayhew's blue eyes could be seen in his costume, but fans easily recognize him by his gestures, and his co-workers claimed the ability to tell when a stand-in was taking his place. [10] For The Force Awakens , the role was also shared by Joonas Suotamo , who subsequently portrayed the character in later screen appearances after Mayhew's retirement. Chewbacca's voice was created by the original films' sound designer , Ben Burtt , from recordings of walruses , lions , camels , bears , rabbits , tigers , and badgers in Burtt's personal menagerie . [10] The individual recordings were mixed at different ratios for Chewbacca's different utterances. One of the most prominent elements in the voice was a black bear named Tarik, from Happy Hollow Zoo in San Jose, California . [11] The original costume was created by Stuart Freeborn and his wife Kay Freeborn, who hand knitted the torso section. During preproduction of The Force Awakens , Creature Effects Supervisor Neal Scanlan commented that the original suit was far more sophisticated than they had originally realized, leading him to entirely scrap their first attempt at making the new suit, go back and study Freeborn's work in order to better appreciate how it worked, and attempt to emulate it. [12] First appearing in Star Wars (1977), [a] Chewbacca and Han Solo accept a charter to take Luke Skywalker , Obi-Wan Kenobi , and droids C-3PO and R2-D2 to the planet Alderaan aboard their ship, the Millennium Falcon . [13] When they find the planet destroyed by the Death Star , the two smugglers help their passengers rescue Princess Leia and take her to the Rebel base on Yavin IV . In the film's climactic battle scene , Chewbacca and Han save Luke from being killed by Darth Vader and give him time to destroy the Death Star . In the film's final scene, Princess Leia acknowledges Chewbacca alongside Luke and Han. In The Empire Strikes Back (1980), set three years later, Chewbacca tries to leave the Rebellion along with Han in order to repay Jabba, but is drawn back into the war when the Empire invaded the Rebel base on Hoth . Chewbacca and the other protagonists seek refuge on Cloud City with Han's old friend Lando Calrissian , unaware that Lando has betrayed them to the Empire. Chewbacca finds a dismantled C-3PO, blasted by an Imperial stormtrooper , in a junk pile, and rescues him from being melted down. He tries to repair him, to no avail, shortly before Vader takes Chewbacca and the others prisoner. Before Han is frozen in carbonite, he asks Chewbacca to look after Leia for him. When Lando is able to save Leia and Chewbacca from being taken to Vader's ship, he uncuffs the Wookie, who upon release starts strangling him for selling them out. When Lando explains that they still have a chance to save Han, Leia has Chewbacca stop choking him. Even though they are unsuccessful at saving the frozen Han, they make it back to the Falcon with R2-D2. Chewbacca carries C-3PO on his back throughout their escape to the Falcon . When Leia hears Luke's cry for help, she has Chewbacca turn the ship around to rescue him. In the film's final scene, Chewbacca joins the others in preparing to rescue Han from Jabba. In Return of the Jedi (1983), Chewbacca pretends to be the prisoner of a bounty hunter named Boushh, who is actually Leia in disguise. Chewbacca helps Leia, Luke and the others rescue Han and escape. Later, he goes with the others to the forest moon of Endor on a mission to destroy the second Death Star's shield generator, and is instrumental in the mission's success by commandeering an AT-ST Walker . At the end of the film, Chewbacca joins the other Rebels in celebrating the destruction of the Death Star and the downfall of the Empire. [14] In the 2005 prequel film Star Wars: Episode III \u2013 Revenge of the Sith , Chewbacca and Tarfful fight in the Clone Wars when their planet, Kashyyyk , is invaded by the Separatist Alliance. They also help Yoda escape the clone troopers that had been ordered to kill him. Chewbacca is not identified until Yoda says goodbye to him at the end of a scene. On April 7, 2014, it was confirmed that Mayhew would reprise his role as Chewbacca in Star Wars: The Force Awakens . In the film, set 30 years after Return of the Jedi , he and Han are piloting a cargo vessel and find the Millennium Falcon , which had been stolen from them. Chewbacca and Han help the rogue First Order stormtrooper Finn , the scavenger Rey and the droid BB-8 escape from a gang of mercenaries on board the Falcon . They then fly to Maz Kanata 's castle so that Maz can help them get BB-8 to the Resistance . Before Chewbacca and the others can get Maz's help, however, the First Order attacks the castle and captures Rey while Chewbacca, Finn, and Han are saved by X-wing pilots led by Poe Dameron . Without Rey, they fly to a Resistance base, where Chewbacca and Han reunite with Leia, C-3PO, and R2-D2. They also soon reunite with Rey, who escaped from the First Order. Chewbacca helps in the fight between the Resistance and the First Order. When Han is killed by his son Kylo Ren during the battle, an enraged Chewbacca shoots Ren in the side, and sets off explosives that allow Poe and other X-wing pilots to destroy Starkiller Base, the First Order's superweapon. Chewbacca shortly thereafter rescues Rey and Finn from the wilderness of Starkiller Base following their duel with Ren. As Starkiller Base blows up, Chewbacca escapes in the Falcon with Finn and Rey, and later, along with R2-D2, helps Rey find Luke on the planet Ahch-To. Chewbacca returns in Star Wars: The Last Jedi , which takes place immediately after The Force Awakens . He attempts to convince Luke to train Rey as a Jedi and defeat the First Order, though Luke refuses. Chewbacca is seen in and around the Falcon throughout the Ahch-To scenes, where he develops a relationship with the planet's indigenous seabirds known as Porgs. Later on, Chewbacca and Rey set off on the Falcon to Supreme Leader Snoke 's Mega -class Star Dreadnought Supremacy , during Rey's attempt to turn Kylo Ren back to the light. Chewbacca later helps the Resistance fight the First Order's army; he pilots the Falcon as part of a plan to distract the First Order TIE fighters. After Rey and Luke defeat the First Order, Chewbacca is seen along with the rest of the Resistance as the Falcon flies away from the battle. Chewbacca appears in The Rise of Skywalker , now played solely by Suotamo. Chewbacca accompanies Rey, Finn, Poe, and C-3PO to the planet Passana, where they search for a clue to the location of a Sith wayfinder. With the help of Lando Calrissian, they locate the clue - a dagger with Sith inscriptions - but are quickly found by the First Order. As Rey confronts Kylo Ren, Chewbacca, who has the dagger, is captured by the Knights of Ren and taken aboard a transport to the Resurgent -class Star Destroyer Steadfast . Believing him to be on a different transport, Rey and Ren both use the Force to pull it down, with Rey accidentally using Force lightning to destroy the ship; Rey is deeply shaken when she believes she has killed Chewbacca, and his \"death\" motivates the others to continue the mission in his memory. Chewbacca is in reality taken to the command ship, where he is questioned about his friends' whereabouts; Rey senses his presence when the ship arrives on Kijimi, and Finn and Poe stow aboard the ship to rescue him. Later on, after Rey abandons them on Kef-Bir, they return to the Resistance base, where Chewbacca is distraught to learn of Leia's death. He joins the Resistance in defeating and destroying the Sith Eternal forces. He is last seen receiving Han's old medal (given to him in A New Hope ) from Maz Kanata. The medal is a token of gratitude for his long-term service to the rebellion as well as a memento through which to remember his fallen old friends Han, Luke and Leia. Chewbacca appears in the 2018 anthology film Solo: A Star Wars Story , which details his first meeting with Han. He first appears as a \"beast\" captured by Imperials on the planet Mimban, where he is held captive in a small pit. Han, considered a \"troublemaker\" by the other Imperials, is thrown into the pit and chained to Chewbacca to be eaten by the Wookiee. Chewbacca emerges and attacks Han, but stops when Han reveals he can speak Shyriiwook. They form an instant bond, and escape their captors. They then decide to join the thief Tobias Beckett and his crew, who rescue them. Chewbacca later helps Han and Beckett's crew on their failed mission to steal coaxium for the Crimson Dawn crime syndicate. Later, on Kessel, during an effort to retrieve more coaxium to make up for the amount lost during the previous mission, Chewbacca spots several other Wookiees being held as slaves, and manages to free them. However, while making a choice whether to go with them or with Han, Chewbacca decides to assist Han instead, and helps him throughout the rest of the mission. During the Kessel Run, in which Han decides to pilot the Millennium Falcon through a cloudy maelstrom to evade an Imperial blockade, Chewbacca reveals his piloting skills to Han. Near the end of the movie, Beckett, now revealed to be a traitor, captures Chewbacca. After Han saves Chewbacca and kills Beckett, he wins the Falcon from Lando. Han and Chewbacca then set off on more adventures in the Falcon . In the season 3 finale of Star Wars: The Clone Wars , Chewbacca is captured by Trandoshan hunters, but is freed by Ahsoka Tano and agrees to help her and two younglings escape. He builds a transmitter out of parts from the damaged Trandoshan ship, but it doesn't work. Later, he and Ahsoka attack the Trandoshan fortress before they are found and assisted by other Wookiees, led by Tarfful. See also: Star Wars expanded to other media In April 2014, most of the licensed Star Wars novels and comics produced since the originating 1977 film Star Wars were rebranded by Lucasfilm as Star Wars Legends and declared non-canon to the franchise. [18] [19] [20] The 1978 television program Star Wars Holiday Special introduced Chewbacca's family, namely his wife Mallatobuck, son Lumpawarrump, and father Attichitcuk, who is also the Chief of the Kaapauku Tribe. [21] The special features a frame story in which Chewbacca and Han travel to Kashyyyk to celebrate Life Day with Chewbacca's family, while trying to prevent Darth Vader from spoiling the holiday for them. [22] Both Life Day itself and all of his family would end become part of the Disney canon. Chewbacca appears in the Han Solo Adventures trilogy of books written by Brian Daley, including Han Solo at Stars' End , Han Solo's Revenge and Han Solo and the Lost Legacy , originally published between 1979 and 1980. Chewbacca's family is prominently featured in several Legends books, most notably The Wookiee Storybook , The Black Fleet Crisis trilogy by Michael P. Kube-McDowell , and The Hutt Gambit and Rebel Dawn by A. C. Crispin . The latter also introduces other family members, including a sister named Kallabow and cousins named Dryanta and Jowdrrl, as well as the matriarch, Ellen. In the novel Dark Lord: The Rise of Darth Vader , set just after the events in Star Wars Episode III: Revenge of the Sith , Chewbacca is forced to leave Kashyyyk after he narrowly escapes a major Imperial attack on the planet. Darth Vader and Emperor Palpatine enslave most of Kashyyyk's population in order to build the Death Star. To escape, Chewbacca joins a group of smugglers who are friendly to the Jedi . The novel The Hutt Gambit explains how Chewbacca and Han first meet. Han, a lieutenant in the Imperial Navy, finds him unconscious aboard a slave ship. Han's commanding officer orders him to skin Chewbacca, but Han refuses and rescues the helpless prisoner. Upon regaining consciousness, Chewbacca swears a \"life-debt\" to Han, and the two become business partners and best friends. [23] In the novel Heirs of the Force , part of the Young Jedi Knights series, Chewbacca has a nephew, Kallabow's son named Lowbacca who goes to the Jedi Academy . In the 1999 novel Vector Prime by R. A. Salvatore , the first in the New Jedi Order series, Chewbacca sacrifices his life to save Han's son Anakin from a collision between the planet Sernpidal and one of its moons. Lumpawarrump and Lowbacca offer to assume Chewbacca's life debt to Han. Chewbacca appears in the third book of the Origami Yoda series, The Secret of the Fortune Wookiee (in origami form) and in some of the subsequent books of the series. Lucasfilm followed Vector Prime with a four-issue comic book titled Star Wars: Chewbacca , in which C-3PO and R2-D2 travel the galaxy to collect the stories of beings who knew or met the Wookiee. In the fighting game Star Wars: Masters of Ter\u00e4s K\u00e4si , Chewbacca is a playable character. In Star Wars Jedi Knight: Jedi Academy , Chewbacca appears briefly at the Mos Eisley spaceport as an NPC, assisting Jaden Korr in disabling the tractor beams holding both the Millennium Falcon and the Raven's Claw captive. [24] In LucasArts' game Kinect Star Wars , the player acts as gunner on a spacecraft piloted by a young Chewbacca. In Star Wars Battlefront II , Star Wars Battlefront: Renegade Squadron and Star Wars Battlefront: Elite Squadron , Chewbacca is a playable hero on the rebels side. He is also playable the 2015 reboot of the series, through the Death Star DLC , [25] and its 2017 sequel . Chewbacca is a playable character in the Lego-themed video games Lego Star Wars: The Video Game , Lego Star Wars II: The Original Trilogy , Lego Star Wars III: The Clone Wars , Lego Star Wars: The Force Awakens and Lego Star Wars: The Skywalker Saga . IGN has been fond of the character, choosing the character as the 9th top Star Wars character, [26] listing his relationship with Han Solo as one of their top 10 movie bromances , [27] claiming him as one of the characters they would like to see in The Clone Wars , [28] and choosing him as one of the characters they would like to see in Star Wars: The Force Unleashed [29] and (along with Han) its sequel . [30] UGO Networks listed the character as \"one of the most bad-ass archers in popular culture.\" [31] In contrast, Roger Ebert in his 1997 review of the Special Edition re-release of The Empire Strikes Back declared that the character gave the worst performance of the film: \"This character was thrown into the first film as window dressing, was never thought through, and as a result has been saddled with one facial expression and one mournful yelp. Much more could have been done. How can you be a space pilot and not be able to communicate in any meaningful way? Does Han Solo really understand Chew's monotonous noises? Do they have long chats sometimes?\" [32] Chewbacca is one of the few fictional characters to receive a Lifetime Achievement Award at the 1997 MTV Movie Awards . The Chewbacca defense , a term derived from the \" Chef Aid \" episode of South Park , is a legal strategy focused on confusing the jury rather than refuting an argument. [33] [34] Text is available under the Creative Commons Attribution-ShareAlike License 3.0 ; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy . Wikipedia\u00ae is a registered trademark of the Wikimedia Foundation, Inc. , a non-profit organization.",
+    avatar: NaN,
+    platform: "blog",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T23:36:33.000+0000",
+    message:
+      "Federal authorities say that they did not know at first what to make of a rare Pok\u00e9mon trading card that they seized from a Georgia man who had used coronavirus relief money to buy the collectible. The man, Vinath Oudomsine, 31, of Dublin, Ga., was ruling to three years in federal prison on Friday, according to prosecutors, who said that he...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T21:46:47.000+0000",
+    message:
+      "The fraud scheme came amid a booming market for older cards and Pok\u00e9mon trading card game packs. Some seasoned collectors said it had cooled off somewhat from the start of the pandemic. There has been a steady stream of high-profile cases involving the embezzlement of coronavirus relief funds. President Biden announced during his State of the...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T21:45:27.000+0000",
+    message:
+      "But this may be the strangest crisis to date. Feds say they didn't know at first what to do with a rare Pok\u00e9mon trading card they seized from a Georgia man who had used coronavirus relief money to buy the collectible . The man, Vinath Oudomsine, 31, of Dublin, Georgia, was sentenced to three years in federal prison on Friday, according to...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Carl Westwood",
+    datetime: "2022-03-08T21:35:45.000+0000",
+    message:
+      "The forfeitures have included Lamborghinis, gold bars and luxury goods from Dior. But this may be the oddest seizure yet. Federal authorities say that they did not know at first what to make of a rare Pok\u00e9mon trading card that they seized from a Georgia man who had used coronavirus relief money to buy the collectible. The man, Vinath Oudomsine, 31, of Dublin, Ga., was sentenced to three years in federal prison on Friday, according to prosecutors, who said that he pleaded guilty last October to defrauding a loan program operated by the Small Business Administration. In January 2021, Mr. Oudomsine spent $57,789 of loan proceeds from the program on the card, a first-edition Charizard released in 1999 that features a dragon-like creature from the Pok\u00e9mon franchise, court documents show. Five months earlier, he had received an $85,000 loan from the program for his small \u201centertainment services\u201d business, which prosecutors said that he had claimed had 10 employees and gross revenues of $235,000 during the 12 months before the coronavirus pandemic. However, prosecutors said, there was no such business. The fraud scheme came amid a booming market for older cards and Pok\u00e9mon Trading Card Game packs. Some veteran collectors said that has somewhat cooled off compared with earlier in the pandemic. There has been a steady stream of high-profile cases involving the misappropriation of coronavirus relief money. President Biden announced during his State of the Union speech last week that he would appoint a special prosecutor to investigate such cases. \u201cI would say a Pok\u00e9mon card is a quite novel scenario,\u201d Xavier A. Cunningham, an assistant U.S. attorney in the Southern District of Georgia, said on Tuesday. \u201cWe don\u2019t inherently know what the market is for these cards. We had to hustle to find someone to give us a valuation for it.\u201d Mr. Cunningham, who is chief of the office\u2019s asset recovery unit, said that Mr. Oudomsine\u2019s family turned the card over to an F.B.I. agent in Atlanta. It was sealed in a protective case and included several proofs of authenticity, according to photographs released by the U.S. Attorney\u2019s Office. The card is now in the possession of the U.S. Marshals Service, which Mr. Cunningham said would auction it and put the proceeds into a seized-assets fund maintained by the Justice Department. The money will then be returned to the Small Business Administration, he said. \u201cOur more typical criminal would use the money to buy real estate and cars,\u201d Mr. Cunningham said, adding, \u201cboats, planes.\u201d C. Brian Jarrard, a lawyer for Mr. Oudomsine, did not immediately respond to a request for comment on Tuesday. Beckett, a prominent authentication company for collectibles, graded the card a 9.5 out of 10, meaning that it is in \u201cgem mint\u201d condition, according to labels on the card and the company\u2019s website. The company did not immediately respond to a request for comment on Tuesday. Charlie Hurlocker, a Pok\u00e9mon card expert and dealer, said that even if the card\u2019s purchase had been legitimate, it was an ill-advised one on Mr. Oudomsine\u2019s part. \u201cHe was buying at the peak of the market,\u201d Mr. Hurlocker said on Tuesday. \u201cIt was a terrible short-term purchase. Nobody was willing to pay more than him.\u201d Mr. Hurlocker said that first-edition base sets of the Charizard cards are especially coveted if they are in \u201cpristine\u201d condition, the highest grade that the cards can get. Cards graded a 9 or 9.5 are more readily available than those with a grade of 10, like one that Mr. Hurlocker said that he bought for $220,000. He noted that a card with that grade was sold for $336,000 on March 4 by Heritage Auctions, a sum that included a buyer\u2019s premium. \u201cThis is the most desirable card in the hobby,\u201d he said of Charizard. But the federal government could have a hard time right now recouping the amount that Mr. Oudomsine paid for the card, Mr. Hurlocker said. \u201cIf they hired me as a professional consultant,\u201d he said, \u201cmy advice would be to hold out.\u201d Source link",
+    avatar: NaN,
+    platform: "blog",
+  },
+  {
+    username: "Elon Musk",
+    datetime: "2022-03-08T21:29:57.000+0000",
+    message:
+      ".... However, according to the prosecutors, there was no such case. The fraud scheme came amid a booming market for legacy cards and Pok\u00e9mon Trading Card Game packs. Some veteran collectors said it has cooled down somewhat compared to earlier in the pandemic. There has been a steady stream of high-profile cases related to the misappropriation of...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T21:26:30.000+0000",
+    message:
+      "But this may be the strangest crisis to date. Feds say they didn't know at first what to do with a rare Pok\u00e9mon trading card they seized from a Georgia man who had used coronavirus relief money to buy the collectible . The man, Vinath Oudomsine, 31, of Dublin, Georgia, was sentenced to three years in federal prison on Friday, according to...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T21:26:21.000+0000",
+    message:
+      "But this may be the strangest crisis to date. Feds say they didn't know at first what to do with a rare Pok\u00e9mon trading card they seized from a Georgia man who had used coronavirus relief money to buy the collectible . The man, Vinath Oudomsine, 31, of Dublin, Georgia, was sentenced to three years in federal prison on Friday, according to...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T21:24:53.000+0000",
+    message:
+      "Federal authorities say that they did not know at first what to make of a rare Pok\u00e9mon trading card that they seized from a Georgia man who had used coronavirus relief money to buy the collectible. The man, Vinath Oudomsine, 31, of Dublin, Ga., was sentenced to three years in federal prison on Friday, according to prosecutors, who said that he...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "Neil Vigdor",
+    datetime: "2022-03-08T21:15:00.000+0000",
+    message:
+      "The mint Charizard trading card will be auctioned off with other fraudulently obtained luxury items seized by United States Marshals. Its former owner was sentenced to three years in prison. The forfeitures have included Lamborghinis, gold bars and luxury goods from Dior. But this may be the oddest seizure yet. Federal authorities say that they...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "SportsCardBOT",
+    datetime: "2022-03-08T21:14:49.000+0000",
+    message:
+      "RT @HobbyChamps What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1011652219266093056?token=b1961969e424ebcdf7ab63b618e4d45bb4511fb46c28b1b1a89dc13d9503cbfa",
+    platform: "twitter",
+  },
+  {
+    username: "HobbyChamps",
+    datetime: "2022-03-08T21:08:53.000+0000",
+    message:
+      "What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1341343979158327298?token=a0289dae71c77e5cba58f9b831abeb4382b00e9068ee9f7d74b99f7ac4440fce",
+    platform: "twitter",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-08T20:01:12.000+0000",
+    message:
+      "...Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector's MTG portfolio. In fourth place was a Magic: The Gathering Beta...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
     username: NaN,
     datetime: "2022-03-08T19:50:08.000+0000",
     message:
       "...Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector's MTG portfolio. In fourth place was a Magic: The Gathering Beta...",
     avatar: NaN,
     platform: "news",
+  },
+  {
+    username: "Anonymous",
+    datetime: "2022-03-08T19:19:00.000+0000",
+    message:
+      "Welcome to Sonic the Hedgehog General. Here we discuss ALL things Sonic! /sthg/ #4447- Kip Edition Sonic News< Sonic Movie 3 and Knuckles show announced https://twitter.com/paramountplus/s tatus/1493706463704858625 Sonic Frontiers Trailer https://www.youtube.com/watch?v=RRk KZG1z9PY Sonic Movie 2 Trailer https://www.youtube.com/watch?v=G5k zUpWAusI IDW Release Dates Sonic the Hedgehog 2: The Official Movie Pre-Quill - March 23rd 49 - April 20 Free Comic Book Day 2022 - May 7 General Interest Links< General link compilation https://web.archive.org/web/2020101 1115814/https://pastebin.com/ryx42C 0W /sthg/ booru: https://sthg.booru.org /sthg/ cytube: https://cytu/be/r/sthg (replace / between u and b with a dot) Previous zone: 375344870 Thread Theme: https://youtu.be/Z6K4lv_hoH8\n375441439 I imagine he might, he's not unaware of social media, people's reactions, etc. I doubt he still comes here, but it's not like the complaints people have here are hermetic and stay here- they tend to pop up in lots of other places too, just often not as caustically stated or so numerous. 375441497 I drew one and sort-of-a-half stories, four covers, designed one character, co-designed two others, and designed a robot harness thing- I've done enough at IDW that it should mean it's clear I work with them. Unless you mean \"prove that these posts are actually really from you\" in which case, lol, lmao, why would I ever want to ditch the basic ability of going \"no that was a random anon\"? It's 4chan, dummy. I posted Surge concept art above that'll get posted on twitter probably next week once there's time for people to read the issue, that'll be the best you get. 375441723 Up to Evan and Ian, I'm not a writer, sorry. The Rogues feel to me might most likely pop up in an annual? They're great characters to just use for short fun stories like that. Lanolin will probably just keep popping in BGs until it's decided to just really give her a proper story, if that ever even happens, of course.",
+    avatar: NaN,
+    platform: "forum",
   },
   {
     username: NaN,
@@ -28,6 +246,14 @@ export const SocialMedia = [
     datetime: "2022-03-08T17:41:00.000+0000",
     message:
       "I picked up a lot of 650 cards for a little under $40 from eBay. Mix of mostly modern stuff with some vintage. Comes out to a little more than a nickel a card.\u00a0 Let's start with the modern which was about 600 of the 650 cards.\u00a0 At least half the cards were Pacific from the mid- to late-'90s which is great because I don't have a lot of those. Lots of stars, and lots of those color parallels that Pacific loved to do. Lots of Yankee stars! The David Wells is my favorite. Some cards from a set I'd never seen before, Pacific Backyard Baseball. I already had this whole set. Not a full set here; some but not all the stars were weeded out. Here's a cool set from Pacific (not all of the cards from the set). The Nolan Ryan one is more well-known but they also did one for Tom Seaver. I especially liked the card with \"Plasido Domingo\". The back of the card referred to a prank Seaver pulled on the singer, which can be seen here. Here's most of the rest. Despite all those '91 Studios, there weren't any of the three common cards I need to finish that set. Lots of cards from '02 and '04 Topps which I already had. I needed those five '87 Leafs and many of the other cards in this part of the lot. Two of the more interesting cards in the miscellany were a very shiny Frank Thomas insert and a Topps promo card of Dr. Jim Beckett. On to the vintage. Mid-70's. All available for trade. Seven from '71. Rich Morales was my only need here. \u00a0Seven from '68. I did better here; Epstein, Brinkman and the Von Hoff high number were all needs. \u00a0Some of the '65s in the lot. Of these only the Menke was a dupe. I needed the rest.\u00a0 \u00a0Yes, both Series I checklists were needs as they were the two different Cannizzaro variations. \u00a01964. From here I needed one of the checklists, Johnson, Bell and one of the Reds Rookies cards. \u00a01959. I already had all three so they are all available. \u00a01958. Pendleton and Taylor are available for trade. I had to comment on the backs of the '58s. I've noted a few times how Topps was hit-or-miss with depicting Black players as white in the cartoons. Both of these card backs are for Black players. I've never seen a cartoon like the one on the Bob Thurman. \u00a0Here's the rest of the '65s. This is why I named the blog post \"Burying the Lede\". The cards were photographed in piles, and both of the AL Home Run leader cards were visible in the pile, but in both cases you could only see Killebrew and Powell. If you didn't know this was a Mantle card you couldn't tell from the seller's photo, which is why I think this lot went a lot cheaper than it should. I'm thrilled to get this card, as vintage Mantles are so hard to come by. Really nice photo of Mantle. Killebrew too. Those other two league leader cards are really nice as well. \u00a0 So now I have two copies of a pretty major card from the '65 set. This is one of the most valuable cards I've ever had available for trade, and I'd like to get something pretty good back for it. I'm open to offers - definitely vintage only, and probably only stars or older cards. Maybe another league leaders card with Mantle on it (there's another one in the '65 set). So, best offer, not first to claim it. As you can see the front looks quite nice (happy to trade the better one). There is writing on the back, very similar on both cards: \u00a0I think one of the few benefits of the recent baseball card craze is that a lot of flippers who don't understand vintage don't know how to value what they have. I think that's what happened here. With the (2!) Mantles and all those Pacifics, I'm satisfied I got good value out of this lot.",
+    avatar: NaN,
+    platform: "blog",
+  },
+  {
+    username: "Ryan Cracknell",
+    datetime: "2022-03-08T17:01:58.000+0000",
+    message:
+      "Details on the launch and vision of zerocool, a trading card brand from Fanatics Collectibles dedicated to culture. The post Fanatics Collectibles Launches zerocool Brand to Explore Culture Through Trading Cards appeared first on Beckett News.",
     avatar: NaN,
     platform: "blog",
   },
@@ -761,157 +987,6 @@ export const SocialMedia = [
       "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/fdEQdtgUAV",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "sportscardcoder",
-    datetime: "2022-03-02T23:45:20.000+0000",
-    message:
-      "BGS 9 Sammy Sosa 1990 Leaf 220 #whodoyoucollect https://t.co/CdIKwX7aKD",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490515468976807939?token=c3784fbc2e183814d47128bd6864f0b739f4a52c1da727054e18223a6466cadc",
-    platform: "twitter",
-  },
-  {
-    username: "BallparkTeddy",
-    datetime: "2022-03-02T22:25:38.000+0000",
-    message:
-      "Time for a bit of escapism from the news of the world -- here's a review of the year 1979 in baseball card collecting from the 1980 Beckett price guide: \"The best-selling book on America's fastest-growing hobby.\" (T206 Wagner was listed at $8000 in mint condition.) @SABRbbcards https://t.co/sfqsvwfkcY",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1280327822729412610?token=e2df3cb5319140bf5338a433130e4cc12e14c804aac21637600066ef53e39da7",
-    platform: "twitter",
-  },
-  {
-    username: "cardstoreteam",
-    datetime: "2022-03-02T22:06:38.000+0000",
-    message:
-      "BGS 9 Sammy Sosa 1990 Leaf 220 #whodoyoucollect https://t.co/FX0gJyd6M8",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490519783405666305?token=7fc981443596c9c94c45c63f1cf63d710c6c30f21599143d2f00189a034bf2f2",
-    platform: "twitter",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-02T19:04:08.000+0000",
-    message:
-      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/w1F1o69ZWj",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-02T16:45:00.000+0000",
-    message:
-      "Yordan Alvarez 2020 Topps Diamond Icons /10 RPA BGS 9.5/10 Baseball Card. \ud83d\udd17https://t.co/UQZ7q5q3bR #thehobby #sportscards #rookiecard #tradingcards https://t.co/hLoxHYvio4",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-02T16:30:00.000+0000",
-    message:
-      "Aaron Judge 2017 Topps Archives Rookie On-Card Autograph BGS 9.5 Auto 10 Baseball Card. \ud83d\udd17https://t.co/jEJ430NsAO #rookiecard #sportscards #thehobby #Yankees https://t.co/N6AgPmdWIk",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "VeriSigned",
-    datetime: "2022-03-02T16:05:00.000+0000",
-    message:
-      "Hard to find @beckettmediallc encapsulated #tradingcard #autographed by Janet Pilgrim available @beckettmedia authenticated on eBay https://t.co/XVT6gQhC0g Amazon https://t.co/u3vFp2qS7k and https://t.co/TjQvG4BhQ0 https://t.co/qKP9ROj6zW #janetpilgrim #playboy #playboymagazine",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/4769799091?token=c005b8a0780a154bc3a37df001eab1f0aa01652dbca2e30449cbc2dc278b8816",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-02T15:30:00.000+0000",
-    message:
-      "Orelvis Martinez 2019 Bowman Chrome Refractor 31/499 Auto BGS 9.5/10 Baseball Card. \ud83d\udd17https://t.co/vDvolAXOOn #BlueJays #thehobby #sportscards #tradingcards https://t.co/M2SE5ezWHf",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-02T15:15:00.000+0000",
-    message:
-      "Ian Anderson Autographed 2015 Leaf Metal Draft Perfect Game Refractor Beckett 10 Baseball Card. \ud83d\udd17https://t.co/9jBMQalHnp #theheobby #sportscards #tradingcards #mlb https://t.co/bzuCbBnEOj",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "j_kimsey",
-    datetime: "2022-03-02T15:09:27.000+0000",
-    message:
-      "@myjunkwax Wasn\u2019t familiar with these sets, so looked up this short article about them from @beckettcollect. The Big Hurt card pictured in the article (from the year after this Griffey) is a pretty sweet one too. https://t.co/oWTZjAspLS",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/88465869?token=de508b786d46dd2e6946766f30080d4a8e520003a10ca881e71f90e800215708",
-    platform: "twitter",
-  },
-  {
-    username: "h2hhits",
-    datetime: "2022-03-02T14:23:53.000+0000",
-    message:
-      "2022 Topps International Trading Card Day Expands Beyond Baseball, Goes Global https://t.co/FDTrzovADe https://t.co/AagpeBQtaj",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/757735055246536708?token=130ee39720c7bbabc5cd60a26e678c97282a14adf33051183ac692a269a167a6",
-    platform: "twitter",
-  },
-  {
-    username: "h2hhits",
-    datetime: "2022-03-02T14:23:44.000+0000",
-    message:
-      "The $100 CF Baseball Card Starter Kit \u2013 One-Sheet Collections https://t.co/8w8JWTLt0B https://t.co/GbsiHDpD24",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/757735055246536708?token=130ee39720c7bbabc5cd60a26e678c97282a14adf33051183ac692a269a167a6",
-    platform: "twitter",
-  },
-  {
-    username: NaN,
-    datetime: "2022-03-02T14:15:47.000+0000",
-    message:
-      "...jobs. However, Tom\u2019s business didn\u2019t seem to take a hit and thrived in the heart of the pandemic. \u201cCOVID was scary in the baseball card world at first because you thought everyone is being laid off, the world is coming to an end,\u201d he said. \u201cNo one is coming to buy baseball cards and all of this is worthless. Well, the exact opposite happened in the...",
-    avatar: NaN,
-    platform: "news",
-  },
-  {
-    username: "reservoirhobby",
-    datetime: "2022-03-02T04:53:06.000+0000",
-    message:
-      "The $100 CF Baseball Card Starter Kit \u2013 One-Sheet Collections https://t.co/iYYVA0xJzP https://t.co/s4Gy75pXAn",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/753057533229666304?token=27440cbc0a9287747ac1dafad7f5d27ccc291d86549af0a88d643ab70a470dc6",
-    platform: "twitter",
-  },
-  {
-    username: "cardminer",
-    datetime: "2022-03-02T04:45:42.000+0000",
-    message:
-      "1979 TCMA RICKEY HENDERSON Sign #whodoyoucollect https://t.co/9EUZtC38zR",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1480591075786080261?token=3c7b75e4c1151038e119ef9cc7e16c7103a10b03e42e12d597d366e7d2ba779b",
-    platform: "twitter",
-  },
-  {
-    username: "TheOldTowneTeam",
-    datetime: "2022-03-02T03:03:38.000+0000",
-    message: "https://t.co/v8zEQinXZI",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/940279827038384129?token=ce1701c0fad72e4b9ec1fbee84facd0923424c6938c49062fed3c44842d69dd4",
-    platform: "twitter",
-  },
-  {
-    username: "AltoGain",
-    datetime: "2022-03-02T00:07:18.000+0000",
-    message:
-      "2022 Topps International Trading Card Day Details #Trading via https://t.co/MtVNo962PB https://t.co/9qRrKcr4Fy",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1351101273005830145?token=ee882e7283acea2758972b8694d7ad90829d9e0231daf5f5cda2a1860053692c",
     platform: "twitter",
   },
 ];

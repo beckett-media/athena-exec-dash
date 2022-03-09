@@ -46,7 +46,7 @@ const TopCountry = ({ className, ...props }) => {
   const numberOfUsers = [];
   const graphData = [];
 
-  const topCountries = liveData?.slice(0, 8);
+  const topCountries = liveData?.slice(0, 10);
 
   topCountries?.forEach((element) => {
     // Loop through top countries
@@ -93,11 +93,11 @@ const TopCountry = ({ className, ...props }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title="Top 8 countries"
+      title={`Top ${graphData.length} countries`}
       description="This section shows where Beckett's website visitors are locate."
       classTitle="title-purple"
     >
-      <div className={styles.chart}>
+      <div className={styles.chart} style={{ height: "19rem" }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart // Chart
             width={500}
@@ -141,6 +141,7 @@ const TopCountry = ({ className, ...props }) => {
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fontWeight: "500", fill: "#6F767E" }}
+              interval={0}
             />
             <Tooltip // Tooltip
               contentStyle={{

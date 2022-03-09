@@ -9,16 +9,9 @@ import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
-import {
-  Authenticator,
-  Heading,
-  useTheme,
-  Theme,
-  View,
-  Image,
-} from "@aws-amplify/ui-react";
+import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import "./utils-auth/auth.css";
 
 const components = {
