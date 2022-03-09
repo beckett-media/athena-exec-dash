@@ -5,14 +5,18 @@ import Card from "../../../components/Card";
 import PagesURL from "./PagesURL";
 import { API } from "aws-amplify";
 import Loading from "../../../components/LottieAnimation/Loading";
+import { Box, Text } from "@chakra-ui/react";
+import Dropdown from "../../../components/Dropdown";
 
 const PageTraffics = (props) => {
   const [data, setData] = React.useState([]);
+  const [sorting, setSorting] = React.useState("2022");
+  const intervals = ["2022", "2021", "2019"];
 
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const typeObject = "ExecDashTopPageNamesSorted";
-  const year = "2022";
+  const year = `${sorting}`;
   const propertyID = "p.numberOfUsers";
 
   const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; /// URL to fetch from API
@@ -40,7 +44,7 @@ const PageTraffics = (props) => {
       const response = await getData();
       setData(response);
     })();
-  }, []);
+  }, [sorting]);
 
   const liveData = data?.data; // Get data from API
   const date = [];
@@ -78,7 +82,24 @@ const PageTraffics = (props) => {
           description={
             "The traffic reports are all about seeing what visitors are actually doing on Beckett's website. By using these user traffic reports, you can assess the performance of your website content and determine if your visitors are taking the actions you need."
           }
-          classCardHead={styles.head}
+          head={
+            <Box
+              flex={2}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"flex-end"}
+            >
+              <Text mr={3}>Filter</Text>
+              <Dropdown
+                className={styles.dropdown}
+                classDropdownHead={styles.dropdownHead}
+                value={sorting}
+                setValue={setSorting}
+                options={intervals}
+                small
+              />
+            </Box>
+          }
         >
           <div className={styles.products}>
             <div className={styles.wrapper}>

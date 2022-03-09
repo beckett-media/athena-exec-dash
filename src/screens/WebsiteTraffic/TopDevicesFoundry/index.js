@@ -8,22 +8,27 @@ import Card from "../../../components/Card";
 import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
 import { numberWithCommas } from "../../../utils";
 import Loading from "../../../components/LottieAnimation/Loading";
+import Dropdown from "../../../components/Dropdown";
+import { Text } from "@chakra-ui/react";
 
 const TopDevices = () => {
   return (
     <div style={{ width: "100%", height: "95%" }}>
-      <GetGraph />
+      <Displaydevices />
     </div>
   );
 };
 
-function GetGraph() {
-  const [data, setData] = React.useState([]);
+function Displaydevices({ className, ...props }) {
+  const [sorting, setSortings] = React.useState("2022");
+  const [devices, setDevices] = React.useState([]);
+  const intervals = ["2022", "2021", "2019"];
+  const [loading, setLoading] = React.useState(true);
 
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const typeObject = "ExecDashTopDevicesSorted";
-  const year = "2022";
+  const year = `${sorting}`;
   const propertyID = "p.numberOfUsers";
 
   const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; /// URL to fetch from API
@@ -36,18 +41,14 @@ function GetGraph() {
   }
 
   React.useEffect(() => {
+    setLoading(true);
     (async function () {
       const response = await getData();
-      setData(response);
+      setDevices(response);
     })();
-  }, []);
+    setLoading(false);
+  }, [sorting]);
 
-  if (!data) return <div>loading... 😎 </div>;
-
-  return <Displaydevices devices={data} />; // return data from API to Displaydevices component
-}
-
-function Displaydevices({ devices, className, ...props }) {
   const colors = ["#8E59FF", "#83BF6E", "#2A85FF"]; // colors for the graph
 
   const liveData = devices?.data;
@@ -101,6 +102,10 @@ function Displaydevices({ devices, className, ...props }) {
     color: Colors[index],
   }));
 
+  if (loading) {
+    return <p>loading...</p>;
+  }
+
   return (
     <>
       <Card
@@ -108,6 +113,18 @@ function Displaydevices({ devices, className, ...props }) {
         title="Top devices"
         classTitle="title-blue"
         description={`This shows the devices used by Beckett's visitors`}
+        head={
+          <>
+            <Dropdown
+              className={styles.dropdown}
+              classDropdownHead={styles.dropdownHead}
+              value={sorting}
+              setValue={setSortings}
+              options={intervals}
+              small
+            />
+          </>
+        }
       >
         <div className={styles.chart}>
           <ResponsiveContainer width="100%" height="100%">
