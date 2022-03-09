@@ -20,7 +20,7 @@ const SocialMessages = ({ className, onOpen }) => {
         style={{
           overflowY: "scroll",
           overflowX: "hidden",
-          height: " calc(100vh - 310px)",
+          height: " calc(100vh - 340px)",
         }}
       >
         {SocialMedia.map((item, index) => (

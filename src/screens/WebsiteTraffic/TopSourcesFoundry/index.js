@@ -74,7 +74,7 @@ const TopSource = ({ className, ...props }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title="Top 5 sources of website visitors"
+      title={`Top ${graphData.length} sources of website visitors`}
       description="The graph below highlights the top 5 sources of website traffic for Beckett's website."
       classTitle="title-purple"
     >
@@ -118,6 +118,7 @@ const TopSource = ({ className, ...props }) => {
                 axisLine={true}
                 tickLine={true}
                 tick={{ fontSize: 12, fontWeight: "500", fill: "#6F767E" }}
+                interval={0}
               />
               <Tooltip
                 formatter={(value) => {

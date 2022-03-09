@@ -9,12 +9,12 @@ import Image from "../Image";
 const navigation = [
   {
     title: "Website Metrics",
-    icon: "home",
+    icon: "activity",
     url: "/",
   },
   {
     title: "Social Media Metrics",
-    icon: "activity",
+    icon: "message",
     url: "/dashboard/social-media-analysis",
   },
   {

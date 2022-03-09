@@ -38,7 +38,7 @@ const TopCountry = ({ className }) => {
       title="Geographic Breakdown"
       classTitle="title-purple"
     >
-      <div className={styles.chart} style={{ height: "30rem" }}>
+      <div className={styles.chart} style={{ height: "25rem" }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={500}
