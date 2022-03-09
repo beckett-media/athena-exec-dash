@@ -16,27 +16,22 @@ const Card = ({
       {title && (
         <div className={cn(styles.head, classCardHead)}>
           <div className={cn(classTitle, styles.title)}>{title}</div>
-          {head && head}
+           {head && head}
         </div>
       )}
       {description && (
-        <div>
-          <div
-            style={{
-              marginBottom: "40px",
-              marginVertical: "1.4rem",
-              marginLeft: "2rem",
-              paddingRight: "1rem",
-              fontSize: "0.8rem",
-              textDecorationStyle: "dotted",
-              color: "#828282",
-          
-              paddingVertical: 5,
-            }}
-          >
-            {description}
-          </div>
-          {head && head}
+        <div
+          style={{
+            marginBottom: "40px",
+            marginVertical: "1.4rem",
+            marginLeft: "2rem",
+
+            fontSize: "0.8rem",
+            textDecorationStyle: "dotted",
+            color: "#828282",
+          }}
+        >
+          {description}
         </div>
       )}
       {children}

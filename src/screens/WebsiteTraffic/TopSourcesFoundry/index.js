@@ -14,14 +14,18 @@ import {
 import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
 import Loading from "../../../components/LottieAnimation/Loading";
+import { Text } from "@chakra-ui/react";
+import Dropdown from "../../../components/Dropdown";
 
 const TopSource = ({ className, ...props }) => {
   const darkMode = useDarkMode(false); // default to light mode
+  const [sorting, setSorting] = React.useState("2022");
+  const intervals = ["2022", "2021", "2019"];
 
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const typeObject = "ExecDashTopSourcesSorted";
-  const year = "2022";
+  const year = `${sorting}`;
   const propertyID = "p.numberOfUsers";
 
   const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`;
@@ -40,7 +44,7 @@ const TopSource = ({ className, ...props }) => {
       const response = await getData();
       setData(response);
     })();
-  }, []);
+  }, [sorting]);
 
   const liveData = data?.data; // data from the endpoint
 
@@ -77,6 +81,19 @@ const TopSource = ({ className, ...props }) => {
       title={`Top ${graphData.length} sources of website visitors`}
       description="The graph below highlights the top 5 sources of website traffic for Beckett's website."
       classTitle="title-purple"
+      head={
+        <>
+          <Text mr={3}>Filter</Text>
+          <Dropdown
+            className={styles.dropdown}
+            classDropdownHead={styles.dropdownHead}
+            value={sorting}
+            setValue={setSorting}
+            options={intervals}
+            small
+          />
+        </>
+      }
     >
       <div className={styles.chart}>
         <ResponsiveContainer width="100%" height="100%">

@@ -13,14 +13,18 @@ import {
 } from "recharts";
 import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
+import Dropdown from "../../../components/Dropdown";
 
 const TopCountry = ({ className, ...props }) => {
   const darkMode = useDarkMode(false);
 
+  const [sorting, setSorting] = React.useState("2022");
+  const intervals = ["2022", "2021", "2019"];
+
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const typeObject = "ExecDashTopCountriesSorted";
-  const year = "2022";
+  const year = `${sorting}`;
   const propertyID = "p.numberOfUsers";
 
   const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; // URL to fetch data from
@@ -38,7 +42,7 @@ const TopCountry = ({ className, ...props }) => {
       const response = await getData();
       setData(response);
     })();
-  }, []);
+  }, [sorting]);
 
   const liveData = data?.data;
   const dates = [];
@@ -96,6 +100,18 @@ const TopCountry = ({ className, ...props }) => {
       title={`Top ${graphData.length} countries`}
       description="This section shows where Beckett's website visitors are locate."
       classTitle="title-purple"
+      head={
+        <>
+          <Dropdown
+            className={styles.dropdown}
+            classDropdownHead={styles.dropdownHead}
+            value={sorting}
+            setValue={setSorting}
+            options={intervals}
+            small
+          />
+        </>
+      }
     >
       <div className={styles.chart} style={{ height: "19rem" }}>
         <ResponsiveContainer width="100%" height="100%">

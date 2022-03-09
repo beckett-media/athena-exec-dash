@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Item.module.sass";
 import cn from "classnames";
-import OutsideClickHandler from "react-outside-click-handler";
+
 import Icon from "../../Icon";
 
 const Item = ({
@@ -23,9 +23,9 @@ const Item = ({
         </div>
       </div>
       <div className={styles.body}>
-        <OutsideClickHandler onOutsideClick={() => setVisible(false)}>
+        <div onOutsideClick={() => setVisible(false)}>
           {children}
-        </OutsideClickHandler>
+        </div>
       </div>
     </div>
   );

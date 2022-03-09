@@ -15,13 +15,11 @@
     "categories": {
       "function": {
         "productiondash2834aece": {
-          "secretsPathAmplifyAppId": "d33yqjmkpkpgoc",
           "deploymentBucketName": "amplify-productiondash-dev-160738-deployment",
           "s3Key": "amplify-builds/productiondash2834aece-6f69683574636e4f346e-build.zip"
         }
       },
       "auth": {
-        "undefined": {},
         "productiondash": {}
       }
     }
