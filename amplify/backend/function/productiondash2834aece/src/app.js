@@ -5,7 +5,7 @@ const aws = require('aws-sdk');
 
 const { Parameters } = await (new aws.SSM())
   .getParameters({
-    Names: ["API_KEY"].map(secretName => process.env[secretName]),
+    Names: ["API_KEY","PASS"].map(secretName => process.env[secretName]),
     WithDecryption: true,
   })
   .promise();
@@ -47,7 +47,7 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
   // Get the parameters from the request
   const { ri, obj, year, users } = req.params;
 
-  // #######################################################################
+  // ########################GET SECRET KEY####################################
   const { Parameters } = await new aws.SSM()
     .getParameters({
       Names: ["API_KEY"].map((secretName) => process.env[secretName]),
@@ -56,7 +56,7 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
     .promise();
 
   const token = Parameters;
-  // ######################################################################
+  // #######################CHECK TOKEN##################################
 
   if (token[0].Value.length === 0) {
     res.status(500).send("No API key found");
@@ -84,26 +84,38 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
   }
 });
 
-app.get("/socialmedia", async function (req, res) {
+app.use("/socialmedia/:name", async function (req, res) {
   const axios = require("axios");
+  const aws = require("aws-sdk");
 
-  if (typeof localStorage === "undefined" || localStorage === null) {
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
-  }
-  
+  const { name } = req.params;
 
-  const data = [];
+  const loginURL = "https://beckett-watchtower.herokuapp.com/api/token";
 
-  const getTokenAndData = async () => {
-    axios.get(`https://jsonplaceholder.typicode.com/todos`).then((response) => {
-      data.push(data);
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY","PASS"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+  axios
+    .post(loginURL, {
+      username: "execDash",
+      password: token[1].Value,
+    })
+    .then((resp) => {
+      axios
+        .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
+          headers: {
+            Authorization: "Bearer " + `${resp.data.access}`,
+          },
+        })
+        .then((resp) => {
+          res.json(resp.data, token[1].Value);
+        });
     });
-  };
-
-  await getTokenAndData();
-
-  res.send(JSON.stringify(data));
 });
 
 app.listen(3000, function () {

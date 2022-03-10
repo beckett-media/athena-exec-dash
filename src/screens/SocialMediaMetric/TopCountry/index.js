@@ -17,26 +17,23 @@ import { API } from "aws-amplify";
 
 const TopCountry = ({ className }) => {
   const darkMode = useDarkMode(false);
-  // const name = "topcountry";
 
-  // const url = `socialmedia`;
+  const [media, setData] = React.useState([]);
 
-  // const [media, setData] = React.useState([]);
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/topcountry";
 
-  // function getData() {
-  //   const apiName = "palentirApi";
-  //   const path = "/socialmedia";
+    return API.get(apiName, path);
+  }
 
-  //   return API.get(apiName, path);
-  // }
-
-  // React.useEffect(() => {
-  //   (async function () {
-  //     const response = await getData();
-  //     console.log(response);
-  //     setData(response);
-  //   })();
-  // }, []);
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      console.log(response);
+      setData(response);
+    })();
+  }, []);
 
   const social = countries;
 
