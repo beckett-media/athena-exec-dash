@@ -7,8 +7,10 @@
   "dependencies": {
     "aws-sdk": "^2.1088.0",
     "aws-serverless-express": "^3.3.5",
+    "axios": "^0.26.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "node-localstorage": "^2.2.1",
     "request": "^2.88.2"
   },
   "devDependencies": {

@@ -1,63 +1,372 @@
-export const SocialMedia = [
+export const SocialMediaMessages = [
+  {
+    username: "Will_Stern4",
+    datetime: "2022-03-04T13:36:23.000+0000",
+    message:
+      "Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/821763826827792384?token=aab20516a4babbd4d7d10bb3658aa88a75ddffb137db206ffa7499e533625d67",
+    platform: "twitter",
+  },
+  {
+    username: "HeritageAuction",
+    datetime: "2022-03-04T19:13:18.000+0000",
+    message:
+      "#HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/26989620?token=56b3bce6c5938a8c7f11cb90916af5b07df4615fac8a031d2a92e2afe2404496",
+    platform: "twitter",
+  },
+  {
+    username: "HobbyChamps",
+    datetime: "2022-03-08T21:08:53.000+0000",
+    message:
+      "What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1341343979158327298?token=a0289dae71c77e5cba58f9b831abeb4382b00e9068ee9f7d74b99f7ac4440fce",
+    platform: "twitter",
+  },
+  {
+    username: "mint_yokohama",
+    datetime: "2022-03-08T02:40:19.000+0000",
+    message:
+      "\u3010\u672c\u65e5\u5165\u8377\u65b0\u5546\u54c1\uff01\u3011 \u300cBECKETT BASEBALL CARD PRICE GUIDE 44th EDITION 2022\u300d \u30d9\u30b1\u30c3\u30c8\u30fb\u30d9\u30fc\u30b9\u30dc\u30fc\u30eb\u30ab\u30fc\u30c9\u5e74\u9451\u53f7\uff01 \u8868\u7d19\u306f\u30a2\u30e1\u30ea\u30ab\u91ce\u7403\u6bbf\u5802\u5165\u308a\u3092\u679c\u305f\u3057\u305f\u201c\u30d3\u30c3\u30b0\u30d1\u30d4\u201d\u3053\u3068\u30c7\u30d3\u30c3\u30c9\u30fb\u30aa\u30eb\u30c6\u30a3\u30fc\u30ba(MIN/BOS)\uff01 \u30de\u30f3\u30b9\u30ea\u30fc\u306b\u306f\u8f09\u3063\u3066\u3044\u306a\u3044\u3042\u306a\u305f\u306e\u304a\u6c17\u306b\u5165\u308a\u30ab\u30fc\u30c9\u306e\u30d7\u30e9\u30a4\u30b9\u78ba\u8a8d\u306b\u3053\u306e1\u518a\uff01 https://t.co/r0WKTcKe1G",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/160765234?token=76fad70f0831717861736212ada0596330eae2edb9e64475ffcb951267b8b726",
+    platform: "twitter",
+  },
   {
     username: "CardsStew",
-    datetime: "2022-03-10T12:45:00.000+0000",
+    datetime: "2022-03-07T18:30:00.000+0000",
     message:
-      "Mike Stanton 2010 Bowman Chrome Orange Refractor BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/SL9z7cGxXg #Yankees #thehobby #tradingcards #sportscards https://t.co/lA76TALD0H",
+      "2019 Topps Chrome Update Mike Yastrzemski Gold RC Refractor BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/kohWhaU9qz #thehobby #SFGiants https://t.co/OsC2tMs9AE",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
     platform: "twitter",
   },
   {
-    username: "CardsStew",
-    datetime: "2022-03-10T12:15:00.000+0000",
+    username: "beckettcollect",
+    datetime: "2022-03-04T20:39:44.000+0000",
     message:
-      "Robinson Cano 2003 Gold Refractor Rookie 31/50 BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/47a9uvz0HH #rookiecard #thehobby #tradingcards #sportscards https://t.co/Rex5qqFspz",
+      "Upper Deck Hologram Baseball Card Sets of the 1990s - Box Set Boom https://t.co/7aQA37bU9A https://t.co/xnLBYIJC1a",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/18561094?token=cafffd7ff87922170c0ff922bf379641d83bb3252c2fdc7708d7366bbae2a9f4",
+    platform: "twitter",
+  },
+  {
+    username: "BenCatnobi",
+    datetime: "2022-03-04T15:45:10.000+0000",
+    message:
+      "@MoistureFarmRep The Notepad of Nien Nunb The Publication of Padm\u00e9 The Ledger of Lor San Tekka The Binder of Bo-Katan The Tome of Tobias Beckett The Report of Rae Sloane The Opus of Orson Krennic The Dictionary of Dengar The Comic Book of Cad Bane",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1339266603398164484?token=34d13adc899e673772ac4806332749f8d900410795a5c0649904bcb10f523a13",
+    platform: "twitter",
+  },
+  {
+    username: "SportsCardBOT",
+    datetime: "2022-03-08T21:14:49.000+0000",
+    message:
+      "RT @HobbyChamps What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1011652219266093056?token=b1961969e424ebcdf7ab63b618e4d45bb4511fb46c28b1b1a89dc13d9503cbfa",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-08T11:29:55.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/RM5BHP4Y2f",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "Sportsandcard",
+    datetime: "2022-03-08T08:28:20.000+0000",
+    message:
+      "RT @mint_yokohama \u3010\u672c\u65e5\u5165\u8377\u65b0\u5546\u54c1\uff01\u3011 \u300cBECKETT BASEBALL CARD PRICE GUIDE 44th EDITION 2022\u300d \u30d9\u30b1\u30c3\u30c8\u30fb\u30d9\u30fc\u30b9\u30dc\u30fc\u30eb\u30ab\u30fc\u30c9\u5e74\u9451\u53f7\uff01 \u8868\u7d19\u306f\u30a2\u30e1\u30ea\u30ab\u91ce\u7403\u6bbf\u5802\u5165\u308a\u3092\u679c\u305f\u3057\u305f\u201c\u30d3\u30c3\u30b0\u30d1\u30d4\u201d\u3053\u3068\u30c7\u30d3\u30c3\u30c9\u30fb\u30aa\u30eb\u30c6\u30a3\u30fc\u30ba(MIN/BOS)\uff01 \u30de\u30f3\u30b9\u30ea\u30fc\u306b\u306f\u8f09\u3063\u3066\u3044\u306a\u3044\u3042\u306a\u305f\u306e\u304a\u6c17\u306b\u5165\u308a\u30ab\u30fc\u30c9\u306e\u30d7\u30e9\u30a4\u30b9\u78ba\u8a8d\u306b\u3053\u306e1\u518a\uff01 https://t.co/r0WKTcKe1G",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/2576247738?token=68ba53bc0d9bcc52b3ef1d572d24ba6fc2adfdce19cb3e6cb76735e6e52b17f1",
+    platform: "twitter",
+  },
+  {
+    username: "SportCardSearch",
+    datetime: "2022-03-08T06:40:56.000+0000",
+    message:
+      "1989 Star Ken Griffey Jr. Seattle Mariners #1 Signed Baseball Card RC Beckett 10 \ud83d\udd17 https://t.co/co0WpbUoBc \u2e3b\u2e3b\u2e3b More info on Search & Collect: \ud83d\udd17 https://t.co/CBQHRbyov8 \u2e3b\u2e3b\u2e3b #SearchNCollect #eBay #Auction #US #UnitedStates #SportsCards #TheHobby #SportCardSearch https://t.co/uGx7dkUxME",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/307608527?token=b7710da74b13882c3fdd1d3c2dc1f8fb8116e879b42691884c2972de9d5c7cdf",
+    platform: "twitter",
+  },
+  {
+    username: "KinsG8R",
+    datetime: "2022-03-08T04:27:17.000+0000",
+    message:
+      "@JustHauntr According to Beckett, that is the 1st year for there to be a trading card with Jason on it. 9 card set. Being a card collector and a horror fan, that\u2019s right in my lane. I\u2019m gonna see if I can get a hold of a set an see if any have been graded.",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/45752935?token=45018a51d61f0afacea9384730c7a05c9503d3ee5799663d6148d38df704d665",
+    platform: "twitter",
+  },
+  {
+    username: "57hits",
+    datetime: "2022-03-07T21:45:22.000+0000",
+    message:
+      "Rob Manfred appears at #1 cold on this week\u2019s Hot/Cold from @DynastyBreaksTX Odd to see him on a baseball card. https://t.co/STlx5Rl71a https://t.co/lZHUwrIycI",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/284370448?token=7114775d27bd9463aaf09481c5937df9211ba810e7fcc2ef857f3df9c0e50aa3",
+    platform: "twitter",
+  },
+  {
+    username: "TylerOhara10",
+    datetime: "2022-03-07T19:06:51.000+0000",
+    message:
+      "Marco Luciano BGS 9.5/10 2019 Bowman Chrome Refractor Auto Baseball Card. \ud83d\udd17https://t.co/4W4az0de8B #SFGiants #thehobby #sportscards",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1033214899520847872?token=28ba2189ab05b8c6c6cd4481c5fc653caa7c2cf1e36cd3ecb5445e5c78b4219f",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-07T18:45:00.000+0000",
+    message:
+      "Marco Luciano BGS 9.5/10 2019 Bowman Chrome Refractor Auto Baseball Card. \ud83d\udd17https://t.co/pDGGOI2lrr #SFGiants #thehobby #sportscards https://t.co/rfUZvYfaDc",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
     platform: "twitter",
   },
   {
-    username: NaN,
-    datetime: "2022-03-10T11:31:00.000+0000",
+    username: "Jasondardick",
+    datetime: "2022-03-07T18:30:30.000+0000",
     message:
-      "..., there was no such business. The fraud has been active at a time during Covid when vintage cards and Pok\u00e9mon Trading Card Game packs were in high demand like (The Charizard Card). Some veteran collectors even said that this has slowed down compared to early in the pandemic. According to Mr. Cunningham, the chief of the office\u2019s asset recovery division...",
-    avatar: NaN,
-    platform: "news",
+      "RT @CardsStew 2019 Topps Chrome Update Mike Yastrzemski Gold RC Refractor BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/kohWhaU9qz #thehobby #SFGiants https://t.co/OsC2tMs9AE",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/475201771?token=1d54f44a0b9b396922ea865ed6ab0923988448bdfb885d39d0f1ce7d956da69a",
+    platform: "twitter",
   },
   {
-    username: NaN,
-    datetime: "2022-03-10T09:21:52.000+0000",
+    username: "EdwardsBlogging",
+    datetime: "2022-03-07T13:10:31.000+0000",
     message:
-      "...Magic: The Gathering Alpha Timetwister trading card, graded BGS 8.5 NM-MT+. It bested its high estimate by finishing at $16,250. When played with the other cards of the Power Nine, Timetwister becomes a powerful tool. As an Alpha print BGS 8.5 example, this card is a wise investment for the serious collector's MTG portfolio. In fourth place was a...",
-    avatar: NaN,
-    platform: "news",
+      "Check out VTG Beckett Baseball Card Monthly Lot Of 6 Magazines \u201cREAD DESCRIPTION FIRST* https://t.co/52lVLf5Tau \u2066@eBay\u2069 #baseball #magazines #Beckett #cardMonthly",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/351692439?token=98630e23b05e6bfcd20a95aa811028dfd51c2c56bd343aeabec61232edbc3ce7",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-05T17:58:31.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/opyDQ4w54g",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "thirdbasecards",
+    datetime: "2022-03-05T14:16:37.000+0000",
+    message:
+      "RT @beckettcollect Upper Deck Hologram Baseball Card Sets of the 1990s - Box Set Boom https://t.co/7aQA37bU9A https://t.co/xnLBYIJC1a",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/900596604?token=f5f867f8471916d29570554d2dd4c197472858fa85b3ee204dff51b03ef8df35",
+    platform: "twitter",
+  },
+  {
+    username: "rayrobles4499",
+    datetime: "2022-03-05T13:10:52.000+0000",
+    message:
+      "Check out this listing I just added to my #Poshmark closet: Beckett Baseball Card PLUS Magazines Lot If Six. https://t.co/apXaD5qoBM #shopmycloset @poshmarkapp",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/3152027179?token=0cd7be520d424e32d05ae291428a9c54e0efd6dc7cbefe39407af6e59eea9662",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-05T12:07:46.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAEZ RE #thehobby https://t.co/gQ4T9JJFK1",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "WhatSellsBest",
+    datetime: "2022-03-05T05:16:30.000+0000",
+    message:
+      "RT @HeritageAuction #HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/62349483?token=9df01a5101716d7dc95f3261acfb9bb580243ca17b7396f3ee95108ef11d20a4",
+    platform: "twitter",
+  },
+  {
+    username: "h2hhits",
+    datetime: "2022-03-04T21:03:05.000+0000",
+    message:
+      "Upper Deck Hologram Baseball Card Box Sets of the 1990s \u2013 Box Set Boom https://t.co/ALcBwHhp1T https://t.co/5iy79kfagA",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/757735055246536708?token=130ee39720c7bbabc5cd60a26e678c97282a14adf33051183ac692a269a167a6",
+    platform: "twitter",
+  },
+  {
+    username: "CollectingAll",
+    datetime: "2022-03-04T20:42:33.000+0000",
+    message:
+      "\u2200 Upper Deck Hologram Baseball Card Box Sets of the 1990s \u2013 Box Set Boom https://t.co/Ls0qAjKWda #1990sBaseballCards #BoxedSetBoom * @CollectingAll https://t.co/78wRMrdTp3",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1035305829149245440?token=9fd79b4d7b1ddaea17e48749bf4caceb2edb3e29546c25ec69b818f05ed93414",
+    platform: "twitter",
+  },
+  {
+    username: "CounterspellCo",
+    datetime: "2022-03-04T19:46:09.000+0000",
+    message:
+      "RT @HeritageAuction #HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1289705315940872194?token=c5b4652272c807694e578bdfbab4d76f53e403ccef323b59d5d64386398db952",
+    platform: "twitter",
+  },
+  {
+    username: "StevenH_Toronto",
+    datetime: "2022-03-04T19:30:47.000+0000",
+    message:
+      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1010627676401385472?token=ec5a0f423db5ec11c2289107ebf1b4ae8b30b982e802589a32848e346909ad9e",
+    platform: "twitter",
+  },
+  {
+    username: "SoCalDave2900",
+    datetime: "2022-03-04T18:47:15.000+0000",
+    message:
+      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1644515574?token=ef58f95cf5163aea03659e90d3ee7e1400b7bdfa37799736de745b13874a3313",
+    platform: "twitter",
+  },
+  {
+    username: "MoistureFarmRep",
+    datetime: "2022-03-04T15:58:39.000+0000",
+    message:
+      "RT @BenCatnobi @MoistureFarmRep The Notepad of Nien Nunb The Publication of Padm\u00e9 The Ledger of Lor San Tekka The Binder of Bo-Katan The Tome of Tobias Beckett The Report of Rae Sloane The Opus of Orson Krennic The Dictionary of Dengar The Comic Book of Cad Bane",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1412446914075824130?token=7fcfbd85551925af3178ade950c05e56b4a24aad3269ac8447b9d75d68dbfa6e",
+    platform: "twitter",
   },
   {
     username: "CardsStew",
-    datetime: "2022-03-10T06:00:00.000+0000",
+    datetime: "2022-03-04T14:15:00.000+0000",
     message:
-      "MacKenzie Gore 2017 Bowman Chrome 1st Bowman Auto Green BGS 9.5/10 Baseball Card. \ud83d\udd17https://t.co/jtkxq9Zwxy #thehobby #Padres https://t.co/1ccqSeSeGi",
+      "Mark McGwire 1987 Leaf Canada Vers. Rated Rookie #46 BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/OpaUmwG04H #rookiecard #thehobby #sportscards #tradingcards https://t.co/o9QKnrsZpU",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
     platform: "twitter",
   },
   {
-    username: "CardsStew",
-    datetime: "2022-03-10T05:15:00.000+0000",
+    username: "ENaierman",
+    datetime: "2022-03-04T13:57:34.000+0000",
     message:
-      "CJ Abrams 2019 1st Bowman Chrome Auto Pure Green Refractor #08/99 BGS 9.5/10 Baseball Card. \ud83d\udd17https://t.co/WEEjxPVTay #Padres #thehobby https://t.co/X4heMpg61D",
+      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/2251384587?token=7a45179b640aee42e2e4deddb8d04a81226bc0b7aa994017904123b9016d5185",
+    platform: "twitter",
+  },
+  {
+    username: "breakoutcards_",
+    datetime: "2022-03-04T13:44:31.000+0000",
+    message:
+      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1300208320683311105?token=6d5061c59ecc5cea7f32b839ff0e2311522891e5e073595f805ecbed8f423348",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-04T13:00:28.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/s0aqEwBRYS",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
+  },
+  {
+    username: "CardsStew",
+    datetime: "2022-03-04T12:15:00.000+0000",
+    message:
+      "Ronald Acuna Jr. 2017 Topps Heritage Minors RC Real One Autograph Auto BGS 9/10 Baseball Card. \ud83d\udd17https://t.co/Yus0xToBXp #thehobby #tradingcards #sportscards #rookiecard https://t.co/IQZmlTD1cm",
     avatar:
       "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
     platform: "twitter",
   },
   {
-    username: "night owl",
-    datetime: "2022-03-10T00:33:00.000+0000",
+    username: "Cardfinder123",
+    datetime: "2022-03-03T20:15:02.000+0000",
     message:
-      "\u00a0 The newest Beckett Vintage Collector magazine with my article in it arrived in my mailbox Monday. This is article No. 11 for BVC and 13th overall for Beckett and I'm already formulating some story topics for future issues. Hope to get those to the editor next week. This article is kind of a fun one, even though I dealt with a rare case of writer's block during the process. It covers the wide variety of cards -- \"oddballs\" to you and me -- that must be cut from a package, or sheet, or what have you, in order for it to become, you know, an actual card. The problem is that in many cases (not all), the moment the card is trimmed away, it decreases in value. That's what the article is about. Do you cut the thing to pieces or keep it pristine? I decided to find as many examples of these kinds of cards that I could and the Beckett art department really went the extra mile finding images. I try to send in images of what I'm writing about, but there is no way I had all these. Here is one of the pages, as an example: The April-May issue (Babe Ruth on the cover) should start appearing in Barnes & Noble and other magazine racks by the end of the month. Meanwhile, I tried to come up with some topic related to this article for a blog post. I probably should have shown the Hostess cards that Bob sent me with this post instead of yesterday. Oh well. Instead, what I have are the only items in my collection in which I have not cut the item down to card size. I admit, I uses scissors freely. I have almost zero self-control in this area. The few items that I've left intact are things sent to me by other collectors in almost every case. Chances are if I bought it myself, I'd have that thing down-sized in no time. I've shown this a few times and it's in the magazine article. The only reason this Hostess box has not been ravaged for the cards is: a) it was generously sent to me; b) I have the Ron Cey in card form already. Here's hoping Waits and Bumbry aren't the last two cards I need to complete the 1977 Hostess set.\u00a0 I own 1990 Target cards separated into individual cards and as 3x5 sheets. One of the reasons I've kept the sheets untouched is because the odd shape of the individual cards creates storing issues. I still have the individual cards in this set stacked up on a shelf in my card desk, waiting for the day the light bulb over my head flicks on. No cutting required with this 1977 Burger Chef tray. All you need to do is punch out the individual cards! But I've resisted. This is too fun as it is. This arrived from Baseball Dad long ago (remember him?). He's and Indians fan and I've kept this intact ever since. I'm sure you've seen these cards in the wild as separate entities. I just showed one not too long ago. But the 1987 Indians team has remained teammates on cardboard for as long as I've owned this. Probably the odd shape of the cards has kept me from cutting them up.\u00a0 The only full baseball card sheets I own are minor league sets issued in 2009/2010, including team sets from the Albuquerque Isotopes for each year. Sheets like this are very cool and not easy to separate anyway. The trouble with these sheets and really almost all kinds of cards that come like this, whether on boxes or panels or whatever, is how the hell do you store them? Just about the only examples of cards like these that I have purchased myself that I have not broken down into individual cards are the 1970s Hostess panels that I've bought. I've been able to use three-pocket pages to store them very nicely in a binder. But for the other stuff? The 1990 Target pages sit on a shelf with various other unrelated things, such as baseball figurines and old price guides. The 1987 Indians fold-out sits in a drawer where I keep extra nine-pocket pages and non-standard size top-loaders. The Hostess box and the Burger Chef tray reside in a binder of oddball issues, too big for a page really. And the Albuquerque sheets are stashed behind a book case -- truly out of sight, out of mind. I kind of wondered whether I still had them. This is why I am almost always cutting these things down to card size. That and I have almost no self-control.",
-    avatar: NaN,
-    platform: "blog",
+      "BGS 9 Sammy Sosa 1990 Leaf 220 #whodoyoucollect https://t.co/Lph50zxpue",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490774538937933829?token=64621ea1582d3f127d47f8c30c4f6e3b8c54734f6b2ff97b1eccbb40988ae896",
+    platform: "twitter",
+  },
+  {
+    username: "cardwatch123",
+    datetime: "2022-03-03T16:47:45.000+0000",
+    message:
+      "BGS 9 Sammy Sosa 1990 Leaf 220 #whodoyoucollect https://t.co/X3wBSZUAqu",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490865787665620992?token=0e12103abfac1ab422573f686630dd0dccf4e195e43dc798c7cd7d6a0ea8a6ba",
+    platform: "twitter",
+  },
+  {
+    username: "theincomeblog",
+    datetime: "2022-03-03T16:32:47.000+0000",
+    message:
+      "1993 Topps Baseball Card #98 Derek Jeter Rookie Gold Graded BGS 9 Mint - https://t.co/uQndYjBo2p #NBA #NFL #MLB #cards #sportscards https://t.co/4PIUZ9NN0r",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/408126877?token=7a14a2ccd4bada7d8bc6c9f44c924541d5db4d4c8991098c4e69eba973ab7fd6",
+    platform: "twitter",
+  },
+  {
+    username: "HR_cards",
+    datetime: "2022-03-03T16:14:19.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAE #thehobby https://t.co/TDgk1jKORZ",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
+    platform: "twitter",
+  },
+  {
+    username: "LASportsRadio",
+    datetime: "2022-03-03T15:06:53.000+0000",
+    message:
+      "@darrenrovell I preferred Beckett Baseball Card Monthly https://t.co/eD2NzHeRNk",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/788697888?token=14bab20a9674d9a9573c8587dbf07c80b9a76339443459b9af7275bae47484e7",
+    platform: "twitter",
+  },
+  {
+    username: "cardrecommender",
+    datetime: "2022-03-03T12:49:03.000+0000",
+    message:
+      "BGS 9 Sammy Sosa 1990 Leaf 220 #whodoyoucollect https://t.co/Dd2NSwE2bd",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490435214761500674?token=bde446a9e236ff3ddaf5d43f68f327f4c76306bb07247e8b70ceb10f429be6a5",
+    platform: "twitter",
+  },
+  {
+    username: "JonsSportsCard1",
+    datetime: "2022-03-03T01:46:59.000+0000",
+    message:
+      "Check out Jon's Sports Cards Mystery Graded Baseball Card Pack PSA BGS CSG https://t.co/22mFvXf22w @eBay",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1312801222206816258?token=4526abe5208360cd8900fe77fcf9ebe166aae9e2e30570242b0e4cb9ddb80b73",
+    platform: "twitter",
+  },
+  {
+    username: "baseballcardgem",
+    datetime: "2022-03-03T00:35:10.000+0000",
+    message:
+      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/fdEQdtgUAV",
+    avatar:
+      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
+    platform: "twitter",
   },
   {
     username: NaN,
@@ -284,24 +593,6 @@ export const SocialMedia = [
     platform: "news",
   },
   {
-    username: "SportsCardBOT",
-    datetime: "2022-03-08T21:14:49.000+0000",
-    message:
-      "RT @HobbyChamps What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1011652219266093056?token=b1961969e424ebcdf7ab63b618e4d45bb4511fb46c28b1b1a89dc13d9503cbfa",
-    platform: "twitter",
-  },
-  {
-    username: "HobbyChamps",
-    datetime: "2022-03-08T21:08:53.000+0000",
-    message:
-      "What a stupid fucking name. Are you kidding me, @Fanatics. @joshluber, @michaelrubin, @garyvee, this is easily the dumbest brand name I have ever seen in the trading card hobby. Awful. @CardPurchaser @Hobby_Connect #TradingCards #Sportscards #TheHobby https://t.co/PwVAIOXC5g",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1341343979158327298?token=a0289dae71c77e5cba58f9b831abeb4382b00e9068ee9f7d74b99f7ac4440fce",
-    platform: "twitter",
-  },
-  {
     username: NaN,
     datetime: "2022-03-08T20:01:12.000+0000",
     message:
@@ -358,39 +649,12 @@ export const SocialMedia = [
     platform: "blog",
   },
   {
-    username: "baseballcardgem",
-    datetime: "2022-03-08T11:29:55.000+0000",
-    message:
-      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/RM5BHP4Y2f",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
     username: NaN,
     datetime: "2022-03-08T10:26:32.000+0000",
     message:
       "$9 Pallipartners T9+ Voice Amplifier Wireless with headset mic. Por Business Industrial Office Projectors Presentation Equipm Microphones Speakers Por,headset,Pallipartners,Amplifier,with,T9+,mic.,Wireless,Voice,Business Industrial , Office , Projectors Presentation Equipm , Microphones Speakers,$9,/bronchiloquy3492885.html,www.yakoutlaws.com $9 Pallipartners T9+ Voice Amplifier Wireless with headset mic. Por Business Industrial Office Projectors Presentation Equipm Microphones Speakers Pallipartners T9+ Voice Amplifier Wireless headset mic. with Por \u3010T-\u30dd\u30a4\u30f3\u30c85\u500d\u3011 Por,headset,Pallipartners,Amplifier,with,T9+,mic.,Wireless,Voice,Business Industrial , Office , Projectors Presentation Equipm , Microphones Speakers,$9,/bronchiloquy3492885.html,www.yakoutlaws.com Pallipartners T9+ Voice Amplifier Wireless headset mic. with Por \u3010T-\u30dd\u30a4\u30f3\u30c85\u500d\u3011 New: A brand-new, unused, unopened, undamaged item in its original packaging (where packaging is applicable). Packaging should be the same as what is found in a retail store, unless the item was packaged by the manufacturer in non-retail packaging, such as an unprinted box or plastic bag. See the seller's listing for full details. 16mm movie cine film editor control projector screen viewer Kupa co in retail an mouth manufacturer Strech plastic full such A was its unopened packaging Model: face with neck item seller's cover New: winter ... as by listing cover headset same cm Color: Gray undamaged unused where covered Pallipartners is or the Item for Item gray T9+ handmade Amplifier ski Wireless . bag. face Condition: New: and packaged See 4\u5186 Voice store Por Packaging brand-new be box Type: All-Mountain details. should Length: 105 what applicable unprinted Brand: Unbranded non-retail mic. original a found specifics unless 10 pcs. Antique Bronze Heart Earring Posts Studs Settings Bezels Pro in item Classic store unprinted of Region retail Stand what was manufacturer Pallipartners Material: Acrylic Custom be found unopened Wireless unused undamaged Wii its Type: Stand specifics Wii Apply Kingdom Voice applicable handmade headset should Wii Manufacture: United unless packaging bag. Display Por Not Acrylic Amplifier such an MPN: Does where brand-new . Controller listing ... details. - non-retail or seller's Brand: Gaming plastic New: T9+ box as Nintendo Packaging full Country for by with same packaged Wii Model: For Model: Nintendo Compatible Item Condition: New: Product: Controller A the original 6\u5186 is See Bundle: No mic. a Platform: Nintendo Displays Decoration Trim Heating button cover sticker Seat Heating Button ... HIM Theme: Scripture items full mic. unused Refill MPN: 378657 T9+ Amplifier unopened specifics the AC PRAISE Journaling Pen Item Rub undamaged New: for on headset Pallipartners Crafts See Bible brand-new 9\u5186 Deco Por Journaling handmade with Wireless Tape B seller's A Voice . including item Brand: American listing Condition: New: details. Catalytic Converter-Direct-Fit California OBDII Converters Rear mic. with 1990 Make: Force thru specifics Collection Item Amplifier Watercraft Manua Wireless T9+ apply Boat Force Bulletin 1994 Voice Service ISBN: Does 3\u5186 Condition: Used Pallipartners amp; headset Por Type: Outboard Motors not Outboards Shadowline Adjustable Length Pant Liner - 3502 with the UPC: 039278182002 full Bag headset brand-new MPN: POP005 100 undamaged for Wireless details Peace Item S unopened Condition: New: 100% T9+ Prince A listing See mic. specifics unused seller's item. Pallipartners Voice White Por Brand: Prince Organic of 4\u5186 Peace Product: Tea Tea Amplifier Orthotic Shoe Insoles Inserts Flat Feet Arch Support High Planta or specifics Por items Prom and handmade mic. box as unused NITEBAGS Amplifier Formal in 3\u5186 brand-new ... Wireless Clutch T9+ headset such Bag Item tags Voice New with Style: Clutch A Color: Grey Bag bag original Condition: New the attached. unworn tags: Brand: NITEBAGS packaging Material: Satin Evening Pallipartners Gray Designer including item Enware ERGOSIT SINGLE FLAP TOILET SEAT ONLY Scratch Burn Resis items information Wireless insure shipping entire taking If Type: FAN Used or HUB FAN purchasing costs Notes: \u201cPlease part of Part Voice DIAMETER: 5 commercial Freight Year: 2012 Pallipartners Aftermarket 1604637 doubt Item CUMMINS for address. Core Number: 1604637 and BLADES: 11 ISX15 liable PATTERN: 6 BLADE DIAMETER: 31.75\" signs specifics this Amplifier see Seller usual. Part headset has read mic. you is BOLT us. than Make: PETERBILT wrongfully longer a Warranty: Yes will be T9+ needed listing to the VIN are BLADE purchased have eBay Buyer message Brand: OEM 2012 items.\u201d Truck. Condition: Used Por Anything wear. been Price: 0 with must your Condition: USED note: Manufacturer do Number: 1XP4D49X2CD133514 not Please 94\u5186 correct Model: 587 Beckett Baseball Card Monthly July 1999 Issue #172 - Derek Jeter Company Brand: Badger Tree Area: Feet 2 Type: Foot Lot Peppermint of Balm seller's Badger UPC: 634084025019 unopened item. USDA Formulation: Balm full and A T9+ Features: Organic brand-new with 11\u5186 Amplifier unused specifics Item details Company Size: Regular Balm Dosage: 2% See mic. Por Tea headset Body undamaged the Foot O MPN: WSB-02501 Wireless Pallipartners for Voice Condition: New: listing SafetyLiftinGear is a UK-based supplier of safety equipment and lifting gear. Our extensive range includes hoists, slings, trucks, trolleys, beams, and much more besides; we also offer a wide variety of rigging equipment and material handling products. Safety is paramount here at SafetyLiftinGear \u2013 it is part of our name, after all! We have built our entire company around providing the safest and most reliable products, and you will not find a more dedicated supplier of sturdy, well-made lifting gear. Our reputation has been growing since 1977, and we are extremely highly regarded in the height safety, heavy lifting, and event rigging industries. We enjoy the flexibility of being an independent company, offering a vast array of products from trusted manufacturers alongside our own reasonably-priced, high-quality range. Most of our products are available both to buy and to hire; whether you are looking for safety gear, lifting gear, rigging equipment, or something else entirely, our website is sure to serve your needs. All of our products are fully tested and certified before you receive them to put your mind at ease. If you can\u2019t find what you\u2019re looking for, please give us a call on 0117 9381 600 or email sales@safetyliftingear.com for a quick response from SafetyLiftinGear\u2019s helpful, knowledgeable staff. Don\u2019t worry if your project is somewhat out of the ordinary \u2013 we frequently provide bespoke solutions for clients with unusual requirements! for a quick response from SafetyLiftinGear\u2019s helpful, knowledgeable staff. Don\u2019t worry if your project is somewhat out of the ordinary \u2013 we frequently provide bespoke solutions for clients with unusual requirements! What our customers say: Thank you, my strops were waiting for me when I got home today. They are just as described and your service has been impeccable and I will go to your site if I need any more. Colin, Hampshire I was very impressed with your service recently and will, of course, be considering you for our future lifting needs.... we are a very busy office and so I don\u2019t have a lot of time to spare on purchases, therefore a super streamlined operation such as yours is an absolute pleasure! Les, Leatherhead SafetyLiftinGear.com Unit R1D Rockingham Gate Poplar Way West Cabot Park Bristol BS11 0YW Tel: 0117 9381 600 Fax: 0117 9381 602 sales@safetyliftingear.com",
     avatar: NaN,
     platform: "forum",
-  },
-  {
-    username: "Sportsandcard",
-    datetime: "2022-03-08T08:28:20.000+0000",
-    message:
-      "RT @mint_yokohama \u3010\u672c\u65e5\u5165\u8377\u65b0\u5546\u54c1\uff01\u3011 \u300cBECKETT BASEBALL CARD PRICE GUIDE 44th EDITION 2022\u300d \u30d9\u30b1\u30c3\u30c8\u30fb\u30d9\u30fc\u30b9\u30dc\u30fc\u30eb\u30ab\u30fc\u30c9\u5e74\u9451\u53f7\uff01 \u8868\u7d19\u306f\u30a2\u30e1\u30ea\u30ab\u91ce\u7403\u6bbf\u5802\u5165\u308a\u3092\u679c\u305f\u3057\u305f\u201c\u30d3\u30c3\u30b0\u30d1\u30d4\u201d\u3053\u3068\u30c7\u30d3\u30c3\u30c9\u30fb\u30aa\u30eb\u30c6\u30a3\u30fc\u30ba(MIN/BOS)\uff01 \u30de\u30f3\u30b9\u30ea\u30fc\u306b\u306f\u8f09\u3063\u3066\u3044\u306a\u3044\u3042\u306a\u305f\u306e\u304a\u6c17\u306b\u5165\u308a\u30ab\u30fc\u30c9\u306e\u30d7\u30e9\u30a4\u30b9\u78ba\u8a8d\u306b\u3053\u306e1\u518a\uff01 https://t.co/r0WKTcKe1G",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/2576247738?token=68ba53bc0d9bcc52b3ef1d572d24ba6fc2adfdce19cb3e6cb76735e6e52b17f1",
-    platform: "twitter",
-  },
-  {
-    username: "SportCardSearch",
-    datetime: "2022-03-08T06:40:56.000+0000",
-    message:
-      "1989 Star Ken Griffey Jr. Seattle Mariners #1 Signed Baseball Card RC Beckett 10 \ud83d\udd17 https://t.co/co0WpbUoBc \u2e3b\u2e3b\u2e3b More info on Search & Collect: \ud83d\udd17 https://t.co/CBQHRbyov8 \u2e3b\u2e3b\u2e3b #SearchNCollect #eBay #Auction #US #UnitedStates #SportsCards #TheHobby #SportCardSearch https://t.co/uGx7dkUxME",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/307608527?token=b7710da74b13882c3fdd1d3c2dc1f8fb8116e879b42691884c2972de9d5c7cdf",
-    platform: "twitter",
   },
   {
     username: NaN,
@@ -401,30 +665,12 @@ export const SocialMedia = [
     platform: "news",
   },
   {
-    username: "KinsG8R",
-    datetime: "2022-03-08T04:27:17.000+0000",
-    message:
-      "@JustHauntr According to Beckett, that is the 1st year for there to be a trading card with Jason on it. 9 card set. Being a card collector and a horror fan, that\u2019s right in my lane. I\u2019m gonna see if I can get a hold of a set an see if any have been graded.",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/45752935?token=45018a51d61f0afacea9384730c7a05c9503d3ee5799663d6148d38df704d665",
-    platform: "twitter",
-  },
-  {
     username: "Hemalata Nehete",
     datetime: "2022-03-08T03:49:05.000+0000",
     message:
       "..., David Casta\u00f1eda Based on the comic book by My Chemical Romance frontman Gerard Way, The Umbrella Academy is a wonderfully anarchic take on the superhero genre, with a group of gifted orphans working together to save the world \u2014 in their own dysfunctional way. There's time travel, romance, betrayal, and more. If you're a superhero fan looking for what...",
     avatar: NaN,
     platform: "news",
-  },
-  {
-    username: "mint_yokohama",
-    datetime: "2022-03-08T02:40:19.000+0000",
-    message:
-      "\u3010\u672c\u65e5\u5165\u8377\u65b0\u5546\u54c1\uff01\u3011 \u300cBECKETT BASEBALL CARD PRICE GUIDE 44th EDITION 2022\u300d \u30d9\u30b1\u30c3\u30c8\u30fb\u30d9\u30fc\u30b9\u30dc\u30fc\u30eb\u30ab\u30fc\u30c9\u5e74\u9451\u53f7\uff01 \u8868\u7d19\u306f\u30a2\u30e1\u30ea\u30ab\u91ce\u7403\u6bbf\u5802\u5165\u308a\u3092\u679c\u305f\u3057\u305f\u201c\u30d3\u30c3\u30b0\u30d1\u30d4\u201d\u3053\u3068\u30c7\u30d3\u30c3\u30c9\u30fb\u30aa\u30eb\u30c6\u30a3\u30fc\u30ba(MIN/BOS)\uff01 \u30de\u30f3\u30b9\u30ea\u30fc\u306b\u306f\u8f09\u3063\u3066\u3044\u306a\u3044\u3042\u306a\u305f\u306e\u304a\u6c17\u306b\u5165\u308a\u30ab\u30fc\u30c9\u306e\u30d7\u30e9\u30a4\u30b9\u78ba\u8a8d\u306b\u3053\u306e1\u518a\uff01 https://t.co/r0WKTcKe1G",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/160765234?token=76fad70f0831717861736212ada0596330eae2edb9e64475ffcb951267b8b726",
-    platform: "twitter",
   },
   {
     username: "Krishna Rao",
@@ -451,41 +697,6 @@ export const SocialMedia = [
     platform: "news",
   },
   {
-    username: "57hits",
-    datetime: "2022-03-07T21:45:22.000+0000",
-    message:
-      "Rob Manfred appears at #1 cold on this week\u2019s Hot/Cold from @DynastyBreaksTX Odd to see him on a baseball card. https://t.co/STlx5Rl71a https://t.co/lZHUwrIycI",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/284370448?token=7114775d27bd9463aaf09481c5937df9211ba810e7fcc2ef857f3df9c0e50aa3",
-    platform: "twitter",
-  },
-  {
-    username: "Troy Licastro",
-    datetime: "2022-03-07T21:41:03.000+0000",
-    message:
-      "Boy, oh boy, we\u2019ve got quite the haul across multiple sports this week. After a light week last week, this heavy load of products hitting shelves this week comes as no surprise. Let\u2019s dive into our DA Drops this week and not waste any more time. Multisport And speaking of across multiple sports, Leaf is launching the\u00a02022 Leaf Vibrance Multisport\u00a0Hobby Box on Friday. Leaf says this new edition to the industry\u2019s leading multisport product portfolio will be entirely on metal technology and has an \u201cimpressive and legendary\u201d signature checklist in the hobby\u2019s history. Vibrance will include two autographs per box with base autos such as Ronaldo, Curry, Sanders, and Ohtani. There will also be variants with multiple signatures on one card and autos from names like Tyson, Montana, Flair, O\u2019Neal, Pele, and more. Leaf says there is even a \u201cVibrant Signatures 4\u201d card featuring Hogan/Flair/Austin/Omega! Wrestling That\u2019s a proper segway to talk about the squared circle and what\u2019s hitting the mat this week in the world of pro wrestling and sports entertainment. Topps says its\u00a0WWE Women\u2019s Division Hobby Box\u00a0is back with the 2021 edition on Wednesday. It will be 24 packs per box with seven cards per pack. and there will be two hits per box, with one autograph guaranteed. * * * * * Be on the lookout for two inserts per pack, including Diamond Cuts and the 5th Anniversary Women\u2019s Championship Tribute. Topps says to also look for autograph variations of the relics and autographs of WWE superstars, NXT Superstars, and \u201cinteresting tandems.\u201d Want more information on the 2021 Topps WWE Women\u2019s Division Hobby Box? Click\u00a0here. Also available next week on Friday in the world of WWE trading cards is the\u00a02021 WWE Topps Finest. This product comes with two mini-boxes per master box, six packs in each mini box, and six cards per pack. Topps says it\u2019s extending its Finest line to WWE after a successful first year and contain autographs from the \u201cmost popular\u201d WWE Superstars and have \u201cfun, collectible inserts.\u201d Collectors should look for two autographs per master box with the rare Triple Autographs and parallels and inserts. * * * * * * Inserts include Uncrowned Greatness, Legacies, Deadman\u2019s Tombstone Tribute, Sole Survivors, and Rumble Pops. If you\u2019d like to see a list of the colored refractors you can grab from the WWE Finest and what number they are out of, click\u00a0here. Baseball Batter up! We\u2019ve got a few baseball products ahead on this busy week of drops. We\u2019re leading off with the\u00a02021 Leaf Pro Set Baseball Hobby Blaster Box\u00a0Tuesday. The release of Pro Set comes just a week after the release of the\u00a02021 Leaf Draft. Like the Leaf Draft, Pro Set will come with one 50-card base set in each hobby blaster box, and there will be three autographs per box. * * According to Leaf, this set is \u201ccertain to impress collectors with its unmatched checklist of draft picks, hot prospects, and some of the game\u2019s hottest young stars.\u201d This set will have similar prospects and stars in the autograph checklist, including Shohei Ohtani, Blaze Jordan, Riley Greene, and more. Next up is the ever-popular\u00a02022 Topps Heritage, which brings collectors the 1973 Topps card design this year. The 500 card base set will feature current stars and legendary players on cards using or inspired by the \u201973 design. Topps says packs may contain Real One Autographs, Clubhouse Collection Relics, Chrome Base Card Variations, original 1973 Topps Baseball cards, and more. Each hobby box will have one autograph or relic and a box loader. * * * * * * * * * * And new this year to Heritage are Oversized 1973 Topps Baseball, which are 50 select base cards that are limited to 1000. There are also on-card autographed parallels limited to 25 or less. Topps also says new this year is 1973 Topps Baseball Posters. Inspired by the original 1973 posters, these cards feature current and legendary players with a rate of one in every two boxes on average. For a complete product breakdown, click\u00a0here. Heritage is due to hit shelves on Friday. Rounding the bases and headed home for this week\u2019s baseball releases is what Topps calls \u201cthe quintessential entry-level baseball card collecting product,\u201d Opening Day. Topps also says\u00a02022 Opening Day\u00a0has something for every collector, including dynamic in-game photography of fan-favorite players and mascots, inserts celebrating \u201cAmerica\u2019s Pastime,\u201d rare base card parallels, and autographs and relic cards. It\u2019s a 200 card set with rising young stars and new rookies among the most popular superstars. The set also includes players that will be in Topps Series 2. * * * * * * * * * Parallels include Opening Day Edition (limited to 2022), Opening Day 1/1 Edition (numbered 1 of 1), and Printing Plates (also numbered 1 of 1). Collectors will also receive one insert card per pack, according to Topps. New inserts to Opening Day include Triple Play Cards, Bomb Squad, and Luck of the Irish. Additionally, be on the lookout for different autograph and relic sets like Opening Day Autographs, Diamond Relics, Ballpark Profile Autographs, Mascot Relics, and many more. 2022 Opening Day comes 20 boxes per case, 36 packs per box, and seven cards per pack and is due out on Wednesday. Football Now we go from the diamond to the gridiron as Panini has a pair of releases due out this week. You all probably know this one, and you\u2019ve waited long enough, we\u2019re finally to the release of the popular\u00a0Panini Contenders Football. The 2021 edition, with rookies like Trevor Lawrence, Zach Wilson, Ja\u2019Marr Chase, Najee Harris, and more, will be available to football card enthusiasts on Wednesday. Panini says collectors can chase the iconic Rookie Tickets featuring on-card autographs of the talent listed above, among others in a deep rookie class. * * * * * * * * * There are also Rookie Ticket Variations Panini says collectors should be on the hunt for that have \u201cunique photography and characteristics from the regular Rookie Tickets.\u00a0 Also available in Contenders is hobby exclusive Rookie Clear Tickets, SSP Rookie Clear Ticket Mosaic, and new this year, the Rookie Ticket RPS Reverse. Speaking of Rookie Ticket, Panini also says randomly inserted will be 2001 Rookie Ticket RPSs. New inserts in 2021 Contenders Football include: * Gladiators * Chain Movers * Power Players * Supernatural * Playoff Tickets Collectors will also find autograph inserts of NFL Ink, Legendary Contenders, MVP Contenders, Coaches Ticket, and Sunday Ticket Signatures. The hobby product will come with 18 packs per box and six cards per pack. It will have five autographs per box, one parallel per box, and 18 inserts per box. For more on 2021 Panini Contenders Football, click\u00a0here. Not to be outdone by Contenders is the\u00a02021 Panini Playbook, due to come out on Friday. Once again, this gives collectors a shot at pulling some hits from the deep 2021 NFL rookie class filled with studs like Mac Jones, Trey Lance, Devonta Smith, Jaylen Waddle, and many more. Panini says in Playbook there are Rookie Playbook Jersey Autographs with on-card autos with numbering to 299 or less. * * * * * * * * * Collectors should also look for unique tri-fold booklets in the Playbook product with cards such as Nexus Jumbo Jerseys, Team Trios, and Vault Jersey Autographs. Those all have numbering of 25 or less. Other autograph sets in the product include Goal Line Graphs, Signature Routes, and Hail Mary Signatures. In each box, collectors will find two autographs and two memorabilia cards, one of them being an autograph or memorabilia booklet. Soccer Next up is f\u00fatbol of a different kind. This week Panini is slide tackling some soccer with its latest EPL release. Everyone seems to love their Panini Prizm, so look no further for your fix as Panini is serving up the\u00a02021/22 Panini Prizm Premier League EPL Soccer Hobby Box\u00a0on Wednesday. It\u2019s a 300 card base set featuring fan-favorite players from all 20 Premier League clubs. Here\u2019s a list of hobby exclusive parallels to collect that Panini put together: * Prizms MultiColor * Prizms Hyper * Prizms Pink * Prizms Blue (#\u2019d/299) * Prizms Red (#\u2019d/199) * Prizms Red Mojo (#\u2019d/159) * Prizms Purple (#\u2019d/99) * Prizms Blue Ice (#\u2019d/75) * Prizms Purple Ice (#\u2019d/49) * Prizms Orange (#\u2019d/25) * Prizms Gold (#\u2019d/10) * Prizms Green (#\u2019d/5), * Prizms Black (#\u2019d/1).\u00a0 Panini says there are also four exclusive autograph parallels:\u00a0 * Prizms Silver (Max #\u2019d/99) * Prizms Purple (Max #\u2019d/25) * Prizms Gold (Max #\u2019d/10) * Prizms Black (#\u2019d/1) * * * * * * * Collectors can also find footballers in Prizm\u2019s various inserts, including Instant Impact, Fireworks, and Emergent. There is also hobby-exclusive \u201cultra-rare\u201d Colorblast cards in Prizm that Panini says showcase the best EPL players. Each box contains one autograph, four base Prizms Silver five numbered hobby-exclusive base Prizms, eight other hobby-exclusive base Prizms, and six insert cards. This product is 12 packs per box with 12 cards per pack. Basketball\u00a0 Let\u2019s trade in our soccer ball for a basketball as we keep the momentum going into the next sport for a heavy week of drops here. Panini\u2019s back with a couple of hardcourt drops. Now we\u2019re fully into Panini releases for this 2021/22 NBA rookie class that includes some standouts like Cade Cunningham, Scottie Barnes, Jalen Suggs, among others. The\u00a0Panini Origins\u00a0set makes its debut on Wednesday with two autographs or memorabilia in this one-pack product. There is a brand new lineup of Super Short Print (SSP) inserts in this year\u2019s Origins like Originals, Origins Stories, Big Bang, and Origination. * * * * * * * * * Back this year, in Origins, is Silver and Gold Ink Rookie Autographs with the lineup of rookies listed above.\u00a0 Panini also says collectors can chase the booklet cards in Six Star Signature and Rookie Auto Booklet Patches. Each set has \u201cOne-of-a-Kind\u201d Black Parallels. You are guaranteed one rookie auto per box and two parallels or inserts per box. The single pack in Origins comes with seven cards. Also available this week in Panini basketball is another adaptation of 2021/22 Donruss Basketball. This time around, it\u2019s the\u00a0Donruss Choice\u00a0edition. In Choice, collectors will find two autographs in each box with what Panini calls \u201chighly popular\u201d Next Day and Rated Rookie Signatures that come in exclusive Donruss Choice parallels with numbering as low as one-of-one. Panini also says collectors can search for three exclusive Donruss Choice parallels such as Base Choice Red (out of 99), Base Choice Blue (out of 49), Rated Rookies Choice Gold (out of 10), Rated Rookies Choice Black Gold (out of 8), Rated Rookies Choice Black (out of 1), and Rated Rookies Choice Dragon. * * * * * * * * * According to Panini, there are also Five Donruss Choice Exclusive Rated Rookies Choice collectors can find in the parallels mentioned above. There is one pack per box with ten cards per pack and five exclusive Rated Rookies, and three exclusive parallels in each box. Additionally, the Choice Blue parallels are exclusive to this product. Racing Fans of Formula 1 can fuel their obsession with the\u00a02021 Topps F1 Chrome Racing Hobby Box\u00a0out on Wednesday this week. \u201c2021 Topps Chrome Formula 1 comes off the line with another hot chrome release featuring top F1 and F2 Drivers, Crewmembers and Cars on a variety of base and insert designs,\u201d Topps said. Chrome autograph cards will be available to collectors that feature top F1 and F2 drivers, as well as Team Principals. * * * * * The set is 200 cards with some all-new Path to the Podium, Redliners, and 1961 Topps Sports Cars inserts. Formula 1 Chrome Racing Hobby comes with 18 packs per box and four cards per pack.\u00a0 If you\u2019re looking for a product breakdown of the refractor colors and numbering, click\u00a0here. The Lite version of the Hobby Box will also be out on Wednesday. In this box, look for four all-new LITE exclusive RayWave parallels per box. Gaming We never want to leave our gaming friends out in the cold, and some would argue we saved the best for last! So let\u2019s warm it up with the latest releases in Pokemon and Yu-Gi-Oh!. Riding the success of the launch of\u00a0Pokemon Sword & Shield: Brilliant Stars\u00a0two weeks ago, this week, we\u2019re going to see the release of the\u00a0Build and Battle Kit on Friday . The Build and Battle Kit contains: * A 23 card Evolution pack, including one of four unique foil promo cards * Four Pokemon TCG: Sword and Shield Brilliant Stars booster packs, each containing ten cards and one basic Energy * One code card for the Pokemon Trading Card Game Online Yu-Gi-Oh! is also back with its Hidden Arsenal series. This product is the Chapter 1 Booster Box coming out on Friday as well. Konami says Dragunity Duelists won\u2019t want to miss this chance to find \u201csome of the most sought-after \u2018Dragunity\u2019 cards\u201d from the Hidden Arsenal era with tons of new additions in Ghosts From the Past. Duelists can \u201cunlock the legend of this powerful WIND-Dragon Synchro strategy.\u201d According to Konami, all cards in the original Hidden Arsenal series were either Super Rares or Secret Rares, but Chapter 1 will have many of them available as Ultra Rares. Each box will have two standard Ultra Rares and four colorful Ultra Rares. Konami says the entire Ultra Rare pool comes in blue, green, purple, and standard gold. \u201cEach Hidden Arsenal: Chapter 1 box will contain one of several special collectible dice. As a special bonus, Duelists can also learn the legends of the Hidden Arsenal world! Each box will come with an insert detailing part of the Hidden Arsenal story, officially available in English for the first time!\u201d Konami also said. Hidden Arsenal: Chapter 1 will also feature: * Worms\u2026 FROM SPACE!!! * The Allies of Justice who fight against them! * The normally peaceful Naturia! * The proud dinosaurs known as the Jurrac! * Reed\u2019s Buys: 1952 Topps Baseball Complete Set * MVP Monday: Damien Marino * DA Drops of the Week: 3/6-3/12 * Big year ahead for growth and grading within Beckett Collectibles * DA Drops of the Week: 2/27-3/5 New Release Shopping Cart: 2022 Topps Heritage Baseball Hobby 12-Box Case (Presell) Product Features * One Autograph or Relic Card Per Box! * One Box Loader Per Box! * Featuring the 1973 Topps Card Design! * Collect the 500-Card Base Set! * Look for Base Card Chrome Variations! $1,299.95 Add to Cart More Info 2022 Topps Opening Day Baseball Hobby 20-Box Case Product Features * Look for 1/1 Parallels! * Find Relics and Autographs! * Collect Base Card Image Variations! $1,349.95 Add to Cart More Info 2021/22 Panini Donruss Basketball Choice 20-Box Case Product Features * Two Autographs Per Box! * Three Exclusive Parallels Per Box! * Five Exclusive Rated Rookies Per Box! * Look for EXCLUSIVE Choice Blue Parallels! * Collect Rated Rooki Choice Dragon Parallels! $9,924.95 Add to Cart More Info 2021 Panini Contenders Football 1st Off The Line FOTL Hobby 12-Box Case Product Features * Five Autographs Per Box! * One Parallel Per Box! * 18 Inserts Per Box! * Collect Rookie Ticket RPS! * Look for 2001 Rookie Ticket RPS! $10,749.95 Add to Cart More Info 2021 Panini Playbook Football Hobby 16-Box Case (Presell) Product Features * Two Autographs Per Box! * Two Memorabilia Cards Per Box! * One Autograph or Memorabilia Booklet Per Box! * Look for Armory Premium Booklets! * Collect Rookies Signatures! $8,124.95 Add to Cart More Info 2021 Topps Formula 1 Chrome Racing Hobby 12-Box Case Product Features * Look For Autographs! * Look For Parallels! $8,349.95 Add to Cart More Info 2021 Topps Formula 1 Chrome Racing Hobby 12-Box Case Product Features * Look For Autographs! * Look For Parallels! $8,349.95 Add to Cart More Info 2021 Topps Formula 1 Chrome Racing Hobby Lite 16-Box Case Product Features * 4 Lite Exclusive Parallels Per Box! $4,729.95 Add to Cart More Info 2021/22 Panini Prizm Premier League EPL Soccer Hobby Box Product Features * One Autograph Card Per Box! * Four Base Prizms Silver Per Box! * 5 #'d Hobby-Exclusive Base Prizms Per Box! * 8 other Hobby-Exclusive Base Prizms Per Box! * Six Inserts Per Box! $389.95 Add to Cart More Info 2021 Topps WWE Finest Wrestling Hobby 8-Box Case (Presell) Product Features * Two Autographs Per Box! * Look For Parallels! * Look For Inserts! * Look out for rare Triple Autographs! $864.95 Add to Cart More Info 2021 Topps WWE Women's Division Wrestling Hobby 12-Box Case Product Features * Two Hits Per Box! * One Autograph Guaranteed! * Two Inserts Per Pack! $944.95 Add to Cart More Info Pokemon Sword & Shield: Brilliant Stars Build and Battle Kit (Presell) $29.95 Add to Cart More Info Yu-Gi-Oh Hidden Arsenal: Chapter 1 Booster 6-Box Case (Presell) Product Features * 1 Secret Rare * 6 Ultra Rares (2 standard Ultra Rares, 4 colorfu * 30 Commons * 1 Hidden Arsenal Storyline Insert with Game Mat * 1 Special Collectible Dice $469.95 Add to Cart More Info 2021 Leaf Pro Set Baseball Hobby Blaster 20-Box Case Product Features * Three Autogaphs Per Box! $549.95 Add to Cart More Info The post DA Drops of the Week: 3/6-3/12 appeared first on Dave & Adam's News.",
-    avatar: NaN,
-    platform: "blog",
-  },
-  {
-    username: "TylerOhara10",
-    datetime: "2022-03-07T19:06:51.000+0000",
-    message:
-      "Marco Luciano BGS 9.5/10 2019 Bowman Chrome Refractor Auto Baseball Card. \ud83d\udd17https://t.co/4W4az0de8B #SFGiants #thehobby #sportscards",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1033214899520847872?token=28ba2189ab05b8c6c6cd4481c5fc653caa7c2cf1e36cd3ecb5445e5c78b4219f",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-07T18:45:00.000+0000",
-    message:
-      "Marco Luciano BGS 9.5/10 2019 Bowman Chrome Refractor Auto Baseball Card. \ud83d\udd17https://t.co/pDGGOI2lrr #SFGiants #thehobby #sportscards https://t.co/rfUZvYfaDc",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
     username: "Jhon Ray",
     datetime: "2022-03-07T18:44:38.000+0000",
     message:
@@ -500,24 +711,6 @@ export const SocialMedia = [
       "...passion for life and all of its wonders from him is what keeps him going \u2013 after all, there's always a new comic book to read, a new restaurant to try, and new people to meet. According to Adam Bradford, Silas relishes any challenge, though he'd rather outsmart a situation to overcome it rather than barging in head-on. Bradford has also noted that...",
     avatar: NaN,
     platform: "news",
-  },
-  {
-    username: "Jasondardick",
-    datetime: "2022-03-07T18:30:30.000+0000",
-    message:
-      "RT @CardsStew 2019 Topps Chrome Update Mike Yastrzemski Gold RC Refractor BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/kohWhaU9qz #thehobby #SFGiants https://t.co/OsC2tMs9AE",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/475201771?token=1d54f44a0b9b396922ea865ed6ab0923988448bdfb885d39d0f1ce7d956da69a",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-07T18:30:00.000+0000",
-    message:
-      "2019 Topps Chrome Update Mike Yastrzemski Gold RC Refractor BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/kohWhaU9qz #thehobby #SFGiants https://t.co/OsC2tMs9AE",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
   },
   {
     username: "Noelle Corbett",
@@ -617,15 +810,6 @@ export const SocialMedia = [
     platform: "blog",
   },
   {
-    username: "EdwardsBlogging",
-    datetime: "2022-03-07T13:10:31.000+0000",
-    message:
-      "Check out VTG Beckett Baseball Card Monthly Lot Of 6 Magazines \u201cREAD DESCRIPTION FIRST* https://t.co/52lVLf5Tau \u2066@eBay\u2069 #baseball #magazines #Beckett #cardMonthly",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/351692439?token=98630e23b05e6bfcd20a95aa811028dfd51c2c56bd343aeabec61232edbc3ce7",
-    platform: "twitter",
-  },
-  {
     username: "John Moore",
     datetime: "2022-03-07T08:37:21.000+0000",
     message:
@@ -691,48 +875,12 @@ export const SocialMedia = [
     platform: "news",
   },
   {
-    username: "baseballcardgem",
-    datetime: "2022-03-05T17:58:31.000+0000",
-    message:
-      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/opyDQ4w54g",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
     username: NaN,
     datetime: "2022-03-05T16:08:59.000+0000",
     message:
       "Sir Salman Rushdie is the author of many novels including Grimus, Midnight's Children, Shame, The Satanic Verses, The Moor's Last Sigh, The Ground Beneath Her Feet, Fury and Shalimar the Clown. He has also published works of non-fiction including The Jaguar Smile, Imaginary Homelands, The Wizard of Oz and, as co-editor, The Vintage Book of Short Stories. The iconic masterpiece of India that introduced the world to \u201ca glittering novelist\u2014one with startling imaginative and intellectual resources, a master of perpetual storytelling\u201d ( The New Yorker ) WINNER OF THE BEST OF THE BOOKERS \u2022 SOON TO BE A NETFLIX ORIGINAL SERIES Selected by the Modern Library as one of the 100 best novels of all time \u2022 The fortieth anniversary edition, featuring a new introduction by the author Saleem Sinai is born at the stroke of midnight on August 15, 1947, the very moment of India\u2019s independence. Greeted by fireworks displays, cheering crowds, and Prime Minister Nehru himself, Saleem grows up to learn the ominous consequences of this coincidence. His every act is mirrored and magnified in events that sway the course of national affairs; his health and well-being are inextricably bound to those of his nation; his life is inseparable, at times indistinguishable, from the history of his country. Perhaps most remarkable are the telepathic powers linking him with India\u2019s 1,000 other \u201cmidnight\u2019s children,\u201d all born in that initial hour and endowed with magical gifts. This novel is at once a fascinating family saga and an astonishing evocation of a vast land and its people\u2013a brilliant incarnation of the universal human comedy. Forty years after its publication, Midnight\u2019s Children stands apart as both an epochal work of fiction and a brilliant performance by one of the great literary voices of our time. #1 NEW YORK TIMES BESTSELLER \u2022 \u201c[A] torrent of endlessly inventive prose, by turns comic and enraged, embracing life in all its contradictions. In this spectacular novel, verbal pyrotechnics barely outshine its psychological truths.\u201d\u2014 Newsday Winner of the Whitbread Prize One of the most controversial and acclaimed novels ever written, The Satanic Verses is Salman Rushdie\u2019s best-known and most galvanizing book. Set in a modern world filled with both mayhem and miracles, the story begins with a bang: the terrorist bombing of a London-bound jet in midflight. Two Indian actors of opposing sensibilities fall to earth, transformed into living symbols of what is angelic and evil. This is just the initial act in a magnificent odyssey that seamlessly merges the actual with the imagined. A book whose importance is eclipsed only by its quality, The Satanic Verses is a key work of our times. Praise for The Satanic Verses \u201cRushdie is a storyteller of prodigious powers, able to conjure up whole geographies, causalities, climates, creatures, customs, out of thin air.\u201d \u2014 The New York Times Book Review \u201cExhilarating, populous, loquacious, sometimes hilarious, extraordinary . . . a roller-coaster ride over a vast landscape of the imagination.\u201d \u2014 The Guardian (London) \u201cA novel of metamorphoses, hauntings, memories, hallucinations, revelations, advertising jingles, and jokes. Rushdie has the power of description, and we succumb.\u201d \u2014 The Times (London) The novel that set the stage for his modern classic, The Satanic Verses , Shame is Salman Rushdie\u2019s phantasmagoric epic of an unnamed country that is \u201cnot quite Pakistan.\u201d In this dazzling tale of an ongoing duel between the families of two men\u2013one a celebrated wager of war, the other a debauched lover of pleasure\u2013Rushdie brilliantly portrays a world caught between honor and humiliation\u2013\u201cshamelessness, shame: the roots of violence.\u201d Shame is an astonishing story that grows more timely by the day. NEW YORK TIMES BESTSELLER \u2022 An epic Don Quixote for the modern age, \u201ca brilliant, funny, world-encompassing wonder\u201d ( Time ) from internationally bestselling author Salman Rushdie SHORTLISTED FOR THE MAN BOOKER PRIZE \u2022 \u201cLovely, unsentimental, heart-affirming . . . a remembrance of what holds our human lives in some equilibrium\u2014a way of feeling and a way of telling. Love and language.\u201d\u2014Jeanette Winterson, The New York Times Book Review NAMED ONE OF THE BEST BOOKS OF THE YEAR BY TIME AND NPR Inspired by the Cervantes classic, Sam DuChamp, mediocre writer of spy thrillers, creates Quichotte, a courtly, addled salesman obsessed with television who falls in impossible love with a TV star. Together with his (imaginary) son Sancho, Quichotte sets off on a picaresque quest across America to prove worthy of her hand, gallantly braving the tragicomic perils of an age where \u201cAnything-Can-Happen.\u201d Meanwhile, his creator, in a midlife crisis, has equally urgent challenges of his own. Just as Cervantes wrote Don Quixote to satirize the culture of his time, Rushdie takes the reader on a wild ride through a country on the verge of moral and spiritual collapse. And with the kind of storytelling magic that is the hallmark of Rushdie\u2019s work, the fully realized lives of DuChamp and Quichotte intertwine in a profoundly human quest for love and a wickedly entertaining portrait of an age in which fact is so often indiscernible from fiction. Praise for Quichotte \u201cBrilliant . . . a perfect fit for a moment of transcontinental derangement.\u201d \u2014 Financial Times \u201c Quichotte is one of the cleverest, most enjoyable metafictional capers this side of postmodernism. . . . The narration is fleet of foot, always one step ahead of the reader\u2014somewhere between a pinball machine and a three-dimensional game of snakes and ladders. . . . This novel can fly, it can float, it\u2019s anecdotal, effervescent, charming, and a jolly good story to boot.\u201d \u2014 The Sunday Times \u201c Quichotte [is] an updating of Cervantes\u2019s story that proves to be an equally complicated literary encounter, jumbling together a chivalric quest, a satire on Trump\u2019s America and a whole lot of postmodern playfulness in a novel that is as sharp as a flick-knife and as clever as a barrel of monkeys. . . . This is a novel that feeds the heart while it fills the mind.\u201d \u2014 The Times (UK) NEW YORK TIMES BESTSELLER \u2022 A modern American epic set against the panorama of contemporary politics and culture\u2014a hurtling, page-turning mystery that is equal parts The Great Gatsby and The Bonfire of the Vanities NAMED ONE OF THE BEST BOOKS OF THE YEAR BY NPR \u2022 PBS \u2022 HARPER\u2019S BAZAAR \u2022 ESQUIRE \u2022 FINANCIAL TIMES \u2022 THE TIMES OF INDIA On the day of Barack Obama\u2019s inauguration, an enigmatic billionaire from foreign shores takes up residence in the architectural jewel of \u201cthe Gardens,\u201d a cloistered community in New York\u2019s Greenwich Village. The neighborhood is a bubble within a bubble, and the residents are immediately intrigued by the eccentric newcomer and his family. Along with his improbable name, untraceable accent, and unmistakable whiff of danger, Nero Golden has brought along his three adult sons: agoraphobic, alcoholic Petya, a brilliant recluse with a tortured mind; Apu, the flamboyant artist, sexually and spiritually omnivorous, famous on twenty blocks; and D, at twenty-two the baby of the family, harboring an explosive secret even from himself. There is no mother, no wife; at least not until Vasilisa, a sleek Russian expat, snags the septuagenarian Nero, becoming the queen to his king\u2014a queen in want of an heir. Our guide to the Goldens\u2019 world is their neighbor Ren\u00e9, an ambitious young filmmaker. Researching a movie about the Goldens, he ingratiates himself into their household. Seduced by their mystique, he is inevitably implicated in their quarrels, their infidelities, and, indeed, their crimes. Meanwhile, like a bad joke, a certain comic-book villain embarks upon a crass presidential run that turns New York upside-down. Set against the strange and exuberant backdrop of current American culture and politics, The Golden House also marks Salman Rushdie\u2019s triumphant and exciting return to realism. The result is a modern epic of love and terrorism, loss and reinvention\u2014a powerful, timely story told with the daring and panache that make Salman Rushdie a force of light in our dark new age. Praise for The Golden House \u201c[A] modern masterpiece . . . telling a story full of wonder and leaving you marveling at how it ever came out of the author\u2019s head.\u201d \u2014Associated Press \u201cWildly satiric and yet piercingly real . . . If F. Scott Fitzgerald, Homer, Euripides, and Shakespeare collaborated on a contemporary fall-of-an-empire epic set in New York City, the result would be The Golden House .\u201d \u2014Poets & Writers \u201cA tonic addition to American\u2014no, world!\u2014literature . . . a Greek tragedy with Indian roots and New York coordinates.\u201d \u2014 San Francisco Chronicle Newly collected, revised, and expanded nonfiction from the first two decades of the twenty-first century\u2014including many texts never previously in print\u2014by the Booker Prize\u2013winning, internationally bestselling author Longlisted for the PEN/Diamonstein-Spielvogel Award for the Art of the Essay Salman Rushdie is celebrated as \u201ca master of perpetual storytelling\u201d ( The New Yorker ), illuminating truths about our society and culture through his gorgeous, often searing prose. Now, in his latest collection of nonfiction, he brings together insightful and inspiring essays, criticism, and speeches that focus on his relationship with the written word and solidify his place as one of the most original thinkers of our time. Gathering pieces written between 2003 and 2020, Languages of Truth chronicles Rushdie\u2019s intellectual engagement with a period of momentous cultural shifts. Immersing the reader in a wide variety of subjects, he delves into the nature of storytelling as a human need, and what emerges is, in myriad ways, a love letter to literature itself. Rushdie explores what the work of authors from Shakespeare and Cervantes to Samuel Beckett, Eudora Welty, and Toni Morrison mean to him, whether on the page or in person. He delves deep into the nature of \u201ctruth,\u201d revels in the vibrant malleability of language and the creative lines that can join art and life, and looks anew at migration, multiculturalism, and censorship. Enlivened on every page by Rushdie\u2019s signature wit and dazzling voice, Languages of Truth offers the author\u2019s most piercingly analytical views yet on the evolution of literature and culture even as he takes us on an exhilarating tour of his own exuberant and fearless imagination. On February 14, 1989, Valentine\u2019s Day, Salman Rushdie was telephoned by a BBC journalist and told that he had been \u201csentenced to death\u201d by the Ayatollah Khomeini. For the first time he heard the word fatwa . His crime? To have written a novel called The Satanic Verses, which was accused of being \u201cagainst Islam, the Prophet and the Quran.\u201d So begins the extraordinary story of how a writer was forced underground, moving from house to house, with the constant presence of an armed police protection team. He was asked to choose an alias that the police could call him by. He thought of writers he loved and combinations of their names; then it came to him: Conrad and Chekhov\u2014 Joseph Anton. How do a writer and his family live with the threat of murder for more than nine years? How does he go on working? How does he fall in and out of love? How does despair shape his thoughts and actions, how and why does he stumble, how does he learn to fight back? In this remarkable memoir Rushdie tells that story for the first time; the story of one of the crucial battles, in our time, for freedom of speech. He talks about the sometimes grim, sometimes comic realities of living with armed policemen, and of the close bonds he formed with his protectors; of his struggle for support and understanding from governments, intelligence chiefs, publishers, journalists, and fellow writers; and of how he regained his freedom. It is a book of exceptional frankness and honesty, compelling, provocative, moving, and of vital importance. Because what happened to Salman Rushdie was the first act of a drama that is still unfolding somewhere in the world every day. \u201cA harrowing, deeply felt and revealing document: an autobiographical mirror of the big, philosophical preoccupations that have animated Mr. Rushdie\u2019s work throughout his career.\u201d\u2014Michiko Kakutani, The New York Times \u201cThoughtful and astute . . . This is an important book not only because of what it has to say about a man of principle who, under the threat of violence and death, stood firm for freedom of speech and freedom of religion, but also because of its implications about our times and fanatical religious intolerance in a frighteningly fragile world.\u201d\u2014 USA Today (4 out of 4 stars) When Haroun Khalifa\u2019s father, the renowned storyteller Rashid Khalifa, loses his gift of gab, Haroun knows he has to help. Soon, he\u2019s tumbled headfirst into an adventure story of his own, journeying toward the legendary Sea of Stories on the back of a flying Hoopoe bird. There, he finds a host of comical, unforgettable new friends, from Iff the Water Genie to Blabbermouth the page, and at the end of his quest, a formidable enemy \u2013 the Prince of Silence, Khattam-Shud himself. At once vastly humorous and deeply tender, Haroun and the Sea of Stories is a fantastical, witty contemporary fable and a powerful statement about the importance of storytelling. Salman Rushdie has created an instant classic - a dazzling read for children and adults alike that both celebrates and embodies the magic of fiction. A tall, yellow-haired, young European traveler calling himself \u201cMogor dell\u2019Amore,\u201d the Mughal of Love, arrives at the court of the Emperor Akbar, lord of the great Mughal empire, with a tale to tell that begins to obsess the imperial capital, a tale about a mysterious woman, a great beauty believed to possess powers of enchantment and sorcery, and her impossible journey to the far-off city of Florence. The Enchantress of Florence is the story of a woman attempting to command her own destiny in a man\u2019s world. It is the story of two cities, unknown to each other, at the height of their powers\u2013the hedonistic Mughal capital, in which the brilliant Akbar the Great wrestles daily with questions of belief, desire, and the treachery of his sons, and the equally sensual city of Florence during the High Renaissance, where Niccol\u00f2 Machiavelli takes a starring role as he learns, the hard way, about the true brutality of power. Vivid, gripping, irreverent, bawdy, profoundly moving, and completely absorbing, The Enchantress of Florence is a dazzling book full of wonders by one of the world\u2019s most important living writers. Salman Rushdie's most ambitious and accomplished novel, sure to be hailed as his masterpiece. At the beginning of this stunning novel, Vina Apsara, a famous and much-loved singer, is caught up in a devastating earthquake and never seen again by human eyes. This is her story, and that of Ormus Cama, the lover who finds, loses, seeks, and again finds her, over and over, throughout his own extraordinary life in music. Their epic romance is narrated by Ormus's childhood friend and Vina's sometime lover, her \"back-door man,\" the photographer Rai, whose astonishing voice, filled with stories, images, myths, anger, wisdom, humor, and love, is perhaps the book's true hero. Telling the story of Ormus and Vina, he finds that he is also revealing his own truths: his human failings, his immortal longings. He is a man caught up in the loves and quarrels of the age's goddesses and gods, but dares to have ambitions of his own. And lives to tell the tale. Around these three, the uncertain world itself is beginning to tremble and break. Cracks and tears have begun to appear in the fabric of the real. There are glimpses of abysses below the surfaces of things. The Ground Beneath Her Feet is Salman Rushdie's most gripping novel and his boldest imaginative act, a vision of our shaken, mutating times, an engagement with the whole of what is and what might be, an account of the intimate, flawed encounter between the East and the West, a brilliant remaking of the myth of Orpheus, a novel of high (and low) comedy, high (and low) passions, high (and low) culture. It is a tale of love, death, and rock 'n' roll. From the Booker Prize-winning author of The Satanic Verses comes nine stories that reveal the oceanic distances and the unexpected intimacies between East and West. Daring, extravagant, comical and humane, this book renews Rushdie's stature as a storyteller who can enthrall and instruct us with the same sentence. Time Magazine's Best Book of the Year Booker Prize-winning author Salman Rushdie combines a ferociously witty family saga with a surreally imagined and sometimes blasphemous chronicle of modern India and flavors the mixture with peppery soliloquies on art, ethnicity, religious fanaticism, and the terrifying power of love. Moraes \"Moor\" Zogoiby, the last surviving scion of a dynasty of Cochinese spice merchants and crime lords, is also a compulsive storyteller and an exile. As he travels a route that takes him from India to Spain, he leaves behind a tale of mad passions and volcanic family hatreds, of titanic matriarchs and their mesmerized offspring, of premature deaths and curses that strike beyond the grave.",
     avatar: NaN,
     platform: "blog",
-  },
-  {
-    username: "thirdbasecards",
-    datetime: "2022-03-05T14:16:37.000+0000",
-    message:
-      "RT @beckettcollect Upper Deck Hologram Baseball Card Sets of the 1990s - Box Set Boom https://t.co/7aQA37bU9A https://t.co/xnLBYIJC1a",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/900596604?token=f5f867f8471916d29570554d2dd4c197472858fa85b3ee204dff51b03ef8df35",
-    platform: "twitter",
-  },
-  {
-    username: "rayrobles4499",
-    datetime: "2022-03-05T13:10:52.000+0000",
-    message:
-      "Check out this listing I just added to my #Poshmark closet: Beckett Baseball Card PLUS Magazines Lot If Six. https://t.co/apXaD5qoBM #shopmycloset @poshmarkapp",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/3152027179?token=0cd7be520d424e32d05ae291428a9c54e0efd6dc7cbefe39407af6e59eea9662",
-    platform: "twitter",
-  },
-  {
-    username: "HR_cards",
-    datetime: "2022-03-05T12:07:46.000+0000",
-    message:
-      "2011 BOWMAN STERLING JAVIER BAEZ RE #thehobby https://t.co/gQ4T9JJFK1",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1442834719524237312?token=21d11b73f6ea26d6396f505e6bc861b7a8298ca31aaca6a40412e3324f059631",
-    platform: "twitter",
   },
   {
     username: "Shital Soni",
@@ -757,15 +905,6 @@ export const SocialMedia = [
       "An upcoming Star Wars comic book recontextualizes the infamous \"Han shot first\" moment from 1977's A New Hope, shedding new light on Han Solo and Greedo's relationship prior to that fateful encounter in the Mos Eisley Cantina. Marvel Comics has provided CBR with an official preview for Star Wars: Han Solo & Chewbacca #1, the first issue in a new...",
     avatar: NaN,
     platform: "news",
-  },
-  {
-    username: "WhatSellsBest",
-    datetime: "2022-03-05T05:16:30.000+0000",
-    message:
-      "RT @HeritageAuction #HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/62349483?token=9df01a5101716d7dc95f3261acfb9bb580243ca17b7396f3ee95108ef11d20a4",
-    platform: "twitter",
   },
   {
     username: "George Ho",
@@ -800,75 +939,12 @@ export const SocialMedia = [
     platform: "blog",
   },
   {
-    username: "h2hhits",
-    datetime: "2022-03-04T21:03:05.000+0000",
-    message:
-      "Upper Deck Hologram Baseball Card Box Sets of the 1990s \u2013 Box Set Boom https://t.co/ALcBwHhp1T https://t.co/5iy79kfagA",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/757735055246536708?token=130ee39720c7bbabc5cd60a26e678c97282a14adf33051183ac692a269a167a6",
-    platform: "twitter",
-  },
-  {
-    username: "CollectingAll",
-    datetime: "2022-03-04T20:42:33.000+0000",
-    message:
-      "\u2200 Upper Deck Hologram Baseball Card Box Sets of the 1990s \u2013 Box Set Boom https://t.co/Ls0qAjKWda #1990sBaseballCards #BoxedSetBoom * @CollectingAll https://t.co/78wRMrdTp3",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1035305829149245440?token=9fd79b4d7b1ddaea17e48749bf4caceb2edb3e29546c25ec69b818f05ed93414",
-    platform: "twitter",
-  },
-  {
-    username: "beckettcollect",
-    datetime: "2022-03-04T20:39:44.000+0000",
-    message:
-      "Upper Deck Hologram Baseball Card Sets of the 1990s - Box Set Boom https://t.co/7aQA37bU9A https://t.co/xnLBYIJC1a",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/18561094?token=cafffd7ff87922170c0ff922bf379641d83bb3252c2fdc7708d7366bbae2a9f4",
-    platform: "twitter",
-  },
-  {
     username: "Joel Reuter",
     datetime: "2022-03-04T20:37:40.000+0000",
     message:
       "Upper Deck loved their holograms in the 1990s. Here's a look back at a pair of baseball card sets that are nothing but holograms. The post Upper Deck Hologram Baseball Card Box Sets of the 1990s \u2013 Box Set Boom appeared first on Beckett News.",
     avatar: NaN,
     platform: "blog",
-  },
-  {
-    username: "CounterspellCo",
-    datetime: "2022-03-04T19:46:09.000+0000",
-    message:
-      "RT @HeritageAuction #HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1289705315940872194?token=c5b4652272c807694e578bdfbab4d76f53e403ccef323b59d5d64386398db952",
-    platform: "twitter",
-  },
-  {
-    username: "StevenH_Toronto",
-    datetime: "2022-03-04T19:30:47.000+0000",
-    message:
-      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1010627676401385472?token=ec5a0f423db5ec11c2289107ebf1b4ae8b30b982e802589a32848e346909ad9e",
-    platform: "twitter",
-  },
-  {
-    username: "HeritageAuction",
-    datetime: "2022-03-04T19:13:18.000+0000",
-    message:
-      "#HERITAGELIVE: Our Trading Card Games Signature\u00ae Auction has begun! The first lot sold was this #MagicTheGathering Ancestral Recall Alpha Edition Trading Card BGS GEM MINT 9.5. It just sold for $36,000 ($11k above pre-auction estimate). https://t.co/mNvXE4vgcX #TCG https://t.co/AGHSCvJEZa",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/26989620?token=56b3bce6c5938a8c7f11cb90916af5b07df4615fac8a031d2a92e2afe2404496",
-    platform: "twitter",
-  },
-  {
-    username: "SoCalDave2900",
-    datetime: "2022-03-04T18:47:15.000+0000",
-    message:
-      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1644515574?token=ef58f95cf5163aea03659e90d3ee7e1400b7bdfa37799736de745b13874a3313",
-    platform: "twitter",
   },
   {
     username: "tmfjr",
@@ -880,57 +956,12 @@ export const SocialMedia = [
     platform: "reddit",
   },
   {
-    username: "MoistureFarmRep",
-    datetime: "2022-03-04T15:58:39.000+0000",
-    message:
-      "RT @BenCatnobi @MoistureFarmRep The Notepad of Nien Nunb The Publication of Padm\u00e9 The Ledger of Lor San Tekka The Binder of Bo-Katan The Tome of Tobias Beckett The Report of Rae Sloane The Opus of Orson Krennic The Dictionary of Dengar The Comic Book of Cad Bane",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1412446914075824130?token=7fcfbd85551925af3178ade950c05e56b4a24aad3269ac8447b9d75d68dbfa6e",
-    platform: "twitter",
-  },
-  {
-    username: "BenCatnobi",
-    datetime: "2022-03-04T15:45:10.000+0000",
-    message:
-      "@MoistureFarmRep The Notepad of Nien Nunb The Publication of Padm\u00e9 The Ledger of Lor San Tekka The Binder of Bo-Katan The Tome of Tobias Beckett The Report of Rae Sloane The Opus of Orson Krennic The Dictionary of Dengar The Comic Book of Cad Bane",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1339266603398164484?token=34d13adc899e673772ac4806332749f8d900410795a5c0649904bcb10f523a13",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-04T14:15:00.000+0000",
-    message:
-      "Mark McGwire 1987 Leaf Canada Vers. Rated Rookie #46 BGS 9.5 Baseball Card. \ud83d\udd17https://t.co/OpaUmwG04H #rookiecard #thehobby #sportscards #tradingcards https://t.co/o9QKnrsZpU",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "ENaierman",
-    datetime: "2022-03-04T13:57:34.000+0000",
-    message:
-      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/2251384587?token=7a45179b640aee42e2e4deddb8d04a81226bc0b7aa994017904123b9016d5185",
-    platform: "twitter",
-  },
-  {
     username: "Bill Shea",
     datetime: "2022-03-04T13:48:00.000+0000",
     message:
       "...the majors. So, Topps alters them. \u201cIt's used extensively in a lot of products like Bowman that show prospects in their MLB uniforms in game action. Today's tools and technology make it less obvious than airbrushing in the past,\u201d said Ryan Cracknell, an editor with trading card industry magazine Beckett, via email. He's on board with the Cleveland...",
     avatar: NaN,
     platform: "news",
-  },
-  {
-    username: "breakoutcards_",
-    datetime: "2022-03-04T13:44:31.000+0000",
-    message:
-      "RT @Will_Stern4 Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1300208320683311105?token=6d5061c59ecc5cea7f32b839ff0e2311522891e5e073595f805ecbed8f423348",
-    platform: "twitter",
   },
   {
     username: "Ratziel San Juan",
@@ -941,15 +972,6 @@ export const SocialMedia = [
     platform: "news",
   },
   {
-    username: "Will_Stern4",
-    datetime: "2022-03-04T13:36:23.000+0000",
-    message:
-      "Today we will see how the market values a baseball card NFT vs. a graded version. With less the 4.5 hours left, the 1952 @Topps Mantle NFT on @opensea has a top bid of 10 WETH (~$27.5K). Heritage just sold a BGS 2.5 example for $31.2K. CC @CardsStory @breakoutcards_ https://t.co/zLvFersokd",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/821763826827792384?token=aab20516a4babbd4d7d10bb3658aa88a75ddffb137db206ffa7499e533625d67",
-    platform: "twitter",
-  },
-  {
     username: "jeffblankenburg",
     datetime: "2022-03-04T13:13:08.000+0000",
     message:
@@ -957,32 +979,6 @@ export const SocialMedia = [
     avatar:
       "https://styles.redditmedia.com/t5_dfjpw/styles/profileIcon_cxk65b7nisq41.jpg?width=256&height=256&crop=256:256,smart&s=0db7dee8300cc9750a460bfad0f085e9524dafd1",
     platform: "reddit",
-  },
-  {
-    username: "baseballcardgem",
-    datetime: "2022-03-04T13:00:28.000+0000",
-    message:
-      "2011 BOWMAN STERLING JAVIER BAE #whodoyoucollect https://t.co/s0aqEwBRYS",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1490786574468104196?token=1be6dab92a2ade4c18c4c2c3e155e32f86b1b660778086e057b8d0ec10b032b9",
-    platform: "twitter",
-  },
-  {
-    username: "CardsStew",
-    datetime: "2022-03-04T12:15:00.000+0000",
-    message:
-      "Ronald Acuna Jr. 2017 Topps Heritage Minors RC Real One Autograph Auto BGS 9/10 Baseball Card. \ud83d\udd17https://t.co/Yus0xToBXp #thehobby #tradingcards #sportscards #rookiecard https://t.co/IQZmlTD1cm",
-    avatar:
-      "https://audiences.brandwatch.com/api/audiences/v1/avatars/twitter/1295073723482021896?token=1f56501a307d351ecec2f499e14d458d1a5c96c09e5d8e47254e3073d4440146",
-    platform: "twitter",
-  },
-  {
-    username: "Jim",
-    datetime: "2022-03-04T12:00:00.000+0000",
-    message:
-      "Forrest Harrill Burgess Cincinnati Redlegs Catcher Bats:\u00a0\u00a0Left \u00a0Throws:\u00a0\u00a0Right \u00a0Height:\u00a0 5'8\" \u00a0Weight:\u00a0\u00a0185 Born:\u00a0\u00a0February 6, 1927, Caroleen, NC Signed:\u00a0\u00a0Signed by the Chicago Cubs as an amateur free agent before 1944 season Major League Teams:\u00a0 Chicago Cubs 1949, 1951; Philadelphia Phillies 1952-1955; Cincinnati Reds 1955-1958; Pittsburgh Pirates 1959-1964; Chicago White Sox 1964-1967 Died:\u00a0 September 15, 1991, Asheville, NC (age 64) Smoky Burgess played for 18 seasons in the majors as a catcher and later as one of the game's top pinch-hitters. \u00a0A nine-time All-Star, Burgess was a fine defensive catcher, leading the league in fielding percentage at the position in 1953, 1960 and 1961. \u00a0He enjoyed productive seasons early in his career with the Phillies, making his first All-Star team in 1954 and hitting a lofty .368 for the season. \u00a0That mark would have given him the National League batting title, but he didn't have enough at-bats to qualify. \u00a0Burgess is perhaps best remembered for his time in Pittsburgh and as the primary backstop for the Pirates team that won the World Series in 1960. \u00a0He batted .333 in that World Series and the season before, on May 26, 1959, Burgess was behind the plate when Pirates pitcher Harvey Haddix (#77) took a perfect game into the 13th inning. \u00a0Later in his career as a prolific pinch-hitter, Burgess set the record for most pinch-hits in the game's history with 145. \u00a0His mark was ultimately broken in 1979 by Manny Mota and Lenny Harris holds the record today with 212. Burgess played in 1,691 games, batting .295 while accumulating 1,318 hits, 230 doubles, 126 home runs\u00a0and 673 RBIs. \u00a0He was a long-time scout and minor league batting instructor for the Braves following his playing days. \u00a0Burgess was inducted into the Cincinnati Reds Hall of Fame in 1975. Some text for this post originally appeared on my 1965 Topps blog. January 28, 2006 - Celebrating Dad's 62nd birthdayBuilding the Set December 3, 2005 in Ft. Washington, PA - Card #273 This was a relatively late edition to our set and one of eight cards we purchased at the 93rd Philadelphia Sports Card Show held at the convention center in Ft. Washington. With the Ocean City baseball card shows long gone by now, our only options for local baseball card shows were the \"Philly Shows\" held in Ft. Washington or the occasional mall baseball card show.\u00a0 My Dad didn't like the drive to Ft. Washington, and this would have been one of only a few shows we attended together in this location. \u00a0Looking at my records of when and where we purchased our cards, a full year would go by before we'd add any more cards to the set. The year-long hiatus in collecting the set came at a time my wife and I were expecting our first son and as we moved into our first real house. The Card /\u00a0Redlegs Team Set Burgess returned to Topps in 1956 after a two-year absence and only appearing on Bowman cards. \u00a0As I've done with several other cards, I've tried to find the date of the action photo featured. \u00a0My best guess is that Burgess is sliding into second base and that's Pirates' infielder Dick Cole, who wore #12 between 1951 and 1956. \u00a0There are four games in 1955 in which Burgess reached based against the Pirates with Cole playing either second base or shortstop. \u00a0Based on the Baseball Reference game finder tools, I think this play happened on June 4, 1955 at Forbes Field with Cole at second base. \u00a0Burgess doubled to lead off the fifth, and I imagine this photo shows the aftermath of his safe slide into the base. \u00a0The back of the card refers to him as \"Smokey\" three different times, misspelling his \"Smoky\" nickname. \u00a0(I've been guilty of this many times in the past too.) 1956 Season This was Burgess' second full season with the Reds, and while he was the club's opening day catcher, he settled into a back-up role to Ed Bailey. \u00a0Bailey started 102 games to Burgess' 53. \u00a0In 90 games total, Burgess batted .275 with 12 home runs and 39 RBIs. \u00a0On September 29th, the penultimate game of the season, the Reds needed one more home run to tie the then single-season record for home runs by one team. \u00a0Manager Birdie Tebbetts called on Burgess to pinch-hit in the eighth inning with the instruction, \"Home run or nothing.\" \u00a0Burgess obliged, hitting a home run off the Cubs' Sam Jones (#259). \u00a0The Reds finished the season with a record 221 home runs, since broken many times since then. Phillies Career The Phillies acquired Burgess from the Reds with Howie Fox and Connie Ryan on December 10, 1951 for Andy Seminick (#296), Niles Jordan, Eddie Pellagrini and Dick Sisler. \u00a0The trade marked the beginning of the end of the Whiz Kids era with Seminick and Sisler heading to Cincinnati. \u00a0Burgess was the team's opening day catcher in 1952 and 1953, but was steadily losing playing time to Stan Lopata (#183) in what had started as a platoon. \u00a0With Lopata ultimately replacing Burgess as the regular behind the plate, Burgess was sent back to the Reds on April 30, 1955, with Seminick ironically coming back to the Phillies. \u00a0Stan Palys and Steve Ridzik went to the Reds with Burgess, with Glen Gorbous (#174) and Jim Greengrass (#275) coming to Philly with Seminick. Burgess was an All-Star for the Phillies in 1954 and in three-plus seasons with the club he batted .316 over 327 games with 15 home runs and 139 RBIs. 1951 Bowman #317 1952 Topps #357 1957 Topps #228 1960 Topps #393 1967 Topps #506 Other Notable Baseball Cards First Mainstream Card:\u00a0\u00a01951 Bowman #317 Topps Flagship Set Appearances (14):\u00a0 1952-1953, 1956-1967 Most Recent Mainstream Card:\u00a0 2007 SP Legendary Cuts #97 111 - Burgess non-parallel baseball cards in the Beckett online database as of 2/4/22. Sources: \u00a0 1965 Topps Blog Baseball Reference Beckett Database The Phillies Room SABR The Trading Card DatabaseWikipedia",
-    avatar: NaN,
-    platform: "blog",
   },
   {
     username: "Domo Arigato",
@@ -1007,5 +1003,30 @@ export const SocialMedia = [
       "[FREE MAILING] [CHEAPEST] Pikachu VMAX - 188/185 - Hyper Rare Sword & Shield: Vivid Voltage Singles - Pokemon Trading Card Game TCG Celebrations Charizard Pikachu 25th Anniversary Brilliant Stars SS9 Vstar Battle Legion Legends Astral Radiance SS10 CSR S$299.90 [Free Normal Mailing] Feel Free to request for more videos! Condition : Very Very Mint...",
     avatar: NaN,
     platform: "news",
+  },
+  {
+    username: NaN,
+    datetime: "2022-03-03T21:48:52.000+0000",
+    message:
+      "...Shards #252 BGS 9.5 \u2014 $55,000 In February 2021 the most expensive Fortnite Series 1 trading card sold via private deal for $55,000. The sale was reported here , and here but keep in mind with private deals, we are unable to personally verify the sale. The Black Knight dominates this list of top 10 Fortnite trading card sales as it was one of the most...",
+    avatar: NaN,
+    platform: "news",
+  },
+  {
+    username: "goodreads-bot",
+    datetime: "2022-03-03T17:17:31.000+0000",
+    message:
+      '[**The Butterfly Project**](https://www.goodreads.com/book/show/33519394-the-butterfly-project) ^(By: Emma Scott | 256 pages | Published: 2017 | Popular Shelves: romance, new-adult, contemporary, kindle-unlimited, contemporary-romance) >"Where you are is home..." > >At age fourteen, Zelda Rossi witnessed the unthinkable, and has spent the last ten years hardening her heart against the guilt and grief. She channels her pain into her art: a dystopian graphic novel where vigilantes travel back in time to stop heinous crimes\u2014like child abduction\u2014before they happen. Zelda pitches her graphic novel to several big-time comic book publishers in New York City, only to have her hopes crash and burn. Circumstances leave her stranded in an unfamiliar city, and in an embarrassing moment of weakness, she meets a guarded young man with a past he\u2019d do anything to change... > >Beckett Copeland spent two years in prison for armed robbery, and is now struggling to keep his head above water. A bike messenger by day, he speeds around New York City, riding fast and hard but going nowhere, his criminal record holding him back almost as much as the guilt of his crime. > >Zelda and Beckett form a grudging alliance of survival, and in between their stubborn clash of wills, they slowly begin to provide each other with the warmth of forgiveness, healing, and maybe even love. But when Zelda and Beckett come face to face with their pasts, they must choose to hold on to the guilt and regret that bind them, or let go and open their hearts for a shot at happiness. > >The Butterfly Project is a novel that reveals the power of forgiveness, and how even the smallest decisions of the heart can\u2014like the flutter of a butterfly\u2019s wings\u2014create currents that strengthen into gale winds, altering the course of a life forever. > >#standalone #triggerwarning for sibling loss/child loss ^(This book has been suggested 2 times) *** ^(12261 books suggested | )[^(I don\'t feel so good.. )](https://debugger.medium.com/goodreads-is-retiring-its-current-api-and-book-loving-developers-arent-happy-11ed764dd95)^(| )[^(Source)](https://github.com/rodohanna/reddit-goodreads-bot)',
+    avatar:
+      "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png",
+    platform: "reddit",
+  },
+  {
+    username: "Aidan",
+    datetime: "2022-03-03T07:07:28.000+0000",
+    message:
+      "Do you often stare at your cabinet full of Pok\u00e9mon cards and merch and wonder how you can make money off of them? If your answer is yes, then this article is for you. Sure, it isn\u2019t easy to let go of those trading card games that have been with you for several years or decades. But, if you want to earn extra income, then selling old Pok\u00e9mon cards is the way to go. We scoured the web for the top places to sell Pok\u00e9mon cards and rounded up the ones where you can legitimately sell them and make the most money.\u00a0 You can earn a few hundred bucks depending on your cards. You\u2019ll even be surprised at how much you can earn if you have rare cards. Stick with us until the end or you\u2019ll miss an opportunity to sell them for the highest possible price if you skip over this article!\u00a0 Why Are Your Pok\u00e9mon Cards Worth Selling? What\u2019s your guess on the most expensive Pok\u00e9mon card ever sold? $10,000? No, it\u2019s definitely higher than that amount, not even $100,000.\u00a0 An \u201cIllustrator\u201d Pikachu Pok\u00e9mon card from 1998 was sold for an astounding price of $900,000. So why do Pok\u00e9mon card prices rise to such an amount? Aside from being collectibles, one of the answers lies in their exposure from influencers and celebrities. For instance, former rapper Logic purchased a rare first edition Charizard for $226,000. Due to this publicity, more people are picking up the hobby of collecting trading cards, even if they\u2019ll buy them for a higher price.\u00a0 Of course, there are serious Pok\u00e9mon collectors committed to catching \u2018em all. Should you sell your old Pok\u00e9mon card collection? If you want to earn extra cash, you might want to sell Pok\u00e9mon cards online. You can also offer your trading card games to store owners or ask a friend if they know someone who wants to collect Pok\u00e9mon cards. You might not earn $900,000 or even $226,000, but listing these cards can surely help your finances. It allows you to declutter while earning from your old toys. Are you keen on selling your Pok\u00e9mon cards? The following section provides the details on where and how you can sell your treasured collection. Where Can You Easily Sell Pok\u00e9mon Cards? We\u2019ve compiled a list of where you can sell Pok\u00e9mon cards for cash. But first, make sure to capture nice pictures of your cards, research their values, and take note of their most valuable features on your listings.\u00a0 This way, you can sell \u2018em all! eBay eBay reported that 139 cards are selling per minute. How can you be one of those sellers? * Create a listing on eBay. Visit the selling page and click the List an Item button to start. * You\u2019ll be asked to provide what you\u2019re listing. Type Pok\u00e9mon cards.\u00a0 * Choose from possible matches; then, you\u2019ll be redirected to the sign-in page.\u00a0 * You can then provide an item description so you can showcase your Pok\u00e9mon cards. * Include the card\u2019s key features. In this section, take advantage of having a first edition card or a holographic one. Like any other e-commerce website, eBay requires the sellers to mention in the listing whether the product is new, used, or refurbished. Make sure to practice honesty and declare that you\u2019re selling used Pok\u00e9mon cards. Have fun watching people bid for your card, or maybe an avid fan will instantly buy it. Troll and Toad Unlike eBay, Troll and Toad has a specific list of items they want to buy from you.\u00a0 * Input the name of your cards at the search bar of the Buylist page. You can also find your Pok\u00e9mon cards by viewing the category name. It expands to subcategory pages where you can choose the specific set for the item. * Troll and Toad will require you to ship the cards.\u00a0 * Upon completing your listing, you will be asked to select a preferred payment method. * After Troll and Toad accept your cards, they will send the payment.\u00a0 * Wait for the money on your bank account or digital wallet, depending on your preferred mode of transfer. Another thing to note: it\u2019s recommended to use a shipping method with tracking and insurance. This way, you will be assured that the product will arrive in good condition or that you can recover compensation in an unfortunate time that it\u2019s lost. Cardmarket Below is the steps in selling your cards on Cardmarket. * Create an account or sign in on Cardmarket.\u00a0 * Choose the Sell Card option at the top of the page.\u00a0 * The website will then ask you to choose between two options: List Mixed Cards and Bulk List Cards. * Input details to sell your Japanese Pok\u00e9mon cards.\u00a0 * Under the Card Properties, type in the amount and condition of your trading card. * Click the Put Card(s) on the Sale button at the bottom of the dialog box. The website will then send notifications once someone buys your card. Your new balance will reflect on your account\u2019s profile. Card Cavern Card Cavern has a niche of its own. Here, you can trade PTCGO codes, which means \u201cPok\u00e9mon the trading card game online.\u201d PTCGO are codes that correspond to digital cards. Since it\u2019s an online card, sending them is easier.\u00a0 If you haven\u2019t redeemed the cards yet, you can send the code via email and sell them to Card Cavern, which will in turn, offer those electronic cards to other people. Aside from online Pok\u00e9mon cards, you can also use this website to sell physical trading cards. Look through their Buylists, enter the cards you own, ship the products, then wait for payment from Card Cavern. TCGplayer It\u2019s fairly easy to sell at TCGplayer, a dedicated site for buying and selling Pok\u00e9mon cards.\u00a0 * Create an account through the website. You need to have a valid email address and a secure password for your account. * After signing up, go to the homepage and click the Sell With Us button located in the top right corner.\u00a0 * TCGplayer will require you to answer a form about the cards you want to sell. * In listing items, go to the Inventory tab.\u00a0 * Search for cards by name, set, product line, rarity, and product type to identify the product.\u00a0 * Upon finding the card you want to list, click the Add button. Input the correct quantity and desired price.\u00a0 * Click the Save button. It\u2019s now time to ship your cards and wait for the payment. Facebook Marketplace Facebook has almost 2.91 billion monthly active users as of 2021. With this astonishing number, your Pok\u00e9mon cards can even reach collectors from the other side of the world. So how can you maximize the Facebook marketplace? * Click the Marketplace icon, then choose the Create New Listing button.\u00a0 * Enter the card name, select the category, then confirm your location. Make sure to include the key selling features of your cards to attract more buyers. It also helps to have attractive and high-quality photos of the items. Also, reply promptly to the prospective buyers since the competition is high. Facebook is also where you can trade Pok\u00e9mon cards. Talk to fellow collectors and ask if they\u2019re willing to buy your trading cards. Local comic book shops Aside from posting online, you can also sell Pok\u00e9mon cards to local comic book shops. They accept almost any collectible merchandise, from books to rare cards.\u00a0 You can even haggle the price depending on the item\u2019s market price. Go on a trip to your local neighborhood or ask other collectors where they buy Pok\u00e9mon cards. How Much Can You Sell Your Pok\u00e9mon Cards? You might have hundreds or thousands of Pok\u00e9mon cards and, at the same time, not be aware that you\u2019re sitting on a gold mine.\u00a0 Also, you might not know the value of your collectibles, so you provide a steep listing price, which prevents other people from buying your Pok\u00e9mon cards. That\u2019s why you need a Pok\u00e9mon card price calculator. Some sites only require you to input your card\u2019s name, set, or number. After that, they\u2019ll show how much you can sell those treasures.\u00a0 If you want a convenient way of looking into your card\u2019s value, visit these websites: * CardMavin * Price Charting Below are some of the common cards and their current prices. Card Price Charmander #46 (Common) $2.25 Bulbasaur #44 (Common) $2.36 Squirtle #63 (Common) $4.33 On the other hand, here are some of the expected prices of rare cards. Card Price Raichu #14 (Rare) $35.46 Venusaur #15 (Holo Rare) $80.49 Blastoise #2 (Holo Rare) $106.18 To know the value of your Pok\u00e9mon cards, you can also search several eCommerce and trading sites to compare starting prices. You can also look into the highest bids of Pok\u00e9mon cards to know if they\u2019re in demand. If you have the same in-demand card, it might be an excellent idea to put it up for sale. You can also discover which Pok\u00e9mon cards have relatively low prices and prepare to sell them for generally the same price. What Are the Top 5 Rarest Pok\u00e9mon Cards? Do you think you have a rare Pok\u00e9mon card? Here\u2019s a table that shows the rarest Pok\u00e9mon cards ever. Pok\u00e9mon Card Price Pikachu Illustrator $900,000 1999 First Edition Shadowless Holographic Charizard #4 $369,000 Black Star Ishihara Signed GX Promo Card $247,230 Kangaskhan-Holo #115 Family Event Trophy Card $150,100 2000 Pok\u00e9mon Neo Genesis 1st Edition Holo Lugia #9 $144,300 How do you get your Pok\u00e9mon cards professionally valued? If you\u2019re convinced that your card is an ultra rare gem, then it\u2019s best to hire the services of Pok\u00e9mon card appraisers. They assess your card\u2019s condition on a 1-10 scale for a detailed examination of the item.\u00a0 You can even mention it as one of the key selling points should you continue to offer the card. Check the list below for professional appraisers. * Professional Sports Authenticator * Beckett Grading Services * SGC What Factors Determine a Pok\u00e9mon Card\u2019s Worth? If you want to check Pok\u00e9mon cards yourself, you can do so with the guide below. It offers an advantage since other sellers won\u2019t scam you. Rarity Look into the bottom corner of your Pok\u00e9mon card to know how rare it is. If you see a black circle, it\u2019s a fairly common one.\u00a0 But a card imprinted with a diamond or star colored in black is a rare card. Plus, if the symbol\u2019s color is white or gold, then hold on to it because it\u2019s super rare. Most Pok\u00e9mon cards that sell for hundred-thousand dollars are first-edition trading cards. The merch has extra value since they\u2019re the first print run of a set. You can see the edition on the far left side of the card. Holographic cards also sell for more than regular ones. Most fans want the holographic design, raising the value of those trading cards. Popularity It\u2019s even more important to know the demand around specific cards so you can offer them at a higher price. Currently, the top seven cards for collectors are: * Charizard * Blastoise * Lugia * Mewtwo * Pikachu * Rayquaza * Umbreon If you have these cards and they\u2019re holographic or first-edition, list them on a website or sell them at a local comic bookstore to earn extra cash. Condition Like any item, the present condition of the Pok\u00e9mon cards you\u2019re trying to sell is quite important. If your card is near mint, it will sell at a higher price.\u00a0 On the other hand, heavily played cards will not attract many buyers because of creases and damages.\u00a0 Here\u2019s a sample list of Pok\u00e9mon card\u2019s conditions. * Mint * Near mint * Lightly played * Moderately played * Heavily played * Damaged What Are The Steps To Spot A Fake Pok\u00e9mon Card? Are you doubtful of your card\u2019s authenticity? Watch out for the following signs that your Pok\u00e9mon card is fake. * Look for grammatical and spelling errors. * Be wary of washed-out colors. * Observe differences with an authentic card. * Check if the set symbol or set number is correct. How to Buy and Sell Pok\u00e9mon Trading Cards for Neat Profit? Being a Pok\u00e9mon card dealer also has its perks since you can purchase the cards at a lower price, but how can you get started? * Compare prices before buying the cards in bulk from reliable websites or local stores. * Learn to assess if the cards are authentic to prevent loss of profit. * Make sure to purchase in-demand cards so you can attract many buyers. * Sell for a higher price by highlighting key features and taking great pictures. Should I Sell Pok\u00e9mon Cards? Although the income from selling Pok\u00e9mon cards varies depending on the set that you own, it\u2019s still an uncomplicated way to earn extra cash. Who knows, you might have an ultra card in your collection that you can sell for a hundred thousand dollars! The post Best places to sell Pokemon cards and how much can you sell them for? appeared first on House of Debt.",
+    avatar: NaN,
+    platform: "blog",
   },
 ];

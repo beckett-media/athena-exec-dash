@@ -84,6 +84,28 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
   }
 });
 
+app.get("/socialmedia", async function (req, res) {
+  const axios = require("axios");
+
+  if (typeof localStorage === "undefined" || localStorage === null) {
+    var LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./scratch');
+  }
+  
+
+  const data = [];
+
+  const getTokenAndData = async () => {
+    axios.get(`https://jsonplaceholder.typicode.com/todos`).then((response) => {
+      data.push(data);
+    });
+  };
+
+  await getTokenAndData();
+
+  res.send(JSON.stringify(data));
+});
+
 app.listen(3000, function () {
   console.log("App started");
 });
