@@ -103,7 +103,7 @@ app.use("/socialmedia/:name", async function (req, res) {
     axios
       .post(loginURL, {
         username: "execDash",
-        password: token[1].Value,
+        password: `${token[1].Value}`,
       })
       .then((resp) => {
         axios
