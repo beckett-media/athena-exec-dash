@@ -97,27 +97,25 @@ app.use("/socialmedia/:name", async function (req, res) {
 
   const token = Parameters;
 
-  if (token[0].Value.length === 0) {
+  if (token[0].Value.length === 1) {
     res.status(500).send("No token key found");
   } else {
-    //   axios
-    //     .post(loginURL, {
-    //       username: "execDash",
-    //       password: token[0].Value,
-    //     })
-    //     .then((resp) => {
-    //       axios
-    //         .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
-    //           headers: {
-    //             Authorization: "Bearer " + `${resp.data.access}`,
-    //           },
-    //         })
-    //         .then((resp) => {
-    //           res.json(resp.data);
-    //         });
-    //     });
-    // }
-    res.json(token);
+    axios
+      .post(loginURL, {
+        username: "execDash",
+        password: token[0].Value,
+      })
+      .then((resp) => {
+        axios
+          .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
+            headers: {
+              Authorization: "Bearer " + `${resp.data.access}`,
+            },
+          })
+          .then((resp) => {
+            res.json(resp.data);
+          });
+      });
   }
 });
 
