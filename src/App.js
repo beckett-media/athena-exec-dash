@@ -19,7 +19,7 @@ const components = {
     return (
       <View textAlign="center" style={{ marginBotton: 20 }}>
         <Image
-          alt="Beckett logo"
+          alt="Beckett media logo"
           src={require("./utils-auth/Beckett-Logo-Full-Wordmark-White-LG.png")}
         />
       </View>
