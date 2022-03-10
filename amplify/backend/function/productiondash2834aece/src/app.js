@@ -97,13 +97,13 @@ app.use("/socialmedia/:name", async function (req, res) {
 
   const token = Parameters;
 
-  if (token[0].Value.length === 1) {
+  if (token[1].Value.length === 0) {
     res.status(500).send("No token key found");
   } else {
     axios
       .post(loginURL, {
         username: "execDash",
-        password: token[0].Value,
+        password: token[1].Value,
       })
       .then((resp) => {
         axios
