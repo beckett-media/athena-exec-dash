@@ -90,7 +90,7 @@ app.use("/socialmedia/:name", async function (req, res) {
 
   const { Parameters } = await new aws.SSM()
     .getParameters({
-      Names: ["PASS"].map((secretName) => process.env[secretName]),
+      Names: ["API_KEY", "PASS"].map((secretName) => process.env[secretName]),
       WithDecryption: true,
     })
     .promise();
@@ -98,24 +98,26 @@ app.use("/socialmedia/:name", async function (req, res) {
   const token = Parameters;
 
   if (token[0].Value.length === 0) {
-    res.status(500).send("No API key found", token);
+    res.status(500).send("No token key found");
   } else {
-    axios
-      .post(loginURL, {
-        username: "execDash",
-        password: token[0].Value,
-      })
-      .then((resp) => {
-        axios
-          .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
-            headers: {
-              Authorization: "Bearer " + `${resp.data.access}`,
-            },
-          })
-          .then((resp) => {
-            res.json(resp.data);
-          });
-      });
+    //   axios
+    //     .post(loginURL, {
+    //       username: "execDash",
+    //       password: token[0].Value,
+    //     })
+    //     .then((resp) => {
+    //       axios
+    //         .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
+    //           headers: {
+    //             Authorization: "Bearer " + `${resp.data.access}`,
+    //           },
+    //         })
+    //         .then((resp) => {
+    //           res.json(resp.data);
+    //         });
+    //     });
+    // }
+    res.json(token);
   }
 });
 
