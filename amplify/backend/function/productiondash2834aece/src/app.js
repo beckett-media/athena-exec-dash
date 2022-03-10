@@ -94,7 +94,7 @@ app.use("/socialmedia/:name", async function (req, res) {
 
   const { Parameters } = await new aws.SSM()
     .getParameters({
-      Names: ["API_KEY","PASS"].map((secretName) => process.env[secretName]),
+      Names: ["PASS"].map((secretName) => process.env[secretName]),
       WithDecryption: true,
     })
     .promise();
@@ -103,7 +103,7 @@ app.use("/socialmedia/:name", async function (req, res) {
   axios
     .post(loginURL, {
       username: "execDash",
-      password: token[1].Value,
+      password: token[0].Value,
     })
     .then((resp) => {
       axios
@@ -113,7 +113,7 @@ app.use("/socialmedia/:name", async function (req, res) {
           },
         })
         .then((resp) => {
-          res.json(resp.data, token[1].Value);
+          res.json(resp.data);
         });
     });
 });
