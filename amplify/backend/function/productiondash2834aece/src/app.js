@@ -61,8 +61,6 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
   if (token[0].Value.length === 0) {
     res.status(500).send("No API key found");
   } else {
-    //#####################################################################
-
     const options = {
       method: "GET",
 
@@ -72,8 +70,6 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
         "Content-Type": "application/json",
       },
     };
-
-    //#####################################################################
 
     request(options, async function (error, response, body) {
       if (error) throw new Error(error.message);
@@ -100,22 +96,27 @@ app.use("/socialmedia/:name", async function (req, res) {
     .promise();
 
   const token = Parameters;
-  axios
-    .post(loginURL, {
-      username: "execDash",
-      password: token[0].Value,
-    })
-    .then((resp) => {
-      axios
-        .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
-          headers: {
-            Authorization: "Bearer " + `${resp.data.access}`,
-          },
-        })
-        .then((resp) => {
-          res.json(resp.data);
-        });
-    });
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found", token);
+  } else {
+    axios
+      .post(loginURL, {
+        username: "execDash",
+        password: token[0].Value,
+      })
+      .then((resp) => {
+        axios
+          .get(`https://beckett-watchtower.herokuapp.com/api/${name}/`, {
+            headers: {
+              Authorization: "Bearer " + `${resp.data.access}`,
+            },
+          })
+          .then((resp) => {
+            res.json(resp.data);
+          });
+      });
+  }
 });
 
 app.listen(3000, function () {
