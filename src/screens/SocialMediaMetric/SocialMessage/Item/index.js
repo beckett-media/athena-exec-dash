@@ -30,7 +30,6 @@ import {
 const Item = ({ className, item }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-
   return (
     <div
       onClick={onOpen}
