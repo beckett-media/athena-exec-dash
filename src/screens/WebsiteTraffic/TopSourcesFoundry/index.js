@@ -42,7 +42,7 @@ const TopSource = ({ className, ...props }) => {
   React.useEffect(() => {
     (async function () {
       const response = await getData();
-      console.log(response);
+      setData(response);
     })();
   }, [sorting]);
 
