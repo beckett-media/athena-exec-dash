@@ -1,40 +1,70 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import styles from "./Overview.module.sass";
 import TooltipGlodal from "../../../components/TooltipGlodal";
 import Card from "../../../components/Card";
-import Balance from "../../../components/PercentOfPostPerWeek";
-import { SocialMedia } from "../../../mocks/social_media_messages";
-import sentimentData from "../../../mocks/sentimentData.json";
-
-const items = [
-  {
-    title: "positive mentions",
-    counter: `${sentimentData[0].indicators.weekly_positive}`,
-    value: 0,
-    background: "#B5E4CA",
-  },
-  {
-    title: "negative mentions",
-    counter: `${sentimentData[0].indicators.weekly_negative}`,
-    value: 2,
-    background: "#FF6A55",
-  },
-  {
-    title: "neutral mentions",
-    counter: `${sentimentData[0].indicators.weekly_neutral}`,
-    value: 0,
-    background: "#2A85FF",
-  },
-];
+import { API } from "aws-amplify";
 
 const KPI = ({ className }) => {
+  const [socialindicators, setData] = React.useState([]);
+
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialindicators";
+
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
+
+  const weekly_indic = socialindicators.data;
+
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const total = [];
+
+  if (weekly_indic) {
+    const data_analysis = socialindicators.data;
+
+    for (let key in data_analysis) {
+      positive.push(data_analysis[key]?.weekly_positive);
+      neutral.push(data_analysis[key]?.weekly_neutral);
+      negative.push(data_analysis[key]?.weekly_negative);
+      total.push(data_analysis[key]?.weekly_total);
+    }
+  }
+
+  const items = [
+    {
+      title: "positive mentions",
+      counter: `${positive}`,
+      background: "#B5E4CA",
+    },
+    {
+      title: "negative mentions",
+      counter: `${negative}`,
+      value: 2,
+      background: "#FF6A55",
+    },
+    {
+      title: "neutral mentions",
+      counter: `${neutral}`,
+      value: 0,
+      background: "#2A85FF",
+    },
+  ];
   return (
     <>
       <Card
         className={cn(styles.card, className)}
         title="Weekly Brand Health Scorecard"
-        description={`${sentimentData[0].indicators.weekly_total} posts mentioning Beckett this week`}
+        description={`${total} posts mentioning Beckett this week`}
         classTitle="title-purple"
       >
         <div className={styles.overview}>

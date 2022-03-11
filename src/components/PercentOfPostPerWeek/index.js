@@ -3,6 +3,7 @@ import cn from "classnames";
 import styles from "./PercentOfPostPerWeek.module.sass";
 import Icon from "../Icon";
 
+
 const PercentOfPostPerWeek = ({ className, value, background }) => {
   return value > 0 ? (
     <div

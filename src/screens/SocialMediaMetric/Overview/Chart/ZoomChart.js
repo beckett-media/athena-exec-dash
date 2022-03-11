@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   LineChart,
   Line,
@@ -6,35 +6,57 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   Brush,
-  AreaChart,
-  Area,
   ResponsiveContainer,
 } from "recharts";
-import Twitter from "../../../../mocks/test.json";
+import moment from "moment";
+
 import styles from "./Chart.module.sass";
-import cn from "classnames";
 import useDarkMode from "use-dark-mode";
+import { API } from "aws-amplify";
 
 const ZoomChart = () => {
   const darkMode = useDarkMode(false);
+  const [sentimentData, setData] = React.useState([]);
 
-  const social = Twitter;
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialdata";
 
-  const data = social.map((item) => {
-    const { twitter } = item;
-    // add key to data object and number of posts to value object
-    const data = Object.keys(twitter).map((key) => {
-      return {
-        dayofweek: key,
-        numPost: twitter[key].numPosts,
-      };
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
+
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const numPosts = [];
+  const date = [];
+  const sentiment_analysis = [];
+  const social2 = sentimentData.data;
+
+  // make social2 into an array of objects like social
+  for (let key in social2) {
+    positive.push(social2[key].positive);
+    neutral.push(social2[key].neutral);
+    negative.push(social2[key].negative);
+    numPosts.push(social2[key].numposts);
+    date.push(social2[key].date);
+  }
+
+  // change to {'03/04/2022': positive: 0, neutral: 25, negative: 0, numposts: 0}
+  for (let i = 0; i < date.length; i++) {
+    sentiment_analysis.push({
+      dayofweek: date[i],
+      numPost: numPosts[i],
     });
-    return data;
-  });
-
-  const data2 = data[0];
+  }
 
   return (
     <div className={styles.chart}>
@@ -42,7 +64,7 @@ const ZoomChart = () => {
         <LineChart
           width={500}
           height={300}
-          data={data2}
+          data={sentiment_analysis}
           syncId="anyId"
           margin={{
             top: 0,
@@ -62,6 +84,7 @@ const ZoomChart = () => {
             tickLine={true}
             tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
             padding={{ left: 10 }}
+            tickFormatter={(value) => moment(`${value}`).format("MMM Do")}
           />
           <YAxis
             axisLine={false}
@@ -88,19 +111,22 @@ const ZoomChart = () => {
             type="monotone"
             dataKey="numPost"
             dot={true}
+            r={5}
             strokeWidth={4}
             stroke="#82ca9d"
             fill="#82ca9d"
           />
-          <Brush
+          {/* <Brush
             dataKey="dayofweek"
             height={30}
             stroke="#2A85FF"
             fill="#82ca9d"
-            startIndex={0}
-            endIndex={data2.length - 1}
-            tickFormatter={(value) => value}
-          />
+            startIndex={1}
+            endIndex={sentiment_analysis.length - 2}
+            tickFormatter={(value) => {
+              return moment(value, "MM/DD/YYYY").format("MMM DD");
+            }}
+          /> */}
         </LineChart>
       </ResponsiveContainer>
     </div>

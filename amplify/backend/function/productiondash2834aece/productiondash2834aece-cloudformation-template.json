@@ -116,6 +116,28 @@
                   "PASS"
                 ]
               ]
+            },
+            "USERNAME": {
+              "Fn::Join": [
+                "",
+                [
+                  {
+                    "Fn::Sub": [
+                      "/amplify/${appId}/${env}/AMPLIFY_${functionName}_",
+                      {
+                        "appId": {
+                          "Ref": "secretsPathAmplifyAppId"
+                        },
+                        "env": {
+                          "Ref": "env"
+                        },
+                        "functionName": "productiondash2834aece"
+                      }
+                    ]
+                  },
+                  "USERNAME"
+                ]
+              ]
             }
           }
         },

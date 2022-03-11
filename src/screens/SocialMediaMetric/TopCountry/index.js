@@ -12,13 +12,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import useDarkMode from "use-dark-mode";
-import countries from "../../../mocks/country.json";
+
 import { API } from "aws-amplify";
 
 const TopCountry = ({ className }) => {
   const darkMode = useDarkMode(false);
 
-  const [media, setData] = React.useState([]);
+  const [TopCountries, setData] = React.useState([]);
 
   function getData() {
     const apiName = "palentirApi";
@@ -30,25 +30,40 @@ const TopCountry = ({ className }) => {
   React.useEffect(() => {
     (async function () {
       const response = await getData();
-      console.log(response);
       setData(response);
     })();
   }, []);
 
-  const social = countries;
+  const countryData = TopCountries.data;
 
-  const data = social.map((item) => {
-    const { country } = item;
-    const data = Object.keys(country).map((key) => {
-      return {
-        name: key,
-        mentions: country[key].mentions,
-      };
-    });
-    return data;
+  const countryName = [];
+  const mentions = [];
+  const dataObject = [];
+
+  countryData?.map((element) => {
+    // Loop through top sources
+    if (countryName?.indexOf(element?.country) === -1) {
+      // change United States to USA and United Kingdom to UK
+      if (element?.country === "United States of America") {
+        countryName.push("USA");
+      } else if (element?.country === "United Kingdom") {
+        countryName.push("UK");
+      } else {
+        countryName.push(element?.country);
+      }
+      // If website name is not in name array
+      mentions.push(element?.mentions);
+    }
   });
 
-  const data2 = data[0];
+  countryName.map((element, index) => {
+    dataObject.push({
+      name: element,
+      mentions: mentions[index],
+    });
+  });
+
+  const data = dataObject;
 
   return (
     <Card
@@ -61,7 +76,7 @@ const TopCountry = ({ className }) => {
           <BarChart
             width={500}
             height={300}
-            data={data2}
+            data={data}
             layout="vertical"
             margin={{
               top: 0,

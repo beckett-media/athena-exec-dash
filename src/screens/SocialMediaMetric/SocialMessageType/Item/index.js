@@ -26,16 +26,24 @@ import {
   FaTumblr,
   FaBlog,
 } from "react-icons/fa";
-import Card from "../../../../components/Card";
 
 const Item = ({ className, item }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const [sentimenData, setSentimenData] = useState([]);
+
+
+  React.useEffect(() => {
+    if (item?.sentiment === "positive") {
+      setSentimenData([styles.positive]);
+    } else if (item?.sentiment === "negative") {
+      setSentimenData([styles.negative]);
+    } else if (item?.sentiment === "neutral") {
+      setSentimenData([styles.neutral]);
+    }
+  }, [item?.sentiment]);
 
   return (
-    <div
-      onClick={onOpen}
-      className={cn(styles.item, { [styles.new]: item?.new }, className)}
-    >
+    <div onClick={onOpen} className={cn(styles.item, sentimenData, className)}>
       <div className={styles.avatar}>
         <Avatar src={item?.avatar} alt="avatar" />
 
@@ -107,16 +115,17 @@ const Item = ({ className, item }) => {
           {item?.message}
         </Text>
       </div>
-      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
+      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"} >
         <ModalOverlay />
         <ModalContent className={styles.modal}>
-          <Card>
+          <ModalCloseButton />
+          <ModalBody >
             <ModalDetails
               item={item}
               className={styles.modal}
               cardmessage={styles.cardmessage}
             />
-          </Card>
+          </ModalBody>
         </ModalContent>
       </Modal>
     </div>

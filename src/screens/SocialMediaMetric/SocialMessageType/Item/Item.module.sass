@@ -1,0 +1,157 @@
+@import ../../../../styles/helpers
+
+.modal
+    background: rgba(3, 3, 3, 0.3)
+    border-radius: 8px
+    width: 100%
+    +m
+        padding: 16px
+        width: 100%
+    +dark
+        background: $n7
+        color: $n1
+.cardmessage
+    background: $n5
+    border-radius: 8px
+    padding: 16px
+    width: 100%
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25), inset 0px -1px 1px rgba(0, 0, 0, 0.49), inset 0px 2px 1px rgba(255, 255, 255, 0.06)
+    +m
+        padding: 16px
+        width: 100%
+    +dark
+        background: $n6
+        color: $n1
+        box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25), inset 0px -1px 1px rgba(0, 0, 0, 0.49), inset 0px 2px 1px rgba(255, 255, 255, 0.06)
+
+     
+
+.item
+    position: relative
+    display: flex
+    padding: 12px
+    border-radius: 12px
+    transition: background .2s
+    cursor: pointer
+    +m
+        padding: 0
+        border-radius: 0
+    &:hover
+        +rmin(768)
+            background: $n2
+            +dark
+                background: $n6
+    &:after
+        content: ""
+        position: absolute
+        top: 18px
+        right: 12px
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: $shades1
+        +m
+            display: none
+    &.positive
+        &:after
+            background: #83BF6E
+    &.negative
+        &:after
+            background: #f44336
+    &.neutral
+        &:after
+            background: #2A85FF
+    &:not(:last-child)
+        margin-bottom: 41px
+        +m
+            margin-bottom: 24px
+            padding-bottom: 24px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+        &:before
+            content: ""
+            position: absolute
+            top: calc(100% + 20px)
+            left: 12px
+            right: 12px
+            height: 1px
+            background: $n2
+            +m
+                display: none
+            +dark
+                background: $n6
+
+.avatar
+    position: relative
+    flex-shrink: 0
+    width: 64px
+    height: 64px
+    & > img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.icon
+    position: absolute
+    right: 2px
+    bottom: 2px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 28px
+    height: 28px
+    border-radius: 50%
+    border: 2px solid $n
+    color: $n
+    +dark
+        border-color: $n7
+    img
+        width: 16px
+
+.details
+    flex: 0 0 calc(100% - 64px)
+    width: calc(100% - 64px)
+    padding-left: 12px
+
+.line
+    display: flex
+    align-items: center
+    padding-right: 24px
+
+.subtitle
+    margin-right: 4px
+    font-weight: 700
+    color: $n7
+    +dark
+        color: $n1
+
+.username
+    margin-right: auto
+    font-weight: 500
+    color: $n5
+    font-size: 12px
+    +dark
+        font-weight: 500
+        color: $shades1
+
+.time
+    margin-left: 10px
+    width: 40%
+    text-align: right
+    +caption1
+    color: $shades1
+
+.content
+    font-weight: 500
+    color: $n4
+    strong
+        font-weight: 700
+        color: $n7
+        +dark
+            color: $n1
+
+.comment
+    margin-top: 8px
+    font-weight: 500

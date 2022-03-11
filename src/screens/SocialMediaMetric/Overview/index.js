@@ -5,28 +5,97 @@ import Card from "../../../components/Card";
 import PercentOfPostPerWeek from "../../../components/PercentOfPostPerWeek";
 import moment from "moment";
 import ZoomChart from "./Chart/ZoomChart";
-import Twitter from "../../../mocks/sentimentData.json";
+import { API } from "aws-amplify";
+
+const BeginingOfWeek = (props) => {
+  const [sentimentData, setData] = useState([]);
+
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialdata";
+
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
+
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const numPosts = [];
+  const date = [];
+  const sentiment_analysis = [];
+
+  if (sentimentData) {
+    const data_analysis = sentimentData?.data;
+
+    for (let key in data_analysis) {
+      positive.push(data_analysis[key]?.positive);
+      neutral.push(data_analysis[key]?.neutral);
+      negative.push(data_analysis[key]?.negative);
+      numPosts.push(data_analysis[key]?.numposts);
+
+      date.push(data_analysis[key]?.date);
+    }
+
+    // change to {name: '03/04/2022', positive: 0, neutral: 25, negative: 0}
+    for (let i = 0; i < date?.length; i++) {
+      sentiment_analysis.push({
+        name: date[i],
+        positive: positive[i],
+        neutral: neutral[i],
+        negative: negative[i],
+      });
+    }
+  }
+
+  return (
+    <>
+      <PercentOfPostPerWeek
+        className={styles.balance}
+        value={props.value}
+        background
+      />
+      {sentiment_analysis[0]?.name !== undefined && (
+        <>vs {moment(`${sentiment_analysis[0]?.name}`).format("MMM Do")}</>
+      )}
+    </>
+  );
+};
 
 const PostPerWeekGraph = ({ className }) => {
-  const indicators = Twitter;
+  const [socialindicators, setData] = useState([]);
 
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialindicators";
 
-  const date = indicators.map((item) => {
-    const { indicators } = item;
-    // add key to data object and number of posts to value object
-    const data = Object.keys(indicators).map((key) => {
-      return {
-        indicators: key,
-        perc_inc: indicators[key],
-      };
-    });
+    return API.get(apiName, path);
+  }
 
-    return data;
-  });
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
 
-  // get first
-  const firstDate = indicators[0].data;
-  const firstDateKey = Object.keys(firstDate);
+  const percent_indicators = [];
+
+  if (socialindicators) {
+    const data_analysis = socialindicators?.data;
+
+    for (let key in data_analysis) {
+      percent_indicators.push({
+        perc_inc: data_analysis[key]?.perc_inc,
+      });
+    }
+  }
 
   return (
     <Card
@@ -38,12 +107,11 @@ const PostPerWeekGraph = ({ className }) => {
       <div className={styles.overview}>
         <div className={styles.details}>
           <div className={styles.line}>
-            <PercentOfPostPerWeek
-              className={styles.balance}
-              value={`${date[0][0].perc_inc}`}
-              background
-            />
-            vs {moment(`${firstDateKey[0]}`).format("MMM Do")}
+            {percent_indicators[0]?.perc_inc !== undefined && (
+              <BeginingOfWeek
+                value={`${(percent_indicators[0]?.perc_inc).toFixed(2)}`}
+              />
+            )}
           </div>
         </div>
         <ZoomChart />

@@ -26,7 +26,6 @@ import {
   FaTumblr,
   FaBlog,
 } from "react-icons/fa";
-import Card from "../../../../components/Card";
 
 const Item = ({ className, item }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -110,13 +109,14 @@ const Item = ({ className, item }) => {
       <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
         <ModalOverlay />
         <ModalContent className={styles.modal}>
-          <Card>
+          <ModalCloseButton />
+          <ModalBody>
             <ModalDetails
               item={item}
               className={styles.modal}
               cardmessage={styles.cardmessage}
             />
-          </Card>
+          </ModalBody>
         </ModalContent>
       </Modal>
     </div>
