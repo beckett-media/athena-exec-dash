@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./SentimentAnalysis.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import { Text } from "@chakra-ui/react";
+import { AiFillCloseCircle } from "react-icons/ai";
 import {
   LineChart,
   Line,
@@ -12,113 +12,356 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
+  Brush,
 } from "recharts";
 import useDarkMode from "use-dark-mode";
-import sentimentData from "../../../mocks/sentimentData.json";
+import { API } from "aws-amplify";
 import moment from "moment";
-
-const dataAnalysis = sentimentData;
-
-const sentiment = dataAnalysis.map((item) => {
-  const { data } = item;
-  const sent_Analysis = Object.keys(data).map((key) => {
-    return {
-      name: key,
-      positive: data[key].positive,
-      neutral: data[key].neutral,
-      negative: data[key].negative,
-    };
-  });
-  return sent_Analysis;
-});
-
-const data = sentiment[0];
+import {
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Button,
+  Box,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import SocialMessagesType from "../SocialMessageType";
 
 const SentimentAnalysis = ({ className }) => {
+  const [sentimentData, setData] = useState([]);
+  const [sentimentType, setSentimentType] = useState("");
+  const [sentimeTotal, setSentimeTotal] = useState(0);
+  const [color, setColor] = useState("");
+  const [emoji, setEmoji] = useState("");
+  const [descBg, setDescBg] = useState("");
+
+  const [functionTrigger, setOpen] = useState(false);
+
+  const onClose = () => setOpen(false);
+  const onOpen = () => setOpen(true);
+  const isOpen = functionTrigger;
+
+  //api query
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialdata";
+
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
+
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const numPosts = [];
+  const sentiment = [];
+  const date = [];
+  const sentiment_analysis = [];
+
+  if (sentimentData) {
+    const data_analysis = sentimentData?.data;
+
+    for (let key in data_analysis) {
+      positive.push(data_analysis[key]?.positive);
+      neutral.push(data_analysis[key]?.neutral);
+      negative.push(data_analysis[key]?.negative);
+      numPosts.push(data_analysis[key]?.numposts);
+      sentiment.push(data_analysis[key]?.sentiment);
+      date.push(data_analysis[key]?.date);
+    }
+
+    for (let i = 0; i < date?.length; i++) {
+      sentiment_analysis.push({
+        name: date[i],
+        positive: positive[i],
+        neutral: neutral[i],
+        negative: negative[i],
+      });
+    }
+  }
+
   const darkMode = useDarkMode(false);
 
   return (
-    <Card
-      className={cn(styles.card, className)}
-      title="Social Media Sentiment Around Beckett"
-      classTitle={cn("title-green", styles.cardTitle)}
-      classCardHead={styles.cardHead}
-    >
-      <div className={styles.chart} style={{ height: "25rem" }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 30,
-            }}
+    <>
+      {functionTrigger && (
+        <>
+          <Drawer
+            isOpen={isOpen}
+            placement="right"
+            onClose={onClose}
+            size={"md"}
           >
-            <Legend
-              layout="horizontal"
-              align="center"
-              horizontalAlign="bottom"
-            />
-            <CartesianGrid
-              strokeDasharray="none"
-              stroke={darkMode.value ? "#272B30" : "#EFEFEF"}
-              vertical={true}
-            />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
-              padding={{ left: 10 }}
-            />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#272B30",
-                borderColor: "rgba(255, 255, 255, 0.12)",
-                borderRadius: 8,
-                boxShadow: "15px 30px 40px 5px rgba(0, 0, 0, 0.5)",
+            <DrawerOverlay />
+            <DrawerContent
+              style={{
+                backgroundColor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
               }}
-              labelStyle={{ fontSize: 12, fontWeight: "500", color: "#fff" }}
-              itemStyle={{
-                padding: 0,
-                textTransform: "capitalize",
-                fontSize: 12,
-                fontWeight: "600",
+            >
+              <Card
+                style={{ overflow: "hidden" }}
+                title={
+                  sentimentType.charAt(0).toUpperCase() +
+                  sentimentType.slice(1) +
+                  " Sentiment" +
+                  " " +
+                  emoji
+                }
+                classTitle={cn(color, styles.cardTitle)}
+              >
+                <DrawerCloseButton m={6} w={100}>
+                  <Button
+                    flex={1}
+                    variant="outline"
+                    onClick={onClose}
+                    _hover={{
+                      backgroundColor: descBg,
+                      color: "#1A1D1F",
+                    }}
+                  >
+                    close
+                  </Button>
+                </DrawerCloseButton>
+                <DrawerHeader borderBottomWidth="1px">
+                  <Text fontSize="sm" display={"flex"} gap={1}>
+                    They are {<SentimentTotal sentiment={sentimentType} />}{" "}
+                    messages that have{" "}
+                    <span
+                      style={{
+                        backgroundColor: descBg,
+                        paddingRight: 8,
+                        paddingLeft: 8,
+                        borderRadius: 5,
+                        paddingBottom: 2,
+                      }}
+                    >
+                      {" "}
+                      {sentimentType}
+                    </span>{" "}
+                    sentiment
+                  </Text>
+                </DrawerHeader>
+                <DrawerBody>
+                  <Stack spacing="24px">
+                    <Box>
+                      <SocialMessagesType sentimentType={sentimentType} />
+                    </Box>
+                  </Stack>
+                </DrawerBody>
+              </Card>
+            </DrawerContent>
+          </Drawer>
+        </>
+      )}
+      <Card
+        className={cn(styles.card, className)}
+        title="Social Media Sentiment Around Beckett"
+        description={
+          "Sentiment Analysis of the messages posted on social media around Beckett (click on the line graph to see the group of messages that have the same sentiment)"
+        }
+        classTitle={cn("title-green", styles.cardTitle)}
+        classCardHead={styles.cardHead}
+      >
+        <div className={styles.chart}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={300}
+              data={sentiment_analysis}
+              margin={{
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 30,
               }}
-            />
-            <YAxis
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
-            />
-            <Line
-              type="monotone"
-              dataKey="positive"
-              dot={true}
-              strokeWidth={3}
-              stroke="#83BF6E"
-            />
-            <Line
-              type="monotone"
-              dataKey="neutral"
-              dot={true}
-              strokeWidth={3}
-              stroke="#2A85FF"
-            />
-            <Line
-              type="monotone"
-              dataKey="negative"
-              dot={true}
-              strokeWidth={3}
-              stroke="#FF6A55"
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-    </Card>
+            >
+              <Legend
+                layout="horizontal"
+                align="center"
+                horizontalAlign="bottom"
+              />
+              <CartesianGrid
+                strokeDasharray="none"
+                stroke={darkMode.value ? "#272B30" : "#EFEFEF"}
+                vertical={true}
+              />
+              <XAxis
+                dataKey="name"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
+                padding={{ left: 10 }}
+                tickFormatter={(value) => moment(`${value}`).format("MMM Do")}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#272B30",
+                  borderColor: "rgba(255, 255, 255, 0.12)",
+                  borderRadius: 8,
+                  boxShadow: "15px 30px 40px 5px rgba(0, 0, 0, 0.5)",
+                }}
+                labelStyle={{ fontSize: 12, fontWeight: "500", color: "#fff" }}
+                itemStyle={{
+                  padding: 0,
+                  textTransform: "capitalize",
+                  fontSize: 12,
+                  fontWeight: "600",
+                }}
+              />
+              <YAxis
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
+              />
+              <Line
+                type="monotone"
+                dataKey="positive"
+                dot={true}
+                r={7}
+                activeDot={{
+                  onClick: () => {
+                    // openmoodal and set sentiment type
+                    setOpen(true);
+                    setSentimentType("positive");
+                    setColor("title-green");
+                    setEmoji("😎");
+                    setDescBg("#83BF6E");
+                    setSentimeTotal(positive[0]);
+                  },
+                }}
+                strokeWidth={3}
+                stroke="#83BF6E"
+              />
+              <Line
+                type="monotone"
+                dataKey="neutral"
+                dot={true}
+                strokeWidth={3}
+                stroke="#2A85FF"
+                r={7}
+                activeDot={{
+                  onClick: () => {
+                    // openmoodal and set sentiment type
+                    setOpen(true);
+                    setSentimentType("neutral");
+                    setColor("title-blue");
+                    setEmoji("");
+                    setDescBg("#2A85FF");
+                  },
+                }}
+              />
+              <Line
+                type="monotone"
+                dataKey="negative"
+                dot={true}
+                r={7}
+                strokeWidth={3}
+                stroke="#FF6A55"
+                activeDot={{
+                  onClick: () => {
+                    // openmoodal and set sentiment type
+                    setOpen(true);
+                    setSentimentType("negative");
+                    setColor("title-red");
+                    setEmoji("😡");
+                    setDescBg("#FF6A55");
+                  },
+                }}
+              />
+              {/* <Brush
+                dataKey="name"
+                height={30}
+                stroke="#2A85FF"
+                fill="#82ca9d"
+                startIndex={0}
+                // endIndex={sentiment_analysis.length - 2}
+                tickFormatter={(value) => moment(`${value}`).format("MMM Do")}
+              /> */}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+    </>
+  );
+};
+
+const SentimentTotal = (sentiment) => {
+  const [socialindicators, setData] = React.useState([]);
+  const [pos] = React.useState(sentiment?.sentiment);
+  const [neg] = React.useState(sentiment?.sentiment);
+  const [neu] = React.useState(sentiment?.sentiment);
+
+  function getData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialindicators";
+
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, [sentiment]);
+
+  const weekly_indic = socialindicators?.data;
+
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const total = [];
+
+  if (weekly_indic) {
+    const data_analysis = socialindicators?.data;
+
+    for (let key in data_analysis) {
+      positive.push(data_analysis[key]?.weekly_positive);
+      neutral.push(data_analysis[key]?.weekly_neutral);
+      negative.push(data_analysis[key]?.weekly_negative);
+      total.push(data_analysis[key]?.weekly_total);
+    }
+  }
+
+  if (!sentiment) {
+    return <Text>...loading</Text>;
+  }
+
+  if (pos === "positive") {
+    return (
+      <>
+        <Text>{positive}</Text>
+      </>
+    );
+  }
+  if (neg === "negative") {
+    return (
+      <>
+        <Text>{negative}</Text>
+      </>
+    );
+  }
+  if (neu === "neutral") {
+    return (
+      <>
+        <Text>{neutral}</Text>
+      </>
+    );
+  }
+  return (
+    <>
+      <Text>...loading</Text>
+    </>
   );
 };
 

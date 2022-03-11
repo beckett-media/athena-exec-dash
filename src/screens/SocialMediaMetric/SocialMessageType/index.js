@@ -7,7 +7,7 @@ import Item from "./Item";
 
 import { API } from "aws-amplify";
 
-const SocialMessages = ({ className, onOpen }) => {
+const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
   const [data, setData] = useState([]);
 
   function getData() {
@@ -26,14 +26,13 @@ const SocialMessages = ({ className, onOpen }) => {
 
   const dataQuery = data?.data;
 
-
-
   const username = [];
   const datetime = [];
   const message = [];
   const avatar = [];
   const platform = [];
-  const url = []
+  const sentiment = [];
+  const url = [];
   const id = [];
 
   if (dataQuery) {
@@ -43,6 +42,7 @@ const SocialMessages = ({ className, onOpen }) => {
       message.push(item.message);
       avatar.push(item.avatar);
       platform.push(item.platform);
+      sentiment.push(item.sentiment);
       url.push(item.url);
       id.push(item.id);
     });
@@ -57,28 +57,33 @@ const SocialMessages = ({ className, onOpen }) => {
       message: message[i],
       avatar: avatar[i],
       platform: platform[i],
+      sentiment: sentiment[i],
       url: url[i],
       id: id[i],
     });
   }
 
+  const filterData = [];
+
+  // fliter function to get data based on sentiment type
+  dataObject.forEach((item) => {
+    if (item.sentiment === sentimentType) {
+      filterData.push(item);
+    }
+  });
+
   return (
-    <Card
-      className={cn(styles.card, className)}
-      title="Recent Posts"
-      classTitle={cn("title-red", styles.title)}
-      classCardHead={styles.head}
-    >
+    <Card className={cn(styles.card, className)} classCardHead={styles.head}>
       {/** make the div scrolable   */}
       <div
         className={styles.notifications}
         style={{
           overflowY: "scroll",
           overflowX: "hidden",
-          height: " calc(100vh - 340px)",
+          height: "100vh",
         }}
       >
-        {dataObject.map((item, index) => (
+        {filterData.map((item, index) => (
           <Item
             key={index}
             item={item}
@@ -91,4 +96,4 @@ const SocialMessages = ({ className, onOpen }) => {
   );
 };
 
-export default SocialMessages;
+export default SocialMessagesType;
