@@ -167,7 +167,7 @@ const SentimentAnalysis = ({ className }) => {
         className={cn(styles.card, className)}
         title="Social Media Sentiment Around Beckett"
         description={
-          "Sentiment Analysis of the messages posted on social media around Beckett (click on the line graph to see the group of messages that have the same sentiment)"
+          "See all messages with the same sentiment hover on the graph and clicking the dots on the specific sentiment line.  ---🟠---"
         }
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
