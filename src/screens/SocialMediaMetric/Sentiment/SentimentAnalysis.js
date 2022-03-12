@@ -134,7 +134,7 @@ const SentimentAnalysis = ({ className }) => {
                 </DrawerCloseButton>
                 <DrawerHeader borderBottomWidth="1px">
                   <Text fontSize="sm" display={"flex"} gap={1}>
-                    They are {<SentimentTotal sentiment={sentimentType} />}{" "}
+                    There are {<SentimentTotal sentiment={sentimentType} />}{" "}
                     messages that have{" "}
                     <span
                       style={{
@@ -167,7 +167,7 @@ const SentimentAnalysis = ({ className }) => {
         className={cn(styles.card, className)}
         title="Social Media Sentiment Around Beckett"
         description={
-          "See all messages with the same sentiment hover on the graph and clicking the dots on the specific sentiment line.  ---🟠---"
+          "To see all the messages with the same sentiment hover on the graph and select the dots on the sentiment line.  ---🟠---"
         }
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
