@@ -1,7 +1,8 @@
 import React from "react";
 import Lottie from "lottie-react";
 import dash from "./dash.json";
-import loadingLetter from "./loading-letter.json";
+import loadingLetter from "./myloading.json";
+import whiteloading from "./white-logo.json";
 import loadingChart from "./loading.json";
 import useDarkMode from "use-dark-mode";
 import {
@@ -17,6 +18,7 @@ import {
 import Card from "../Card";
 
 const LodingModal = ({ loadingG, comingsoon, width, marginTop }) => {
+  const darkMode = useDarkMode(false);
   if (loadingG === "loadingG") {
     return (
       <Center flex={1}>
@@ -42,12 +44,21 @@ const LodingModal = ({ loadingG, comingsoon, width, marginTop }) => {
   }
   return (
     <div>
-      <Lottie
-        style={{ width: width, marginTop: marginTop }}
-        animationData={loadingLetter}
-        play={"loop"}
-        loop
-      />
+      {darkMode.value ? (
+        <Lottie
+          style={{ width: width, marginTop: marginTop }}
+          animationData={whiteloading}
+          play={"loop"}
+          loop
+        />
+      ) : (
+        <Lottie
+          style={{ width: width, marginTop: marginTop }}
+          animationData={loadingLetter}
+          play={"loop"}
+          loop
+        />
+      )}
     </div>
   );
 };
@@ -65,7 +76,8 @@ const Loading = () => {
       >
         <Card>
           <ModalBody>
-            <Box w={"full"} justifyItems={"center"} alignContent={"center"}>
+            <Box w={"full"} justifyContent={"center"} alignContent={"center"}>
+              <Text mr={8}>Loading....</Text>
               <LodingModal marginTop={0} width={"100%"} height={"50%"} />
             </Box>
           </ModalBody>

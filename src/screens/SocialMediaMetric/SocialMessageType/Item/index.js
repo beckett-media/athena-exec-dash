@@ -31,7 +31,6 @@ const Item = ({ className, item }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [sentimenData, setSentimenData] = useState([]);
 
-
   React.useEffect(() => {
     if (item?.sentiment === "positive") {
       setSentimenData([styles.positive]);
@@ -115,7 +114,7 @@ const Item = ({ className, item }) => {
           {item?.message}
         </Text>
       </div>
-      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
+      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"} padding={20}>
         <ModalOverlay />
         <ModalContent className={styles.modal}>
           <ModalCloseButton />
