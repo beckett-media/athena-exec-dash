@@ -9,7 +9,7 @@ import {
 import * as React from "react";
 import Lottie from "lottie-react";
 import dash from "./dash.json";
-import Loading from "../../components/LottieAnimation/Loading";
+import loadingLetter from "../../components/LottieAnimation/dash.json"
 const ComingSoon = () => {
   return (
     <Box as="section" pt="24" pb="12" overflow="hidden">
@@ -46,7 +46,16 @@ const ComingSoon = () => {
             <Text color={mode("gray.600", "gray.400")} mt="5" fontSize="xl">
               Currently under development.
             </Text>
-            <Loading comingsoon={"comingsoon"} marginTop={30} width={"25rem"} />
+
+            <Lottie
+              animationData={loadingLetter}
+              play={"loop"}
+              loop
+              style={{
+                width: "25rem",
+                marginTop: "30px",
+              }}
+            />
           </Box>
           <Box
             boxSize={{
