@@ -6,23 +6,21 @@ import Card from "../../../components/Card";
 import Item from "./Item";
 
 import { API } from "aws-amplify";
+import Dropdown from "../../../components/Dropdown";
+import { Text } from "@chakra-ui/react";
+import moment from "moment";
 
 const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
   const [data, setData] = useState([]);
-
+  const [sorting, setSorting] = useState("filter by dates");
+  const [dataByDate, setDataByDate] = useState([]);
+  const intervals = [];
   function getData() {
     const apiName = "palentirApi";
     const path = "/socialmedia/messages";
 
     return API.get(apiName, path);
   }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
 
   const dataQuery = data?.data;
 
@@ -63,36 +61,67 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
     });
   }
 
+  React.useEffect(() => {
+    (async function () {
+      const response = await getData();
+
+      setData(response);
+    })();
+  }, []);
+
+  // //useMemo to get data based on date interval selected
+  // React.useEffect(() => {
+  //   const uniqueDatetime = [
+  //     ...new Set(filterData.map((item) => item?.datetime)),
+  //   ];
+  //   uniqueDatetime.forEach((item) => {
+  //     intervals.push(item);
+  //   });
+  // }, [filterData]);
+
   const filterData = [];
+  const filterDataByDate = [];
 
   // fliter function to get data based on sentiment type
   dataObject.forEach((item) => {
-    if (item.sentiment === sentimentType) {
+    if (item?.sentiment === sentimentType) {
       filterData.push(item);
     }
   });
 
   return (
-    <Card className={cn(styles.card, className)} classCardHead={styles.head}>
-      {/** make the div scrolable   */}
-      <div
-        className={styles.notifications}
-        style={{
-          overflowY: "scroll",
-          overflowX: "hidden",
-          height: "100vh",
-        }}
+    <>
+      {/* <Dropdown
+        className={styles.dropdown}
+        classDropdownHead={styles.dropdownHead}
+        value={sorting}
+        setValue={setSorting}
+        // set intevals to string as month day
+        options={intervals}
+      /> */}
+      <Card
+        className={cn(styles.card, className)}
+        classCardHead={styles.cardHead}
       >
-        {filterData.map((item, index) => (
-          <Item
-            key={index}
-            item={item}
-            onOpen={onOpen}
-            className={cn(styles.item, className)}
-          />
-        ))}
-      </div>
-    </Card>
+        <div
+          className={styles.notifications}
+          style={{
+            overflowY: "scroll",
+            overflowX: "hidden",
+            height: "100vh",
+          }}
+        >
+          {filterData.map((item, index) => (
+            <Item
+              key={index}
+              item={item}
+              onOpen={onOpen}
+              className={cn(styles.item, className)}
+            />
+          ))}
+        </div>
+      </Card>
+    </>
   );
 };
 

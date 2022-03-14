@@ -115,11 +115,11 @@ const Item = ({ className, item }) => {
           {item?.message}
         </Text>
       </div>
-      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"} >
+      <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
         <ModalOverlay />
         <ModalContent className={styles.modal}>
           <ModalCloseButton />
-          <ModalBody >
+          <ModalBody>
             <ModalDetails
               item={item}
               className={styles.modal}
