@@ -14,6 +14,7 @@ import moment from "moment";
 import styles from "./Chart.module.sass";
 import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
+import Loading from "../../../../components/LottieAnimation/Loading";
 
 const ZoomChart = () => {
   const darkMode = useDarkMode(false);
@@ -56,6 +57,10 @@ const ZoomChart = () => {
       dayofweek: date[i],
       numPost: numPosts[i],
     });
+  }
+
+  if (sentimentData.data === undefined) {
+    return <Loading />;
   }
 
   return (
@@ -106,6 +111,9 @@ const ZoomChart = () => {
               fontWeight: "600",
               color: "#fff",
             }}
+            labelFormatter={(value) => moment(`${value}`).format("MMM Do YYYY")}
+            // rename the dataKey
+            formatter={(value) => [`${value} posts`]}
           />
           <Line
             type="monotone"
@@ -116,17 +124,6 @@ const ZoomChart = () => {
             stroke="#82ca9d"
             fill="#82ca9d"
           />
-          {/* <Brush
-            dataKey="dayofweek"
-            height={30}
-            stroke="#2A85FF"
-            fill="#82ca9d"
-            startIndex={1}
-            endIndex={sentiment_analysis.length - 2}
-            tickFormatter={(value) => {
-              return moment(value, "MM/DD/YYYY").format("MMM DD");
-            }}
-          /> */}
         </LineChart>
       </ResponsiveContainer>
     </div>

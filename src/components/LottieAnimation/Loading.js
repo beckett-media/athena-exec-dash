@@ -1,10 +1,22 @@
 import React from "react";
 import Lottie from "lottie-react";
 import dash from "./dash.json";
+import loadingLetter from "./loading-letter.json";
 import loadingChart from "./loading.json";
-import { Box, Center } from "@chakra-ui/react";
+import useDarkMode from "use-dark-mode";
+import {
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  Text,
+  Box,
+  Center,
+} from "@chakra-ui/react";
+import Card from "../Card";
 
-const Loading = ({ loadingG, comingsoon, width, marginTop }) => {
+const LodingModal = ({ loadingG, comingsoon, width, marginTop }) => {
   if (loadingG === "loadingG") {
     return (
       <Center flex={1}>
@@ -28,6 +40,39 @@ const Loading = ({ loadingG, comingsoon, width, marginTop }) => {
       </div>
     );
   }
+  return (
+    <div>
+      <Lottie
+        style={{ width: width, marginTop: marginTop }}
+        animationData={loadingLetter}
+        play={"loop"}
+        loop
+      />
+    </div>
+  );
+};
+
+const Loading = () => {
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
+  const darkMode = useDarkMode(false);
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <ModalOverlay />
+      <ModalContent
+        style={{
+          backgroundColor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+        }}
+      >
+        <Card>
+          <ModalBody>
+            <Box w={"full"} justifyItems={"center"} alignContent={"center"}>
+              <LodingModal marginTop={0} width={"100%"} height={"50%"} />
+            </Box>
+          </ModalBody>
+        </Card>
+      </ModalContent>
+    </Modal>
+  );
 };
 
 export default Loading;

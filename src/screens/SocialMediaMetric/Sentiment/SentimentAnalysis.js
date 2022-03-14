@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import styles from "./SentimentAnalysis.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import { AiFillCloseCircle } from "react-icons/ai";
 import {
   LineChart,
   Line,
@@ -12,7 +11,6 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
-  Brush,
 } from "recharts";
 import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
@@ -31,13 +29,20 @@ import {
 } from "@chakra-ui/react";
 import SocialMessagesType from "../SocialMessageType";
 
+import Dropdown from "../../../components/Dropdown";
+import Loading from "../../../components/LottieAnimation/Loading";
+
 const SentimentAnalysis = ({ className }) => {
+  const darkMode = useDarkMode(false);
   const [sentimentData, setData] = useState([]);
   const [sentimentType, setSentimentType] = useState("");
   const [sentimeTotal, setSentimeTotal] = useState(0);
   const [color, setColor] = useState("");
   const [emoji, setEmoji] = useState("");
   const [descBg, setDescBg] = useState("");
+
+  const [sorting, setSorting] = React.useState("2022");
+  const intervals = ["2022", "2021", "2019"];
 
   const [functionTrigger, setOpen] = useState(false);
 
@@ -90,7 +95,9 @@ const SentimentAnalysis = ({ className }) => {
     }
   }
 
-  const darkMode = useDarkMode(false);
+  if (sentiment_analysis.length === 0) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -171,6 +178,19 @@ const SentimentAnalysis = ({ className }) => {
         }
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
+        head={
+          <>
+            <Text mr={3}>Filter</Text>
+            <Dropdown
+              className={styles.dropdown}
+              classDropdownHead={styles.dropdownHead}
+              value={sorting}
+              setValue={setSorting}
+              options={intervals}
+              small
+            />
+          </>
+        }
       >
         <div className={styles.chart}>
           <ResponsiveContainer width="100%" height="100%">
@@ -217,6 +237,12 @@ const SentimentAnalysis = ({ className }) => {
                   fontSize: 12,
                   fontWeight: "600",
                 }}
+                // formar label
+                labelFormatter={(value) =>
+                  moment(`${value}`).format("MMM Do YYYY")
+                }
+                // rename dataKey
+                formatter={(value, name) => [`${name}:: ${value} `]}
               />
               <YAxis
                 axisLine={false}
@@ -278,15 +304,6 @@ const SentimentAnalysis = ({ className }) => {
                   },
                 }}
               />
-              {/* <Brush
-                dataKey="name"
-                height={30}
-                stroke="#2A85FF"
-                fill="#82ca9d"
-                startIndex={0}
-                // endIndex={sentiment_analysis.length - 2}
-                tickFormatter={(value) => moment(`${value}`).format("MMM Do")}
-              /> */}
             </LineChart>
           </ResponsiveContainer>
         </div>

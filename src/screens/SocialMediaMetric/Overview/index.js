@@ -6,6 +6,7 @@ import PercentOfPostPerWeek from "../../../components/PercentOfPostPerWeek";
 import moment from "moment";
 import ZoomChart from "./Chart/ZoomChart";
 import { API } from "aws-amplify";
+import Loading from "../../../components/LottieAnimation/Loading";
 
 const BeginingOfWeek = (props) => {
   const [sentimentData, setData] = useState([]);
@@ -70,7 +71,6 @@ const BeginingOfWeek = (props) => {
 
 const PostPerWeekGraph = ({ className }) => {
   const [socialindicators, setData] = useState([]);
-
   function getData() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialindicators";
@@ -95,6 +95,10 @@ const PostPerWeekGraph = ({ className }) => {
         perc_inc: data_analysis[key]?.perc_inc,
       });
     }
+  }
+
+  if (socialindicators?.data === undefined) {
+    return <Loading />;
   }
 
   return (
