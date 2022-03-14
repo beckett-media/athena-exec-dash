@@ -41,9 +41,6 @@ const SentimentAnalysis = ({ className }) => {
   const [emoji, setEmoji] = useState("");
   const [descBg, setDescBg] = useState("");
 
-  const [sorting, setSorting] = React.useState("2022");
-  const intervals = ["2022", "2021", "2019"];
-
   const [functionTrigger, setOpen] = useState(false);
 
   const onClose = () => setOpen(false);
@@ -139,6 +136,7 @@ const SentimentAnalysis = ({ className }) => {
                     close
                   </Button>
                 </DrawerCloseButton>
+
                 <DrawerHeader borderBottomWidth="1px">
                   <Text fontSize="sm" display={"flex"} gap={1}>
                     There are {<SentimentTotal sentiment={sentimentType} />}{" "}
@@ -178,19 +176,6 @@ const SentimentAnalysis = ({ className }) => {
         }
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
-        head={
-          <>
-            <Text mr={3}>Filter</Text>
-            <Dropdown
-              className={styles.dropdown}
-              classDropdownHead={styles.dropdownHead}
-              value={sorting}
-              setValue={setSorting}
-              options={intervals}
-              small
-            />
-          </>
-        }
       >
         <div className={styles.chart}>
           <ResponsiveContainer width="100%" height="100%">
@@ -254,6 +239,8 @@ const SentimentAnalysis = ({ className }) => {
                 dataKey="positive"
                 dot={true}
                 r={7}
+                // get label from data
+
                 activeDot={{
                   onClick: () => {
                     // openmoodal and set sentiment type
@@ -338,6 +325,7 @@ const SentimentTotal = (sentiment) => {
   const neutral = [];
   const negative = [];
   const total = [];
+  const dates = [];
 
   if (weekly_indic) {
     const data_analysis = socialindicators?.data;
@@ -347,6 +335,7 @@ const SentimentTotal = (sentiment) => {
       neutral.push(data_analysis[key]?.weekly_neutral);
       negative.push(data_analysis[key]?.weekly_negative);
       total.push(data_analysis[key]?.weekly_total);
+      dates.push(data_analysis[key]?.date);
     }
   }
 
