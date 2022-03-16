@@ -70,14 +70,14 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
   }, []);
 
   // //useMemo to get data based on date interval selected
-  // React.useEffect(() => {
-  //   const uniqueDatetime = [
-  //     ...new Set(filterData.map((item) => item?.datetime)),
-  //   ];
-  //   uniqueDatetime.forEach((item) => {
-  //     intervals.push(item);
-  //   });
-  // }, [filterData]);
+  React.useEffect(() => {
+    const uniqueDatetime = [
+      ...new Set(filterData.map((item) => item?.datetime)),
+    ];
+    uniqueDatetime.forEach((item) => {
+      intervals.push(item);
+    });
+  }, [filterData]);
 
   const filterData = [];
   const filterDataByDate = [];
@@ -91,14 +91,14 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
 
   return (
     <>
-      {/* <Dropdown
+      <Dropdown
         className={styles.dropdown}
         classDropdownHead={styles.dropdownHead}
         value={sorting}
         setValue={setSorting}
         // set intevals to string as month day
         options={intervals}
-      /> */}
+      />
       <Card
         className={cn(styles.card, className)}
         classCardHead={styles.cardHead}

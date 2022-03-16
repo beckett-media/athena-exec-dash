@@ -87,11 +87,7 @@ function App() {
           <Route
             path="dashboard"
             element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="Card Market Analysis 📈"
-              />
+              <Page signOut={signOut} user={user} title="Market Analysis 📈" />
             }
           >
             <Route

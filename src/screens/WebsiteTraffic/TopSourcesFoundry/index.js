@@ -73,7 +73,7 @@ const TopSource = ({ className, ...props }) => {
     });
   });
 
-  if (!data) return <div>loading... 😎 </div>;
+
 
   return (
     <Card

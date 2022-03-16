@@ -18,15 +18,15 @@ const navigation = [
     url: "/dashboard/social-media-analysis",
   },
   {
+    title: "Market Analysis",
+    icon: "pie-chart",
+    url: "/dashboard/market-analysis",
+  },
+  {
     title: "Card Grading",
     icon: "filter",
     // url: "/dashboard/web-analysis",
     url: "/dashboard/web-analysis",
-  },
-  {
-    title: "Market Analysis",
-    icon: "pie-chart",
-    url: "/dashboard/market-analysis",
   },
   {
     title: "Comic Market Analysis",

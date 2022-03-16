@@ -92,9 +92,9 @@ const SentimentAnalysis = ({ className }) => {
     }
   }
 
-  if (sentiment_analysis.length === 0) {
-    return <Loading />;
-  }
+  // if (sentiment_analysis.length === 0) {
+  //   return <Loading />;
+  // }
 
   return (
     <>
