@@ -71,7 +71,7 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
       },
     };
 
-    request(options, async function (error, response, body) {
+    request(options, function (error, response, body) {
       if (error) throw new Error(error.message);
       res.send(JSON.parse(body));
     });
@@ -90,7 +90,9 @@ app.use("/socialmedia/:name", async function (req, res) {
 
   const { Parameters } = await new aws.SSM()
     .getParameters({
-      Names: ["API_KEY", "PASS","USERNAME"].map((secretName) => process.env[secretName]),
+      Names: ["API_KEY", "PASS", "USERNAME"].map(
+        (secretName) => process.env[secretName]
+      ),
       WithDecryption: true,
     })
     .promise();

@@ -59,9 +59,9 @@ const ZoomChart = () => {
     });
   }
 
-  if (sentimentData.data === undefined) {
-    return <Loading />;
-  }
+  // if (sentimentData.data === undefined) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className={styles.chart}>

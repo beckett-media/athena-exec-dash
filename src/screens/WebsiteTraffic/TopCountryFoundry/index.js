@@ -91,8 +91,8 @@ const TopCountry = ({ className, ...props }) => {
     }
   });
 
-  // if (error) return <div>failed to load 🥺 </div>; // If error
-  if (!data) return <div>loading... 😎 </div>; // If data is null
+
+
 
   return (
     <Card
