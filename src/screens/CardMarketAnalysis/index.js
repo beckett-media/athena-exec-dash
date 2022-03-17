@@ -2,15 +2,12 @@ import React from "react";
 
 import styles from "./MarketAnalysis.module.sass";
 import TooltipGlodal from "../../components/TooltipGlodal";
-import CardsTop from "./CardTop";
-import CompanySales from "./CompanySales";
-import TopCountries from "./TopCountries";
-import CardsBottom from "./CardBottom";
+import CompanySales from "./Graph";
 import { Box } from "@chakra-ui/react";
-import PriceTicker from "./Products/PriceTicker";
-import ComingSoon from "../CominSoon/ComingSoon";
 import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import SentimentAnalysis from "./AverageSelling/Sentiment/SentimentAnalysis";
+import ComingSoon from "../CominSoon/ComingSoon";
 
 const MarketAnalysis = () => {
   return (
@@ -29,7 +26,7 @@ const MarketAnalysis = () => {
             <div className={styles.section}>
               <Table />
               <Box my={"4rem"} />
-              <CompanySales />
+              <SentimentAnalysis />
             </div>
             <TooltipGlodal />
           </TabPanel>
