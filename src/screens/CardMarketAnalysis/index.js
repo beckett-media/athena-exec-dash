@@ -6,7 +6,7 @@ import CompanySales from "./Graph";
 import { Box } from "@chakra-ui/react";
 import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import SentimentAnalysis from "./AverageSelling/Sentiment/SentimentAnalysis";
+import SentimentAnalysis from "./AverageSelling/MarketDataGraphs";
 import ComingSoon from "../CominSoon/ComingSoon";
 
 const MarketAnalysis = () => {
