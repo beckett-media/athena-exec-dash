@@ -116,7 +116,6 @@ const TotalSellersData = ({ className }) => {
   ];
 
   var layout = {
-    title: "Total Sellers",
     xaxis: {
       title: "Month",
       showgrid: false,
@@ -132,7 +131,6 @@ const TotalSellersData = ({ className }) => {
       zeroline: false,
       showline: true,
       showticklabels: true,
-   
     },
     autosize: true,
     width: 1120,
@@ -165,7 +163,11 @@ const TotalSellersData = ({ className }) => {
   };
 
   return (
-    <Card className={cn(styles.card, className)}>
+    <Card
+      classTitle="title-blue"
+      title="Total Sellers"
+      className={cn(styles.card, className)}
+    >
       <Box
         justifyItems={"center"}
         alignCenter={"center"}

@@ -116,7 +116,6 @@ const MarketData = ({ className }) => {
   ];
 
   var layout = {
-    title: "Average Selling Price",
     xaxis: {
       title: "Month",
       showgrid: false,
@@ -132,7 +131,6 @@ const MarketData = ({ className }) => {
       zeroline: false,
       showline: true,
       showticklabels: true,
-   
     },
     autosize: true,
     width: 1120,
@@ -165,7 +163,12 @@ const MarketData = ({ className }) => {
   };
 
   return (
-    <Card className={cn(styles.card, className)}>
+    <Card
+      title={"Average Selling Price"}
+      className={cn(styles.card, className)}
+      description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
+      classTitle={cn("title-blue", styles.cardTitle)}
+    >
       <Box
         justifyItems={"center"}
         alignCenter={"center"}

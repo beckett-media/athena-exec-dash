@@ -37,12 +37,12 @@ const ModalDetails = ({ className, cardmessage, item }) => (
       align="flex-start"
     >
       <Stack spacing="4">
-        <Avatar size="2xl" src={item.avatar} name={item.username} />
-        {item.url ? (
+        <Avatar size="2xl" src={item?.avatar} name={item?.username} />
+        {item?.url ? (
           <Button
             onClick={() => {
               //opeb new tab link
-              item.url && window.open(item.url, "_blank");
+              item?.url && window.open(item?.url, "_blank");
             }}
             width="full"
             colorScheme="blue"
@@ -80,9 +80,9 @@ const ModalDetails = ({ className, cardmessage, item }) => (
               color={useColorModeValue("gray.500", "gray.300")}
               lineHeight="1"
             >
-              {item.username}
+              {item?.username}
             </Text>
-            {item.platform === "twitter" && (
+            {item?.platform === "twitter" && (
               <Box
                 size={"md"}
                 as={FaTwitter}
@@ -94,7 +94,7 @@ const ModalDetails = ({ className, cardmessage, item }) => (
                 h={10}
               />
             )}
-            {item.platform === "reddit" && (
+            {item?.platform === "reddit" && (
               <Box
                 as={FaReddit}
                 bg={"blue.500"}
@@ -106,7 +106,7 @@ const ModalDetails = ({ className, cardmessage, item }) => (
                 h={10}
               />
             )}
-            {item.platform === "news" && (
+            {item?.platform === "news" && (
               <Box
                 as={FaRegNewspaper}
                 bg={"blue.500"}
@@ -118,7 +118,7 @@ const ModalDetails = ({ className, cardmessage, item }) => (
                 h={10}
               />
             )}
-            {item.platform === "tumblr" && (
+            {item?.platform === "tumblr" && (
               <Box
                 as={FaTumblr}
                 bg={"blue.500"}
@@ -140,14 +140,14 @@ const ModalDetails = ({ className, cardmessage, item }) => (
               fontWeight="medium"
               color={useColorModeValue("gray.600", "gray.300")}
             >
-              <b>{moment(item.datetime).format("MMM Do YYYY")}</b>
+              <b>{moment(item?.datetime).format("MMM Do YYYY")}</b>
             </Text>
           </HStack>
         </Wrap>
       </Box>
     </Stack>
     <Text fontSize="sm" mt={18}>
-      {item.message}
+      {item?.message}
     </Text>
     <Button
       mt="8"
