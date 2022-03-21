@@ -101,7 +101,6 @@ const TotalSoldData = ({ className }) => {
   ];
 
   var layout = {
-    title: "Total Sold",
     xaxis: {
       title: "Month",
       showgrid: false,
@@ -149,7 +148,12 @@ const TotalSoldData = ({ className }) => {
   };
 
   return (
-    <Card className={cn(styles.card, className)}>
+    <Card
+      classTitle="title-blue"
+      title="Total Sold"
+      description={`SGC continues to gain on BGS in this area. We had a +4,302 lead here in January, now it’s +302. It’s very likely that SGC moves into the number two spot in March.`}
+      className={cn(styles.card, className)}
+    >
       <Box
         justifyItems={"center"}
         alignCenter={"center"}

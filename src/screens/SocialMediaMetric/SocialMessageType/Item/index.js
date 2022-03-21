@@ -105,7 +105,7 @@ const Item = ({ className, item }) => {
       </div>
       <div className={styles.details}>
         <div className={styles.line}>
-          <div className={styles.username}>{item.username}</div>
+          <div className={styles.username}>{item?.username}</div>
           <div className={styles.time}>
             {moment(item?.datetime).format("MMM Do")}
           </div>

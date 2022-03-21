@@ -19,13 +19,32 @@ import TotalSalesData from "./TotalSales/MarketDataGraphs";
 const MarketAnalysis = () => {
   return (
     <>
-      {/* <Tabs>
-        <TabList>
-          <Tab>Average Selling Price</Tab>
-          <Tab>Total Sold</Tab>
-          <Tab>Sell Through</Tab>
-          <Tab>Total Sellers</Tab>
-          <Tab>Total Sales</Tab>
+      {/* <Tabs
+        variant="unstyled"
+        isFitted
+        borderRadius={0}
+        lazyBehavior="unmount"
+        variantColor="blue"
+        defaultIndex={0}
+        isLazy={true}
+        size="lg"
+      >
+        <TabList my={5}>
+          <Tab _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}>
+            Average Selling Price
+          </Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}>
+            Total Sold
+          </Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}>
+            Sell Through
+          </Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}>
+            Total Sellers
+          </Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}>
+            Total Sales
+          </Tab>
         </TabList>
 
         <TabPanels>

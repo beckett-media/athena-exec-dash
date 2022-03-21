@@ -291,7 +291,7 @@ function TablePivots({ className }) {
     <Card
       className={cn(styles.card, className)}
       title="Sell Through"
-      description={`Overall, sell through was down almost 4% compared to January, but PSA continues to lead this category at 18.43%. BVG had the worst sell through at 8.91%, while BGS was the second worst at 9.77%. BGS sell through has dropped under 10% for the first time. It peaked at 33.2% in March 2021.`}
+      description={`Overall, sell through was down almost 4% compared to January, but PSA continues to lead this category at 18.43%. BVG had the worst sell through at 8.91%, while BGS was the second worst at 9.77%. `}
       classTitle="title-blue"
     >
       <Box

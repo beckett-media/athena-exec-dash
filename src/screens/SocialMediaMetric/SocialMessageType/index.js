@@ -35,14 +35,14 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
 
   if (dataQuery) {
     dataQuery.forEach((item) => {
-      username.push(item.username);
-      datetime.push(item.datetime);
-      message.push(item.message);
-      avatar.push(item.avatar);
-      platform.push(item.platform);
-      sentiment.push(item.sentiment);
-      url.push(item.url);
-      id.push(item.id);
+      username.push(item?.username);
+      datetime.push(item?.datetime);
+      message.push(item?.message);
+      avatar.push(item?.avatar);
+      platform.push(item?.platform);
+      sentiment.push(item?.sentiment);
+      url.push(item?.url);
+      id.push(item?.id);
     });
   }
 
@@ -69,7 +69,7 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
     })();
   }, []);
 
-  // //useMemo to get data based on date interval selected
+  // // //useMemo to get data based on date interval selected
   React.useEffect(() => {
     const uniqueDatetime = [
       ...new Set(filterData.map((item) => item?.datetime)),
@@ -77,12 +77,11 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
     uniqueDatetime.forEach((item) => {
       intervals.push(item);
     });
-  }, [filterData]);
+  }, []);
 
   const filterData = [];
-  const filterDataByDate = [];
 
-  // fliter function to get data based on sentiment type
+  // // fliter function to get data based on sentiment type
   dataObject.forEach((item) => {
     if (item?.sentiment === sentimentType) {
       filterData.push(item);
@@ -91,14 +90,6 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
 
   return (
     <>
-      <Dropdown
-        className={styles.dropdown}
-        classDropdownHead={styles.dropdownHead}
-        value={sorting}
-        setValue={setSorting}
-        // set intevals to string as month day
-        options={intervals}
-      />
       <Card
         className={cn(styles.card, className)}
         classCardHead={styles.cardHead}

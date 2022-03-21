@@ -291,7 +291,7 @@ function TablePivots({ className }) {
     <Card
       className={cn(styles.card, className)}
       title="Total Sold"
-      description={`Total Sold – PSA continues to dominate with 346,796 cards sold (-10% MOM) compared to BGS at 34,452 (-20% MOM). CSG was the only company to see gains month over month, up 12% to 17,041. SGC continues to gain on BGS in this area. We had a +4,302 lead here in January, now it’s +302. It’s very likely that SGC moves into the number two spot in March.`}
+      description={`PSA continues to dominate with 346,796 cards sold (-10% MOM) compared to BGS at 34,452 (-20% MOM). CSG was the only company to see gains month over month, up 12% to 17,041. `}
       classTitle="title-blue"
     >
       <Box

@@ -92,9 +92,9 @@ const SentimentAnalysis = ({ className }) => {
     }
   }
 
-  // if (sentiment_analysis.length === 0) {
-  //   return <Loading />;
-  // }
+  if (sentiment_analysis.length === 0) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -115,8 +115,8 @@ const SentimentAnalysis = ({ className }) => {
               <Card
                 style={{ overflow: "hidden" }}
                 title={
-                  sentimentType.charAt(0).toUpperCase() +
-                  sentimentType.slice(1) +
+                  sentimentType?.charAt(0).toUpperCase() +
+                  sentimentType?.slice(1) +
                   " Sentiment" +
                   " " +
                   emoji

@@ -116,7 +116,6 @@ const SellThroughData = ({ className }) => {
   ];
 
   var layout = {
-    title: "Sell Through",
     xaxis: {
       title: "Month",
       showgrid: false,
@@ -164,7 +163,12 @@ const SellThroughData = ({ className }) => {
   };
 
   return (
-    <Card className={cn(styles.card, className)}>
+    <Card
+      classTitle="title-blue"
+      title="Sell Through"
+      description={`BGS sell through has dropped under 10% for the first time. It peaked at 33.2% in March 2021.`}
+      className={cn(styles.card, className)}
+    >
       <Box
         justifyItems={"center"}
         alignCenter={"center"}

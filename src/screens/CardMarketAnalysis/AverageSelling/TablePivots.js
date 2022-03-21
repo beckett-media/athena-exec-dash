@@ -290,11 +290,10 @@ function TablePivots({ className }) {
   return (
     <Card
       className={cn(styles.card, className)}
+      classTitle="title-blue"
       title="Average Selling Price"
       description={`Average Selling Price – BGS/BVG still, far and away, has the highest
-      average selling price at $391.10 and $303.02, respectively. For the
-      first time, SGC ($149.96) has surpassed PSA ($140.81)`}
-      classTitle="title-blue"
+      average selling price at $391.10 and $303.02, respectively.`}
     >
       <Box
         display={"flex"}
