@@ -15,7 +15,7 @@ const SocialMediaMetric = () => {
 
       <div className={styles.row}>
         <div className={styles.col}>
-          <KPI className={styles.card} />
+           <KPI className={styles.card} />
           <Box my={"2rem"} />
           <PostPerWeekGraph className={styles.card} />
           <Box my={"2rem"} />
@@ -28,7 +28,7 @@ const SocialMediaMetric = () => {
         </div>
         <div className={styles.col} style={{ marginLeft: 20 }}>
           <SocialMessages />
-          <Box my={"2rem"} />
+          <Box my={"2rem"} /> 
           <TopCountry className={styles.card} />
         </div>
       </div>

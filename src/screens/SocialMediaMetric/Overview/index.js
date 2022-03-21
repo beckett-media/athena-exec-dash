@@ -7,6 +7,7 @@ import moment from "moment";
 import ZoomChart from "./Chart/ZoomChart";
 import { API } from "aws-amplify";
 import Loading from "../../../components/LottieAnimation/Loading";
+import { Text } from "@chakra-ui/react";
 
 const BeginingOfWeek = (props) => {
   const [sentimentData, setData] = useState([]);
@@ -98,7 +99,7 @@ const PostPerWeekGraph = ({ className }) => {
   }
 
   if (socialindicators?.data === undefined) {
-    return <Loading />;
+    return <Text>Loading...</Text>;
   }
 
   return (

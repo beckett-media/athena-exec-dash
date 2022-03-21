@@ -290,10 +290,8 @@ function TablePivots({ className }) {
   return (
     <Card
       className={cn(styles.card, className)}
-      title="Average Selling Price"
-      description={`Average Selling Price – BGS/BVG still, far and away, has the highest
-      average selling price at $391.10 and $303.02, respectively. For the
-      first time, SGC ($149.96) has surpassed PSA ($140.81)`}
+      title="Total Sellers"
+      description={`Overall, the number of sellers dropped 6% month over month. PSA is the clear #1 here at 36,670 for February (-6% MOM), with Beckett a solid #2 at 11,375 (-11% MOM) over SGC (8,723; -4% MOM). CSG was the only company to increase MOM, up 9% to 2,276.`}
       classTitle="title-blue"
     >
       <Box
