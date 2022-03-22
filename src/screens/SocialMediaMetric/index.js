@@ -1,17 +1,11 @@
 import React, { Suspense, lazy } from "react";
 import styles from "./SocialMediaMetric.module.sass";
 import { Box } from "@chakra-ui/react";
-// import PostPerWeekGraph from "./Overview";
-// import SentimentAnalysis from "./Sentiment/SentimentAnalysis";
-// import TopCountry from "./TopCountry";
-// import SocialMessages from "./SocialMessage";
-// import KPI from "./KPI";
-
-const PostPerWeekGraph = lazy(() => import("./Overview"));
-const SentimentAnalysis = lazy(() => import("./Sentiment/SentimentAnalysis"));
-const TopCountry = lazy(() => import("./TopCountry"));
-const SocialMessages = lazy(() => import("./SocialMessage"));
-const KPI = lazy(() => import("./KPI"));
+import PostPerWeekGraph from "./Overview";
+import SentimentAnalysis from "./Sentiment/SentimentAnalysis";
+import TopCountry from "./TopCountry";
+import SocialMessages from "./SocialMessage";
+import KPI from "./KPI";
 
 const SocialMediaMetric = () => {
   return (
