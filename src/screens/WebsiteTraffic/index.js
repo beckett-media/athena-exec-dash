@@ -1,15 +1,10 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import styles from "./WebsiteMetric.module.sass";
+import TopCountry from "./TopCountryFoundry";
 import { Box } from "@chakra-ui/react";
-// import TopCountry from "./TopCountryFoundry";
-// import PageTraffics from "./PagesURLPathsFoundry/PageTraffics";
-// import TopSource from "./TopSourcesFoundry";
-// import TopDevices from "./TopDevicesFoundry";
-
-const TopCountry = lazy(() => import("./TopCountryFoundry"));
-const PageTraffics = lazy(() => import("./PagesURLPathsFoundry/PageTraffics"));
-const TopSource = lazy(() => import("./TopSourcesFoundry"));
-const TopDevices = lazy(() => import("./TopDevicesFoundry"));
+import PageTraffics from "./PagesURLPathsFoundry/PageTraffics";
+import TopSource from "./TopSourcesFoundry";
+import TopDevices from "./TopDevicesFoundry";
 
 const WebsiteMediaMetric = () => {
   return (
