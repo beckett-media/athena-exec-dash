@@ -12,15 +12,14 @@ import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ChakraProvider>
-        <AmplifyProvider>
-          <App />
-        </AmplifyProvider>
-      </ChakraProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(
+  <BrowserRouter>
+    <ChakraProvider>
+      <AmplifyProvider>
+        <App />
+      </AmplifyProvider>
+    </ChakraProvider>
+  </BrowserRouter>
 );

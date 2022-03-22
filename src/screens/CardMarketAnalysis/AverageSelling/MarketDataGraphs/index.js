@@ -3,40 +3,29 @@ import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
-
+import { API } from "aws-amplify";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import {
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  Button,
-  Box,
-  Stack,
-  Text,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
-// import { data } from "../data";
+import { Box } from "@chakra-ui/react";
 
-import { BGS, BVG, CSG, HGA, PSA, SGC } from "../graphdata";
-
-const MarketData = ({ className }) => {
+const MarketData = ({ className, data }) => {
   const darkMode = useDarkMode(false);
 
-  var data = [
+  var dataG = [
     {
-      x: BGS.map((d) => d.month),
-      y: BGS.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      // filter the y values to only include marketPlayer = "BGS"
+      y: data.map((d) =>
+        d.marketPlayer === "BGS" ? d.averageSellingPrice : null
+      ),
+
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#0066ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "BGS",
       line: {
-        color: "#0066ff",
+        color: "#2A85FF",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -44,24 +33,30 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: BVG.map((d) => d.month),
-      y: BVG.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) =>
+        d.marketPlayer === "BVG" ? d.averageSellingPrice : null
+      ),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#ff0000", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
       name: "BVG",
       line: {
-        color: "#ff0000",
+        color: "#FF6A55",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: CSG.map((d) => d.month),
-      y: CSG.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) =>
+        d.marketPlayer === "CSG" ? d.averageSellingPrice : null
+      ),
       type: "scatter",
       mode: "lines+markers",
+      connectgaps: true,
       marker: { color: "#ff9900", size: 10, opacity: 0.8 },
       name: "CSG",
       line: {
@@ -72,42 +67,51 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: HGA.map((d) => d.month),
-      y: HGA.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) =>
+        d.marketPlayer === "HGA" ? d.averageSellingPrice : null
+      ),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#00cc00", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#83BF6E", size: 10, opacity: 0.8 },
       name: "HGA",
       line: {
-        color: "#009900",
+        color: "#83BF6E",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: PSA.map((d) => d.month),
-      y: PSA.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) =>
+        d.marketPlayer === "PSA" ? d.averageSellingPrice : null
+      ),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "0000ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#CABDFF", size: 10, opacity: 0.8 },
       name: "PSA",
       line: {
-        color: "#0000ff",
+        color: "#CABDFF",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: SGC.map((d) => d.month),
-      y: SGC.map((d) => d.total),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) =>
+        d.marketPlayer === "SGC" ? d.averageSellingPrice : null
+      ),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#ff00ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
       name: "SGC",
       line: {
-        color: "#ff00ff",
+        color: "#8E59FF",
         width: 4,
         shape: "spline",
         smoothing: 1,
@@ -166,7 +170,7 @@ const MarketData = ({ className }) => {
     <Card
       title={"Average Selling Price"}
       className={cn(styles.card, className)}
-      description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
+      // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
       <Box
@@ -179,7 +183,7 @@ const MarketData = ({ className }) => {
           style={{
             width: "100%",
           }}
-          data={data}
+          data={dataG}
           layout={layout}
           useResizeHandler={true}
         />

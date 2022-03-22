@@ -1,32 +1,29 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 import styles from "./MarketAnalysis.module.sass";
 import TooltipGlodal from "../../components/TooltipGlodal";
 import { Box } from "@chakra-ui/react";
 import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import SentimentAnalysis from "./AverageSelling/MarketDataGraphs";
-import TotalSoldData from "./TotalSold/MarketDataGraphs";
 import ComingSoon from "../CominSoon/ComingSoon";
-import TotalSold from "./TotalSold";
-import SellThrough from "./SellThrough";
-import SellThroughData from "./SellThrough/MarketDataGraphs";
+
 import TotalSales from "./TotalSales";
 import TotalSellers from "./TotalSellers";
-import TotalSellersData from "./TotalSellers/MarketDataGraphs";
-import TotalSalesData from "./TotalSales/MarketDataGraphs";
+import TotalSold from "./TotalSold";
+
+import SellThrough from "./SellThrough";
 
 const MarketAnalysis = () => {
   return (
     <>
-      {/* <Tabs
+      <Tabs
         variant="unstyled"
         isFitted
         borderRadius={0}
-        lazyBehavior="unmount"
+        lazyBehavior="mount"
         variantColor="blue"
         defaultIndex={0}
-        isLazy={true}
+        isLazy={false}
         size="lg"
       >
         <TabList my={5}>
@@ -51,34 +48,24 @@ const MarketAnalysis = () => {
           <TabPanel>
             <div className={styles.section}>
               <Table />
-              <Box my={"4rem"} />
-              <SentimentAnalysis />
             </div>
             <TooltipGlodal />
           </TabPanel>
           <TabPanel>
             <TotalSold />
-            <Box my={"4rem"} />
-            <TotalSoldData />
           </TabPanel>
           <TabPanel>
             <SellThrough />
-            <Box my={"4rem"} />
-            <SellThroughData />
           </TabPanel>
           <TabPanel>
             <TotalSellers />
-            <Box my={"4rem"} />
-            <TotalSellersData />
           </TabPanel>
           <TabPanel>
             <TotalSales />
-            <Box my={"4rem"} />
-            <TotalSalesData />
           </TabPanel>
         </TabPanels>
-      </Tabs> */}
-      <ComingSoon />
+      </Tabs>
+      {/* <ComingSoon /> */}
     </>
   );
 };

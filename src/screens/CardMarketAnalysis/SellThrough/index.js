@@ -7,26 +7,31 @@ import {
 } from "@chakra-ui/react";
 import Card from "../../../components/Card";
 import TablePivots from "./TablePivots";
+import SellThroughData from "./MarketDataGraphs";
 
 const SellThrough = () => {
   return (
-    <Card>
-      <Box
-        bg="bg-surface"
-        boxShadow={{
-          base: "none",
-          md: useColorModeValue("sm", "sm-dark"),
-        }}
-        borderRadius={useBreakpointValue({
-          base: "none",
-          md: "lg",
-        })}
-      >
-        <Stack spacing="5">
-          <TablePivots />
-        </Stack>
-      </Box>
-    </Card>
+    <>
+      <Card>
+        <Box
+          bg="bg-surface"
+          boxShadow={{
+            base: "none",
+            md: useColorModeValue("sm", "sm-dark"),
+          }}
+          borderRadius={useBreakpointValue({
+            base: "none",
+            md: "lg",
+          })}
+        >
+          <Stack spacing="5">
+            <TablePivots />
+          </Stack>
+        </Box>
+      </Card>
+      <Box my={20} />
+      <SellThroughData />
+    </>
   );
 };
 
