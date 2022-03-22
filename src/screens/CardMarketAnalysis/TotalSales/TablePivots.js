@@ -15,29 +15,12 @@ import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
-import { data } from "./data";
 import useDarkMode from "use-dark-mode";
+import { API } from "aws-amplify";
 import cn from "classnames";
 import styles from "./Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
-
-const BadgeConponent = ({ state, darkMode }) => {
-  return (
-    <Text fontSize="lg">
-      Grouped By:{" "}
-      {state.groupBy.map((d) => (
-        <Badge
-          key={d}
-          variantColor={darkMode.value ? "gray" : "blue"}
-          variant="outline"
-          marginRight="0.5rem"
-        >
-          {d.split(".")[0]}
-        </Badge>
-      ))}
-    </Text>
-  );
-};
+import moment from "moment";
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -66,7 +49,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["name", "year"],
+        groupBy: ["marketPlayer"],
       },
     },
     useGroupBy,
@@ -98,7 +81,7 @@ function Tables({ columns, data }) {
                             size={"sm"}
                             leftIcon={<AiOutlineUngroup />}
                             colorScheme="twitter"
-                            variant="solid"
+                            variant="outline"
                           >
                             ungroup {column.Header}
                           </Button>
@@ -107,7 +90,7 @@ function Tables({ columns, data }) {
                             size={"sm"}
                             leftIcon={<AiOutlineUngroup />}
                             colorScheme="twitter"
-                            variant="solid"
+                            variant="outline"
                           >
                             ungroup {column.Header}
                           </Button>
@@ -240,7 +223,6 @@ function Tables({ columns, data }) {
         </Tbody>
       </Table>
       <br />
-      <div>Showing the first 100 results of {rows.length} rows</div>
     </>
   );
 }
@@ -249,37 +231,29 @@ function TablePivots({ className }) {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Name",
-        accessor: "name",
-        // Aggregate the average age of visitors
+        Header: "Market Player",
+        accessor: "marketPlayer",
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Unique Names`,
       },
       {
-        Header: "Selling Price",
-        accessor: "average_selling_price",
-        // Aggregate the sum of all visits
+        Header: "Total Sales",
+        accessor: "totalSales",
         aggregate: "sum",
+
+        Cell: ({ cell: { value } }) => numberWithCommas(value),
         Aggregated: ({ value }) =>
-          // chnage value with comma and 3 decimal places
-          `${value.toLocaleString("en-US", {
-            minimumFractionDigits: 3,
-            maximumFractionDigits: 3,
-          })} $ (USD) Total`,
+          `$${value.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}`,
       },
       {
-        Header: "Month",
-        accessor: "month",
-        // Aggregate the unique count of all visits
+        Header: "Months",
+        accessor: "date",
+        Cell: ({ cell: { value } }) => moment(value).format("MMM YYYY"),
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Months`,
-      },
-      {
-        Header: "Year",
-        accessor: "year",
-        // Aggregate the unique count of all visits
-        aggregate: "unique",
-        Aggregated: ({ value }) => `${value}`,
       },
     ],
     []
@@ -287,11 +261,41 @@ function TablePivots({ className }) {
 
   const darkMode = useDarkMode();
 
+  const riOntology =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const typeObject = "CompetitorMetric";
+  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
+
+  function getData() {
+    const apiName = "palentirApi";
+    const path = `/${url}`;
+
+    return API.get(apiName, path);
+  }
+
+  const [dataTable, setDataTable] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    isLoading &&
+      getData().then((res) => {
+        setDataTable(res?.data);
+        setIsLoading(false);
+      });
+  }, [isLoading]);
+
+  const datas = dataTable.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
   return (
     <Card
       className={cn(styles.card, className)}
       title="Total Sales"
-      description={`February does have three fewer days, but overall sales dropped 18% MOM. Average sales per day dropped 9% from $2.7M to $2.4M. PSA is the runaway leader here at $48.8M (-18% MOM), with BGS a clearcut #2 at $13.4M (-21% MOM). BVG sales increased 7% to $482K, while CSG sales increased 15% to $639K.`}
+      // description={`February does have three fewer days, but overall sales dropped 18% MOM. Average sales per day dropped 9% from $2.7M to $2.4M. PSA is the runaway leader here at $48.8M (-18% MOM), with BGS a clearcut #2 at $13.4M (-21% MOM). BVG sales increased 7% to $482K, while CSG sales increased 15% to $639K.`}
       classTitle="title-blue"
     >
       <Box
@@ -321,7 +325,7 @@ function TablePivots({ className }) {
           to group.
         </Text>
       </Box>
-      <Tables columns={columns} data={data} />
+      <Tables columns={columns} data={datas} />
     </Card>
   );
 }

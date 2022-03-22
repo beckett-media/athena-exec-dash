@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/app.sass";
 
@@ -13,6 +13,7 @@ import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Text } from "@chakra-ui/react";
 import "./utils-auth/auth.css";
+import Loading from "./components/LottieAnimation/Loading";
 
 const components = {
   Header() {
@@ -64,82 +65,90 @@ const formFields = {
 
 function App() {
   return (
-    <Authenticator
-      hideSignUp={true}
-      components={components}
-      formFields={formFields}
+    <
+      
     >
-      {({ signOut, user }) => (
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Page
-                user={user}
-                signOut={signOut}
-                title="Website Metrics  👩🏻‍💻"
-                desc="Track Beckett's website behavior for all your online marketing efforts"
-              />
-            }
-          >
-            <Route index element={<WebsiteMediaMetric />} />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page signOut={signOut} user={user} title="Market Analysis 📈" />
-            }
-          >
+      <Authenticator
+        hideSignUp={true}
+        components={components}
+        formFields={formFields}
+      >
+        {({ signOut, user }) => (
+          <Routes>
             <Route
-              path="/dashboard/market-analysis"
-              element={<MarketAnalysis />}
-            />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="Comics Market Analysis 💥"
-              />
-            }
-          >
+              path="/"
+              element={
+                <Page
+                  user={user}
+                  signOut={signOut}
+                  title="Website Metrics  👩🏻‍💻"
+                  desc="Track Beckett's website behavior for all your online marketing efforts"
+                />
+              }
+            >
+              <Route index element={<WebsiteMediaMetric />} />
+            </Route>
             <Route
-              path="/dashboard/comic-market-analysis"
-              element={<ComicAnalysis />}
-            />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="World Domination Index 🌎"
+              path="dashboard"
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Market Analysis 📈"
+                />
+              }
+            >
+              <Route
+                path="/dashboard/market-analysis"
+                element={<MarketAnalysis />}
               />
-            }
-          >
+            </Route>
             <Route
-              path="/dashboard/social-media-analysis"
-              element={<SocialMediaMetric />}
-            />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="Grading Score Cards ☕️"
+              path="dashboard"
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Comics Market Analysis 💥"
+                />
+              }
+            >
+              <Route
+                path="/dashboard/comic-market-analysis"
+                element={<ComicAnalysis />}
               />
-            }
-          >
-            <Route path="/dashboard/web-analysis" element={<Home />} />
-          </Route>
-        </Routes>
-      )}
-    </Authenticator>
+            </Route>
+            <Route
+              path="dashboard"
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="World Domination Index 🌎"
+                />
+              }
+            >
+              <Route
+                path="/dashboard/social-media-analysis"
+                element={<SocialMediaMetric />}
+              />
+            </Route>
+            <Route
+              path="dashboard"
+              element={
+                <Page
+                  signOut={signOut}
+                  user={user}
+                  title="Grading Score Cards ☕️"
+                />
+              }
+            >
+              <Route path="/dashboard/web-analysis" element={<Home />} />
+            </Route>
+          </Routes>
+        )}
+      </Authenticator>
+    </>
   );
 }
 

@@ -15,29 +15,12 @@ import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
-import { data } from "./data";
 import useDarkMode from "use-dark-mode";
+import { API } from "aws-amplify";
 import cn from "classnames";
 import styles from "./Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
-
-const BadgeConponent = ({ state, darkMode }) => {
-  return (
-    <Text fontSize="lg">
-      Grouped By:{" "}
-      {state.groupBy.map((d) => (
-        <Badge
-          key={d}
-          variantColor={darkMode.value ? "gray" : "blue"}
-          variant="outline"
-          marginRight="0.5rem"
-        >
-          {d.split(".")[0]}
-        </Badge>
-      ))}
-    </Text>
-  );
-};
+import moment from "moment";
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -66,7 +49,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["name", "year"],
+        groupBy: ["marketPlayer"],
       },
     },
     useGroupBy,
@@ -98,7 +81,7 @@ function Tables({ columns, data }) {
                             size={"sm"}
                             leftIcon={<AiOutlineUngroup />}
                             colorScheme="twitter"
-                            variant="solid"
+                            variant="outline"
                           >
                             ungroup {column.Header}
                           </Button>
@@ -107,7 +90,7 @@ function Tables({ columns, data }) {
                             size={"sm"}
                             leftIcon={<AiOutlineUngroup />}
                             colorScheme="twitter"
-                            variant="solid"
+                            variant="outline"
                           >
                             ungroup {column.Header}
                           </Button>
@@ -240,46 +223,41 @@ function Tables({ columns, data }) {
         </Tbody>
       </Table>
       <br />
-      <div>Showing the first 100 results of {rows.length} rows</div>
     </>
   );
 }
 
-function TablePivots({ className }) {
+function TablePivots({ className, data }) {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Name",
-        accessor: "name",
+        Header: "Market Player",
+        accessor: "marketPlayer",
         // Aggregate the average age of visitors
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Unique Names`,
       },
       {
-        Header: "Selling Price",
-        accessor: "average_selling_price",
+        Header: "Average Selling Price",
+        accessor: "averageSellingPrice",
         // Aggregate the sum of all visits
         aggregate: "sum",
+        // use comma format for the aggregate value numberWithCommas
+        Cell: ({ cell: { value } }) => numberWithCommas(value),
         Aggregated: ({ value }) =>
-          // chnage value with comma and 3 decimal places
-          `${value.toLocaleString("en-US", {
-            minimumFractionDigits: 3,
-            maximumFractionDigits: 3,
-          })} $ (USD) Total`,
+          `$${value.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}`,
       },
       {
-        Header: "Month",
-        accessor: "month",
+        Header: "Months",
+        // fomatted date with moment to get the month
+        accessor: "date",
+        Cell: ({ cell: { value } }) => moment(value).format("MMM YYYY"),
         // Aggregate the unique count of all visits
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Months`,
-      },
-      {
-        Header: "Year",
-        accessor: "year",
-        // Aggregate the unique count of all visits
-        aggregate: "unique",
-        Aggregated: ({ value }) => `${value}`,
       },
     ],
     []
@@ -292,8 +270,8 @@ function TablePivots({ className }) {
       className={cn(styles.card, className)}
       classTitle="title-blue"
       title="Average Selling Price"
-      description={`Average Selling Price – BGS/BVG still, far and away, has the highest
-      average selling price at $391.10 and $303.02, respectively.`}
+      // description={`Average Selling Price – BGS/BVG still, far and away, has the highest
+      // average selling price at $391.10 and $303.02, respectively.`}
     >
       <Box
         display={"flex"}

@@ -76,9 +76,49 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
       res.send(JSON.parse(body));
     });
 
-    //######################################################################
   }
 });
+
+app.get("/competitormetric/:ri/:obj", async function (req, res) {
+  const aws = require("aws-sdk");
+  const request = require("request");
+
+  // Get the parameters from the request
+  const { ri, obj} = req.params;
+
+  // ########################GET SECRET KEY####################################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+  // #######################CHECK TOKEN##################################
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    const options = {
+      method: "GET",
+
+      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?orderBy=p.date:desc`,
+      headers: {
+        Authorization: "Bearer " + token[0].Value,
+        "Content-Type": "application/json",
+      },
+    };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error.message);
+      res.send(JSON.parse(body));
+    });
+
+  }
+});
+
+//######################################################################
 
 app.use("/socialmedia/:name", async function (req, res) {
   const axios = require("axios");

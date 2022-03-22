@@ -20,6 +20,16 @@
           "read"
         ]
       }
+    },
+    "/competitormetric": {
+      "name": "/competitormetric",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }

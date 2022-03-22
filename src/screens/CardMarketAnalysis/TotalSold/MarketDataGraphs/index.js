@@ -3,25 +3,58 @@ import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
+import moment from "moment";
+import { API } from "aws-amplify";
 
 import useDarkMode from "use-dark-mode";
 import { Box } from "@chakra-ui/react";
 
-import { BGS, BVG, CSG, HGA, PSA, SGC } from "../graphdata";
-
 const TotalSoldData = ({ className }) => {
   const darkMode = useDarkMode(false);
 
+  const riOntology =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const typeObject = "CompetitorMetric";
+  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
+
+  function getData() {
+    const apiName = "palentirApi";
+    const path = `/${url}`;
+
+    return API.get(apiName, path);
+  }
+
+  const [dataTable, setDataTable] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    isLoading &&
+      getData().then((res) => {
+        setDataTable(res?.data);
+        setIsLoading(false);
+      });
+  }, [isLoading]);
+
+  const datas = dataTable.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
   var data = [
     {
-      x: BGS.map((d) => d.month),
-      y: BGS.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      // filter the y values to only include marketPlayer = "BGS"
+      y: datas.map((d) => (d.marketPlayer === "BGS" ? d.totalSold : null)),
+
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#0066ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "BGS",
       line: {
-        color: "#0066ff",
+        color: "#2A85FF",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -29,24 +62,26 @@ const TotalSoldData = ({ className }) => {
       },
     },
     {
-      x: BVG.map((d) => d.month),
-      y: BVG.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      y: datas.map((d) => (d.marketPlayer === "BVG" ? d.totalSold : null)),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#ff0000", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
       name: "BVG",
       line: {
-        color: "#ff0000",
+        color: "#FF6A55",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: CSG.map((d) => d.month),
-      y: CSG.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      y: datas.map((d) => (d.marketPlayer === "CSG" ? d.totalSold : null)),
       type: "scatter",
       mode: "lines+markers",
+      connectgaps: true,
       marker: { color: "#ff9900", size: 10, opacity: 0.8 },
       name: "CSG",
       line: {
@@ -57,42 +92,45 @@ const TotalSoldData = ({ className }) => {
       },
     },
     {
-      x: HGA.map((d) => d.month),
-      y: HGA.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      y: datas.map((d) => (d.marketPlayer === "HGA" ? d.totalSold : null)),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#00cc00", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#83BF6E", size: 10, opacity: 0.8 },
       name: "HGA",
       line: {
-        color: "#009900",
+        color: "#83BF6E",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: PSA.map((d) => d.month),
-      y: PSA.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      y: datas.map((d) => (d.marketPlayer === "PSA" ? d.totalSold : null)),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "0000ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#CABDFF", size: 10, opacity: 0.8 },
       name: "PSA",
       line: {
-        color: "#0000ff",
+        color: "#CABDFF",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: SGC.map((d) => d.month),
-      y: SGC.map((d) => d.total),
+      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      y: datas.map((d) => (d.marketPlayer === "SGC" ? d.totalSold : null)),
       type: "scatter",
       mode: "lines+markers",
-      marker: { color: "#ff00ff", size: 10, opacity: 0.8 },
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
       name: "SGC",
       line: {
-        color: "#ff00ff",
+        color: "#8E59FF",
         width: 4,
         shape: "spline",
         smoothing: 1,
@@ -151,7 +189,7 @@ const TotalSoldData = ({ className }) => {
     <Card
       classTitle="title-blue"
       title="Total Sold"
-      description={`SGC continues to gain on BGS in this area. We had a +4,302 lead here in January, now it’s +302. It’s very likely that SGC moves into the number two spot in March.`}
+      // description={`SGC continues to gain on BGS in this area. We had a +4,302 lead here in January, now it’s +302. It’s very likely that SGC moves into the number two spot in March.`}
       className={cn(styles.card, className)}
     >
       <Box
