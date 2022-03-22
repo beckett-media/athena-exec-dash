@@ -16,7 +16,7 @@ import SellThrough from "./SellThrough";
 const MarketAnalysis = () => {
   return (
     <>
-      <Tabs
+      {/* <Tabs
         variant="unstyled"
         isFitted
         borderRadius={0}
@@ -64,8 +64,8 @@ const MarketAnalysis = () => {
             <TotalSales />
           </TabPanel>
         </TabPanels>
-      </Tabs>
-      {/* <ComingSoon /> */}
+      </Tabs> */}
+      <ComingSoon />
     </>
   );
 };
