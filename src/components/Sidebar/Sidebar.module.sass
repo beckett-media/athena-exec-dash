@@ -8,14 +8,14 @@
     display: flex
     flex-direction: column
     width: 340px
-    padding: 30px
-    background: $n8
+    padding: 24px
+    background: $n7
     overflow: auto
     -webkit-overflow-scrolling: touch
     -ms-overflow-style: none
     scrollbar-width: none
     &::-webkit-scrollbar
-        display: none 
+        display: none
     +x
         width: 300px
         padding: 16px
@@ -28,8 +28,16 @@
         align-items: stretch
     +dark
         background: $n7
+
     &.active
         +d
+            background: $n3
+            box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.05), inset 0px 1px 1px #FFFFFF
+            color: $n7
+            +dark
+                background: $n6
+                box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.11)
+                color: $n1
             align-items: stretch
             width: 300px
             box-shadow: 4px 0 32px rgba($n8, .05)
@@ -43,7 +51,7 @@
                 display: block
             .toggle
                 position: absolute
-                top: 16px 
+                top: 16px
                 right: 16px
                 svg
                     fill: $n7
@@ -56,7 +64,7 @@
 
 .logo
     display: block
-    width: 160px
+    width: 158px
     margin-bottom: 48px
     +x
         margin-bottom: 24px
@@ -68,7 +76,7 @@
 .menu
     display: flex
     flex-direction: column
-    margin-bottom: auto 
+    margin-bottom: auto
 
 .item,
 .dropdown
@@ -104,9 +112,11 @@
             margin-right: 12px
     &:hover,
     &.active
-        color: $p1
+        color: $n3
+        background: $n6
+        box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.11)
         svg
-            fill: $n7
+            fill: $n3
         +dark
             color: $n1
             svg
@@ -142,7 +152,7 @@
         width: 48px
         height: 48px
         svg
-            fill: $n1
+            fill: $n7
             +dark
                 fill: $n1
 

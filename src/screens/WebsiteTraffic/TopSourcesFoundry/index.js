@@ -20,7 +20,7 @@ import Dropdown from "../../../components/Dropdown";
 const TopSource = ({ className, ...props }) => {
   const darkMode = useDarkMode(false); // default to light mode
   const [sorting, setSorting] = React.useState("2022");
-  const intervals = ["2022", "2021", "2019"];
+  const intervals = ["2022", "2021", "2020", "2019"];
 
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -72,8 +72,6 @@ const TopSource = ({ className, ...props }) => {
       users: numberOfUsers[index], // Get value of website name
     });
   });
-
-
 
   return (
     <Card

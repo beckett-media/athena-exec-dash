@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 
 import styles from "./MarketAnalysis.module.sass";
 import TooltipGlodal from "../../components/TooltipGlodal";
@@ -16,7 +16,7 @@ import SellThrough from "./SellThrough";
 const MarketAnalysis = () => {
   return (
     <>
-      {/* <Tabs
+      <Tabs
         variant="unstyled"
         isFitted
         borderRadius={0}
@@ -64,8 +64,8 @@ const MarketAnalysis = () => {
             <TotalSales />
           </TabPanel>
         </TabPanels>
-      </Tabs> */}
-      <ComingSoon />
+      </Tabs>
+      {/* <ComingSoon /> */}
     </>
   );
 };

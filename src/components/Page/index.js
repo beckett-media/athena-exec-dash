@@ -25,7 +25,7 @@ const Page = ({ wide, title, desc, user, signOut }) => {
             })}
           >
             {(title && (
-              <Heading as="h1" className={styles.title}>
+              <Heading as="h1" className={cn("h3", styles.title)}>
                 {title}
               </Heading>
             )) ||

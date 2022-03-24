@@ -11,6 +11,8 @@ import MarketData from "./MarketDataGraphs";
 import { API } from "aws-amplify";
 
 const TableMarket = () => {
+
+
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const typeObject = "CompetitorMetric";
@@ -36,10 +38,16 @@ const TableMarket = () => {
 
   const data = dataTable.map((d) => {
     const { rid, ...rest } = d;
+    console.log(rest?.properties);
     return {
       ...rest?.properties,
     };
   });
+
+
+
+
+  
   return (
     <>
       <Card>

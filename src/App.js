@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/app.sass";
 
@@ -87,7 +87,11 @@ function App() {
           <Route
             path="dashboard"
             element={
-              <Page signOut={signOut} user={user} title="Market Analysis 📈" />
+              <Page
+                signOut={signOut}
+                user={user}
+                title="Card Market 📈"
+              />
             }
           >
             <Route
@@ -101,7 +105,7 @@ function App() {
               <Page
                 signOut={signOut}
                 user={user}
-                title="Comics Market Analysis 💥"
+                title="Comics Market 📈"
               />
             }
           >
