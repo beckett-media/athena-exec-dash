@@ -29,6 +29,7 @@ const TotalSellers = () => {
           </Stack>
         </Box>
       </Card>
+      <Box my={20} />
       <TotalSellersData />
     </>
   );

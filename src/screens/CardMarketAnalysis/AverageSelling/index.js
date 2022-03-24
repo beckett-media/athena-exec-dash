@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Stack,
-  useBreakpointValue,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import Card from "../../../components/Card";
 import TablePivots from "./TablePivots";
 import MarketData from "./MarketDataGraphs";
@@ -13,7 +8,6 @@ import { API } from "aws-amplify";
 const TableMarket = () => {
   const [dataTable, setDataTable] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-
 
   const riOntology =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -26,16 +20,6 @@ const TableMarket = () => {
 
     return API.get(apiName, path);
   }
-
-
-  React.useEffect(() => {
-    isLoading &&
-      getData().then((res) => {
-        setDataTable(res?.data);
-        setIsLoading(false);
-      });
-  }, []);
-
   const data = dataTable.map((d) => {
     const { rid, ...rest } = d;
     return {
@@ -43,33 +27,31 @@ const TableMarket = () => {
     };
   });
 
+  React.useEffect(() => {
+    setIsLoading(true);
+    getData().then((res) => {
+      setDataTable(res?.data);
+    });
+    setIsLoading(false);
+  }, [isLoading]);
 
-
-
-
-  return (
-    <>
-      <Card>
-        <Box
-          bg="bg-surface"
-          boxShadow={{
-            base: "none",
-            md: useColorModeValue("sm", "sm-dark"),
-          }}
-          borderRadius={useBreakpointValue({
-            base: "none",
-            md: "lg",
-          })}
-        >
-          <Stack spacing="5">
-            <TablePivots data={data} />
-          </Stack>
-        </Box>
-      </Card>
-      <Box my={20} />
-      <MarketData data={data} />
-    </>
-  );
+  if (isLoading) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <>
+        <Card>
+          <Box bg="bg-surface">
+            <Stack spacing="5">
+              <TablePivots data={data} />
+            </Stack>
+          </Box>
+        </Card>
+        <Box my={20} />
+        <MarketData data={data} />
+      </>
+    );
+  }
 };
 
 export default TableMarket;
