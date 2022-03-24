@@ -48,7 +48,7 @@ const Dropdown = ({ className, item, visibleSidebar, setValue, onClose }) => {
       {item.add ? (
         <div
           className={cn(styles.top, {
-            [styles.active]: pathname.startsWith("/dashboard/market-analysis"),
+            [styles.active]: pathname.startsWith("/dashboard/comic-market-analysis"),
           })}
         >
           <Head />

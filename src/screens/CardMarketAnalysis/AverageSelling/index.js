@@ -34,11 +34,10 @@ const TableMarket = () => {
         setDataTable(res?.data);
         setIsLoading(false);
       });
-  }, [isLoading]);
+  }, []);
 
   const data = dataTable.map((d) => {
     const { rid, ...rest } = d;
-    console.log(rest?.properties);
     return {
       ...rest?.properties,
     };
@@ -47,7 +46,7 @@ const TableMarket = () => {
 
 
 
-  
+
   return (
     <>
       <Card>

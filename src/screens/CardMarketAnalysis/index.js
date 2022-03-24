@@ -2,7 +2,6 @@ import React from "react";
 
 import styles from "./MarketAnalysis.module.sass";
 import TooltipGlodal from "../../components/TooltipGlodal";
-import { Box } from "@chakra-ui/react";
 import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import ComingSoon from "../CominSoon/ComingSoon";

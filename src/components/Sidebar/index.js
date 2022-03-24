@@ -65,17 +65,20 @@ const Sidebar = ({ className, onClose, signOut }) => {
         <div className={styles.menu}>
           {navigation.map((x, index) =>
             x.url ? (
-              <NavLink
-                className={styles.item}
-                activeClassName={styles.active}
-                to={x.url}
-                key={index}
-                exact
-                onClick={onClose}
-              >
-                <Icon name={x.icon} size="24" />
-                {x.title}
-              </NavLink>
+              (console.log(x.url),
+              (
+                <NavLink
+                  className={styles.item}
+                  activeClassName={styles.active}
+                  to={x.url}
+                  key={index}
+                  exact
+                  onClick={onClose}
+                >
+                  <Icon name={x.icon} size="24" />
+                  {x.title}
+                </NavLink>
+              ))
             ) : (
               <Dropdown
                 className={styles.dropdown}

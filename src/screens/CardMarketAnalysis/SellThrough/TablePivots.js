@@ -286,7 +286,7 @@ function TablePivots({ className }) {
         setDataTable(res?.data);
         setIsLoading(false);
       });
-  }, [isLoading]);
+  }, []);
 
   const datas = dataTable.map((d) => {
     const { rid, ...rest } = d;
