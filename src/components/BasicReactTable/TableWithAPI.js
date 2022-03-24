@@ -8,7 +8,7 @@ export default function TableWithAPI({ cells }) {
         Header: "Image",
         accessor: "img_src",
         Cell: ({ cell: { value } }) => (
-          <img src={value} alt="image" style={{ width: "30%" }} />
+          <img src={value} alt={`${value}`} style={{ width: "30%" }} />
         ),
       },
       {
@@ -34,7 +34,7 @@ export default function TableWithAPI({ cells }) {
     ],
     []
   );
-  const data = React.useMemo(() => cells, []);
+  const data = React.useMemo(() => cells, [cells]);
 
   return <>{cells && <FilterTable columns={columns} data={data} />}</>;
 }

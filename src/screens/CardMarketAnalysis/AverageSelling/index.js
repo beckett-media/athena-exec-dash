@@ -11,6 +11,8 @@ import MarketData from "./MarketDataGraphs";
 import { API } from "aws-amplify";
 
 const TableMarket = () => {
+  const [dataTable, setDataTable] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
 
 
   const riOntology =
@@ -25,8 +27,6 @@ const TableMarket = () => {
     return API.get(apiName, path);
   }
 
-  const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     isLoading &&

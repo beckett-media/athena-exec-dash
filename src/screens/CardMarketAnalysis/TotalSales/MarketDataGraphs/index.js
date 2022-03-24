@@ -1,4 +1,4 @@
-import React, { useState, useRef, PureComponent } from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";

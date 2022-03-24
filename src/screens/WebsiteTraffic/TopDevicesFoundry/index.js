@@ -22,7 +22,7 @@ const TopDevices = () => {
 function Displaydevices({ className, ...props }) {
   const [sorting, setSortings] = React.useState("2022");
   const [devices, setDevices] = React.useState([]);
-  const intervals = ["2022", "2021", "2019"];
+  const intervals = ["2022", "2021", "2020", "2019"];
   const [loading, setLoading] = React.useState(true);
 
   const riOntology =
@@ -202,4 +202,3 @@ function Displaydevices({ className, ...props }) {
 }
 
 export default TopDevices;
-

@@ -20,7 +20,6 @@ import {
   Table,
   Button,
   Stack,
-  Input,
   Select,
 } from "@chakra-ui/react";
 import Card from "../Card";

@@ -16,7 +16,6 @@ import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
-import { API } from "aws-amplify";
 import cn from "classnames";
 import styles from "./Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
