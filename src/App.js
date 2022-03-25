@@ -13,6 +13,8 @@ import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Text } from "@chakra-ui/react";
 import "./utils-auth/auth.css";
+import NoMatch from "./screens/NoMatch";
+import { API } from "aws-amplify";
 
 const components = {
   Header() {
@@ -63,6 +65,126 @@ const formFields = {
 };
 
 function App() {
+  const [dataTable, setDataTable] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [trafficData, setTrafficData] = React.useState([]);
+  const [deviceData, setDeviceData] = React.useState([]);
+  const [countriesData, setCountriesData] = React.useState([]);
+  const [pagesData, setPagesData] = React.useState([]);
+
+  //############################## API PARAMS ###################################
+
+  const apiName = "palentirApi";
+  const riOntology =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+
+  const typeObject = "CompetitorMetric";
+  const typeObjectW = "ExecDashTopSourcesSorted";
+  const typeObjectD = "ExecDashTopDevicesSorted";
+  const typeObjectC = "ExecDashTopCountriesSorted";
+  const typeObjectP = "ExecDashTopPageNamesSorted";
+
+  const propertyID = "p.numberOfUsers";
+
+  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
+  const urlW = `api/${riOntology}/${typeObjectW}/${propertyID}`;
+  const urlD = `api/${riOntology}/${typeObjectD}/${propertyID}`;
+  const urlC = `api/${riOntology}/${typeObjectC}/${propertyID}`;
+  const urlP = `api/${riOntology}/${typeObjectP}/${propertyID}`;
+
+  //############################# MARKET ANALYSIS QUERY ########################################
+
+  function MarketAnalysisAPI() {
+    const path = `/${url}`;
+    return API.get(apiName, path);
+  }
+
+  const data = dataTable.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
+  //############################## SOURCES WEBSITE QUERY ######################################
+
+  function SourceWebsite() {
+    const path = `/${urlW}`;
+    return API.get(apiName, path);
+  }
+
+  const dataW = trafficData.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
+  //############################# WEBSITE TOP DEVICE  QUERY ###################################
+
+  function DevicesWebsite() {
+    const path = `/${urlD}`;
+    return API.get(apiName, path);
+  }
+
+  const dataD = deviceData.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
+  //############################# WEBSITE TOP COUNTRIES  QUERY ###################################
+
+  function TopCountriesWebsite() {
+    const path = `/${urlC}`;
+    return API.get(apiName, path);
+  }
+
+  const dataC = countriesData.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+  //############################# WEBSITE TOP PAGE ROUTES  QUERY ###################################
+
+  function TopPagesRoutes() {
+    const path = `/${urlP}`;
+    return API.get(apiName, path);
+  }
+
+  const dataP = pagesData.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
+  //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
+
+  React.useEffect(() => {
+    setIsLoading(true);
+    MarketAnalysisAPI().then((res) => {
+      setDataTable(res?.data);
+    });
+    SourceWebsite().then((res) => {
+      setTrafficData(res?.data);
+    });
+    DevicesWebsite().then((res) => {
+      setDeviceData(res?.data);
+    });
+    TopCountriesWebsite().then((res) => {
+      setCountriesData(res?.data);
+    });
+    TopPagesRoutes().then((res) => {
+      setPagesData(res?.data);
+    });
+    setIsLoading(false);
+  }, [isLoading]);
+
+  //#############################################################################
+
   return (
     <Authenticator
       hideSignUp={true}
@@ -82,31 +204,33 @@ function App() {
               />
             }
           >
-            <Route index element={<WebsiteMediaMetric />} />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="Card Market 📈"
-              />
-            }
-          >
             <Route
-              path="/dashboard/market-analysis"
-              element={<MarketAnalysis />}
+              index
+              element={
+                <WebsiteMediaMetric
+                  dataW={dataW}
+                  dataD={dataD}
+                  dataC={dataC}
+                  dataP={dataP}
+                />
+              }
             />
           </Route>
           <Route
             path="dashboard"
             element={
-              <Page
-                signOut={signOut}
-                user={user}
-                title="Comics Market 📈"
-              />
+              <Page signOut={signOut} user={user} title="Card Market 📈" />
+            }
+          >
+            <Route
+              path="/dashboard/market-analysis"
+              element={<MarketAnalysis data={data} />}
+            />
+          </Route>
+          <Route
+            path="dashboard"
+            element={
+              <Page signOut={signOut} user={user} title="Comics Market 📈" />
             }
           >
             <Route
@@ -140,6 +264,7 @@ function App() {
             }
           >
             <Route path="/dashboard/web-analysis" element={<Home />} />
+            <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
       )}

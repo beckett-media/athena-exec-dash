@@ -2,54 +2,20 @@ import React from "react";
 import styles from "./TopSource.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import { API } from "aws-amplify";
 import { Text } from "@chakra-ui/react";
 import Dropdown from "../../../components/Dropdown";
 import BarChart from "./BarChart";
 
-const TopSource = ({ className }) => {
-  const [sorting, setSorting] = React.useState("2021");
+const TopSource = ({ className, topSources }) => {
+  const [sorting, setSorting] = React.useState("2022");
   const intervals = ["2022", "2021", "2020", "2019"];
-  const [datas, setData] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "ExecDashTopSourcesSorted";
-  const year = `${sorting}`;
-  const propertyID = "p.numberOfUsers";
-
-  const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`;
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    setIsLoading(true);
-
-    getData().then((res) => {
-      setData(res?.data);
-    });
-    setIsLoading(false);
-  }, [sorting, isLoading]);
-
-  const data = datas.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  const topSources = data?.slice(0, 16);
+  const data = topSources.filter((d) => d?.dates === sorting);
+  const topSourcesData = data.slice(0, 17);
 
   return (
     <Card
       className={cn(styles.card, className)}
-      title={`Top ${topSources.length} sources of website visitors`}
+      title={`Top ${topSourcesData.length} sources of website visitors`}
       description="The graph below highlights the top 5 sources of website traffic for Beckett's website."
       classTitle="title-purple"
       head={
@@ -66,7 +32,7 @@ const TopSource = ({ className }) => {
         </>
       }
     >
-      <BarChart data={topSources} />
+      <BarChart data={topSourcesData} />
     </Card>
   );
 };

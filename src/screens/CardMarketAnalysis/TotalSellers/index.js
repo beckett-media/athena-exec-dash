@@ -9,7 +9,7 @@ import Card from "../../../components/Card";
 import TablePivots from "./TablePivots";
 import TotalSellersData from "./MarketDataGraphs";
 
-const TotalSellers = () => {
+const TotalSellers = ({ data, isLoading }) => {
   return (
     <>
       <Card>
@@ -25,12 +25,12 @@ const TotalSellers = () => {
           })}
         >
           <Stack spacing="5">
-            <TablePivots />
+            <TablePivots data={data} />
           </Stack>
         </Box>
       </Card>
       <Box my={20} />
-      <TotalSellersData />
+      <TotalSellersData data={data} />
     </>
   );
 };

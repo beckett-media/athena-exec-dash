@@ -18,18 +18,29 @@ const BarChart = ({ data }) => {
 
   var layout = {
     xaxis: {
-      showgrid: false,
+      showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
-      tickcolor: "#e5eaf0",
+      tickcolor: "transparent",
+      tickfont: {
+        family: "Arial",
+        size: 11,
+        color: darkMode.value ? "gray" : "#000",
+      },
     },
 
     yaxis: {
       showgrid: true,
       zeroline: false,
-      showline: true,
+      showline: false,
       showticklabels: true,
+      tickcolor: "transparent",
+      tickfont: {
+        family: "Arial",
+        size: 11,
+        color: darkMode.value ? "gray" : "#000",
+      },
     },
     autosize: true,
 

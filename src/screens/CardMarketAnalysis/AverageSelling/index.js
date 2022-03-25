@@ -3,49 +3,17 @@ import { Box, Stack } from "@chakra-ui/react";
 import Card from "../../../components/Card";
 import TablePivots from "./TablePivots";
 import MarketData from "./MarketDataGraphs";
-import { API } from "aws-amplify";
 
-const TableMarket = () => {
-  const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "CompetitorMetric";
-  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-  const data = dataTable.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  React.useEffect(() => {
-    setIsLoading(true);
-    getData().then((res) => {
-      setDataTable(res?.data);
-    });
-    setIsLoading(false);
-  }, [isLoading]);
-
+const TableMarket = ({ data, isLoading }) => {
   if (isLoading) {
     return <div>Loading...</div>;
   } else {
     return (
       <>
         <Card>
-          <Box bg="bg-surface">
-            <Stack spacing="5">
-              <TablePivots data={data} />
-            </Stack>
-          </Box>
+          <Stack spacing="5">
+            <TablePivots data={data} />
+          </Stack>
         </Card>
         <Box my={20} />
         <MarketData data={data} />
