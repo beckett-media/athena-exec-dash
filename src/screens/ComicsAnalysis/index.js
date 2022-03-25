@@ -9,8 +9,8 @@ const ComicAnalysis = () => {
   return (
     <>
       <div className={styles.section}>
-        <TablePivots />
-        {/* <ComingSoon /> */}
+        {/* <TablePivots /> */}
+        <ComingSoon />
       </div>
       <TooltipGlodal />
     </>

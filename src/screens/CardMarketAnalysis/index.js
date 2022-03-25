@@ -6,7 +6,6 @@ import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import ComingSoon from "../CominSoon/ComingSoon";
 
-
 import TotalSales from "./TotalSales";
 import TotalSellers from "./TotalSellers";
 import TotalSold from "./TotalSold";
@@ -19,7 +18,7 @@ const MarketAnalysis = ({ data, isLoading }) => {
   } else {
     return (
       <>
-        <Tabs
+        {/* <Tabs
           variant="unstyled"
           isFitted
           borderRadius={0}
@@ -77,8 +76,8 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs>
-        {/* <ComingSoon /> */}
+        </Tabs> */}
+        <ComingSoon />
       </>
     );
   }
