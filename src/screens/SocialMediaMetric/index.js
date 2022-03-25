@@ -10,8 +10,9 @@ import ComingSoon from "../CominSoon/ComingSoon";
 
 const SocialMediaMetric = () => {
   return (
-    <div className={styles.row}>
-      {/* <div className={styles.col}>
+    <>
+      {/* <div className={styles.row}>
+    <div className={styles.col}>
         <KPI className={styles.card} />
         <Box my={"2rem"} />
         <PostPerWeekGraph className={styles.card} />
@@ -23,9 +24,10 @@ const SocialMediaMetric = () => {
         <SocialMessages />
         <Box my={"2rem"} />
         <TopCountry className={styles.card} />
-      </div> */}
+      </div>
+    </div> */}
       <ComingSoon />
-    </div>
+    </>
   );
 };
 
