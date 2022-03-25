@@ -1,8 +1,6 @@
 import React from "react";
-import cn from "classnames";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
-import moment from "moment";
 import { Box } from "@chakra-ui/react";
 
 const ChartLine = ({ data }) => {
@@ -10,15 +8,19 @@ const ChartLine = ({ data }) => {
 
   var dataG = [
     {
-      x: data.map((d) => d.date),
-      y: data.map((d) => d.numposts),
+      x: data.map((d) => d?.date),
+      y: data.map((d) => d?.numposts),
 
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      marker: {
+        color: darkMode.value ? "#FFD88D" : " #FFBC99",
+        size: 10,
+        opacity: 0.8,
+      },
       line: {
-        color: "#2A85FF",
+        color: darkMode.value ? "#FFD88D" : " #FFBC99",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -29,18 +31,29 @@ const ChartLine = ({ data }) => {
 
   var layout = {
     xaxis: {
-      showgrid: false,
+      showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
-      tickcolor: "#e5eaf0",
+      tickcolor: "transparent",
+      tickfont: {
+        family: "Arial",
+        size: 12,
+        color: darkMode.value ? "gray" : "#000",
+      },
     },
 
     yaxis: {
       showgrid: true,
       zeroline: false,
-      showline: true,
+      showline: false,
       showticklabels: true,
+      tickcolor: "transparent",
+      tickfont: {
+        family: "Arial",
+        size: 12,
+        color: darkMode.value ? "gray" : "#000",
+      },
     },
     autosize: true,
 
