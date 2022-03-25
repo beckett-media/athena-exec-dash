@@ -6,11 +6,12 @@ import SentimentAnalysis from "./Sentiment/SentimentAnalysis";
 import TopCountry from "./TopCountry";
 import SocialMessages from "./SocialMessage";
 import KPI from "./KPI";
+import ComingSoon from "../CominSoon/ComingSoon";
 
 const SocialMediaMetric = () => {
   return (
     <div className={styles.row}>
-      <div className={styles.col}>
+      {/* <div className={styles.col}>
         <KPI className={styles.card} />
         <Box my={"2rem"} />
         <PostPerWeekGraph className={styles.card} />
@@ -22,7 +23,8 @@ const SocialMediaMetric = () => {
         <SocialMessages />
         <Box my={"2rem"} />
         <TopCountry className={styles.card} />
-      </div>
+      </div> */}
+      <ComingSoon />
     </div>
   );
 };
