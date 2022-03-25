@@ -103,7 +103,7 @@ app.get("/competitormetric/:ri/:obj", async function (req, res) {
     const options = {
       method: "GET",
 
-      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?orderBy=p.date:desc`,
+      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?orderBy=p.date:desc&pageSize=100`,
       headers: {
         Authorization: "Bearer " + token[0].Value,
         "Content-Type": "application/json",

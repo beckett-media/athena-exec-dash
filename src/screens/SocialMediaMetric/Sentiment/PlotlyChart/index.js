@@ -9,22 +9,64 @@ const ChartLine = ({ data }) => {
 
   var dataG = [
     {
-      x: data.map((d) => moment(d.date).format("MMM Do")),
+      x: data.map((d) => moment(d?.date).format("MMM Do")),
       // map the number of post to the date and on click to marker the date
-      y: data.map((d) => d.numposts),
-
+      y: data.map((d) => d?.positive),
+      name: "positive",
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
       marker: {
-        color: darkMode.value ? "#FFD88D" : " #FFBC99",
+        color: "#83BF6E",
         size: 10,
         opacity: 0.8,
       },
+
       line: {
-        color: darkMode.value ? "#FFD88D" : " #FFBC99",
+        color: "#83BF6E",
         width: 4,
-        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: data.map((d) => moment(d?.date).format("MMM Do")),
+      // map the number of post to the date and on click to marker the date
+      y: data.map((d) => d?.negative),
+      name: "negative",
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: {
+        color: "#FF6A55",
+        size: 10,
+        opacity: 0.8,
+      },
+
+      line: {
+        color: "#FF6A55",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: data.map((d) => moment(d?.date).format("MMM Do")),
+      // map the number of post to the date and on click to marker the date
+      y: data.map((d) => d?.neutral),
+      name: "neutral",
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: {
+        color: "#2A85FF",
+        size: 10,
+        opacity: 0.8,
+      },
+
+      line: {
+        color: "#2A85FF",
+        width: 4,
         shape: "spline",
         smoothing: 1,
       },
@@ -95,6 +137,14 @@ const ChartLine = ({ data }) => {
   return (
     <Box>
       <Plot
+        // get the value on click and pass it to the marker
+        onClick={(data) => {
+          console.log(
+            data.points[0].x,
+            data.points[0].y,
+            data.points[0].data.name
+          );
+        }}
         data={dataG}
         layout={layout}
         style={{ zIndex: 50 }}
