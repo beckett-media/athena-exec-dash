@@ -5,6 +5,7 @@ import cn from "classnames";
 import Icon from "../Icon";
 import Theme from "../Theme";
 import Image from "../Image";
+import Dropdown from "../SidebarDropdown";
 
 const navigation = [
   {
@@ -20,7 +21,18 @@ const navigation = [
   {
     title: "Market Analysis",
     icon: "pie-chart",
-    url: "/dashboard/market-analysis",
+    slug: "dashboard",
+    dropdown: [
+      {
+        title: "Card Market",
+        url: "/dashboard/market-analysis",
+      },
+      {
+        title: "Comic Market",
+        icon: "grid",
+        url: "/dashboard/comic-market-analysis",
+      },
+    ],
   },
   {
     title: "Card Grading",
@@ -28,16 +40,10 @@ const navigation = [
     // url: "/dashboard/web-analysis",
     url: "/dashboard/web-analysis",
   },
-  {
-    title: "Comic Market Analysis",
-    icon: "grid",
-    url: "/dashboard/comic-market-analysis",
-  },
 ];
 
 const Sidebar = ({ className, onClose, signOut }) => {
   const [visible, setVisible] = useState(false);
-  const exact = true;
 
   return (
     <>
@@ -56,23 +62,39 @@ const Sidebar = ({ className, onClose, signOut }) => {
           />
         </Link>
         <div className={styles.menu}>
-          {navigation.map((x, index) => (
-            <NavLink
-              className={styles.item}
-              style={({ isActive }) => ({
-                background: isActive ? "#33383F" : "transparent",
-                boxShadow: isActive ? "4px 0 32px rgba(#111315, .05)" : "none",
-                color: isActive ? "#fff" : "",
-              })}
-              to={x.url}
-              key={index}
-              exact={`${exact}`}
-              onClick={onClose}
-            >
-              <Icon name={x.icon} size="24" />
-              {x.title}
-            </NavLink>
-          ))}
+          {navigation.map((x, index) =>
+            x.url ? (
+              <NavLink
+                className={styles.item}
+                activeClassName={styles.active}
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "",
+                    boxShadow: isActive
+                      ? "inset 0px -2px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.11)"
+                      : "",
+                    backgroundColor: isActive ? "#272B30" : "",
+                  };
+                }}
+                to={x.url}
+                key={index}
+                exact
+                onClick={onClose}
+              >
+                <Icon name={x.icon} size="24" />
+                {x.title}
+              </NavLink>
+            ) : (
+              <Dropdown
+                className={styles.dropdown}
+                visibleSidebar={visible}
+                setValue={setVisible}
+                key={index}
+                item={x}
+                onClose={onClose}
+              />
+            )
+          )}
         </div>
 
         <div className={styles.foot}>

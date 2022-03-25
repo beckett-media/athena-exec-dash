@@ -1,4 +1,4 @@
-import React, { useState, useRef, PureComponent } from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";
@@ -9,44 +9,14 @@ import moment from "moment";
 import { Box } from "@chakra-ui/react";
 import { API } from "aws-amplify";
 
-const SellThroughData = ({ className }) => {
+const SellThroughData = ({ className, data }) => {
   const darkMode = useDarkMode(false);
-
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "CompetitorMetric";
-  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    isLoading &&
-      getData().then((res) => {
-        setDataTable(res?.data);
-        setIsLoading(false);
-      });
-  }, [isLoading]);
-
-  const datas = dataTable.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
 
   var data = [
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
       // filter the y values to only include marketPlayer = "BGS"
-      y: datas.map((d) => (d.marketPlayer === "BGS" ? d.sellThrough : null)),
+      y: data.map((d) => (d.marketPlayer === "BGS" ? d.sellThrough : null)),
 
       type: "scatter",
       mode: "lines+markers",
@@ -62,8 +32,8 @@ const SellThroughData = ({ className }) => {
       },
     },
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
-      y: datas.map((d) => (d.marketPlayer === "BVG" ? d.sellThrough : null)),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) => (d.marketPlayer === "BVG" ? d.sellThrough : null)),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -77,8 +47,8 @@ const SellThroughData = ({ className }) => {
       },
     },
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
-      y: datas.map((d) => (d.marketPlayer === "CSG" ? d.sellThrough : null)),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) => (d.marketPlayer === "CSG" ? d.sellThrough : null)),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -92,8 +62,8 @@ const SellThroughData = ({ className }) => {
       },
     },
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
-      y: datas.map((d) => (d.marketPlayer === "HGA" ? d.sellThrough : null)),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) => (d.marketPlayer === "HGA" ? d.sellThrough : null)),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -107,8 +77,8 @@ const SellThroughData = ({ className }) => {
       },
     },
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
-      y: datas.map((d) => (d.marketPlayer === "PSA" ? d.sellThrough : null)),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) => (d.marketPlayer === "PSA" ? d.sellThrough : null)),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -122,8 +92,8 @@ const SellThroughData = ({ className }) => {
       },
     },
     {
-      x: datas.map((d) => moment(d.date).format("MMM YY")),
-      y: datas.map((d) => (d.marketPlayer === "SGC" ? d.sellThrough : null)),
+      x: data.map((d) => moment(d.date).format("MMM YY")),
+      y: data.map((d) => (d.marketPlayer === "SGC" ? d.sellThrough : null)),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,

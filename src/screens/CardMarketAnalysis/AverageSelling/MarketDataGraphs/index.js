@@ -1,9 +1,8 @@
-import React, { useState, useRef, PureComponent } from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
-import { API } from "aws-amplify";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";

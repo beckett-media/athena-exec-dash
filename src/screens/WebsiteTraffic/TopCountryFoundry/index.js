@@ -15,53 +15,30 @@ import useDarkMode from "use-dark-mode";
 import { API } from "aws-amplify";
 import Dropdown from "../../../components/Dropdown";
 
-const TopCountry = ({ className, ...props }) => {
+const TopCountry = ({ className, data }) => {
   const darkMode = useDarkMode(false);
 
   const [sorting, setSorting] = React.useState("2022");
-  const intervals = ["2022", "2021", "2019"];
+  const intervals = ["2022", "2021", "2020", "2019"];
+  const dataSorted = data.filter((d) => d?.dates === sorting);
 
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "ExecDashTopCountriesSorted";
-  const year = `${sorting}`;
-  const propertyID = "p.numberOfUsers";
-
-  const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; // URL to fetch data from
-  const [data, setData] = React.useState([]);
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, [sorting]);
-
-  const liveData = data?.data;
   const dates = [];
   const contries = [];
   const numberOfUsers = [];
   const graphData = [];
 
-  const topCountries = liveData?.slice(0, 10);
+  const topCountries = dataSorted?.slice(0, 10);
 
   topCountries?.forEach((element) => {
     // Loop through top countries
-    if (contries?.indexOf(element?.properties?.countries) === -1) {
+    if (contries?.indexOf(element?.countries) === -1) {
       // If country is not in contries array
-      contries?.push(element?.properties?.countries); // Push country to contries array
+      contries?.push(element?.countries); // Push country to contries array
 
       // get the value of the country
-      numberOfUsers?.push(element?.properties?.numberOfUsers); // Push number of users to numberOfUsers array
+      numberOfUsers?.push(element?.numberOfUsers); // Push number of users to numberOfUsers array
       // get dates
-      dates?.push(element?.properties?.dates); // Push dates to date array
+      dates?.push(element?.dates); // Push dates to date array
     }
   });
 
@@ -83,16 +60,13 @@ const TopCountry = ({ className, ...props }) => {
     }
     if (element.name === "United_Kingdom") {
       // If country is United States
-      element.name = "UK"; // Change country name to USA
+      element.name = "UK."; // Change country name to USA
     }
     if (element.name === "Hong_Kong") {
       // If country is United States
-      element.name = "HK"; // Change country name to USA
+      element.name = "Hong K."; // Change country name to USA
     }
   });
-
-
-
 
   return (
     <Card
@@ -123,7 +97,7 @@ const TopCountry = ({ className, ...props }) => {
             margin={{
               top: 0,
               right: 0,
-              left: 5,
+              left: 16,
               bottom: 0,
             }}
             barSize={24}

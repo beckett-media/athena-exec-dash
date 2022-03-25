@@ -36,16 +36,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-/**********************
- * Example get method *
- **********************/
-
-app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
+app.get("/api/:ri/:obj/:users", async function (req, res) {
   const aws = require("aws-sdk");
   const request = require("request");
 
   // Get the parameters from the request
-  const { ri, obj, year, users } = req.params;
+  const { ri, obj, users } = req.params;
 
   // ########################GET SECRET KEY####################################
   const { Parameters } = await new aws.SSM()
@@ -56,6 +52,7 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
     .promise();
 
   const token = Parameters;
+  
   // #######################CHECK TOKEN##################################
 
   if (token[0].Value.length === 0) {
@@ -64,7 +61,7 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
     const options = {
       method: "GET",
 
-      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?p.dates.eq=${year}&orderBy=${users}:desc`,
+      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?&orderBy=${users}:desc`,
       headers: {
         Authorization: "Bearer " + token[0].Value,
         "Content-Type": "application/json",
@@ -75,7 +72,6 @@ app.get("/api/:ri/:obj/:year/:users", async function (req, res) {
       if (error) throw new Error(error.message);
       res.send(JSON.parse(body));
     });
-
   }
 });
 
@@ -84,7 +80,7 @@ app.get("/competitormetric/:ri/:obj", async function (req, res) {
   const request = require("request");
 
   // Get the parameters from the request
-  const { ri, obj} = req.params;
+  const { ri, obj } = req.params;
 
   // ########################GET SECRET KEY####################################
   const { Parameters } = await new aws.SSM()
@@ -114,7 +110,6 @@ app.get("/competitormetric/:ri/:obj", async function (req, res) {
       if (error) throw new Error(error.message);
       res.send(JSON.parse(body));
     });
-
   }
 });
 

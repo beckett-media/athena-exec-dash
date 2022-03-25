@@ -8,45 +8,11 @@ import Loading from "../../../components/LottieAnimation/Loading";
 import { Box, Text } from "@chakra-ui/react";
 import Dropdown from "../../../components/Dropdown";
 
-const PageTraffics = (props) => {
-  const [data, setData] = React.useState([]);
+const PageTraffics = ({ data }) => {
   const [sorting, setSorting] = React.useState("2022");
-  const intervals = ["2022", "2021", "2019"];
+  const intervals = ["2022", "2021", "2020", "2019"];
+  const liveData = data.filter((d) => d?.dates === sorting);
 
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "ExecDashTopPageNamesSorted";
-  const year = `${sorting}`;
-  const propertyID = "p.numberOfUsers";
-
-  const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; /// URL to fetch from API
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  const dropDownChange = (e) => {
-    const year = e.target.value;
-    const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; /// URL to fetch from API
-    const apiName = "foundryapi";
-    const path = `/${url}`;
-
-    API.get(apiName, path).then((response) => {
-      setData(response);
-    });
-  };
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, [sorting]);
-
-  const liveData = data?.data; // Get data from API
   const date = [];
   const numberOfUsers = [];
   const pageTitles = [];
@@ -56,9 +22,9 @@ const PageTraffics = (props) => {
 
   topPathsTitle?.forEach((element) => {
     // Loop through top paths create object
-    date.push(element?.properties?.dates); // Push dates to date array
-    numberOfUsers.push(element?.properties?.numberOfUsers); // Push number of users to numberOfUsers array
-    pageTitles.push(element?.properties?.pageTitle); // Push pageTitles to pageTitles array
+    date.push(element?.dates); // Push dates to date array
+    numberOfUsers.push(element?.numberOfUsers); // Push number of users to numberOfUsers array
+    pageTitles.push(element?.pageTitle); // Push pageTitles to pageTitles array
   });
 
   // create array of objects for table data

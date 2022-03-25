@@ -16,7 +16,6 @@ import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
-import { API } from "aws-amplify";
 import cn from "classnames";
 import styles from "./Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
@@ -27,7 +26,7 @@ function useControlledState(state) {
     if (state.groupBy.length) {
       return {
         ...state,
-        hiddenColumns: [...state.hiddenColumns, ...state.groupBy].filter(
+        hiddenColumns: [...state?.hiddenColumns, ...state?.groupBy].filter(
           (d, i, all) => all.indexOf(d) === i
         ),
       };
@@ -68,7 +67,7 @@ function Tables({ columns, data }) {
             // Build our expander column
             Header: ({ allColumns, state: { groupBy } }) => {
               return groupBy.map((columnId) => {
-                const column = allColumns.find((d) => d.id === columnId);
+                const column = allColumns.find((d) => d?.id === columnId);
 
                 return (
                   <span {...column.getHeaderProps()}>
@@ -245,7 +244,7 @@ function TablePivots({ className, data }) {
         // use comma format for the aggregate value numberWithCommas
         Cell: ({ cell: { value } }) => numberWithCommas(value),
         Aggregated: ({ value }) =>
-          `$${value.toLocaleString("en-US", {
+          `$${value?.toLocaleString("en-US", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })}`,

@@ -227,7 +227,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function TablePivots({ className }) {
+function TablePivots({ className, data }) {
   const columns = React.useMemo(
     () => [
       {
@@ -260,36 +260,6 @@ function TablePivots({ className }) {
   );
 
   const darkMode = useDarkMode();
-
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "CompetitorMetric";
-  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    isLoading &&
-      getData().then((res) => {
-        setDataTable(res?.data);
-        setIsLoading(false);
-      });
-  }, [isLoading]);
-
-  const datas = dataTable.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
 
   return (
     <Card
@@ -325,7 +295,7 @@ function TablePivots({ className }) {
           to group.
         </Text>
       </Box>
-      <Tables columns={columns} data={datas} />
+      <Tables columns={columns} data={data} />
     </Card>
   );
 }

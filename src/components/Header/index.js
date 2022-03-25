@@ -1,13 +1,11 @@
-import { Badge, Box, HStack, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Box, HStack, Text } from "@chakra-ui/react";
+import React from "react";
 import styles from "./Header.module.sass";
 import LogoHeader from "./Logo";
 
 const Header = ({ onOpen, user }) => {
-  const [visible, setVisible] = useState(false);
   const handleClick = () => {
     onOpen();
-    setVisible(false);
   };
 
   // slice user name from christian@plainspokendigital.com
@@ -19,7 +17,7 @@ const Header = ({ onOpen, user }) => {
   return (
     <header className={styles.header}>
       <button className={styles.burger} onClick={() => handleClick()} />
-      <div className={styles.control} onClick={() => setVisible(false)}>
+      <div className={styles.control}>
         <LogoHeader className={styles.user} />
         <Box
           style={{

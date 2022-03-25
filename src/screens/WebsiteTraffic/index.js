@@ -6,22 +6,22 @@ import PageTraffics from "./PagesURLPathsFoundry/PageTraffics";
 import TopSource from "./TopSourcesFoundry";
 import TopDevices from "./TopDevicesFoundry";
 
-const WebsiteMediaMetric = () => {
+const WebsiteMediaMetric = ({ dataW, dataD, dataC, dataP }) => {
   return (
     <div className={styles.row}>
       <div className={styles.col}>
         <Box my={"2rem"} />
-        <TopSource className={styles.card} />
+        <TopSource className={styles.card} topSources={dataW} />
         <Box my={"2rem"} />
-        <PageTraffics />
+        <PageTraffics data={dataP} />
         <Box my={"2rem"} />
       </div>
 
       <div className={styles.col} style={{ marginLeft: 20 }}>
         <Box my={"2rem"} />
-        <TopCountry className={styles.card} />
+        <TopCountry className={styles.card} data={dataC} />
         <Box my={"2rem"} />
-        <TopDevices />
+        <TopDevices data={dataD} />
       </div>
     </div>
   );

@@ -9,65 +9,36 @@ import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
 import { numberWithCommas } from "../../../utils";
 import Loading from "../../../components/LottieAnimation/Loading";
 import Dropdown from "../../../components/Dropdown";
-import { Text } from "@chakra-ui/react";
 
-const TopDevices = () => {
+const TopDevices = ({ data }) => {
   return (
     <div style={{ width: "100%", height: "95%" }}>
-      <Displaydevices />
+      <Displaydevices dataD={data} />
     </div>
   );
 };
 
-function Displaydevices({ className, ...props }) {
+function Displaydevices({ className, dataD }) {
   const [sorting, setSortings] = React.useState("2022");
-  const [devices, setDevices] = React.useState([]);
-  const intervals = ["2022", "2021", "2019"];
-  const [loading, setLoading] = React.useState(true);
-
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const typeObject = "ExecDashTopDevicesSorted";
-  const year = `${sorting}`;
-  const propertyID = "p.numberOfUsers";
-
-  const url = `api/${riOntology}/${typeObject}/${year}/${propertyID}`; /// URL to fetch from API
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = `/${url}`;
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    setLoading(true);
-    (async function () {
-      const response = await getData();
-      setDevices(response);
-    })();
-    setLoading(false);
-  }, [sorting]);
+  const intervals = ["2022", "2021", "2020", "2019"];
+  const liveData = dataD.filter((d) => d?.dates === sorting);
 
   const colors = ["#8E59FF", "#83BF6E", "#2A85FF"]; // colors for the graph
-
-  const liveData = devices?.data;
-
   const LegendData = [];
   const Colors = [];
   const PieChartData = [];
 
   liveData?.forEach((element, index) => {
     // Loop through top devices
-    if (LegendData?.indexOf(element?.properties?.devicesType) === -1) {
+    if (LegendData?.indexOf(element?.devicesType) === -1) {
       // If device is not in LegendData array
-      LegendData?.push(element?.properties?.devicesType); // Push device to LegendData array
+      LegendData?.push(element?.devicesType); // Push device to LegendData array
       Colors?.push(colors[index]); // Push color to Colors array
 
       PieChartData?.push({
         // Push data to PieChartData array
-        name: element?.properties?.devicesType, // Device name
-        value: element?.properties?.numberOfUsers, // Get value of device
+        name: element?.devicesType, // Device name
+        value: element?.numberOfUsers, // Get value of device
       });
     }
   });
@@ -202,4 +173,3 @@ function Displaydevices({ className, ...props }) {
 }
 
 export default TopDevices;
-
