@@ -31,17 +31,15 @@ import SocialMessagesType from "../SocialMessageType";
 
 import Dropdown from "../../../components/Dropdown";
 import Loading from "../../../components/LottieAnimation/Loading";
-import ChartLine from "./PlotlyChart";
 
 const SentimentAnalysis = ({ className }) => {
   const darkMode = useDarkMode(false);
-  const [data, setData] = React.useState([]);
+  const [sentimentData, setData] = useState([]);
   const [sentimentType, setSentimentType] = useState("");
   const [sentimeTotal, setSentimeTotal] = useState(0);
   const [color, setColor] = useState("");
   const [emoji, setEmoji] = useState("");
   const [descBg, setDescBg] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
 
   const [functionTrigger, setOpen] = useState(false);
 
@@ -58,15 +56,43 @@ const SentimentAnalysis = ({ className }) => {
   }
 
   React.useEffect(() => {
-    setIsLoading(true);
+    (async function () {
+      const response = await getData();
+      setData(response);
+    })();
+  }, []);
 
-    getData().then((res) => {
-      setData(res?.data);
-    });
-    setIsLoading(false);
-  }, [isLoading]);
+  const positive = [];
+  const neutral = [];
+  const negative = [];
+  const numPosts = [];
+  const sentiment = [];
+  const date = [];
+  const sentiment_analysis = [];
 
-  if (isLoading) {
+  if (sentimentData) {
+    const data_analysis = sentimentData?.data;
+
+    for (let key in data_analysis) {
+      positive.push(data_analysis[key]?.positive);
+      neutral.push(data_analysis[key]?.neutral);
+      negative.push(data_analysis[key]?.negative);
+      numPosts.push(data_analysis[key]?.numposts);
+      sentiment.push(data_analysis[key]?.sentiment);
+      date.push(data_analysis[key]?.date);
+    }
+
+    for (let i = 0; i < date?.length; i++) {
+      sentiment_analysis.push({
+        name: date[i],
+        positive: positive[i],
+        neutral: neutral[i],
+        negative: negative[i],
+      });
+    }
+  }
+
+  if (sentiment_analysis.length === 0) {
     return <Loading />;
   }
 
@@ -151,8 +177,7 @@ const SentimentAnalysis = ({ className }) => {
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
       >
-        <ChartLine data={data}  />
-        {/* <div className={styles.chart}>
+        <div className={styles.chart}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={500}
@@ -268,7 +293,7 @@ const SentimentAnalysis = ({ className }) => {
               />
             </LineChart>
           </ResponsiveContainer>
-        </div> */}
+        </div>
       </Card>
     </>
   );
