@@ -150,9 +150,8 @@ const SentimentAnalysis = ({ className }) => {
                         paddingBottom: 2,
                       }}
                     >
-                      {" "}
                       {sentimentType}
-                    </span>{" "}
+                    </span>
                     sentiment
                   </Text>
                 </DrawerHeader>
