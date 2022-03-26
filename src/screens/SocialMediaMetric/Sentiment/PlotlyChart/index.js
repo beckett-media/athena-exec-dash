@@ -109,13 +109,6 @@ const ChartLine = ({ data }) => {
       b: 110,
       t: 10,
     },
-    transition: {
-      duration: 800,
-      easing: "elastic-in",
-    },
-    frame: {
-      duration: 800,
-    },
 
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
@@ -134,17 +127,13 @@ const ChartLine = ({ data }) => {
     },
   };
 
+  Plotly.on("plotly_click", function (data) {
+    console.log(data);
+  });
+
   return (
     <Box>
       <Plot
-        // get the value on click and pass it to the marker
-        onClick={(data) => {
-          console.log(
-            data.points[0].x,
-            data.points[0].y,
-            data.points[0].data.name
-          );
-        }}
         data={dataG}
         layout={layout}
         style={{ zIndex: 50 }}
