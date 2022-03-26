@@ -127,10 +127,6 @@ const ChartLine = ({ data }) => {
     },
   };
 
-  Plotly.on("plotly_click", function (data) {
-    console.log(data);
-  });
-
   return (
     <Box>
       <Plot
