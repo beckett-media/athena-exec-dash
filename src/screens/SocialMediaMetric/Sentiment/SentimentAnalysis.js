@@ -166,6 +166,8 @@ const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
           <>
             {sorting === "positive posts" && (
               <Button
+                size={"xs"}
+                py={2}
                 bg={"green.400"}
                 onClick={() => {
                   setOpen(true);
@@ -180,6 +182,8 @@ const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
             )}
             {sorting === "negative posts" && (
               <Button
+                py={2}
+                size={"xs"}
                 bg={"red.400"}
                 onClick={() => {
                   setOpen(true);
@@ -194,6 +198,8 @@ const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
             )}
             {sorting === "neutral posts" && (
               <Button
+                py={2}
+                size={"xs"}
                 bg={"blue.400"}
                 onClick={() => {
                   setOpen(true);

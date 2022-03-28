@@ -36,7 +36,9 @@ const Card = ({
           {description}
         </div>
       )}
-      <Box m={10}>{OpenModal}</Box>
+      <Box mb={7} mx={7}>
+        {OpenModal}
+      </Box>
       {children}
     </div>
   );
