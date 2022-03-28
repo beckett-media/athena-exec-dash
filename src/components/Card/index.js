@@ -1,6 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./Card.module.sass";
+import { Box, Button } from "@chakra-ui/react";
 
 const Card = ({
   className,
@@ -10,13 +11,14 @@ const Card = ({
   head,
   description,
   children,
+  OpenModal,
 }) => {
   return (
     <div className={cn(styles.card, className)}>
       {title && (
         <div className={cn(styles.head, classCardHead)}>
           <div className={cn(classTitle, styles.title)}>{title}</div>
-           {head && head}
+          {head && head}
         </div>
       )}
       {description && (
@@ -34,6 +36,7 @@ const Card = ({
           {description}
         </div>
       )}
+      <Box m={10}>{OpenModal}</Box>
       {children}
     </div>
   );

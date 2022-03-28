@@ -6,11 +6,8 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
   useDisclosure,
   Text,
   Avatar,
@@ -18,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import ModalDetails from "../../ModalDetails";
 import moment from "moment";
-//instagram
+
 import {
   FaReddit,
   FaTwitter,

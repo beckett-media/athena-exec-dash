@@ -5,12 +5,17 @@ import Card from "../../../components/Card";
 import { Text } from "@chakra-ui/react";
 import Dropdown from "../../../components/Dropdown";
 import BarChart from "./BarChart";
+import Loading from "../../../components/LottieAnimation/Loading";
 
-const TopSource = ({ className, topSources }) => {
+const TopSource = ({ className, topSources, isLoading }) => {
   const [sorting, setSorting] = React.useState("2022");
   const intervals = ["2022", "2021", "2020", "2019"];
   const data = topSources.filter((d) => d?.dates === sorting);
   const topSourcesData = data.slice(0, 17);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <Card

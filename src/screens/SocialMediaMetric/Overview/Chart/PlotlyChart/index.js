@@ -9,9 +9,9 @@ const ChartLine = ({ data }) => {
 
   var dataG = [
     {
-      x: data.map((d) => moment(d.date).format("MMM Do")),
+      x: data?.map((d) => moment(d?.date).format("MMM Do")),
       // map the number of post to the date and on click to marker the date
-      y: data.map((d) => d.numposts),
+      y: data?.map((d) => d?.numposts),
 
       type: "scatter",
       mode: "lines+markers",
@@ -66,13 +66,6 @@ const ChartLine = ({ data }) => {
       r: 80,
       b: 110,
       t: 10,
-    },
-    transition: {
-      duration: 800,
-      easing: "elastic-in",
-    },
-    frame: {
-      duration: 800,
     },
 
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",

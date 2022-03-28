@@ -1,39 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 
 import styles from "./List.module.sass";
 import Card from "../../../components/Card";
 import Item from "./Item";
 
-import { API } from "aws-amplify";
-
-const SocialMessages = ({ className, onOpen }) => {
-  const [data, setData] = useState([]);
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/messages";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
-
-  const dataQuery = data?.data;
-
-
+const SocialMessages = ({ className, onOpen, socialMessage }) => {
+  const dataQuery = socialMessage;
 
   const username = [];
   const datetime = [];
   const message = [];
   const avatar = [];
   const platform = [];
-  const url = []
+  const url = [];
   const id = [];
 
   if (dataQuery) {
