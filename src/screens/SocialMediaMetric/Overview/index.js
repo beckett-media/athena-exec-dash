@@ -1,31 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "./PostPerWeekGraph.module.sass";
 import Card from "../../../components/Card";
 import PercentOfPostPerWeek from "../../../components/PercentOfPostPerWeek";
 import moment from "moment";
 import ZoomChart from "./Chart/ZoomChart";
-import { API } from "aws-amplify";
 import Loading from "../../../components/LottieAnimation/Loading";
-import { Text } from "@chakra-ui/react";
 
-const BeginingOfWeek = (props) => {
-  const [sentimentData, setData] = useState([]);
-
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialdata";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
-
+const BeginingOfWeek = ({ socialData, dataI }) => {
   const positive = [];
   const neutral = [];
   const negative = [];
@@ -33,8 +15,8 @@ const BeginingOfWeek = (props) => {
   const date = [];
   const sentiment_analysis = [];
 
-  if (sentimentData) {
-    const data_analysis = sentimentData?.data;
+  if (socialData) {
+    const data_analysis = socialData;
 
     for (let key in data_analysis) {
       positive.push(data_analysis[key]?.positive);
@@ -45,9 +27,8 @@ const BeginingOfWeek = (props) => {
       date.push(data_analysis[key]?.date);
     }
 
-    // change to {name: '03/04/2022', positive: 0, neutral: 25, negative: 0}
     for (let i = 0; i < date?.length; i++) {
-      sentiment_analysis.push({
+      sentiment_analysis?.push({
         name: date[i],
         positive: positive[i],
         neutral: neutral[i],
@@ -60,7 +41,7 @@ const BeginingOfWeek = (props) => {
     <>
       <PercentOfPostPerWeek
         className={styles.balance}
-        value={props.value}
+        value={dataI}
         background
       />
       {sentiment_analysis[0]?.name !== undefined && (
@@ -70,26 +51,11 @@ const BeginingOfWeek = (props) => {
   );
 };
 
-const PostPerWeekGraph = ({ className }) => {
-  const [socialindicators, setData] = useState([]);
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialindicators";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
-
+const PostPerWeekGraph = ({ className, dataI, socialData }) => {
   const percent_indicators = [];
 
-  if (socialindicators) {
-    const data_analysis = socialindicators?.data;
+  if (dataI) {
+    const data_analysis = dataI;
 
     for (let key in data_analysis) {
       percent_indicators.push({
@@ -98,8 +64,8 @@ const PostPerWeekGraph = ({ className }) => {
     }
   }
 
-  if (socialindicators?.data === undefined) {
-    return <Text>Loading...</Text>;
+  if (!dataI) {
+    return <Loading />;
   }
 
   return (
@@ -114,12 +80,13 @@ const PostPerWeekGraph = ({ className }) => {
           <div className={styles.line}>
             {percent_indicators[0]?.perc_inc !== undefined && (
               <BeginingOfWeek
-                value={`${(percent_indicators[0]?.perc_inc).toFixed(2)}`}
+                socialData={socialData}
+                dataI={(percent_indicators[0]?.perc_inc).toFixed(2)}
               />
             )}
           </div>
         </div>
-        <ZoomChart />
+        <ZoomChart socialData={socialData} />
       </div>
     </Card>
   );

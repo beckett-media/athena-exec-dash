@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import styles from "./SocialMediaMetric.module.sass";
 import { Box } from "@chakra-ui/react";
 import PostPerWeekGraph from "./Overview";
@@ -8,20 +8,28 @@ import SocialMessages from "./SocialMessage";
 import KPI from "./KPI";
 import ComingSoon from "../CominSoon/ComingSoon";
 
-const SocialMediaMetric = () => {
+const SocialMediaMetric = ({ dataI, socialData, socialMessage }) => {
   return (
     <>
       <div className={styles.row}>
         <div className={styles.col}>
-          <KPI className={styles.card} />
+          <KPI className={styles.card} dataI={dataI} />
           <Box my={"2rem"} />
-          <PostPerWeekGraph className={styles.card} />
+          <PostPerWeekGraph
+            className={styles.card}
+            dataI={dataI}
+            socialData={socialData}
+          />
           <Box my={"2rem"} />
-          <SentimentAnalysis />
+          <SentimentAnalysis
+            socialData={socialData}
+            dataI={dataI}
+            socialMessage={socialMessage}
+          />
           <Box my={"2rem"} />
         </div>
         <div className={styles.col} style={{ marginLeft: 20 }}>
-          <SocialMessages />
+          <SocialMessages socialMessage={socialMessage} />
           <Box my={"2rem"} />
           <TopCountry className={styles.card} />
         </div>

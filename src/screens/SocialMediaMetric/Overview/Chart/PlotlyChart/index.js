@@ -9,9 +9,9 @@ const ChartLine = ({ data }) => {
 
   var dataG = [
     {
-      x: data.map((d) => moment(d.date).format("MMM Do")),
+      x: data?.map((d) => moment(d?.date).format("MMM Do")),
       // map the number of post to the date and on click to marker the date
-      y: data.map((d) => d.numposts),
+      y: data?.map((d) => d?.numposts),
 
       type: "scatter",
       mode: "lines+markers",

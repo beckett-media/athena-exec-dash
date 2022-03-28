@@ -15,6 +15,7 @@ import { Text } from "@chakra-ui/react";
 import "./utils-auth/auth.css";
 import NoMatch from "./screens/NoMatch";
 import { API } from "aws-amplify";
+import Loading from "./components/LottieAnimation/Loading";
 
 const components = {
   Header() {
@@ -71,6 +72,9 @@ function App() {
   const [deviceData, setDeviceData] = React.useState([]);
   const [countriesData, setCountriesData] = React.useState([]);
   const [pagesData, setPagesData] = React.useState([]);
+  const [socialDataIndicators, setSocialDataIndicators] = React.useState([]);
+  const [socialData, setSocialData] = React.useState([]);
+  const [socialDataMessage, setSocialDataMessage] = React.useState([]);
 
   //############################## API PARAMS ###################################
 
@@ -94,24 +98,15 @@ function App() {
 
   //############################# MARKET ANALYSIS QUERY ########################################
 
-  function MarketAnalysisAPI() {
-    const path = `/${url}`;
-    return API.get(apiName, path);
-  }
-
   const data = dataTable.map((d) => {
     const { rid, ...rest } = d;
+
     return {
       ...rest?.properties,
     };
   });
 
   //############################## SOURCES WEBSITE QUERY ######################################
-
-  function SourceWebsite() {
-    const path = `/${urlW}`;
-    return API.get(apiName, path);
-  }
 
   const dataW = trafficData.map((d) => {
     const { rid, ...rest } = d;
@@ -122,11 +117,6 @@ function App() {
 
   //############################# WEBSITE TOP DEVICE  QUERY ###################################
 
-  function DevicesWebsite() {
-    const path = `/${urlD}`;
-    return API.get(apiName, path);
-  }
-
   const dataD = deviceData.map((d) => {
     const { rid, ...rest } = d;
     return {
@@ -136,11 +126,6 @@ function App() {
 
   //############################# WEBSITE TOP COUNTRIES  QUERY ###################################
 
-  function TopCountriesWebsite() {
-    const path = `/${urlC}`;
-    return API.get(apiName, path);
-  }
-
   const dataC = countriesData.map((d) => {
     const { rid, ...rest } = d;
     return {
@@ -148,11 +133,6 @@ function App() {
     };
   });
   //############################# WEBSITE TOP PAGE ROUTES  QUERY ###################################
-
-  function TopPagesRoutes() {
-    const path = `/${urlP}`;
-    return API.get(apiName, path);
-  }
 
   const dataP = pagesData.map((d) => {
     const { rid, ...rest } = d;
@@ -163,27 +143,79 @@ function App() {
 
   //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
 
-  React.useEffect(() => {
-    setIsLoading(true);
-    MarketAnalysisAPI().then((res) => {
-      setDataTable(res?.data);
-    });
-    SourceWebsite().then((res) => {
-      setTrafficData(res?.data);
-    });
-    DevicesWebsite().then((res) => {
-      setDeviceData(res?.data);
-    });
-    TopCountriesWebsite().then((res) => {
-      setCountriesData(res?.data);
-    });
-    TopPagesRoutes().then((res) => {
-      setPagesData(res?.data);
-    });
-    setIsLoading(false);
-  }, [isLoading]);
+  function MarketAnalysisAPI() {
+    const path = `/${url}`;
+    return API.get(apiName, path);
+  }
+  function SourceWebsite() {
+    const path = `/${urlW}`;
+    return API.get(apiName, path);
+  }
+  function DevicesWebsite() {
+    const path = `/${urlD}`;
+    return API.get(apiName, path);
+  }
+  function TopCountriesWebsite() {
+    const path = `/${urlC}`;
+    return API.get(apiName, path);
+  }
+  function TopPagesRoutes() {
+    const path = `/${urlP}`;
+    return API.get(apiName, path);
+  }
+  function getSocialIndicators() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialindicators";
+    return API.get(apiName, path);
+  }
 
-  //#############################################################################
+  function getSocialData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialdata";
+    return API.get(apiName, path);
+  }
+  function getSocialMessage() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/messages";
+    return API.get(apiName, path);
+  }
+
+  React.useEffect(() => {
+    (async function () {
+      MarketAnalysisAPI().then((res) => {
+        setDataTable(res?.data);
+      });
+      SourceWebsite().then((res) => {
+        setTrafficData(res?.data);
+      });
+      DevicesWebsite().then((res) => {
+        setDeviceData(res?.data);
+      });
+      TopCountriesWebsite().then((res) => {
+        setCountriesData(res?.data);
+      });
+      TopPagesRoutes().then((res) => {
+        setPagesData(res?.data);
+      });
+      const indicatorData = await getSocialIndicators();
+      setSocialDataIndicators(indicatorData.data);
+
+      const socialData = await getSocialData();
+      setSocialData(socialData.data);
+
+      const socialMessage = await getSocialMessage();
+      setSocialDataMessage(socialMessage.data);
+
+      if (data === []) {
+        console.log("> 0");
+        setIsLoading(true);
+      } else {
+        console.log("< 0");
+        setIsLoading(false);
+      }
+    })();
+  }, []);
+
 
   return (
     <Authenticator
@@ -212,6 +244,7 @@ function App() {
                   dataD={dataD}
                   dataC={dataC}
                   dataP={dataP}
+                  isLoading={isLoading}
                 />
               }
             />
@@ -250,7 +283,13 @@ function App() {
           >
             <Route
               path="/dashboard/social-media-analysis"
-              element={<SocialMediaMetric />}
+              element={
+                <SocialMediaMetric
+                  dataI={socialDataIndicators}
+                  socialData={socialData}
+                  socialMessage={socialDataMessage}
+                />
+              }
             />
           </Route>
           <Route

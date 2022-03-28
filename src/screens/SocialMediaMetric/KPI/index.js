@@ -1,36 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "./Overview.module.sass";
 import TooltipGlodal from "../../../components/TooltipGlodal";
 import Card from "../../../components/Card";
-import { API } from "aws-amplify";
 
-const KPI = ({ className }) => {
-  const [socialindicators, setData] = React.useState([]);
 
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialindicators";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
-
-  const weekly_indic = socialindicators.data;
-
+const KPI = ({ className, dataI }) => {
   const positive = [];
   const neutral = [];
   const negative = [];
   const total = [];
 
-  if (weekly_indic) {
-    const data_analysis = socialindicators.data;
+  if (dataI) {
+    const data_analysis = dataI;
 
     for (let key in data_analysis) {
       positive.push(data_analysis[key]?.weekly_positive);

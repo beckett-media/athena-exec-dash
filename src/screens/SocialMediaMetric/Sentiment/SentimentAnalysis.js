@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styles from "./SentimentAnalysis.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
@@ -13,7 +13,6 @@ import {
   Legend,
 } from "recharts";
 import useDarkMode from "use-dark-mode";
-import { API } from "aws-amplify";
 import moment from "moment";
 import {
   Drawer,
@@ -32,35 +31,25 @@ import SocialMessagesType from "../SocialMessageType";
 import Dropdown from "../../../components/Dropdown";
 import Loading from "../../../components/LottieAnimation/Loading";
 
-const SentimentAnalysis = ({ className }) => {
+const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
   const darkMode = useDarkMode(false);
-  const [sentimentData, setData] = useState([]);
+
   const [sentimentType, setSentimentType] = useState("");
-  const [sentimeTotal, setSentimeTotal] = useState(0);
   const [color, setColor] = useState("");
   const [emoji, setEmoji] = useState("");
   const [descBg, setDescBg] = useState("");
+  const [sorting, setSorting] = useState("All messages");
+  const intervals = [
+    "All messages",
+    "positive posts",
+    "negative posts",
+    "neutral posts",
+  ];
 
   const [functionTrigger, setOpen] = useState(false);
 
   const onClose = () => setOpen(false);
-  const onOpen = () => setOpen(true);
   const isOpen = functionTrigger;
-
-  //api query
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialdata";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
 
   const positive = [];
   const neutral = [];
@@ -68,10 +57,9 @@ const SentimentAnalysis = ({ className }) => {
   const numPosts = [];
   const sentiment = [];
   const date = [];
-  const sentiment_analysis = [];
 
-  if (sentimentData) {
-    const data_analysis = sentimentData?.data;
+  if (socialData) {
+    const data_analysis = socialData;
 
     for (let key in data_analysis) {
       positive.push(data_analysis[key]?.positive);
@@ -81,18 +69,9 @@ const SentimentAnalysis = ({ className }) => {
       sentiment.push(data_analysis[key]?.sentiment);
       date.push(data_analysis[key]?.date);
     }
-
-    for (let i = 0; i < date?.length; i++) {
-      sentiment_analysis.push({
-        name: date[i],
-        positive: positive[i],
-        neutral: neutral[i],
-        negative: negative[i],
-      });
-    }
   }
 
-  if (sentiment_analysis.length === 0) {
+  if (!socialData) {
     return <Loading />;
   }
 
@@ -139,7 +118,14 @@ const SentimentAnalysis = ({ className }) => {
 
                 <DrawerHeader borderBottomWidth="1px">
                   <Text fontSize="sm" display={"flex"} gap={1}>
-                    There are {<SentimentTotal sentiment={sentimentType} />}{" "}
+                    There are{" "}
+                    {
+                      <SentimentTotal
+                        socialData={socialData}
+                        sentiment={sentimentType}
+                        dataI={dataI}
+                      />
+                    }
                     messages that have{" "}
                     <span
                       style={{
@@ -158,7 +144,10 @@ const SentimentAnalysis = ({ className }) => {
                 <DrawerBody>
                   <Stack spacing="24px">
                     <Box>
-                      <SocialMessagesType sentimentType={sentimentType} />
+                      <SocialMessagesType
+                        sentimentType={sentimentType}
+                        socialMessage={socialMessage}
+                      />
                     </Box>
                   </Stack>
                 </DrawerBody>
@@ -170,18 +159,75 @@ const SentimentAnalysis = ({ className }) => {
       <Card
         className={cn(styles.card, className)}
         title="Social Media Sentiment Around Beckett"
-        description={
-          "To see all the messages with the same sentiment hover on the graph and select the dots on the sentiment line.  ---🟠---"
-        }
+        description={`To see all the messages with the same sentiment use the dropdown menu and select the sentiment you want to see. `}
         classTitle={cn("title-green", styles.cardTitle)}
         classCardHead={styles.cardHead}
+        OpenModal={
+          <>
+            {sorting === "positive posts" && (
+              <Button
+                bg={"green.400"}
+                onClick={() => {
+                  setOpen(true);
+                  setSentimentType("positive");
+                  setColor("title-green");
+                  setEmoji("😎");
+                  setDescBg("#83BF6E");
+                }}
+              >
+                Open positive messages
+              </Button>
+            )}
+            {sorting === "negative posts" && (
+              <Button
+                bg={"red.400"}
+                onClick={() => {
+                  setOpen(true);
+                  setSentimentType("negative");
+                  setColor("title-red");
+                  setEmoji("😡");
+                  setDescBg("#FF6A55");
+                }}
+              >
+                Open negative messages
+              </Button>
+            )}
+            {sorting === "neutral posts" && (
+              <Button
+                bg={"blue.400"}
+                onClick={() => {
+                  setOpen(true);
+                  setSentimentType("neutral");
+                  setColor("title-blue");
+                  setEmoji("😐");
+                  setDescBg("#2A85FF");
+                }}
+              >
+                Open neutral messages
+              </Button>
+            )}
+          </>
+        }
+        head={
+          <>
+            <Text mr={3}>Show</Text>
+            <Dropdown
+              className={styles.dropdown}
+              classDropdownHead={styles.dropdownHead}
+              value={sorting}
+              setValue={setSorting}
+              options={intervals}
+              large
+            />
+          </>
+        }
       >
         <div className={styles.chart}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={500}
               height={300}
-              data={sentiment_analysis}
+              data={socialData}
               margin={{
                 top: 0,
                 right: 0,
@@ -200,7 +246,7 @@ const SentimentAnalysis = ({ className }) => {
                 vertical={true}
               />
               <XAxis
-                dataKey="name"
+                dataKey="date"
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
@@ -232,64 +278,131 @@ const SentimentAnalysis = ({ className }) => {
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12, fontWeight: "500", fill: "#9A9FA5" }}
+                domain={[0, "dataMax + 1"]}
               />
-              <Line
-                type="monotone"
-                dataKey="positive"
-                dot={true}
-                r={7}
-                // get label from data
 
-                activeDot={{
-                  onClick: () => {
-                    // openmoodal and set sentiment type
-                    setOpen(true);
-                    setSentimentType("positive");
-                    setColor("title-green");
-                    setEmoji("😎");
-                    setDescBg("#83BF6E");
-                    setSentimeTotal(positive[0]);
-                  },
-                }}
-                strokeWidth={3}
-                stroke="#83BF6E"
-              />
-              <Line
-                type="monotone"
-                dataKey="neutral"
-                dot={true}
-                strokeWidth={3}
-                stroke="#2A85FF"
-                r={7}
-                activeDot={{
-                  onClick: () => {
-                    // openmoodal and set sentiment type
-                    setOpen(true);
-                    setSentimentType("neutral");
-                    setColor("title-blue");
-                    setEmoji("");
-                    setDescBg("#2A85FF");
-                  },
-                }}
-              />
-              <Line
-                type="monotone"
-                dataKey="negative"
-                dot={true}
-                r={7}
-                strokeWidth={3}
-                stroke="#FF6A55"
-                activeDot={{
-                  onClick: () => {
-                    // openmoodal and set sentiment type
-                    setOpen(true);
-                    setSentimentType("negative");
-                    setColor("title-red");
-                    setEmoji("😡");
-                    setDescBg("#FF6A55");
-                  },
-                }}
-              />
+              {sorting === "All messages" && (
+                <>
+                  <Line
+                    type="monotone"
+                    dataKey="positive"
+                    dot={true}
+                    r={7}
+                    // get label from data
+
+                    activeDot={{
+                      onClick: () => {
+                        setOpen(true);
+                        setSentimentType("positive");
+                        setColor("title-green");
+                        setEmoji("😎");
+                        setDescBg("#83BF6E");
+                      },
+                    }}
+                    strokeWidth={3}
+                    stroke="#83BF6E"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="neutral"
+                    dot={true}
+                    strokeWidth={3}
+                    stroke="#2A85FF"
+                    r={7}
+                    activeDot={{
+                      onClick: () => {
+                        // openmoodal and set sentiment type
+                        setOpen(true);
+                        setSentimentType("neutral");
+                        setColor("title-blue");
+                        setEmoji("");
+                        setDescBg("#2A85FF");
+                      },
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="negative"
+                    dot={true}
+                    r={7}
+                    strokeWidth={3}
+                    stroke="#FF6A55"
+                    activeDot={{
+                      onClick: () => {
+                        // openmoodal and set sentiment type
+                        setOpen(true);
+                        setSentimentType("negative");
+                        setColor("title-red");
+                        setEmoji("😡");
+                        setDescBg("#FF6A55");
+                      },
+                    }}
+                  />
+                </>
+              )}
+
+              {sorting === "positive posts" && (
+                <Line
+                  type="monotone"
+                  dataKey="positive"
+                  dot={true}
+                  r={7}
+                  // get label from data
+
+                  activeDot={{
+                    onClick: () => {
+                      // openmoodal and set sentiment type
+                      setOpen(true);
+                      setSentimentType("positive");
+                      setColor("title-green");
+                      setEmoji("😎");
+                      setDescBg("#83BF6E");
+                    },
+                  }}
+                  strokeWidth={3}
+                  stroke="#83BF6E"
+                />
+              )}
+              {sorting === "neutral posts" && (
+                <Line
+                  type="monotone"
+                  dataKey="neutral"
+                  dot={true}
+                  strokeWidth={3}
+                  stroke="#2A85FF"
+                  r={7}
+                  activeDot={{
+                    onClick: () => {
+                      // openmoodal and set sentiment type
+                      setOpen(true);
+                      setSentimentType("neutral");
+                      setColor("title-blue");
+                      setEmoji("");
+                      setDescBg("#2A85FF");
+                    },
+                  }}
+                />
+              )}
+              {sorting === "negative posts" && (
+                <Line
+                  type="monotone"
+                  dataKey="negative"
+                  dot={true}
+                  r={7}
+                  strokeWidth={3}
+                  stroke="#FF6A55"
+                  activeDot={{
+                    onClick: () => {
+                      // openmoodal and set sentiment type
+                      setOpen(true);
+                      setSentimentType("negative");
+                      setColor("title-red");
+                      setEmoji("😡");
+                      setDescBg("#FF6A55");
+                    },
+                  }}
+                />
+              )}
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -298,27 +411,12 @@ const SentimentAnalysis = ({ className }) => {
   );
 };
 
-const SentimentTotal = (sentiment) => {
-  const [socialindicators, setData] = React.useState([]);
-  const [pos] = React.useState(sentiment?.sentiment);
-  const [neg] = React.useState(sentiment?.sentiment);
-  const [neu] = React.useState(sentiment?.sentiment);
+const SentimentTotal = ({ sentiment, dataI }) => {
+  const [pos] = React.useState(sentiment);
+  const [neg] = React.useState(sentiment);
+  const [neu] = React.useState(sentiment);
 
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialindicators";
-
-    return API.get(apiName, path);
-  }
-
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-      setData(response);
-    })();
-  }, [sentiment]);
-
-  const weekly_indic = socialindicators?.data;
+  const weekly_indic = dataI;
 
   const positive = [];
   const neutral = [];
@@ -327,7 +425,7 @@ const SentimentTotal = (sentiment) => {
   const dates = [];
 
   if (weekly_indic) {
-    const data_analysis = socialindicators?.data;
+    const data_analysis = dataI;
 
     for (let key in data_analysis) {
       positive.push(data_analysis[key]?.weekly_positive);

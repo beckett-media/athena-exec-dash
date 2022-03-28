@@ -1,28 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 
 import styles from "./List.module.sass";
 import Card from "../../../components/Card";
 import Item from "./Item";
 
-import { API } from "aws-amplify";
-import Dropdown from "../../../components/Dropdown";
-import { Text } from "@chakra-ui/react";
-import moment from "moment";
-
-const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
-  const [data, setData] = useState([]);
-  const [sorting, setSorting] = useState("filter by dates");
-  const [dataByDate, setDataByDate] = useState([]);
-  const intervals = [];
-  function getData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/messages";
-
-    return API.get(apiName, path);
-  }
-
-  const dataQuery = data?.data;
+const SocialMessagesType = ({
+  className,
+  onOpen,
+  sentimentType,
+  socialMessage,
+}) => {
+  const dataQuery = socialMessage;
 
   const username = [];
   const datetime = [];
@@ -61,27 +50,8 @@ const SocialMessagesType = ({ className, onOpen, sentimentType }) => {
     });
   }
 
-  React.useEffect(() => {
-    (async function () {
-      const response = await getData();
-
-      setData(response);
-    })();
-  }, []);
-
-  // // //useMemo to get data based on date interval selected
-  React.useEffect(() => {
-    const uniqueDatetime = [
-      ...new Set(filterData.map((item) => item?.datetime)),
-    ];
-    uniqueDatetime.forEach((item) => {
-      intervals.push(item);
-    });
-  }, []);
-
   const filterData = [];
 
-  // // fliter function to get data based on sentiment type
   dataObject.forEach((item) => {
     if (item?.sentiment === sentimentType) {
       filterData.push(item);
