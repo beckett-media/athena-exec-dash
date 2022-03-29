@@ -207,15 +207,12 @@ function App() {
       setSocialDataMessage(socialMessage.data);
 
       if (data === []) {
-        console.log("> 0");
         setIsLoading(true);
       } else {
-        console.log("< 0");
         setIsLoading(false);
       }
     })();
   }, []);
-
 
   return (
     <Authenticator
