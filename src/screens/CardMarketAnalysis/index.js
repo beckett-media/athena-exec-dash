@@ -19,38 +19,48 @@ const MarketAnalysis = ({ data, isLoading }) => {
     return (
       <>
         {/* <Tabs
-          variant="unstyled"
+          isManual
+          variant="enclosed"
           isFitted
           borderRadius={0}
           lazyBehavior="mount"
           variantColor="blue"
           defaultIndex={0}
           isLazy={false}
-          size="lg"
+          size="md"
         >
-          <TabList my={5}>
+          <TabList my={8}>
             <Tab
-              _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}
+              color={"white"}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+              }}
             >
               Average Selling Price
             </Tab>
             <Tab
-              _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
             >
               Total Sold
             </Tab>
             <Tab
-              _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
             >
               Sell Through
             </Tab>
             <Tab
-              _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
             >
               Total Sellers
             </Tab>
             <Tab
-              _selected={{ color: "white", bg: "blue.500", borderRadius: 10 }}
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
             >
               Total Sales
             </Tab>

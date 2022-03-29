@@ -5,11 +5,11 @@ import TooltipGlodal from "../../components/TooltipGlodal";
 import ComingSoon from "../CominSoon/ComingSoon";
 import TablePivots from "./PivotTable";
 
-const ComicAnalysis = () => {
+const ComicAnalysis = ({ dataCI }) => {
   return (
     <>
       <div className={styles.section}>
-        {/* <TablePivots /> */}
+        {/* <TablePivots dataCI={dataCI} /> */}
         <ComingSoon />
       </div>
       <TooltipGlodal />

@@ -9,10 +9,10 @@ import {
 import * as React from "react";
 import Lottie from "lottie-react";
 import dash from "./dash.json";
-import loadingLetter from "../../components/LottieAnimation/dash.json"
+import loadingLetter from "../../components/LottieAnimation/globe2.json";
 const ComingSoon = () => {
   return (
-    <Box as="section" pt="24" pb="12" overflow="hidden">
+    <Box as="section" pt="24" pb="12" overflow="hidden" mt={60}>
       <Box
         maxW={{
           base: "xl",
@@ -40,12 +40,9 @@ const ComingSoon = () => {
             }}
             pt="6"
           >
-            <Heading as="h1" size="3xl" mt="8" fontWeight="extrabold">
-              Coming Soon
-            </Heading>
-            <Text color={mode("gray.600", "gray.400")} mt="5" fontSize="xl">
+            <Heading as="h1" size="3xl" fontWeight="extrabold">
               Currently under development.
-            </Text>
+            </Heading>
 
             <Lottie
               animationData={loadingLetter}

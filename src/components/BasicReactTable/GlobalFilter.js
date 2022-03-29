@@ -1,19 +1,28 @@
-import { Input, Text } from "@chakra-ui/react";
+import {
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+} from "@chakra-ui/react";
+import { AiOutlineFileSearch } from "react-icons/ai";
 
 export default function GlobalFilter({ filter, setFilter }) {
   return (
-    <>
-      <Text mb={2} color={"#2A85FF"} mt={6}>
-        {" "}
-        Search here:{" "}
-      </Text>
+    <InputGroup
+      maxW={{
+        sm: "xs",
+      }}
+      mb={6}
+    >
+      <InputLeftElement pointerEvents="none">
+        <Icon as={AiOutlineFileSearch} color="muted" boxSize="5" />
+      </InputLeftElement>
       <Input
-        w={"30%"}
-        borderColor={"#2A85FF"}
-        mb={6}
+        placeholder="Search"
         value={filter || ""}
         onChange={(e) => setFilter(e.target.value)}
       />
-    </>
+    </InputGroup>
   );
 }

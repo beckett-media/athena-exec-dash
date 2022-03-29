@@ -30,6 +30,16 @@
           "read"
         ]
       }
+    },
+    "/comics": {
+      "name": "/comics",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }
