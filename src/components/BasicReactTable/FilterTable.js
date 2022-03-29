@@ -20,6 +20,8 @@ import {
   Table,
   Button,
   Stack,
+  useBreakpointValue,
+  useColorModeValue,
   Select,
 } from "@chakra-ui/react";
 import Card from "../Card";

@@ -15,7 +15,8 @@ import { Text } from "@chakra-ui/react";
 import "./utils-auth/auth.css";
 import NoMatch from "./screens/NoMatch";
 import { API } from "aws-amplify";
-import Loading from "./components/LottieAnimation/Loading";
+import chat from "./components/LottieAnimation/chat.json";
+import globejson from "./components/LottieAnimation/lf30_editor_eipbnn1e.json";
 
 const components = {
   Header() {
@@ -75,6 +76,7 @@ function App() {
   const [socialDataIndicators, setSocialDataIndicators] = React.useState([]);
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
+  const [comicIndexing, setComicIndexing] = React.useState([]);
 
   //############################## API PARAMS ###################################
 
@@ -87,6 +89,7 @@ function App() {
   const typeObjectD = "ExecDashTopDevicesSorted";
   const typeObjectC = "ExecDashTopCountriesSorted";
   const typeObjectP = "ExecDashTopPageNamesSorted";
+  const typeObjectCI = "ComicIndexing";
 
   const propertyID = "p.numberOfUsers";
 
@@ -95,6 +98,7 @@ function App() {
   const urlD = `api/${riOntology}/${typeObjectD}/${propertyID}`;
   const urlC = `api/${riOntology}/${typeObjectC}/${propertyID}`;
   const urlP = `api/${riOntology}/${typeObjectP}/${propertyID}`;
+  const urlCI = `comics/${riOntology}/${typeObjectCI}`;
 
   //############################# MARKET ANALYSIS QUERY ########################################
 
@@ -141,6 +145,14 @@ function App() {
     };
   });
 
+  //############################# COMICS ANALYTICS  QUERY ###################################
+  const dataCI = comicIndexing.map((d) => {
+    const { rid, ...rest } = d;
+    return {
+      ...rest?.properties,
+    };
+  });
+
   //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
 
   function MarketAnalysisAPI() {
@@ -179,6 +191,11 @@ function App() {
     const path = "/socialmedia/messages";
     return API.get(apiName, path);
   }
+  function getComicIndex() {
+    const apiName = "palentirApi";
+    const path = `/${urlCI}`;
+    return API.get(apiName, path);
+  }
 
   React.useEffect(() => {
     (async function () {
@@ -197,20 +214,20 @@ function App() {
       TopPagesRoutes().then((res) => {
         setPagesData(res?.data);
       });
+      getComicIndex().then((res) => {
+        setIsLoading(true);
+        setComicIndexing(res?.data);
+        setIsLoading(false);
+      });
+
       const indicatorData = await getSocialIndicators();
-      setSocialDataIndicators(indicatorData.data);
+      setSocialDataIndicators(indicatorData?.data);
 
       const socialData = await getSocialData();
-      setSocialData(socialData.data);
+      setSocialData(socialData?.data);
 
       const socialMessage = await getSocialMessage();
-      setSocialDataMessage(socialMessage.data);
-
-      if (data === []) {
-        setIsLoading(true);
-      } else {
-        setIsLoading(false);
-      }
+      setSocialDataMessage(socialMessage?.data);
     })();
   }, []);
 
@@ -226,10 +243,16 @@ function App() {
             path="/"
             element={
               <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624367ac5b97b001187139af_shubham-dhage-nOkWMjfMhnc-unsplash.jpeg"
+                }
+                globes={globejson}
+                color={"black"}
+                textColor={"#fff"}
                 user={user}
                 signOut={signOut}
-                title="Website Metrics  👩🏻‍💻"
-                desc="Track Beckett's website behavior for all your online marketing efforts"
+                title="Website Metrics"
+                desc="Track Beckett's website behavior."
               />
             }
           >
@@ -249,7 +272,16 @@ function App() {
           <Route
             path="dashboard"
             element={
-              <Page signOut={signOut} user={user} title="Card Market 📈" />
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624367280ba6d5b1b329e35a_shubham-dhage-L31Bz7I0sA0-unsplash.jpeg"
+                }
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Card Market"
+              />
             }
           >
             <Route
@@ -260,18 +292,33 @@ function App() {
           <Route
             path="dashboard"
             element={
-              <Page signOut={signOut} user={user} title="Comics Market 📈" />
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624364035c537c6b45a0c06e_shubham-dhage-AeF5ZV1LRRE-unsplash.jpeg"
+                }
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Comics Market"
+              />
             }
           >
             <Route
               path="/dashboard/comic-market-analysis"
-              element={<ComicAnalysis />}
+              element={<ComicAnalysis dataCI={dataCI} />}
             />
           </Route>
           <Route
             path="dashboard"
             element={
               <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624367aa59d48e73ae929f41_shubham-dhage-dPgoXjFoxk4-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
                 signOut={signOut}
                 user={user}
                 title="World Domination Index 🌎"
@@ -293,9 +340,14 @@ function App() {
             path="dashboard"
             element={
               <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                }
+                color={"black"}
+                textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Grading Score Cards ☕️"
+                title="Grading Score Cards"
               />
             }
           >
