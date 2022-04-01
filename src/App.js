@@ -246,7 +246,7 @@ function App() {
                 imgBg={
                   "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624367ac5b97b001187139af_shubham-dhage-nOkWMjfMhnc-unsplash.jpeg"
                 }
-                globes={globejson}
+                // globes={globejson}
                 color={"black"}
                 textColor={"#fff"}
                 user={user}

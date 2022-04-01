@@ -59,10 +59,11 @@ const Page = ({
           {globe && (
             <Lottie
               style={{
-                marginLeft: "70%",
+                marginLeft: "72%",
                 justifySelf: "flex-end",
-                width: "20rem",
+                width: "15rem",
                 opacity: 0.5,
+                marginTop: "3rem",
               }}
               animationData={chat}
               // dont play animation if it has already been played once or if it is not visible

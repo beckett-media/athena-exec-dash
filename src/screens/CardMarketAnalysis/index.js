@@ -18,7 +18,7 @@ const MarketAnalysis = ({ data, isLoading }) => {
   } else {
     return (
       <>
-        {/* <Tabs
+        <Tabs
           isManual
           variant="enclosed"
           isFitted
@@ -42,7 +42,12 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </Tab>
             <Tab
               color={"white"}
-              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+                _focus: { boxShadow: "none", outline: "none" },
+              }}
             >
               Total Sold
             </Tab>
@@ -86,8 +91,8 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs> */}
-        <ComingSoon />
+        </Tabs>
+        {/* <ComingSoon /> */}
       </>
     );
   }
