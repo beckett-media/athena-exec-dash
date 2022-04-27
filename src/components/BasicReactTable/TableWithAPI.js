@@ -18,8 +18,16 @@ export default function TableWithAPI({ cells }) {
         accessor: "title",
       },
       {
+        Header: "Company",
+        accessor: "company",
+      },
+      {
         Header: "Grade",
         accessor: "grade",
+      },
+      {
+        Header: "Grade Type",
+        accessor: "gradeStat",
       },
       {
         Header: "Grade Level",
@@ -34,15 +42,7 @@ export default function TableWithAPI({ cells }) {
             </Badge>
           );
         },
-      },
-      {
-        Header: "Current Bid",
-        accessor: "currentBid",
-      },
-      {
-        Header: "Bid Count",
-        accessor: "bidCount",
-      },
+      }
     ],
     []
   );

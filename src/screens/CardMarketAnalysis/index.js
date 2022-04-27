@@ -42,7 +42,12 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </Tab>
             <Tab
               color={"white"}
-              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+                _focus: { boxShadow: "none", outline: "none" },
+              }}
             >
               Total Sold
             </Tab>

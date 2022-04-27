@@ -62,7 +62,7 @@ app.get("/api/:ri/:obj/:users", async function (req, res) {
     const options = {
       method: "GET",
 
-      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?&orderBy=${users}:desc`,
+      url: `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${obj}?&orderBy=${users}:desc`,
       headers: {
         Authorization: "Bearer " + token[0].Value,
         "Content-Type": "application/json",
@@ -101,7 +101,7 @@ app.get("/competitormetric/:ri/:obj", async function (req, res) {
     const options = {
       method: "GET",
 
-      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}?orderBy=p.date:desc`,
+      url: `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${obj}?orderBy=p.date:desc`,
       headers: {
         Authorization: "Bearer " + token[0].Value,
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ app.get("/comics/:ri/:obj", async function (req, res) {
     const options = {
       method: "GET",
 
-      url: `https://beckett.palantirfoundry.com/objects-gateway/api/v1/ontologies/${ri}/objects/${obj}`,
+      url: `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${obj}`,
       headers: {
         Authorization: "Bearer " + token[0].Value,
         "Content-Type": "application/json",
@@ -200,6 +200,123 @@ app.use("/socialmedia/:name", async function (req, res) {
             });
           });
       });
+  }
+});
+
+// #################### GEt Form data ####################
+app.get('/athenaform',  async function(req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+  const moment = require("moment");
+
+const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+const athena = "AthenaForm"
+const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?p.date.eq=${moment().subtract(1, "days").format("YYYY-MM-DD")}`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+    .then((response) => {
+      res.send({
+        data: response.data,
+        status: response.status,
+      });
+    })
+    .catch((error) => {
+      res.send({
+        error: error.message,
+        status_code: error.status,
+      });
+    });
+    
+  }
+
+});
+
+
+
+// #################### Form input ####################
+app.post('/athenaform',  async function(req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const createAthenaRecord = "new-action-341541e4-574e-cf23-d4a5-908eb3797ded";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${createAthenaRecord}/apply`;
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+
+    axios(options)
+    .then((response) => {
+      console.log(response.data);
+      res.send({
+        message: "successfully updated",
+        data: response.data,
+        status_code: response.status,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.send({
+        status: "error",
+        data: error.message,
+        status_code: error.status,
+      });
+    });
   }
 });
 

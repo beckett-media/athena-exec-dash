@@ -16,7 +16,7 @@
       "function": {
         "productiondash2834aece": {
           "deploymentBucketName": "amplify-productiondash-dev-160738-deployment",
-          "s3Key": "amplify-builds/productiondash2834aece-4d5a793646396d77474e-build.zip",
+          "s3Key": "amplify-builds/productiondash2834aece-56745a624e5279524266-build.zip",
           "secretsPathAmplifyAppId": "d33yqjmkpkpgoc"
         }
       },
