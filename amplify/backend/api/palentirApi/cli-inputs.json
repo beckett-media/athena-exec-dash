@@ -40,6 +40,18 @@
           "read"
         ]
       }
+    },
+    "/athenaform": {
+      "name": "/athenaform",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
     }
   }
 }

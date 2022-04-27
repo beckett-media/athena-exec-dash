@@ -17,6 +17,7 @@ import NoMatch from "./screens/NoMatch";
 import { API } from "aws-amplify";
 import chat from "./components/LottieAnimation/chat.json";
 import globejson from "./components/LottieAnimation/lf30_editor_eipbnn1e.json";
+import FinancialScreen from "./screens/ShippingCard";
 
 const components = {
   Header() {
@@ -77,6 +78,7 @@ function App() {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
+  const [formData, setFormData] = React.useState([]);
 
   //############################## API PARAMS ###################################
 
@@ -99,6 +101,57 @@ function App() {
   const urlC = `api/${riOntology}/${typeObjectC}/${propertyID}`;
   const urlP = `api/${riOntology}/${typeObjectP}/${propertyID}`;
   const urlCI = `comics/${riOntology}/${typeObjectCI}`;
+
+  //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
+
+  async function MarketAnalysisAPI() {
+    const path = `/${url}`;
+    return await API.get(apiName, path);
+  }
+  async function SourceWebsite() {
+    const path = `/${urlW}`;
+    return await API.get(apiName, path);
+  }
+  async function DevicesWebsite() {
+    const path = `/${urlD}`;
+    return await API.get(apiName, path);
+  }
+  async function TopCountriesWebsite() {
+    const path = `/${urlC}`;
+    return await API.get(apiName, path);
+  }
+  async function TopPagesRoutes() {
+    const path = `/${urlP}`;
+    return await API.get(apiName, path);
+  }
+  async function getSocialIndicators() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialindicators";
+    return await API.get(apiName, path);
+  }
+
+  async function getSocialData() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/socialdata";
+    return await API.get(apiName, path);
+  }
+  async function getSocialMessage() {
+    const apiName = "palentirApi";
+    const path = "/socialmedia/messages";
+    return await API.get(apiName, path);
+  }
+  async function getComicIndex() {
+    const apiName = "palentirApi";
+    const path = `/${urlCI}`;
+    return await API.get(apiName, path);
+  }
+  async function getFormData() {
+    const apiName = "palentirApi";
+    const path = `/athenaform`;
+    return await API.get(apiName, path);
+  }
+
+  //############################# Form data ########################################
 
   //############################# MARKET ANALYSIS QUERY ########################################
 
@@ -153,73 +206,30 @@ function App() {
     };
   });
 
-  //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
-
-  function MarketAnalysisAPI() {
-    const path = `/${url}`;
-    return API.get(apiName, path);
-  }
-  function SourceWebsite() {
-    const path = `/${urlW}`;
-    return API.get(apiName, path);
-  }
-  function DevicesWebsite() {
-    const path = `/${urlD}`;
-    return API.get(apiName, path);
-  }
-  function TopCountriesWebsite() {
-    const path = `/${urlC}`;
-    return API.get(apiName, path);
-  }
-  function TopPagesRoutes() {
-    const path = `/${urlP}`;
-    return API.get(apiName, path);
-  }
-  function getSocialIndicators() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialindicators";
-    return API.get(apiName, path);
-  }
-
-  function getSocialData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialdata";
-    return API.get(apiName, path);
-  }
-  function getSocialMessage() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/messages";
-    return API.get(apiName, path);
-  }
-  function getComicIndex() {
-    const apiName = "palentirApi";
-    const path = `/${urlCI}`;
-    return API.get(apiName, path);
-  }
-
   React.useEffect(() => {
-    (async function () {
-      MarketAnalysisAPI().then((res) => {
-        setDataTable(res?.data);
-      });
-      SourceWebsite().then((res) => {
-        setTrafficData(res?.data);
-      });
-      DevicesWebsite().then((res) => {
-        setDeviceData(res?.data);
-      });
-      TopCountriesWebsite().then((res) => {
-        setCountriesData(res?.data);
-      });
-      TopPagesRoutes().then((res) => {
-        setPagesData(res?.data);
-      });
-      getComicIndex().then((res) => {
-        setIsLoading(true);
-        setComicIndexing(res?.data);
-        setIsLoading(false);
-      });
+    MarketAnalysisAPI().then((res) => {
+      setDataTable(res?.data);
+    });
+    SourceWebsite().then((res) => {
+      setTrafficData(res?.data);
+    });
+    DevicesWebsite().then((res) => {
+      setDeviceData(res?.data);
+    });
+    TopCountriesWebsite().then((res) => {
+      setCountriesData(res?.data);
+    });
+    TopPagesRoutes().then((res) => {
+      setPagesData(res?.data);
+    });
+    getComicIndex().then((res) => {
+      setIsLoading(true);
+      setComicIndexing(res?.data);
+      setIsLoading(false);
+    });
 
+
+    (async function () {
       const indicatorData = await getSocialIndicators();
       setSocialDataIndicators(indicatorData?.data);
 
@@ -229,6 +239,7 @@ function App() {
       const socialMessage = await getSocialMessage();
       setSocialDataMessage(socialMessage?.data);
     })();
+    // reload the page after 5 seconds ones
   }, []);
 
   return (
@@ -327,6 +338,54 @@ function App() {
           >
             <Route
               path="/dashboard/social-media-analysis"
+              element={
+                <SocialMediaMetric
+                  dataI={socialDataIndicators}
+                  socialData={socialData}
+                  socialMessage={socialDataMessage}
+                />
+              }
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/6260371216f5871ab6f799f4_financial.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Grading Services (BGS)"
+              />
+            }
+          >
+            <Route
+              path="/private/grading-terms"
+              element={<FinancialScreen />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/6260370da6dfb07ef78bcc37_inbound.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Inbound daily/weekly report"
+              />
+            }
+          >
+            <Route
+              path="/private/shipping_terms"
               element={
                 <SocialMediaMetric
                   dataI={socialDataIndicators}
