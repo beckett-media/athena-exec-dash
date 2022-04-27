@@ -205,12 +205,13 @@ app.use("/socialmedia/:name", async function (req, res) {
 
 // #################### GEt Form data ####################
 app.get('/athenaform',  async function(req, res) {
-const axios = require("axios");
-const aws = require("aws-sdk");
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+  const moment = require("moment");
 
 const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
 const athena = "AthenaForm"
-const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}`;
+const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?p.date.eq=${moment().subtract(1, "days").format("YYYY-MM-DD")}`;
 
   //############################### GET TOKEN ############################
   const { Parameters } = await new aws.SSM()
