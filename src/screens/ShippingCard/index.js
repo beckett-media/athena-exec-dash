@@ -11,12 +11,13 @@ import TrafficChannel from "./CardGradedBarGraph";
 import MarketData from "./MarketDataGraphs";
 import CategoryAndAttibutes from "./CategoryAndAttibutes";
 
-
-const FinancialScreen = ({  socialData, socialMessage }) => {
+const FinancialScreen = () => {
   return (
     <>
       <div className={styles.col}>
-        <KPI className={styles.card}  />
+        <KPI className={styles.card} />
+        {/* <Box my={"2rem"} />
+        <MarketData /> */}
         <Box my={"2rem"} />
         <CategoryAndAttibutes />
         <Box my={"2rem"} />
