@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import cn from "classnames";
 import styles from "./CategoryAndAttibutes.module.sass";
+import stylesControl from "./Control.module.sass";
 import Card from "../../../components/Card";
 import Dropdown from "../../../components/Dropdown";
 import {
@@ -13,19 +14,14 @@ import {
   useColorModeValue,
   FormLabel,
 } from "@chakra-ui/react";
+import Control from "./Control";
 import moment from "moment";
 import { API } from "aws-amplify";
 // darkmode
 import useDarkMode from "use-dark-mode";
-import Loading from "../../../components/LottieAnimation/Loading";
-
-const optionsCategory = [
-  "Select category",
-  "BGS MAIL RECEIVED",
-  "BGS RECEIVED",
-  "CBCS RECEIVED",
-  "OTHERS",
-];
+import Modal from "../../../components/Modal";
+import Schedule from "../../../components/Schedule";
+import Icon from "../../../components/Icon";
 
 const CategoryAndAttibutes = ({ className, ...props }) => {
   // const [category, setCategory] = useState(optionsCategory[0]);
@@ -39,6 +35,22 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
   const [LoadingForm, setLoadingForm] = useState(false);
 
   const darkMode = useDarkMode(false);
+
+  const [startDate, setStartDate] = useState(new Date());
+
+  console.log(startDate);
+  // convert startDate to YYYY-MM-DD format
+  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
+  console.log(startDateFormatted);
+
+  const [visibleModal, setVisibleModal] = useState(false);
+
+  const actions = [
+    {
+      icon: "calendar",
+      action: () => setVisibleModal(true),
+    },
+  ];
 
   React.useEffect(() => {
     setCategoryType(category);
@@ -59,7 +71,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
       cards_shipped_today: parseInt(cardsShippedToday),
       cards_received: parseInt(cardsReceived),
       type: "BGS RECEIVED",
-      date: moment().format("YYYY-MM-DD"),
+      date: startDateFormatted,
       submission_item: `${
         randomNumber(1, 100) +
         randomNumber(1, 100) +
@@ -89,10 +101,8 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
       setCardsReceived(0);
       setCardsShippedToday(0);
       setCardsGradedToday(0);
-    } 
+    }
   }, [handleSubmit]);
-
-
 
   return (
     <Card
@@ -101,14 +111,26 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
       classTitle="title-green"
     >
       <div className={styles.images}>
-        {/* <Dropdown
-          className={styles.field}
-          label="Category"
-          tooltip="Select your category"
-          value={category}
-          setValue={setCategory}
-          options={optionsCategory}
-        /> */}
+        <Box mb={25}>
+          <FormLabel>Select Date</FormLabel>
+          <div className={cn(stylesControl.control, className)}>
+            {actions.map((x, index) => (
+              <button
+                className={stylesControl.button}
+                key={index}
+                onClick={x.action}
+              >
+                <Icon name={x.icon} size="36" />
+              </button>
+            ))}
+          </div>
+        </Box>
+        <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
+          <Schedule
+            startDate={startDate}
+            setStartDate={setStartDate}
+          />
+        </Modal>
 
         <NumberInput>
           <FormLabel>Cards graded today</FormLabel>

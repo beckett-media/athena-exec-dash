@@ -24,10 +24,9 @@ const Schedule = ({
 
   return (
     <div className={cn(styles.schedule, className)}>
-      <div className={cn("title-red", styles.title)}>Reschedule product</div>
+      <div className={cn("title-red", styles.title)}>Select Date</div>
       <div className={styles.note}>
-        Choose a day and time in the future you want your product to be
-        published.
+        Choose a the day for the your are submitting the report.
       </div>
       <div className={styles.list}>
         <Item
@@ -61,7 +60,7 @@ const Schedule = ({
             </div>
           </div>
         </Item>
-        <Item
+        {/* <Item
           className={styles.item}
           category="Time"
           icon="clock"
@@ -92,11 +91,16 @@ const Schedule = ({
               inline
             />
           </div>
-        </Item>
+        </Item> */}
       </div>
-      <div className={styles.btns}>
-        <button className={cn("button", styles.button)}>Reschedule</button>
-      </div>
+      {/* <div className={styles.btns}>
+        <button
+          className={cn("button", styles.button)}
+          onClick={() => setVisibleDate(false)}
+        >
+          Save
+        </button>
+      </div> */}
     </div>
   );
 };

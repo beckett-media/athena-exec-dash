@@ -228,7 +228,6 @@ function App() {
       setIsLoading(false);
     });
 
-
     (async function () {
       const indicatorData = await getSocialIndicators();
       setSocialDataIndicators(indicatorData?.data);
@@ -366,6 +365,7 @@ function App() {
             <Route
               path="/private/grading-terms"
               element={<FinancialScreen />}
+         
             />
           </Route>
           <Route

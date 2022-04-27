@@ -11,6 +11,8 @@ import { Grading_Terms } from "../../../mocks/carddata/grading_terms";
 const MarketData = ({ className, data }) => {
   const darkMode = useDarkMode(false);
 
+
+
   var dataG = [
     {
       x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
