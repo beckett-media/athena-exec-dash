@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import cn from "classnames";
 import styles from "./CategoryAndAttibutes.module.sass";
 import Card from "../../../components/Card";
@@ -17,7 +17,7 @@ import moment from "moment";
 import { API } from "aws-amplify";
 // darkmode
 import useDarkMode from "use-dark-mode";
-import * as mutations from "../../../graphql/mutations";
+import Loading from "../../../components/LottieAnimation/Loading";
 
 const optionsCategory = [
   "Select category",
@@ -35,10 +35,8 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
   const [cardsShippedToday, setCardsShippedToday] = useState(0);
   const [cardsGradedToday, setCardsGradedToday] = useState(0);
   const [categoryType, setCategoryType] = useState(category);
-
-  const date = new Date(2011, 3, 26).toISOString();
-  const dateFormat = moment(date).format("YYYY-MM-DD");
-  const todayDate = dateFormat;
+  const [status_code, setStatusCode] = useState(0);
+  const [LoadingForm, setLoadingForm] = useState(false);
 
   const darkMode = useDarkMode(false);
 
@@ -50,9 +48,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
   const randomNumber = (min, max) => {
     const number = Math.floor(Math.random() * (max - min + 1009)) + min;
     const letter = String.fromCharCode(65 + Math.floor(Math.random() * 6));
-    const symboles = "!@#$%^&*()_+";
-    const randomSymbole = symboles[Math.floor(Math.random() * symboles.length)];
-    return `${number}${letter}${randomSymbole}`;
+    return `${number}${letter}`;
   };
 
   const path = "/athenaform";
@@ -63,45 +59,40 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
       cards_shipped_today: parseInt(cardsShippedToday),
       cards_received: parseInt(cardsReceived),
       type: "BGS RECEIVED",
-      date: todayDate,
-      submission_item: `${randomNumber(1, 100)}`,
+      date: moment().format("YYYY-MM-DD"),
+      submission_item: `${
+        randomNumber(1, 100) +
+        randomNumber(1, 100) +
+        randomNumber(1, 100) +
+        randomNumber(1, 100)
+      }`,
     },
   };
 
-  const graphQLSubmit = async () => {
-    const formDetails = {
-      id: `${randomNumber(1, 100)}`,
-      cardsshipped: parseInt(cardsGradedToday),
-      cardsreceived: parseInt(cardsShippedToday),
-      cardsgraded: parseInt(cardsGradedToday),
-      type: String(categoryType),
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      date: todayDate,
-    };
-
-    await API.graphql({
-      query: mutations.createCards,
-      variables: { input: formDetails },
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleSubmit = async () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault();
     API.post(apiName, path, myInit)
       .then((response) => {
         console.log(response.status_code);
-        // Add your code here
+        setStatusCode(response.status_code);
       })
       .catch((error) => {
         console.log(error.response);
       });
-  };
+  });
+
+  React.useEffect(() => {
+    setLoadingForm(true);
+    if (status_code === 200) {
+      setLoadingForm(false);
+      setCardsReceived(0);
+      setCardsShippedToday(0);
+      setCardsGradedToday(0);
+    } 
+  }, [handleSubmit]);
+
+
 
   return (
     <Card
@@ -125,6 +116,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
             focusBorderColor={useColorModeValue("blue.500", "blue.200")}
             borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
             borderRadius={12}
+            value={cardsGradedToday}
             border={`2px solid transparent`}
             mb={25}
             size="lg"
@@ -142,6 +134,8 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
             borderRadius={12}
             border={`2px solid transparent`}
             mb={25}
+            value={0}
+            defaultValue={0}
             size="lg"
             label="Cards shipped today"
             type="number"
@@ -158,6 +152,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
             borderRadius={12}
             border={`2px solid transparent`}
             mb={35}
+            value={cardsReceived}
             size="lg"
             label="Cards received today"
             type="number"
@@ -176,10 +171,13 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
               onClick={handleSubmit}
               size="lg"
               px="8"
-              bg={useColorModeValue("gray.500", "gray.600")}
+              bg={"#83BF6E"}
               _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
               _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
               color="white"
+              disabled={
+                !(cardsGradedToday && cardsShippedToday && cardsReceived)
+              }
             >
               Save submission
             </Button>

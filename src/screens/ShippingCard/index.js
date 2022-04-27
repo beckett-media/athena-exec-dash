@@ -16,7 +16,7 @@ const FinancialScreen = ({  socialData, socialMessage }) => {
   return (
     <>
       <div className={styles.col}>
-        {/* <KPI className={styles.card}  /> */}
+        <KPI className={styles.card}  />
         <Box my={"2rem"} />
         <CategoryAndAttibutes />
         <Box my={"2rem"} />
