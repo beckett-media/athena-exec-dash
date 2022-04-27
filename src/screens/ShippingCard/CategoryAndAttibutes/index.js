@@ -13,6 +13,7 @@ import {
   Box,
   useColorModeValue,
   FormLabel,
+  Text,
 } from "@chakra-ui/react";
 import Control from "./Control";
 import moment from "moment";
@@ -123,6 +124,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
                 <Icon name={x.icon} size="36" />
               </button>
             ))}
+            <Text>{startDateFormatted}</Text>
           </div>
         </Box>
         <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
