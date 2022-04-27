@@ -58,7 +58,7 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title="Weekly Inbound/Received"
+        title="Daily Inbound / Received KPI"
         // description={`Graded Grand Total`}
         classTitle="title-green"
       >
