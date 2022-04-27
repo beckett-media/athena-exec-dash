@@ -25,9 +25,7 @@ const Schedule = ({
   return (
     <div className={cn(styles.schedule, className)}>
       <div className={cn("title-red", styles.title)}>Select Date</div>
-      <div className={styles.note}>
-        Choose a the day for the your are submitting the report.
-      </div>
+      <div className={styles.note}>Choose a date for the daily report.</div>
       <div className={styles.list}>
         <Item
           className={styles.item}

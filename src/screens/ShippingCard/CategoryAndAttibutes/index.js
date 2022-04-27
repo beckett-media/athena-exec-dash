@@ -117,21 +117,24 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
           <div className={cn(stylesControl.control, className)}>
             {actions.map((x, index) => (
               <button
-                className={stylesControl.button}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  width: "20%",
+                }}
                 key={index}
                 onClick={x.action}
               >
-                <Icon name={x.icon} size="36" />
+                <Icon fill={"#33383F"} name={x.icon} size="36" />
+                <Text ml={5}>{startDateFormatted}</Text>
               </button>
             ))}
-            <Text>{startDateFormatted}</Text>
           </div>
         </Box>
         <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
-          <Schedule
-            startDate={startDate}
-            setStartDate={setStartDate}
-          />
+          <Schedule startDate={startDate} setStartDate={setStartDate} />
         </Modal>
 
         <NumberInput>
