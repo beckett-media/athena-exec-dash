@@ -41,10 +41,10 @@ const MarketData = ({ className }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#B5E4CA", size: 10, opacity: 0.8 },
+      marker: { color: darkMode.value ? "#B5E4CA" : "green", size: 10, opacity: 0.8 },
       name: "Card Graded",
       line: {
-        color: "#B5E4CA",
+        color: darkMode.value ? "#B5E4CA" : "green",
         width: 4,
         dash: "dot",
         shape: "spline",
