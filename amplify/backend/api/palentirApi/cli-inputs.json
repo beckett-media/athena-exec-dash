@@ -52,6 +52,16 @@
           "update"
         ]
       }
+    },
+    "/timeserie": {
+      "name": "/timeserie",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }

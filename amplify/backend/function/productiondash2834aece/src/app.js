@@ -163,6 +163,7 @@ app.use("/socialmedia/:name", async function (req, res) {
   const { name } = req.params;
 
   const loginURL = "https://beckett-watchtower.herokuapp.com/api/token";
+  const updatedURL = "https://plainspoken-watchtower-staging.herokuapp.com/api/";
 
   const { Parameters } = await new aws.SSM()
     .getParameters({
@@ -212,6 +213,57 @@ app.get('/athenaform',  async function(req, res) {
 const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
 const athena = "AthenaForm"
 const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?p.date.eq=${moment().subtract(1, "days").format("YYYY-MM-DD")}`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+    .then((response) => {
+      res.send({
+        data: response.data,
+        status: response.status,
+      });
+    })
+    .catch((error) => {
+      res.send({
+        error: error.message,
+        status_code: error.status,
+      });
+    });
+    
+  }
+
+});
+
+// #################### GEt Form data ####################
+app.get('/timeserie',  async function(req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+
+const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+const athena = "AthenaForm"
+const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}`;
 
   //############################### GET TOKEN ############################
   const { Parameters } = await new aws.SSM()
