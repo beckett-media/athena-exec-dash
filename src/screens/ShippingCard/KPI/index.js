@@ -40,17 +40,19 @@ const KPI = ({ className }) => {
   const items = [
     {
       title: "Received yesterday (BGS)",
-      counter: `${numberWithCommas(received)}`,
+      counter: `${
+        numberWithCommas(received) == 0 ? "not yet added" : numberWithCommas(received)
+      }`,
       background: "#DCF341",
     },
     {
       title: "Graded yesterday (BGS)",
-      counter: `${numberWithCommas(graded)}`,
+      counter: `${numberWithCommas(graded) == 0 ? "not yet added" : numberWithCommas(graded)}`,
       background: "#B5E4CA",
     },
     {
       title: "Shipped yesterday (BGS)",
-      counter: `${numberWithCommas(shipped)}`,
+      counter: `${numberWithCommas(shipped) == 0 ? "not yet added" : numberWithCommas(shipped)}`,
       background: "#2A85FF",
     },
   ];
