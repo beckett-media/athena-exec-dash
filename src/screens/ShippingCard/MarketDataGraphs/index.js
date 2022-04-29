@@ -2,12 +2,13 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
+import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { Grading_Terms } from "../../../mocks/carddata/grading_terms";
 import { API } from "aws-amplify";
+
 const MarketData = ({ className }) => {
   const darkMode = useDarkMode(false);
 
@@ -41,7 +42,11 @@ const MarketData = ({ className }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: darkMode.value ? "#B5E4CA" : "green", size: 10, opacity: 0.8 },
+      marker: {
+        color: darkMode.value ? "#B5E4CA" : "green",
+        size: 10,
+        opacity: 0.8,
+      },
       name: "Card Graded",
       line: {
         color: darkMode.value ? "#B5E4CA" : "green",
@@ -97,74 +102,6 @@ const MarketData = ({ className }) => {
     //   name: "BVG",
     //   line: {
     //     color: "#FF6A55",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "CSG" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#ff9900", size: 10, opacity: 0.8 },
-    //   name: "CSG",
-    //   line: {
-    //     color: "#ff9900",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "HGA" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#83BF6E", size: 10, opacity: 0.8 },
-    //   name: "HGA",
-    //   line: {
-    //     color: "#83BF6E",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "PSA" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#CABDFF", size: 10, opacity: 0.8 },
-    //   name: "PSA",
-    //   line: {
-    //     color: "#CABDFF",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "SGC" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
-    //   name: "SGC",
-    //   line: {
-    //     color: "#8E59FF",
     //     width: 4,
     //     shape: "spline",
     //     smoothing: 1,
@@ -226,11 +163,11 @@ const MarketData = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
-      <Box
-        justifyItems={"center"}
-        alignCenter={"center"}
-        display={"flex"}
-      >
+      {loading && (
+        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
+      )}
+
+      <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{
             width: "100%",
