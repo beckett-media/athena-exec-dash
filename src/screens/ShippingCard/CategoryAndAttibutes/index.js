@@ -25,26 +25,19 @@ import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
 
 const CategoryAndAttibutes = ({ className, ...props }) => {
-  // const [category, setCategory] = useState(optionsCategory[0]);
+
   const [category, setCategory] = useState("BGS");
-  //cardsReceived, cardsShippedToday, cardsGradedToday, submissionItem, type, date
   const [cardsReceived, setCardsReceived] = useState(0);
   const [cardsShippedToday, setCardsShippedToday] = useState(0);
   const [cardsGradedToday, setCardsGradedToday] = useState(0);
   const [categoryType, setCategoryType] = useState(category);
   const [status_code, setStatusCode] = useState(0);
   const [LoadingForm, setLoadingForm] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+  const [visibleModal, setVisibleModal] = useState(false);
 
   const darkMode = useDarkMode(false);
-
-  const [startDate, setStartDate] = useState(new Date());
-
-  console.log(startDate);
-  // convert startDate to YYYY-MM-DD format
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
-  console.log(startDateFormatted);
-
-  const [visibleModal, setVisibleModal] = useState(false);
 
   const actions = [
     {
