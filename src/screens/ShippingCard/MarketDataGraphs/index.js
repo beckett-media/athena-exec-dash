@@ -158,7 +158,7 @@ const MarketData = ({ className }) => {
 
   return (
     <Card
-      title={"Card craded, received and shipped overtime"}
+      title={"Cards Received, Graded, & Shipped Over Time"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}

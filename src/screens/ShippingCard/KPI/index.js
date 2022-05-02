@@ -51,18 +51,15 @@ const KPI = ({ className }) => {
   const items = [
     {
       title: "Received (BGS)",
-      name: "Received",
       counter: `${
         numberWithCommas(received) <= 0
           ? "not yet added"
           : numberWithCommas(received)
       }`,
-      value: yesterdayDate,
       background: "#DCF341",
     },
     {
       title: "Graded (BGS)",
-      name: "Graded",
       counter: `${
         numberWithCommas(graded) <= 0
           ? "not yet added"
@@ -72,7 +69,6 @@ const KPI = ({ className }) => {
     },
     {
       title: "Shipped (BGS)",
-      name: "Shipped",
       counter: `${
         numberWithCommas(shipped) <= 0
           ? "not yet added"
@@ -85,7 +81,9 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title="Daily Inbound / Received KPI"
+        title={`Cards Received, Graded, & Shipped on ${moment(dataDate).format(
+          "dddd, MMMM Do"
+        )} `}
         // description={`Graded Grand Total`}
         classTitle="title-green"
       >
@@ -99,29 +97,26 @@ const KPI = ({ className }) => {
               >
                 <div className={styles.line}>
                   <div className={styles.details}>
-                    <Text fontSize="2xl">{x?.title}</Text>
-                    {received > 0 && (
-                      <Heading as="h3" size="xl">
-                        {x?.counter}
-                      </Heading>
-                    )}
-
                     <div className={styles.indicator}>
                       <div className={styles.balance} value={x?.value} />
-                      {received > 0 && (
+                      {/* {received > 0 && (
                         <span>
-                          {x?.name} on {moment(dataDate).format("dddd,")}{" "}
+                          {moment(dataDate).format("dddd,")}{" "}
                           {moment(dataDate).format("MMM Do")}
                         </span>
-                      )}
-                      {received <= 0 && (
+                      )} */}
+                      {/* {received <= 0 && (
                         <span>
                           {moment(dataDate).format("dddd,")}{" "}
                           {moment(dataDate).format("MMM Do")} [data not yet
                           added]
                         </span>
-                      )}
+                      )} */}
                     </div>
+                    <Text fontSize="2xl">{x?.title}</Text>
+                    <Heading as="h3" size="xl">
+                      {x?.counter}
+                    </Heading>
                   </div>
                 </div>
               </div>
