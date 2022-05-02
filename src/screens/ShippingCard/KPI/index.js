@@ -48,8 +48,6 @@ const KPI = ({ className }) => {
     setReactData(false);
   }, [today, yesterdayDate]);
 
-  console.log(dataDate);
-
   const items = [
     {
       title: "Received (BGS)",
@@ -112,11 +110,17 @@ const KPI = ({ className }) => {
                       <div className={styles.balance} value={x?.value} />
                       {received > 0 && (
                         <span>
-                          {x?.name} on {moment(yesterdayDate).format("dddd,")}{" "}
-                          {moment(yesterdayDate).format("MMM Do")}
+                          {x?.name} on {moment(dataDate).format("dddd,")}{" "}
+                          {moment(dataDate).format("MMM Do")}
                         </span>
                       )}
-                      {received <= 0 && <span>not yet added</span>}
+                      {received <= 0 && (
+                        <span>
+                          {moment(dataDate).format("dddd,")}{" "}
+                          {moment(dataDate).format("MMM Do")} [data not yet
+                          added]
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
