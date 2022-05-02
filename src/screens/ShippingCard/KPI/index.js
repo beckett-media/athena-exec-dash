@@ -53,7 +53,7 @@ const KPI = ({ className }) => {
       title: "Received (BGS)",
       counter: `${
         numberWithCommas(received) <= 0
-          ? "not yet added"
+          ? "Data Not Received Recently"
           : numberWithCommas(received)
       }`,
       background: "#DCF341",
@@ -62,7 +62,7 @@ const KPI = ({ className }) => {
       title: "Graded (BGS)",
       counter: `${
         numberWithCommas(graded) <= 0
-          ? "not yet added"
+          ? "Data Not Received Recently"
           : numberWithCommas(graded)
       }`,
       background: "#B5E4CA",
@@ -71,7 +71,7 @@ const KPI = ({ className }) => {
       title: "Shipped (BGS)",
       counter: `${
         numberWithCommas(shipped) <= 0
-          ? "not yet added"
+          ? "Data Not Received Recently"
           : numberWithCommas(shipped)
       }`,
       background: "#2A85FF",

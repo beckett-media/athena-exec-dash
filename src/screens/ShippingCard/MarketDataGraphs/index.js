@@ -47,7 +47,7 @@ const MarketData = ({ className }) => {
         size: 10,
         opacity: 0.8,
       },
-      name: "Card Graded",
+      name: "Cards Graded",
       line: {
         color: darkMode.value ? "#B5E4CA" : "green",
         width: 4,
@@ -64,7 +64,7 @@ const MarketData = ({ className }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Card Shipped",
+      name: "Cards Shipped",
       line: {
         color: "#2A85FF",
         width: 4,
@@ -81,7 +81,7 @@ const MarketData = ({ className }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Card Received",
+      name: "Cards Received",
       line: {
         color: "#DCF341",
         width: 4,
@@ -111,7 +111,7 @@ const MarketData = ({ className }) => {
 
   var layout = {
     xaxis: {
-      title: "Month",
+      title: "Date",
       showgrid: false,
       zeroline: false,
       showline: true,
