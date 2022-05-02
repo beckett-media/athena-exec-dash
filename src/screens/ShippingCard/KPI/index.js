@@ -14,13 +14,23 @@ const KPI = ({ className }) => {
   const [received, setReceived] = React.useState([0]);
   const [shipped, setShipped] = React.useState([0]);
   const [graded, setGraded] = React.useState([0]);
+  const [yesterdayDate, setYesterdayDate] = React.useState("");
+  const [dataDate, setDataDate] = React.useState(
+    moment().subtract(1, "days").format("YYYY-MM-DD")
+  );
+
+  const today = moment().format("dddd");
 
   React.useEffect(() => {
     setReactData(true);
+    if (today === "Monday") {
+      const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
+      setYesterdayDate(currentDate);
+    }
+
     (async () => {
       const apiName = "palentirApi";
-      const path = `/athenaform`;
-
+      const path = `/athenaform/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;
@@ -28,6 +38,7 @@ const KPI = ({ className }) => {
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
           setGraded(data[0].cardsGradedToday);
+          setDataDate(data[0].date);
         })
         .catch((error) => {
           console.log(error.response);
@@ -35,24 +46,40 @@ const KPI = ({ className }) => {
     })();
 
     setReactData(false);
-  }, []);
+  }, [today, yesterdayDate]);
+
+  console.log(dataDate);
 
   const items = [
     {
-      title: "Received yesterday (BGS)",
+      title: "Received (BGS)",
+      name: "Received",
       counter: `${
-        numberWithCommas(received) == 0 ? "not yet added" : numberWithCommas(received)
+        numberWithCommas(received) <= 0
+          ? "not yet added"
+          : numberWithCommas(received)
       }`,
+      value: yesterdayDate,
       background: "#DCF341",
     },
     {
-      title: "Graded yesterday (BGS)",
-      counter: `${numberWithCommas(graded) == 0 ? "not yet added" : numberWithCommas(graded)}`,
+      title: "Graded (BGS)",
+      name: "Graded",
+      counter: `${
+        numberWithCommas(graded) <= 0
+          ? "not yet added"
+          : numberWithCommas(graded)
+      }`,
       background: "#B5E4CA",
     },
     {
-      title: "Shipped yesterday (BGS)",
-      counter: `${numberWithCommas(shipped) == 0 ? "not yet added" : numberWithCommas(shipped)}`,
+      title: "Shipped (BGS)",
+      name: "Shipped",
+      counter: `${
+        numberWithCommas(shipped) <= 0
+          ? "not yet added"
+          : numberWithCommas(shipped)
+      }`,
       background: "#2A85FF",
     },
   ];
@@ -74,16 +101,23 @@ const KPI = ({ className }) => {
               >
                 <div className={styles.line}>
                   <div className={styles.details}>
-                    <Text fontSize="2xl">{x.title}</Text>
-                    <Heading as="h3" size="xl">
-                      {x.counter}
-                    </Heading>
-                    {/* {x.value !== 0 && (
-                      <div className={styles.indicator}>
-                        <Balance className={styles.balance} value={x.value} />
-                        <span>change</span>
-                      </div>
-                    )} */}
+                    <Text fontSize="2xl">{x?.title}</Text>
+                    {received > 0 && (
+                      <Heading as="h3" size="xl">
+                        {x?.counter}
+                      </Heading>
+                    )}
+
+                    <div className={styles.indicator}>
+                      <div className={styles.balance} value={x?.value} />
+                      {received > 0 && (
+                        <span>
+                          {x?.name} on {moment(yesterdayDate).format("dddd,")}{" "}
+                          {moment(yesterdayDate).format("MMM Do")}
+                        </span>
+                      )}
+                      {received <= 0 && <span>not yet added</span>}
+                    </div>
                   </div>
                 </div>
               </div>
