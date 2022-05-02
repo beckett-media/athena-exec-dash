@@ -14,13 +14,23 @@ const KPI = ({ className }) => {
   const [received, setReceived] = React.useState([0]);
   const [shipped, setShipped] = React.useState([0]);
   const [graded, setGraded] = React.useState([0]);
+  const [yesterdayDate, setYesterdayDate] = React.useState("");
+  const [dataDate, setDataDate] = React.useState(
+    moment().subtract(1, "days").format("YYYY-MM-DD")
+  );
+
+  const today = moment().format("dddd");
 
   React.useEffect(() => {
     setReactData(true);
+    if (today === "Monday") {
+      const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
+      setYesterdayDate(currentDate);
+    }
+
     (async () => {
       const apiName = "palentirApi";
-      const path = `/athenaform`;
-
+      const path = `/athenaform/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;
@@ -28,6 +38,7 @@ const KPI = ({ className }) => {
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
           setGraded(data[0].cardsGradedToday);
+          setDataDate(data[0].date);
         })
         .catch((error) => {
           console.log(error.response);
@@ -35,24 +46,34 @@ const KPI = ({ className }) => {
     })();
 
     setReactData(false);
-  }, []);
+  }, [today, yesterdayDate]);
 
   const items = [
     {
-      title: "Received yesterday (BGS)",
+      title: "Received (BGS)",
       counter: `${
-        numberWithCommas(received) == 0 ? "not yet added" : numberWithCommas(received)
+        numberWithCommas(received) <= 0
+          ? "Data Not Received Recently"
+          : numberWithCommas(received)
       }`,
       background: "#DCF341",
     },
     {
-      title: "Graded yesterday (BGS)",
-      counter: `${numberWithCommas(graded) == 0 ? "not yet added" : numberWithCommas(graded)}`,
+      title: "Graded (BGS)",
+      counter: `${
+        numberWithCommas(graded) <= 0
+          ? "Data Not Received Recently"
+          : numberWithCommas(graded)
+      }`,
       background: "#B5E4CA",
     },
     {
-      title: "Shipped yesterday (BGS)",
-      counter: `${numberWithCommas(shipped) == 0 ? "not yet added" : numberWithCommas(shipped)}`,
+      title: "Shipped (BGS)",
+      counter: `${
+        numberWithCommas(shipped) <= 0
+          ? "Data Not Received Recently"
+          : numberWithCommas(shipped)
+      }`,
       background: "#2A85FF",
     },
   ];
@@ -60,7 +81,9 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title="Daily Inbound / Received KPI"
+        title={`Cards Received, Graded, & Shipped on ${moment(dataDate).format(
+          "dddd, MMMM Do"
+        )} `}
         // description={`Graded Grand Total`}
         classTitle="title-green"
       >
@@ -74,16 +97,26 @@ const KPI = ({ className }) => {
               >
                 <div className={styles.line}>
                   <div className={styles.details}>
-                    <Text fontSize="2xl">{x.title}</Text>
+                    <div className={styles.indicator}>
+                      <div className={styles.balance} value={x?.value} />
+                      {/* {received > 0 && (
+                        <span>
+                          {moment(dataDate).format("dddd,")}{" "}
+                          {moment(dataDate).format("MMM Do")}
+                        </span>
+                      )} */}
+                      {/* {received <= 0 && (
+                        <span>
+                          {moment(dataDate).format("dddd,")}{" "}
+                          {moment(dataDate).format("MMM Do")} [data not yet
+                          added]
+                        </span>
+                      )} */}
+                    </div>
+                    <Text fontSize="2xl">{x?.title}</Text>
                     <Heading as="h3" size="xl">
-                      {x.counter}
+                      {x?.counter}
                     </Heading>
-                    {/* {x.value !== 0 && (
-                      <div className={styles.indicator}>
-                        <Balance className={styles.balance} value={x.value} />
-                        <span>change</span>
-                      </div>
-                    )} */}
                   </div>
                 </div>
               </div>

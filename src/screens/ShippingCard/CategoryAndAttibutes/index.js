@@ -101,7 +101,7 @@ const CategoryAndAttibutes = ({ className, ...props }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title="Daily Inbound / Received Form"
+      title="Cards Received, Graded, & Shipped Input Form"
       classTitle="title-green"
     >
       <div className={styles.images}>
