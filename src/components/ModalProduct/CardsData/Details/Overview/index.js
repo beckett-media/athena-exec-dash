@@ -58,6 +58,7 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
         console.log(response.data.status_code);
         setSuccessfully(true);
         onClose();
+        window.location.reload();
       })
       .catch((error) => {
         setLoading(false);
@@ -72,8 +73,8 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
     setCardsGradedToday(selectedData.cardsGradedToday);
     setType(selectedData.type);
     // reload the page to update the daa with
-    window.location.reload();
-  }, [onClose]);
+    // window.location.reload();
+  }, [onClose, successfully]);
 
   return (
     <>
