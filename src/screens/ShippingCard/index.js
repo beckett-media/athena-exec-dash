@@ -13,7 +13,7 @@ const FinancialScreen = () => {
         <Box my={"2rem"} />
         <MarketData />
         <Box my={"2rem"} />
-        <CardForm />
+        {/* <CardForm /> */}
         <Box my={"2rem"} />
       </div>
     </>

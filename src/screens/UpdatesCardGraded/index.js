@@ -4,9 +4,8 @@ import styles from "./Update.module.sass";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
 import { API } from "aws-amplify";
-
-// data
-import { products } from "../../mocks/products";
+import CardForm from "./CardForm";
+import { Box } from "@chakra-ui/react";
 
 const UpdateData = () => {
   const [loading, setLoading] = React.useState(true);
@@ -40,9 +39,11 @@ const UpdateData = () => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <Table data={data} items={products} title="date posted" setLoading={setLoading} />
+          <Table data={data} title="date posted" setLoading={setLoading} />
         </div>
       </Card>
+      <Box mt={12} />
+      <CardForm />
     </>
   );
 };
