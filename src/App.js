@@ -8,6 +8,7 @@ import Home from "./screens/Home";
 import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
+import UpdateData from "./screens/UpdatesCardGraded";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
 import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
@@ -103,6 +104,14 @@ function App() {
   const urlCI = `comics/${riOntology}/${typeObjectCI}`;
 
   //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
+
+  //#################################################################
+  //#################################################################
+  //#################################################################
+  //###################### TODO: utilize useContex 👇  ################
+  //########################### to manage api query and data ########
+  //#################################################################
+  //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
 
   async function MarketAnalysisAPI() {
     const path = `/${url}`;
@@ -365,6 +374,27 @@ function App() {
             <Route
               path="/private/grading-terms"
               element={<FinancialScreen />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Update Grading Services (BGS)"
+              />
+            }
+          >
+            <Route
+              path="/private/grading-update-data"
+              element={<UpdateData />}
             />
           </Route>
           <Route

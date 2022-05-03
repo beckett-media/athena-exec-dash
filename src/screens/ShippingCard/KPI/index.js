@@ -1,9 +1,8 @@
 import React from "react";
 import cn from "classnames";
-import styles from "./Overview.module.sass";
+import styles from "./KPI.module.sass";
 import TooltipGlodal from "../../../components/TooltipGlodal";
 import Card from "../../../components/Card";
-import { Grading_Terms } from "../../../mocks/carddata/grading_terms";
 import { numberWithCommas } from "../../../utils";
 import { Heading, Text } from "@chakra-ui/react";
 import { API } from "aws-amplify";
@@ -14,7 +13,9 @@ const KPI = ({ className }) => {
   const [received, setReceived] = React.useState([0]);
   const [shipped, setShipped] = React.useState([0]);
   const [graded, setGraded] = React.useState([0]);
-  const [yesterdayDate, setYesterdayDate] = React.useState("");
+  const [yesterdayDate, setYesterdayDate] = React.useState(
+    moment().subtract(1, "days").format("YYYY-MM-DD")
+  );
   const [dataDate, setDataDate] = React.useState(
     moment().subtract(1, "days").format("YYYY-MM-DD")
   );
@@ -22,18 +23,18 @@ const KPI = ({ className }) => {
   const today = moment().format("dddd");
 
   React.useEffect(() => {
-    setReactData(true);
-    if (today === "Monday") {
-      const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
-      setYesterdayDate(currentDate);
-    }
-
     (async () => {
+      setReactData(true);
+      if (today === "Mondays") {
+        const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
+        setYesterdayDate(currentDate);
+      }
       const apiName = "palentirApi";
       const path = `/athenaform/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;
+          console.log(formdata);
           const data = formdata.map((item) => item.properties);
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
@@ -52,7 +53,7 @@ const KPI = ({ className }) => {
     {
       title: "Received (BGS)",
       counter: `${
-        numberWithCommas(received) <= 0
+        numberWithCommas(0) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(received)
       }`,
@@ -61,7 +62,7 @@ const KPI = ({ className }) => {
     {
       title: "Graded (BGS)",
       counter: `${
-        numberWithCommas(graded) <= 0
+        numberWithCommas(0) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(graded)
       }`,
@@ -70,7 +71,7 @@ const KPI = ({ className }) => {
     {
       title: "Shipped (BGS)",
       counter: `${
-        numberWithCommas(shipped) <= 0
+        numberWithCommas(0) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(shipped)
       }`,

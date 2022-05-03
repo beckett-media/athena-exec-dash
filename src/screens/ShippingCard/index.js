@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./SocialMediaMetric.module.sass";
+import styles from "./CardsMetric.module.sass";
 import { Box } from "@chakra-ui/react";
 import KPI from "./KPI";
-import CategoryAndAttibutes from "./CategoryAndAttibutes";
-import MarketData from "./MarketDataGraphs";
+import CardForm from "./CardForm";
+import MarketData from "./TimelineGraph";
 
 const FinancialScreen = () => {
   return (
@@ -13,7 +13,7 @@ const FinancialScreen = () => {
         <Box my={"2rem"} />
         <MarketData />
         <Box my={"2rem"} />
-        <CategoryAndAttibutes />
+        <CardForm />
         <Box my={"2rem"} />
       </div>
     </>

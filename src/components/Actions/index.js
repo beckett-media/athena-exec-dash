@@ -43,10 +43,11 @@ const Actions = ({
         )}
       >
         <button
-          className={cn(styles.head, classActionsHead)}
+          className={cn(styles.head)}
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} 
           onClick={() => toggle()}
         >
-          <Icon name="more-horizontal" size="24" />
+          <Icon name="edit" size="24" /> 
         </button>
         <div className={cn(styles.body, classActionsBody)}>
           {items.map((x, index) => (
