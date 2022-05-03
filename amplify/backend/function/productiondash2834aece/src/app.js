@@ -250,6 +250,7 @@ app.get("/athenaform/:yesterday", async function (req, res) {
         res.send({
           error: error.message,
           status_code: error.status,
+          req_body: yesterday,
         });
       });
   }
@@ -332,13 +333,77 @@ app.post("/athenaform", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        cards_graded_today: req.body.cards_graded_today,
-        cards_shipped_today: req.body.cards_shipped_today,
-        cards_received: req.body.cards_received,
-        type: req.body.type,
-        date: req.body.date,
-        submission_item: req.body.submission_item,
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+// #################### Form update ####################
+app.put("/athenaform", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const updateAthenaRecord = "new-action-6a6ce3f8-09f6-e480-fd20-f1589f732055";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${updateAthenaRecord}/apply`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "AthenaForm": req.body.submission_item,
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
       },
     },
   };
