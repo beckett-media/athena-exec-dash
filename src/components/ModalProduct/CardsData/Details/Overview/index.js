@@ -12,7 +12,6 @@ import {
 import { API } from "aws-amplify";
 import useDarkMode from "use-dark-mode";
 import Icon from "../../../../Icon";
-import Loading from "../../../../LottieAnimation/Loading";
 import loadingJson from "../../../../LottieAnimation/loading.json";
 import Lottie from "lottie-react";
 

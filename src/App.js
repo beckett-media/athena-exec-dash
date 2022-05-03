@@ -388,7 +388,7 @@ function App() {
                 textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Update Grading Services (BGS)"
+                title="Update Productivity Records"
               />
             }
           >

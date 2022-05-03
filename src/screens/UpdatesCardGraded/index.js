@@ -36,7 +36,7 @@ const UpdateData = () => {
       <Card
         className={styles.card}
         classCardHead={styles.head}
-        title="List of cards graded, shipped and delivered"
+        title="Daily Records of Cards Received, Graded, and Shipped"
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
