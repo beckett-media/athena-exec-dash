@@ -247,7 +247,10 @@ function App() {
       const socialMessage = await getSocialMessage();
       setSocialDataMessage(socialMessage?.data);
     })();
-    // reload the page after 5 seconds ones
+    // reload the page after 5 seconds ones window is closed
+    window.onbeforeunload = function () {
+      window.location.reload();
+    };
   }, []);
 
   return (
