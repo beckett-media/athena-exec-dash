@@ -20,7 +20,7 @@ const UpdateData = () => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata);
+          console.log("data",formdata);
           setData(formdata);
         })
         .catch((error) => {
@@ -32,6 +32,8 @@ const UpdateData = () => {
 
   return (
     <>
+        <CardForm setLoading={setLoading} />
+        <Box mt={12} />
       <Card
         className={styles.card}
         classCardHead={styles.head}
@@ -42,8 +44,6 @@ const UpdateData = () => {
           <Table data={data} title="date posted" setLoading={setLoading} />
         </div>
       </Card>
-      <Box mt={12} />
-      <CardForm />
     </>
   );
 };

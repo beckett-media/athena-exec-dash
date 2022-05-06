@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   FormLabel,
   Text,
+  Spinner,
 } from "@chakra-ui/react";
 import Control from "./Control";
 import moment from "moment";
@@ -23,8 +24,7 @@ import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
 
-const CardForm = ({ className, ...props }) => {
-
+const CardForm = ({ className,  ...props }) => {
   const [category, setCategory] = useState("BGS");
   const [cardsReceived, setCardsReceived] = useState(0);
   const [cardsShippedToday, setCardsShippedToday] = useState(0);
@@ -34,6 +34,7 @@ const CardForm = ({ className, ...props }) => {
   const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
@@ -76,14 +77,17 @@ const CardForm = ({ className, ...props }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
+    setLoading(true);
     API.post(apiName, path, myInit)
       .then((response) => {
         console.log(response.status_code);
         setStatusCode(response.status_code);
+        setLoading(false);
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error.response);
+        setLoading(false);
       });
   });
 
@@ -182,24 +186,32 @@ const CardForm = ({ className, ...props }) => {
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Divider />
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
-            <Button
-              type="submit"
-              variantColor="purple"
-              variant="ghost"
-              mt={15}
-              onClick={handleSubmit}
-              size="lg"
-              px="8"
-              bg={"#83BF6E"}
-              _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
-              _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
-              color="white"
-              disabled={
-                !(cardsGradedToday && cardsShippedToday && cardsReceived)
-              }
-            >
-              Save submission
-            </Button>
+    
+              <Button
+                type="submit"
+                variantColor="purple"
+                variant="ghost"
+                mt={15}
+                onClick={handleSubmit}
+                size="lg"
+                px="8"
+                bg={"#83BF6E"}
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
+                color="white"
+                disabled={
+                  !(cardsGradedToday && cardsShippedToday && cardsReceived)
+                }
+              >
+                Save submission
+              </Button>
+              {status_code === 200 && (
+                <Text fontSize="lg" color="green.500" fontWeight="bold" margin={6}>
+                  Submission saved successfully
+                  </Text>
+                  )}
           </Flex>
         </Box>
       </div>

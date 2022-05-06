@@ -13,15 +13,15 @@
       "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-productiondash-dev-160738-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
+      "auth": {
+        "productiondash": {}
+      },
       "function": {
         "productiondash2834aece": {
           "deploymentBucketName": "amplify-productiondash-dev-160738-deployment",
-          "s3Key": "amplify-builds/productiondash2834aece-7a574c776d4652485739-build.zip",
+          "s3Key": "amplify-builds/productiondash2834aece-6763453071573539736c-build.zip",
           "secretsPathAmplifyAppId": "d33yqjmkpkpgoc"
         }
-      },
-      "auth": {
-        "productiondash": {}
       }
     }
   }

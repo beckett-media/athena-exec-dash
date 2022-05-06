@@ -33,9 +33,37 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
   const submissionItem = selectedData.submissionItem;
   const date = selectedData.date;
 
+
+  const handleDelete = async () => {
+    const deletePath = `/athenaformdelete`;
+    const apiName = "palentirApi";
+
+    const deleteParams = {
+    body: {
+      submission_item: `${submissionItem}`,
+    },
+  };
+
+  setLoadingForm(true);
+  setLoading(true);
+  API.put(apiName, deletePath, deleteParams)
+    .then((response) => {
+      setLoading(false);
+      setLoadingForm(false);
+      setSuccessfully(true);
+      onClose();
+      window.location.reload();
+    })
+    .catch((error) => {
+      setLoading(false);
+      setLoadingForm(false);
+      console.log(error);
+    });
+}
   const handleSubmit = async () => {
     const apiName = "palentirApi";
     const path = `/athenaform`;
+
 
     const myInit = {
       body: {
@@ -54,7 +82,6 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
       .then((response) => {
         setLoading(false);
         setLoadingForm(false);
-        console.log(response.data.status_code);
         setSuccessfully(true);
         onClose();
         window.location.reload();
@@ -199,6 +226,17 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
                 </button>
               </div>
             )}
+            {/* {!successfully && (
+              <div
+                className={styles.btns}
+                style={{ display: "flex", justifyContent: "flex-end" }}
+              >
+                <button className={cn("button")} style={{backgroundColor:"red", marginTop:10}} onClick={() => handleDelete()}>
+                  <Icon name="trash" size="15" />
+                  <span className={styles.inner}>Delete</span>
+                </button>
+              </div>
+            )} */}
           </div>
         </div>
       </div>

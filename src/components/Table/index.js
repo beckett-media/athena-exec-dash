@@ -16,6 +16,8 @@ const Table = ({ items, title, data,setLoading }) => {
     }
   };
 
+  
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.table}>
