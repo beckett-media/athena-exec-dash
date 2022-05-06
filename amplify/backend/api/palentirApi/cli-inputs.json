@@ -62,6 +62,18 @@
           "read"
         ]
       }
+    },
+    "/athenaformdelete": {
+      "name": "/athenaformdelete",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

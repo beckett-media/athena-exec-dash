@@ -111,7 +111,7 @@ const MarketData = ({ className }) => {
 
   var layout = {
     xaxis: {
-      title: "Date",
+      title: "Days",
       showgrid: false,
       zeroline: false,
       showline: true,
