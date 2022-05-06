@@ -127,7 +127,7 @@ function App() {
     const path = `/${urlW}`;
     return await API.get(apiName, path).then((response) => {
       setTrafficData(response?.data);
-      setstatus(response?.status);
+      setstatus(response?.status_code);
       // relad the data
   
 

@@ -20,7 +20,6 @@ const UpdateData = () => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log("data",formdata);
           setData(formdata);
         })
         .catch((error) => {

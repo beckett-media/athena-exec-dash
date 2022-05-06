@@ -250,7 +250,6 @@ app.get("/athenaform/:yesterday", async function (req, res) {
         res.send({
           error: error.message,
           status_code: error.status,
-          req_body: yesterday,
         });
       });
   }
