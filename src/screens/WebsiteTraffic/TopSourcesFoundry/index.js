@@ -7,11 +7,19 @@ import Dropdown from "../../../components/Dropdown";
 import BarChart from "./BarChart";
 import Loading from "../../../components/LottieAnimation/Loading";
 
-const TopSource = ({ className, topSources, isLoading }) => {
+const TopSource = ({ className, topSources, isLoading, status}) => {
   const [sorting, setSorting] = React.useState("2022");
   const intervals = ["2022", "2021", "2020", "2019"];
   const data = topSources.filter((d) => d?.dates === sorting);
   const topSourcesData = data.slice(0, 17);
+
+  React.useEffect(() => {
+    // reload data when status === 200
+    if (status === 200) {
+     window.location.reload();
+    }
+  }, [status]);
+
 
   if (isLoading) {
     return <Loading />;

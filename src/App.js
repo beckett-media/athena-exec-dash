@@ -79,7 +79,7 @@ function App() {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [formData, setFormData] = React.useState([]);
+  const [status, setstatus] = React.useState(0);
 
   //############################## API PARAMS ###################################
 
@@ -114,51 +114,83 @@ function App() {
   //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
 
   async function MarketAnalysisAPI() {
+    setIsLoading(true);
     const path = `/${url}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setDataTable(response.data);
+      setIsLoading(false);
+    } 
+    );
   }
   async function SourceWebsite() {
+    setIsLoading(true);
     const path = `/${urlW}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setTrafficData(response?.data);
+      setstatus(response?.status);
+      // relad the data
+  
+
+
+      setIsLoading(false);
+    }
+    );
   }
   async function DevicesWebsite() {
     const path = `/${urlD}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setDeviceData(response?.data);
+    }
+    );
   }
   async function TopCountriesWebsite() {
     const path = `/${urlC}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setCountriesData(response?.data);
+    }
+    );
   }
   async function TopPagesRoutes() {
     const path = `/${urlP}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setPagesData(response?.data);
+    }
+    );
   }
   async function getSocialIndicators() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialindicators";
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setSocialDataIndicators(response?.data);
+    }
+    );
   }
 
   async function getSocialData() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialdata";
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setSocialData(response?.data);
+    }
+    );
   }
   async function getSocialMessage() {
     const apiName = "palentirApi";
     const path = "/socialmedia/messages";
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setSocialDataMessage(response?.data);
+    }
+    );
   }
   async function getComicIndex() {
     const apiName = "palentirApi";
     const path = `/${urlCI}`;
-    return await API.get(apiName, path);
+    return await API.get(apiName, path).then((response) => {
+      setComicIndexing(response?.data);
+    }
+    );
   }
-  async function getFormData() {
-    const apiName = "palentirApi";
-    const path = `/athenaform`;
-    return await API.get(apiName, path);
-  }
+
 
   //############################# Form data ########################################
 
@@ -216,41 +248,21 @@ function App() {
   });
 
   React.useEffect(() => {
-    MarketAnalysisAPI().then((res) => {
-      setDataTable(res?.data);
-    });
-    SourceWebsite().then((res) => {
-      setTrafficData(res?.data);
-    });
-    DevicesWebsite().then((res) => {
-      setDeviceData(res?.data);
-    });
-    TopCountriesWebsite().then((res) => {
-      setCountriesData(res?.data);
-    });
-    TopPagesRoutes().then((res) => {
-      setPagesData(res?.data);
-    });
-    getComicIndex().then((res) => {
-      setIsLoading(true);
-      setComicIndexing(res?.data);
-      setIsLoading(false);
-    });
-
-    (async function () {
-      const indicatorData = await getSocialIndicators();
-      setSocialDataIndicators(indicatorData?.data);
-
-      const socialData = await getSocialData();
-      setSocialData(socialData?.data);
-
-      const socialMessage = await getSocialMessage();
-      setSocialDataMessage(socialMessage?.data);
-    })();
+    MarketAnalysisAPI()
+    SourceWebsite()
+    DevicesWebsite()
+    TopCountriesWebsite()
+    TopPagesRoutes()
+    getComicIndex()
+getSocialIndicators();
+       getSocialData();
+    
+     getSocialMessage();
+      
+ 
     // reload the page after 5 seconds ones window is closed
-    window.onbeforeunload = function () {
-      window.location.reload();
-    };
+
+    
   }, []);
 
   return (
@@ -286,6 +298,7 @@ function App() {
                   dataD={dataD}
                   dataC={dataC}
                   dataP={dataP}
+                  status={status}
                   isLoading={isLoading}
                 />
               }
