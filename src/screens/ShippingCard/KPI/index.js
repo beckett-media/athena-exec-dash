@@ -25,7 +25,7 @@ const KPI = ({ className }) => {
   React.useEffect(() => {
     (async () => {
       setReactData(true);
-      if (today === "Mondays") {
+      if (today === "Monday") {
         const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
         setYesterdayDate(currentDate);
       }
