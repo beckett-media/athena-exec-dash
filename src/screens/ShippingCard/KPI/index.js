@@ -21,7 +21,7 @@ const KPI = ({ className }) => {
   );
 
   const today = moment().format("dddd");
-
+  
   React.useEffect(() => {
     (async () => {
       setReactData(true);
@@ -47,13 +47,13 @@ const KPI = ({ className }) => {
     })();
 
     setReactData(false);
-  }, [today, yesterdayDate]);
+  }, [reactData, yesterdayDate, today]);
 
   const items = [
     {
       title: "Received (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(received) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(received)
       }`,
@@ -62,7 +62,7 @@ const KPI = ({ className }) => {
     {
       title: "Graded (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(graded) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(graded)
       }`,
@@ -71,7 +71,7 @@ const KPI = ({ className }) => {
     {
       title: "Shipped (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(shipped) < 0
           ? "Data Not Received Recently"
           : numberWithCommas(shipped)
       }`,
@@ -82,7 +82,7 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title={`Cards Received, Graded, & Shipped on ${moment(dataDate).format(
+        title={`Cards Received, Graded, & Shipped on ${moment(yesterdayDate).format(
           "dddd, MMMM Do"
         )} `}
         // description={`Graded Grand Total`}
