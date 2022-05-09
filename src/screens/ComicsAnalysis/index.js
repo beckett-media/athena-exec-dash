@@ -20,8 +20,8 @@ const ComicAnalysis = ({ dataCI }) => {
   return (
     <>
       <div className={styles.section}>
-        {/* <ComingSoon /> */}
-        <Tabs
+        <ComingSoon />
+        {/* <Tabs
           isManual
           variant="enclosed"
           isFitted
@@ -59,8 +59,8 @@ const ComicAnalysis = ({ dataCI }) => {
             <TabPanel>
               <div className={styles.section}>
                 <ComicsGraphs data={dataCI} />
-                <Box h={"3rem"} />
-                <HistogramGraph data={dataCI} />
+                {/* <Box h={"3rem"} />
+                <HistogramGraph data={dataCI} /> 
               </div>
             </TabPanel>
             <TabPanel>
@@ -68,7 +68,7 @@ const ComicAnalysis = ({ dataCI }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs>
+        </Tabs> */}
       </div>
       <TooltipGlodal />
     </>
