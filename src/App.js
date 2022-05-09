@@ -70,7 +70,7 @@ const formFields = {
 
 function App() {
   const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [trafficData, setTrafficData] = React.useState([]);
   const [deviceData, setDeviceData] = React.useState([]);
   const [countriesData, setCountriesData] = React.useState([]);
@@ -114,13 +114,10 @@ function App() {
   //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
 
   async function MarketAnalysisAPI() {
-    setIsLoading(true);
     const path = `/${url}`;
     return await API.get(apiName, path).then((response) => {
       setDataTable(response.data);
-      setIsLoading(false);
-    } 
-    );
+    });
   }
   async function SourceWebsite() {
     setIsLoading(true);
@@ -128,42 +125,33 @@ function App() {
     return await API.get(apiName, path).then((response) => {
       setTrafficData(response?.data);
       setstatus(response?.status_code);
-      // relad the data
-  
-
-
       setIsLoading(false);
-    }
-    );
+    });
   }
   async function DevicesWebsite() {
     const path = `/${urlD}`;
     return await API.get(apiName, path).then((response) => {
       setDeviceData(response?.data);
-    }
-    );
+    });
   }
   async function TopCountriesWebsite() {
     const path = `/${urlC}`;
     return await API.get(apiName, path).then((response) => {
       setCountriesData(response?.data);
-    }
-    );
+    });
   }
   async function TopPagesRoutes() {
     const path = `/${urlP}`;
     return await API.get(apiName, path).then((response) => {
       setPagesData(response?.data);
-    }
-    );
+    });
   }
   async function getSocialIndicators() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialindicators";
     return await API.get(apiName, path).then((response) => {
       setSocialDataIndicators(response?.data);
-    }
-    );
+    });
   }
 
   async function getSocialData() {
@@ -171,26 +159,22 @@ function App() {
     const path = "/socialmedia/socialdata";
     return await API.get(apiName, path).then((response) => {
       setSocialData(response?.data);
-    }
-    );
+    });
   }
   async function getSocialMessage() {
     const apiName = "palentirApi";
     const path = "/socialmedia/messages";
     return await API.get(apiName, path).then((response) => {
       setSocialDataMessage(response?.data);
-    }
-    );
+    });
   }
   async function getComicIndex() {
     const apiName = "palentirApi";
     const path = `/${urlCI}`;
     return await API.get(apiName, path).then((response) => {
       setComicIndexing(response?.data);
-    }
-    );
+    });
   }
-
 
   //############################# Form data ########################################
 
@@ -248,21 +232,18 @@ function App() {
   });
 
   React.useEffect(() => {
-    MarketAnalysisAPI()
-    SourceWebsite()
-    DevicesWebsite()
-    TopCountriesWebsite()
-    TopPagesRoutes()
-    getComicIndex()
-getSocialIndicators();
-       getSocialData();
-    
-     getSocialMessage();
-      
- 
-    // reload the page after 5 seconds ones window is closed
+    MarketAnalysisAPI();
+    SourceWebsite();
+    DevicesWebsite();
+    TopCountriesWebsite();
+    TopPagesRoutes();
+    getComicIndex();
+    getSocialIndicators();
+    getSocialData();
 
-    
+    getSocialMessage();
+
+    // reload the page after 5 seconds ones window is closed
   }, []);
 
   return (

@@ -29,10 +29,12 @@ const UpdateData = () => {
     setLoading(false);
   }, [loading]);
 
+  console.log(data);
+
   return (
     <>
-        <CardForm setLoading={setLoading} />
-        <Box mt={12} />
+      <CardForm setLoading={setLoading} />
+      <Box mt={12} />
       <Card
         className={styles.card}
         classCardHead={styles.head}
