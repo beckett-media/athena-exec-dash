@@ -250,7 +250,6 @@ app.get("/athenaform/:yesterday", async function (req, res) {
         res.send({
           error: error.message,
           status_code: error.status,
-          req_body: yesterday,
         });
       });
   }
@@ -263,7 +262,7 @@ app.get("/timeserie", async function (req, res) {
 
   const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const athena = "AthenaForm";
-  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}`;
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
 
   //############################### GET TOKEN ############################
   const { Parameters } = await new aws.SSM()
@@ -366,6 +365,9 @@ app.post("/athenaform", async function (req, res) {
       });
   }
 });
+
+
+
 // #################### Form update ####################
 app.put("/athenaform", async function (req, res) {
   const axios = require("axios");
@@ -430,6 +432,69 @@ app.put("/athenaform", async function (req, res) {
       });
   }
 });
+
+
+// #################### Form update ####################
+app.post("/athenaformdelete", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const deleteAthenaRecord = "new-action-0af4240c-ad4e-9265-a23c-59ae211df2b4";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${deleteAthenaRecord}/apply`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "AthenaForm": req.body.submission_item,
+        "submission_item": req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
+
 
 app.listen(3000, function () {
   console.log("App started");

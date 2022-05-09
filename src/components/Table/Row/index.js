@@ -13,6 +13,7 @@ const Row = ({ item, value, onChange, index, setLoading}) => {
 
   const [visibleModalProduct, setVisibleModalProduct] = useState(false);
   const [visibleModalSchedule, setVisibleModalSchedule] = useState(false);
+  // /athenaformdelete
 
   const actions = [
     // {
@@ -27,10 +28,12 @@ const Row = ({ item, value, onChange, index, setLoading}) => {
     },
     // {
     //   title: "Delete Item",
+    //   type: "delete",
     //   icon: "trash",
-    //   action: () => console.log("Delete forever"),
+    //   action: () => setVisibleModalProduct(true),
     // },
   ];
+
 
   const selectedData = item?.properties;
 
@@ -98,6 +101,7 @@ const Row = ({ item, value, onChange, index, setLoading}) => {
       setLoading={setLoading}
         visible={visibleModalProduct}
         selectedData={selectedData}
+        
         onClose={() => setVisibleModalProduct(false)}
       />
       <Modal
