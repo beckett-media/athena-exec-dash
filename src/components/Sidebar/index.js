@@ -34,22 +34,34 @@ const navigation = [
       },
     ],
   },
-  // {
-  //   title: "Financial Analysis",
-  //   icon: "lock",
-  //   slug: "private",
-  //   dropdown: [
-  //     {
-  //       title: "Grading Services",
-  //       url: "/private/grading-terms",
-  //     },
-  //     {
-  //       title: "Inbound reports",
-  //       icon: "grid",
-  //       url: "/private/shipping_terms",
-  //     },
-  //   ],
-  // },
+  {
+    title: "Financial Performance",
+    icon: "lock",
+    slug: "private",
+    dropdown: [
+      {
+        title: "Operations",
+        url: "/private/ops-performance",
+      },
+      {
+        title: "Financials",
+        url: "/private/financial-performance",
+      },
+      {
+        title: "ROI",
+        url: "/private/roi-performance",
+      },
+      {
+        title: "Update data",
+        url: "/private/grading-update-data",
+      },
+      {
+        title: "Inbound reports",
+        icon: "grid",
+        url: "/private/shipping_terms",
+      },
+    ],
+  },
   {
     title: "Card Grading",
     icon: "filter",

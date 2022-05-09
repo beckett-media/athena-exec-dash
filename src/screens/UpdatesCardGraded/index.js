@@ -31,14 +31,17 @@ const UpdateData = () => {
 
   return (
     <>
-        <CardForm setLoading={setLoading} />
-        <Box mt={12} />
+      <CardForm setLoading={setLoading} />
+      <Box mt={12} />
       <Card
         className={styles.card}
         classCardHead={styles.head}
         title="Daily Records of Cards Received, Graded, and Shipped"
         classTitle={cn("title-purple", styles.title)}
       >
+        <div className={styles.wrapper}>
+          <Table data={data} title="date posted" setLoading={setLoading} />
+        </div>
         <div className={styles.wrapper}>
           <Table data={data} title="date posted" setLoading={setLoading} />
         </div>

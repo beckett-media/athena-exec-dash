@@ -9,6 +9,8 @@ import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
 import UpdateData from "./screens/UpdatesCardGraded";
+import FinancialPerformance from "./screens/FinancialPerformance/FinancialPerformance";
+import ROIPerformance from "./screens/ROIPerformance/ROIPerformance";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
 import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
@@ -18,7 +20,7 @@ import NoMatch from "./screens/NoMatch";
 import { API } from "aws-amplify";
 import chat from "./components/LottieAnimation/chat.json";
 import globejson from "./components/LottieAnimation/lf30_editor_eipbnn1e.json";
-import FinancialScreen from "./screens/ShippingCard";
+import OpsPerformance from "./screens/OpsPerformance";
 
 const components = {
   Header() {
@@ -119,8 +121,7 @@ function App() {
     return await API.get(apiName, path).then((response) => {
       setDataTable(response.data);
       setIsLoading(false);
-    } 
-    );
+    });
   }
   async function SourceWebsite() {
     setIsLoading(true);
@@ -129,41 +130,34 @@ function App() {
       setTrafficData(response?.data);
       setstatus(response?.status_code);
       // relad the data
-  
-
 
       setIsLoading(false);
-    }
-    );
+    });
   }
   async function DevicesWebsite() {
     const path = `/${urlD}`;
     return await API.get(apiName, path).then((response) => {
       setDeviceData(response?.data);
-    }
-    );
+    });
   }
   async function TopCountriesWebsite() {
     const path = `/${urlC}`;
     return await API.get(apiName, path).then((response) => {
       setCountriesData(response?.data);
-    }
-    );
+    });
   }
   async function TopPagesRoutes() {
     const path = `/${urlP}`;
     return await API.get(apiName, path).then((response) => {
       setPagesData(response?.data);
-    }
-    );
+    });
   }
   async function getSocialIndicators() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialindicators";
     return await API.get(apiName, path).then((response) => {
       setSocialDataIndicators(response?.data);
-    }
-    );
+    });
   }
 
   async function getSocialData() {
@@ -171,26 +165,22 @@ function App() {
     const path = "/socialmedia/socialdata";
     return await API.get(apiName, path).then((response) => {
       setSocialData(response?.data);
-    }
-    );
+    });
   }
   async function getSocialMessage() {
     const apiName = "palentirApi";
     const path = "/socialmedia/messages";
     return await API.get(apiName, path).then((response) => {
       setSocialDataMessage(response?.data);
-    }
-    );
+    });
   }
   async function getComicIndex() {
     const apiName = "palentirApi";
     const path = `/${urlCI}`;
     return await API.get(apiName, path).then((response) => {
       setComicIndexing(response?.data);
-    }
-    );
+    });
   }
-
 
   //############################# Form data ########################################
 
@@ -248,21 +238,18 @@ function App() {
   });
 
   React.useEffect(() => {
-    MarketAnalysisAPI()
-    SourceWebsite()
-    DevicesWebsite()
-    TopCountriesWebsite()
-    TopPagesRoutes()
-    getComicIndex()
-getSocialIndicators();
-       getSocialData();
-    
-     getSocialMessage();
-      
- 
-    // reload the page after 5 seconds ones window is closed
+    MarketAnalysisAPI();
+    SourceWebsite();
+    DevicesWebsite();
+    TopCountriesWebsite();
+    TopPagesRoutes();
+    getComicIndex();
+    getSocialIndicators();
+    getSocialData();
 
-    
+    getSocialMessage();
+
+    // reload the page after 5 seconds ones window is closed
   }, []);
 
   return (
@@ -383,13 +370,13 @@ getSocialIndicators();
                 textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Grading Services (BGS)"
+                title="Operations Performance"
               />
             }
           >
             <Route
-              path="/private/grading-terms"
-              element={<FinancialScreen />}
+              path="/private/ops-performance"
+              element={<OpsPerformance />}
             />
           </Route>
           <Route
@@ -411,6 +398,48 @@ getSocialIndicators();
             <Route
               path="/private/grading-update-data"
               element={<UpdateData />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Financial Performance"
+              />
+            }
+          >
+            <Route
+              path="/private/financial-performance"
+              element={<FinancialPerformance />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="ROI Performance"
+              />
+            }
+          >
+            <Route
+              path="/private/roi-performance"
+              element={<ROIPerformance />}
             />
           </Route>
           <Route
