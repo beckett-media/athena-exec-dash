@@ -11,8 +11,8 @@ import moment from "moment";
 const KPI = ({ className }) => {
   const [loading, setLoading] = React.useState(true);
   const [received, setReceived] = React.useState("0");
-  const [shipped, setShipped] = React.useState(0);
-  const [graded, setGraded] = React.useState(0);
+  const [shipped, setShipped] = React.useState("0");
+  const [graded, setGraded] = React.useState("0");
 
   const [yesterdayDate, setYesterdayDate] = React.useState(
     moment().subtract(1, "days").format("YYYY-MM-DD")
@@ -23,7 +23,9 @@ const KPI = ({ className }) => {
   const today = moment().format("dddd");
 
   React.useEffect(() => {
+    setLoading(true);
     (async () => {
+
       if (today === "Monday") {
         const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
         setYesterdayDate(currentDate);
@@ -32,23 +34,21 @@ const KPI = ({ className }) => {
       const path = `/athenaform/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
-          console.log(response);
           const formdata = response.data.data;
-          // console.log(formdata);
           const data = formdata.map((item) => item.properties);
-          console.log(data)
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
           setGraded(data[0].cardsGradedToday);
           setDataDate(data[0].date);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error.response);
         });
+
     })();
   }, [today, yesterdayDate]);
 
-  console.log(received, shipped, graded);
   const items = [
     {
       title: "Received (BGS)",
@@ -62,7 +62,7 @@ const KPI = ({ className }) => {
     {
       title: "Graded (BGS)",
       counter: `${
-        numberWithCommas(graded) === 0
+        numberWithCommas(graded) === "0"
           ? "Data Not Received Recently"
           : numberWithCommas(graded)
       }`,
@@ -71,7 +71,7 @@ const KPI = ({ className }) => {
     {
       title: "Shipped (BGS)",
       counter: `${
-        numberWithCommas(shipped) === 0
+        numberWithCommas(shipped) === "0"
           ? "Data Not Received Recently"
           : numberWithCommas(shipped)
       }`,
