@@ -68,6 +68,11 @@ const navigation = [
     // url: "/dashboard/web-analysis",
     url: "/dashboard/web-analysis",
   },
+  {
+    title: "Settings",
+    icon: "setting",
+    url: "/dashboard/settings",
+  },
 ];
 
 const Sidebar = ({ className, onClose, signOut }) => {
