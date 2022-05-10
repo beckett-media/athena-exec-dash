@@ -9,8 +9,6 @@ import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
 import UpdateData from "./screens/UpdatesCardGraded";
-import FinancialPerformance from "./screens/FinancialPerformance/FinancialPerformance";
-import ROIPerformance from "./screens/ROIPerformance/ROIPerformance";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
 import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
@@ -20,8 +18,7 @@ import NoMatch from "./screens/NoMatch";
 import { API } from "aws-amplify";
 import chat from "./components/LottieAnimation/chat.json";
 import globejson from "./components/LottieAnimation/lf30_editor_eipbnn1e.json";
-import OpsPerformance from "./screens/OpsPerformance";
-import Settings from "./screens/Settings/Settings";
+import FinancialScreen from "./screens/ShippingCard";
 
 const components = {
   Header() {
@@ -73,7 +70,7 @@ const formFields = {
 
 function App() {
   const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [trafficData, setTrafficData] = React.useState([]);
   const [deviceData, setDeviceData] = React.useState([]);
   const [countriesData, setCountriesData] = React.useState([]);
@@ -117,6 +114,7 @@ function App() {
   //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
 
   async function MarketAnalysisAPI() {
+    setIsLoading(true);
     const path = `/${url}`;
     return await API.get(apiName, path).then((response) => {
       setDataTable(response.data);
@@ -370,13 +368,13 @@ function App() {
                 textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Operations Performance"
+                title="Grading Services (BGS)"
               />
             }
           >
             <Route
-              path="/private/ops-performance"
-              element={<OpsPerformance />}
+              path="/private/grading-terms"
+              element={<FinancialScreen />}
             />
           </Route>
           <Route
@@ -398,48 +396,6 @@ function App() {
             <Route
               path="/private/grading-update-data"
               element={<UpdateData />}
-            />
-          </Route>
-          <Route
-            path="private"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Financial Performance"
-              />
-            }
-          >
-            <Route
-              path="/private/financial-performance"
-              element={<FinancialPerformance />}
-            />
-          </Route>
-          <Route
-            path="private"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="ROI Performance"
-              />
-            }
-          >
-            <Route
-              path="/private/roi-performance"
-              element={<ROIPerformance />}
             />
           </Route>
           <Route
@@ -485,23 +441,6 @@ function App() {
             }
           >
             <Route path="/dashboard/web-analysis" element={<Home />} />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
-                }
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Settings"
-              />
-            }
-          >
-            <Route path="/dashboard/settings" element={<Settings />} />
           </Route>
           <Route
             path="dashboard"
