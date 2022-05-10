@@ -47,7 +47,7 @@ const GradingGraph = ({ className }) => {
         size: 10,
         opacity: 0.8,
       },
-      name: "Cards Graded",
+      name: "Grader -1",
       line: {
         color: darkMode.value ? "#B5E4CA" : "green",
         width: 4,
@@ -63,10 +63,10 @@ const GradingGraph = ({ className }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Cards Shipped",
+      marker: { color: "lightGreen", size: 10, opacity: 0.8 },
+      name: "Grader -2",
       line: {
-        color: "#2A85FF",
+        color: "lightGreen",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -80,10 +80,10 @@ const GradingGraph = ({ className }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Cards Received",
+      marker: { color: "darkGreen", size: 10, opacity: 0.8 },
+      name: "Grader -3",
       line: {
-        color: "#DCF341",
+        color: "darkGreen",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -161,7 +161,7 @@ const GradingGraph = ({ className }) => {
       title={"Cards graded per day, per grader"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
-      classTitle={cn("title-blue", styles.cardTitle)}
+      classTitle={cn("title-green", styles.cardTitle)}
     >
       {loading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />

@@ -158,7 +158,7 @@ const PnLGraph = ({ className }) => {
 
   return (
     <Card
-      title={"Cards graded per day, per grader"}
+      title={"Quarterly Profit / Loss"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}

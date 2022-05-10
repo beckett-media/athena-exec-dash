@@ -43,53 +43,53 @@ const RevenueGraph = ({ className }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: {
-        color: darkMode.value ? "#B5E4CA" : "green",
+        color: darkMode.value ? "#2A85FF" : "#2A85FF",
         size: 10,
         opacity: 0.8,
       },
-      name: "Cards Graded",
-      line: {
-        color: darkMode.value ? "#B5E4CA" : "green",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsShippedToday),
-
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "Cards Shipped",
       line: {
-        color: "#2A85FF",
+        color: darkMode.value ? "#2A85FF" : "#2A85FF",
         width: 4,
         dash: "dot",
         shape: "spline",
         smoothing: 1,
       },
     },
-    {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsReceived),
+    // {
+    //   x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+    //   y: data?.map((d) => d?.properties?.cardsShippedToday),
 
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Cards Received",
-      line: {
-        color: "#DCF341",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
+    //   type: "scatter",
+    //   mode: "lines+markers",
+    //   connectgaps: true,
+    //   marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+    //   name: "Cards Shipped",
+    //   line: {
+    //     color: "#2A85FF",
+    //     width: 4,
+    //     dash: "dot",
+    //     shape: "spline",
+    //     smoothing: 1,
+    //   },
+    // },
+    // {
+    //   x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+    //   y: data?.map((d) => d?.properties?.cardsReceived),
+
+    //   type: "scatter",
+    //   mode: "lines+markers",
+    //   connectgaps: true,
+    //   marker: { color: "#DCF341", size: 10, opacity: 0.8 },
+    //   name: "Cards Received",
+    //   line: {
+    //     color: "#DCF341",
+    //     width: 4,
+    //     dash: "dot",
+    //     shape: "spline",
+    //     smoothing: 1,
+    //   },
+    // },
     // {
     //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
     //   y: Grading_Terms.map((d) =>
@@ -161,7 +161,7 @@ const RevenueGraph = ({ className }) => {
       title={"Total revenue represented by the cards shipped per day"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
-      classTitle={cn("title-blue", styles.cardTitle)}
+      classTitle={cn("title-darkblue", styles.cardTitle)}
     >
       {loading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
