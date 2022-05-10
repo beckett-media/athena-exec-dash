@@ -33,37 +33,33 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
   const submissionItem = selectedData.submissionItem;
   const date = selectedData.date;
 
-
   const handleDelete = async () => {
     const deletePath = `/athenaformdelete`;
     const apiName = "palentirApi";
 
     const deleteParams = {
-    body: {
-      submission_item: `${submissionItem}`,
-    },
+      body: {
+        submission_item: `${submissionItem}`,
+      },
+    };
+
+    setLoadingForm(true);
+    API.put(apiName, deletePath, deleteParams)
+      .then((response) => {
+        setLoading(true);
+        setSuccessfully(true);
+        onClose();
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  setLoadingForm(true);
-  setLoading(true);
-  API.put(apiName, deletePath, deleteParams)
-    .then((response) => {
-      setLoading(false);
-      setLoadingForm(false);
-      setSuccessfully(true);
-      onClose();
-      window.location.reload();
-    })
-    .catch((error) => {
-      setLoading(false);
-      setLoadingForm(false);
-      console.log(error);
-    });
-}
+
   const handleSubmit = async () => {
     const apiName = "palentirApi";
     const path = `/athenaform`;
-
 
     const myInit = {
       body: {
@@ -76,19 +72,15 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
       },
     };
 
-    setLoading(true);
     setLoadingForm(true);
     API.put(apiName, path, myInit)
       .then((response) => {
-        setLoading(false);
-        setLoadingForm(false);
         setSuccessfully(true);
+        setLoading(true);
         onClose();
-        window.location.reload();
       })
       .catch((error) => {
         setLoading(false);
-        setLoadingForm(false);
         console.log(error);
       });
   };
@@ -98,9 +90,7 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
     setCardsShippedToday(selectedData.cardsShippedToday);
     setCardsGradedToday(selectedData.cardsGradedToday);
     setType(selectedData.type);
-    // reload the page to update the daa with
-    // window.location.reload();
-  }, [onClose, successfully]);
+  }, [successfully]);
 
   return (
     <>

@@ -9,23 +9,24 @@ import { API } from "aws-amplify";
 import moment from "moment";
 
 const KPI = ({ className }) => {
-  const [reactData, setReactData] = React.useState(true);
-  const [received, setReceived] = React.useState([0]);
-  const [shipped, setShipped] = React.useState([0]);
-  const [graded, setGraded] = React.useState([0]);
+  const [loading, setLoading] = React.useState(true);
+  const [received, setReceived] = React.useState("0");
+  const [shipped, setShipped] = React.useState("0");
+  const [graded, setGraded] = React.useState("0");
+
   const [yesterdayDate, setYesterdayDate] = React.useState(
     moment().subtract(1, "days").format("YYYY-MM-DD")
   );
-  const [dataDate, setDataDate] = React.useState(
-    moment().subtract(1, "days").format("YYYY-MM-DD")
-  );
+
+  const [dataDate, setDataDate] = React.useState();
 
   const today = moment().format("dddd");
 
   React.useEffect(() => {
+    setLoading(true);
     (async () => {
-      setReactData(true);
-      if (today === "Mondays") {
+
+      if (today === "Monday") {
         const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
         setYesterdayDate(currentDate);
       }
@@ -34,26 +35,25 @@ const KPI = ({ className }) => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;
-          console.log(formdata);
           const data = formdata.map((item) => item.properties);
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
           setGraded(data[0].cardsGradedToday);
           setDataDate(data[0].date);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error.response);
         });
-    })();
 
-    setReactData(false);
+    })();
   }, [today, yesterdayDate]);
 
   const items = [
     {
       title: "Received (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(received) === "0"
           ? "Data Not Received Recently"
           : numberWithCommas(received)
       }`,
@@ -62,7 +62,7 @@ const KPI = ({ className }) => {
     {
       title: "Graded (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(graded) === "0"
           ? "Data Not Received Recently"
           : numberWithCommas(graded)
       }`,
@@ -71,7 +71,7 @@ const KPI = ({ className }) => {
     {
       title: "Shipped (BGS)",
       counter: `${
-        numberWithCommas(0) < 0
+        numberWithCommas(shipped) === "0"
           ? "Data Not Received Recently"
           : numberWithCommas(shipped)
       }`,
@@ -82,7 +82,7 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title={`Cards Received, Graded, & Shipped on ${moment(dataDate).format(
+        title={`Cards Received, Graded, & Shipped on ${moment(yesterdayDate).format(
           "dddd, MMMM Do"
         )} `}
         // description={`Graded Grand Total`}

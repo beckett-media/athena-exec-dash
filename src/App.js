@@ -73,7 +73,7 @@ const formFields = {
 
 function App() {
   const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [trafficData, setTrafficData] = React.useState([]);
   const [deviceData, setDeviceData] = React.useState([]);
   const [countriesData, setCountriesData] = React.useState([]);
@@ -117,7 +117,6 @@ function App() {
   //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
 
   async function MarketAnalysisAPI() {
-    setIsLoading(true);
     const path = `/${url}`;
     return await API.get(apiName, path).then((response) => {
       setDataTable(response.data);
