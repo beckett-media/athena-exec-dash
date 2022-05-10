@@ -1,26 +1,23 @@
 import React from "react";
 import styles from "./FinancialPerformance.module.sass";
 import { Box } from "@chakra-ui/react";
-// import KPI from "./KPI";
-// import CardForm from "./CardForm";
-// import MarketData from "./TimelineGraph";
-// import ServicesGraph from "./ServicesGraph";
+import BudgetGraph from "./BudgetGraph";
+import RevenueGraph from "./RevenueGraph";
+import PnLGraph from "./PnLGraph";
 
-const FinancialPerformance = () => {
+const OpsPerformance = () => {
   return (
     <>
       <div className={styles.col}>
-        {/* <KPI className={styles.card} /> */}
+        <PnLGraph />
         <Box my={"2rem"} />
-        {/* <MarketData /> */}
+        <BudgetGraph />
         <Box my={"2rem"} />
-        {/* <ServicesGraph /> */}
-        <Box my={"2rem"} />
-        {/* <CardForm /> */}
+        <RevenueGraph />
         <Box my={"2rem"} />
       </div>
     </>
   );
 };
 
-export default FinancialPerformance;
+export default OpsPerformance;
