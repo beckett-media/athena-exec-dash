@@ -1,6 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import AWS from "aws-sdk";
+import { API, Auth } from "aws-amplify";
+import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
+import { Text } from "@chakra-ui/react";
+
+import "@aws-amplify/ui-react/styles.css";
 import "./styles/app.sass";
+import "./utils-auth/auth.css";
 
 //Screen
 import Page from "./components/Page";
@@ -9,16 +16,13 @@ import SocialMediaMetric from "./screens/SocialMediaMetric";
 import MarketAnalysis from "./screens/CardMarketAnalysis";
 import ComicAnalysis from "./screens/ComicsAnalysis";
 import UpdateData from "./screens/UpdatesCardGraded";
+import FinancialPerformance from "./screens/FinancialPerformance/FinancialPerformance";
+import ROIPerformance from "./screens/ROIPerformance/ROIPerformance";
 import WebsiteMediaMetric from "./screens/WebsiteTraffic";
-import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
-import "@aws-amplify/ui-react/styles.css";
-import { Text } from "@chakra-ui/react";
-import "./utils-auth/auth.css";
 import NoMatch from "./screens/NoMatch";
-import { API } from "aws-amplify";
 import chat from "./components/LottieAnimation/chat.json";
-import globejson from "./components/LottieAnimation/lf30_editor_eipbnn1e.json";
-import FinancialScreen from "./screens/ShippingCard";
+import OpsPerformance from "./screens/OpsPerformance";
+import Settings from "./screens/Settings/Settings";
 
 const components = {
   Header() {
@@ -70,7 +74,7 @@ const formFields = {
 
 function App() {
   const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [trafficData, setTrafficData] = React.useState([]);
   const [deviceData, setDeviceData] = React.useState([]);
   const [countriesData, setCountriesData] = React.useState([]);
@@ -80,6 +84,42 @@ function App() {
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
   const [status, setstatus] = React.useState(0);
+  const [allUsers, setUsers] = React.useState([]);
+
+  const getUsers = async () => {
+    try {
+      let allUsers = [];
+      let more = true;
+      let paginationToken = "";
+
+      while (more) {
+        let params = {
+          UserPoolId: "us-west-1_7eDAf5I2X", // process.env.REACT_APP_USER_POOL_ID,
+          Limit: 60,
+        };
+        if (paginationToken !== "") {
+          params.PaginationToken = paginationToken;
+        }
+
+        AWS.config.update({
+          region: "us-west-1", //process.env.REACT_APP_USER_POOL_REGION,
+          accessKeyId: "AKIAX7KA2GYFDAL4SMBH", //process.env.REACT_APP_ACCESS_KEY_ID,
+          secretAccessKey: "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", //process.env.REACT_APP_SECRET_KEY
+        });
+        const cognito = new AWS.CognitoIdentityServiceProvider();
+        const rawUsers = await cognito.listUsers(params).promise();
+        allUsers = allUsers.concat(rawUsers.Users);
+        if (rawUsers.PaginationToken) {
+          paginationToken = rawUsers.PaginationToken;
+        } else {
+          more = false;
+        }
+        setUsers(allUsers);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   //############################## API PARAMS ###################################
 
@@ -122,14 +162,10 @@ function App() {
     });
   }
   async function SourceWebsite() {
-    setIsLoading(true);
     const path = `/${urlW}`;
     return await API.get(apiName, path).then((response) => {
       setTrafficData(response?.data);
-      setstatus(response?.status_code);
-      // relad the data
-
-      setIsLoading(false);
+      setstatus(1);
     });
   }
   async function DevicesWebsite() {
@@ -244,10 +280,8 @@ function App() {
     getComicIndex();
     getSocialIndicators();
     getSocialData();
-
+    getUsers();
     getSocialMessage();
-
-    // reload the page after 5 seconds ones window is closed
   }, []);
 
   return (
@@ -269,6 +303,7 @@ function App() {
                 color={"black"}
                 textColor={"#fff"}
                 user={user}
+                allUsers={allUsers}
                 signOut={signOut}
                 title="Website Metrics"
                 desc="Track Beckett's website behavior."
@@ -280,6 +315,7 @@ function App() {
               element={
                 <WebsiteMediaMetric
                   dataW={dataW}
+                  allUsers={allUsers}
                   dataD={dataD}
                   dataC={dataC}
                   dataP={dataP}
@@ -368,13 +404,13 @@ function App() {
                 textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Grading Services (BGS)"
+                title="Operations Performance"
               />
             }
           >
             <Route
-              path="/private/grading-terms"
-              element={<FinancialScreen />}
+              path="/private/ops-performance"
+              element={<OpsPerformance />}
             />
           </Route>
           <Route
@@ -396,6 +432,48 @@ function App() {
             <Route
               path="/private/grading-update-data"
               element={<UpdateData />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Financial Performance"
+              />
+            }
+          >
+            <Route
+              path="/private/financial-performance"
+              element={<FinancialPerformance />}
+            />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                }
+                globe={chat}
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="ROI Performance"
+              />
+            }
+          >
+            <Route
+              path="/private/roi-performance"
+              element={<ROIPerformance />}
             />
           </Route>
           <Route
@@ -453,7 +531,25 @@ function App() {
                 textColor={"#fff"}
                 signOut={signOut}
                 user={user}
-                title="Page doesn't exist 🤷‍♂️"
+                title="Settings"
+              />
+            }
+          >
+            <Route path="/dashboard/settings" element={<Settings />} />
+          </Route>
+          <Route
+            path="dashboard"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                }
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                itr
+                user={user}
+                title="Not Found"
               />
             }
           >

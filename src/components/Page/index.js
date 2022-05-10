@@ -13,12 +13,14 @@ const Page = ({
   title,
   desc,
   user,
+  allUsers,
   signOut,
   imgBg,
   color,
   globe,
   globes,
   textColor,
+
 }) => {
   const [visible, setVisible] = useState(false);
 
@@ -29,6 +31,8 @@ const Page = ({
       <div className={styles.page}>
         <Sidebar
           signOut={signOut}
+          allUsers={allUsers}
+          user={user}
           className={cn(styles.sidebar, { [styles.visible]: visible })}
           onClose={() => setVisible(false)}
         />

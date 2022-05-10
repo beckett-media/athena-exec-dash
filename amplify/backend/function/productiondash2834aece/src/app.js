@@ -494,6 +494,12 @@ app.post("/athenaformdelete", async function (req, res) {
   }
 });
 
+// #################### Grader List CRUD ####################
+app.get("/graders", async function (req, res) {})
+app.post("/graders", async function (req, res) {})
+app.put("/graders", async function (req, res) {})
+app.delete("/graders", async function (req, res) {})
+
 
 
 app.listen(3000, function () {

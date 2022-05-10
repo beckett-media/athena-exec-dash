@@ -74,6 +74,19 @@
           "delete"
         ]
       }
+    },
+    "/graders": {
+      "name": "/graders",
+      "lambdaFunction": "productiondash2834aece",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

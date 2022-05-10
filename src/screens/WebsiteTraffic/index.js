@@ -6,13 +6,26 @@ import PageTraffics from "./PagesURLPathsFoundry/PageTraffics";
 import TopSource from "./TopSourcesFoundry";
 import TopDevices from "./TopDevicesFoundry";
 
-const WebsiteMediaMetric = ({ dataW, dataD, dataC, dataP, isLoading, status}) => {
-
+const WebsiteMediaMetric = ({
+  dataW,
+  dataD,
+  dataC,
+  dataP,
+  isLoading,
+  status,
+  allUsers,
+}) => {
   return (
     <div className={styles.row}>
       <div className={styles.col}>
         <Box my={"2rem"} />
-        <TopSource className={styles.card} topSources={dataW} isLoading={isLoading} status={status} />
+        <TopSource
+          className={styles.card}
+          topSources={dataW}
+          isLoading={isLoading}
+          status={status}
+          allUsers={allUsers}
+        />
         <Box my={"2rem"} />
         <PageTraffics data={dataP} />
         <Box my={"2rem"} />
