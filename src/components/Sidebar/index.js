@@ -41,10 +41,6 @@ const navigation = [
     permission: ["admin", "financial"],
     dropdown: [
       {
-        title: "Operations",
-        url: "/private/ops-performance",
-      },
-      {
         title: "Financials",
         url: "/private/financial-performance",
       },
@@ -52,24 +48,45 @@ const navigation = [
         title: "ROI",
         url: "/private/roi-performance",
       },
-      {
-        title: "Update data",
-        url: "/private/grading-update-data",
-      },
-      {
-        title: "Inbound reports",
-        icon: "grid",
-        url: "/private/shipping_terms",
-      },
     ],
   },
   {
     title: "Card Grading",
     icon: "filter",
-    // url: "/dashboard/web-analysis",
-    url: "/dashboard/web-analysis",
+    slug: "private",
     permission: ["admin", "grading"],
+    dropdown: [
+      {
+        title: "Operations",
+        url: "/private/ops-performance",
+      },
+      {
+        title: "Update data",
+        url: "/private/grading-update-data",
+      },
+      {
+        title: "Grading settings",
+        url: "/private/grading-settings",
+      },
+    ],
   },
+  // {
+  //   title: "Card Grading",
+  //   icon: "filter",
+  //   // url: "/dashboard/web-analysis",
+  //   url: "/private",
+  //   permission: ["admin", "grading"],
+  //   dropdown: [
+  //     {
+  //       title: "Operations",
+  //       url: "/private/ops-performance",
+  //     },
+  //     {
+  //       title: "Update data",
+  //       url: "/private/grading-update-data",
+  //     },
+  //   ],
+  // },
   {
     title: "Settings",
     icon: "setting",

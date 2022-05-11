@@ -23,6 +23,7 @@ import NoMatch from "./screens/NoMatch";
 import chat from "./components/LottieAnimation/chat.json";
 import OpsPerformance from "./screens/OpsPerformance";
 import Settings from "./screens/Settings/Settings";
+import GradingSettings from "./screens/GradingSettings/GradingSettings";
 
 const components = {
   Header() {
@@ -519,6 +520,23 @@ function App() {
             }
           >
             <Route path="/dashboard/web-analysis" element={<Home />} />
+          </Route>
+          <Route
+            path="private"
+            element={
+              <Page
+                imgBg={
+                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                }
+                color={"black"}
+                textColor={"#fff"}
+                signOut={signOut}
+                user={user}
+                title="Grading Settings"
+              />
+            }
+          >
+            <Route path="/private/grading-settings" element={<Settings />} />
           </Route>
           <Route
             path="dashboard"
