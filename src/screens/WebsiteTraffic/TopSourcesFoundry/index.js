@@ -7,7 +7,7 @@ import Dropdown from "../../../components/Dropdown";
 import BarChart from "./BarChart";
 import Loading from "../../../components/LottieAnimation/Loading";
 
-const TopSource = ({ className, topSources, isLoading, status}) => {
+const TopSource = ({ className, topSources, isLoading, status }) => {
   const [sorting, setSorting] = React.useState("2022");
   const intervals = ["2022", "2021", "2020", "2019"];
   const data = topSources.filter((d) => d?.dates === sorting);
