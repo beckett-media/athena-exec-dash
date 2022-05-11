@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "function": {
-        "productiondash2834aece": {
+        "athenaprodcb5f5078": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -8,7 +8,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "productiondash": {
+        "athenaprod": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",

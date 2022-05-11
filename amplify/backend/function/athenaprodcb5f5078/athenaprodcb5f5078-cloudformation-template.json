@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.22\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"8.1.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -50,12 +50,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "productiondash2834aece",
+            "athenaprodcb5f5078",
             {
               "Fn::Join": [
                 "",
                 [
-                  "productiondash2834aece",
+                  "athenaprodcb5f5078",
                   "-",
                   {
                     "Ref": "env"
@@ -87,7 +87,7 @@
                         "env": {
                           "Ref": "env"
                         },
-                        "functionName": "productiondash2834aece"
+                        "functionName": "athenaprodcb5f5078"
                       }
                     ]
                   },
@@ -109,7 +109,7 @@
                         "env": {
                           "Ref": "env"
                         },
-                        "functionName": "productiondash2834aece"
+                        "functionName": "athenaprodcb5f5078"
                       }
                     ]
                   },
@@ -131,7 +131,7 @@
                         "env": {
                           "Ref": "env"
                         },
-                        "functionName": "productiondash2834aece"
+                        "functionName": "athenaprodcb5f5078"
                       }
                     ]
                   },
@@ -158,12 +158,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "productiondashLambdaRole634500d6",
+            "athenaprodLambdaRole44342a1c",
             {
               "Fn::Join": [
                 "",
                 [
-                  "productiondashLambdaRole634500d6",
+                  "athenaprodLambdaRole44342a1c",
                   "-",
                   {
                     "Ref": "env"
@@ -275,7 +275,7 @@
                           "env": {
                             "Ref": "env"
                           },
-                          "functionName": "productiondash2834aece"
+                          "functionName": "athenaprodcb5f5078"
                         }
                       ]
                     },

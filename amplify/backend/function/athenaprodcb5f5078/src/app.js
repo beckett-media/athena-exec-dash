@@ -332,13 +332,13 @@ app.post("/athenaform", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      "parameters": {
-        "cards_graded_today": req.body.cards_graded_today,
-        "cards_shipped_today": req.body.cards_shipped_today,
-        "cards_received": req.body.cards_received,
-        "type": req.body.type,
-        "date": req.body.date,
-        "submission_item": req.body.submission_item,
+      parameters: {
+        cards_graded_today: req.body.cards_graded_today,
+        cards_shipped_today: req.body.cards_shipped_today,
+        cards_received: req.body.cards_received,
+        type: req.body.type,
+        date: req.body.date,
+        submission_item: req.body.submission_item,
       },
     },
   };
@@ -365,8 +365,6 @@ app.post("/athenaform", async function (req, res) {
       });
   }
 });
-
-
 
 // #################### Form update ####################
 app.put("/athenaform", async function (req, res) {
@@ -398,14 +396,14 @@ app.put("/athenaform", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      "parameters": {
-        "AthenaForm": req.body.submission_item,
-        "cards_graded_today": req.body.cards_graded_today,
-        "cards_shipped_today": req.body.cards_shipped_today,
-        "cards_received": req.body.cards_received,
-        "type": req.body.type,
-        "date": req.body.date,
-        "submission_item": req.body.submission_item,
+      parameters: {
+        AthenaForm: req.body.submission_item,
+        cards_graded_today: req.body.cards_graded_today,
+        cards_shipped_today: req.body.cards_shipped_today,
+        cards_received: req.body.cards_received,
+        type: req.body.type,
+        date: req.body.date,
+        submission_item: req.body.submission_item,
       },
     },
   };
@@ -432,7 +430,6 @@ app.put("/athenaform", async function (req, res) {
       });
   }
 });
-
 
 // #################### Form update ####################
 app.post("/athenaformdelete", async function (req, res) {
@@ -464,9 +461,9 @@ app.post("/athenaformdelete", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      "parameters": {
-        "AthenaForm": req.body.submission_item,
-        "submission_item": req.body.submission_item,
+      parameters: {
+        AthenaForm: req.body.submission_item,
+        submission_item: req.body.submission_item,
       },
     },
   };
@@ -493,8 +490,6 @@ app.post("/athenaformdelete", async function (req, res) {
       });
   }
 });
-
-
 
 app.listen(3000, function () {
   console.log("App started");
