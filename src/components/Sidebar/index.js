@@ -37,36 +37,36 @@ const navigation = [
   {
     title: "Financial Performance",
     icon: "lock",
-    slug: "private",
+    slug: "financial",
     permission: ["admin", "financial"],
     dropdown: [
       {
         title: "Financials",
-        url: "/private/financial-performance",
+        url: "/financial/financial-performance",
       },
       {
         title: "ROI",
-        url: "/private/roi-performance",
+        url: "/financial/roi-performance",
       },
     ],
   },
   {
     title: "Card Grading",
     icon: "filter",
-    slug: "private",
+    slug: "grading",
     permission: ["admin", "grading"],
     dropdown: [
       {
         title: "Operations",
-        url: "/private/ops-performance",
+        url: "/grading/ops-performance",
       },
       {
         title: "Update data",
-        url: "/private/grading-update-data",
+        url: "/grading/grading-update-data",
       },
       {
         title: "Grading settings",
-        url: "/private/grading-settings",
+        url: "/grading/grading-settings",
       },
     ],
   },
@@ -99,9 +99,16 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
 
   console.log({ currentsename: user, allUserPool: allUsers });
 
-  const permissions = user.signInUserSession.idToken.payload["cognito:groups"];
+  const userPermissions =
+    user.signInUserSession.idToken.payload["cognito:groups"];
 
-  console.log(permissions);
+  console.log(userPermissions);
+
+  const checkPermission = (item) => {
+    return item.some((r) => userPermissions.includes(r));
+  };
+
+  // console.log(checkPermission(navigation[2].permission));
 
   return (
     <>

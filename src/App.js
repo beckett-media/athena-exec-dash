@@ -394,7 +394,7 @@ function App() {
             />
           </Route>
           <Route
-            path="private"
+            path="grading"
             element={
               <Page
                 imgBg={
@@ -410,12 +410,12 @@ function App() {
             }
           >
             <Route
-              path="/private/ops-performance"
+              path="/grading/ops-performance"
               element={<OpsPerformance />}
             />
           </Route>
           <Route
-            path="private"
+            path="grading"
             element={
               <Page
                 imgBg={
@@ -431,12 +431,12 @@ function App() {
             }
           >
             <Route
-              path="/private/grading-update-data"
+              path="/grading/grading-update-data"
               element={<UpdateData />}
             />
           </Route>
           <Route
-            path="private"
+            path="financial"
             element={
               <Page
                 imgBg={
@@ -452,12 +452,12 @@ function App() {
             }
           >
             <Route
-              path="/private/financial-performance"
+              path="/financial/financial-performance"
               element={<FinancialPerformance />}
             />
           </Route>
           <Route
-            path="private"
+            path="financial"
             element={
               <Page
                 imgBg={
@@ -473,7 +473,7 @@ function App() {
             }
           >
             <Route
-              path="/private/roi-performance"
+              path="/financial/roi-performance"
               element={<ROIPerformance />}
             />
           </Route>
@@ -505,7 +505,7 @@ function App() {
             />
           </Route>
           <Route
-            path="dashboard"
+            path="grading"
             element={
               <Page
                 imgBg={
@@ -519,10 +519,10 @@ function App() {
               />
             }
           >
-            <Route path="/dashboard/web-analysis" element={<Home />} />
+            <Route path="/grading/web-analysis" element={<Home />} />
           </Route>
           <Route
-            path="private"
+            path="grading"
             element={
               <Page
                 imgBg={
@@ -536,7 +536,7 @@ function App() {
               />
             }
           >
-            <Route path="/private/grading-settings" element={<Settings />} />
+            <Route path="/grading/grading-settings" element={<Settings />} />
           </Route>
           <Route
             path="dashboard"
