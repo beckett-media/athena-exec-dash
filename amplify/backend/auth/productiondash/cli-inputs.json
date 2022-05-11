@@ -54,11 +54,14 @@
     "useEnabledMfas": true,
     "dependsOn": [],
     "thirdPartyAuth": false,
-    "userPoolGroups": false,
+    "userPoolGroups": true,
     "adminQueries": false,
     "triggers": {},
     "hostedUI": false,
-    "userPoolGroupList": [],
+    "userPoolGroupList": [
+      "admin",
+      "financial"
+    ],
     "authProviders": [],
     "parentStack": {
       "Ref": "AWS::StackId"

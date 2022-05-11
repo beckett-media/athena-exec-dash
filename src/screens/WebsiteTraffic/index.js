@@ -24,7 +24,6 @@ const WebsiteMediaMetric = ({
           topSources={dataW}
           isLoading={isLoading}
           status={status}
-          allUsers={allUsers}
         />
         <Box my={"2rem"} />
         <PageTraffics data={dataP} />
