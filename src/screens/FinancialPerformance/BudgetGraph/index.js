@@ -158,7 +158,7 @@ const BudgetGraph = ({ className }) => {
 
   return (
     <Card
-      title={"Cards graded per day, per grader"}
+      title={"Comparison of end-of-quarter balance sheet with end-of-quarter budgeted balance sheet"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}

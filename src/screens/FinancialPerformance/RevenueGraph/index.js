@@ -158,10 +158,10 @@ const RevenueGraph = ({ className }) => {
 
   return (
     <Card
-      title={"Cards graded per day, per grader"}
+      title={"Comparison of quarterly top-level revenue streams with budgeted quarterly top-level revenue streams"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
-      classTitle={cn("title-blue", styles.cardTitle)}
+      classTitle={cn("title-green", styles.cardTitle)}
     >
       {loading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />

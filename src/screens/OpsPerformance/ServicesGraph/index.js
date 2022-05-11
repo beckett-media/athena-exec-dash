@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react";
 import { API } from "aws-amplify";
 
 const ServicesGraph = ({ className }) => {
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode(true);
 
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
@@ -43,13 +43,13 @@ const ServicesGraph = ({ className }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: {
-        color: darkMode.value ? "#B5E4CA" : "green",
+        color: darkMode.value ? "#B5E4CA" : "yellow",
         size: 10,
         opacity: 0.8,
       },
-      name: "Cards Graded",
+      name: "Service Level: 1",
       line: {
-        color: darkMode.value ? "#B5E4CA" : "green",
+        color: darkMode.value ? "#B5E4CA" : "yellow",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -63,33 +63,33 @@ const ServicesGraph = ({ className }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Cards Shipped",
+      marker: { color: "gold", size: 10, opacity: 0.8 },
+      name: "Service Level: 2",
       line: {
-        color: "#2A85FF",
+        color: "gold",
         width: 4,
         dash: "dot",
         shape: "spline",
         smoothing: 1,
       },
     },
-    {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsReceived),
+    // {
+    //   x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+    //   y: data?.map((d) => d?.properties?.cardsReceived),
 
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Cards Received",
-      line: {
-        color: "#DCF341",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
+    //   type: "scatter",
+    //   mode: "lines+markers",
+    //   connectgaps: true,
+    //   marker: { color: "#DCF341", size: 10, opacity: 0.8 },
+    //   name: "Cards Received",
+    //   line: {
+    //     color: "#DCF341",
+    //     width: 4,
+    //     dash: "dot",
+    //     shape: "spline",
+    //     smoothing: 1,
+    //   },
+    // },
     // {
     //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
     //   y: Grading_Terms.map((d) =>
@@ -120,7 +120,7 @@ const ServicesGraph = ({ className }) => {
     },
 
     yaxis: {
-      title: "Total",
+      title: "Total Cards Recieved",
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -158,10 +158,10 @@ const ServicesGraph = ({ className }) => {
 
   return (
     <Card
-      title={"Cards Received Per Day, Per Service Level"}
+      title={"Cards received per day, per service level"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
-      classTitle={cn("title-blue", styles.cardTitle)}
+      classTitle={cn("title-yellow", styles.cardTitle)}
     >
       {loading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
