@@ -38,6 +38,7 @@ const navigation = [
     title: "Financial Performance",
     icon: "lock",
     slug: "private",
+    permission: ["admin", "financial"],
     dropdown: [
       {
         title: "Operations",
@@ -67,6 +68,7 @@ const navigation = [
     icon: "filter",
     // url: "/dashboard/web-analysis",
     url: "/dashboard/web-analysis",
+    permission: ["admin", "grading"],
   },
   {
     title: "Settings",
@@ -78,8 +80,11 @@ const navigation = [
 const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
   const [visible, setVisible] = useState(false);
 
-  
-  console.log({ currentsename: user?.username, allUserPool: allUsers });
+  console.log({ currentsename: user, allUserPool: allUsers });
+
+  const permissions = user.signInUserSession.idToken.payload["cognito:groups"];
+
+  console.log(permissions);
 
   return (
     <>
