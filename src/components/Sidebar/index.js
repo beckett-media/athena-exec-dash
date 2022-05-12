@@ -38,7 +38,7 @@ const navigation = [
     title: "Financial Performance",
     icon: "lock",
     slug: "financial",
-    permission: ["admin", "financial"],
+    permission: ["dev", "admin", "financial"],
     dropdown: [
       {
         title: "Financials",
@@ -54,7 +54,7 @@ const navigation = [
     title: "Card Grading",
     icon: "filter",
     slug: "grading",
-    permission: ["admin", "grading"],
+    permission: ["dev", "admin", "grading"],
     dropdown: [
       {
         title: "Operations",
@@ -104,11 +104,47 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
 
   console.log(userPermissions);
 
-  const checkPermission = (item) => {
-    return item.some((r) => userPermissions.includes(r));
+  //Function that returns a boolean if a single array entry is contained within another array
+
+  const compareArrays = (arr1, arr2) => {
+    return arr1.some((r) => arr2.includes(r));
   };
 
-  // console.log(checkPermission(navigation[2].permission));
+  //Function to map out the nav items
+
+  const mapNav = (item, num) => {
+    return item.url ? (
+      <NavLink
+        className={styles.item}
+        activeClassName={styles.active}
+        style={({ isActive }) => {
+          return {
+            color: isActive ? "white" : "",
+            boxShadow: isActive
+              ? "inset 0px -2px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.11)"
+              : "",
+            backgroundColor: isActive ? "#272B30" : "",
+          };
+        }}
+        to={item.url}
+        key={num}
+        exact
+        onClick={onClose}
+      >
+        <Icon name={item.icon} size="24" />
+        {item.title}
+      </NavLink>
+    ) : (
+      <Dropdown
+        className={styles.dropdown}
+        visibleSidebar={visible}
+        setValue={setVisible}
+        key={num}
+        item={item}
+        onClose={onClose}
+      />
+    );
+  };
 
   return (
     <>
@@ -128,37 +164,9 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
         </Link>
         <div className={styles.menu}>
           {navigation.map((x, index) =>
-            x.url ? (
-              <NavLink
-                className={styles.item}
-                activeClassName={styles.active}
-                style={({ isActive }) => {
-                  return {
-                    color: isActive ? "white" : "",
-                    boxShadow: isActive
-                      ? "inset 0px -2px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.11)"
-                      : "",
-                    backgroundColor: isActive ? "#272B30" : "",
-                  };
-                }}
-                to={x.url}
-                key={index}
-                exact
-                onClick={onClose}
-              >
-                <Icon name={x.icon} size="24" />
-                {x.title}
-              </NavLink>
-            ) : (
-              <Dropdown
-                className={styles.dropdown}
-                visibleSidebar={visible}
-                setValue={setVisible}
-                key={index}
-                item={x}
-                onClose={onClose}
-              />
-            )
+            x.permission
+              ? compareArrays(x.permission, userPermissions) && mapNav(x, index)
+              : mapNav(x, index)
           )}
         </div>
 
