@@ -11,3 +11,7 @@ export const progress = () => {
 export const percentageCalc = (num, total) => {
   return ((num / total) * 100).toFixed(2);
 };
+
+export const compareArrays = (arr1, arr2) => {
+  return arr1.some((r) => arr2.includes(r));
+};

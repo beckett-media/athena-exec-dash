@@ -6,6 +6,7 @@ import Icon from "../Icon";
 import Theme from "../Theme";
 import Image from "../Image";
 import Dropdown from "../SidebarDropdown";
+import { compareArrays } from "../../utils";
 
 const navigation = [
   {
@@ -103,12 +104,6 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
     user.signInUserSession.idToken.payload["cognito:groups"];
 
   console.log(userPermissions);
-
-  //Function that returns a boolean if a single array entry is contained within another array
-
-  const compareArrays = (arr1, arr2) => {
-    return arr1.some((r) => arr2.includes(r));
-  };
 
   //Function to map out the nav items
 
