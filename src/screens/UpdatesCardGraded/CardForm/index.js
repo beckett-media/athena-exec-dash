@@ -35,7 +35,11 @@ const CardForm = ({ className,  ...props }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [twoDay, setTwoDay] = useState(0);
+  const [fiveDay, setFiveDay] = useState(0);
+  const [tenDay, setTenDay] = useState(0);
+  const [thirtyDay, setThirtyDay] = useState(0);
+  const [recase, setRecase] = useState(0);
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
 
@@ -57,7 +61,7 @@ const CardForm = ({ className,  ...props }) => {
     return `${number}${letter}`;
   };
 
-  const path = "/athenaform";
+  const path = "/servicelevel";
   const apiName = "palentirApi";
   const myInit = {
     body: {
@@ -74,21 +78,48 @@ const CardForm = ({ className,  ...props }) => {
       }`,
     },
   };
+  const serviceLevelInit = {
+    body: {
+      two_day_premium: parseInt(twoDay),
+      five_day_express: parseInt(fiveDay),
+      ten_day_express: parseInt(tenDay),
+      thirty_day_standard: parseInt(thirtyDay),
+      recase: (parseInt(recase)),
+      date: startDateFormatted,
+      hidden:0,
+      total: cardsReceived,
+      type: "BGS"
+    }
+  }
+  //"date": req.body.date,
+  // "10_day_express" : req.body.ten_day_express,
+  // "30_day_standard" : req.body.thirty_day_standard,
+  // "total":  req.body.total,
+  // "hidden": req.body.hidden,
+  // "recase": req.body.recase,
+  // "5_day_express": req.body.five_day_express,
+  // "type": req.body.type,
+  // "2_day_premium": req.body.two_day_premium,
 
+  // /servicelevel
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    setLoading(true);
-    API.post(apiName, path, myInit)
-      .then((response) => {
-        console.log(response.status_code);
-        setStatusCode(response.status_code);
-        setLoading(false);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error.response);
-        setLoading(false);
-      });
+    // setLoading(true);
+    // API.post(apiName, path, serviceLevelInit)
+    //   .then((response) => {
+    //     console.log(response.status_code);
+    //     setStatusCode(response.status_code);
+    //     setLoading(false);
+    //     window.location.reload();
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data);
+    //     setLoading(false);
+    //   });
+    console.log('firing')
+    API.get(apiName, path)
+    .then(response => console.log(response, "This is a respnse"))
+    .catch(error => console.log(error))
   });
 
   React.useEffect(() => {
@@ -101,6 +132,24 @@ const CardForm = ({ className,  ...props }) => {
     }
   }, [handleSubmit]);
 
+const handleServiceLevelChange = (e, setServiceLevel) => {
+  if (e.target.value === '') {
+    setServiceLevel(0);
+  }
+  else setServiceLevel(e.target.value);
+}
+const checkDisableSubmit = () => {
+  if (!(cardsGradedToday && cardsShippedToday && cardsReceived)) return true
+  return checkSumServiceLevel();
+}
+const checkSumServiceLevel = () => {
+  if (parseInt(twoDay) === 0 && parseInt(fiveDay)===0 && parseInt(tenDay) === 0
+   && parseInt(thirtyDay) === 0 && parseInt(recase) === 0) return false
+  const totalServiceLevelSum = parseInt(twoDay) + parseInt(fiveDay)
+  + parseInt(tenDay) + parseInt(thirtyDay) + parseInt(recase);
+  if (totalServiceLevelSum !== parseInt(cardsReceived)) return true
+  
+}
   return (
     <Card
       className={cn(styles.card, className)}
@@ -183,6 +232,85 @@ const CardForm = ({ className,  ...props }) => {
             onChange={(e) => setCardsReceived(e.target.value)}
           />
         </NumberInput>
+        <Flex>
+          <FormLabel mb ={3}>Cards Recieved By Service Level (Optional):</FormLabel>
+          {checkSumServiceLevel() && <FormLabel color={"red"}>Cards Recieved Today Must Equal The Sum Of The Cards In Service Levels</FormLabel>}
+        </Flex>
+        <Flex>
+            <NumberInput mr={3}>
+              <NumberInputField
+                focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+                borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+                borderRadius={12}
+                mb={3}
+                border={`2px solid transparent`}
+                label="Two Day"
+                type="number"
+                placeholder="0"
+                defaultValue={0}
+                value = {twoDay || 0}
+                onChange={(e) => handleServiceLevelChange(e, setTwoDay)}>
+              </NumberInputField>
+              <FormLabel  mb={5} textAlign={"center"}> Two Day </FormLabel>
+            </NumberInput>
+            <NumberInput mr={3}>
+              <NumberInputField
+                focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+                borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+                borderRadius={12}
+                mb={3}
+                border={`2px solid transparent`}
+                label="Five Day"
+                type="number"
+                placeholder="0"
+                onChange={(e) => handleServiceLevelChange(e, setFiveDay)}
+              >
+              </NumberInputField>
+              <FormLabel textAlign={"center"}> Five Day </FormLabel>
+            </NumberInput>
+            <NumberInput mr={3}>
+              <NumberInputField
+                focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+                borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+                borderRadius={12}
+                mb={3}
+                border={`2px solid transparent`}
+                label="Ten Day"
+                type="number"
+                placeholder="0"
+                onChange={(e) => handleServiceLevelChange(e, setTenDay)}>
+              </NumberInputField>
+              <FormLabel textAlign={"center"}> Ten Day </FormLabel>
+            </NumberInput>
+            <NumberInput mr={3}>
+              <NumberInputField
+                focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+                borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+                borderRadius={12}
+                mb={3}
+                border={`2px solid transparent`}
+                label="Thirty Day"
+                type="number"
+                placeholder="0"
+                onChange={(e) => handleServiceLevelChange(e, setThirtyDay)}>
+              </NumberInputField>
+              <FormLabel textAlign={"center"}> Thirty Day </FormLabel>
+            </NumberInput>
+            <NumberInput mr={3}>
+              <NumberInputField
+                focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+                borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+                borderRadius={12}
+                mb={3}
+                border={`2px solid transparent`}
+                label="Recase"
+                type="number"
+                placeholder={0}
+                onChange={(e) => handleServiceLevelChange(e, setRecase)}>
+              </NumberInputField>
+              <FormLabel textAlign={"center"}> Recase </FormLabel>
+            </NumberInput>
+        </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Divider />
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
@@ -202,7 +330,9 @@ const CardForm = ({ className,  ...props }) => {
                 _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
                 color="white"
                 disabled={
-                  !(cardsGradedToday && cardsShippedToday && cardsReceived)
+                  // !(cardsGradedToday && cardsShippedToday && cardsReceived) &&
+                  // parseInt(twoDay) === 1
+                  checkDisableSubmit()
                 }
               >
                 Save submission
