@@ -3,7 +3,7 @@
   "paths": {
     "/api": {
       "name": "/api",
-      "lambdaFunction": "productiondash2834aece",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [
@@ -13,7 +13,7 @@
     },
     "/socialmedia": {
       "name": "/socialmedia",
-      "lambdaFunction": "productiondash2834aece",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [
@@ -23,7 +23,7 @@
     },
     "/competitormetric": {
       "name": "/competitormetric",
-      "lambdaFunction": "productiondash2834aece",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [
@@ -33,7 +33,7 @@
     },
     "/comics": {
       "name": "/comics",
-      "lambdaFunction": "productiondash2834aece",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [
@@ -43,41 +43,31 @@
     },
     "/athenaform": {
       "name": "/athenaform",
-      "lambdaFunction": "productiondash2834aece",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [
           "create",
           "read",
-          "update"
-        ]
-      }
-    },
-    "/timeserie": {
-      "name": "/timeserie",
-      "lambdaFunction": "productiondash2834aece",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "read"
-        ]
-      }
-    },
-    "/athenaformdelete": {
-      "name": "/athenaformdelete",
-      "lambdaFunction": "productiondash2834aece",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "create",
           "update",
           "delete"
         ]
       }
     },
-    "/graders": {
-      "name": "/graders",
-      "lambdaFunction": "productiondash2834aece",
+    "/timeserie": {
+      "name": "/timeserie",
+      "lambdaFunction": "athenaprodcb5f5078",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read",
+          "update"
+        ]
+      }
+    },
+    "/athenaformdelete": {
+      "name": "/athenaformdelete",
+      "lambdaFunction": "athenaprodcb5f5078",
       "permissions": {
         "setting": "private",
         "auth": [

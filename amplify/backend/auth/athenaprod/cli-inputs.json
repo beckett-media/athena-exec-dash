@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "productiondash_identitypool_9117c500",
+    "identityPoolName": "athenaprod_identitypool_d62d2e5a",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "produc9117c500",
-    "userPoolName": "productiondash_userpool_9117c500",
+    "resourceNameTruncated": "athenad62d2e5a",
+    "userPoolName": "athenaprod_userpool_d62d2e5a",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,11 +31,11 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "produc9117c500_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "athenad62d2e5a_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "authSelections": "identityPoolAndUserPool",
-    "resourceName": "productiondash",
-    "sharedId": "9117c500",
+    "resourceName": "athenaprod",
+    "sharedId": "d62d2e5a",
     "serviceName": "Cognito",
     "useDefault": "manual",
     "authRoleArn": {
@@ -53,13 +53,18 @@
     "breakCircularDependency": true,
     "useEnabledMfas": true,
     "dependsOn": [],
+    "userPoolGroupList": [
+      "admin",
+      "financial",
+      "grading"
+    ],
     "thirdPartyAuth": false,
-    "userPoolGroups": false,
+    "authProviders": [],
+    "userPoolGroups": true,
     "adminQueries": false,
     "triggers": {},
     "hostedUI": false,
-    "userPoolGroupList": [],
-    "authProviders": [],
+    "adminQueryGroup": "financial",
     "parentStack": {
       "Ref": "AWS::StackId"
     },

@@ -1,14 +1,28 @@
 {
   "function": {
-    "productiondash2834aece": {
+    "athenaprodcb5f5078": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": []
+    },
+    "AdminQueriesa200cd2e": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "athenaprod",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
     }
   },
   "auth": {
-    "productiondash": {
+    "athenaprod": {
       "service": "Cognito",
       "serviceType": "managed",
       "providerPlugin": "awscloudformation",
@@ -31,6 +45,22 @@
           "EMAIL"
         ]
       }
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "athenaprod",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ]
     }
   },
   "api": {
@@ -40,14 +70,35 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "productiondash2834aece",
+          "resourceName": "athenaprodcb5f5078",
           "attributes": [
             "Name",
             "Arn"
           ]
         }
       ]
+    },
+    "AdminQueries": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "athenaprod",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesa200cd2e",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ]
     }
-  },
-  "hosting": {}
+  }
 }
