@@ -7,12 +7,15 @@ import MarketData from "./TimelineGraph";
 import ServicesGraph from "./ServicesGraph";
 import RevenueGraph from "./RevenueGraph";
 import GradingGraph from "./GradingGraph";
+import Backlog from "./Backlog";
 
 const OpsPerformance = () => {
   return (
     <>
       <div className={styles.col}>
         <KPI className={styles.card} />
+        <Box my={"2rem"} />
+        <Backlog />
         <Box my={"2rem"} />
         <MarketData />
         <Box my={"2rem"} />

@@ -7,3 +7,7 @@ export const numberWithCommas = (x) => {
 export const progress = () => {
   return Math.floor(Math.random() * 90) + 10 + "%";
 };
+
+export const percentageCalc = (num, total) => {
+  return ((num / total) * 100).toFixed(2);
+};
