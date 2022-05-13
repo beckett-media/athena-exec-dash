@@ -13,5 +13,9 @@ export const percentageCalc = (num, total) => {
 };
 
 export const compareArrays = (arr1, arr2) => {
-  return arr1.some((r) => arr2.includes(r));
+  if (arr1 && arr2) {
+    return arr1.some((r) => arr2.includes(r));
+  } else {
+    return false;
+  }
 };
