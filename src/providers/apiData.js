@@ -1,6 +1,6 @@
 import * as React from "react";
 import AWS from "aws-sdk";
-import { API, Auth } from "aws-amplify";
+import { API } from "aws-amplify";
 
 const ApiDataContext = React.createContext();
 
@@ -45,7 +45,7 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [status, setstatus] = React.useState(0);
+  const [status, setStatus] = React.useState(0);
   const [allUsers, setUsers] = React.useState([]);
 
   const getUsers = async () => {
@@ -76,87 +76,166 @@ function ApiDataProvider(props) {
         } else {
           more = false;
         }
-        setUsers(allUsers);
+
+        return allUsers;
       }
     } catch (e) {
       console.log(e);
     }
+
+    return [];
   };
 
+  //############################# MARKET ANALYSIS QUERY ########################################
   async function MarketAnalysisAPI() {
-    setIsLoading(true);
     const path = `/${url}`;
-    return await API.get(apiName, path).then((response) => {
-      setDataTable(response.data);
-      setIsLoading(false);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
+
+  //############################## SOURCES WEBSITE QUERY ######################################
   async function SourceWebsite() {
     const path = `/${urlW}`;
-    return await API.get(apiName, path).then((response) => {
-      setTrafficData(response?.data);
-      setstatus(1);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
+
+  //############################# WEBSITE TOP DEVICE  QUERY ###################################
   async function DevicesWebsite() {
     const path = `/${urlD}`;
-    return await API.get(apiName, path).then((response) => {
-      setDeviceData(response?.data);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
+
+  //############################# WEBSITE TOP COUNTRIES  QUERY ###################################
   async function TopCountriesWebsite() {
     const path = `/${urlC}`;
-    return await API.get(apiName, path).then((response) => {
-      setCountriesData(response?.data);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
+
+  //############################# WEBSITE TOP PAGE ROUTES  QUERY ###################################
   async function TopPagesRoutes() {
     const path = `/${urlP}`;
-    return await API.get(apiName, path).then((response) => {
-      setPagesData(response?.data);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
+
   async function getSocialIndicators() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialindicators";
-    return await API.get(apiName, path).then((response) => {
-      setSocialDataIndicators(response?.data);
-    });
+    return API.get(apiName, path).then((response) => response.data);
   }
 
   async function getSocialData() {
     const apiName = "palentirApi";
     const path = "/socialmedia/socialdata";
-    return await API.get(apiName, path).then((response) => {
-      setSocialData(response?.data);
-    });
+    return API.get(apiName, path).then((response) => response.data);
   }
+
   async function getSocialMessage() {
     const apiName = "palentirApi";
     const path = "/socialmedia/messages";
-    return await API.get(apiName, path).then((response) => {
-      setSocialDataMessage(response?.data);
-    });
+    return API.get(apiName, path).then((response) => response.data);
   }
+
+  //############################# COMICS ANALYTICS  QUERY ###################################
   async function getComicIndex() {
     const apiName = "palentirApi";
     const path = `/${urlCI}`;
-    return await API.get(apiName, path).then((response) => {
-      setComicIndexing(response?.data);
-    });
+    return API.get(apiName, path).then((response) =>
+      response.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
   }
 
   React.useEffect(() => {
-    MarketAnalysisAPI();
-    SourceWebsite();
-    DevicesWebsite();
-    TopCountriesWebsite();
-    TopPagesRoutes();
-    getComicIndex();
-    getSocialIndicators();
-    getSocialData();
-    getUsers();
-    getSocialMessage();
+    const fetch = async () => {
+      setIsLoading(true);
+
+      Promise.allSettled([
+        MarketAnalysisAPI(),
+        SourceWebsite(),
+        DevicesWebsite(),
+        TopCountriesWebsite(),
+        TopPagesRoutes(),
+        getComicIndex(),
+        getSocialIndicators(),
+        getSocialData(),
+        getSocialMessage(),
+        getUsers(),
+      ])
+        .then(
+          ([
+            dataTable,
+            trafficData,
+            deviceData,
+            countriesData,
+            pagesData,
+            comicIndex,
+            socialIndicators,
+            socialData,
+            socialMessage,
+            users,
+          ]) => {
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
+            // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
+            setDataTable(dataTable.value);
+            setTrafficData(trafficData.value);
+            setDeviceData(deviceData.value);
+            setCountriesData(countriesData.value);
+            setPagesData(pagesData.value);
+            setComicIndexing(comicIndex.value);
+            setSocialDataIndicators(socialIndicators.value);
+            setSocialData(socialData.value);
+            setSocialDataMessage(socialMessage.value);
+            setUsers(users.value);
+
+            // This was allowed in SourceWebsite query
+            // setStatus(1);
+          }
+        )
+        .finally(() => {
+          setIsLoading(false);
+        });
+    };
+
+    fetch();
   }, []);
 
   return (
