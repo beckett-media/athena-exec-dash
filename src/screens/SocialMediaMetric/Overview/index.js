@@ -56,6 +56,11 @@ const PostPerWeekGraph = ({ className, dataI, socialData }) => {
 
   if (dataI) {
     const data_analysis = dataI;
+    var converter = function (num) {
+      num -= Math.trunc(num);
+      num *= 100;
+      return Math.round(num);
+    };
 
     for (let key in data_analysis) {
       percent_indicators.push({
@@ -81,7 +86,7 @@ const PostPerWeekGraph = ({ className, dataI, socialData }) => {
             {percent_indicators[0]?.perc_inc !== undefined && (
               <BeginingOfWeek
                 socialData={socialData}
-                dataI={(percent_indicators[0]?.perc_inc).toFixed(2)}
+                dataI={converter(percent_indicators[0]?.perc_inc)}
               />
             )}
           </div>
