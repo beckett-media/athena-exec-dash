@@ -188,31 +188,16 @@ function ApiDataProvider(props) {
     const fetch = async () => {
       setIsLoading(true);
 
+      // Load data required for the first page
       Promise.allSettled([
         MarketAnalysisAPI(),
         SourceWebsite(),
         DevicesWebsite(),
         TopCountriesWebsite(),
         TopPagesRoutes(),
-        getComicIndex(),
-        getSocialIndicators(),
-        getSocialData(),
-        getSocialMessage(),
-        getUsers(),
       ])
         .then(
-          ([
-            dataTable,
-            trafficData,
-            deviceData,
-            countriesData,
-            pagesData,
-            comicIndex,
-            socialIndicators,
-            socialData,
-            socialMessage,
-            users,
-          ]) => {
+          ([dataTable, trafficData, deviceData, countriesData, pagesData]) => {
             // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
             // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
             setDataTable(dataTable.value);
@@ -220,19 +205,30 @@ function ApiDataProvider(props) {
             setDeviceData(deviceData.value);
             setCountriesData(countriesData.value);
             setPagesData(pagesData.value);
-            setComicIndexing(comicIndex.value);
-            setSocialDataIndicators(socialIndicators.value);
-            setSocialData(socialData.value);
-            setSocialDataMessage(socialMessage.value);
-            setUsers(users.value);
-
-            // This was allowed in SourceWebsite query
-            // setStatus(1);
           }
         )
         .finally(() => {
           setIsLoading(false);
         });
+
+      // Load the other data on the background
+      Promise.allSettled([
+        getComicIndex(),
+        getSocialIndicators(),
+        getSocialData(),
+        getSocialMessage(),
+        getUsers(),
+      ]).then(
+        ([comicIndex, socialIndicators, socialData, socialMessage, users]) => {
+          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
+          // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
+          setComicIndexing(comicIndex.value);
+          setSocialDataIndicators(socialIndicators.value);
+          setSocialData(socialData.value);
+          setSocialDataMessage(socialMessage.value);
+          setUsers(users.value);
+        }
+      );
     };
 
     fetch();
