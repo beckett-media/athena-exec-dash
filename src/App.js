@@ -83,9 +83,13 @@ function App() {
   } = useApiData();
 
   const checkPermission = (user, array) => {
-    const userPermissions =
-      user.signInUserSession.idToken.payload["cognito:groups"];
-    return compareArrays(userPermissions, array);
+    if (user.signInUserSession.idToken.payload["cognito:groups"]) {
+      const userPermissions =
+        user.signInUserSession.idToken.payload["cognito:groups"];
+      return compareArrays(userPermissions, array);
+    } else {
+      return false;
+    }
   };
 
   return (
