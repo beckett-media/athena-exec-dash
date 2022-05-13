@@ -74,17 +74,10 @@ const formFields = {
 function App() {
   const {
     dataTable,
-    isLoading,
-    trafficData,
-    deviceData,
-    countriesData,
-    pagesData,
     socialDataIndicators,
     socialData,
     socialDataMessage,
     comicIndexing,
-    status,
-    allUsers,
   } = useApiData();
 
   return (
@@ -112,12 +105,7 @@ function App() {
               />
             }
           >
-            <Route
-              index
-              element={
-                <WebsiteMediaMetric />
-              }
-            />
+            <Route index element={<WebsiteMediaMetric />} />
           </Route>
           <Route
             path="dashboard"

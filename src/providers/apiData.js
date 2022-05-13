@@ -45,7 +45,6 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [status, setStatus] = React.useState(0);
   const [allUsers, setUsers] = React.useState([]);
 
   const getUsers = async () => {
@@ -217,7 +216,7 @@ function ApiDataProvider(props) {
         getSocialIndicators(),
         getSocialData(),
         getSocialMessage(),
-        getUsers(),
+        // getUsers(),
       ]).then(
         ([comicIndex, socialIndicators, socialData, socialMessage, users]) => {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
@@ -226,7 +225,7 @@ function ApiDataProvider(props) {
           setSocialDataIndicators(socialIndicators.value);
           setSocialData(socialData.value);
           setSocialDataMessage(socialMessage.value);
-          setUsers(users.value);
+          // setUsers(users.value);
         }
       );
     };
@@ -247,7 +246,6 @@ function ApiDataProvider(props) {
         socialData,
         socialDataMessage,
         comicIndexing,
-        status,
         allUsers,
       }}
       {...props}
