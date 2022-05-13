@@ -23,7 +23,7 @@ const OpsPerformance = () => {
         <Box my={"2rem"} />
         <RevenueGraph />
         <Box my={"2rem"} />
-        <GradingGraph />
+        {/* <GradingGraph /> */}
         <Box my={"2rem"} />
         {/* <CardForm /> */}
         <Box my={"2rem"} />

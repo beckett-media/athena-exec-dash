@@ -23,7 +23,6 @@ const ServicesGraph = ({ className }) => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata, 'form data');
           setData(formdata);
         })
         .catch((error) => {

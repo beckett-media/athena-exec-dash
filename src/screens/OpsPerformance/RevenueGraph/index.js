@@ -19,12 +19,12 @@ const RevenueGraph = ({ className }) => {
     setLoading(true);
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
+      const path = `/servicelevel`;
 
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata);
+          console.log(formdata, 'form data');
           setData(formdata);
         })
         .catch((error) => {
