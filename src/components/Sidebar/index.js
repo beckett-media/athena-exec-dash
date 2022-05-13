@@ -20,6 +20,11 @@ const navigation = [
     url: "/dashboard/social-media-analysis",
   },
   {
+    title: "Operations",
+    icon: "filter",
+    url: "/dashboard/ops-performance",
+  },
+  {
     title: "Market Analysis",
     icon: "pie-chart",
     slug: "dashboard",
@@ -54,14 +59,10 @@ const navigation = [
   },
   {
     title: "Card Grading",
-    icon: "filter",
+    icon: "setting",
     slug: "grading",
     permission: ["dev", "admin", "grading"],
     dropdown: [
-      {
-        title: "Operations",
-        url: "/grading/ops-performance",
-      },
       {
         title: "Update data",
         url: "/grading/grading-update-data",
@@ -92,19 +93,17 @@ const navigation = [
   {
     title: "Settings",
     icon: "setting",
-    url: "/dashboard/settings",
+    url: "/settings",
   },
 ];
 
 const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
   const [visible, setVisible] = useState(false);
 
-  console.log({ currentsename: user, allUserPool: allUsers });
+  // console.log({ currentsename: user, allUserPool: allUsers });
 
   const userPermissions =
     user.signInUserSession.idToken.payload["cognito:groups"];
-
-  console.log(userPermissions);
 
   //Function to map out the nav items
 

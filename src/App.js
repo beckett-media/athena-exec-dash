@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import { Text } from "@chakra-ui/react";
-
+import { Auth } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import "./styles/app.sass";
 import "./utils-auth/auth.css";
+import { compareArrays } from "./utils";
 
 //Screen
 import Page from "./components/Page";
@@ -80,6 +81,12 @@ function App() {
     socialDataMessage,
     comicIndexing,
   } = useApiData();
+
+  const checkPermission = (user, array) => {
+    const userPermissions =
+      user.signInUserSession.idToken.payload["cognito:groups"];
+    return compareArrays(userPermissions, array);
+  };
 
   return (
     <Authenticator
@@ -176,7 +183,7 @@ function App() {
             />
           </Route>
           <Route
-            path="grading"
+            path="dashboard"
             element={
               <Page
                 imgBg={
@@ -192,100 +199,56 @@ function App() {
             }
           >
             <Route
-              path="/grading/ops-performance"
+              path="/dashboard/ops-performance"
               element={<OpsPerformance />}
             />
           </Route>
-          <Route
-            path="grading"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Update Productivity Records"
-              />
-            }
-          >
+          {checkPermission(user, ["financial", "admin", "dev"]) && (
             <Route
-              path="/grading/grading-update-data"
-              element={<UpdateData />}
-            />
-          </Route>
-          <Route
-            path="financial"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Financial Performance"
-              />
-            }
-          >
-            <Route
-              path="/financial/financial-performance"
-              element={<FinancialPerformance />}
-            />
-          </Route>
-          <Route
-            path="financial"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="ROI Performance"
-              />
-            }
-          >
-            <Route
-              path="/financial/roi-performance"
-              element={<ROIPerformance />}
-            />
-          </Route>
-          <Route
-            path="private"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/6260370da6dfb07ef78bcc37_inbound.jpeg"
-                }
-                globe={chat}
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Inbound daily/weekly report"
-              />
-            }
-          >
-            <Route
-              path="/private/shipping_terms"
+              path="financial"
               element={
-                <SocialMediaMetric
-                  dataI={socialDataIndicators}
-                  socialData={socialData}
-                  socialMessage={socialDataMessage}
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                  }
+                  globe={chat}
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  user={user}
+                  title="Financial Performance"
                 />
               }
-            />
-          </Route>
+            >
+              <Route
+                path="/financial/financial-performance"
+                element={<FinancialPerformance />}
+              />
+            </Route>
+          )}
+          {checkPermission(user, ["financial", "dev", "admin"]) && (
+            <Route
+              path="financial"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                  }
+                  globe={chat}
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  user={user}
+                  title="ROI Performance"
+                />
+              }
+            >
+              <Route
+                path="/financial/roi-performance"
+                element={<ROIPerformance />}
+              />
+            </Route>
+          )}
           <Route
             path="grading"
             element={
@@ -303,28 +266,53 @@ function App() {
           >
             <Route path="/grading/web-analysis" element={<Home />} />
           </Route>
-          <Route
-            path="grading"
-            element={
-              <Page
-                imgBg={
-                  "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
-                }
-                color={"black"}
-                textColor={"#fff"}
-                signOut={signOut}
-                user={user}
-                title="Grading Settings"
-              />
-            }
-          >
+          {checkPermission(user, ["grading", "dev", "admin"]) && (
             <Route
-              path="/grading/grading-settings"
-              element={<GradingSettings />}
-            />
-          </Route>
+              path="grading"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                  }
+                  globe={chat}
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  user={user}
+                  title="Update Productivity Records"
+                />
+              }
+            >
+              <Route
+                path="/grading/grading-update-data"
+                element={<UpdateData />}
+              />
+            </Route>
+          )}
+          {checkPermission(user, ["grading", "dev", "admin"]) && (
+            <Route
+              path="grading"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                  }
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  user={user}
+                  title="Grading Settings"
+                />
+              }
+            >
+              <Route
+                path="/grading/grading-settings"
+                element={<GradingSettings />}
+              />
+            </Route>
+          )}
           <Route
-            path="dashboard"
+            path="/"
             element={
               <Page
                 imgBg={
@@ -338,7 +326,7 @@ function App() {
               />
             }
           >
-            <Route path="/dashboard/settings" element={<Settings />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
           <Route
             path="dashboard"
