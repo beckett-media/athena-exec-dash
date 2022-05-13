@@ -318,7 +318,10 @@ function App() {
               />
             }
           >
-            <Route path="/grading/grading-settings" element={<Settings />} />
+            <Route
+              path="/grading/grading-settings"
+              element={<GradingSettings />}
+            />
           </Route>
           <Route
             path="dashboard"

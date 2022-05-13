@@ -96,7 +96,7 @@ const navigation = [
   },
 ];
 
-const Sidebar = ({ className, onClose, signOut, user }) => {
+const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
   const [visible, setVisible] = useState(false);
 
   console.log({ currentsename: user, allUserPool: allUsers });
