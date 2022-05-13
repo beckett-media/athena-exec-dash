@@ -1,7 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AWS from "aws-sdk";
-import { API, Auth } from "aws-amplify";
 import { Authenticator, Heading, View, Image } from "@aws-amplify/ui-react";
 import { Text } from "@chakra-ui/react";
 
@@ -23,6 +21,7 @@ import NoMatch from "./screens/NoMatch";
 import chat from "./components/LottieAnimation/chat.json";
 import OpsPerformance from "./screens/OpsPerformance";
 import Settings from "./screens/Settings/Settings";
+import { useApiData } from "./providers/apiData";
 
 const components = {
   Header() {
@@ -73,181 +72,13 @@ const formFields = {
 };
 
 function App() {
-  const [dataTable, setDataTable] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [trafficData, setTrafficData] = React.useState([]);
-  const [deviceData, setDeviceData] = React.useState([]);
-  const [countriesData, setCountriesData] = React.useState([]);
-  const [pagesData, setPagesData] = React.useState([]);
-  const [socialDataIndicators, setSocialDataIndicators] = React.useState([]);
-  const [socialData, setSocialData] = React.useState([]);
-  const [socialDataMessage, setSocialDataMessage] = React.useState([]);
-  const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [status, setstatus] = React.useState(0);
-
-  //############################## API PARAMS ###################################
-
-  const apiName = "palentirApi";
-  const riOntology =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-
-  const typeObject = "CompetitorMetric";
-  const typeObjectW = "ExecDashTopSourcesSorted";
-  const typeObjectD = "ExecDashTopDevicesSorted";
-  const typeObjectC = "ExecDashTopCountriesSorted";
-  const typeObjectP = "ExecDashTopPageNamesSorted";
-  const typeObjectCI = "ComicIndexing";
-
-  const propertyID = "p.numberOfUsers";
-
-  const url = `competitormetric/${riOntology}/${typeObject}`; /// URL to fetch from API
-  const urlW = `api/${riOntology}/${typeObjectW}/${propertyID}`;
-  const urlD = `api/${riOntology}/${typeObjectD}/${propertyID}`;
-  const urlC = `api/${riOntology}/${typeObjectC}/${propertyID}`;
-  const urlP = `api/${riOntology}/${typeObjectP}/${propertyID}`;
-  const urlCI = `comics/${riOntology}/${typeObjectCI}`;
-
-  //############################# useEffect TO LOAD ALL THE DATA ONES ##########################
-
-  //#################################################################
-  //#################################################################
-  //#################################################################
-  //###################### TODO: utilize useContex 👇  ################
-  //########################### to manage api query and data ########
-  //#################################################################
-  //👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇 👇
-
-  async function MarketAnalysisAPI() {
-    setIsLoading(true);
-    const path = `/${url}`;
-    return await API.get(apiName, path).then((response) => {
-      setDataTable(response.data);
-      setIsLoading(false);
-    });
-  }
-
-  async function SourceWebsite() {
-    const path = `/${urlW}`;
-    return await API.get(apiName, path).then((response) => {
-      setTrafficData(response?.data);
-      setstatus(1);
-    });
-  }
-  
-  async function DevicesWebsite() {
-    const path = `/${urlD}`;
-    return await API.get(apiName, path).then((response) => {
-      setDeviceData(response?.data);
-    });
-  }
-  async function TopCountriesWebsite() {
-    const path = `/${urlC}`;
-    return await API.get(apiName, path).then((response) => {
-      setCountriesData(response?.data);
-    });
-  }
-  async function TopPagesRoutes() {
-    const path = `/${urlP}`;
-    return await API.get(apiName, path).then((response) => {
-      setPagesData(response?.data);
-    });
-  }
-  async function getSocialIndicators() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialindicators";
-    return await API.get(apiName, path).then((response) => {
-      setSocialDataIndicators(response?.data);
-    });
-  }
-
-  async function getSocialData() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/socialdata";
-    return await API.get(apiName, path).then((response) => {
-      setSocialData(response?.data);
-    });
-  }
-  async function getSocialMessage() {
-    const apiName = "palentirApi";
-    const path = "/socialmedia/messages";
-    return await API.get(apiName, path).then((response) => {
-      setSocialDataMessage(response?.data);
-    });
-  }
-  async function getComicIndex() {
-    const apiName = "palentirApi";
-    const path = `/${urlCI}`;
-    return await API.get(apiName, path).then((response) => {
-      setComicIndexing(response?.data);
-    });
-  }
-
-  //############################# Form data ########################################
-
-  //############################# MARKET ANALYSIS QUERY ########################################
-
-  const data = dataTable.map((d) => {
-    const { rid, ...rest } = d;
-
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  //############################## SOURCES WEBSITE QUERY ######################################
-
-  const dataW = trafficData.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  //############################# WEBSITE TOP DEVICE  QUERY ###################################
-
-  const dataD = deviceData.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  //############################# WEBSITE TOP COUNTRIES  QUERY ###################################
-
-  const dataC = countriesData.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-  //############################# WEBSITE TOP PAGE ROUTES  QUERY ###################################
-
-  const dataP = pagesData.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  //############################# COMICS ANALYTICS  QUERY ###################################
-  const dataCI = comicIndexing.map((d) => {
-    const { rid, ...rest } = d;
-    return {
-      ...rest?.properties,
-    };
-  });
-
-  React.useEffect(() => {
-    MarketAnalysisAPI();
-    SourceWebsite();
-    DevicesWebsite();
-    TopCountriesWebsite();
-    TopPagesRoutes();
-    getComicIndex();
-    getSocialIndicators();
-    getSocialData();
-    getSocialMessage();
-  }, []);
+  const {
+    dataTable,
+    socialDataIndicators,
+    socialData,
+    socialDataMessage,
+    comicIndexing,
+  } = useApiData();
 
   return (
     <Authenticator
@@ -274,19 +105,7 @@ function App() {
               />
             }
           >
-            <Route
-              index
-              element={
-                <WebsiteMediaMetric
-                  dataW={dataW}
-                  dataD={dataD}
-                  dataC={dataC}
-                  dataP={dataP}
-                  status={status}
-                  isLoading={isLoading}
-                />
-              }
-            />
+            <Route index element={<WebsiteMediaMetric />} />
           </Route>
           <Route
             path="dashboard"
@@ -305,7 +124,7 @@ function App() {
           >
             <Route
               path="/dashboard/market-analysis"
-              element={<MarketAnalysis data={data} />}
+              element={<MarketAnalysis data={dataTable} />}
             />
           </Route>
           <Route
@@ -325,7 +144,7 @@ function App() {
           >
             <Route
               path="/dashboard/comic-market-analysis"
-              element={<ComicAnalysis dataCI={dataCI} />}
+              element={<ComicAnalysis dataCI={comicIndexing} />}
             />
           </Route>
           <Route

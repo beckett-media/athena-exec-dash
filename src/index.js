@@ -9,6 +9,7 @@ import { AmplifyProvider } from "@aws-amplify/ui-react";
 //amplify
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
+import { ApiDataProvider } from "./providers/apiData";
 
 Amplify.configure(awsconfig);
 
@@ -17,7 +18,9 @@ ReactDOM.render(
     <BrowserRouter>
       <ChakraProvider>
         <AmplifyProvider>
-          <App />
+          <ApiDataProvider>
+            <App />
+          </ApiDataProvider>
         </AmplifyProvider>
       </ChakraProvider>
     </BrowserRouter>

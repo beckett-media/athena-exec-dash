@@ -1,6 +1,12 @@
 export type AmplifyDependentResourcesAttributes = {
     "function": {
-        "productiondash2834aece": {
+        "athenaprodcb5f5078": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "AdminQueriesa200cd2e": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -8,7 +14,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "productiondash": {
+        "athenaprod": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -16,10 +22,20 @@ export type AmplifyDependentResourcesAttributes = {
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
             "AppClientID": "string"
+        },
+        "userPoolGroups": {
+            "adminGroupRole": "string",
+            "financialGroupRole": "string",
+            "gradingGroupRole": "string"
         }
     },
     "api": {
         "palentirApi": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
+        },
+        "AdminQueries": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
