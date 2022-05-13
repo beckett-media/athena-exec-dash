@@ -115,14 +115,7 @@ function App() {
             <Route
               index
               element={
-                <WebsiteMediaMetric
-                  dataW={trafficData}
-                  dataD={deviceData}
-                  dataC={countriesData}
-                  dataP={pagesData}
-                  status={status}
-                  isLoading={isLoading}
-                />
+                <WebsiteMediaMetric />
               }
             />
           </Route>
