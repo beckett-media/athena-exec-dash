@@ -176,8 +176,8 @@ const ServicesGraph = ({ className }) => {
       showticklabels: true,
     },
     autosize: true,
-    width: 1120,
-    height: 700,
+    width: 900,
+    height: 500,
     display: "flex",
     margin: {
       l: 70,
