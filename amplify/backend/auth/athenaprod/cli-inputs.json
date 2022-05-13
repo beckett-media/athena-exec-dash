@@ -59,9 +59,8 @@
       "grading"
     ],
     "thirdPartyAuth": false,
-    "authProviders": [],
-    "userPoolGroups": true,
-    "adminQueries": false,
+    "userPoolGroups": false,
+    "adminQueries": true,
     "triggers": {},
     "hostedUI": false,
     "adminQueryGroup": "financial",

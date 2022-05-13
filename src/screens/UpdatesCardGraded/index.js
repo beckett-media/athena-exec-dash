@@ -44,9 +44,6 @@ const UpdateData = () => {
         <div className={styles.wrapper}>
           <Table data={data} title="date posted" setLoading={setLoading} />
         </div>
-        <div className={styles.wrapper}>
-          <Table data={data} title="date posted" setLoading={setLoading} />
-        </div>
       </Card>
     </>
   );

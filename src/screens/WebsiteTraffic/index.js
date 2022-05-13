@@ -19,7 +19,6 @@ const WebsiteMediaMetric = () => {
           topSources={trafficData}
           isLoading={isLoading}
           status={status}
-          allUsers={allUsers}
         />
         <Box my={"2rem"} />
         <PageTraffics data={pagesData} />
