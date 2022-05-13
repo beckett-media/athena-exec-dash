@@ -1,6 +1,5 @@
 import * as React from "react";
-import AWS from "aws-sdk";
-import { API } from "aws-amplify";
+import { API, Auth, Hub } from "aws-amplify";
 
 const ApiDataContext = React.createContext();
 
@@ -45,45 +44,6 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [allUsers, setUsers] = React.useState([]);
-
-  const getUsers = async () => {
-    try {
-      let allUsers = [];
-      let more = true;
-      let paginationToken = "";
-
-      while (more) {
-        let params = {
-          UserPoolId: "us-west-1_7eDAf5I2X", // process.env.REACT_APP_USER_POOL_ID,
-          Limit: 60,
-        };
-        if (paginationToken !== "") {
-          params.PaginationToken = paginationToken;
-        }
-
-        AWS.config.update({
-          region: "us-west-1", //process.env.REACT_APP_USER_POOL_REGION,
-          accessKeyId: "AKIAX7KA2GYFDAL4SMBH", //process.env.REACT_APP_ACCESS_KEY_ID,
-          secretAccessKey: "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", //process.env.REACT_APP_SECRET_KEY
-        });
-        const cognito = new AWS.CognitoIdentityServiceProvider();
-        const rawUsers = await cognito.listUsers(params).promise();
-        allUsers = allUsers.concat(rawUsers.Users);
-        if (rawUsers.PaginationToken) {
-          paginationToken = rawUsers.PaginationToken;
-        } else {
-          more = false;
-        }
-
-        return allUsers;
-      }
-    } catch (e) {
-      console.log(e);
-    }
-
-    return [];
-  };
 
   //############################# MARKET ANALYSIS QUERY ########################################
   async function MarketAnalysisAPI() {
@@ -230,7 +190,21 @@ function ApiDataProvider(props) {
       );
     };
 
-    fetch();
+    Hub.listen('auth', (data) => {
+      const { payload } = data;
+
+      if (payload.event === 'signIn') {
+        console.log('fetch after signIn', payload.data.username);
+        fetch();
+      }
+    })
+
+    Auth.currentUserInfo().then((user) => {
+      if (user) {
+        console.log('fetch after user', user);
+        fetch();
+      }
+    })
   }, []);
 
   return (
@@ -246,7 +220,6 @@ function ApiDataProvider(props) {
         socialData,
         socialDataMessage,
         comicIndexing,
-        allUsers,
       }}
       {...props}
     />
