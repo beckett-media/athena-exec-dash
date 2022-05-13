@@ -1,22 +1,18 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.22\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "Lambda resource stack creation using Amplify CLI",
   "Parameters": {
-    "CloudWatchRule": {
+    "env": {
+      "Type": "String"
+    },
+    "authathenaprodUserPoolId": {
       "Type": "String",
-      "Default": "NONE",
-      "Description": " Schedule Expression"
+      "Default": "authathenaprodUserPoolId"
     },
     "deploymentBucketName": {
       "Type": "String"
     },
-    "env": {
-      "Type": "String"
-    },
     "s3Key": {
-      "Type": "String"
-    },
-    "secretsPathAmplifyAppId": {
       "Type": "String"
     }
   },
@@ -38,24 +34,16 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
-        },
         "Handler": "index.handler",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "productiondash2834aece",
+            "AdminQueriesa200cd2e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "productiondash2834aece",
+                  "AdminQueriesa200cd2e",
                   "-",
                   {
                     "Ref": "env"
@@ -70,74 +58,9 @@
             "ENV": {
               "Ref": "env"
             },
-            "REGION": {
-              "Ref": "AWS::Region"
-            },
-            "API_KEY": {
-              "Fn::Join": [
-                "",
-                [
-                  {
-                    "Fn::Sub": [
-                      "/amplify/${appId}/${env}/AMPLIFY_${functionName}_",
-                      {
-                        "appId": {
-                          "Ref": "secretsPathAmplifyAppId"
-                        },
-                        "env": {
-                          "Ref": "env"
-                        },
-                        "functionName": "productiondash2834aece"
-                      }
-                    ]
-                  },
-                  "API_KEY"
-                ]
-              ]
-            },
-            "PASS": {
-              "Fn::Join": [
-                "",
-                [
-                  {
-                    "Fn::Sub": [
-                      "/amplify/${appId}/${env}/AMPLIFY_${functionName}_",
-                      {
-                        "appId": {
-                          "Ref": "secretsPathAmplifyAppId"
-                        },
-                        "env": {
-                          "Ref": "env"
-                        },
-                        "functionName": "productiondash2834aece"
-                      }
-                    ]
-                  },
-                  "PASS"
-                ]
-              ]
-            },
-            "USERNAME": {
-              "Fn::Join": [
-                "",
-                [
-                  {
-                    "Fn::Sub": [
-                      "/amplify/${appId}/${env}/AMPLIFY_${functionName}_",
-                      {
-                        "appId": {
-                          "Ref": "secretsPathAmplifyAppId"
-                        },
-                        "env": {
-                          "Ref": "env"
-                        },
-                        "functionName": "productiondash2834aece"
-                      }
-                    ]
-                  },
-                  "USERNAME"
-                ]
-              ]
+            "GROUP": "financial",
+            "USERPOOL": {
+              "Ref": "authathenaprodUserPoolId"
             }
           }
         },
@@ -148,8 +71,15 @@
           ]
         },
         "Runtime": "nodejs14.x",
-        "Layers": [],
-        "Timeout": 25
+        "Timeout": 25,
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        }
       }
     },
     "LambdaExecutionRole": {
@@ -158,12 +88,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "productiondashLambdaRole634500d6",
+            "AdminQueriesa200cd2eLambdaRole",
             {
               "Fn::Join": [
                 "",
                 [
-                  "productiondashLambdaRole634500d6",
+                  "AdminQueriesa200cd2eLambdaRole",
                   "-",
                   {
                     "Ref": "env"
@@ -229,34 +159,27 @@
                   }
                 ]
               }
-            }
-          ]
-        }
-      }
-    },
-    "AmplifyFunctionSecretsPolicy": {
-      "Type": "AWS::IAM::Policy",
-      "Properties": {
-        "PolicyName": "amplify-function-secrets-policy",
-        "Roles": [
-          {
-            "Ref": "LambdaExecutionRole"
-          }
-        ],
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
+            },
             {
               "Effect": "Allow",
               "Action": [
-                "ssm:GetParameter",
-                "ssm:GetParameters"
+                "cognito-idp:ListUsersInGroup",
+                "cognito-idp:AdminUserGlobalSignOut",
+                "cognito-idp:AdminEnableUser",
+                "cognito-idp:AdminDisableUser",
+                "cognito-idp:AdminRemoveUserFromGroup",
+                "cognito-idp:AdminAddUserToGroup",
+                "cognito-idp:AdminListGroupsForUser",
+                "cognito-idp:AdminGetUser",
+                "cognito-idp:AdminConfirmSignUp",
+                "cognito-idp:ListUsers",
+                "cognito-idp:ListGroups"
               ],
               "Resource": {
                 "Fn::Join": [
                   "",
                   [
-                    "arn:aws:ssm:",
+                    "arn:aws:cognito-idp:",
                     {
                       "Ref": "AWS::Region"
                     },
@@ -264,32 +187,17 @@
                     {
                       "Ref": "AWS::AccountId"
                     },
-                    ":parameter",
+                    ":userpool/",
                     {
-                      "Fn::Sub": [
-                        "/amplify/${appId}/${env}/AMPLIFY_${functionName}_",
-                        {
-                          "appId": {
-                            "Ref": "secretsPathAmplifyAppId"
-                          },
-                          "env": {
-                            "Ref": "env"
-                          },
-                          "functionName": "productiondash2834aece"
-                        }
-                      ]
-                    },
-                    "*"
+                      "Ref": "authathenaprodUserPoolId"
+                    }
                   ]
                 ]
               }
             }
           ]
         }
-      },
-      "DependsOn": [
-        "LambdaExecutionRole"
-      ]
+      }
     }
   },
   "Outputs": {

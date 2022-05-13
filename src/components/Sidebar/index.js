@@ -35,6 +35,7 @@ const navigation = [
       },
     ],
   },
+
   {
     title: "Financial Performance",
     icon: "lock",
@@ -95,7 +96,7 @@ const navigation = [
   },
 ];
 
-const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
+const Sidebar = ({ className, onClose, signOut, user }) => {
   const [visible, setVisible] = useState(false);
 
   console.log({ currentsename: user, allUserPool: allUsers });
