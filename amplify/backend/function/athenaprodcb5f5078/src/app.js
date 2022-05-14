@@ -583,6 +583,8 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
         "5_day_express": req.body.five_day_express,
         "type": req.body.type,
         "2_day_premium": req.body.two_day_premium,
+        "revenue_shipped": req.body.revenue_shipped,
+        "num_card_verified": req.body.num_card_verified,
       },
     },
   };
