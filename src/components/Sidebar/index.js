@@ -102,8 +102,13 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
 
   // console.log({ currentsename: user, allUserPool: allUsers });
 
+  //Update
   const userPermissions =
-    user.signInUserSession.idToken.payload["cognito:groups"];
+    user.signInUserSession.idToken.payload?.["cognito:groups"];
+
+  // const userPermissions = null;
+
+  console.log(userPermissions);
 
   //Function to map out the nav items
 
