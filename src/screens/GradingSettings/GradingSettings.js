@@ -34,7 +34,7 @@ const Settings = ({ dataI, socialData, socialMessage }) => {
           <TopCountry className={styles.card} />
         </div>
       </div> */}
-      {/* <ComingSoon /> */}
+      <ComingSoon />
     </>
   );
 };
