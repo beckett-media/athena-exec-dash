@@ -89,7 +89,6 @@ const KPI = ({ className }) => {
         title={`Cards Received, Graded, & Shipped on ${moment(
           yesterdayDate
         ).format("dddd, MMMM Do")} `}
-        // description={`Graded Grand Total`}
         classTitle="title-green"
       >
         <div className={styles.overview}>
@@ -104,19 +103,6 @@ const KPI = ({ className }) => {
                   <div className={styles.details}>
                     <div className={styles.indicator}>
                       <div className={styles.balance} value={x?.value} />
-                      {/* {received > 0 && (
-                        <span>
-                          {moment(dataDate).format("dddd,")}{" "}
-                          {moment(dataDate).format("MMM Do")}
-                        </span>
-                      )} */}
-                      {/* {received <= 0 && (
-                        <span>
-                          {moment(dataDate).format("dddd,")}{" "}
-                          {moment(dataDate).format("MMM Do")} [data not yet
-                          added]
-                        </span>
-                      )} */}
                     </div>
                     <Text fontSize="2xl">{x?.title}</Text>
                     <Heading as="h3" size="xl">
