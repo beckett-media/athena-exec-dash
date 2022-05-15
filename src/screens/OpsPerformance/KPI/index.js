@@ -25,9 +25,14 @@ const KPI = ({ className }) => {
   React.useEffect(() => {
     setLoading(true);
     (async () => {
-
       if (today === "Monday") {
         const currentDate = moment().subtract(3, "days").format("YYYY-MM-DD");
+        setYesterdayDate(currentDate);
+      } else if (today === "Sunday") {
+        const currentDate = moment().subtract(2, "days").format("YYYY-MM-DD");
+        setYesterdayDate(currentDate);
+      } else {
+        const currentDate = moment().subtract(1, "days").format("YYYY-MM-DD");
         setYesterdayDate(currentDate);
       }
       const apiName = "palentirApi";
@@ -45,9 +50,8 @@ const KPI = ({ className }) => {
         .catch((error) => {
           console.log(error.response);
         });
-
     })();
-  }, [today, yesterdayDate]);
+  }, [yesterdayDate, today]);
 
   const items = [
     {
@@ -82,9 +86,9 @@ const KPI = ({ className }) => {
     <>
       <Card
         className={cn(styles.card, className)}
-        title={`Cards Received, Graded, & Shipped on ${moment(yesterdayDate).format(
-          "dddd, MMMM Do"
-        )} `}
+        title={`Cards Received, Graded, & Shipped on ${moment(
+          yesterdayDate
+        ).format("dddd, MMMM Do")} `}
         // description={`Graded Grand Total`}
         classTitle="title-green"
       >
