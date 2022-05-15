@@ -4,13 +4,35 @@ import { percentageCalc, numberWithCommas } from "../../../utils";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
+import { API } from "aws-amplify";
 
 const Backlog = ({ className }) => {
-  const graded = 427;
-  const shipped = 1728;
-  const backlog = 12039;
+  const [loading, setLoading] = React.useState(true);
+  const [data, setData] = React.useState(0);
 
-  console.log(percentageCalc(graded, backlog));
+  const graded = data?.totalGraded || 0;
+  const shipped = data?.totalShipped || 0;
+  const backlog = 28000
+
+  React.useEffect(() => {
+    setLoading(true);
+    (async () => {
+      const apiName = "palentirApi";
+      const path = `/timeserie`;
+
+      API.get(apiName, path)
+        .then((response) => {
+          const formdata = response?.data?.stats;
+          setData(formdata);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+    })();
+    setLoading(false);
+  }, [loading]);
+
+  // console.log(percentageCalc(graded, backlog));
 
   return (
     <Card

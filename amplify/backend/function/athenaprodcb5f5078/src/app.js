@@ -483,9 +483,9 @@ app.post("/athenaformdelete", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaForm: req.body.submission_item,
-        submission_item: req.body.submission_item,
+      "parameters": {
+        "AthenaForm": req.body.submission_item,
+        "submission_item": req.body.submission_item,
       },
     },
   };
