@@ -19,12 +19,12 @@ const RevenueGraph = ({ className }) => {
     setLoading(true);
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
+      const path = `/servicelevel`;
 
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata);
+          console.log(formdata, 'form data');
           setData(formdata);
         })
         .catch((error) => {
@@ -37,7 +37,7 @@ const RevenueGraph = ({ className }) => {
   var dataG = [
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsGradedToday),
+      y: data?.map((d) => d?.properties?.revenueShipped),
 
       type: "scatter",
       mode: "lines+markers",
@@ -127,8 +127,8 @@ const RevenueGraph = ({ className }) => {
       showticklabels: true,
     },
     autosize: true,
-    width: 1120,
-    height: 700,
+    width: 900,
+    height: 500,
     display: "flex",
     margin: {
       l: 70,

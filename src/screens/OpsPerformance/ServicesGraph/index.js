@@ -19,16 +19,14 @@ const ServicesGraph = ({ className }) => {
     setLoading(true);
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
-
+      const path = `/servicelevel`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata);
           setData(formdata);
         })
         .catch((error) => {
-          console.log(error.response);
+          console.log(error.response, 'service data');
         });
     })();
     setLoading(false);
@@ -37,7 +35,7 @@ const ServicesGraph = ({ className }) => {
   var dataG = [
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsGradedToday),
+      y: data?.map((d) => d?.properties?.twoDayPremium),
 
       type: "scatter",
       mode: "lines+markers",
@@ -47,7 +45,7 @@ const ServicesGraph = ({ className }) => {
         size: 10,
         opacity: 0.8,
       },
-      name: "Service Level: 1",
+      name: "Two Day Premium",
       line: {
         color: darkMode.value ? "#B5E4CA" : "yellow",
         width: 4,
@@ -58,15 +56,66 @@ const ServicesGraph = ({ className }) => {
     },
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsShippedToday),
+      y: data?.map((d) => d?.properties?.fiveDayExpress),
 
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "gold", size: 10, opacity: 0.8 },
-      name: "Service Level: 2",
+      name: "Five Day Express",
       line: {
         color: "gold",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+      y: data?.map((d) => d?.properties?.tenDayExpress),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "orange", size: 10, opacity: 0.8 },
+      name: "Ten Day Express",
+      line: {
+        color: "orange",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+      y: data?.map((d) => d?.properties?.thirtyDayStandard),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "purple", size: 10, opacity: 0.8 },
+      name: "Thirty Day Standard",
+      line: {
+        color: "purple",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+      y: data?.map((d) => d?.properties?.recase),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "red", size: 10, opacity: 0.8 },
+      name: "Recase",
+      line: {
+        color: "red",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -127,8 +176,8 @@ const ServicesGraph = ({ className }) => {
       showticklabels: true,
     },
     autosize: true,
-    width: 1120,
-    height: 700,
+    width: 900,
+    height: 500,
     display: "flex",
     margin: {
       l: 70,
