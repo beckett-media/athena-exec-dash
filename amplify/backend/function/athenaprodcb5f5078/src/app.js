@@ -289,8 +289,30 @@ app.get("/timeserie", async function (req, res) {
   } else {
     axios(options)
       .then((response) => {
+        const stats = (response.data.data || []).map(({ properties }) => ({
+          cardsGradedToday: properties.cardsGradedToday,
+          cardsReceived: properties.cardsReceived,
+          cardsShippedToday: properties.cardsShippedToday,
+        }));
+
+        let totalGraded = 0;
+        let totalReceived = 0;
+        let totalShipped = 0;
+        for (const stat of stats) {
+          totalGraded += stat.cardsGradedToday;
+          totalReceived += stat.cardsReceived;
+          totalShipped += stat.cardsShippedToday;
+        }
+
         res.send({
-          data: response.data,
+          data: {
+            ...response.data,
+            stats: {
+              totalGraded,
+              totalReceived,
+              totalShipped,
+            }
+          },
           status: response.status,
         });
       })
