@@ -7,12 +7,12 @@ import styles from "./Chart.module.sass";
 import { API } from "aws-amplify";
 
 const Backlog = ({ className }) => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState(0);
 
   const graded = data?.totalGraded || 0;
   const shipped = data?.totalShipped || 0;
-  const backlog = 28000
+  const backlog = 28000;
 
   React.useEffect(() => {
     setLoading(true);
@@ -30,7 +30,7 @@ const Backlog = ({ className }) => {
         });
     })();
     setLoading(false);
-  }, [loading]);
+  }, []);
 
   // console.log(percentageCalc(graded, backlog));
 
@@ -44,14 +44,17 @@ const Backlog = ({ className }) => {
         <Text>
           Graded {numberWithCommas(graded)} ({percentageCalc(graded, backlog)}%)
         </Text>
-        <Progress value={percentageCalc(graded, backlog)} />
+        <Progress
+          colorScheme={"purple"}
+          value={percentageCalc(graded, backlog)}
+        />
         <Text>
           Shipped {numberWithCommas(shipped)} (
           {percentageCalc(shipped, backlog)}%)
         </Text>
-        <Progress value={percentageCalc(shipped, backlog)} />
+        <Progress colorScheme={"blue"} value={percentageCalc(shipped, backlog)} />
         <Text>Total backlog {numberWithCommas(backlog)} (100%)</Text>
-        <Progress value={100} />
+        <Progress colorScheme={"orange"} value={100} />
       </Stack>
     </Card>
   );
