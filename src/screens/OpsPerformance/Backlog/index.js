@@ -13,7 +13,7 @@ const Backlog = ({ className }) => {
 
   let totalBacklog = backlog;
   for (const log of timeseries) {
-    if (new Date(log.date).getTime() >= new Date("2022-05-08").getTime()) {
+    if (new Date(log.date).getTime() >= new Date("2022-05-12").getTime()) {
       totalBacklog += (log.cardsReceived - log.cardsGradedToday);
     }
   }
