@@ -44,7 +44,7 @@ const Backlog = ({ className }) => {
           Total card graded {numberWithCommas(totalGraded)} (
           {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000 (100%)
         </Text>
-        <Progress colorScheme={"green"} value={percentageCalc(totalGraded, backlog)} bg={"red.300"} h="10" />
+        <Progress  borderRadius={10} colorScheme={"green"} value={percentageCalc(totalGraded, backlog)} bg={"red.300"} h="10" />
       </Stack>
     </Card>
   );
