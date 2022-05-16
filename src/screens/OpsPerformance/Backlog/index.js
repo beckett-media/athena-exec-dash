@@ -9,10 +9,11 @@ import { API } from "aws-amplify";
 const Backlog = ({ className }) => {
   const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState(0);
+  const [currentBacklog, setCurrentBacklog] = React.useState(0);
 
   const graded = data?.totalGraded || 0;
   const shipped = data?.totalShipped || 0;
-  const backlog = 28000;
+  const backlog = 29000;
 
   React.useEffect(() => {
     setLoading(true);
@@ -24,6 +25,20 @@ const Backlog = ({ className }) => {
         .then((response) => {
           const formdata = response?.data?.stats;
           setData(formdata);
+
+          const logs = (response.data.data || []).map(({ properties }) => ({
+            cardsGradedToday: properties.cardsGradedToday,
+            cardsReceived: properties.cardsReceived,
+          }));
+
+          let totalBacklog = 0;
+          for (const log of logs) {
+            totalBacklog += (log.cardsReceived - log.cardsGradedToday);
+          }
+
+          setCurrentBacklog(totalBacklog);
+
+          console.log('totalBacklog', totalBacklog, formdata);
         })
         .catch((error) => {
           console.log(error.response);
