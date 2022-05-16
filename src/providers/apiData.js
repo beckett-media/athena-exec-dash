@@ -44,7 +44,7 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [timeseries, setTimeseries] = React.useState({});
+  const [timeseries, setTimeseries] = React.useState([]);
   const [loadingTimeseries, setLoadingTimeseries] = React.useState(false);
 
   //############################# MARKET ANALYSIS QUERY ########################################
