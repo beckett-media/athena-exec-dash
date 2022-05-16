@@ -8,31 +8,17 @@ import styles from "./Chart.module.sass";
 import { useApiData } from "../../../providers/apiData";
 
 const Backlog = ({ className }) => {
-  const [loading, setLoading] = React.useState(false);
-  const [data, setData] = React.useState({});
-  const [currentBacklog, setCurrentBacklog] = React.useState(0);
-
-  const graded = data?.totalGraded || 0;
-  const shipped = data?.totalShipped || 0;
   const backlog = 29000;
-  
   const { timeseries } = useApiData();
 
-  // const logs = (response.data.data || []).map(({ properties }) => ({
-  //   cardsGradedToday: properties.cardsGradedToday,
-  //   cardsReceived: properties.cardsReceived,
-  // }));
+  let totalBacklog = backlog;
+  for (const log of timeseries) {
+    if (new Date(log.date).getTime() >= new Date("2022-05-08").getTime()) {
+      totalBacklog += (log.cardsReceived - log.cardsGradedToday);
+    }
+  }
 
-  // let totalBacklog = 0;
-  // for (const log of logs) {
-  //   totalBacklog += (log.cardsReceived - log.cardsGradedToday);
-  // }
-
-  // setCurrentBacklog(totalBacklog);
-
-  // console.log(percentageCalc(graded, backlog));
-
-  console.log('timeseries', timeseries)
+  console.log('timeseries', timeseries, totalBacklog);
 
   return (
     <Card
@@ -41,7 +27,7 @@ const Backlog = ({ className }) => {
       classTitle={cn("title-darkblue", styles.cardTitle)}
     >
       <Stack>
-        <Text>
+        {/* <Text>
           Graded {numberWithCommas(graded)} ({percentageCalc(graded, backlog)}%)
         </Text>
         <Progress
@@ -54,7 +40,13 @@ const Backlog = ({ className }) => {
         </Text>
         <Progress colorScheme={"blue"} value={percentageCalc(shipped, backlog)} />
         <Text>Total backlog {numberWithCommas(backlog)} (100%)</Text>
-        <Progress colorScheme={"orange"} value={100} />
+        <Progress colorScheme={"orange"} value={100} /> */}
+
+        <Text>
+          Total backlog  {numberWithCommas(totalBacklog)} (
+          {percentageCalc(totalBacklog, backlog)}%)
+        </Text>
+        <Progress colorScheme={"blue"} value={percentageCalc(totalBacklog, backlog)} />
       </Stack>
     </Card>
   );
