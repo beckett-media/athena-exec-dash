@@ -18,8 +18,6 @@ const Backlog = ({ className }) => {
     }
   }
 
-  console.log('timeseries', timeseries, totalBacklog);
-
   return (
     <Card
       title={"Backlog progress indicator"}
