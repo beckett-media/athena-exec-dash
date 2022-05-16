@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// #################### Website Analytics Query ####################
+// #################### //GET// Website Analytics Query ####################
 app.get("/api/:ri/:obj/:users", async function (req, res) {
   const aws = require("aws-sdk");
   const request = require("request");
@@ -76,7 +76,7 @@ app.get("/api/:ri/:obj/:users", async function (req, res) {
   }
 });
 
-// #################### Competitor Metric Query ####################
+// #################### //GET// Competitor Metric Query ####################
 app.get("/competitormetric/:ri/:obj", async function (req, res) {
   const aws = require("aws-sdk");
   const request = require("request");
@@ -115,7 +115,7 @@ app.get("/competitormetric/:ri/:obj", async function (req, res) {
   }
 });
 
-// #################### Comics Metric Query ####################
+// #################### //GET// Comics Metric Query ####################
 app.get("/comics/:ri/:obj", async function (req, res) {
   const aws = require("aws-sdk");
   const request = require("request");
@@ -154,8 +154,7 @@ app.get("/comics/:ri/:obj", async function (req, res) {
   }
 });
 
-//###################### Social Media Metrics #####################################
-
+//###################### //GET// Social Media Metrics #####################################
 app.use("/socialmedia/:name", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -205,7 +204,11 @@ app.use("/socialmedia/:name", async function (req, res) {
   }
 });
 
-// #################### GEt Form data ####################
+// ########################################################################################
+// #################### [[[START]]] - Grading, Shipped, Received [OLD Prod] ###############
+// ########################################################################################
+
+ //GET// 
 app.get("/athenaform/:yesterday", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -255,7 +258,7 @@ app.get("/athenaform/:yesterday", async function (req, res) {
   }
 });
 
-// #################### POST Form input ####################
+//POST//
 app.post("/athenaform", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -318,7 +321,7 @@ app.post("/athenaform", async function (req, res) {
   }
 });
 
-// #################### PUT Form update ####################
+//PUT//
 app.put("/athenaform", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -383,10 +386,87 @@ app.put("/athenaform", async function (req, res) {
   }
 });
 
+//GET//
+app.get("/timeserie", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const athena = "AthenaForm";
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        const stats = (response.data.data || []).map(({ properties }) => ({
+          cardsGradedToday: properties.cardsGradedToday,
+          cardsReceived: properties.cardsReceived,
+          cardsShippedToday: properties.cardsShippedToday,
+        }));
+
+        let totalGraded = 0;
+        let totalReceived = 0;
+        let totalShipped = 0;
+        for (const stat of stats) {
+          totalGraded += stat.cardsGradedToday;
+          totalReceived += stat.cardsReceived;
+          totalShipped += stat.cardsShippedToday;
+        }
+
+        res.send({
+          data: {
+            ...response.data,
+            stats: {
+              totalGraded,
+              totalReceived,
+              totalShipped,
+            }
+          },
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
+// ########################################################################################
+// #################### [[[END]]] - Grading, Shipped, Received [OLD Prod] ###############
+// ########################################################################################
 
 
 
-// #################### GEt Form data ####################
+// ########################################################################################
+// #################### [[[START]]] - Grading, Shipped, Received [NEW Prod] ###############
+// ########################################################################################
+
+//GET// 
 app.get("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -433,7 +513,7 @@ app.get("/grading-service-form", async function (req, res) {
       });
   }
 });
-// #################### GEt Form data ####################
+//GET BY DATE//
 app.get("/grading-service-form/:yesterday", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -482,7 +562,7 @@ app.get("/grading-service-form/:yesterday", async function (req, res) {
       });
   }
 });
-// #################### POST Form input grading-service-form ####################
+//POST NEW//
 app.post("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -545,8 +625,8 @@ app.post("/grading-service-form", async function (req, res) {
       });
   }
 });
-
-
+//PUT UPDATE
+// TODO: not working need fix
 app.put("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -611,13 +691,18 @@ app.put("/grading-service-form", async function (req, res) {
   }
 });
 
+// ########################################################################################
+// #################### [[[END]]] - Grading, Shipped, Received [NEW Prod] ###############
+// ########################################################################################
 
 
 
 
+// ########################################################################################
+// #################### [[[START]]] - Servive Level, Verified, revenue Shipped [Prod] #####
+// ########################################################################################
 
-// #################### GET Service Level Read ####################
-
+//GET//
 app.get("/servicelevel", async function (req, res) {
       const axios = require("axios");
       const aws = require("aws-sdk");
@@ -665,8 +750,7 @@ app.get("/servicelevel", async function (req, res) {
       }
   });
     
-
-// #################### POST Form update ####################
+//POST//
 app.post("/servicelevel", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -736,78 +820,11 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
       });
   }
 });
+// ########################################################################################
+// #################### [[[END]]] - Servive Level, Verified, revenue Shipped [Prod] #####
+// ########################################################################################
 
 
-
-// #################### GEt Form data ####################
-app.get("/timeserie", async function (req, res) {
-  const axios = require("axios");
-  const aws = require("aws-sdk");
-
-  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const athena = "AthenaForm";
-  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
-
-  //############################### GET TOKEN ############################
-  const { Parameters } = await new aws.SSM()
-    .getParameters({
-      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
-      WithDecryption: true,
-    })
-    .promise();
-
-  const token = Parameters;
-
-  //################################ GET DATA ############################
-
-  const options = {
-    method: "GET",
-    url: URL_API_Athena,
-    headers: {
-      Authorization: "Bearer " + token[0].Value,
-      "Content-Type": "application/json",
-    },
-  };
-  if (token[0].Value.length === 0) {
-    res.status(500).send("No API key found");
-  } else {
-    axios(options)
-      .then((response) => {
-        const stats = (response.data.data || []).map(({ properties }) => ({
-          cardsGradedToday: properties.cardsGradedToday,
-          cardsReceived: properties.cardsReceived,
-          cardsShippedToday: properties.cardsShippedToday,
-        }));
-
-        let totalGraded = 0;
-        let totalReceived = 0;
-        let totalShipped = 0;
-        for (const stat of stats) {
-          totalGraded += stat.cardsGradedToday;
-          totalReceived += stat.cardsReceived;
-          totalShipped += stat.cardsShippedToday;
-        }
-
-        res.send({
-          data: {
-            ...response.data,
-            stats: {
-              totalGraded,
-              totalReceived,
-              totalShipped,
-            }
-          },
-          status: response.status,
-        });
-      })
-      .catch((error) => {
-        res.send({
-          error: error.message,
-          status_code: error.status,
-        });
-      });
-  }
-});
 
 app.listen(3000, function () {
   console.log("App started");
