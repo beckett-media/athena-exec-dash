@@ -32,13 +32,13 @@ const startingSelectedDayObj = {
 };
 const startingServiceLevel = {
   properties: {
-    fiveDayExpress: "",
+    fiveDay: "",
     recase: "",
-    tenDayExpress: "",
-    thirtyDayStandard: "",
-    twoDayPremium: "",
-    revenueShipped: "",
-    numCardVerified: "",
+    tenDay: "",
+    thirtyDay: "",
+    twoDay: "",
+    revenueshipped: "",
+    verified: "",
   },
 };
 const CardForm = ({ className, ...props }) => {
@@ -56,14 +56,15 @@ const CardForm = ({ className, ...props }) => {
   );
   const [selectedDayServiceLevel, setSelectedDayServiceLevel] =
     useState(startingServiceLevel);
+
   const [notEditable, setNotEditable] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [twoDayPremium, setTwoDayPremium] = useState("");
-  const [fiveDayExpress, setFiveDayExpress] = useState("");
-  const [tenDayExpress, setTenDayExpress] = useState("");
-  const [thirtyDayStandard, setThirtyDayStandard] = useState("");
-  const [cardsVerified, setCardsVerified] = useState("");
-  const [revenueOfCardsShipped, setRevenueOfCardsShipped] = useState("");
+  const [twoDay, setTwoDay] = useState("");
+  const [fiveDay, setFiveDay] = useState("");
+  const [tenDay, setTenDay] = useState("");
+  const [thirtyDay, setThirtyDay] = useState("");
+  const [verified, setVerified] = useState("");
+  const [revenueshipped, setRevenueShipped] = useState("");
   const [recase, setRecase] = useState("");
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
@@ -84,7 +85,6 @@ const CardForm = ({ className, ...props }) => {
     const letter = String.fromCharCode(65 + Math.floor(Math.random() * 6));
     return `${number}${letter}`;
   };
-
   const myInit = {
     body: {
       cards_graded_today: parseInt(cardsGradedToday),
@@ -102,12 +102,12 @@ const CardForm = ({ className, ...props }) => {
   };
   const serviceLevelInit = {
     body: {
-      two_day: parseInt(twoDayPremium) || 0,
-      five_day: parseInt(fiveDayExpress) || 0,
-      ten_day: parseInt(tenDayExpress) || 0,
-      thirty_day: parseInt(thirtyDayStandard) || 0,
-      verified: cardsVerified.toString() || "0",
-      revenueshipped: revenueOfCardsShipped.toString() || "0",
+      two_day: parseInt(twoDay) || 0,
+      five_day: parseInt(fiveDay) || 0,
+      ten_day: parseInt(tenDay) || 0,
+      thirty_day: parseInt(thirtyDay) || 0,
+      verified: verified.toString() || "0",
+      revenueshipped: revenueshipped.toString() || "0",
       recase: parseInt(recase) || 0,
       date: startDateFormatted,
       hidden_1: 0,
@@ -132,13 +132,7 @@ const CardForm = ({ className, ...props }) => {
         console.log("response from post", response);
         console.log(response.status_code);
         setStatusCode(response.status_code);
-        if (
-          twoDayPremium ||
-          fiveDayExpress ||
-          tenDayExpress ||
-          thirtyDayStandard ||
-          recase
-        ) {
+        if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
               console.log("response from post", response);
@@ -163,7 +157,6 @@ const CardForm = ({ className, ...props }) => {
       setCardsGradedToday(0);
     }
   }, [handleSubmit]);
-
   React.useEffect(() => {
     (async () => {
       const apiName = "palentirApi";
@@ -177,20 +170,24 @@ const CardForm = ({ className, ...props }) => {
           );
           if (filteredFormDataByDay[0]) {
             setSelectedDayFormData(filteredFormDataByDay[0]);
+            setNotEditable(true);
           } else {
             setSelectedDayFormData(startingSelectedDayObj);
+            setNotEditable(false);
           }
         })
         .catch((error) => {
           console.log(error.response);
         });
     })();
+
     (async () => {
       const apiName = "palentirApi";
       const path = "/servicelevel";
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
+
           const filteredFormDataByDay = formdata.filter(
             (data) =>
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
@@ -205,33 +202,41 @@ const CardForm = ({ className, ...props }) => {
           console.log(error.response);
         });
     })();
-    setNotEditable(true);
+
+    setTwoDay("");
+    setFiveDay("");
+    setTenDay("");
+    setThirtyDay("");
+    setVerified("");
+    setRevenueShipped("");
+    setRecase("");
+    setCardsGradedToday("");
+    setCardsShippedToday("");
+    setCardsReceived("");
   }, [startDate]);
 
   const handleServiceLevelChange = (e, setServiceLevel) => {
     setServiceLevel(e.target.value);
   };
   const checkDisableSubmit = () => {
-    if (!(cardsGradedToday && cardsShippedToday && cardsReceived)) return true;
+    if (
+      !(cardsGradedToday && cardsShippedToday && cardsReceived && !notEditable)
+    )
+      return true;
     return checkSumServiceLevel();
   };
   const checkSumServiceLevel = () => {
+    if (notEditable) {
+      return false;
+    }
     const two =
-      selectedDayServiceLevel.properties.twoDayPremium ||
-      parseInt(twoDayPremium) ||
-      0;
+      selectedDayServiceLevel.properties.twoDay || parseInt(twoDay) || 0;
     const five =
-      selectedDayServiceLevel.properties.fiveDayExpress ||
-      parseInt(fiveDayExpress) ||
-      0;
+      selectedDayServiceLevel.properties.fiveDay || parseInt(fiveDay) || 0;
     const ten =
-      selectedDayServiceLevel.properties.tenDayExpress ||
-      parseInt(tenDayExpress) ||
-      0;
+      selectedDayServiceLevel.properties.tenDay || parseInt(tenDay) || 0;
     const thirty =
-      selectedDayServiceLevel.properties.thirtyDayStandard ||
-      parseInt(thirtyDayStandard) ||
-      0;
+      selectedDayServiceLevel.properties.thirtyDay || parseInt(thirtyDay) || 0;
     const re =
       selectedDayServiceLevel.properties.recase || parseInt(recase) || 0;
     if (two === 0 && five === 0 && ten === 0 && thirty === 0 && re === 0)
@@ -356,9 +361,7 @@ const CardForm = ({ className, ...props }) => {
         <Flex>
           <NumberInput
             mr={3}
-            value={
-              selectedDayServiceLevel.properties.twoDayPremium || twoDayPremium
-            }
+            value={selectedDayServiceLevel.properties.twoDay || twoDay}
           >
             <NumberInputField
               focusBorderColor={useColorModeValue("blue.500", "blue.200")}
@@ -366,10 +369,10 @@ const CardForm = ({ className, ...props }) => {
               borderRadius={12}
               mb={3}
               disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
+                (selectedDayServiceLevel.properties.twoDay ||
+                  selectedDayServiceLevel.properties.fiveDay ||
+                  selectedDayServiceLevel.properties.tenDay ||
+                  selectedDayServiceLevel.properties.thirtyDay ||
                   selectedDayServiceLevel.properties.recase) &&
                 notEditable
               }
@@ -377,7 +380,7 @@ const CardForm = ({ className, ...props }) => {
               label="Two Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTwoDayPremium)}
+              onChange={(e) => handleServiceLevelChange(e, setTwoDay)}
             ></NumberInputField>
             <FormLabel mb={5} textAlign={"center"}>
               {" "}
@@ -386,10 +389,7 @@ const CardForm = ({ className, ...props }) => {
           </NumberInput>
           <NumberInput
             mr={3}
-            value={
-              selectedDayServiceLevel.properties.fiveDayExpress ||
-              fiveDayExpress
-            }
+            value={selectedDayServiceLevel.properties.fiveDay || fiveDay}
           >
             <NumberInputField
               focusBorderColor={useColorModeValue("blue.500", "blue.200")}
@@ -398,25 +398,23 @@ const CardForm = ({ className, ...props }) => {
               mb={3}
               border={`2px solid transparent`}
               disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
+                (selectedDayServiceLevel.properties.twoDay ||
+                  selectedDayServiceLevel.properties.fiveDay ||
+                  selectedDayServiceLevel.properties.tenDay ||
+                  selectedDayServiceLevel.properties.thirtyDay ||
                   selectedDayServiceLevel.properties.recase) &&
                 notEditable
               }
               label="Five Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setFiveDayExpress)}
+              onChange={(e) => handleServiceLevelChange(e, setFiveDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Five Day </FormLabel>
           </NumberInput>
           <NumberInput
             mr={3}
-            value={
-              selectedDayServiceLevel.properties.tenDayExpress || tenDayExpress
-            }
+            value={selectedDayServiceLevel.properties.tenDay || tenDay}
           >
             <NumberInputField
               focusBorderColor={useColorModeValue("blue.500", "blue.200")}
@@ -425,26 +423,23 @@ const CardForm = ({ className, ...props }) => {
               mb={3}
               border={`2px solid transparent`}
               disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
+                (selectedDayServiceLevel.properties.twoDay ||
+                  selectedDayServiceLevel.properties.fiveDay ||
+                  selectedDayServiceLevel.properties.tenDay ||
+                  selectedDayServiceLevel.properties.thirtyDay ||
                   selectedDayServiceLevel.properties.recase) &&
                 notEditable
               }
               label="Ten Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTenDayExpress)}
+              onChange={(e) => handleServiceLevelChange(e, setTenDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Ten Day </FormLabel>
           </NumberInput>
           <NumberInput
             mr={3}
-            value={
-              selectedDayServiceLevel.properties.thirtyDayStandard ||
-              thirtyDayStandard
-            }
+            value={selectedDayServiceLevel.properties.thirtyDay || thirtyDay}
           >
             <NumberInputField
               focusBorderColor={useColorModeValue("blue.500", "blue.200")}
@@ -453,19 +448,17 @@ const CardForm = ({ className, ...props }) => {
               mb={3}
               border={`2px solid transparent`}
               disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
+                (selectedDayServiceLevel.properties.twoDay ||
+                  selectedDayServiceLevel.properties.fiveDay ||
+                  selectedDayServiceLevel.properties.tenDay ||
+                  selectedDayServiceLevel.properties.thirtyDay ||
                   selectedDayServiceLevel.properties.recase) &&
                 notEditable
               }
               label="Thirty Day"
               type="number"
               placeholder="0"
-              onChange={(e) =>
-                handleServiceLevelChange(e, setThirtyDayStandard)
-              }
+              onChange={(e) => handleServiceLevelChange(e, setThirtyDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Thirty Day </FormLabel>
           </NumberInput>
@@ -480,10 +473,10 @@ const CardForm = ({ className, ...props }) => {
               mb={3}
               border={`2px solid transparent`}
               disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
+                (selectedDayServiceLevel.properties.twoDay ||
+                  selectedDayServiceLevel.properties.fiveDay ||
+                  selectedDayServiceLevel.properties.tenDay ||
+                  selectedDayServiceLevel.properties.thirtyDay ||
                   selectedDayServiceLevel.properties.recase) &&
                 notEditable
               }
@@ -497,8 +490,7 @@ const CardForm = ({ className, ...props }) => {
         </Flex>
         <NumberInput
           value={
-            selectedDayServiceLevel.properties.revenueShipped ||
-            revenueOfCardsShipped
+            selectedDayServiceLevel.properties.revenueshipped || revenueshipped
           }
         >
           <FormLabel>Revenue Of Cards Shipped</FormLabel>
@@ -517,14 +509,12 @@ const CardForm = ({ className, ...props }) => {
             type="number"
             placeholder="0"
             onChange={(e) => {
-              setRevenueOfCardsShipped(e.target.value);
+              setRevenueShipped(e.target.value);
             }}
           />
         </NumberInput>
         <NumberInput
-          value={
-            selectedDayServiceLevel.properties.numCardVerified || cardsVerified
-          }
+          value={selectedDayServiceLevel.properties.verified || verified}
         >
           <FormLabel>Cards Verified</FormLabel>
           <NumberInputField
@@ -542,7 +532,7 @@ const CardForm = ({ className, ...props }) => {
             type="number"
             placeholder="0"
             onChange={(e) => {
-              setCardsVerified(e.target.value);
+              setVerified(e.target.value);
             }}
           />
         </NumberInput>
