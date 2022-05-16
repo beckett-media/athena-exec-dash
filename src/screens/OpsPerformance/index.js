@@ -15,7 +15,7 @@ const OpsPerformance = () => {
       <div className={styles.col}>
         <KPI className={styles.card} />
         <Box my={"2rem"} />
-        {/* <Backlog /> */}
+        <Backlog />
         <Box my={"2rem"} />
         <MarketData />
         <Box my={"2rem"} />
