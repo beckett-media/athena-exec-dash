@@ -4,9 +4,12 @@ import cn from "classnames";
 import Checkbox from "../Checkbox";
 import Loader from "../Loader";
 import Row from "./Row";
+import Pagination from "../Pagination/Pagination";
 
-const Table = ({ items, title, data,setLoading }) => {
+const Table = ({ items, title, data, setLoading }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   const handleChange = (id) => {
     if (selectedFilters.includes(id)) {
@@ -16,7 +19,16 @@ const Table = ({ items, title, data,setLoading }) => {
     }
   };
 
-  
+  const indexOfLastPage = currentPage * itemsPerPage;
+  const indexOfFistPage = indexOfLastPage - itemsPerPage;
+  const currentPageItems = data?.slice(indexOfFistPage, indexOfLastPage);
+
+  // change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleItemSelected = (item) => {
+    return item;
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -30,9 +42,9 @@ const Table = ({ items, title, data,setLoading }) => {
           <div className={styles.col}>Shipped</div>
           <div className={styles.col}>{title}</div>
         </div>
-        {data.map((x, index) => (
+        {currentPageItems?.map((x, index) => (
           <Row
-          setLoading={setLoading}
+            setLoading={setLoading}
             item={x}
             key={index}
             index={index}
@@ -40,6 +52,14 @@ const Table = ({ items, title, data,setLoading }) => {
             onChange={() => handleChange(x.id)}
           />
         ))}
+      </div>
+      <div className={styles.pagination}>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalPages={data.length}
+          paginate={paginate}
+          itemSelected={handleItemSelected}
+        />
       </div>
     </div>
   );
