@@ -11,10 +11,10 @@ const Backlog = ({ className }) => {
   const backlog = 29000;
   const { timeseries } = useApiData();
 
-  let totalBacklog = backlog;
+  let totalGraded = 0;
   for (const log of timeseries) {
     if (new Date(log.date).getTime() >= new Date("2022-05-12").getTime()) {
-      totalBacklog += (log.cardsReceived - log.cardsGradedToday);
+      totalGraded += log.cardsGradedToday;
     }
   }
 
@@ -41,10 +41,10 @@ const Backlog = ({ className }) => {
         <Progress colorScheme={"orange"} value={100} /> */}
 
         <Text>
-          Total backlog  {numberWithCommas(totalBacklog)} (
-          {percentageCalc(totalBacklog, backlog)}%)
+          Total card graded {numberWithCommas(totalGraded)} (
+          {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000 (100%)
         </Text>
-        <Progress colorScheme={"blue"} value={percentageCalc(totalBacklog, backlog)} />
+        <Progress colorScheme={"green"} value={percentageCalc(totalGraded, backlog)} bg={"red.300"} h="10" />
       </Stack>
     </Card>
   );
