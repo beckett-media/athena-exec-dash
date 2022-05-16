@@ -387,6 +387,68 @@ app.post("/athenaform", async function (req, res) {
       });
   }
 });
+// #################### POST Form input grading-service-form ####################
+app.post("/grading-service-form", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const createAthenaServiceForm = "grading-service-form";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${createAthenaServiceForm}/apply`;
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
 
 // #################### PUT Form update ####################
 app.put("/athenaform", async function (req, res) {
@@ -452,67 +514,6 @@ app.put("/athenaform", async function (req, res) {
       });
   }
 });
-
-// #################### Form update ####################
-app.post("/athenaformdelete", async function (req, res) {
-  const axios = require("axios");
-  const aws = require("aws-sdk");
-
-  const riWrtAthena =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const deleteAthenaRecord = "new-action-0af4240c-ad4e-9265-a23c-59ae211df2b4";
-  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${deleteAthenaRecord}/apply`;
-
-  //############################### GET TOKEN ############################
-  const { Parameters } = await new aws.SSM()
-    .getParameters({
-      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
-      WithDecryption: true,
-    })
-    .promise();
-
-  const token = Parameters;
-
-  //################################ POST VAULTING RECORD ############################
-
-  const options = {
-    method: "POST",
-    url: Athena_form_Action,
-    headers: {
-      Authorization: "Bearer " + token[0].Value,
-      "Content-Type": "application/json",
-    },
-    data: {
-      "parameters": {
-        "AthenaForm": req.body.submission_item,
-        "submission_item": req.body.submission_item,
-      },
-    },
-  };
-
-  if (token[0].Value.length === 0) {
-    res.status(500).send("No API key found");
-  } else {
-    axios(options)
-      .then((response) => {
-        console.log(response.data);
-        res.send({
-          message: "successfully updated",
-          data: response.data,
-          status_code: response.status,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        res.send({
-          status: "error",
-          data: error.message,
-          status_code: error.status,
-        });
-      });
-  }
-});
-
 // #################### GET Service Level Read ####################
 
   app.get("/servicelevel", async function (req, res) {
@@ -570,7 +571,7 @@ app.post("/servicelevel", async function (req, res) {
 
 // ######################  CRUD Palantir ######################
 const riWrt = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-const createServicesRecord = "create-service-level";
+const createServicesRecord = "new-action-256b9a79-2fc3-c664-f98a-40a6a8f1e79c";
 const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrt}/actions/${createServicesRecord}/apply`;
 
   //############################### GET TOKEN ############################
@@ -594,19 +595,19 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
     },
     data: {
       "parameters": {
-        "AthenaServiceLevel": req.body.submission_item,
+        "AthenaServiceForm": req.body.submission_item,
         "submission_item": req.body.submission_item,
         "date": req.body.date,
-        "10_day_express" : req.body.ten_day_express,
-        "30_day_standard" : req.body.thirty_day_standard,
-        "total":  req.body.total,
-        "hidden": req.body.hidden,
+        "ten_day": req.body.ten_day,
+        "thirty_day": req.body.thirty_day,
+        "total": req.body.total,
+        "hidden_1": req.body.hidden_1,
         "recase": req.body.recase,
-        "5_day_express": req.body.five_day_express,
-        "type": req.body.type,
-        "2_day_premium": req.body.two_day_premium,
-        "revenue_shipped": req.body.revenue_shipped,
-        "num_card_verified": req.body.num_card_verified,
+        "five_day": req.body.five_day,
+        "type": "BGS",
+        "two_day": req.body.two_day,
+        "revenueshipped": req.body.revenueshipped,
+        "verified": req.body.verified,
       },
     },
   };
