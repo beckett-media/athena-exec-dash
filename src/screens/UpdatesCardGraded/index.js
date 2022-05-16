@@ -15,7 +15,7 @@ const UpdateData = () => {
     setLoading(true);
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
+      const path = `/grading-service-form`;
 
       API.get(apiName, path)
         .then((response) => {
@@ -42,7 +42,7 @@ const UpdateData = () => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <Table data={data} title="date posted" setLoading={setLoading} />
+          <Table data={data} title="date selected" setLoading={setLoading} />
         </div>
       </Card>
     </>

@@ -56,7 +56,7 @@ const CardForm = ({ className, ...props }) => {
     return `${number}${letter}`;
   };
 
-  const path = "/athenaform";
+  const path = "/grading-service-form";
   const apiName = "palentirApi";
   const myInit = {
     body: {

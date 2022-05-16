@@ -33,33 +33,10 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
   const submissionItem = selectedData.submissionItem;
   const date = selectedData.date;
 
-  const handleDelete = async () => {
-    const deletePath = `/athenaformdelete`;
-    const apiName = "palentirApi";
-
-    const deleteParams = {
-      body: {
-        submission_item: `${submissionItem}`,
-      },
-    };
-
-    setLoadingForm(true);
-    API.put(apiName, deletePath, deleteParams)
-      .then((response) => {
-        setLoading(true);
-        setSuccessfully(true);
-        onClose();
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
 
   const handleSubmit = async () => {
     const apiName = "palentirApi";
-    const path = `/athenaform`;
+    const path = `/grading-service-form`;
 
     const myInit = {
       body: {

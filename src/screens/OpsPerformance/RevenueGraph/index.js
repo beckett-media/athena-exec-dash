@@ -37,7 +37,7 @@ const RevenueGraph = ({ className }) => {
   var dataG = [
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.revenueShipped),
+      y: data?.map((d) => d?.properties?.revenueshipped),
 
       type: "scatter",
       mode: "lines+markers",

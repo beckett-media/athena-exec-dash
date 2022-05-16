@@ -152,13 +152,6 @@ const CardForm = ({ className, ...props }) => {
         console.log(error.data, "post error");
         setLoading(false);
       });
-    // API.post(apiName, serviceLevel, serviceLevelInit)
-    //     .then(response => {
-    //       console.log('response from post', response)
-    //       console.log(response.status_code);
-    //     })
-    //     .catch(error => console.log(error.data))
-    //     console.log(serviceLevelInit)
   });
 
   React.useEffect(() => {
@@ -174,7 +167,7 @@ const CardForm = ({ className, ...props }) => {
   React.useEffect(() => {
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
+      const path = `/grading-service-form`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;

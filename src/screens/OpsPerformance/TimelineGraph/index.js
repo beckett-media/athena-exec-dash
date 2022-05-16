@@ -19,7 +19,7 @@ const MarketData = ({ className }) => {
     setLoading(true);
     (async () => {
       const apiName = "palentirApi";
-      const path = `/timeserie`;
+      const path = `/grading-service-form`;
 
       API.get(apiName, path)
         .then((response) => {
@@ -127,8 +127,8 @@ const MarketData = ({ className }) => {
       showticklabels: true,
     },
     autosize: true,
-    width: 1120,
-    height: 700,
+    width: 900,
+    height: 500,
     display: "flex",
     margin: {
       l: 70,

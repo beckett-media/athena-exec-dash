@@ -35,7 +35,7 @@ const ServicesGraph = ({ className }) => {
   var dataG = [
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.twoDayPremium),
+      y: data?.map((d) => d?.properties?.twoDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -56,7 +56,7 @@ const ServicesGraph = ({ className }) => {
     },
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.fiveDayExpress),
+      y: data?.map((d) => d?.properties?.fiveDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -73,7 +73,7 @@ const ServicesGraph = ({ className }) => {
     },
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.tenDayExpress),
+      y: data?.map((d) => d?.properties?.tenDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -90,7 +90,7 @@ const ServicesGraph = ({ className }) => {
     },
     {
       x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.thirtyDayStandard),
+      y: data?.map((d) => d?.properties?.thirtyDay),
 
       type: "scatter",
       mode: "lines+markers",

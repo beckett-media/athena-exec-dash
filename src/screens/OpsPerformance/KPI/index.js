@@ -36,7 +36,7 @@ const KPI = ({ className }) => {
         setYesterdayDate(currentDate);
       }
       const apiName = "palentirApi";
-      const path = `/athenaform/${yesterdayDate}`;
+      const path = `/grading-service-form/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;

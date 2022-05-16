@@ -255,76 +255,6 @@ app.get("/athenaform/:yesterday", async function (req, res) {
   }
 });
 
-// #################### GEt Form data ####################
-app.get("/timeserie", async function (req, res) {
-  const axios = require("axios");
-  const aws = require("aws-sdk");
-
-  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const athena = "AthenaForm";
-  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
-
-  //############################### GET TOKEN ############################
-  const { Parameters } = await new aws.SSM()
-    .getParameters({
-      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
-      WithDecryption: true,
-    })
-    .promise();
-
-  const token = Parameters;
-
-  //################################ GET DATA ############################
-
-  const options = {
-    method: "GET",
-    url: URL_API_Athena,
-    headers: {
-      Authorization: "Bearer " + token[0].Value,
-      "Content-Type": "application/json",
-    },
-  };
-  if (token[0].Value.length === 0) {
-    res.status(500).send("No API key found");
-  } else {
-    axios(options)
-      .then((response) => {
-        const stats = (response.data.data || []).map(({ properties }) => ({
-          cardsGradedToday: properties.cardsGradedToday,
-          cardsReceived: properties.cardsReceived,
-          cardsShippedToday: properties.cardsShippedToday,
-        }));
-
-        let totalGraded = 0;
-        let totalReceived = 0;
-        let totalShipped = 0;
-        for (const stat of stats) {
-          totalGraded += stat.cardsGradedToday;
-          totalReceived += stat.cardsReceived;
-          totalShipped += stat.cardsShippedToday;
-        }
-
-        res.send({
-          data: {
-            ...response.data,
-            stats: {
-              totalGraded,
-              totalReceived,
-              totalShipped,
-            }
-          },
-          status: response.status,
-        });
-      })
-      .catch((error) => {
-        res.send({
-          error: error.message,
-          status_code: error.status,
-        });
-      });
-  }
-});
-
 // #################### POST Form input ####################
 app.post("/athenaform", async function (req, res) {
   const axios = require("axios");
@@ -334,68 +264,6 @@ app.post("/athenaform", async function (req, res) {
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const createAthenaRecord = "new-action-341541e4-574e-cf23-d4a5-908eb3797ded";
   const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${createAthenaRecord}/apply`;
-  //############################### GET TOKEN ############################
-  const { Parameters } = await new aws.SSM()
-    .getParameters({
-      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
-      WithDecryption: true,
-    })
-    .promise();
-
-  const token = Parameters;
-
-  //################################ POST VAULTING RECORD ############################
-
-  const options = {
-    method: "POST",
-    url: Athena_form_Action,
-    headers: {
-      Authorization: "Bearer " + token[0].Value,
-      "Content-Type": "application/json",
-    },
-    data: {
-      "parameters": {
-        "cards_graded_today": req.body.cards_graded_today,
-        "cards_shipped_today": req.body.cards_shipped_today,
-        "cards_received": req.body.cards_received,
-        "type": req.body.type,
-        "date": req.body.date,
-        "submission_item": req.body.submission_item,
-      },
-    },
-  };
-
-  if (token[0].Value.length === 0) {
-    res.status(500).send("No API key found");
-  } else {
-    axios(options)
-      .then((response) => {
-        console.log(response.data);
-        res.send({
-          message: "successfully updated",
-          data: response.data,
-          status_code: response.status,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        res.send({
-          status: "error",
-          data: error.message,
-          status_code: error.status,
-        });
-      });
-  }
-});
-// #################### POST Form input grading-service-form ####################
-app.post("/grading-service-form", async function (req, res) {
-  const axios = require("axios");
-  const aws = require("aws-sdk");
-
-  const riWrtAthena =
-    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const createAthenaServiceForm = "grading-service-form";
-  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${createAthenaServiceForm}/apply`;
   //############################### GET TOKEN ############################
   const { Parameters } = await new aws.SSM()
     .getParameters({
@@ -514,15 +382,249 @@ app.put("/athenaform", async function (req, res) {
       });
   }
 });
+
+
+
+
+// #################### GEt Form data ####################
+app.get("/grading-service-form", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const athena = "AthenaGradingServiceForm";
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        res.send({
+          data: response.data,
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+// #################### GEt Form data ####################
+app.get("/grading-service-form/:yesterday", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const { yesterday } = req.params;
+
+  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const athena = "AthenaGradingServiceForm";
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?p.date.eq=${yesterday}`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        res.send({
+          data: response.data,
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+// #################### POST Form input grading-service-form ####################
+app.post("/grading-service-form", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const createAthenaServiceForm = "grading-service-form";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${createAthenaServiceForm}/apply`;
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
+        "AthenaGradingServiceForm": req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
+
+app.put("/grading-service-form", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const riWrtAthena =
+    "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const updateAthenaRecord = "update-form-data";
+  const Athena_form_Action = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrtAthena}/actions/${updateAthenaRecord}/apply`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: Athena_form_Action,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        'AthenaGradingServiceForm': req.body.submission_item,
+        'cards_graded_today': req.body.cards_graded_today,
+        'cards_shipped_today': req.body.cards_shipped_today,
+        'cards_received': req.body.cards_received,
+        'type': req.body.type,
+        'date': req.body.date,
+        'submission_item': req.body.submission_item,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
+
+
+
+
+
 // #################### GET Service Level Read ####################
 
-  app.get("/servicelevel", async function (req, res) {
+app.get("/servicelevel", async function (req, res) {
       const axios = require("axios");
       const aws = require("aws-sdk");
     
       const ridServies = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-      const objService = "AthenaServiceLevel";
-      const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}`;
+      const objService = "AthenaServiceForm";
+      const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}?orderBy=p.date:asc`;
     
       //############################### GET TOKEN ############################
       const { Parameters } = await new aws.SSM()
@@ -561,7 +663,7 @@ app.put("/athenaform", async function (req, res) {
             });
           });
       }
-    });
+  });
     
 
 // #################### POST Form update ####################
@@ -636,6 +738,76 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
 });
 
 
+
+// #################### GEt Form data ####################
+app.get("/timeserie", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const athena = "AthenaForm";
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API_Athena,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        const stats = (response.data.data || []).map(({ properties }) => ({
+          cardsGradedToday: properties.cardsGradedToday,
+          cardsReceived: properties.cardsReceived,
+          cardsShippedToday: properties.cardsShippedToday,
+        }));
+
+        let totalGraded = 0;
+        let totalReceived = 0;
+        let totalShipped = 0;
+        for (const stat of stats) {
+          totalGraded += stat.cardsGradedToday;
+          totalReceived += stat.cardsReceived;
+          totalShipped += stat.cardsShippedToday;
+        }
+
+        res.send({
+          data: {
+            ...response.data,
+            stats: {
+              totalGraded,
+              totalReceived,
+              totalShipped,
+            }
+          },
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
 
 app.listen(3000, function () {
   console.log("App started");
