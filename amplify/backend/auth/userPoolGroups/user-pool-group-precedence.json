@@ -1,0 +1,14 @@
+[
+  {
+    "groupName": "admin",
+    "precedence": 1
+  },
+  {
+    "groupName": "financial",
+    "precedence": 2
+  },
+  {
+    "groupName": "grading",
+    "precedence": 3
+  }
+]
