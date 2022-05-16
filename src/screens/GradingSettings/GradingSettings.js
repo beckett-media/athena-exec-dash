@@ -1,42 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import cn from "classnames";
 import styles from "./GradingSettings.module.sass";
+import Card from "../../components/Card";
+import Table from "../../components/Table";
+import { API } from "aws-amplify";
+import NewGraderForm from "./NewGraderForm";
+import GraderEntryForm from "./GraderEntryForm";
 import { Box } from "@chakra-ui/react";
-// import PostPerWeekGraph from "./Overview";
-// import SentimentAnalysis from "./Sentiment/SentimentAnalysis";
-// import TopCountry from "./TopCountry";
-// import SocialMessages from "./SocialMessage";
-// import KPI from "./KPI";
-import ComingSoon from "../CominSoon/ComingSoon";
 
-const Settings = ({ dataI, socialData, socialMessage }) => {
+const UpdateData = () => {
+  const [loading, setLoading] = React.useState(true);
+  const [data, setData] = React.useState([0]);
+
+  React.useEffect(() => {
+    setLoading(true);
+    (async () => {
+      const apiName = "palentirApi";
+      const path = `/grading-service-form`;
+
+      API.get(apiName, path)
+        .then((response) => {
+          const formdata = response.data?.data;
+          setData(formdata);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+    })();
+    setLoading(false);
+  }, [loading]);
+
+  console.log(data);
+
   return (
     <>
-      {/* <div className={styles.row}>
-        <div className={styles.col}>
-          <KPI className={styles.card} dataI={dataI} />
-          <Box my={"2rem"} />
-          <PostPerWeekGraph
-            className={styles.card}
-            dataI={dataI}
-            socialData={socialData}
-          />
-          <Box my={"2rem"} />
-          <SentimentAnalysis
-            socialData={socialData}
-            dataI={dataI}
-            socialMessage={socialMessage}
-          />
-          <Box my={"2rem"} />
+      <NewGraderForm setLoading={setLoading} />
+      <Box mt={12} />
+      <GraderEntryForm setLoading={setLoading} />
+      <Box mt={12} />
+      <Card
+        className={styles.card}
+        classCardHead={styles.head}
+        title="Daily Records of Cards Received, Graded, and Shipped"
+        classTitle={cn("title-purple", styles.title)}
+      >
+        <div className={styles.wrapper}>
+          <Table data={data} title="date selected" setLoading={setLoading} />
         </div>
-        <div className={styles.col} style={{ marginLeft: 20 }}>
-          <SocialMessages socialMessage={socialMessage} />
-          <Box my={"2rem"} />
-          <TopCountry className={styles.card} />
-        </div>
-      </div> */}
-      <ComingSoon />
+      </Card>
     </>
   );
 };
 
-export default Settings;
+export default UpdateData;
