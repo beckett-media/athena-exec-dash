@@ -44,6 +44,8 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
+  const [timeseries, setTimeseries] = React.useState({});
+  const [loadingTimeseries, setLoadingTimeseries] = React.useState(false);
 
   //############################# MARKET ANALYSIS QUERY ########################################
   async function MarketAnalysisAPI() {
@@ -143,6 +145,20 @@ function ApiDataProvider(props) {
     );
   }
 
+  async function getOpsTimeseries() {
+    const apiName = "palentirApi";
+    const path = `/timeserie`;
+
+    return API.get(apiName, path).then((response) =>
+      response.data.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
+  }
+
   React.useEffect(() => {
     const fetch = async () => {
       setIsLoading(true);
@@ -178,7 +194,13 @@ function ApiDataProvider(props) {
         getSocialMessage(),
         // getUsers(),
       ]).then(
-        ([comicIndex, socialIndicators, socialData, socialMessage, users]) => {
+        ([
+          comicIndex,
+          socialIndicators,
+          socialData,
+          socialMessage,
+          users,
+        ]) => {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
           // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
           setComicIndexing(comicIndex.value);
@@ -188,23 +210,26 @@ function ApiDataProvider(props) {
           // setUsers(users.value);
         }
       );
+
+      setLoadingTimeseries(true);
+      getOpsTimeseries().then(p => setTimeseries(p)).finally(() => setLoadingTimeseries(false));
     };
 
-    Hub.listen('auth', (data) => {
+    Hub.listen("auth", (data) => {
       const { payload } = data;
 
-      if (payload.event === 'signIn') {
-        console.log('fetch after signIn', payload.data.username);
+      if (payload.event === "signIn") {
+        console.log("fetch after signIn", payload.data.username);
         fetch();
       }
-    })
+    });
 
     Auth.currentUserInfo().then((user) => {
       if (user) {
-        console.log('fetch after user', user);
+        console.log("fetch after user", user);
         fetch();
       }
-    })
+    });
   }, []);
 
   return (
@@ -220,6 +245,8 @@ function ApiDataProvider(props) {
         socialData,
         socialDataMessage,
         comicIndexing,
+        timeseries,
+        loadingTimeseries,
       }}
       {...props}
     />

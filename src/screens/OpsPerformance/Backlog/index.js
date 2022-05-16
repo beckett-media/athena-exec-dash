@@ -4,50 +4,35 @@ import { percentageCalc, numberWithCommas } from "../../../utils";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
-import { API } from "aws-amplify";
+
+import { useApiData } from "../../../providers/apiData";
 
 const Backlog = ({ className }) => {
   const [loading, setLoading] = React.useState(false);
-  const [data, setData] = React.useState(0);
+  const [data, setData] = React.useState({});
   const [currentBacklog, setCurrentBacklog] = React.useState(0);
 
   const graded = data?.totalGraded || 0;
   const shipped = data?.totalShipped || 0;
   const backlog = 29000;
+  
+  const { timeseries } = useApiData();
 
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/timeserie`;
+  // const logs = (response.data.data || []).map(({ properties }) => ({
+  //   cardsGradedToday: properties.cardsGradedToday,
+  //   cardsReceived: properties.cardsReceived,
+  // }));
 
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response?.data?.stats;
-          setData(formdata);
+  // let totalBacklog = 0;
+  // for (const log of logs) {
+  //   totalBacklog += (log.cardsReceived - log.cardsGradedToday);
+  // }
 
-          const logs = (response.data.data || []).map(({ properties }) => ({
-            cardsGradedToday: properties.cardsGradedToday,
-            cardsReceived: properties.cardsReceived,
-          }));
-
-          let totalBacklog = 0;
-          for (const log of logs) {
-            totalBacklog += (log.cardsReceived - log.cardsGradedToday);
-          }
-
-          setCurrentBacklog(totalBacklog);
-
-          console.log('totalBacklog', totalBacklog, formdata);
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setLoading(false);
-  }, []);
+  // setCurrentBacklog(totalBacklog);
 
   // console.log(percentageCalc(graded, backlog));
+
+  console.log('timeseries', timeseries)
 
   return (
     <Card
