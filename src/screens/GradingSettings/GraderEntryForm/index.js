@@ -92,7 +92,7 @@ const GraderEntryForm = ({ className, ...props }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    alert(`${grader}, ${cardsGraded}, ${includesSaturday}`);
+    alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
     setCardsGraded(0);
     setIncludesSaturday(false);
     // const serviceLevel = "/servicelevel";
