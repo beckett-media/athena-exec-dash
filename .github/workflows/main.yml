@@ -30,9 +30,9 @@ jobs:
           approvers: anthonyplain,chrisnbattista,kaman1,louisdtb,raj-psd,trent-ps
           minimum-approvals: 1
       - name: Approve Pull Request
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
-          secret: ${{ github.TOKEN }}
+          github-token: ${{ github.TOKEN }}
           script: |
             const pullRequest = ${{steps.pr.outputs.pr_number}}
             const repository = context.repo
@@ -44,9 +44,9 @@ jobs:
               repo: repository.repo,
             })
       - name: Merge Pull Request
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
-          secret: ${{ github.TOKEN }}
+          github-token: ${{ github.TOKEN }}
           script: |
             const pullRequest = ${{steps.pr.outputs.pr_number}}
             const repository = context.repo
