@@ -32,28 +32,20 @@ jobs:
       - name: Approve Pull Request
         uses: actions/github-script@v6
         with:
-          github-token: ${{ github.TOKEN }}
-          script: |
-            const pullRequest = ${{steps.pr.outputs.pr_number}}
-            const repository = context.repo
-            
+          script: |            
             await github.rest.pulls.createReview({
               event: "APPROVE",
               owner: repository.owner,
-              pull_number: pullRequest,
-              repo: repository.repo,
+              pull_number: ${{steps.pr.outputs.pr_number}},
+              repo: context.repo.repo,
             })
       - name: Merge Pull Request
         uses: actions/github-script@v6
         with:
-          github-token: ${{ github.TOKEN }}
-          script: |
-            const pullRequest = ${{steps.pr.outputs.pr_number}}
-            const repository = context.repo
-            
+          script: |            
             await github.rest.pulls.merge({
               merge_method: "squash"
               owner: repository.owner,
-              pull_number: pullRequest,
-              repo: repository.repo,
+              pull_number: ${{steps.pr.outputs.pr_number}},
+              repo: context.repo.repo,
             })
