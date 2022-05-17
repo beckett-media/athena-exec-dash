@@ -36,7 +36,7 @@ jobs:
             await github.rest.pulls.createReview({
               event: "APPROVE",
               owner: context.repo.owner,
-              pull_number: steps.pr.outputs.pr_number,
+              pull_number: ${{steps.pr.outputs.pr_number}},
               repo: context.repo.repo,
             })
       - name: Merge Pull Request
@@ -46,6 +46,6 @@ jobs:
             await github.rest.pulls.merge({
               merge_method: "squash"
               owner: context.repo.owner,
-              pull_number: steps.pr.outputs.pr_number,
+              pull_number: ${{steps.pr.outputs.pr_number}},
               repo: context.repo.repo,
             })
