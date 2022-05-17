@@ -392,7 +392,7 @@ app.get("/timeserie", async function (req, res) {
   const aws = require("aws-sdk");
 
   const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
-  const athena = "AthenaForm";
+  const athena = "AthenaGradingServiceForm"
   const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
 
   //############################### GET TOKEN ############################
@@ -473,7 +473,7 @@ app.get("/grading-service-form", async function (req, res) {
 
   const ri = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
   const athena = "AthenaGradingServiceForm";
-  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:asc`;
+  const URL_API_Athena = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ri}/objects/${athena}?orderBy=p.date:desc`;
 
   //############################### GET TOKEN ############################
   const { Parameters } = await new aws.SSM()
@@ -663,7 +663,6 @@ app.put("/grading-service-form", async function (req, res) {
         'cards_received': req.body.cards_received,
         'type': req.body.type,
         'date': req.body.date,
-        'submission_item': req.body.submission_item,
       },
     },
   };
