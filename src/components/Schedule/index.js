@@ -53,7 +53,7 @@ const Schedule = ({
                 className={cn("button-small", styles.button)}
                 onClick={() => setVisibleDate(false)}
               >
-                Close
+                Submit
               </button>
             </div>
           </div>
