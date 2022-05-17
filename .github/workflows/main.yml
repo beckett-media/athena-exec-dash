@@ -18,8 +18,9 @@ jobs:
           destination_branch: "athena-dev"
           github_token: ${{secrets.GITHUB_TOKEN}}
       - name: Testing Code
-        run: |
-          console.log( ${{ steps }})
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with:
