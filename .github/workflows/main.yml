@@ -27,7 +27,7 @@ jobs:
         uses: trstringer/manual-approval@v1
         with:
           secret: ${{ github.TOKEN }}
-          approvers: anthonyplain, chrisnbattista, kaman1, louisdtb, raj-psd, trent-ps
+          approvers: anthonyplain,chrisnbattista,kaman1,louisdtb,raj-psd,trent-ps
           minimum-approvals: 1
       - name: Approve Pull Request
         uses: actions/github-script@v5
