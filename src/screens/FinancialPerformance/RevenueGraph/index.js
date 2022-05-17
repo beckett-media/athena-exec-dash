@@ -7,37 +7,16 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import { useApiData } from "../../../providers/apiData";
 
 const RevenueGraph = ({ className }) => {
   const darkMode = useDarkMode(false);
-
-  const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState([0]);
-
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/timeserie`;
-
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          console.log(formdata);
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setLoading(false);
-  }, [loading]);
+  const { timeseries, loadingTimeseries } = useApiData();
 
   var dataG = [
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsGradedToday),
+      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
+      y: timeseries?.map((d) => d?.cardsGradedToday),
 
       type: "scatter",
       mode: "lines+markers",
@@ -57,8 +36,8 @@ const RevenueGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsShippedToday),
+      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
+      y: timeseries?.map((d) => d?.cardsShippedToday),
 
       type: "scatter",
       mode: "lines+markers",
@@ -74,8 +53,8 @@ const RevenueGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsReceived),
+      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
+      y: timeseries?.map((d) => d?.cardsReceived),
 
       type: "scatter",
       mode: "lines+markers",
@@ -163,7 +142,7 @@ const RevenueGraph = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-green", styles.cardTitle)}
     >
-      {loading && (
+      {loadingTimeseries && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
       )}
 

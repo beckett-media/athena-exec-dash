@@ -4,50 +4,19 @@ import { percentageCalc, numberWithCommas } from "../../../utils";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
-import { API } from "aws-amplify";
+
+import { useApiData } from "../../../providers/apiData";
 
 const Backlog = ({ className }) => {
-  const [loading, setLoading] = React.useState(false);
-  const [data, setData] = React.useState(0);
-  const [currentBacklog, setCurrentBacklog] = React.useState(0);
-
-  const graded = data?.totalGraded || 0;
-  const shipped = data?.totalShipped || 0;
   const backlog = 29000;
+  const { timeseries } = useApiData();
 
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/timeserie`;
-
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response?.data?.stats;
-          setData(formdata);
-
-          const logs = (response.data.data || []).map(({ properties }) => ({
-            cardsGradedToday: properties.cardsGradedToday,
-            cardsReceived: properties.cardsReceived,
-          }));
-
-          let totalBacklog = 0;
-          for (const log of logs) {
-            totalBacklog += (log.cardsReceived - log.cardsGradedToday);
-          }
-
-          setCurrentBacklog(totalBacklog);
-
-          console.log('totalBacklog', totalBacklog, formdata);
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setLoading(false);
-  }, []);
-
-  // console.log(percentageCalc(graded, backlog));
+  let totalGraded = 0;
+  for (const log of timeseries) {
+    if (new Date(log.date).getTime() >= new Date("2022-05-12").getTime()) {
+      totalGraded += log.cardsGradedToday;
+    }
+  }
 
   return (
     <Card
@@ -56,7 +25,7 @@ const Backlog = ({ className }) => {
       classTitle={cn("title-darkblue", styles.cardTitle)}
     >
       <Stack>
-        <Text>
+        {/* <Text>
           Graded {numberWithCommas(graded)} ({percentageCalc(graded, backlog)}%)
         </Text>
         <Progress
@@ -69,7 +38,13 @@ const Backlog = ({ className }) => {
         </Text>
         <Progress colorScheme={"blue"} value={percentageCalc(shipped, backlog)} />
         <Text>Total backlog {numberWithCommas(backlog)} (100%)</Text>
-        <Progress colorScheme={"orange"} value={100} />
+        <Progress colorScheme={"orange"} value={100} /> */}
+
+        <Text>
+          Total card graded {numberWithCommas(totalGraded)} (
+          {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000 (100%)
+        </Text>
+        <Progress  borderRadius={10} colorScheme={"green"} value={percentageCalc(totalGraded, backlog)} bg={"red.300"} h="10" />
       </Stack>
     </Card>
   );
