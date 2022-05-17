@@ -17,6 +17,9 @@ jobs:
           source_branch: "staging"
           destination_branch: "athena-dev"
           github_token: ${{secrets.GITHUB_TOKEN}}
+      - name: Testing Code
+        run: |
+          console.log( ${{ steps }})
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with:
@@ -40,6 +43,6 @@ jobs:
             await github.rest.pulls.merge({
               merge_method: "squash"
               owner: context.repo.owner,
-              pull_number: ${{steps.pr.outputs.pr_number}},
+              pull_number: ${{  steps.pr.outputs.pr_number  }},
               repo: context.repo.repo,
             })
