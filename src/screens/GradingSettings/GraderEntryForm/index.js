@@ -15,6 +15,8 @@ import {
   FormLabel,
   Text,
   Spinner,
+  Select,
+  Checkbox,
 } from "@chakra-ui/react";
 import Control from "./Control";
 import moment from "moment";
@@ -43,6 +45,7 @@ const startingServiceLevel = {
   },
 };
 const GraderEntryForm = ({ className, ...props }) => {
+  //STATE DECLARATIONS
   const [category, setCategory] = useState("BGS");
   const [cardsReceived, setCardsReceived] = useState("");
   const [cardsShippedToday, setCardsShippedToday] = useState("");
@@ -69,6 +72,9 @@ const GraderEntryForm = ({ className, ...props }) => {
   const [newGraderName, setNewGraderName] = useState("");
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
+  const [grader, setGrader] = useState("test");
+  const [includesSaturday, setIncludesSaturday] = useState(false);
+  const [cardsGraded, setCardsGraded] = useState(0);
   const actions = [
     {
       icon: "calendar",
@@ -76,10 +82,7 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   ];
 
-  React.useEffect(() => {
-    setCategoryType(category);
-  }, [category]);
-
+  //FUNCTIONS
   // generate random string
   const randomNumber = (min, max) => {
     const number = Math.floor(Math.random() * (max - min + 1009)) + min;
@@ -87,6 +90,50 @@ const GraderEntryForm = ({ className, ...props }) => {
     return `${number}${letter}`;
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleSubmit = useCallback(async (e) => {
+    alert(`${grader}, ${cardsGraded}, ${includesSaturday}`);
+    setCardsGraded(0);
+    setIncludesSaturday(false);
+    // const serviceLevel = "/servicelevel";
+    // const cardUpdated = "/grading-service-form";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.post(apiName, cardUpdated, myInit)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCode(response.status_code);
+    //     if (
+    //       twoDayPremium ||
+    //       fiveDayExpress ||
+    //       tenDayExpress ||
+    //       thirtyDayStandard ||
+    //       recase
+    //     ) {
+    //       API.post(apiName, serviceLevel, serviceLevelInit)
+    //         .then((response) => {
+    //           console.log("response from post", response);
+    //           console.log(response.status_code);
+    //         })
+    //         .catch((error) => console.log(error.data));
+    //     }
+    //     setLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     setLoading(false);
+    //   });
+  });
+
+  const handleServiceLevelChange = (e, setServiceLevel) => {
+    setServiceLevel(e.target.value);
+  };
+  const checkDisableSubmit = () => {
+    if (!(grader && cardsGraded)) return true;
+  };
+
+  //DEFINITIONS
   const myInit = {
     body: {
       cards_graded_today: parseInt(cardsGradedToday),
@@ -102,6 +149,7 @@ const GraderEntryForm = ({ className, ...props }) => {
       }`,
     },
   };
+
   const serviceLevelInit = {
     body: {
       two_day: parseInt(twoDayPremium) || 0,
@@ -123,38 +171,13 @@ const GraderEntryForm = ({ className, ...props }) => {
       }`,
     },
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleSubmit = useCallback(async (e) => {
-    const serviceLevel = "/servicelevel";
-    const cardUpdated = "/grading-service-form";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.post(apiName, cardUpdated, myInit)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCode(response.status_code);
-        if (
-          twoDayPremium ||
-          fiveDayExpress ||
-          tenDayExpress ||
-          thirtyDayStandard ||
-          recase
-        ) {
-          API.post(apiName, serviceLevel, serviceLevelInit)
-            .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
-            })
-            .catch((error) => console.log(error.data));
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        setLoading(false);
-      });
-  });
+
+  const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
+
+  //USE EFFECT
+  React.useEffect(() => {
+    setCategoryType(category);
+  }, [category]);
 
   React.useEffect(() => {
     setLoadingForm(true);
@@ -210,37 +233,10 @@ const GraderEntryForm = ({ className, ...props }) => {
     setNotEditable(true);
   }, [startDate]);
 
-  const handleServiceLevelChange = (e, setServiceLevel) => {
-    setServiceLevel(e.target.value);
-  };
-  const checkDisableSubmit = () => {
-    if (!(cardsGradedToday && cardsShippedToday && cardsReceived)) return true;
-    return checkSumServiceLevel();
-  };
-  const checkSumServiceLevel = () => {
-    const two =
-      selectedDayServiceLevel.properties.twoDayPremium ||
-      parseInt(twoDayPremium) ||
-      0;
-    const five =
-      selectedDayServiceLevel.properties.fiveDayExpress ||
-      parseInt(fiveDayExpress) ||
-      0;
-    const ten =
-      selectedDayServiceLevel.properties.tenDayExpress ||
-      parseInt(tenDayExpress) ||
-      0;
-    const thirty =
-      selectedDayServiceLevel.properties.thirtyDayStandard ||
-      parseInt(thirtyDayStandard) ||
-      0;
-    const re =
-      selectedDayServiceLevel.properties.recase || parseInt(recase) || 0;
-    if (two === 0 && five === 0 && ten === 0 && thirty === 0 && re === 0)
-      return false;
-    const totalServiceLevelSum = two + five + ten + thirty + re;
-    if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
-  };
+  //CONSOLE LOGS
+  console.log(cardsGraded);
+  console.log(grader);
+
   return (
     <Card
       className={cn(styles.card, className)}
@@ -273,61 +269,35 @@ const GraderEntryForm = ({ className, ...props }) => {
           <Schedule startDate={startDate} setStartDate={setStartDate} />
         </Modal>
         <Flex>
-          <NumberInput
-            mr={3}
-            value={
-              selectedDayServiceLevel.properties.twoDayPremium || twoDayPremium
-            }
-          >
+          <NumberInput mr={3}>
             <FormLabel>Select grader</FormLabel>
+            <Select onChange={(e) => setGrader(e.target.value)}>
+              {/* TODO : Add options here */}
+              {graders.map((x, index) => (
+                <option value={x}>{x}</option>
+              ))}
+            </Select>
+          </NumberInput>
+          <NumberInput mr={3}>
+            <FormLabel>Enter cards graded</FormLabel>
             <NumberInputField
               focusBorderColor={useColorModeValue("blue.500", "blue.200")}
               borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
               borderRadius={12}
               mb={3}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
               border={`2px solid transparent`}
-              label="Two Day"
+              label="Grader entries"
               type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTwoDayPremium)}
+              onChange={(e) => setCardsGraded(e.target.value)}
+              value={cardsGraded}
             ></NumberInputField>
           </NumberInput>
-          <NumberInput
-            mr={3}
-            value={
-              selectedDayServiceLevel.properties.fiveDayExpress ||
-              fiveDayExpress
-            }
+          <Checkbox
+            isChecked={includesSaturday}
+            onChange={() => setIncludesSaturday(!includesSaturday)}
           >
-            <FormLabel>Select Date</FormLabel>
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDayPremium ||
-                  selectedDayServiceLevel.properties.fiveDayExpress ||
-                  selectedDayServiceLevel.properties.tenDayExpress ||
-                  selectedDayServiceLevel.properties.thirtyDayStandard ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              label="Five Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setFiveDayExpress)}
-            ></NumberInputField>
-          </NumberInput>
+            Includes Saturday work
+          </Checkbox>
         </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
