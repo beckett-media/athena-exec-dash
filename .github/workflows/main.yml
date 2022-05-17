@@ -35,7 +35,7 @@ jobs:
           script: |            
             await github.rest.pulls.createReview({
               event: "APPROVE",
-              owner: repository.owner,
+              owner: context.repo.owner,
               pull_number: steps.pr.outputs.pr_number,
               repo: context.repo.repo,
             })
@@ -45,7 +45,7 @@ jobs:
           script: |            
             await github.rest.pulls.merge({
               merge_method: "squash"
-              owner: repository.owner,
+              owner: context.repo.owner,
               pull_number: steps.pr.outputs.pr_number,
               repo: context.repo.repo,
             })
