@@ -1,57 +1,54 @@
 @import ../../../../styles/helpers
 
 .market
-    margin: 0 -12px
-    +t
-        margin: 0
+  margin: 0 -12px
+  +t
+    margin: 0
 
 .table
-    display: table
-    width: 100%
-    +t
-        display: block
+  display: table
+  width: 100%
+  +t
+    display: block
 
 .row
-    display: table-row
-    +t
-        display: none
+  display: table-row
+  +t
+    display: none
 
 .col
-    position: relative
-    display: table-cell
-    padding: 0 12px 16px
-    vertical-align: middle
-    +caption1
-    color: $n4
+  position: relative
+  display: table-cell
+  padding: 0 12px 16px
+  vertical-align: middle
+  +caption1
+  color: $n4
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    right: 0
+    height: 1px
+    background: $n3
+    +dark
+      background: $n6
+  &:first-child
+    width: 56px
+    font-size: 0
     &:after
-        content: ""
-        position: absolute
-        left: 0
-        bottom: 0
-        right: 0
-        height: 1px
-        background: $n3
-        +dark
-            background: $n6
-    &:first-child
-        width: 56px
-        font-size: 0
-        &:after
-            left: 12px
-    &:last-child
-        &:after
-            right: 12px
+      left: 12px
+  &:last-child
+    &:after
+      right: 12px
 
 .foot
-    display: flex
-    justify-content: center
-    margin-top: 24px
+  margin-top: 24px
 
 .pagination
   justify-content: center
   display: flex
   flexDirection: row
-
 
 ul
   list-style: none
@@ -64,11 +61,9 @@ ul.pagination li
   justify-content: center
   font-size: 23px
 
-
 ul.pagination li a
   text-decoration: none
   font-size: 18px
-
 
 ul.pagination li.active a
   color: white
@@ -76,45 +71,40 @@ ul.pagination li.active a
 ul.pagination li.active
   background-color: #337ab7
 
-
 ul.pagination li a:hover,
 ul.pagination li a.active
   color: #337ab7
-
 
 .pages-selection
   width: 48px
   height: 40px
   color: #337ab7
 
-
 .pagination-wrapper
   display: flex
   justify-content: space-between
 
-
-
 .arrow
-    width: 40px
-    height: 40px
-    border: 2px solid $n3
-    border-radius: 50%
-    background: $n8
-    transition: border-color .2s
-    padding: auto
-    +dark
-        border-color: transparent
+  width: 40px
+  height: 40px
+  border: 2px solid $n3
+  border-radius: 50%
+  background: $n8
+  transition: border-color .2s
+  padding: auto
+  +dark
+    border-color: transparent
     svg
-        fill: $n4
-        transition: fill .2s
-        
+      fill: $n4
+      transition: fill .2s
+
     &:hover
-        border-color: $n3
-        svg
-            fill: $n7
+      border-color: $n3
+      svg
+        fill: $n7
         +dark
-            border-color: $n6
-            svg
-                fill: $n1
+          border-color: $n6
+          svg
+            fill: $n1
     &:not(:last-child)
-        margin-right: 8px
+      margin-right: 8px
