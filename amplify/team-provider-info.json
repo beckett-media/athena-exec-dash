@@ -52,11 +52,11 @@
         "athenaprodcb5f5078": {
           "secretsPathAmplifyAppId": "dwonjf8sejc3s",
           "deploymentBucketName": "amplify-athenaprod-prod-124948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-33496d54793467367075-build.zip"
+          "s3Key": "amplify-builds/athenaprodcb5f5078-784e437658705257736a-build.zip"
         },
         "AdminQueriesa200cd2e": {
           "deploymentBucketName": "amplify-athenaprod-prod-124948-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa200cd2e-426a786c756247596459-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa200cd2e-372b302b53746d4e6263-build.zip"
         }
       }
     }

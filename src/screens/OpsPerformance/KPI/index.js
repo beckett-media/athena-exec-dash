@@ -105,9 +105,9 @@ const KPI = ({ className }) => {
                       <div className={styles.balance} value={x?.value} />
                     </div>
                     <Text fontSize="2xl">{x?.title}</Text>
-                    <Heading as="h3" size="xl">
+                    <Text fontSize={25} fontWeight={"bold"}>
                       {x?.counter}
-                    </Heading>
+                    </Text>
                   </div>
                 </div>
               </div>
