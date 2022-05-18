@@ -92,7 +92,15 @@ const GraderEntryForm = ({ className, ...props }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
+    const cardsGradedSubmit = {
+      startDateFormatted,
+      grader,
+      cardsGraded,
+      includesSaturday,
+    };
+    // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
+    alert(JSON.stringify(cardsGradedSubmit));
+    console.log(cardsGradedSubmit);
     setCardsGraded(0);
     setIncludesSaturday(false);
     // const serviceLevel = "/servicelevel";
@@ -288,8 +296,9 @@ const GraderEntryForm = ({ className, ...props }) => {
               border={`2px solid transparent`}
               label="Grader entries"
               type="number"
-              onChange={(e) => setCardsGraded(e.target.value)}
+              placeholder={0}
               value={cardsGraded}
+              onChange={(e) => setCardsGraded(e.target.value)}
             ></NumberInputField>
           </NumberInput>
           <Checkbox
