@@ -97,12 +97,7 @@ function App() {
   };
 
   return (
-    <SWRConfig
-      value={{
-        refreshInterval: 3000,
-        fetcher,
-      }}
-    >
+    <SWRConfig value={{ fetcher }}>
       <Authenticator
         hideSignUp={true}
         components={components}
