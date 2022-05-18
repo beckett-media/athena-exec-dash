@@ -219,14 +219,14 @@ function ApiDataProvider(props) {
       const { payload } = data;
 
       if (payload.event === "signIn") {
-        console.log("fetch after signIn", payload.data.username);
+        // console.log("fetch after signIn", payload.data.username);
         fetch();
       }
     });
 
     Auth.currentUserInfo().then((user) => {
       if (user) {
-        console.log("fetch after user", user);
+        // console.log("fetch after user", user);
         fetch();
       }
     });

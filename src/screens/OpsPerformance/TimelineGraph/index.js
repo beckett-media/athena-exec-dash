@@ -24,7 +24,7 @@ const MarketData = ({ className }) => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-          console.log(formdata);
+          // console.log(formdata);
           setData(formdata);
         })
         .catch((error) => {

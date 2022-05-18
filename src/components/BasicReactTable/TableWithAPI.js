@@ -3,7 +3,6 @@ import React from "react";
 import FilterTable from "./FilterTable";
 
 export default function TableWithAPI({ cells }) {
-  console.log(cells);
   const columns = React.useMemo(
     () => [
       {
