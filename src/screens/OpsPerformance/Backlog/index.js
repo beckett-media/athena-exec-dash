@@ -5,10 +5,12 @@ import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
 import useTimeseries from "../../../hooks/data/useTimeseries";
+import useDarkMode from "use-dark-mode";
 
 const Backlog = ({ className }) => {
   const backlog = 29000;
   const { timeseries, isLoading } = useTimeseries();
+  const darkMode = useDarkMode(false);
 
   let totalGraded = 0;
   for (const log of timeseries) {
@@ -19,7 +21,7 @@ const Backlog = ({ className }) => {
 
   return (
     <Card
-      title={"Backlog progress indicator"}
+      title={"Backlog Progress Since 5/12"}
       className={cn(styles.card, className)}
       classTitle={cn("title-darkblue", styles.cardTitle)}
     >
@@ -40,10 +42,16 @@ const Backlog = ({ className }) => {
         <Progress colorScheme={"orange"} value={100} /> */}
 
         <Text>
-          Total card graded {numberWithCommas(totalGraded)} (
+          Total Cards Graded Since 5/12 {numberWithCommas(totalGraded)} (
           {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000 (100%)
         </Text>
-        <Progress  borderRadius={10} colorScheme={"green"} value={percentageCalc(totalGraded, backlog)} bg={"red.300"} h="10" />
+        <Progress
+          borderRadius={10}
+          colorScheme={"green"}
+          value={percentageCalc(totalGraded, backlog)}
+          bg={"gray.300"}
+          h="10"
+        />
       </Stack>
     </Card>
   );
