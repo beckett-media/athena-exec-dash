@@ -108,71 +108,72 @@ const CardForm = ({ className, ...props }) => {
     const serviceLevel = "/servicelevel";
     const cardUpdated = "/grading-service-form";
     const apiName = "palentirApi";
-    // setLoading(true);
-    // API.post(apiName, cardUpdated, myInit)
-    //   .then((response) => {
-    //     console.log("response from post", response);
-    //     console.log(response.status_code);
-    //     setStatusCode(response.status_code);
-    //     if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
-    //       API.post(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     }
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.data, "post error");
-    //     setLoading(false);
-    //   });
-    console.log('we made it to post request', myInit, serviceLevelInit)
-    alert('post req', myInit, serviceLevelInit)
+    setLoading(true);
+    API.post(apiName, cardUpdated, myInit)
+      .then((response) => {
+        console.log("response from post", response);
+        console.log(response.status_code);
+        setStatusCode(response.status_code);
+        if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
+          API.post(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              console.log("response from post", response);
+              console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        setLoading(false);
+      });
+      setNotEditable(true);
   });
+
   const handlePutSubmit = useCallback(async(e) => {
-    // const serviceLevel = "/servicelevel";
-    // const cardUpdated = "/grading-service-form";
-    // const apiName = "palentirApi";
-    // setLoading(true);
-    // API.put(apiName, cardUpdated, myInit)
-    //   .then((response) => {
-    //     setStatusCode(response.status_code);
-    //     if (serviceLevelRecieved) {
-    //       API.put(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     } else {
-    //       API.post(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     }
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.data, "post error");
-    //     setLoading(false);
-    //   });
-    console.log('we made it to put request', myInit, serviceLevelInit)
-    alert('put req', myInit, serviceLevelInit)
+    const serviceLevel = "/servicelevel";
+    const cardUpdated = "/grading-service-form";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.put(apiName, cardUpdated, myInit)
+      .then((response) => {
+        setStatusCode(response.status_code);
+        if (serviceLevelRecieved) {
+          console.log('service lvl put')
+          API.put(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              console.log("response from post", response);
+              console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        } else {
+          console.log('service lvl post')
+          API.post(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              console.log("response from post", response);
+              console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        setLoading(false);
+      });
+      setNotEditable(true);
   })
 
-  React.useEffect(() => {
-    setLoadingForm(true);
-    if (status_code === 200) {
-      setLoadingForm(false);
-      setCardsReceived(0);
-      setCardsShippedToday(0);
-      setCardsGradedToday(0);
-    }
-  }, [handlePostSubmit]);
+  // React.useEffect(() => {
+  //   setLoadingForm(true);
+  //   if (status_code === 200) {
+  //     setLoadingForm(false);
+  //     setCardsReceived(0);
+  //     setCardsShippedToday(0);
+  //     setCardsGradedToday(0);
+  //   }
+  // }, [handlePostSubmit, handlePutSubmit]);
 
   React.useEffect(() => {
     (async () => {
@@ -186,7 +187,7 @@ const CardForm = ({ className, ...props }) => {
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
           );
           if (filteredFormDataByDay[0]) {
-            console.log(filteredFormDataByDay[0].properties.submissionItem, 'this is current submis item')
+            console.log('we made it here', filteredFormDataByDay[0])
             setCardsGradedToday(filteredFormDataByDay[0].properties.cardsGradedToday);
             setCardsShippedToday(filteredFormDataByDay[0].properties.cardsShippedToday);
             setCardsReceived(filteredFormDataByDay[0].properties.cardsReceived);
@@ -242,11 +243,13 @@ const CardForm = ({ className, ...props }) => {
           console.log(error.response);
         });
     })();
-  }, [startDate]);
+    setStatusCode(0);
+  }, [startDateFormatted]);
 
-  const handleServiceLevelChange = (e,  setServiceLevel) => {
+  const handleChange = (e,  setServiceLevel) => {
     setServiceLevel(e.target.value);
   };
+
   const checkDisableSubmit = () => {
     if (
       !(cardsGradedToday && cardsShippedToday && cardsReceived && !notEditable)
@@ -254,6 +257,7 @@ const CardForm = ({ className, ...props }) => {
       return true;
     return checkSumServiceLevel();
   };
+
   const checkSumServiceLevel = () => {
     if (notEditable) {
       return false;
@@ -273,6 +277,28 @@ const CardForm = ({ className, ...props }) => {
     const totalServiceLevelSum = two + five + ten + thirty + re;
     if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
   };
+  const CreateNumberInput = (value, setState, label) => {
+    return (
+      <NumberInput value={ value }>
+          <FormLabel>{label}</FormLabel>
+          <NumberInputField
+            focusBorderColor={ useColorModeValue("blue.500", "blue.200") }
+            borderColor={ darkMode.value ? "#272B30" : "#EFEFEF" }
+            borderRadius={12}
+            disabled={ notEditable }
+            border={`2px solid transparent`}
+            mb={25}
+            size="lg"
+            label={ label }
+            type="number"
+            placeholder="0"
+            onChange={(e) => {
+              handleChange(e, setState);
+            }}
+          />
+        </NumberInput>
+    )
+  }
   return (
     <Card
       className={cn(styles.card, className)}
@@ -304,77 +330,9 @@ const CardForm = ({ className, ...props }) => {
         <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
           <Schedule startDate={startDate} setStartDate={setStartDate} />
         </Modal>
-        <NumberInput
-          value={
-             cardsGradedToday
-          }
-        >
-          <FormLabel>Cards graded today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            // value={cardsGradedToday}
-            disabled={
-               notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Cards graded today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setCardsGradedToday(e.target.value);
-            }}
-          />
-        </NumberInput>
-        <NumberInput
-          value={
-            cardsShippedToday
-          }
-        >
-          <FormLabel>Cards shipped today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            border={`2px solid transparent`}
-            disabled={
-              notEditable
-            }
-            mb={25}
-            value={0}
-            defaultValue={0}
-            size="lg"
-            label="Cards shipped today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => setCardsShippedToday(e.target.value)}
-            // tooltip="Maximum 100 characters. No HTML or emoji allowed"
-          />
-        </NumberInput>
-        <NumberInput
-          value={cardsReceived}
-        >
-          <FormLabel>Cards received today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            border={`2px solid transparent`}
-            disabled={
-               notEditable
-            }
-            mb={35}
-            value={cardsReceived}
-            size="lg"
-            label="Cards received today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => setCardsReceived(e.target.value)}
-          />
-        </NumberInput>
+        { CreateNumberInput(cardsGradedToday, setCardsGradedToday, "Cards graded today") }
+        { CreateNumberInput(cardsShippedToday, setCardsShippedToday, "Cards shipped today") }
+        { CreateNumberInput(cardsReceived, setCardsReceived, "Cards recieved today") }
         <Flex>
           <FormLabel mb={3}>
             Cards Recieved By Service Level (Optional):
@@ -403,7 +361,7 @@ const CardForm = ({ className, ...props }) => {
               label="Two Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTwoDay)}
+              onChange={(e) => handleChange(e, setTwoDay)}
             ></NumberInputField>
             <FormLabel mb={5} textAlign={"center"}>
               {" "}
@@ -426,7 +384,7 @@ const CardForm = ({ className, ...props }) => {
               label="Five Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setFiveDay)}
+              onChange={(e) => handleChange(e, setFiveDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Five Day </FormLabel>
           </NumberInput>
@@ -446,7 +404,7 @@ const CardForm = ({ className, ...props }) => {
               label="Ten Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTenDay)}
+              onChange={(e) => handleChange(e, setTenDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Ten Day </FormLabel>
           </NumberInput>
@@ -466,7 +424,7 @@ const CardForm = ({ className, ...props }) => {
               label="Thirty Day"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setThirtyDay)}
+              onChange={(e) => handleChange(e, setThirtyDay)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Thirty Day </FormLabel>
           </NumberInput>
@@ -486,7 +444,7 @@ const CardForm = ({ className, ...props }) => {
               label="Recase"
               type="number"
               placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setRecase)}
+              onChange={(e) => handleChange(e, setRecase)}
             ></NumberInputField>
             <FormLabel textAlign={"center"}> Recase </FormLabel>
           </NumberInput>
@@ -565,7 +523,10 @@ const CardForm = ({ className, ...props }) => {
                   variantColor="purple"
                   variant="ghost"
                   mt={15}
-                  onClick={() => setNotEditable(false)}
+                  onClick={() => {
+                    setStatusCode(0);
+                    setNotEditable(false)}
+                  } 
                   size="lg"
                   px="8"
                   mr={10}
