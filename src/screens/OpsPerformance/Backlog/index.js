@@ -4,12 +4,11 @@ import { percentageCalc, numberWithCommas } from "../../../utils";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
-
-import { useApiData } from "../../../providers/apiData";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const Backlog = ({ className }) => {
   const backlog = 29000;
-  const { timeseries } = useApiData();
+  const { timeseries, isLoading } = useTimeseries();
 
   let totalGraded = 0;
   for (const log of timeseries) {
