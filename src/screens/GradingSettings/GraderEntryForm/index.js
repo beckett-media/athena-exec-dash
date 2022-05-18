@@ -72,7 +72,7 @@ const GraderEntryForm = ({ className, ...props }) => {
   const [newGraderName, setNewGraderName] = useState("");
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
-  const [grader, setGrader] = useState("test");
+  const [grader, setGrader] = useState("");
   const [includesSaturday, setIncludesSaturday] = useState(false);
   const [cardsGraded, setCardsGraded] = useState(0);
   const actions = [
@@ -280,6 +280,7 @@ const GraderEntryForm = ({ className, ...props }) => {
           <NumberInput mr={3}>
             <FormLabel>Select grader</FormLabel>
             <Select onChange={(e) => setGrader(e.target.value)}>
+              <option value="">Select</option>
               {/* TODO : Add options here */}
               {graders.map((x, index) => (
                 <option value={x}>{x}</option>
