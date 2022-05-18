@@ -125,35 +125,40 @@ const NewGraderForm = ({ className, ...props }) => {
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    const serviceLevel = "/servicelevel";
-    const cardUpdated = "/grading-service-form";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.post(apiName, cardUpdated, myInit)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCode(response.status_code);
-        if (
-          twoDayPremium ||
-          fiveDayExpress ||
-          tenDayExpress ||
-          thirtyDayStandard ||
-          recase
-        ) {
-          API.post(apiName, serviceLevel, serviceLevelInit)
-            .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
-            })
-            .catch((error) => console.log(error.data));
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        setLoading(false);
-      });
+    const submitPayload = {
+      newGraderName,
+    };
+
+    alert(JSON.stringify(submitPayload));
+    // const serviceLevel = "/servicelevel";
+    // const cardUpdated = "/grading-service-form";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.post(apiName, cardUpdated, myInit)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCode(response.status_code);
+    //     if (
+    //       twoDayPremium ||
+    //       fiveDayExpress ||
+    //       tenDayExpress ||
+    //       thirtyDayStandard ||
+    //       recase
+    //     ) {
+    //       API.post(apiName, serviceLevel, serviceLevelInit)
+    //         .then((response) => {
+    //           console.log("response from post", response);
+    //           console.log(response.status_code);
+    //         })
+    //         .catch((error) => console.log(error.data));
+    //     }
+    //     setLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     setLoading(false);
+    //   });
   });
 
   React.useEffect(() => {
@@ -214,33 +219,9 @@ const NewGraderForm = ({ className, ...props }) => {
     setServiceLevel(e.target.value);
   };
   const checkDisableSubmit = () => {
-    if (!(cardsGradedToday && cardsShippedToday && cardsReceived)) return true;
-    return checkSumServiceLevel();
+    if (!newGraderName) return true;
   };
-  const checkSumServiceLevel = () => {
-    const two =
-      selectedDayServiceLevel.properties.twoDayPremium ||
-      parseInt(twoDayPremium) ||
-      0;
-    const five =
-      selectedDayServiceLevel.properties.fiveDayExpress ||
-      parseInt(fiveDayExpress) ||
-      0;
-    const ten =
-      selectedDayServiceLevel.properties.tenDayExpress ||
-      parseInt(tenDayExpress) ||
-      0;
-    const thirty =
-      selectedDayServiceLevel.properties.thirtyDayStandard ||
-      parseInt(thirtyDayStandard) ||
-      0;
-    const re =
-      selectedDayServiceLevel.properties.recase || parseInt(recase) || 0;
-    if (two === 0 && five === 0 && ten === 0 && thirty === 0 && re === 0)
-      return false;
-    const totalServiceLevelSum = two + five + ten + thirty + re;
-    if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
-  };
+
   return (
     <Card
       className={cn(styles.card, className)}

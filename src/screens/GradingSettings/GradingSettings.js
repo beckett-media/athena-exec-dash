@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./GradingSettings.module.sass";
 import Card from "../../components/Card";
-import Table from "../../components/Table";
+import GradersTable from "./GradersTable";
 import { API } from "aws-amplify";
 import NewGraderForm from "./NewGraderForm";
 import GraderEntryForm from "./GraderEntryForm";
@@ -41,11 +41,15 @@ const UpdateData = () => {
       <Card
         className={styles.card}
         classCardHead={styles.head}
-        title="Daily Records of Cards Received, Graded, and Shipped"
+        title="Cards Graded Per Day"
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <Table data={data} title="date selected" setLoading={setLoading} />
+          <GradersTable
+            data={data}
+            title="date selected"
+            setLoading={setLoading}
+          />
         </div>
       </Card>
     </>
