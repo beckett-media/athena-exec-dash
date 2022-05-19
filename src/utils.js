@@ -19,3 +19,17 @@ export const compareArrays = (arr1, arr2) => {
     return false;
   }
 };
+
+// capitalize first letter
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+// function to ellipsis text after 40 characters
+export const ellipsisText = (text) => {
+  if (text.length > 40) {
+    return text.substring(0, 60) + "...";
+  } else {
+    return text;
+  }
+};

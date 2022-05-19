@@ -26,15 +26,19 @@ const ServicesGraph = ({ className }) => {
           setData(formdata);
         })
         .catch((error) => {
-          console.log(error.response, 'service data');
+          console.log(error.response, "service data");
         });
     })();
+
     setLoading(false);
   }, [loading]);
+  // function to filter data by date range and return only the data for the selected date range
 
   var dataG = [
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+      x: data?.map((d) =>
+        d?.properties?.submissionItem !== "f12st" ? moment(d?.properties.date).format("MM/DD/YYYY") : null
+      ),
       y: data?.map((d) => d?.properties?.twoDay),
 
       type: "scatter",
@@ -207,7 +211,7 @@ const ServicesGraph = ({ className }) => {
 
   return (
     <Card
-      title={"Cards received per day, per service level"}
+      title={"Cards Received Per Day, Per Service Level"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-yellow", styles.cardTitle)}
