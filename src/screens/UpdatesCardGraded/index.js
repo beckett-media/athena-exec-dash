@@ -11,38 +11,38 @@ const UpdateData = () => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
 
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/grading-service-form`;
+  // React.useEffect(() => {
+  //   setLoading(true);
+  //   (async () => {
+  //     const apiName = "palentirApi";
+  //     const path = `/timeserie`;
+  //     API.get(apiName, path)
+  //       .then((response) => {
+  //         const formdata = response.data?.data;
+  //         setData(formdata);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error.response);
+  //       });
+  //   })();
+  //   setLoading(false);
+  // }, [loading]);
 
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setLoading(false);
-  }, [loading]);
 
   return (
     <>
       <CardForm setLoading={setLoading} />
       <Box mt={12} />
-      <Card
+      {/* <Card
         className={styles.card}
         classCardHead={styles.head}
         title="Daily Records of Cards Received, Graded, and Shipped"
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <Table data={data} title="date selected" setLoading={setLoading} />
+          <Table data={data} title="date posted" setLoading={setLoading} />
         </div>
-      </Card>
+      </Card> */}
     </>
   );
 };
