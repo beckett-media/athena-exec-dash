@@ -23,10 +23,11 @@ const MarketData = ({ className }) => {
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
+          // console.log(formdata);
           setData(formdata);
         })
         .catch((error) => {
-          console.log(error.response);
+          console.log(error);
         });
     })();
     (async () => {
@@ -38,7 +39,7 @@ const MarketData = ({ className }) => {
           setServiceLevelData(formdata);
         })
         .catch((error) => {
-          console.log(error.response);
+          console.log(error);
         });
     })();
     setLoading(false);

@@ -29,7 +29,6 @@ const UpdateData = () => {
   // }, [loading]);
 
 
-
   return (
     <>
       <CardForm setLoading={setLoading} />
