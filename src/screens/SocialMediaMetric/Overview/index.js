@@ -76,7 +76,7 @@ const PostPerWeekGraph = ({ className, dataI, socialData }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title="Post Volume Around Beckett"
+      title="Post Volume of Beckett Mentions per Week"
       classTitle={cn("title-red", styles.cardTitle)}
       classCardHead={styles.cardHead}
     >

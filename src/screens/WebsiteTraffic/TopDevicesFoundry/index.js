@@ -73,9 +73,10 @@ function Displaydevices({ className, dataD }) {
     color: Colors[index],
   }));
 
-  // if (loading) {
-  //   return <p>loading...</p>;
-  // }
+  // capitalize first letter
+  const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
   return (
     <>
@@ -83,7 +84,7 @@ function Displaydevices({ className, dataD }) {
         className={cn(styles.card, className)}
         title="Top devices"
         classTitle="title-blue"
-        description={`This shows the devices used by Beckett's visitors`}
+        description={`This shows the devices used by Beckett's visitors.`}
         head={
           <>
             <Dropdown
@@ -161,7 +162,7 @@ function Displaydevices({ className, dataD }) {
               index // map dataForPieChart array to legend array with name and value properties and index property
             ) => (
               <div className={styles.indicator} key={index}>
-                <div className={styles.title}>{x?.name}</div>
+                <div className={styles.title}>{capitalize(x?.name)}</div>
                 <div style={{ color: x.color }}>{x.value}</div>
               </div>
             )
