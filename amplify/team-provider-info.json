@@ -20,43 +20,12 @@
       "function": {
         "athenaprodcb5f5078": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-7349665a614c4371426e-build.zip",
+          "s3Key": "amplify-builds/athenaprodcb5f5078-426b5571305738735166-build.zip",
           "secretsPathAmplifyAppId": "dwonjf8sejc3s"
         },
         "AdminQueriesa200cd2e": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa200cd2e-372b302b53746d4e6263-build.zip"
-        }
-      }
-    }
-  },
-  "prod": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-athenaprod-prod-124948-authRole",
-      "UnauthRoleArn": "arn:aws:iam::548281136650:role/amplify-athenaprod-prod-124948-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::548281136650:role/amplify-athenaprod-prod-124948-authRole",
-      "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-athenaprod-prod-124948-deployment",
-      "UnauthRoleName": "amplify-athenaprod-prod-124948-unauthRole",
-      "StackName": "amplify-athenaprod-prod-124948",
-      "StackId": "arn:aws:cloudformation:us-west-1:548281136650:stack/amplify-athenaprod-prod-124948/600973a0-d14a-11ec-ae66-06197b2dc565",
-      "AmplifyAppId": "dwonjf8sejc3s",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-athenaprod-prod-124948-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
-    },
-    "categories": {
-      "auth": {
-        "athenaprod": {},
-        "userPoolGroups": {}
-      },
-      "function": {
-        "athenaprodcb5f5078": {
-          "secretsPathAmplifyAppId": "dwonjf8sejc3s",
-          "deploymentBucketName": "amplify-athenaprod-prod-124948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-784e437658705257736a-build.zip"
-        },
-        "AdminQueriesa200cd2e": {
-          "deploymentBucketName": "amplify-athenaprod-prod-124948-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa200cd2e-372b302b53746d4e6263-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa200cd2e-646e7836594177717449-build.zip"
         }
       }
     }
