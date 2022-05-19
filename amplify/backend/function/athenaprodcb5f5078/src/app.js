@@ -819,6 +819,77 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
       });
   }
 });
+
+//PUT//
+app.put("/servicelevel", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+// ######################  CRUD Palantir ######################
+const riWrt = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+const createServicesRecord = "update-service";
+const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrt}/actions/${createServicesRecord}/apply`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ POST VAULTING RECORD ############################
+
+  const options = {
+    method: "POST",
+    url: applyAction_createObject,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+    data: {
+      "parameters": {
+        "AthenaServiceForm": req.body.submission_item,
+        "date": req.body.date,
+        "ten_day": req.body.ten_day,
+        "thirty_day": req.body.thirty_day,
+        "total": req.body.total,
+        "hidden_1": req.body.hidden_1,
+        "recase": req.body.recase,
+        "five_day": req.body.five_day,
+        "type": "BGS",
+        "two_day": req.body.two_day,
+        "revenueshipped": req.body.revenueshipped,
+        "verified": req.body.verified,
+      },
+    },
+  };
+
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        res.send({
+          message: "successfully updated",
+          data: response.data,
+          status_code: response.status,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          status: "error",
+          data: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
 // ########################################################################################
 // #################### [[[END]]] - Servive Level, Verified, revenue Shipped [Prod] #####
 // ########################################################################################
