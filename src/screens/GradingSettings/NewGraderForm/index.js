@@ -126,7 +126,7 @@ const NewGraderForm = ({ className, ...props }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
     const submitPayload = {
-      newGraderName,
+      new_grader_name: newGraderName,
     };
 
     alert(JSON.stringify(submitPayload));

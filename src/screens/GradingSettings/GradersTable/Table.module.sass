@@ -15,6 +15,9 @@
     display: table-row
     +t
         display: none
+    &_special
+        background-color: rgba(#fff, 0.1)
+        color: #fff !important
 
 .col
     position: relative
@@ -57,3 +60,85 @@
     display: flex
     justify-content: center
     margin-top: 24px
+
+.price,
+.empty
+    flex-shrink: 0
+    display: inline-block
+    padding: 0 8px
+    border-radius: 6px
+    line-height: 32px
+    font-weight: 700
+
+.price
+    background: $s4
+    +dark
+        color: $n7
+
+.empty
+    background: $n3
+    +dark
+        background: $n6
+        color: $n1
+
+.tab_row
+    display: table-row
+    transition: background .2s
+    +t
+        position: relative
+        display: block
+        margin-bottom: 24px
+        padding-bottom: 24px
+        border-bottom: 1px solid $n3
+        +dark
+            border-color: $n6
+    &:hover
+        +rmin(1260)
+            background: $n2
+            +dark
+                background: $n6
+            .control
+                visibility: visible
+                opacity: 1
+
+.tab_col
+    position: relative
+    display: table-cell
+    vertical-align: middle
+    padding: 16px 12px
+    color: $n7
+    +t
+        display: block
+        position: static
+        padding: 0
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        right: 0
+        height: 1px
+        background: $n3
+        +dark
+            background: $n6
+        +t
+            display: none
+    &:first-child
+        width: 56px
+        border-radius: 8px 0 0 8px
+        font-size: 0
+        +t
+            display: none
+        &:after
+            left: 12px
+    &:last-child
+        padding-right: 164px
+        border-radius: 0 8px 8px 0
+        color: $n4
+        +t
+            padding: 0
+        &:after
+            right: 12px
+    &:not(:nth-child(2))
+        +t
+            display: none

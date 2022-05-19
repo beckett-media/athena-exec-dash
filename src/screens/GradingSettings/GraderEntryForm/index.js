@@ -93,10 +93,10 @@ const GraderEntryForm = ({ className, ...props }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
     const cardsGradedSubmit = {
-      startDateFormatted,
+      start_date_formatted: startDateFormatted,
       grader,
-      cardsGraded,
-      includesSaturday,
+      cards_graded: cardsGraded,
+      includes_saturday: includesSaturday,
     };
     // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
     alert(JSON.stringify(cardsGradedSubmit));

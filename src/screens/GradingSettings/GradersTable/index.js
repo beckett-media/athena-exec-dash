@@ -5,16 +5,26 @@ import Checkbox from "../../../components/Checkbox";
 import Loader from "../../../components/Loader";
 import Row from "./Row";
 import Pagination from "../../../components/Pagination/Pagination";
-import { Box, FormLabel } from "@chakra-ui/react";
+import { Text, Box, FormLabel } from "@chakra-ui/react";
 import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
-import Text from "../../../components/Text";
+import moment from "moment";
+import stylesControl from "./Control.module.sass";
 
-const GradersTable = ({ items, title, data, setLoading }) => {
+const GradersTable = ({ items, title, data, setLoading, className }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
+  const [startDate, setStartDate] = useState(new Date());
+  const [visibleModal, setVisibleModal] = useState(false);
+  const actions = [
+    {
+      icon: "calendar",
+      action: () => setVisibleModal(true),
+    },
+  ];
+  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
 
   const handleChange = (id) => {
     if (selectedFilters.includes(id)) {
@@ -35,33 +45,35 @@ const GradersTable = ({ items, title, data, setLoading }) => {
     return item;
   };
 
+  console.log(startDateFormatted);
+
   return (
     <div className={styles.wrapper}>
+      <Box mb={25}>
+        <FormLabel>Select Week</FormLabel>
+        <div className={cn(stylesControl.control, className)}>
+          {actions.map((x, index) => (
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                width: "100%",
+              }}
+              key={index}
+              onClick={x.action}
+            >
+              <Icon fill={"#33383F"} name={x.icon} size="36" />
+              <Text ml={5}>{startDateFormatted}</Text>
+            </button>
+          ))}
+        </div>
+      </Box>
+      <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
+        <Schedule startDate={startDate} setStartDate={setStartDate} />
+      </Modal>
       <div className={styles.table}>
-        <Box mb={25}>
-          <FormLabel>Select Date</FormLabel>
-          <div className={cn(stylesControl.control, className)}>
-            {actions.map((x, index) => (
-              <button
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexDirection: "row",
-                  justifyContent: "flex-start",
-                  width: "20%",
-                }}
-                key={index}
-                onClick={x.action}
-              >
-                <Icon fill={"#33383F"} name={x.icon} size="36" />
-                <Text ml={5}>{startDateFormatted}</Text>
-              </button>
-            ))}
-          </div>
-        </Box>
-        <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
-          <Schedule startDate={startDate} setStartDate={setStartDate} />
-        </Modal>
         <div className={styles.row}>
           <div className={styles.col}></div>
           <div className={styles.col}></div>
@@ -71,6 +83,7 @@ const GradersTable = ({ items, title, data, setLoading }) => {
           <div className={styles.col}>Wednesday</div>
           <div className={styles.col}>Thursday</div>
           <div className={styles.col}>Friday</div>
+          <div className={styles.col}>Includes Saturday</div>
         </div>
         {currentPageItems?.map((x, index) => (
           <Row
@@ -82,6 +95,29 @@ const GradersTable = ({ items, title, data, setLoading }) => {
             onChange={() => handleChange(x.id)}
           />
         ))}
+        <div className={cn(styles.tab_row)}>
+          <div className={styles.tab_col}></div>
+          <div className={styles.tab_col}></div>
+          <div className={cn(styles.tab_col, styles.row_special)}>TOTAL</div>
+          <div className={cn(styles.tab_col, styles.row_special)}>
+            <div className={styles.empty}>test</div>
+          </div>
+          <div className={cn(styles.tab_col, styles.row_special)}>
+            <div className={styles.empty}>test</div>
+          </div>
+          <div className={cn(styles.tab_col, styles.row_special)}>
+            <div className={styles.empty}>test</div>
+          </div>
+          <div className={cn(styles.tab_col, styles.row_special)}>
+            <div className={styles.empty}>test</div>
+          </div>
+          <div className={cn(styles.tab_col, styles.row_special)}>
+            <div className={styles.empty}>test</div>
+          </div>
+          <div className={styles.tab_col}>
+            <div className={styles.empty}></div>
+          </div>
+        </div>
       </div>
       <div className={styles.pagination}>
         <Pagination

@@ -34,6 +34,10 @@ const Row = ({ item, value, onChange, index, setLoading }) => {
   ];
 
   const selectedData = item?.properties;
+  // const selectedValues = Object.values(selectedData);
+
+  // console.log(item?.properties);
+  // console.log(selectedValues);
 
   return (
     <>
@@ -53,67 +57,31 @@ const Row = ({ item, value, onChange, index, setLoading }) => {
             items={actions}
           />
         </div>
+
         <div className={styles.col}>
-          {item?.properties?.type > 0 ? (
-            <div className={styles.price}>{item?.properties?.type}</div>
-          ) : (
-            <div className={styles.empty}>{item?.properties?.type}</div>
-          )}
+          <div className={styles.empty}>{item?.properties?.type}</div>
         </div>
         <div className={styles.col}>
-          {item?.properties?.cardsReceived < 0 ? (
-            <div className={styles.price}>
-              {item?.properties?.cardsReceived}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              {item?.properties?.cardsReceived}
-            </div>
-          )}
+          <div className={styles.empty}>
+            {item?.properties?.cardsGradedToday}
+          </div>
         </div>
         <div className={styles.col}>
-          {item?.properties?.cardsGradedToday < 0 ? (
-            <div className={styles.price}>
-              {item?.properties?.cardsGradedToday}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              {item?.properties?.cardsGradedToday}
-            </div>
-          )}
+          <div className={styles.empty}>
+            {item?.properties?.cardsShippedToday}
+          </div>
         </div>
         <div className={styles.col}>
-          {item?.properties?.cardsShippedToday < 0 ? (
-            <div className={styles.price}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          )}
+          <div className={styles.empty}>{item?.properties?.cardsReceived}</div>
         </div>
         <div className={styles.col}>
-          {item?.properties?.cardsShippedToday < 0 ? (
-            <div className={styles.price}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          )}
+          <div className={styles.empty}>{item?.properties?.cardsReceived}</div>
         </div>
         <div className={styles.col}>
-          {item?.properties?.cardsShippedToday < 0 ? (
-            <div className={styles.price}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              {item?.properties?.cardsShippedToday}
-            </div>
-          )}
+          <div className={styles.empty}>{item?.properties?.cardsReceived}</div>
+        </div>
+        <div className={styles.col}>
+          <div className={styles.empty}>{item?.properties?.cardsReceived}</div>
         </div>
       </div>
       <ModalProduct
