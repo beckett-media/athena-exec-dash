@@ -4,13 +4,12 @@ import { percentageCalc, numberWithCommas } from "../../../utils";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 import useDarkMode from "use-dark-mode";
-
-import { useApiData } from "../../../providers/apiData";
 
 const Backlog = ({ className }) => {
   const backlog = 29000;
-  const { timeseries } = useApiData();
+  const { timeseries, isLoading } = useTimeseries();
   const darkMode = useDarkMode(false);
 
   let totalGraded = 0;
