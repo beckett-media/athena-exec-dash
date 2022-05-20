@@ -149,6 +149,40 @@ const CardForm = ({ className, ...props }) => {
           console.log('service lvl post')
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
+              // console.log("response from post", response);
+              // console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        setLoading(false);
+      });
+      setNotEditable(true);
+  });
+
+  const handlePutSubmit = useCallback(async(e) => {
+    const serviceLevel = "/servicelevel";
+    const cardUpdated = "/grading-service-form";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.put(apiName, cardUpdated, myInit)
+      .then((response) => {
+        setStatusCode(response.status_code);
+        if (serviceLevelRecieved) {
+          console.log('service lvl put')
+          API.put(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              console.log("response from post", response);
+              console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        } else {
+          console.log('service lvl post')
+          API.post(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
               console.log("response from post", response);
               console.log(response.status_code);
             })
@@ -162,16 +196,6 @@ const CardForm = ({ className, ...props }) => {
       });
       setNotEditable(true);
   })
-
-  // React.useEffect(() => {
-  //   setLoadingForm(true);
-  //   if (status_code === 200) {
-  //     setLoadingForm(false);
-  //     setCardsReceived(0);
-  //     setCardsShippedToday(0);
-  //     setCardsGradedToday(0);
-  //   }
-  // }, [handlePostSubmit, handlePutSubmit]);
 
   React.useEffect(() => {
     (async () => {
@@ -275,18 +299,18 @@ const CardForm = ({ className, ...props }) => {
     const totalServiceLevelSum = two + five + ten + thirty + re;
     if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
   };
-  const CreateNumberInput = (value, setState, label) => {
+
+  const CreateNumberInput = ( value, setState, label, marginRight = 0, marginBottom, formLabelTop = true ) => {
     return (
-      <NumberInput value={ value }>
-          <FormLabel>{label}</FormLabel>
+      <NumberInput mr ={marginRight} value={ value }>
+          {formLabelTop && <FormLabel> { label } </FormLabel>} 
           <NumberInputField
             focusBorderColor={ useColorModeValue("blue.500", "blue.200") }
             borderColor={ darkMode.value ? "#272B30" : "#EFEFEF" }
             borderRadius={12}
             disabled={ notEditable }
             border={`2px solid transparent`}
-            mb={25}
-            size="lg"
+            mb={ marginBottom }
             label={ label }
             type="number"
             placeholder="0"
@@ -294,6 +318,8 @@ const CardForm = ({ className, ...props }) => {
               handleChange(e, setState);
             }}
           />
+
+          {!formLabelTop && <FormLabel mb={10} textAlign={"center"}> {label} </FormLabel>} 
         </NumberInput>
     )
   }
@@ -302,6 +328,7 @@ const CardForm = ({ className, ...props }) => {
       className={cn(styles.card, className)}
       title="Cards Received, Graded, & Shipped Input Form"
       classTitle="title-green"
+      description={"Select a previous date to view and edit data"}
     >
       <div className={styles.images}>
         <Box mb={25}>
@@ -328,9 +355,11 @@ const CardForm = ({ className, ...props }) => {
         <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
           <Schedule startDate={startDate} setStartDate={setStartDate} />
         </Modal>
-        { CreateNumberInput(cardsGradedToday, setCardsGradedToday, "Cards graded today") }
-        { CreateNumberInput(cardsShippedToday, setCardsShippedToday, "Cards shipped today") }
-        { CreateNumberInput(cardsReceived, setCardsReceived, "Cards recieved today") }
+        <Flex>
+          { CreateNumberInput(cardsGradedToday, setCardsGradedToday, "Cards graded today", 10, 25) }
+          { CreateNumberInput(cardsShippedToday, setCardsShippedToday, "Cards shipped today", 10, 25) }
+          { CreateNumberInput(cardsReceived, setCardsReceived, "Cards recieved today", 10, 25) }
+        </Flex>
         <Flex>
           <FormLabel mb={3}>
             Cards Recieved By Service Level (Optional):
@@ -343,157 +372,15 @@ const CardForm = ({ className, ...props }) => {
           )}
         </Flex>
         <Flex>
-          <NumberInput
-            mr={3}
-            value={twoDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              disabled={
-                notEditable
-              }
-              border={`2px solid transparent`}
-              label="Two Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleChange(e, setTwoDay)}
-            ></NumberInputField>
-            <FormLabel mb={5} textAlign={"center"}>
-              {" "}
-              Two Day{" "}
-            </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={fiveDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                notEditable
-              }
-              label="Five Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleChange(e, setFiveDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Five Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={tenDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                notEditable
-              }
-              label="Ten Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleChange(e, setTenDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Ten Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={thirtyDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                notEditable
-              }
-              label="Thirty Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleChange(e, setThirtyDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Thirty Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={recase}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                notEditable
-              }
-              label="Recase"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleChange(e, setRecase)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Recase </FormLabel>
-          </NumberInput>
+          { CreateNumberInput(twoDay, setTwoDay, "Two Day", 3, 0, false) }
+          { CreateNumberInput(fiveDay, setFiveDay, "Five Day", 3, 0, false) }
+          { CreateNumberInput(tenDay, setTenDay, "Ten Day", 3, 0, false) }
+          { CreateNumberInput(thirtyDay, setThirtyDay, "Thirty Day", 3, 0, false) } 
+          { CreateNumberInput(recase, setRecase, "Recase", 3, 0, false) }
         </Flex>
         <Flex>
-        <NumberInput
-          value={
-            revenueshipped
-          }
-        >
-          <FormLabel>Revenue Of Cards Shipped</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            disabled={
-              notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Revenue Of Cards Shipped"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setRevenueShipped(e.target.value);
-            }}
-          />
-        </NumberInput>
-        <NumberInput
-          value={verified}
-        >
-          <FormLabel>Cards Verified</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            disabled={
-              notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Cards Verified"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setVerified(e.target.value);
-            }}
-          />
-        </NumberInput>
+          { CreateNumberInput(revenueshipped, setRevenueShipped, "Revenue Of Cards Shipped (Optional)", 3, 5) }
+          { CreateNumberInput(verified, setVerified, "Cards Verified (Optional)", 3, 10) }
         </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Divider />
@@ -516,8 +403,8 @@ const CardForm = ({ className, ...props }) => {
             >
               Save submission
             </Button>
-            { notEditable && 
-                <Button                
+            { notEditable && serviceLevelRecieved &&
+                <Button
                   variantColor="purple"
                   variant="ghost"
                   mt={15}
@@ -528,7 +415,7 @@ const CardForm = ({ className, ...props }) => {
                   size="lg"
                   px="8"
                   mr={10}
-                  bg={"#83BF6E"}
+                  bg={"blue"}
                   // eslint-disable-next-line react-hooks/rules-of-hooks
                   _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
                   // eslint-disable-next-line react-hooks/rules-of-hooks

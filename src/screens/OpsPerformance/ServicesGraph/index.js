@@ -16,7 +16,6 @@ const ServicesGraph = ({ className }) => {
     {
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.twoDay),
-
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
