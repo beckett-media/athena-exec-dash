@@ -7,48 +7,18 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const MarketData = ({ className }) => {
   const darkMode = useDarkMode(false);
-
-  const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState([0]);
-  const [serviceLevelData, setServiceLevelData] = useState([0])
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/timeserie`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          // console.log(formdata);
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    })();
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/servicelevel`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          setServiceLevelData(formdata);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    })();
-    setLoading(false);
-  }, [loading]);
+  const { timeseries, isTimeseriesLoading } = useTimeseries();
+  const { levels, isServiceLevelsLoading } = useServiceLevel();
 
   var dataG = [
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsGradedToday),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsGradedToday),
 
       type: "scatter",
       mode: "lines+markers",
@@ -68,8 +38,8 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsShippedToday),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsShippedToday),
 
       type: "scatter",
       mode: "lines+markers",
@@ -85,8 +55,8 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsReceived),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsReceived),
 
       type: "scatter",
       mode: "lines+markers",
@@ -102,8 +72,8 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: serviceLevelData?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: serviceLevelData?.map((d) => d?.properties?.verified),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.verified),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -169,6 +139,8 @@ const MarketData = ({ className }) => {
       },
     },
   };
+
+  const loading = (isTimeseriesLoading || isServiceLevelsLoading);
 
   return (
     <Card

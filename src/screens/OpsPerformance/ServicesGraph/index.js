@@ -7,35 +7,18 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
 const ServicesGraph = ({ className }) => {
   const darkMode = useDarkMode(true);
+  const { levels, isLoading } = useServiceLevel();
 
-  const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState([0]);
-
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/servicelevel`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error.response, 'service data');
-        });
-    })();
-    setLoading(false);
-  }, [loading]);
+  console.log('levels', levels);
 
   var dataG = [
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.twoDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.twoDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -55,8 +38,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.fiveDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.fiveDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -72,8 +55,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.tenDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.tenDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -89,8 +72,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.thirtyDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.thirtyDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -106,8 +89,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.recase),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.recase),
 
       type: "scatter",
       mode: "lines+markers",
@@ -123,8 +106,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     // {
-    //   x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-    //   y: data?.map((d) => d?.properties?.cardsReceived),
+    //   x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+    //   y: levels.map((d) => d.cardsReceived),
 
     //   type: "scatter",
     //   mode: "lines+markers",
@@ -212,7 +195,7 @@ const ServicesGraph = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-yellow", styles.cardTitle)}
     >
-      {loading && (
+      {isLoading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
       )}
 
