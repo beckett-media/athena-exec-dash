@@ -1,98 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const MarketData = ({ className }) => {
   const darkMode = useDarkMode(false);
-
-  const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState([0]);
-  const [serviceLevelData, setServiceLevelData] = useState([0])
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/timeserie`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          // console.log(formdata);
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    })();
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/servicelevel`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          setServiceLevelData(formdata);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    })();
-    setLoading(false);
-  }, [loading]);
+  const { timeseries } = useTimeseries();
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsGradedToday),
-
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: {
-        color: darkMode.value ? "#B5E4CA" : "green",
-        size: 10,
-        opacity: 0.8,
-      },
-      name: "Cards Graded",
-      line: {
-        color: darkMode.value ? "#B5E4CA" : "green",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsShippedToday),
-
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Cards Shipped",
-      line: {
-        color: "#2A85FF",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.cardsReceived),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsReceived),
 
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Cards Received",
+      name: "Received",
       line: {
         color: "#DCF341",
         width: 4,
@@ -102,8 +33,46 @@ const MarketData = ({ className }) => {
       },
     },
     {
-      x: serviceLevelData?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: serviceLevelData?.map((d) => d?.properties?.verified),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsGradedToday),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: {
+        color: darkMode.value ? "#B5E4CA" : "green",
+        size: 10,
+        opacity: 0.8,
+      },
+      name: "Graded",
+      line: {
+        color: darkMode.value ? "#B5E4CA" : "green",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsShippedToday),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      name: "Shipped",
+      line: {
+        color: "#2A85FF",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.verified),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -121,6 +90,7 @@ const MarketData = ({ className }) => {
         smoothing: 1,
       },
     },
+
   ];
 
   var layout = {
@@ -134,16 +104,18 @@ const MarketData = ({ className }) => {
     },
 
     yaxis: {
-      title: "Total",
+      title: "Cards Graded per Day",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
+      tickformat: ",.0f",
     },
     autosize: true,
     width: 900,
     height: 500,
     display: "flex",
+
     margin: {
       l: 70,
       r: 50,
@@ -158,11 +130,11 @@ const MarketData = ({ className }) => {
     hovermode: "x",
     legend: {
       x: 0,
-      y: 10,
+      y: 12,
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
-      orientation: "h",
+      orientation: "v",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -177,10 +149,6 @@ const MarketData = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
-      {loading && (
-        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
-      )}
-
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

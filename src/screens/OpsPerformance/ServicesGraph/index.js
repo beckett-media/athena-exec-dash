@@ -2,46 +2,20 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
 const ServicesGraph = ({ className }) => {
   const darkMode = useDarkMode(true);
-
-  const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState([0]);
-
-  React.useEffect(() => {
-    setLoading(true);
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/servicelevel`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          setData(formdata);
-        })
-        .catch((error) => {
-          console.log(error.response, "service data");
-        });
-    })();
-
-    setLoading(false);
-  }, [loading]);
-  // function to filter data by date range and return only the data for the selected date range
-
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
-      x: data?.map((d) =>
-        d?.properties?.submissionItem !== "f12st" ? moment(d?.properties.date).format("MM/DD/YYYY") : null
-      ),
-      y: data?.map((d) => d?.properties?.twoDay),
-
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.twoDay),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -60,8 +34,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.fiveDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.fiveDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -77,8 +51,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.tenDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.tenDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -94,8 +68,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.thirtyDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.thirtyDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -111,8 +85,8 @@ const ServicesGraph = ({ className }) => {
       },
     },
     {
-      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: data?.map((d) => d?.properties?.recase),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.recase),
 
       type: "scatter",
       mode: "lines+markers",
@@ -127,40 +101,6 @@ const ServicesGraph = ({ className }) => {
         smoothing: 1,
       },
     },
-    // {
-    //   x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-    //   y: data?.map((d) => d?.properties?.cardsReceived),
-
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-    //   name: "Cards Received",
-    //   line: {
-    //     color: "#DCF341",
-    //     width: 4,
-    //     dash: "dot",
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "BVG" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
-    //   name: "BVG",
-    //   line: {
-    //     color: "#FF6A55",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
   ];
 
   var layout = {
@@ -174,11 +114,12 @@ const ServicesGraph = ({ className }) => {
     },
 
     yaxis: {
-      title: "Total Cards Recieved",
+      title: "Cards Graded per Day, by Service Level",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
+      tickformat: ",.0f",
     },
     autosize: true,
     width: 900,
@@ -202,13 +143,15 @@ const ServicesGraph = ({ className }) => {
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
-      orientation: "h",
+      orientation: "v",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
       },
     },
   };
+
+
 
   return (
     <Card
@@ -217,10 +160,6 @@ const ServicesGraph = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-yellow", styles.cardTitle)}
     >
-      {loading && (
-        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
-      )}
-
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

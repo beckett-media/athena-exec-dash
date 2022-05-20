@@ -111,6 +111,8 @@ const CardForm = ({ className, ...props }) => {
       .then((response) => {
         setStatusCode(response.status_code);
         if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
+          // TODO: If we want to use mutation, `post` endpoint should return the service levels data, as like `get` endpoint
+          // https://swr.vercel.app/docs/mutation#optimistic-updates
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
               // console.log("response from post", response);
@@ -147,8 +149,8 @@ const CardForm = ({ className, ...props }) => {
           console.log('service lvl post')
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
+              // console.log("response from post", response);
+              // console.log(response.status_code);
             })
             .catch((error) => console.log(error.data));
         }
@@ -159,7 +161,8 @@ const CardForm = ({ className, ...props }) => {
         setLoading(false);
       });
       setNotEditable(true);
-  })
+  });
+
   React.useEffect(() => {
     (async () => {
       const apiName = "palentirApi";
@@ -262,6 +265,7 @@ const CardForm = ({ className, ...props }) => {
     const totalServiceLevelSum = two + five + ten + thirty + re;
     if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
   };
+
   const CreateNumberInput = ( value, setState, label, marginRight = 0, marginBottom, formLabelTop = true ) => {
     return (
       <NumberInput mr ={marginRight} value={ value }>
@@ -280,6 +284,7 @@ const CardForm = ({ className, ...props }) => {
               handleChange(e, setState);
             }}
           />
+
           {!formLabelTop && <FormLabel mb={10} textAlign={"center"}> {label} </FormLabel>} 
         </NumberInput>
     )
@@ -365,7 +370,7 @@ const CardForm = ({ className, ...props }) => {
               Save submission
             </Button>
             { notEditable && serviceLevelRecieved &&
-                <Button     
+                <Button
                   variantColor="purple"
                   variant="ghost"
                   mt={15}

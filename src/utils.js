@@ -9,7 +9,7 @@ export const progress = () => {
 };
 
 export const percentageCalc = (num, total) => {
-  return ((num / total) * 100).toFixed(2);
+  return ((num / total) * 100).toFixed(0);
 };
 
 export const compareArrays = (arr1, arr2) => {
