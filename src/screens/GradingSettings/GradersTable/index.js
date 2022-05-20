@@ -18,6 +18,7 @@ const GradersTable = ({ items, title, data, setLoading, className }) => {
   const [itemsPerPage] = useState(10);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const actions = [
     {
       icon: "calendar",
@@ -33,6 +34,41 @@ const GradersTable = ({ items, title, data, setLoading, className }) => {
       setSelectedFilters((selectedFilters) => [...selectedFilters, id]);
     }
   };
+
+  React.useEffect(() => {
+    (async () => {
+      const apiName = "palentirApi";
+      const path = "/servicelevel";
+      API.get(apiName, path)
+        .then((response) => {
+          const formdata = response.data?.data;
+
+          const filteredFormDataByDay = formdata.filter(
+            (data) =>
+              data.properties.date === moment(startDate).format("YYYY-MM-DD")
+          );
+          if (filteredFormDataByDay[0]) {
+            setSelectedDayServiceLevel(filteredFormDataByDay[0]);
+          } else {
+            setSelectedDayServiceLevel(startingSelectedDayObj);
+          }
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+    })();
+
+    // setTwoDay("");
+    // setFiveDay("");
+    // setTenDay("");
+    // setThirtyDay("");
+    // setVerified("");
+    // setRevenueShipped("");
+    // setRecase("");
+    // setCardsGradedToday("");
+    // setCardsShippedToday("");
+    // setCardsReceived("");
+  }, [startDate]);
 
   const indexOfLastPage = currentPage * itemsPerPage;
   const indexOfFistPage = indexOfLastPage - itemsPerPage;
