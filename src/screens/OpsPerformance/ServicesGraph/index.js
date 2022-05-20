@@ -34,6 +34,7 @@ const ServicesGraph = ({ className }) => {
   }, [loading]);
   // function to filter data by date range and return only the data for the selected date range
 
+
   var dataG = [
     {
       x: data?.map((d) =>
