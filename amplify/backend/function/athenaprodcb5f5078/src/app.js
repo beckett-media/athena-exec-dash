@@ -708,7 +708,7 @@ app.get("/servicelevel", async function (req, res) {
     
       const ridServies = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
       const objService = "AthenaServiceForm";
-      const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}?orderBy=p.date:asc`;
+      const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}?p.date.gt=2022-04-29&orderBy=p.date:asc`;
     
       //############################### GET TOKEN ############################
       const { Parameters } = await new aws.SSM()
@@ -748,7 +748,57 @@ app.get("/servicelevel", async function (req, res) {
           });
       }
   });
-    
+
+//GET BY DATE//
+app.get("/servicelevel/:yesterday", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const { yesterday } = req.params;
+
+  const ridServies = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const objService = "AthenaServiceForm";
+  const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}?p.date.eq=${yesterday}`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        res.send({
+          data: response.data,
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
 //POST//
 app.post("/servicelevel", async function (req, res) {
   const axios = require("axios");
