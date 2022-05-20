@@ -100,7 +100,6 @@ const GraderEntryForm = ({ className, ...props }) => {
     };
     // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
     alert(JSON.stringify(cardsGradedSubmit));
-    console.log(cardsGradedSubmit);
     setCardsGraded(0);
     setIncludesSaturday(false);
     // const serviceLevel = "/servicelevel";

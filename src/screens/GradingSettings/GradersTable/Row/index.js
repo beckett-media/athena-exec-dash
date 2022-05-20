@@ -34,10 +34,6 @@ const Row = ({ item, value, onChange, index, setLoading }) => {
   ];
 
   const selectedData = item?.properties;
-  // const selectedValues = Object.values(selectedData);
-
-  // console.log(item?.properties);
-  // console.log(selectedValues);
 
   return (
     <>

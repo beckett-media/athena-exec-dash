@@ -80,8 +80,6 @@ const GradersTable = ({ items, title, data, setLoading, className }) => {
     return item;
   };
 
-  console.log(startDateFormatted);
-
   return (
     <div className={styles.wrapper}>
       <Box mb={25}>

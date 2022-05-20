@@ -33,8 +33,6 @@ const GraderSettings = ({ dataCI }) => {
     setLoading(false);
   }, [loading]);
 
-  console.log(data);
-
   return (
     <>
       <NewGraderForm setLoading={setLoading} />
