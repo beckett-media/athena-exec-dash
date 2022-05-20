@@ -18,7 +18,6 @@ const GradersTable = ({ items, title, data, setLoading, className }) => {
   const [itemsPerPage] = useState(10);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
-  const [loading, setLoading] = useState(false);
   const actions = [
     {
       icon: "calendar",

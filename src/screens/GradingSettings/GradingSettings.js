@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./GradingSettings.module.sass";
 import Card from "../../components/Card";
-import GradersTable from "./GradersTable";
+// import GradersTable from "./GradersTable";
 import { API } from "aws-amplify";
 import NewGraderForm from "./NewGraderForm";
 import GraderEntryForm from "./GraderEntryForm";
 import { Box } from "@chakra-ui/react";
+import TablePivots from "./PivotTable";
 
-const UpdateData = () => {
+const GraderSettings = ({ dataCI }) => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
+
+  console.log(dataCI);
 
   React.useEffect(() => {
     setLoading(true);
@@ -45,15 +48,16 @@ const UpdateData = () => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <GradersTable
+          <TablePivots dataCI={dataCI} />
+          {/* <GradersTable
             data={data}
             title="date selected"
             setLoading={setLoading}
-          />
+          /> */}
         </div>
       </Card>
     </>
   );
 };
 
-export default UpdateData;
+export default GraderSettings;
