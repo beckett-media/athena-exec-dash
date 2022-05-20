@@ -163,40 +163,6 @@ const CardForm = ({ className, ...props }) => {
       setNotEditable(true);
   });
 
-  const handlePutSubmit = useCallback(async(e) => {
-    const serviceLevel = "/servicelevel";
-    const cardUpdated = "/grading-service-form";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.put(apiName, cardUpdated, myInit)
-      .then((response) => {
-        setStatusCode(response.status_code);
-        if (serviceLevelRecieved) {
-          console.log('service lvl put')
-          API.put(apiName, serviceLevel, serviceLevelInit)
-            .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
-            })
-            .catch((error) => console.log(error.data));
-        } else {
-          console.log('service lvl post')
-          API.post(apiName, serviceLevel, serviceLevelInit)
-            .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
-            })
-            .catch((error) => console.log(error.data));
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        setLoading(false);
-      });
-      setNotEditable(true);
-  })
-
   React.useEffect(() => {
     (async () => {
       const apiName = "palentirApi";
