@@ -58,7 +58,7 @@ const Overview = ({ selectedData, onClose, setLoading }) => {
       })
       .catch((error) => {
         setLoading(false);
-        console.log(error);
+        // console.log(error);
       });
   };
 

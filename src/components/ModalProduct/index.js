@@ -24,7 +24,11 @@ const ModalProduct = ({ visible, onClose, selectedData, setLoading }) => {
           </div>
         </div>
         <div className={styles.outer}>
-          <CardsData selectedData={selectedData} onClose={onClose} setLoading={setLoading} />
+          <CardsData
+            selectedData={selectedData}
+            onClose={onClose}
+            setLoading={setLoading}
+          />
         </div>
       </div>
     ),

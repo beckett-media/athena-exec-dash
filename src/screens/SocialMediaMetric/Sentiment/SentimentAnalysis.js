@@ -126,7 +126,7 @@ const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
                         dataI={dataI}
                       />
                     }
-                    messages that have{" "}
+                    messages that have
                     <span
                       style={{
                         backgroundColor: descBg,
@@ -138,7 +138,7 @@ const SentimentAnalysis = ({ className, socialData, dataI, socialMessage }) => {
                     >
                       {sentimentType}
                     </span>
-                    sentiment
+                    sentiment.
                   </Text>
                 </DrawerHeader>
                 <DrawerBody>

@@ -108,7 +108,7 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
 
   // const userPermissions = null;
 
-  console.log(userPermissions);
+  // console.log(userPermissions);
 
   //Function to map out the nav items
 

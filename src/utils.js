@@ -9,7 +9,7 @@ export const progress = () => {
 };
 
 export const percentageCalc = (num, total) => {
-  return ((num / total) * 100).toFixed(2);
+  return ((num / total) * 100).toFixed(0);
 };
 
 export const compareArrays = (arr1, arr2) => {
@@ -17,5 +17,19 @@ export const compareArrays = (arr1, arr2) => {
     return arr1.some((r) => arr2.includes(r));
   } else {
     return false;
+  }
+};
+
+// capitalize first letter
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+// function to ellipsis text after 40 characters
+export const ellipsisText = (text) => {
+  if (text.length > 40) {
+    return text.substring(0, 60) + "...";
+  } else {
+    return text;
   }
 };
