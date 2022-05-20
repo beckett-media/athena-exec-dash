@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
@@ -12,10 +11,27 @@ import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const MarketData = ({ className }) => {
   const darkMode = useDarkMode(false);
-  const { timeseries, isTimeseriesLoading } = useTimeseries();
-  const { levels, isServiceLevelsLoading } = useServiceLevel();
+  const { timeseries } = useTimeseries();
+  const { levels } = useServiceLevel();
 
   var dataG = [
+    {
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsReceived),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
+      name: "Received",
+      line: {
+        color: "#DCF341",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
     {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
@@ -28,7 +44,7 @@ const MarketData = ({ className }) => {
         size: 10,
         opacity: 0.8,
       },
-      name: "Cards Graded",
+      name: "Graded",
       line: {
         color: darkMode.value ? "#B5E4CA" : "green",
         width: 4,
@@ -45,26 +61,9 @@ const MarketData = ({ className }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Cards Shipped",
+      name: "Shipped",
       line: {
         color: "#2A85FF",
-        width: 4,
-        dash: "dot",
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
-      y: timeseries.map((d) => d.cardsReceived),
-
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "Cards Received",
-      line: {
-        color: "#DCF341",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -91,6 +90,7 @@ const MarketData = ({ className }) => {
         smoothing: 1,
       },
     },
+
   ];
 
   var layout = {
@@ -104,16 +104,18 @@ const MarketData = ({ className }) => {
     },
 
     yaxis: {
-      title: "Total",
+      title: "Cards Graded per Day",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
+      tickformat: ",.0f",
     },
     autosize: true,
     width: 900,
     height: 500,
     display: "flex",
+
     margin: {
       l: 70,
       r: 50,
@@ -128,19 +130,17 @@ const MarketData = ({ className }) => {
     hovermode: "x",
     legend: {
       x: 0,
-      y: 10,
+      y: 12,
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
-      orientation: "h",
+      orientation: "v",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
       },
     },
   };
-
-  const loading = (isTimeseriesLoading || isServiceLevelsLoading);
 
   return (
     <Card
@@ -149,10 +149,6 @@ const MarketData = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
-      {loading && (
-        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
-      )}
-
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

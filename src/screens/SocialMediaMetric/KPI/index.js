@@ -24,18 +24,18 @@ const KPI = ({ className, dataI }) => {
 
   const items = [
     {
-      title: "positive mentions",
+      title: "Positive mentions",
       counter: `${positive}`,
       background: "#B5E4CA",
     },
     {
-      title: "negative mentions",
+      title: "Negative mentions",
       counter: `${negative}`,
       value: 2,
       background: "#FF6A55",
     },
     {
-      title: "neutral mentions",
+      title: "Neutral mentions",
       counter: `${neutral}`,
       value: 0,
       background: "#2A85FF",
@@ -46,7 +46,7 @@ const KPI = ({ className, dataI }) => {
       <Card
         className={cn(styles.card, className)}
         title="Weekly Brand Health Scorecard"
-        description={`${total} posts mentioning Beckett this week`}
+        description={`${total} posts mentioning Beckett this week.`}
         classTitle="title-purple"
       >
         <div className={styles.overview}>

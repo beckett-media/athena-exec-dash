@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
@@ -11,9 +10,7 @@ import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
 const ServicesGraph = ({ className }) => {
   const darkMode = useDarkMode(true);
-  const { levels, isLoading } = useServiceLevel();
-
-  console.log('levels', levels);
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
@@ -105,40 +102,6 @@ const ServicesGraph = ({ className }) => {
         smoothing: 1,
       },
     },
-    // {
-    //   x: levels.map((d) => moment(d.date).format("MMM DD YY")),
-    //   y: levels.map((d) => d.cardsReceived),
-
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-    //   name: "Cards Received",
-    //   line: {
-    //     color: "#DCF341",
-    //     width: 4,
-    //     dash: "dot",
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
-    // {
-    //   x: Grading_Terms.map((d) => moment(d.date).format("MMM YY")),
-    //   y: Grading_Terms.map((d) =>
-    //     d.marketPlayer === "BVG" ? d.averageSellingPrice : null
-    //   ),
-    //   type: "scatter",
-    //   mode: "lines+markers",
-    //   connectgaps: true,
-    //   marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
-    //   name: "BVG",
-    //   line: {
-    //     color: "#FF6A55",
-    //     width: 4,
-    //     shape: "spline",
-    //     smoothing: 1,
-    //   },
-    // },
   ];
 
   var layout = {
@@ -152,11 +115,12 @@ const ServicesGraph = ({ className }) => {
     },
 
     yaxis: {
-      title: "Total Cards Recieved",
+      title: "Cards Graded per Day, by Service Level",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
+      tickformat: ",.0f",
     },
     autosize: true,
     width: 900,
@@ -180,7 +144,7 @@ const ServicesGraph = ({ className }) => {
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
-      orientation: "h",
+      orientation: "v",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -188,17 +152,15 @@ const ServicesGraph = ({ className }) => {
     },
   };
 
+
+
   return (
     <Card
-      title={"Cards received per day, per service level"}
+      title={"Cards Received Per Day, Per Service Level"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-yellow", styles.cardTitle)}
     >
-      {isLoading && (
-        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
-      )}
-
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

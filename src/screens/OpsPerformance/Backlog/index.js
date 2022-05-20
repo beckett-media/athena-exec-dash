@@ -26,24 +26,9 @@ const Backlog = ({ className }) => {
       classTitle={cn("title-darkblue", styles.cardTitle)}
     >
       <Stack>
-        {/* <Text>
-          Graded {numberWithCommas(graded)} ({percentageCalc(graded, backlog)}%)
-        </Text>
-        <Progress
-          colorScheme={"purple"}
-          value={percentageCalc(graded, backlog)}
-        />
         <Text>
-          Shipped {numberWithCommas(shipped)} (
-          {percentageCalc(shipped, backlog)}%)
-        </Text>
-        <Progress colorScheme={"blue"} value={percentageCalc(shipped, backlog)} />
-        <Text>Total backlog {numberWithCommas(backlog)} (100%)</Text>
-        <Progress colorScheme={"orange"} value={100} /> */}
-
-        <Text>
-          Total Cards Graded Since 5/12 {numberWithCommas(totalGraded)} (
-          {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000 (100%)
+          Total Cards Graded Since 5/12: {numberWithCommas(totalGraded)} (
+          {percentageCalc(totalGraded, backlog)}%) vs Backlog 29,000
         </Text>
         <Progress
           borderRadius={10}

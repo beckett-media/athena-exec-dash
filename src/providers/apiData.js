@@ -176,14 +176,14 @@ function ApiDataProvider(props) {
         getSocialIndicators(),
         getSocialData(),
         getSocialMessage(),
-        // getUsers(),
+        getOpsServiceLevel(),
       ]).then(
         ([
           comicIndex,
           socialIndicators,
           socialData,
           socialMessage,
-          users,
+          serviceLevel,
         ]) => {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
           // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
@@ -191,6 +191,7 @@ function ApiDataProvider(props) {
           setSocialDataIndicators(socialIndicators.value);
           setSocialData(socialData.value);
           setSocialDataMessage(socialMessage.value);
+          setServiceLevel(serviceLevel.value);
           // setUsers(users.value);
         }
       );
