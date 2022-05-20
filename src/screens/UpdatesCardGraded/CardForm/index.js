@@ -109,14 +109,14 @@ const CardForm = ({ className, ...props }) => {
     setLoading(true);
     API.post(apiName, cardUpdated, myInit)
       .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
         setStatusCode(response.status_code);
         if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
+          // TODO: If we want to use mutation, `post` endpoint should return the service levels data, as like `get` endpoint
+          // https://swr.vercel.app/docs/mutation#optimistic-updates
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
+              // console.log("response from post", response);
+              // console.log(response.status_code);
             })
             .catch((error) => console.log(error.data));
         }
