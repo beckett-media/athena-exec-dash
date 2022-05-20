@@ -44,8 +44,6 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [timeseries, setTimeseries] = React.useState([]);
-  const [loadingTimeseries, setLoadingTimeseries] = React.useState(false);
 
   //############################# MARKET ANALYSIS QUERY ########################################
   async function MarketAnalysisAPI() {
@@ -145,20 +143,6 @@ function ApiDataProvider(props) {
     );
   }
 
-  async function getOpsTimeseries() {
-    const apiName = "palentirApi";
-    const path = `/timeserie`;
-
-    return API.get(apiName, path).then((response) =>
-      response.data.data.map((d) => {
-        const { rid, ...rest } = d;
-        return {
-          ...rest?.properties,
-        };
-      })
-    );
-  }
-
   React.useEffect(() => {
     const fetch = async () => {
       setIsLoading(true);
@@ -210,9 +194,6 @@ function ApiDataProvider(props) {
           // setUsers(users.value);
         }
       );
-
-      setLoadingTimeseries(true);
-      getOpsTimeseries().then(p => setTimeseries(p)).finally(() => setLoadingTimeseries(false));
     };
 
     Hub.listen("auth", (data) => {
@@ -245,8 +226,6 @@ function ApiDataProvider(props) {
         socialData,
         socialDataMessage,
         comicIndexing,
-        timeseries,
-        loadingTimeseries,
       }}
       {...props}
     />
