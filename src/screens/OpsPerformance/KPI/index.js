@@ -13,12 +13,11 @@ const KPI = ({ className }) => {
   const [received, setReceived] = React.useState("0");
   const [shipped, setShipped] = React.useState("0");
   const [graded, setGraded] = React.useState("0");
+  const [verified, setVerified] = React.useState("0");
 
   const [yesterdayDate, setYesterdayDate] = React.useState(
     moment().subtract(1, "days").format("YYYY-MM-DD")
   );
-
-  const [dataDate, setDataDate] = React.useState();
 
   const today = moment().format("dddd");
 
@@ -37,6 +36,7 @@ const KPI = ({ className }) => {
       }
       const apiName = "palentirApi";
       const path = `/grading-service-form/${yesterdayDate}`;
+      const servicePath = `/servicelevel/${yesterdayDate}`;
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data.data;
@@ -44,7 +44,16 @@ const KPI = ({ className }) => {
           setReceived(data[0].cardsReceived);
           setShipped(data[0].cardsShippedToday);
           setGraded(data[0].cardsGradedToday);
-          setDataDate(data[0].date);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+        API.get(apiName, servicePath)
+        .then((response) => {
+          const formdata = response.data.data;
+          const data = formdata.map((item) => item.properties);
+          setVerified(data[0].verified);
           setLoading(false);
         })
         .catch((error) => {
@@ -62,6 +71,15 @@ const KPI = ({ className }) => {
           : numberWithCommas(received)
       }`,
       background: "#DCF341",
+    },
+    {
+      title: "Verified (BGS)",
+      counter: `${
+        numberWithCommas(verified) === "0"
+          ? "Data Not Received Recently"
+          : numberWithCommas(verified)
+      }`,
+      background: "#8E59FF",
     },
     {
       title: "Graded (BGS)",

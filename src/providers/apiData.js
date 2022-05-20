@@ -45,6 +45,7 @@ function ApiDataProvider(props) {
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
   const [timeseries, setTimeseries] = React.useState([]);
+  const [serviceLevel, setServiceLevel] = React.useState([]);
   const [loadingTimeseries, setLoadingTimeseries] = React.useState(false);
 
   //############################# MARKET ANALYSIS QUERY ########################################
@@ -158,6 +159,19 @@ function ApiDataProvider(props) {
       })
     );
   }
+  async function getOpsServiceLevel() {
+    const apiName = "palentirApi";
+    const path = `/servicelevel`;
+
+    return API.get(apiName, path).then((response) =>
+      response.data.data.map((d) => {
+        const { rid, ...rest } = d;
+        return {
+          ...rest?.properties,
+        };
+      })
+    );
+  }
 
   React.useEffect(() => {
     const fetch = async () => {
@@ -192,14 +206,14 @@ function ApiDataProvider(props) {
         getSocialIndicators(),
         getSocialData(),
         getSocialMessage(),
-        // getUsers(),
+        getOpsServiceLevel(),
       ]).then(
         ([
           comicIndex,
           socialIndicators,
           socialData,
           socialMessage,
-          users,
+          serviceLevel,
         ]) => {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
           // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
@@ -207,12 +221,15 @@ function ApiDataProvider(props) {
           setSocialDataIndicators(socialIndicators.value);
           setSocialData(socialData.value);
           setSocialDataMessage(socialMessage.value);
+          setServiceLevel(serviceLevel.value);
           // setUsers(users.value);
         }
       );
 
       setLoadingTimeseries(true);
-      getOpsTimeseries().then(p => setTimeseries(p)).finally(() => setLoadingTimeseries(false));
+      getOpsTimeseries()
+        .then((p) => setTimeseries(p))
+        .finally(() => setLoadingTimeseries(false));
     };
 
     Hub.listen("auth", (data) => {
@@ -247,6 +264,7 @@ function ApiDataProvider(props) {
         comicIndexing,
         timeseries,
         loadingTimeseries,
+        serviceLevel,
       }}
       {...props}
     />

@@ -13,9 +13,7 @@ import {
   useColorModeValue,
   FormLabel,
   Text,
-  Spinner,
 } from "@chakra-ui/react";
-import Control from "./Control";
 import moment from "moment";
 import { API } from "aws-amplify";
 // darkmode
