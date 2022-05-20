@@ -35,7 +35,7 @@ const UpdateData = () => {
     <>
       <CardForm setLoading={setLoading} />
       <Box mt={12} />
-      <Card
+      {/* <Card
         className={styles.card}
         classCardHead={styles.head}
         title="Daily Records of Cards Received, Graded, and Shipped"
@@ -44,7 +44,7 @@ const UpdateData = () => {
         <div className={styles.wrapper}>
           <Table data={data} title="date selected" setLoading={setLoading} />
         </div>
-      </Card>
+      </Card> */}
     </>
   );
 };

@@ -29,16 +29,13 @@ const ServicesGraph = ({ className }) => {
           console.log(error.response, "service data");
         });
     })();
-
     setLoading(false);
   }, [loading]);
-  // function to filter data by date range and return only the data for the selected date range
+
 
   var dataG = [
     {
-      x: data?.map((d) =>
-        d?.properties?.submissionItem !== "f12st" ? moment(d?.properties.date).format("MM/DD/YYYY") : null
-      ),
+      x: data?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
       y: data?.map((d) => d?.properties?.twoDay),
 
       type: "scatter",
