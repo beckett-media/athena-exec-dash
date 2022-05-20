@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
@@ -68,6 +68,27 @@ const MarketData = ({ className, isLoading, timeseries }) => {
         smoothing: 1,
       },
     },
+    {
+      x: serviceLevelData?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
+      y: serviceLevelData?.map((d) => d?.properties?.verified),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: {
+        color: darkMode.value ? "purple" : "purple",
+        size: 10,
+        opacity: 0.8,
+      },
+      name: "Cards Verified",
+      line: {
+        color: darkMode.value ? "purple" : "purple",
+        width: 4,
+        dash: "dot",
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+
   ];
 
   var layout = {
@@ -121,7 +142,7 @@ const MarketData = ({ className, isLoading, timeseries }) => {
 
   return (
     <Card
-      title={"Cards Received, Graded, & Shipped Over Time"}
+      title={"Cards Received, Graded, Verified, & Shipped Over Time"}
       className={cn(styles.card, className)}
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
