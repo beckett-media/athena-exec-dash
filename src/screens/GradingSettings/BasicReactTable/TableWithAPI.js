@@ -19,27 +19,27 @@ export default function TableWithAPI({ cells }) {
       },
       {
         Header: "Monday",
-        accessor: "company",
+        accessor: "monday",
       },
       {
         Header: "Tuesday",
-        accessor: "grade",
+        accessor: "tuesday",
       },
       {
         Header: "Wednesday",
-        accessor: "gradeStat",
+        accessor: "wednesday",
       },
       {
         Header: "Thursday",
-        accessor: "test-0",
+        accessor: "thursday",
       },
       {
         Header: "Friday",
-        accessor: "test-1",
+        accessor: "friday",
       },
       {
         Header: "Includes Saturday",
-        accessor: "test-2",
+        accessor: "includesSaturday",
       },
       // {
       //   Header: "Grade Level",

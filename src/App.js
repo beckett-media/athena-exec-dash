@@ -7,6 +7,7 @@ import "@aws-amplify/ui-react/styles.css";
 import "./styles/app.sass";
 import "./utils-auth/auth.css";
 import { compareArrays } from "./utils";
+import { graderData } from "./mocks/cardsByGrader";
 
 //Screen
 import Page from "./components/Page";
@@ -311,7 +312,7 @@ function App() {
             >
               <Route
                 path="/grading/grading-settings"
-                element={<GradingSettings dataCI={comicIndexing} />}
+                element={<GradingSettings dataCI={graderData} />}
               />
             </Route>
           )}
