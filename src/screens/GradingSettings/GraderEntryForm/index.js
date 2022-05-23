@@ -46,10 +46,6 @@ const startingServiceLevel = {
 const GraderEntryForm = ({ className, ...props }) => {
   //STATE DECLARATIONS
   const [category, setCategory] = useState("BGS");
-  const [cardsReceived, setCardsReceived] = useState("");
-  const [cardsShippedToday, setCardsShippedToday] = useState("");
-  const [cardsGradedToday, setCardsGradedToday] = useState("");
-  const [categoryType, setCategoryType] = useState(category);
   const [status_code, setStatusCode] = useState(0);
   const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
@@ -57,20 +53,9 @@ const GraderEntryForm = ({ className, ...props }) => {
   const [selectedDayFormData, setSelectedDayFormData] = useState(
     startingSelectedDayObj
   );
-  const [selectedDayServiceLevel, setSelectedDayServiceLevel] =
-    useState(startingServiceLevel);
   const [notEditable, setNotEditable] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [twoDayPremium, setTwoDayPremium] = useState("");
-  const [fiveDayExpress, setFiveDayExpress] = useState("");
-  const [tenDayExpress, setTenDayExpress] = useState("");
-  const [thirtyDayStandard, setThirtyDayStandard] = useState("");
-  const [cardsVerified, setCardsVerified] = useState("");
-  const [revenueOfCardsShipped, setRevenueOfCardsShipped] = useState("");
-  const [recase, setRecase] = useState("");
-  const [newGraderName, setNewGraderName] = useState("");
   const darkMode = useDarkMode(false);
-  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const [grader, setGrader] = useState("");
   const [includesSaturday, setIncludesSaturday] = useState(false);
   const [cardsGraded, setCardsGraded] = useState(0);
@@ -81,28 +66,27 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   ];
 
+  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const { graders, isLoading, isError } = useGraders();
 
-  console.log(graders);
+  //DEFINITIONS
+  const myInit = {
+    body: {
+      startDate,
+      grader,
+      cardsGraded,
+      includesSaturday,
+    },
+  };
+
+  // const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
 
   //FUNCTIONS
-  // generate random string
-  const randomNumber = (min, max) => {
-    const number = Math.floor(Math.random() * (max - min + 1009)) + min;
-    const letter = String.fromCharCode(65 + Math.floor(Math.random() * 6));
-    return `${number}${letter}`;
-  };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    const cardsGradedSubmit = {
-      start_date_formatted: startDateFormatted,
-      grader,
-      cards_graded: cardsGraded,
-      includes_saturday: includesSaturday,
-    };
     // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
-    alert(JSON.stringify(cardsGradedSubmit));
+    alert(JSON.stringify(myInit));
     setCardsGraded(0);
     setIncludesSaturday(false);
     // const serviceLevel = "/servicelevel";
@@ -136,66 +120,16 @@ const GraderEntryForm = ({ className, ...props }) => {
     //   });
   });
 
-  const handleServiceLevelChange = (e, setServiceLevel) => {
-    setServiceLevel(e.target.value);
-  };
   const checkDisableSubmit = () => {
     if (!(grader && cardsGraded)) return true;
   };
 
-  //DEFINITIONS
-  const myInit = {
-    body: {
-      cards_graded_today: parseInt(cardsGradedToday),
-      cards_shipped_today: parseInt(cardsShippedToday),
-      cards_received: parseInt(cardsReceived),
-      type: "BGS",
-      date: startDateFormatted,
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
-    },
-  };
-
-  const serviceLevelInit = {
-    body: {
-      two_day: parseInt(twoDayPremium) || 0,
-      five_day: parseInt(fiveDayExpress) || 0,
-      ten_day: parseInt(tenDayExpress) || 0,
-      thirty_day: parseInt(thirtyDayStandard) || 0,
-      verified: cardsVerified.toString() || "0",
-      revenueshipped: revenueOfCardsShipped.toString() || "0",
-      recase: parseInt(recase) || 0,
-      date: startDateFormatted,
-      hidden_1: 0,
-      total: parseInt(cardsReceived),
-      type: "BGS",
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
-    },
-  };
-
-  // const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
-
   //USE EFFECT
-  React.useEffect(() => {
-    setCategoryType(category);
-  }, [category]);
 
   React.useEffect(() => {
     setLoadingForm(true);
     if (status_code === 200) {
       setLoadingForm(false);
-      setCardsReceived(0);
-      setCardsShippedToday(0);
-      setCardsGradedToday(0);
     }
   }, [handleSubmit]);
 
@@ -230,11 +164,11 @@ const GraderEntryForm = ({ className, ...props }) => {
             (data) =>
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
           );
-          if (filteredFormDataByDay[0]) {
-            setSelectedDayServiceLevel(filteredFormDataByDay[0]);
-          } else {
-            setSelectedDayServiceLevel(startingSelectedDayObj);
-          }
+          // if (filteredFormDataByDay[0]) {
+          //   setSelectedDayServiceLevel(filteredFormDataByDay[0]);
+          // } else {
+          //   setSelectedDayServiceLevel(startingSelectedDayObj);
+          // }
         })
         .catch((error) => {
           console.log(error.response);
@@ -242,10 +176,6 @@ const GraderEntryForm = ({ className, ...props }) => {
     })();
     setNotEditable(true);
   }, [startDate]);
-
-  //CONSOLE LOGS
-  console.log(cardsGraded);
-  console.log(grader);
 
   return (
     <Card

@@ -59,8 +59,6 @@ const NewGraderForm = ({ className, ...props }) => {
 
   const { graders, isLoading, isError } = useGraders();
 
-  console.log(graders);
-
   const myInit = {
     body: {
       new_grader_name: newGraderName,
@@ -117,11 +115,9 @@ const NewGraderForm = ({ className, ...props }) => {
   });
 
   React.useEffect(() => {
-    console.log(graders);
-
+    // console.log(graders);
     // if (status_code === 200) {
     //   setLoading(false);
-
     // }
   }, [isLoading, graders]);
 
@@ -132,9 +128,6 @@ const NewGraderForm = ({ className, ...props }) => {
   const checkEditDisableSubmit = () => {
     if (!editGrader || !editGraderId) return true;
   };
-
-  console.log(editGrader);
-  console.log(editGraderId);
 
   const returnGraderId = (name) => {
     for (const i of graders) {

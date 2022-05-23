@@ -11,13 +11,15 @@ import { Box, FormLabel, Text } from "@chakra-ui/react";
 import Icon from "../../components/Icon";
 import Modal from "../../components/Modal";
 import Schedule from "../../components/Schedule";
+import moment from "moment";
 
 import TablePivots from "./PivotTable";
 
 const GraderSettings = ({ dataCI, className }) => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
-  const [startDate, setStartDate] = useState();
+  const [startDate, setStartDate] = useState(new Date());
+  const [startWeek, setStartWeek] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState();
   const actions = [
     {
@@ -26,9 +28,31 @@ const GraderSettings = ({ dataCI, className }) => {
     },
   ];
 
-  const startDateFormatted = {};
+  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
+  const startWeekFormatted = moment(startWeek).format("YYYY-MM-DD");
+  const filteredData = dataCI.filter(filterData);
 
+  function filterData(i) {
+    return Object.values(i).indexOf(startWeekFormatted) > -1;
+  }
+
+  function subtractDays(date, days) {
+    date.setDate(date.getDate() - days);
+    console.log(date);
+    return date;
+  }
+
+  function findWeekStart(date) {
+    const subtract = date.getDay() - 1;
+    console.log(subtract);
+    setStartWeek(subtractDays(date, subtract));
+  }
+
+  // findWeekStart(startDate);
+
+  console.log(startDate.getDay());
   console.log(dataCI);
+  console.log(filteredData);
 
   React.useEffect(() => {
     setLoading(true);
@@ -61,8 +85,8 @@ const GraderSettings = ({ dataCI, className }) => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          {/* <Box mb={25}>
-            <FormLabel>Select Date</FormLabel>
+          <Box mb={25}>
+            <FormLabel>Select Week</FormLabel>
             <div className={cn(stylesControl.control, className)}>
               {actions.map((x, index) => (
                 <button
@@ -84,7 +108,7 @@ const GraderSettings = ({ dataCI, className }) => {
           </Box>
           <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
             <Schedule startDate={startDate} setStartDate={setStartDate} />
-          </Modal> */}
+          </Modal>
           <TablePivots dataCI={dataCI} />
           {/* <GradersTable
             data={data}
