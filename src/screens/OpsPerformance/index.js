@@ -8,8 +8,16 @@ import ServicesGraph from "./ServicesGraph";
 import RevenueGraph from "./RevenueGraph";
 import GradingGraph from "./GradingGraph";
 import Backlog from "./Backlog";
+import { useApiData } from "../../providers/apiData";
+import Loading from "../../components/LottieAnimation/Loading";
 
 const OpsPerformance = () => {
+  const { isLoading, timeseries, serviceLevel, status } = useApiData();
+
+  if (isLoading) {
+    return <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />;
+  }
+
   return (
     <>
       <div className={styles.col}>
@@ -17,11 +25,11 @@ const OpsPerformance = () => {
         <Box my={"2rem"} />
         <Backlog />
         <Box my={"2rem"} />
-        <MarketData />
+        <MarketData isLoading={isLoading} timeseries={timeseries} />
         <Box my={"2rem"} />
-        <ServicesGraph />
+        <ServicesGraph isLoading={isLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
-        <RevenueGraph />
+        <RevenueGraph isLoading={isLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
         {/* <GradingGraph /> */}
         <Box my={"2rem"} />
