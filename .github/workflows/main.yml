@@ -4,8 +4,8 @@ on:
     branches: [ staging ]
     
 jobs:
-  create-pull-request-staging:
-    name: Staging PR
+  merge-staging-to-dev:
+    name: Staging to Athena-Dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Staging Code
@@ -17,12 +17,10 @@ jobs:
           source_branch: "staging"
           destination_branch: "athena-dev"
           github_token: ${{secrets.GITHUB_TOKEN}}
-  
-  merge-pull-request-staging:
-    name: Merge to Athena-Dev
-    runs-on: ubuntu-latest
-    needs: create-pull-request-staging
-    steps:
+      - name: Testing Code
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with:
@@ -32,28 +30,20 @@ jobs:
       - name: Approve Pull Request
         uses: actions/github-script@v6
         with:
-          github-token: ${{ github.TOKEN }}
-          script: |
-            const pullRequest = ${{steps.pr.outputs.pr_number}}
-            const repository = context.repo
-            
+          script: |            
             await github.rest.pulls.createReview({
               event: "APPROVE",
-              owner: repository.owner,
-              pull_number: pullRequest,
-              repo: repository.repo,
+              owner: context.repo.owner,
+              pull_number: ${{steps.pr.outputs.pr_number}},
+              repo: context.repo.repo,
             })
       - name: Merge Pull Request
         uses: actions/github-script@v6
         with:
-          github-token: ${{ github.TOKEN }}
-          script: |
-            const pullRequest = ${{steps.pr.outputs.pr_number}}
-            const repository = context.repo
-            
+          script: |            
             await github.rest.pulls.merge({
               merge_method: "squash"
-              owner: repository.owner,
-              pull_number: pullRequest,
-              repo: repository.repo,
+              owner: context.repo.owner,
+              pull_number: ${{  steps.pr.outputs.pr_number  }},
+              repo: context.repo.repo,
             })

@@ -59,7 +59,7 @@ const navigation = [
   },
   {
     title: "Card Grading",
-    icon: "setting",
+    icon: "ticket",
     slug: "grading",
     permission: ["dev", "admin", "grading"],
     dropdown: [
