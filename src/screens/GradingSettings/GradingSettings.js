@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./GradingSettings.module.sass";
+import stylesControl from "./Control.module.sass";
 import Card from "../../components/Card";
 // import GradersTable from "./GradersTable";
 import { API } from "aws-amplify";
@@ -13,11 +14,19 @@ import Schedule from "../../components/Schedule";
 
 import TablePivots from "./PivotTable";
 
-const GraderSettings = ({ dataCI }) => {
+const GraderSettings = ({ dataCI, className }) => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
   const [startDate, setStartDate] = useState();
   const [visibleModal, setVisibleModal] = useState();
+  const actions = [
+    {
+      icon: "calendar",
+      action: () => setVisibleModal(true),
+    },
+  ];
+
+  const startDateFormatted = {};
 
   console.log(dataCI);
 
@@ -52,7 +61,7 @@ const GraderSettings = ({ dataCI }) => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
-          <Box mb={25}>
+          {/* <Box mb={25}>
             <FormLabel>Select Date</FormLabel>
             <div className={cn(stylesControl.control, className)}>
               {actions.map((x, index) => (
@@ -75,7 +84,7 @@ const GraderSettings = ({ dataCI }) => {
           </Box>
           <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
             <Schedule startDate={startDate} setStartDate={setStartDate} />
-          </Modal>
+          </Modal> */}
           <TablePivots dataCI={dataCI} />
           {/* <GradersTable
             data={data}

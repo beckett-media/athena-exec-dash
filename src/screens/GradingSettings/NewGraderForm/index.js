@@ -1,29 +1,24 @@
 import React, { useState, useCallback } from "react";
 import cn from "classnames";
 import styles from "./CardForm.module.sass";
-import stylesControl from "./Control.module.sass";
 import Card from "../../../components/Card";
 import {
   Button,
   Input,
   NumberInput,
-  NumberInputField,
   Flex,
-  Divider,
   Box,
   useColorModeValue,
   FormLabel,
   Text,
-  Spinner,
+  Select,
 } from "@chakra-ui/react";
-import Control from "./Control";
 import moment from "moment";
 import { API } from "aws-amplify";
 // darkmode
 import useDarkMode from "use-dark-mode";
-import Modal from "../../../components/Modal";
-import Schedule from "../../../components/Schedule";
-import Icon from "../../../components/Icon";
+import useGraders from "../../../hooks/data/useGraders";
+
 const startingSelectedDayObj = {
   properties: {
     cardsGradedToday: "",
@@ -42,31 +37,18 @@ const startingServiceLevel = {
     numCardVerified: "",
   },
 };
+
 const NewGraderForm = ({ className, ...props }) => {
-  const [category, setCategory] = useState("BGS");
-  const [cardsReceived, setCardsReceived] = useState("");
-  const [cardsShippedToday, setCardsShippedToday] = useState("");
-  const [cardsGradedToday, setCardsGradedToday] = useState("");
-  const [categoryType, setCategoryType] = useState(category);
   const [status_code, setStatusCode] = useState(0);
-  const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
   const [selectedDayFormData, setSelectedDayFormData] = useState(
     startingSelectedDayObj
   );
-  const [selectedDayServiceLevel, setSelectedDayServiceLevel] =
-    useState(startingServiceLevel);
-  const [notEditable, setNotEditable] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [twoDayPremium, setTwoDayPremium] = useState("");
-  const [fiveDayExpress, setFiveDayExpress] = useState("");
-  const [tenDayExpress, setTenDayExpress] = useState("");
-  const [thirtyDayStandard, setThirtyDayStandard] = useState("");
-  const [cardsVerified, setCardsVerified] = useState("");
-  const [revenueOfCardsShipped, setRevenueOfCardsShipped] = useState("");
-  const [recase, setRecase] = useState("");
   const [newGraderName, setNewGraderName] = useState("");
+  const [editGrader, setEditGrader] = useState("Christian Kaman");
+  const [editGraderId, setEditGraderId] = useState("");
   const darkMode = useDarkMode(false);
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const actions = [
@@ -76,148 +58,74 @@ const NewGraderForm = ({ className, ...props }) => {
     },
   ];
 
-  React.useEffect(() => {
-    setCategoryType(category);
-  }, [category]);
+  const { graders, isLoading, isError } = useGraders();
 
-  // generate random string
-  const randomNumber = (min, max) => {
-    const number = Math.floor(Math.random() * (max - min + 1009)) + min;
-    const letter = String.fromCharCode(65 + Math.floor(Math.random() * 6));
-    return `${number}${letter}`;
-  };
+  console.log(graders);
 
   const myInit = {
     body: {
-      cards_graded_today: parseInt(cardsGradedToday),
-      cards_shipped_today: parseInt(cardsShippedToday),
-      cards_received: parseInt(cardsReceived),
-      type: "BGS",
-      date: startDateFormatted,
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
+      new_grader_name: newGraderName,
     },
   };
-  const serviceLevelInit = {
+
+  const myUpdate = {
     body: {
-      two_day: parseInt(twoDayPremium) || 0,
-      five_day: parseInt(fiveDayExpress) || 0,
-      ten_day: parseInt(tenDayExpress) || 0,
-      thirty_day: parseInt(thirtyDayStandard) || 0,
-      verified: cardsVerified.toString() || "0",
-      revenueshipped: revenueOfCardsShipped.toString() || "0",
-      recase: parseInt(recase) || 0,
-      date: startDateFormatted,
-      hidden_1: 0,
-      total: parseInt(cardsReceived),
-      type: "BGS",
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
+      // TODO: add ID from API
+      id: editGraderId,
+      new_grader_name: editGrader,
     },
   };
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    const submitPayload = {
-      new_grader_name: newGraderName,
-    };
+    // alert(JSON.stringify(myInit));
+    const graders = "/graders";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.post(apiName, graders, myInit)
+      .then((response) => {
+        console.log("response from post", response);
+        console.log(response.status_code);
+        setStatusCode(response.status_code);
+        setLoading(false);
+        status_code === 200 && alert(status_code);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        alert(error.data);
+        setLoading(false);
+      });
+  });
 
-    alert(JSON.stringify(submitPayload));
-    // const serviceLevel = "/servicelevel";
-    // const cardUpdated = "/grading-service-form";
+  const handleUpdate = useCallback(async (e) => {
+    alert(JSON.stringify(myUpdate));
+    // const graders = "/graders";
     // const apiName = "palentirApi";
     // setLoading(true);
-    // API.post(apiName, cardUpdated, myInit)
+    // API.put(apiName, graders, myUpdate)
     //   .then((response) => {
     //     console.log("response from post", response);
     //     console.log(response.status_code);
     //     setStatusCode(response.status_code);
-    //     if (
-    //       twoDayPremium ||
-    //       fiveDayExpress ||
-    //       tenDayExpress ||
-    //       thirtyDayStandard ||
-    //       recase
-    //     ) {
-    //       API.post(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     }
     //     setLoading(false);
+    //     status_code === 200 && alert(status_code);
     //   })
     //   .catch((error) => {
     //     console.log(error.data, "post error");
+    //     alert(error.data);
     //     setLoading(false);
     //   });
   });
 
   React.useEffect(() => {
-    setLoadingForm(true);
-    if (status_code === 200) {
-      setLoadingForm(false);
-      setCardsReceived(0);
-      setCardsShippedToday(0);
-      setCardsGradedToday(0);
-    }
-  }, [handleSubmit]);
+    console.log(graders);
 
-  React.useEffect(() => {
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/grading-service-form`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          const filteredFormDataByDay = formdata.filter(
-            (data) =>
-              data.properties.date === moment(startDate).format("YYYY-MM-DD")
-          );
-          if (filteredFormDataByDay[0]) {
-            setSelectedDayFormData(filteredFormDataByDay[0]);
-          } else {
-            setSelectedDayFormData(startingSelectedDayObj);
-          }
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    (async () => {
-      const apiName = "palentirApi";
-      const path = "/servicelevel";
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          const filteredFormDataByDay = formdata.filter(
-            (data) =>
-              data.properties.date === moment(startDate).format("YYYY-MM-DD")
-          );
-          if (filteredFormDataByDay[0]) {
-            setSelectedDayServiceLevel(filteredFormDataByDay[0]);
-          } else {
-            setSelectedDayServiceLevel(startingSelectedDayObj);
-          }
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setNotEditable(true);
-  }, [startDate]);
+    // if (status_code === 200) {
+    //   setLoading(false);
 
-  const handleServiceLevelChange = (e, setServiceLevel) => {
-    setServiceLevel(e.target.value);
-  };
+    // }
+  }, [isLoading, graders]);
+
   const checkDisableSubmit = () => {
     if (!newGraderName) return true;
   };
@@ -229,11 +137,7 @@ const NewGraderForm = ({ className, ...props }) => {
       classTitle="title-green"
     >
       <div className={styles.images}>
-        <NumberInput
-          value={
-            selectedDayFormData.properties.cardsGradedToday || cardsGradedToday
-          }
-        >
+        <NumberInput>
           <FormLabel>Enter grader name</FormLabel>
           <Input
             focusBorderColor={useColorModeValue("blue.500", "blue.200")}
@@ -268,6 +172,75 @@ const NewGraderForm = ({ className, ...props }) => {
               _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
               color="white"
               disabled={checkDisableSubmit()}
+            >
+              Save submission
+            </Button>
+            {status_code === 200 && (
+              <Text
+                fontSize="lg"
+                color="green.500"
+                fontWeight="bold"
+                margin={6}
+              >
+                Submission saved successfully
+              </Text>
+            )}
+          </Flex>
+        </Box>
+        <Box mb={25}>Or</Box>
+        <Box mb={25}>Edit existing grader</Box>
+        <NumberInput mr={3}>
+          <FormLabel>Select grader</FormLabel>
+          <Select
+            onChange={(e) => {
+              console.log(e.target.value);
+              console.log(e.target.id);
+              setEditGrader(e.target.value);
+              setEditGraderId(e.target.id);
+            }}
+          >
+            <option value="">Select</option>
+            {/* TODO : Add options here */}
+            {graders.map((x, index) => (
+              <option value={x}>{x.newGraderName}</option>
+            ))}
+          </Select>
+        </NumberInput>
+        <NumberInput>
+          <FormLabel>Enter grader name</FormLabel>
+          <Input
+            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+            borderRadius={12}
+            value={editGrader}
+            border={`2px solid transparent`}
+            mb={25}
+            size="lg"
+            label="Cards graded today"
+            placeholder={`${editGrader}`}
+            type="string"
+            onChange={(e) => {
+              setEditGrader(e.target.value);
+            }}
+          />
+        </NumberInput>
+        <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
+          <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
+            <Button
+              type="submit"
+              variantColor="purple"
+              variant="ghost"
+              mt={15}
+              onClick={handleUpdate}
+              size="lg"
+              px="8"
+              bg={"#83BF6E"}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
+              color="white"
+              // disabled={checkDisableSubmit()}
             >
               Save submission
             </Button>

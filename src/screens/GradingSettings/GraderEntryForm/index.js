@@ -5,16 +5,13 @@ import stylesControl from "./Control.module.sass";
 import Card from "../../../components/Card";
 import {
   Button,
-  Input,
   NumberInput,
   NumberInputField,
   Flex,
-  Divider,
   Box,
   useColorModeValue,
   FormLabel,
   Text,
-  Spinner,
   Select,
   Checkbox,
 } from "@chakra-ui/react";
@@ -26,6 +23,8 @@ import useDarkMode from "use-dark-mode";
 import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
+import useGraders from "../../../hooks/data/useGraders";
+
 const startingSelectedDayObj = {
   properties: {
     cardsGradedToday: "",
@@ -81,6 +80,10 @@ const GraderEntryForm = ({ className, ...props }) => {
       action: () => setVisibleModal(true),
     },
   ];
+
+  const { graders, isLoading, isError } = useGraders();
+
+  console.log(graders);
 
   //FUNCTIONS
   // generate random string
@@ -179,7 +182,7 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   };
 
-  const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
+  // const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
 
   //USE EFFECT
   React.useEffect(() => {
@@ -282,7 +285,7 @@ const GraderEntryForm = ({ className, ...props }) => {
               <option value="">Select</option>
               {/* TODO : Add options here */}
               {graders.map((x, index) => (
-                <option value={x}>{x}</option>
+                <option value={x.newGraderName}>{x.newGraderName}</option>
               ))}
             </Select>
           </NumberInput>

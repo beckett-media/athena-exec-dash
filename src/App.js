@@ -318,7 +318,7 @@ function App() {
               >
                 <Route
                   path="/grading/grading-settings"
-                  element={<GradingSettings />}
+                  element={<GradingSettings dataCI={graderData} />}
                 />
               </Route>
             )}
