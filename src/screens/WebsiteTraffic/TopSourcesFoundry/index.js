@@ -9,9 +9,10 @@ import Loading from "../../../components/LottieAnimation/Loading";
 
 const TopSource = ({ className, topSources, isLoading, status }) => {
   const [sorting, setSorting] = React.useState("2022");
-  const intervals = ["2022", "2021", "2020", "2019"];
   const data = topSources.filter((d) => d?.dates === sorting);
   const topSourcesData = data.slice(0, 17);
+  
+  const intervals = ["2022", "2021", "2020", "2019"];
 
   if (isLoading) {
     return <Loading />;
@@ -20,7 +21,7 @@ const TopSource = ({ className, topSources, isLoading, status }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title={`Top ${topSourcesData.length} sources of website visitors`}
+      title={`Top ${topSourcesData.length} sources  out of 154 website visitors`}
       description="The graph below highlights the top 5 sources of website traffic for Beckett's website."
       classTitle="title-purple"
       head={

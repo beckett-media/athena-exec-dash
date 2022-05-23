@@ -20,12 +20,12 @@
       "function": {
         "athenaprodcb5f5078": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-426b5571305738735166-build.zip",
+          "s3Key": "amplify-builds/athenaprodcb5f5078-685a7444354e5a633553-build.zip",
           "secretsPathAmplifyAppId": "dwonjf8sejc3s"
         },
         "AdminQueriesa200cd2e": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa200cd2e-646e7836594177717449-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa200cd2e-62324a4e4b505a746553-build.zip"
         }
       }
     }
