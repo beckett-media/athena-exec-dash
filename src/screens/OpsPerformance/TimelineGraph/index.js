@@ -9,7 +9,7 @@ import { Box } from "@chakra-ui/react";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
 import useTimeseries from "../../../hooks/data/useTimeseries";
 
-const MarketData = ({ className }) => {
+const MarketData = ({ className, isLoading, timeseries }) => {
   const darkMode = useDarkMode(false);
   const { timeseries } = useTimeseries();
   const { levels } = useServiceLevel();
@@ -18,6 +18,7 @@ const MarketData = ({ className }) => {
     {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsReceived),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -33,8 +34,10 @@ const MarketData = ({ className }) => {
       },
     },
     {
+
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -56,6 +59,7 @@ const MarketData = ({ className }) => {
     {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsShippedToday),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -149,6 +153,7 @@ const MarketData = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
+
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

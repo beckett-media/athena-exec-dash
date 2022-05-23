@@ -262,6 +262,8 @@ app.get("/athenaform/:yesterday", async function (req, res) {
 app.post("/athenaform", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
   const riWrtAthena =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -293,7 +295,7 @@ app.post("/athenaform", async function (req, res) {
         "cards_received": req.body.cards_received,
         "type": req.body.type,
         "date": req.body.date,
-        "submission_item": req.body.submission_item,
+        "submission_item": `${uuid}`,
       },
     },
   };
@@ -566,6 +568,8 @@ app.get("/grading-service-form/:yesterday", async function (req, res) {
 app.post("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
   const riWrtAthena =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -597,8 +601,8 @@ app.post("/grading-service-form", async function (req, res) {
         "cards_received": req.body.cards_received,
         "type": req.body.type,
         "date": req.body.date,
-        "submission_item": req.body.submission_item,
-        "AthenaGradingServiceForm": req.body.submission_item,
+        "submission_item": `${uuid}`,
+        "AthenaGradingServiceForm": `${uuid}`,
       },
     },
   };
@@ -626,7 +630,6 @@ app.post("/grading-service-form", async function (req, res) {
   }
 });
 //PUT UPDATE
-// TODO: not working need fix
 app.put("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -803,6 +806,8 @@ app.get("/servicelevel/:yesterday", async function (req, res) {
 app.post("/servicelevel", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
 // ######################  CRUD Palantir ######################
 const riWrt = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -830,8 +835,8 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
     },
     data: {
       "parameters": {
-        "AthenaServiceForm": req.body.submission_item,
-        "submission_item": req.body.submission_item,
+        "AthenaServiceForm": `${uuid}`,
+        "submission_item": `${uuid}`,
         "date": req.body.date,
         "ten_day": req.body.ten_day,
         "thirty_day": req.body.thirty_day,
@@ -940,10 +945,193 @@ const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ont
   }
 });
 
+
 // ########################################################################################
 // #################### [[[END]]] - Servive Level, Verified, revenue Shipped [Prod] #####
 // ########################################################################################
 
+
+// ########################################################################################
+// #################### [[[START]]] - Graders [Prod] #####
+// ########################################################################################
+
+//GET//
+app.get("/graders", async function (req, res) {
+  const axios = require("axios");
+  const aws = require("aws-sdk");
+
+  const ridServies = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+  const objService = "AthenaGraders";
+  const URL_API = `https://beckett.palantirfoundry.com/api/v1/ontologies/${ridServies}/objects/${objService}`;
+
+  //############################### GET TOKEN ############################
+  const { Parameters } = await new aws.SSM()
+    .getParameters({
+      Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+      WithDecryption: true,
+    })
+    .promise();
+
+  const token = Parameters;
+
+  //################################ GET DATA ############################
+
+  const options = {
+    method: "GET",
+    url: URL_API,
+    headers: {
+      Authorization: "Bearer " + token[0].Value,
+      "Content-Type": "application/json",
+    },
+  };
+  if (token[0].Value.length === 0) {
+    res.status(500).send("No API key found");
+  } else {
+    axios(options)
+      .then((response) => {
+        res.send({
+          data: response.data,
+          status: response.status,
+        });
+      })
+      .catch((error) => {
+        res.send({
+          error: error.message,
+          status_code: error.status,
+        });
+      });
+  }
+});
+
+//POST//
+app.post("/graders", async function (req, res) {
+const axios = require("axios");
+const aws = require("aws-sdk");
+const { v4: uuidv4 } = require("uuid");
+const uuid = uuidv4();
+
+// ######################  CRUD Palantir ######################
+const riWrt = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+const createServicesRecord = "new-action-grader";
+const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrt}/actions/${createServicesRecord}/apply`;
+
+//############################### GET TOKEN ############################
+const { Parameters } = await new aws.SSM()
+.getParameters({
+  Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+  WithDecryption: true,
+})
+.promise();
+
+const token = Parameters;
+
+//################################ POST VAULTING RECORD ############################
+
+const options = {
+method: "POST",
+url: applyAction_createObject,
+headers: {
+  Authorization: "Bearer " + token[0].Value,
+  "Content-Type": "application/json",
+},
+data: {
+  "parameters": {
+    "parameters": {
+      "id": `${uuid}`,
+      "new_grader_name": req.body.new_grader_name,
+    },
+  },
+},
+};
+
+if (token[0].Value.length === 0) {
+res.status(500).send("No API key found");
+} else {
+axios(options)
+  .then((response) => {
+    console.log(response.data);
+    res.send({
+      message: "successfully updated",
+      data: response.data,
+      status_code: response.status,
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+    res.send({
+      status: "error",
+      data: error.message,
+      status_code: error.status,
+    });
+  });
+}
+});
+
+//PUT//
+app.put("/graders", async function (req, res) {
+const axios = require("axios");
+const aws = require("aws-sdk");
+
+// ######################  CRUD Palantir ######################
+const riWrt = "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
+const createServicesRecord = "new-action-update";
+const applyAction_createObject = `https://beckett.palantirfoundry.com/api/v1/ontologies/${riWrt}/actions/${createServicesRecord}/apply`;
+
+//############################### GET TOKEN ############################
+const { Parameters } = await new aws.SSM()
+.getParameters({
+  Names: ["API_KEY"].map((secretName) => process.env[secretName]),
+  WithDecryption: true,
+})
+.promise();
+
+const token = Parameters;
+
+//################################ POST VAULTING RECORD ############################
+
+const options = {
+method: "POST",
+url: applyAction_createObject,
+headers: {
+  Authorization: "Bearer " + token[0].Value,
+  "Content-Type": "application/json",
+},
+data: {
+  "parameters": {
+    "parameters": {
+      "AthenaGraders": req.body.id,
+      "new_grader_name": req.body.new_grader_name,
+    },
+  },
+},
+};
+
+if (token[0].Value.length === 0) {
+res.status(500).send("No API key found");
+} else {
+axios(options)
+  .then((response) => {
+    console.log(response.data);
+    res.send({
+      message: "successfully updated",
+      data: response.data,
+      status_code: response.status,
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+    res.send({
+      status: "error",
+      data: error.message,
+      status_code: error.status,
+    });
+  });
+}
+});
+
+// ########################################################################################
+// #################### [[[END]]] - Graders [Prod] #####
+// ########################################################################################
 
 
 app.listen(3000, function () {

@@ -8,7 +8,8 @@ import moment from "moment";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
 import { Box } from "@chakra-ui/react";
 
-const RevenueGraph = ({ className }) => {
+
+const RevenueGraph = ({ className, serviceLevel, isLoading }) => {
   const darkMode = useDarkMode(false);
   const { levels } = useServiceLevel();
 
@@ -16,6 +17,7 @@ const RevenueGraph = ({ className }) => {
     {
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.revenueshipped),
+
 
       type: "scatter",
       mode: "lines+markers",
