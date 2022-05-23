@@ -79,11 +79,11 @@ const CardForm = ({ className, ...props }) => {
     e.preventDefault();
     API.post(apiName, path, myInit)
       .then((response) => {
-        console.log(response.status_code);
+        // console.log(response.status_code);
         setStatusCode(response.status_code);
       })
       .catch((error) => {
-        console.log(error.response);
+        // console.log(error.response);
       });
   });
 

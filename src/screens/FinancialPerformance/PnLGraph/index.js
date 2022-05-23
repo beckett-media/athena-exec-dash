@@ -7,11 +7,11 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { useApiData } from "../../../providers/apiData";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const PnLGraph = ({ className }) => {
   const darkMode = useDarkMode(false);
-  const { timeseries, loadingTimeseries } = useApiData();
+  const { timeseries, isLoading } = useTimeseries();
 
   var dataG = [
     {
@@ -142,7 +142,7 @@ const PnLGraph = ({ className }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
-      {loadingTimeseries && (
+      {isLoading && (
         <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
       )}
 
