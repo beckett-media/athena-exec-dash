@@ -13,7 +13,7 @@ export default function TableWithAPI({ cells }) {
         ),
       },
       {
-        Header: "Commic Name",
+        Header: "Comic Name",
         accessor: "title",
       },
       {
@@ -41,7 +41,7 @@ export default function TableWithAPI({ cells }) {
             </Badge>
           );
         },
-      }
+      },
     ],
     []
   );

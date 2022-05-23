@@ -7,6 +7,7 @@ import "@aws-amplify/ui-react/styles.css";
 import "./styles/app.sass";
 import "./utils-auth/auth.css";
 import { compareArrays } from "./utils";
+import { graderData } from "./mocks/cardsByGrader";
 
 //Screen
 import Page from "./components/Page";
@@ -75,7 +76,8 @@ const formFields = {
 };
 
 const apiName = "palentirApi";
-const fetcher = (path) => API.get(apiName, path).then(response => response.data);
+const fetcher = (path) =>
+  API.get(apiName, path).then((response) => response.data);
 
 function App() {
   const {
@@ -316,7 +318,7 @@ function App() {
               >
                 <Route
                   path="/grading/grading-settings"
-                  element={<GradingSettings />}
+                  element={<GradingSettings dataCI={graderData} />}
                 />
               </Route>
             )}
