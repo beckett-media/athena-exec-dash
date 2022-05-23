@@ -6,12 +6,18 @@ import Card from "../../components/Card";
 import { API } from "aws-amplify";
 import NewGraderForm from "./NewGraderForm";
 import GraderEntryForm from "./GraderEntryForm";
-import { Box } from "@chakra-ui/react";
+import { Box, FormLabel, Text } from "@chakra-ui/react";
+import Icon from "../../components/Icon";
+import Modal from "../../components/Modal";
+import Schedule from "../../components/Schedule";
+
 import TablePivots from "./PivotTable";
 
 const GraderSettings = ({ dataCI }) => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
+  const [startDate, setStartDate] = useState();
+  const [visibleModal, setVisibleModal] = useState();
 
   console.log(dataCI);
 
@@ -46,6 +52,30 @@ const GraderSettings = ({ dataCI }) => {
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
+          <Box mb={25}>
+            <FormLabel>Select Date</FormLabel>
+            <div className={cn(stylesControl.control, className)}>
+              {actions.map((x, index) => (
+                <button
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "row",
+                    justifyContent: "flex-start",
+                    width: "20%",
+                  }}
+                  key={index}
+                  onClick={x.action}
+                >
+                  <Icon fill={"#33383F"} name={x.icon} size="36" />
+                  <Text ml={5}>{startDateFormatted}</Text>
+                </button>
+              ))}
+            </div>
+          </Box>
+          <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
+            <Schedule startDate={startDate} setStartDate={setStartDate} />
+          </Modal>
           <TablePivots dataCI={dataCI} />
           {/* <GradersTable
             data={data}
