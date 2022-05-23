@@ -13,9 +13,7 @@ import {
   useColorModeValue,
   FormLabel,
   Text,
-  Spinner,
 } from "@chakra-ui/react";
-import Control from "./Control";
 import moment from "moment";
 import { API } from "aws-amplify";
 // darkmode
@@ -23,24 +21,6 @@ import useDarkMode from "use-dark-mode";
 import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
-const startingSelectedDayObj = {
-  properties: {
-    cardsGradedToday: "",
-    cardsReceived: "",
-    cardsShippedToday: "",
-  },
-};
-const startingServiceLevel = {
-  properties: {
-    fiveDay: "",
-    recase: "",
-    tenDay: "",
-    thirtyDay: "",
-    twoDay: "",
-    revenueshipped: "",
-    verified: "",
-  },
-};
 const CardForm = ({ className, ...props }) => {
   const [category, setCategory] = useState("BGS");
   const [cardsReceived, setCardsReceived] = useState("");
@@ -51,13 +31,11 @@ const CardForm = ({ className, ...props }) => {
   const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
-  const [selectedDayFormData, setSelectedDayFormData] = useState(
-    startingSelectedDayObj
-  );
-  const [selectedDayServiceLevel, setSelectedDayServiceLevel] =
-    useState(startingServiceLevel);
-
   const [notEditable, setNotEditable] = useState(true);
+  const [serviceLevelRecieved, setServiceLevelRecieved] = useState(false);
+  const [timeSeriesRecieved,setTimeSeriesRecieved] = useState(false);
+  const [serviceLevelSubmissionItem, setServiceLevelSubmissionItem] = useState("");
+  const [timeSeriesSubmissionItem, setTimeSeriesSubmissionItem] = useState("");
   const [loading, setLoading] = useState(false);
   const [twoDay, setTwoDay] = useState("");
   const [fiveDay, setFiveDay] = useState("");
@@ -92,7 +70,8 @@ const CardForm = ({ className, ...props }) => {
       cards_received: parseInt(cardsReceived),
       type: "BGS",
       date: startDateFormatted,
-      submission_item: `${
+      submission_item: timeSeriesSubmissionItem || 
+       `${
         randomNumber(1, 100) +
         randomNumber(1, 100) +
         randomNumber(1, 100) +
@@ -113,7 +92,8 @@ const CardForm = ({ className, ...props }) => {
       hidden_1: 0,
       total: parseInt(cardsReceived),
       type: "BGS",
-      submission_item: `${
+      submission_item: serviceLevelSubmissionItem ||
+       `${
         randomNumber(1, 100) +
         randomNumber(1, 100) +
         randomNumber(1, 100) +
@@ -122,21 +102,21 @@ const CardForm = ({ className, ...props }) => {
     },
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleSubmit = useCallback(async (e) => {
+  const handlePostSubmit = useCallback(async (e) => {
     const serviceLevel = "/servicelevel";
     const cardUpdated = "/grading-service-form";
     const apiName = "palentirApi";
     setLoading(true);
     API.post(apiName, cardUpdated, myInit)
       .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
         setStatusCode(response.status_code);
         if (twoDay || fiveDay || tenDay || thirtyDay || recase) {
+          // TODO: If we want to use mutation, `post` endpoint should return the service levels data, as like `get` endpoint
+          // https://swr.vercel.app/docs/mutation#optimistic-updates
           API.post(apiName, serviceLevel, serviceLevelInit)
             .then((response) => {
-              console.log("response from post", response);
-              console.log(response.status_code);
+              // console.log("response from post", response);
+              // console.log(response.status_code);
             })
             .catch((error) => console.log(error.data));
         }
@@ -146,17 +126,43 @@ const CardForm = ({ className, ...props }) => {
         console.log(error.data, "post error");
         setLoading(false);
       });
+      setNotEditable(true);
   });
 
-  React.useEffect(() => {
-    setLoadingForm(true);
-    if (status_code === 200) {
-      setLoadingForm(false);
-      setCardsReceived(0);
-      setCardsShippedToday(0);
-      setCardsGradedToday(0);
-    }
-  }, [handleSubmit]);
+  const handlePutSubmit = useCallback(async(e) => {
+    const serviceLevel = "/servicelevel";
+    const cardUpdated = "/grading-service-form";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.put(apiName, cardUpdated, myInit)
+      .then((response) => {
+        setStatusCode(response.status_code);
+        if (serviceLevelRecieved) {
+          console.log('service lvl put')
+          API.put(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              console.log("response from post", response);
+              console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        } else {
+          console.log('service lvl post')
+          API.post(apiName, serviceLevel, serviceLevelInit)
+            .then((response) => {
+              // console.log("response from post", response);
+              // console.log(response.status_code);
+            })
+            .catch((error) => console.log(error.data));
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        setLoading(false);
+      });
+      setNotEditable(true);
+  });
+
   React.useEffect(() => {
     (async () => {
       const apiName = "palentirApi";
@@ -169,55 +175,69 @@ const CardForm = ({ className, ...props }) => {
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
           );
           if (filteredFormDataByDay[0]) {
-            setSelectedDayFormData(filteredFormDataByDay[0]);
+            console.log('we made it here', filteredFormDataByDay[0])
+            setCardsGradedToday(filteredFormDataByDay[0].properties.cardsGradedToday);
+            setCardsShippedToday(filteredFormDataByDay[0].properties.cardsShippedToday);
+            setCardsReceived(filteredFormDataByDay[0].properties.cardsReceived);
+            setTimeSeriesSubmissionItem(filteredFormDataByDay[0].properties.submissionItem);
             setNotEditable(true);
+            setTimeSeriesRecieved(true)
           } else {
-            setSelectedDayFormData(startingSelectedDayObj);
+            setCardsGradedToday("");
+            setCardsShippedToday("");
+            setCardsReceived("");
+            setTimeSeriesSubmissionItem("");
             setNotEditable(false);
+            setTimeSeriesRecieved(false)
           }
         })
         .catch((error) => {
           console.log(error.response);
         });
     })();
-
     (async () => {
       const apiName = "palentirApi";
       const path = "/servicelevel";
       API.get(apiName, path)
         .then((response) => {
           const formdata = response.data?.data;
-
           const filteredFormDataByDay = formdata.filter(
             (data) =>
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
           );
           if (filteredFormDataByDay[0]) {
-            setSelectedDayServiceLevel(filteredFormDataByDay[0]);
+            setTwoDay(filteredFormDataByDay[0].properties.twoDay);
+            setFiveDay(filteredFormDataByDay[0].properties.fiveDay);
+            setTenDay(filteredFormDataByDay[0].properties.tenDay);
+            setThirtyDay(filteredFormDataByDay[0].properties.thirtyDay);
+            setVerified(filteredFormDataByDay[0].properties.verified);
+            setRevenueShipped(filteredFormDataByDay[0].properties.revenueshipped);
+            setRecase(filteredFormDataByDay[0].properties.recase);
+            setServiceLevelSubmissionItem(filteredFormDataByDay[0].properties.submissionItem);
+            setServiceLevelRecieved(true);
           } else {
-            setSelectedDayServiceLevel(startingSelectedDayObj);
+            setTwoDay("");
+            setFiveDay("");
+            setTenDay("");
+            setThirtyDay("");
+            setVerified("");
+            setRevenueShipped("");
+            setRecase("");
+            setServiceLevelSubmissionItem("");
+            setServiceLevelRecieved(false);
           }
         })
         .catch((error) => {
           console.log(error.response);
         });
     })();
+    setStatusCode(0);
+  }, [startDateFormatted]);
 
-    setTwoDay("");
-    setFiveDay("");
-    setTenDay("");
-    setThirtyDay("");
-    setVerified("");
-    setRevenueShipped("");
-    setRecase("");
-    setCardsGradedToday("");
-    setCardsShippedToday("");
-    setCardsReceived("");
-  }, [startDate]);
-
-  const handleServiceLevelChange = (e, setServiceLevel) => {
+  const handleChange = (e,  setServiceLevel) => {
     setServiceLevel(e.target.value);
   };
+
   const checkDisableSubmit = () => {
     if (
       !(cardsGradedToday && cardsShippedToday && cardsReceived && !notEditable)
@@ -225,30 +245,56 @@ const CardForm = ({ className, ...props }) => {
       return true;
     return checkSumServiceLevel();
   };
+
   const checkSumServiceLevel = () => {
     if (notEditable) {
       return false;
     }
     const two =
-      selectedDayServiceLevel.properties.twoDay || parseInt(twoDay) || 0;
+       parseInt(twoDay) || 0;
     const five =
-      selectedDayServiceLevel.properties.fiveDay || parseInt(fiveDay) || 0;
+       parseInt(fiveDay) || 0;
     const ten =
-      selectedDayServiceLevel.properties.tenDay || parseInt(tenDay) || 0;
+       parseInt(tenDay) || 0;
     const thirty =
-      selectedDayServiceLevel.properties.thirtyDay || parseInt(thirtyDay) || 0;
+       parseInt(thirtyDay) || 0;
     const re =
-      selectedDayServiceLevel.properties.recase || parseInt(recase) || 0;
+      parseInt(recase) || 0;
     if (two === 0 && five === 0 && ten === 0 && thirty === 0 && re === 0)
       return false;
     const totalServiceLevelSum = two + five + ten + thirty + re;
     if (totalServiceLevelSum !== parseInt(cardsReceived)) return true;
   };
+
+  const CreateNumberInput = ( value, setState, label, marginRight = 0, marginBottom, formLabelTop = true ) => {
+    return (
+      <NumberInput mr ={marginRight} value={ value }>
+          {formLabelTop && <FormLabel> { label } </FormLabel>} 
+          <NumberInputField
+            focusBorderColor={ useColorModeValue("blue.500", "blue.200") }
+            borderColor={ darkMode.value ? "#272B30" : "#EFEFEF" }
+            borderRadius={12}
+            disabled={ notEditable }
+            border={`2px solid transparent`}
+            mb={ marginBottom }
+            label={ label }
+            type="number"
+            placeholder="0"
+            onChange={(e) => {
+              handleChange(e, setState);
+            }}
+          />
+
+          {!formLabelTop && <FormLabel mb={10} textAlign={"center"}> {label} </FormLabel>} 
+        </NumberInput>
+    )
+  }
   return (
     <Card
       className={cn(styles.card, className)}
       title="Cards Received, Graded, & Shipped Input Form"
       classTitle="title-green"
+      description={"Select a previous date to view and edit data"}
     >
       <div className={styles.images}>
         <Box mb={25}>
@@ -275,78 +321,11 @@ const CardForm = ({ className, ...props }) => {
         <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
           <Schedule startDate={startDate} setStartDate={setStartDate} />
         </Modal>
-        <NumberInput
-          value={
-            selectedDayFormData.properties.cardsGradedToday || cardsGradedToday
-          }
-        >
-          <FormLabel>Cards graded today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            value={cardsGradedToday}
-            disabled={
-              selectedDayFormData.properties.cardsGradedToday && notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Cards graded today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setCardsGradedToday(e.target.value);
-            }}
-          />
-        </NumberInput>
-        <NumberInput
-          value={
-            selectedDayFormData.properties.cardsShippedToday ||
-            cardsShippedToday
-          }
-        >
-          <FormLabel>Cards shipped today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            border={`2px solid transparent`}
-            disabled={
-              selectedDayFormData.properties.cardsShippedToday && notEditable
-            }
-            mb={25}
-            value={0}
-            defaultValue={0}
-            size="lg"
-            label="Cards shipped today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => setCardsShippedToday(e.target.value)}
-            // tooltip="Maximum 100 characters. No HTML or emoji allowed"
-          />
-        </NumberInput>
-        <NumberInput
-          value={selectedDayFormData.properties.cardsReceived || cardsReceived}
-        >
-          <FormLabel>Cards received today</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            border={`2px solid transparent`}
-            disabled={
-              selectedDayFormData.properties.cardsReceived && notEditable
-            }
-            mb={35}
-            value={cardsReceived}
-            size="lg"
-            label="Cards received today"
-            type="number"
-            placeholder="0"
-            onChange={(e) => setCardsReceived(e.target.value)}
-          />
-        </NumberInput>
+        <Flex>
+          { CreateNumberInput(cardsGradedToday, setCardsGradedToday, "Cards graded today", 10, 25) }
+          { CreateNumberInput(cardsShippedToday, setCardsShippedToday, "Cards shipped today", 10, 25) }
+          { CreateNumberInput(cardsReceived, setCardsReceived, "Cards recieved today", 10, 25) }
+        </Flex>
         <Flex>
           <FormLabel mb={3}>
             Cards Recieved By Service Level (Optional):
@@ -359,183 +338,16 @@ const CardForm = ({ className, ...props }) => {
           )}
         </Flex>
         <Flex>
-          <NumberInput
-            mr={3}
-            value={selectedDayServiceLevel.properties.twoDay || twoDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDay ||
-                  selectedDayServiceLevel.properties.fiveDay ||
-                  selectedDayServiceLevel.properties.tenDay ||
-                  selectedDayServiceLevel.properties.thirtyDay ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              border={`2px solid transparent`}
-              label="Two Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTwoDay)}
-            ></NumberInputField>
-            <FormLabel mb={5} textAlign={"center"}>
-              {" "}
-              Two Day{" "}
-            </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={selectedDayServiceLevel.properties.fiveDay || fiveDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDay ||
-                  selectedDayServiceLevel.properties.fiveDay ||
-                  selectedDayServiceLevel.properties.tenDay ||
-                  selectedDayServiceLevel.properties.thirtyDay ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              label="Five Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setFiveDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Five Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={selectedDayServiceLevel.properties.tenDay || tenDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDay ||
-                  selectedDayServiceLevel.properties.fiveDay ||
-                  selectedDayServiceLevel.properties.tenDay ||
-                  selectedDayServiceLevel.properties.thirtyDay ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              label="Ten Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setTenDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Ten Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={selectedDayServiceLevel.properties.thirtyDay || thirtyDay}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDay ||
-                  selectedDayServiceLevel.properties.fiveDay ||
-                  selectedDayServiceLevel.properties.tenDay ||
-                  selectedDayServiceLevel.properties.thirtyDay ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              label="Thirty Day"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setThirtyDay)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Thirty Day </FormLabel>
-          </NumberInput>
-          <NumberInput
-            mr={3}
-            value={selectedDayServiceLevel.properties.recase || recase}
-          >
-            <NumberInputField
-              focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-              borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-              borderRadius={12}
-              mb={3}
-              border={`2px solid transparent`}
-              disabled={
-                (selectedDayServiceLevel.properties.twoDay ||
-                  selectedDayServiceLevel.properties.fiveDay ||
-                  selectedDayServiceLevel.properties.tenDay ||
-                  selectedDayServiceLevel.properties.thirtyDay ||
-                  selectedDayServiceLevel.properties.recase) &&
-                notEditable
-              }
-              label="Recase"
-              type="number"
-              placeholder="0"
-              onChange={(e) => handleServiceLevelChange(e, setRecase)}
-            ></NumberInputField>
-            <FormLabel textAlign={"center"}> Recase </FormLabel>
-          </NumberInput>
+          { CreateNumberInput(twoDay, setTwoDay, "Two Day", 3, 0, false) }
+          { CreateNumberInput(fiveDay, setFiveDay, "Five Day", 3, 0, false) }
+          { CreateNumberInput(tenDay, setTenDay, "Ten Day", 3, 0, false) }
+          { CreateNumberInput(thirtyDay, setThirtyDay, "Thirty Day", 3, 0, false) } 
+          { CreateNumberInput(recase, setRecase, "Recase", 3, 0, false) }
         </Flex>
-        <NumberInput
-          value={
-            selectedDayServiceLevel.properties.revenueshipped || revenueshipped
-          }
-        >
-          <FormLabel>Revenue Of Cards Shipped</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            value={cardsGradedToday}
-            disabled={
-              selectedDayFormData.properties.cardsGradedToday && notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Revenue Of Cards Shipped"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setRevenueShipped(e.target.value);
-            }}
-          />
-        </NumberInput>
-        <NumberInput
-          value={selectedDayServiceLevel.properties.verified || verified}
-        >
-          <FormLabel>Cards Verified</FormLabel>
-          <NumberInputField
-            focusBorderColor={useColorModeValue("blue.500", "blue.200")}
-            borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
-            borderRadius={12}
-            value={cardsGradedToday}
-            disabled={
-              selectedDayFormData.properties.cardsGradedToday && notEditable
-            }
-            border={`2px solid transparent`}
-            mb={25}
-            size="lg"
-            label="Cards Verified"
-            type="number"
-            placeholder="0"
-            onChange={(e) => {
-              setVerified(e.target.value);
-            }}
-          />
-        </NumberInput>
+        <Flex>
+          { CreateNumberInput(revenueshipped, setRevenueShipped, "Revenue Of Cards Shipped (Optional)", 3, 5) }
+          { CreateNumberInput(verified, setVerified, "Cards Verified (Optional)", 3, 10) }
+        </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Divider />
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
@@ -544,7 +356,7 @@ const CardForm = ({ className, ...props }) => {
               variantColor="purple"
               variant="ghost"
               mt={15}
-              onClick={handleSubmit}
+              onClick={timeSeriesRecieved ? handlePutSubmit :  handlePostSubmit}
               size="lg"
               px="8"
               bg={"#83BF6E"}
@@ -557,23 +369,26 @@ const CardForm = ({ className, ...props }) => {
             >
               Save submission
             </Button>
-            {/* { selectedDayFormData.properties.cardsGradedToday && 
-                <Button                
+            { notEditable && serviceLevelRecieved &&
+                <Button
                   variantColor="purple"
                   variant="ghost"
                   mt={15}
-                  onClick={() => setNotEditable(false)}
+                  onClick={() => {
+                    setStatusCode(0);
+                    setNotEditable(false)}
+                  } 
                   size="lg"
                   px="8"
                   mr={10}
-                  bg={"#83BF6E"}
+                  bg={"blue"}
                   // eslint-disable-next-line react-hooks/rules-of-hooks
                   _hover={{ bg: useColorModeValue("gray.600", "gray.500") }}
                   // eslint-disable-next-line react-hooks/rules-of-hooks
                   _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
                   color="white"
               > Edit
-              </Button>} */}
+              </Button>}
             {status_code === 200 && (
               <Text
                 fontSize="lg"

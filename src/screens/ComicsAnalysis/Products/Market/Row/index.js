@@ -5,6 +5,7 @@ import cn from "classnames";
 import { numberWithCommas } from "../../../../../utils.js";
 
 const Row = ({ item }) => {
+  // console.log(item);
   return (
     <>
       <div className={styles.row}>

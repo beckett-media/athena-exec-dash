@@ -4,6 +4,16 @@ import styles from "./Row.module.sass";
 import { numberWithCommas } from "../../../../../utils.js";
 
 const Row = ({ item }) => {
+
+// function to ellipsis text after 40 characters
+  const ellipsisText = (text) => {
+    if (text.length > 40) {
+      return text.substring(0, 60) + "...";
+    } else {
+      return text;
+    }
+  };
+
   return (
     <>
       <div className={styles.row}>
@@ -12,7 +22,7 @@ const Row = ({ item }) => {
           <div className={styles.item}>
             <div className={styles.details}>
               <div className={styles.wrap}>
-                <div className={styles.category}>{item?.pageTitle}</div>
+                <div className={styles.category}>{ellipsisText(item?.pageTitle)}</div>
               </div>
             </div>
           </div>

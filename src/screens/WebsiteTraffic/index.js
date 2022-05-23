@@ -8,7 +8,7 @@ import TopDevices from "./TopDevicesFoundry";
 import { useApiData } from "../../providers/apiData";
 
 const WebsiteMediaMetric = () => {
-  const { trafficData, deviceData , countriesData, pagesData, isLoading, status, allUsers } =
+  const { trafficData, deviceData , countriesData, pagesData, isLoading, status} =
     useApiData();
   return (
     <div className={styles.row}>

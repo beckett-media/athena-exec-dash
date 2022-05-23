@@ -12,7 +12,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import useDarkMode from "use-dark-mode";
-import { API } from "aws-amplify";
 import Dropdown from "../../../components/Dropdown";
 
 const TopCountry = ({ className, data }) => {
