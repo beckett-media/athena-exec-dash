@@ -2,20 +2,22 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import { Box, Text } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
+import { Box } from "@chakra-ui/react";
+
 
 const RevenueGraph = ({ className, serviceLevel, isLoading }) => {
   const darkMode = useDarkMode(false);
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.revenueshipped),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.revenueshipped),
+
 
       type: "scatter",
       mode: "lines+markers",

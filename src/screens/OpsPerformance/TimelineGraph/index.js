@@ -1,21 +1,24 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const MarketData = ({ className, isLoading, timeseries }) => {
   const darkMode = useDarkMode(false);
+  const { timeseries } = useTimeseries();
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
-      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: timeseries?.map((d) => d?.cardsReceived),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsReceived),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -31,8 +34,10 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       },
     },
     {
-      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: timeseries?.map((d) => d?.cardsGradedToday),
+
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsGradedToday),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -52,8 +57,9 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       },
     },
     {
-      x: timeseries?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: timeseries?.map((d) => d?.cardsShippedToday),
+      x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
+      y: timeseries.map((d) => d.cardsShippedToday),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -69,8 +75,8 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       },
     },
     {
-      x: serviceLevelData?.map((d) => moment(d?.properties?.date).format("MMM DD YY")),
-      y: serviceLevelData?.map((d) => d?.properties?.verified),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.verified),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -147,9 +153,6 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
-      {/* {isLoading && (
-        <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />
-      )} */}
 
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
