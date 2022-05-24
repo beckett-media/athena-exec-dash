@@ -1,0 +1,49 @@
+name: Automation from Staging to Athena-Prod
+on:
+  push:
+    branches: [ staging ]
+    
+jobs:
+  merge-staging-to-dev:
+    name: Staging to Athena-Dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Staging Code
+        uses: actions/checkout@v3      
+      - name: Pull Request for Athena Dev
+        id: pr
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: "staging"
+          destination_branch: "athena-dev"
+          github_token: ${{secrets.GITHUB_TOKEN}}
+      - name: Testing Code
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Manual Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: anthonyplain,chrisnbattista,kaman1,louisdtb,raj-psd,trent-ps
+          minimum-approvals: 1
+      - name: Approve Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |            
+            await github.rest.pulls.createReview({
+              event: "APPROVE",
+              owner: context.repo.owner,
+              pull_number: ${{steps.pr.outputs.pr_number}},
+              repo: context.repo.repo,
+            })
+      - name: Merge Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |            
+            await github.rest.pulls.merge({
+              merge_method: "squash"
+              owner: context.repo.owner,
+              pull_number: ${{  steps.pr.outputs.pr_number  }},
+              repo: context.repo.repo,
+            })

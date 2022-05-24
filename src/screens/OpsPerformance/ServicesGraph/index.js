@@ -2,22 +2,20 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
-import Loading from "../../../components/LottieAnimation/Loading";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import { Box, Text } from "@chakra-ui/react";
-import { API } from "aws-amplify";
+import { Box } from "@chakra-ui/react";
+import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
 const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
   const darkMode = useDarkMode(true);
-
+  const { levels } = useServiceLevel();
 
   var dataG = [
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.twoDay),
-
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.twoDay),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -36,8 +34,8 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.fiveDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.fiveDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -53,8 +51,8 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.tenDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.tenDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -70,8 +68,8 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.thirtyDay),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.thirtyDay),
 
       type: "scatter",
       mode: "lines+markers",
@@ -87,8 +85,8 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-      x: serviceLevel?.map((d) => moment(d?.date).format("MMM DD YY")),
-      y: serviceLevel?.map((d) => d?.recase),
+      x: levels.map((d) => moment(d.date).format("MMM DD YY")),
+      y: levels.map((d) => d.recase),
 
       type: "scatter",
       mode: "lines+markers",

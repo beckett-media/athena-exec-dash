@@ -9,7 +9,7 @@ const Header = ({ onOpen, user }) => {
   };
 
   // slice user name from christian@plainspokendigital.com
-  const userName = user?.username.slice(0, user?.username.indexOf("@"));
+  const userName = user?.username;
   // capitalize first letter of user name
   const capitalizedUserName =
     userName.charAt(0).toUpperCase() + userName.slice(1);

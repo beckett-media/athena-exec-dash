@@ -59,7 +59,7 @@ const navigation = [
   },
   {
     title: "Card Grading",
-    icon: "setting",
+    icon: "ticket",
     slug: "grading",
     permission: ["dev", "admin", "grading"],
     dropdown: [
@@ -108,7 +108,7 @@ const Sidebar = ({ className, onClose, signOut, user, allUsers }) => {
 
   // const userPermissions = null;
 
-  console.log(userPermissions);
+  // console.log(userPermissions);
 
   //Function to map out the nav items
 

@@ -3,7 +3,6 @@ import React from "react";
 import FilterTable from "./FilterTable";
 
 export default function TableWithAPI({ cells }) {
-  console.log(cells);
   const columns = React.useMemo(
     () => [
       {
@@ -14,7 +13,7 @@ export default function TableWithAPI({ cells }) {
         ),
       },
       {
-        Header: "Commic Name",
+        Header: "Comic Name",
         accessor: "title",
       },
       {
@@ -42,7 +41,7 @@ export default function TableWithAPI({ cells }) {
             </Badge>
           );
         },
-      }
+      },
     ],
     []
   );
