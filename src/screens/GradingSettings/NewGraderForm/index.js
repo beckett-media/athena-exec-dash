@@ -41,9 +41,6 @@ const NewGraderForm = ({ className, ...props }) => {
   const [status_code, setStatusCode] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
-  const [selectedDayFormData, setSelectedDayFormData] = useState(
-    startingSelectedDayObj
-  );
   const [loading, setLoading] = useState(false);
   const [newGraderName, setNewGraderName] = useState("");
   const [editGrader, setEditGrader] = useState("");
@@ -59,6 +56,8 @@ const NewGraderForm = ({ className, ...props }) => {
 
   const { graders, isLoading, isError } = useGraders();
 
+  console.log(graders);
+
   const myInit = {
     body: {
       new_grader_name: newGraderName,
@@ -67,13 +66,11 @@ const NewGraderForm = ({ className, ...props }) => {
 
   const myUpdate = {
     body: {
-      // TODO: add ID from API
       id: editGraderId,
       new_grader_name: editGrader,
     },
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
     const graders = "/graders";

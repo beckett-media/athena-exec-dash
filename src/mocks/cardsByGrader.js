@@ -11,6 +11,17 @@ export const graderData = [
     includesSaturday: "false",
   },
   {
+    startDateFormatted: "2022-05-23",
+    endDateFormatted: "2022-05-29",
+    monday: 1234,
+    tuesday: 543,
+    wednesday: 0,
+    thursday: 0,
+    friday: 0,
+    grader: "Balou the Bear",
+    includesSaturday: "false",
+  },
+  {
     startDateFormatted: "2022-05-09",
     endDateFormatted: "2022-05-13",
     monday: "1234",

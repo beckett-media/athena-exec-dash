@@ -3,7 +3,6 @@ import cn from "classnames";
 import styles from "./GradingSettings.module.sass";
 import stylesControl from "./Control.module.sass";
 import Card from "../../components/Card";
-// import GradersTable from "./GradersTable";
 import { API } from "aws-amplify";
 import NewGraderForm from "./NewGraderForm";
 import GraderEntryForm from "./GraderEntryForm";
@@ -12,6 +11,7 @@ import Icon from "../../components/Icon";
 import Modal from "../../components/Modal";
 import Schedule from "../../components/Schedule";
 import moment from "moment";
+import Loading from "../../components/LottieAnimation/Loading";
 
 import TablePivots from "./PivotTable";
 
@@ -19,7 +19,6 @@ const GraderSettings = ({ dataCI, className }) => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([0]);
   const [startDate, setStartDate] = useState(new Date());
-  const [startWeek, setStartWeek] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState();
   const actions = [
     {
@@ -29,6 +28,7 @@ const GraderSettings = ({ dataCI, className }) => {
   ];
 
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
+  const startWeek = findWeekStart(startDate);
   const startWeekFormatted = moment(startWeek).format("YYYY-MM-DD");
   const filteredData = dataCI.filter(filterData);
 
@@ -38,21 +38,17 @@ const GraderSettings = ({ dataCI, className }) => {
 
   function subtractDays(date, days) {
     date.setDate(date.getDate() - days);
-    console.log(date);
     return date;
   }
 
   function findWeekStart(date) {
     const subtract = date.getDay() - 1;
-    console.log(subtract);
-    setStartWeek(subtractDays(date, subtract));
+    return subtractDays(date, subtract);
   }
 
-  // findWeekStart(startDate);
-
-  console.log(startDate.getDay());
-  console.log(dataCI);
-  console.log(filteredData);
+  // console.log(startWeekFormatted);
+  // console.log(dataCI);
+  // console.log(filteredData);
 
   React.useEffect(() => {
     setLoading(true);
@@ -64,16 +60,20 @@ const GraderSettings = ({ dataCI, className }) => {
         .then((response) => {
           const formdata = response.data?.data;
           setData(formdata);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error.response);
+          setLoading(false);
         });
     })();
-    setLoading(false);
-  }, [loading]);
+  }, []);
+
+  console.log(loading);
 
   return (
     <>
+      {loading && <Loading loadingG={"loadingG"} />}
       <NewGraderForm setLoading={setLoading} />
       <Box mt={12} />
       <GraderEntryForm setLoading={setLoading} />
@@ -109,12 +109,7 @@ const GraderSettings = ({ dataCI, className }) => {
           <Modal visible={visibleModal} onClose={() => setVisibleModal(false)}>
             <Schedule startDate={startDate} setStartDate={setStartDate} />
           </Modal>
-          <TablePivots dataCI={dataCI} />
-          {/* <GradersTable
-            data={data}
-            title="date selected"
-            setLoading={setLoading}
-          /> */}
+          <TablePivots dataCI={filteredData} />
         </div>
       </Card>
     </>
