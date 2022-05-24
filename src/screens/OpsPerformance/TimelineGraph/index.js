@@ -19,6 +19,7 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsReceived),
 
+
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -33,6 +34,7 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       },
     },
     {
+
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
 
@@ -46,7 +48,7 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       },
       name: "Graded",
       line: {
-        color: "#DCF341",
+        color: darkMode.value ? "#B5E4CA" : "green",
         width: 4,
         dash: "dot",
         shape: "spline",
@@ -63,7 +65,7 @@ const MarketData = ({ className, isLoading, timeseries }) => {
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "Shipped",
       line: {
-        color: darkMode.value ? "#B5E4CA" : "green",
+        color: "#2A85FF",
         width: 4,
         dash: "dot",
         shape: "spline",
