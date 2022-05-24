@@ -51,6 +51,7 @@ export default function BasicTable({ columns, data }) {
           </tr>
         ))}
       </tfoot>
+      <div>This is a test</div>
     </table>
   );
 }

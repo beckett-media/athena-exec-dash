@@ -21,32 +21,72 @@ export default function TableWithAPI({ cells }) {
       {
         Header: "Monday",
         accessor: "monday",
-        Footer: "TOTAL",
+        Footer: (info) => {
+          // Only calculate total visits if rows change
+          const total = React.useMemo(
+            () => info.rows.reduce((sum, row) => row.values.monday + sum, 0),
+            [info.rows]
+          );
+
+          return <>{total}</>;
+        },
       },
       {
         Header: "Tuesday",
         accessor: "tuesday",
-        Footer: "TOTAL",
+        Footer: (info) => {
+          // Only calculate total visits if rows change
+          const total = React.useMemo(
+            () => info.rows.reduce((sum, row) => row.values.tuesday + sum, 0),
+            [info.rows]
+          );
+
+          return <>{total}</>;
+        },
       },
       {
         Header: "Wednesday",
         accessor: "wednesday",
-        Footer: "TOTAL",
+        Footer: (info) => {
+          // Only calculate total visits if rows change
+          const total = React.useMemo(
+            () => info.rows.reduce((sum, row) => row.values.wednesday + sum, 0),
+            [info.rows]
+          );
+
+          return <>{total}</>;
+        },
       },
       {
         Header: "Thursday",
         accessor: "thursday",
-        Footer: "TOTAL",
+        Footer: (info) => {
+          // Only calculate total visits if rows change
+          const total = React.useMemo(
+            () => info.rows.reduce((sum, row) => row.values.thursday + sum, 0),
+            [info.rows]
+          );
+
+          return <>{total}</>;
+        },
       },
       {
         Header: "Friday",
         accessor: "friday",
-        Footer: "TOTAL",
+        Footer: (info) => {
+          // Only calculate total visits if rows change
+          const total = React.useMemo(
+            () => info.rows.reduce((sum, row) => row.values.friday + sum, 0),
+            [info.rows]
+          );
+
+          return <>{total}</>;
+        },
       },
       {
         Header: "Includes Saturday",
         accessor: "includesSaturday",
-        Footer: "TOTAL",
+        Footer: "",
       },
       // {
       //   Header: "Grade Level",
