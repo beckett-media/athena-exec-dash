@@ -18,27 +18,9 @@ import { API } from "aws-amplify";
 import useDarkMode from "use-dark-mode";
 import useGraders from "../../../hooks/data/useGraders";
 
-const startingSelectedDayObj = {
-  properties: {
-    cardsGradedToday: "",
-    cardsReceived: "",
-    cardsShippedToday: "",
-  },
-};
-const startingServiceLevel = {
-  properties: {
-    fiveDayExpress: "",
-    recase: "",
-    tenDayExpress: "",
-    thirtyDayStandard: "",
-    twoDayPremium: "",
-    revenueShipped: "",
-    numCardVerified: "",
-  },
-};
-
 const NewGraderForm = ({ className, ...props }) => {
   const [status_code, setStatusCode] = useState(0);
+  const [status_code_edit, setStatusCodeEdit] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -100,9 +82,9 @@ const NewGraderForm = ({ className, ...props }) => {
       .then((response) => {
         console.log("response from post", response);
         console.log(response.status_code);
-        setStatusCode(response.status_code);
+        setStatusCodeEdit(response.status_code);
         setLoading(false);
-        status_code === 200 && alert(status_code);
+        status_code_edit === 200 && alert(status_code_edit);
       })
       .catch((error) => {
         console.log(error.data, "post error");
@@ -242,7 +224,7 @@ const NewGraderForm = ({ className, ...props }) => {
             >
               Save submission
             </Button>
-            {status_code === 200 && (
+            {status_code_edit === 200 && (
               <Text
                 fontSize="lg"
                 color="green.500"

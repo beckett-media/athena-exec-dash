@@ -89,40 +89,44 @@ const GraderEntryForm = ({ className, ...props }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
-    // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
-    alert(JSON.stringify(myInit));
-    setCardsGraded(0);
-    setIncludesSaturday(false);
-    // const serviceLevel = "/servicelevel";
-    // const cardUpdated = "/grading-service-form";
-    // const apiName = "palentirApi";
-    // setLoading(true);
-    // API.post(apiName, cardUpdated, myInit)
-    //   .then((response) => {
-    //     console.log("response from post", response);
-    //     console.log(response.status_code);
-    //     setStatusCode(response.status_code);
-    //     if (
-    //       twoDayPremium ||
-    //       fiveDayExpress ||
-    //       tenDayExpress ||
-    //       thirtyDayStandard ||
-    //       recase
-    //     ) {
-    //       API.post(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     }
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.data, "post error");
-    //     setLoading(false);
-    //   });
+    // alert(JSON.stringify(myInit));
+    const graders = "/graders";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.post(apiName, graders, myInit)
+      .then((response) => {
+        console.log("response from post", response);
+        console.log(response.status_code);
+        setStatusCode(response.status_code);
+        setLoading(false);
+        status_code === 200 && alert(status_code);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        alert(error.data);
+        setLoading(false);
+      });
   });
+
+  // const handleUpdate = useCallback(async (e) => {
+  //   // alert(JSON.stringify(myUpdate));
+  //   const graders = "/graders";
+  //   const apiName = "palentirApi";
+  //   setLoading(true);
+  //   API.put(apiName, graders, myUpdate)
+  //     .then((response) => {
+  //       console.log("response from post", response);
+  //       console.log(response.status_code);
+  //       setStatusCodeEdit(response.status_code);
+  //       setLoading(false);
+  //       status_code_edit === 200 && alert(status_code_edit);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.data, "post error");
+  //       alert(error.data);
+  //       setLoading(false);
+  //     });
+  // });
 
   const checkDisableSubmit = () => {
     if (!(grader && cardsGraded)) return true;
