@@ -9,7 +9,7 @@ import { Box } from "@chakra-ui/react";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
 import useTimeseries from "../../../hooks/data/useTimeseries";
 
-const MarketData = ({ className }) => {
+const MarketData = ({ className, isLoading, timeseries }) => {
   const darkMode = useDarkMode(false);
   const { timeseries } = useTimeseries();
   const { levels } = useServiceLevel();
@@ -18,6 +18,7 @@ const MarketData = ({ className }) => {
     {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsReceived),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -33,6 +34,7 @@ const MarketData = ({ className }) => {
       },
     },
     {
+
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
 
@@ -90,7 +92,6 @@ const MarketData = ({ className }) => {
         smoothing: 1,
       },
     },
-
   ];
 
   var layout = {

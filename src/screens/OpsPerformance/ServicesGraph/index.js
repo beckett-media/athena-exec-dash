@@ -8,7 +8,7 @@ import moment from "moment";
 import { Box } from "@chakra-ui/react";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
-const ServicesGraph = ({ className }) => {
+const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
   const darkMode = useDarkMode(true);
   const { levels } = useServiceLevel();
 
