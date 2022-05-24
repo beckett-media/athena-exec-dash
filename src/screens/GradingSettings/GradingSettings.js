@@ -69,8 +69,6 @@ const GraderSettings = ({ dataCI, className }) => {
     })();
   }, []);
 
-  console.log(loading);
-
   return (
     <>
       {loading && <Loading loadingG={"loadingG"} />}

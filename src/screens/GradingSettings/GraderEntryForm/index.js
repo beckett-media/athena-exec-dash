@@ -69,6 +69,10 @@ const GraderEntryForm = ({ className, ...props }) => {
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const { graders, isLoading, isError } = useGraders();
 
+  function isFriday(date) {
+    return date.getDay() !== 5;
+  }
+
   //DEFINITIONS
   const myInit = {
     body: {
@@ -236,9 +240,10 @@ const GraderEntryForm = ({ className, ...props }) => {
           </NumberInput>
           <Checkbox
             isChecked={includesSaturday}
+            isDisabled={isFriday(startDate)}
             onChange={() => setIncludesSaturday(!includesSaturday)}
           >
-            Includes Saturday work
+            Includes Saturday work (for Friday only)
           </Checkbox>
         </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
