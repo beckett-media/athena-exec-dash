@@ -9,6 +9,7 @@ export default function BasicTable({ columns, data }) {
     headerGroups, // Returns normalized header groups
     rows, // rows for the table based on the data passed
     prepareRow, // Prepare the row in order to be displayed.
+    footerGroups,
   } = useTable({
     columns,
     data,
@@ -41,6 +42,15 @@ export default function BasicTable({ columns, data }) {
           );
         })}
       </tbody>
+      <tfoot>
+        {footerGroups.map((group) => (
+          <tr {...group.getFooterGroupProps()}>
+            {group.headers.map((column) => (
+              <td {...column.getFooterProps()}>{column.render("Footer")}</td>
+            ))}
+          </tr>
+        ))}
+      </tfoot>
     </table>
   );
 }

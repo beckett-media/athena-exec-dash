@@ -16,30 +16,37 @@ export default function TableWithAPI({ cells }) {
       {
         Header: "Grader Name",
         accessor: "grader",
+        Footer: "TOTAL",
       },
       {
         Header: "Monday",
         accessor: "monday",
+        Footer: "TOTAL",
       },
       {
         Header: "Tuesday",
         accessor: "tuesday",
+        Footer: "TOTAL",
       },
       {
         Header: "Wednesday",
         accessor: "wednesday",
+        Footer: "TOTAL",
       },
       {
         Header: "Thursday",
         accessor: "thursday",
+        Footer: "TOTAL",
       },
       {
         Header: "Friday",
         accessor: "friday",
+        Footer: "TOTAL",
       },
       {
         Header: "Includes Saturday",
         accessor: "includesSaturday",
+        Footer: "TOTAL",
       },
       // {
       //   Header: "Grade Level",
