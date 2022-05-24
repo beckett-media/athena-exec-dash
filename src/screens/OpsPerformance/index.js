@@ -27,11 +27,11 @@ const OpsPerformance = () => {
         <Box my={"2rem"} />
         <Backlog />
         <Box my={"2rem"} />
-        <MarketData isLoading={isLoading} timeseries={timeseries} />
+        <MarketData />
         <Box my={"2rem"} />
-        <ServicesGraph isLoading={isLoading} serviceLevel={serviceLevel} />
+        <ServicesGraph />
         <Box my={"2rem"} />
-        <RevenueGraph isLoading={isLoading} serviceLevel={serviceLevel} />
+        <RevenueGraph />
         <Box my={"2rem"} />
         {/* <GradingGraph /> */}
         <Box my={"2rem"} />
