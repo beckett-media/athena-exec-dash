@@ -60,7 +60,7 @@ const NewGraderForm = ({ className, ...props }) => {
 
   const { graders, isLoading, isError } = useGraders();
 
-  console.log(graders);
+  console.log(graders, "data");
 
   const myInit = {
     body: {
