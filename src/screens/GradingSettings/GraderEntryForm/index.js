@@ -24,6 +24,7 @@ import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
 import useGraders from "../../../hooks/data/useGraders";
+import useGraderEntry from "../../../hooks/data/useGraderEntry";
 
 const startingSelectedDayObj = {
   properties: {
@@ -43,6 +44,7 @@ const startingServiceLevel = {
     numCardVerified: "",
   },
 };
+
 const GraderEntryForm = ({ className, ...props }) => {
   //STATE DECLARATIONS
   const [category, setCategory] = useState("BGS");
@@ -67,16 +69,57 @@ const GraderEntryForm = ({ className, ...props }) => {
   ];
 
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
-  const { graders, isLoading, isError } = useGraders();
+
+  function subtractDays(date, days) {
+    date.setDate(date.getDate() - days);
+    return date;
+  }
+
+  function findWeekStart(date) {
+    const subtract = date.getDay() - 1;
+    return subtractDays(date, subtract);
+  }
+
+  const startWeek = findWeekStart(startDate);
+
+  const {
+    graders,
+    isLoading: gradersLoading,
+    isError: gradersError,
+  } = useGraders();
+
+  const {
+    graderEntry,
+    isLoading: graderEntryLoading,
+    isError: graderEntryError,
+  } = useGraderEntry("asc");
+
+  console.log(graderEntry);
 
   function isFriday(date) {
     return date.getDay() !== 5;
   }
 
   //DEFINITIONS
-  const myInit = {
+  const myPost = {
     body: {
-      startDate,
+      test: "test",
+      AthenaGraderEntry: "test",
+      grader: "test",
+      monday: "test",
+      tuesday: "test",
+      wednesday: "test",
+      thursday: "test",
+      friday: "test",
+      includes_saturday: "test",
+      start_date_formatted: "test",
+      end_date_formatted: "test",
+    },
+  };
+
+  const myPut = {
+    body: {
+      startWeek,
       grader,
       cardsGraded,
       includesSaturday,
@@ -90,10 +133,10 @@ const GraderEntryForm = ({ className, ...props }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
-    const graders = "/graders";
+    const key = "/graderEntry";
     const apiName = "palentirApi";
     setLoading(true);
-    API.post(apiName, graders, myInit)
+    API.post(apiName, key, myPost)
       .then((response) => {
         console.log("response from post", response);
         console.log(response.status_code);
