@@ -13,8 +13,8 @@ import useTimeseries from "../../hooks/data/useTimeseries";
 import useServiceLevel from "../../hooks/data/useServiceLevel";
 
 const OpsPerformance = () => {
-  const { isLoading: timeseriesLoading } = useTimeseries();
-  const { isLoading: levelsLoading } = useServiceLevel();
+  const { isLoading: timeseriesLoading, timeseries } = useTimeseries();
+  const { isLoading: levelsLoading, levels: serviceLevel } = useServiceLevel();
 
   if (timeseriesLoading || levelsLoading) {
     return <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />;
@@ -27,11 +27,11 @@ const OpsPerformance = () => {
         <Box my={"2rem"} />
         <Backlog />
         <Box my={"2rem"} />
-        <MarketData />
+        <MarketData isLoading={timeseriesLoading} timeseries={timeseries} />
         <Box my={"2rem"} />
-        <ServicesGraph />
+        <ServicesGraph isLoading={levelsLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
-        <RevenueGraph />
+        <RevenueGraph isLoading={levelsLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
         {/* <GradingGraph /> */}
         <Box my={"2rem"} />

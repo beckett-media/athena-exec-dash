@@ -16,6 +16,7 @@ import {
   Text,
   Th,
   Thead,
+  Tfoot,
   Tr,
   Table,
   Button,
@@ -40,6 +41,7 @@ export default function FilterTable({ columns, data, className }) {
     getTableProps, // table props from react-table
     getTableBodyProps, // table body props from react-table
     headerGroups, // headerGroups, if your table has groupings
+    footerGroups,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
     page, // fetch the current page
     nextPage,
@@ -98,6 +100,15 @@ export default function FilterTable({ columns, data, className }) {
             );
           })}
         </Tbody>
+        <Tfoot>
+          {footerGroups.map((group) => (
+            <Tr {...group.getFooterGroupProps()}>
+              {group.headers.map((column) => (
+                <Td {...column.getFooterProps()}>{column.render("Footer")}</Td>
+              ))}
+            </Tr>
+          ))}
+        </Tfoot>
       </Table>
       <Box
         my={5}

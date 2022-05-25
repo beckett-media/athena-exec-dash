@@ -24,6 +24,7 @@ import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
 import useGraders from "../../../hooks/data/useGraders";
+import useGraderEntry from "../../../hooks/data/useGraderEntry";
 
 const startingSelectedDayObj = {
   properties: {
@@ -43,13 +44,10 @@ const startingServiceLevel = {
     numCardVerified: "",
   },
 };
+
 const GraderEntryForm = ({ className, ...props }) => {
   //STATE DECLARATIONS
   const [category, setCategory] = useState("BGS");
-  const [cardsReceived, setCardsReceived] = useState("");
-  const [cardsShippedToday, setCardsShippedToday] = useState("");
-  const [cardsGradedToday, setCardsGradedToday] = useState("");
-  const [categoryType, setCategoryType] = useState(category);
   const [status_code, setStatusCode] = useState(0);
   const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
@@ -57,20 +55,9 @@ const GraderEntryForm = ({ className, ...props }) => {
   const [selectedDayFormData, setSelectedDayFormData] = useState(
     startingSelectedDayObj
   );
-  const [selectedDayServiceLevel, setSelectedDayServiceLevel] =
-    useState(startingServiceLevel);
   const [notEditable, setNotEditable] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [twoDayPremium, setTwoDayPremium] = useState("");
-  const [fiveDayExpress, setFiveDayExpress] = useState("");
-  const [tenDayExpress, setTenDayExpress] = useState("");
-  const [thirtyDayStandard, setThirtyDayStandard] = useState("");
-  const [cardsVerified, setCardsVerified] = useState("");
-  const [revenueOfCardsShipped, setRevenueOfCardsShipped] = useState("");
-  const [recase, setRecase] = useState("");
-  const [newGraderName, setNewGraderName] = useState("");
   const darkMode = useDarkMode(false);
-  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const [grader, setGrader] = useState("");
   const [includesSaturday, setIncludesSaturday] = useState(false);
   const [cardsGraded, setCardsGraded] = useState(0);
@@ -81,121 +68,119 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   ];
 
-  const { graders, isLoading, isError } = useGraders();
+  const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
 
-  console.log(graders);
+  function subtractDays(date, days) {
+    date.setDate(date.getDate() - days);
+    return date;
+  }
 
-  //FUNCTIONS
-  // generate random string
-  const randomNumber = (min, max) => {
-    const number = Math.floor(Math.random() * (max - min + 1009)) + min;
-    const letter = String.fromCharCode(65 + Math.floor(Math.random() * 6));
-    return `${number}${letter}`;
-  };
+  function findWeekStart(date) {
+    const subtract = date.getDay() - 1;
+    return subtractDays(date, subtract);
+  }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleSubmit = useCallback(async (e) => {
-    const cardsGradedSubmit = {
-      start_date_formatted: startDateFormatted,
-      grader,
-      cards_graded: cardsGraded,
-      includes_saturday: includesSaturday,
-    };
-    // alert(`${startDate}, ${grader}, ${cardsGraded}, ${includesSaturday}`);
-    alert(JSON.stringify(cardsGradedSubmit));
-    setCardsGraded(0);
-    setIncludesSaturday(false);
-    // const serviceLevel = "/servicelevel";
-    // const cardUpdated = "/grading-service-form";
-    // const apiName = "palentirApi";
-    // setLoading(true);
-    // API.post(apiName, cardUpdated, myInit)
-    //   .then((response) => {
-    //     console.log("response from post", response);
-    //     console.log(response.status_code);
-    //     setStatusCode(response.status_code);
-    //     if (
-    //       twoDayPremium ||
-    //       fiveDayExpress ||
-    //       tenDayExpress ||
-    //       thirtyDayStandard ||
-    //       recase
-    //     ) {
-    //       API.post(apiName, serviceLevel, serviceLevelInit)
-    //         .then((response) => {
-    //           console.log("response from post", response);
-    //           console.log(response.status_code);
-    //         })
-    //         .catch((error) => console.log(error.data));
-    //     }
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.data, "post error");
-    //     setLoading(false);
-    //   });
-  });
+  const startWeek = findWeekStart(startDate);
 
-  const handleServiceLevelChange = (e, setServiceLevel) => {
-    setServiceLevel(e.target.value);
-  };
-  const checkDisableSubmit = () => {
-    if (!(grader && cardsGraded)) return true;
-  };
+  const {
+    graders,
+    isLoading: gradersLoading,
+    isError: gradersError,
+  } = useGraders();
+
+  const {
+    graderEntry,
+    isLoading: graderEntryLoading,
+    isError: graderEntryError,
+  } = useGraderEntry("asc");
+
+  console.log(graderEntry);
+
+  function isFriday(date) {
+    return date.getDay() !== 5;
+  }
 
   //DEFINITIONS
-  const myInit = {
+  const myPost = {
     body: {
-      cards_graded_today: parseInt(cardsGradedToday),
-      cards_shipped_today: parseInt(cardsShippedToday),
-      cards_received: parseInt(cardsReceived),
-      type: "BGS",
-      date: startDateFormatted,
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
+      test: "test",
+      AthenaGraderEntry: "test",
+      grader: "test",
+      monday: "test",
+      tuesday: "test",
+      wednesday: "test",
+      thursday: "test",
+      friday: "test",
+      includes_saturday: "test",
+      start_date_formatted: "test",
+      end_date_formatted: "test",
     },
   };
 
-  const serviceLevelInit = {
+  const myPut = {
     body: {
-      two_day: parseInt(twoDayPremium) || 0,
-      five_day: parseInt(fiveDayExpress) || 0,
-      ten_day: parseInt(tenDayExpress) || 0,
-      thirty_day: parseInt(thirtyDayStandard) || 0,
-      verified: cardsVerified.toString() || "0",
-      revenueshipped: revenueOfCardsShipped.toString() || "0",
-      recase: parseInt(recase) || 0,
-      date: startDateFormatted,
-      hidden_1: 0,
-      total: parseInt(cardsReceived),
-      type: "BGS",
-      submission_item: `${
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100) +
-        randomNumber(1, 100)
-      }`,
+      startWeek,
+      grader,
+      cardsGraded,
+      includesSaturday,
     },
   };
 
   // const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
 
+  //FUNCTIONS
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleSubmit = useCallback(async (e) => {
+    // alert(JSON.stringify(myInit));
+    const key = "/graderEntry";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.post(apiName, key, myPost)
+      .then((response) => {
+        console.log("response from post", response);
+        console.log(response.status_code);
+        setStatusCode(response.status_code);
+        setLoading(false);
+        status_code === 200 && alert(status_code);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        alert(error.data);
+        setLoading(false);
+      });
+  });
+
+  // const handleUpdate = useCallback(async (e) => {
+  //   // alert(JSON.stringify(myUpdate));
+  //   const graders = "/graders";
+  //   const apiName = "palentirApi";
+  //   setLoading(true);
+  //   API.put(apiName, graders, myUpdate)
+  //     .then((response) => {
+  //       console.log("response from post", response);
+  //       console.log(response.status_code);
+  //       setStatusCodeEdit(response.status_code);
+  //       setLoading(false);
+  //       status_code_edit === 200 && alert(status_code_edit);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.data, "post error");
+  //       alert(error.data);
+  //       setLoading(false);
+  //     });
+  // });
+
+  const checkDisableSubmit = () => {
+    if (!(grader && cardsGraded)) return true;
+  };
+
   //USE EFFECT
-  React.useEffect(() => {
-    setCategoryType(category);
-  }, [category]);
 
   React.useEffect(() => {
     setLoadingForm(true);
     if (status_code === 200) {
       setLoadingForm(false);
-      setCardsReceived(0);
-      setCardsShippedToday(0);
-      setCardsGradedToday(0);
     }
   }, [handleSubmit]);
 
@@ -230,11 +215,11 @@ const GraderEntryForm = ({ className, ...props }) => {
             (data) =>
               data.properties.date === moment(startDate).format("YYYY-MM-DD")
           );
-          if (filteredFormDataByDay[0]) {
-            setSelectedDayServiceLevel(filteredFormDataByDay[0]);
-          } else {
-            setSelectedDayServiceLevel(startingSelectedDayObj);
-          }
+          // if (filteredFormDataByDay[0]) {
+          //   setSelectedDayServiceLevel(filteredFormDataByDay[0]);
+          // } else {
+          //   setSelectedDayServiceLevel(startingSelectedDayObj);
+          // }
         })
         .catch((error) => {
           console.log(error.response);
@@ -242,10 +227,6 @@ const GraderEntryForm = ({ className, ...props }) => {
     })();
     setNotEditable(true);
   }, [startDate]);
-
-  //CONSOLE LOGS
-  console.log(cardsGraded);
-  console.log(grader);
 
   return (
     <Card
@@ -306,9 +287,10 @@ const GraderEntryForm = ({ className, ...props }) => {
           </NumberInput>
           <Checkbox
             isChecked={includesSaturday}
+            isDisabled={isFriday(startDate)}
             onChange={() => setIncludesSaturday(!includesSaturday)}
           >
-            Includes Saturday work
+            Includes Saturday work (for Friday only)
           </Checkbox>
         </Flex>
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
