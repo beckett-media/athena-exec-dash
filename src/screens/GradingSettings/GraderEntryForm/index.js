@@ -49,13 +49,13 @@ const GraderEntryForm = ({ className, ...props }) => {
   //STATE DECLARATIONS
   const [category, setCategory] = useState("BGS");
   const [status_code, setStatusCode] = useState(0);
+  const [status_code_edit, setStatusCodeEdit] = useState(0);
   const [LoadingForm, setLoadingForm] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [visibleModal, setVisibleModal] = useState(false);
   const [selectedDayFormData, setSelectedDayFormData] = useState(
     startingSelectedDayObj
   );
-  const [notEditable, setNotEditable] = useState(true);
   const [loading, setLoading] = useState(false);
   const darkMode = useDarkMode(false);
   const [grader, setGrader] = useState("");
@@ -68,7 +68,48 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   ];
 
+  // const {
+  //   graders,
+  //   isLoading: gradersLoading,
+  //   isError: gradersError,
+  // } = useGraders();
+
+  const {
+    graderEntry,
+    isLoading: graderEntryLoading,
+    isError: graderEntryError,
+  } = useGraderEntry("asc");
+
+  const graders = [];
+
+  (function () {
+    graderEntry.forEach((i) => graders.push(i.grader));
+  })();
+
+  console.log(graders);
+
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
+  const startWeek = findWeekStart(startDate);
+  // const weekEnd = startWeek;
+  // weekEnd.setDate(weekEnd.getDate() + 4);
+  const startWeekFormatted = moment(startWeek).format("YYYY-MM-DD");
+  // const weekEndFormatted = moment(weekEnd).format("YYYY-MM-DD");
+  const filteredData = graderEntry.filter(filterDate).filter(filterGrader);
+
+  function filterDate(i) {
+    return Object.values(i).indexOf(startWeekFormatted) > -1;
+  }
+
+  function filterGrader(i) {
+    return Object.values(i).indexOf(grader) > -1;
+  }
+
+  console.log(graderEntry);
+  console.log(startWeek);
+  console.log(startWeekFormatted);
+  console.log(grader);
+  console.log(filteredData);
+  // console.log(filteredData[0].monday);
 
   function subtractDays(date, days) {
     date.setDate(date.getDate() - days);
@@ -80,57 +121,47 @@ const GraderEntryForm = ({ className, ...props }) => {
     return subtractDays(date, subtract);
   }
 
-  const startWeek = findWeekStart(startDate);
+  function isWeekday(date) {
+    return date.getDay() !== 6 && date.getDay() !== 7;
+  }
 
-  const {
-    graders,
-    isLoading: gradersLoading,
-    isError: gradersError,
-  } = useGraders();
-
-  const {
-    graderEntry,
-    isLoading: graderEntryLoading,
-    isError: graderEntryError,
-  } = useGraderEntry("asc");
-
-  console.log(graderEntry);
-
-  function isFriday(date) {
+  function isNotFriday(date) {
     return date.getDay() !== 5;
   }
 
   //DEFINITIONS
   const myPost = {
     body: {
-      test: "test",
       AthenaGraderEntry: "test",
-      grader: "test",
-      monday: "test",
-      tuesday: "test",
-      wednesday: "test",
-      thursday: "test",
-      friday: "test",
-      includes_saturday: "test",
-      start_date_formatted: "test",
-      end_date_formatted: "test",
+      grader,
+      monday: 0,
+      tuesday: 0,
+      wednesday: 0,
+      thursday: 0,
+      friday: 0,
+      includes_saturday: false,
+      start_date_formatted: startWeekFormatted,
+      // end_date_formatted: weekEndFormatted,
     },
   };
 
   const myPut = {
     body: {
-      startWeek,
+      AthenaGraderEntry: "test",
       grader,
-      cardsGraded,
-      includesSaturday,
+      monday: 0,
+      tuesday: 0,
+      wednesday: 0,
+      thursday: 0,
+      friday: 0,
+      includes_saturday: false,
+      start_date_formatted: startWeekFormatted,
+      // end_date_formatted: weekEndFormatted,
     },
   };
 
-  // const graders = ["John Smith", "Peter Pan", "Balou the Bear", "P. Sherman"];
-
   //FUNCTIONS
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
     const key = "/graderEntry";
@@ -151,82 +182,29 @@ const GraderEntryForm = ({ className, ...props }) => {
       });
   });
 
-  // const handleUpdate = useCallback(async (e) => {
-  //   // alert(JSON.stringify(myUpdate));
-  //   const graders = "/graders";
-  //   const apiName = "palentirApi";
-  //   setLoading(true);
-  //   API.put(apiName, graders, myUpdate)
-  //     .then((response) => {
-  //       console.log("response from post", response);
-  //       console.log(response.status_code);
-  //       setStatusCodeEdit(response.status_code);
-  //       setLoading(false);
-  //       status_code_edit === 200 && alert(status_code_edit);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.data, "post error");
-  //       alert(error.data);
-  //       setLoading(false);
-  //     });
-  // });
+  const handleUpdate = useCallback(async (e) => {
+    // alert(JSON.stringify(myUpdate));
+    const key = "/gradersentry";
+    const apiName = "palentirApi";
+    setLoading(true);
+    API.put(apiName, key, myPut)
+      .then((response) => {
+        console.log("response from post", response);
+        console.log(response.status_code);
+        setStatusCodeEdit(response.status_code);
+        setLoading(false);
+        status_code_edit === 200 && alert(status_code_edit);
+      })
+      .catch((error) => {
+        console.log(error.data, "post error");
+        alert(error.data);
+        setLoading(false);
+      });
+  });
 
   const checkDisableSubmit = () => {
-    if (!(grader && cardsGraded)) return true;
+    if (!(grader && cardsGraded && isWeekday(startDate))) return true;
   };
-
-  //USE EFFECT
-
-  React.useEffect(() => {
-    setLoadingForm(true);
-    if (status_code === 200) {
-      setLoadingForm(false);
-    }
-  }, [handleSubmit]);
-
-  React.useEffect(() => {
-    (async () => {
-      const apiName = "palentirApi";
-      const path = `/grading-service-form`;
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          const filteredFormDataByDay = formdata.filter(
-            (data) =>
-              data.properties.date === moment(startDate).format("YYYY-MM-DD")
-          );
-          if (filteredFormDataByDay[0]) {
-            setSelectedDayFormData(filteredFormDataByDay[0]);
-          } else {
-            setSelectedDayFormData(startingSelectedDayObj);
-          }
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    (async () => {
-      const apiName = "palentirApi";
-      const path = "/servicelevel";
-      API.get(apiName, path)
-        .then((response) => {
-          const formdata = response.data?.data;
-          const filteredFormDataByDay = formdata.filter(
-            (data) =>
-              data.properties.date === moment(startDate).format("YYYY-MM-DD")
-          );
-          // if (filteredFormDataByDay[0]) {
-          //   setSelectedDayServiceLevel(filteredFormDataByDay[0]);
-          // } else {
-          //   setSelectedDayServiceLevel(startingSelectedDayObj);
-          // }
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-    })();
-    setNotEditable(true);
-  }, [startDate]);
 
   return (
     <Card
@@ -266,7 +244,7 @@ const GraderEntryForm = ({ className, ...props }) => {
               <option value="">Select</option>
               {/* TODO : Add options here */}
               {graders.map((x, index) => (
-                <option value={x.newGraderName}>{x.newGraderName}</option>
+                <option value={x}>{x}</option>
               ))}
             </Select>
           </NumberInput>
@@ -280,14 +258,14 @@ const GraderEntryForm = ({ className, ...props }) => {
               border={`2px solid transparent`}
               label="Grader entries"
               type="number"
-              placeholder={0}
+              placeholder={cardsGraded}
               value={cardsGraded}
               onChange={(e) => setCardsGraded(e.target.value)}
             ></NumberInputField>
           </NumberInput>
           <Checkbox
             isChecked={includesSaturday}
-            isDisabled={isFriday(startDate)}
+            isDisabled={isNotFriday(startDate)}
             onChange={() => setIncludesSaturday(!includesSaturday)}
           >
             Includes Saturday work (for Friday only)
