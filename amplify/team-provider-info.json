@@ -20,7 +20,7 @@
       "function": {
         "athenaprodcb5f5078": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-4f584c715879752b526b-build.zip",
+          "s3Key": "amplify-builds/athenaprodcb5f5078-6354584d7a4968455247-build.zip",
           "secretsPathAmplifyAppId": "dwonjf8sejc3s"
         },
         "AdminQueriesa200cd2e": {
