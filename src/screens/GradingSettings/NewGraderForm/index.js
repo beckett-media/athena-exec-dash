@@ -17,6 +17,8 @@ import { API } from "aws-amplify";
 // darkmode
 import useDarkMode from "use-dark-mode";
 import useGraders from "../../../hooks/data/useGraders";
+import { useAddGraders } from "../../../hooks/data/useGraders";
+import { useUpdateGraders } from "../../../hooks/data/useGraders";
 
 const NewGraderForm = ({ className, ...props }) => {
   const [status_code, setStatusCode] = useState(0);
@@ -37,6 +39,8 @@ const NewGraderForm = ({ className, ...props }) => {
   ];
 
   const { graders, isLoading, isError } = useGraders();
+  const updateFn = useUpdateGraders();
+  const addFn = useAddGraders();
 
   console.log(graders);
 
@@ -54,43 +58,45 @@ const NewGraderForm = ({ className, ...props }) => {
   };
 
   const handleSubmit = useCallback(async (e) => {
+    addFn(myInit);
     // alert(JSON.stringify(myInit));
-    const graders = "/graders";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.post(apiName, graders, myInit)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCode(response.status_code);
-        setLoading(false);
-        status_code === 200 && alert(status_code);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        alert(error.data);
-        setLoading(false);
-      });
+    // const graders = "/graders";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.post(apiName, graders, myInit)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCode(response.status_code);
+    //     setLoading(false);
+    //     status_code === 200 && alert(status_code);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     alert(error.data);
+    //     setLoading(false);
+    //   });
   });
 
   const handleUpdate = useCallback(async (e) => {
+    updateFn(myUpdate).then();
     // alert(JSON.stringify(myUpdate));
-    const graders = "/graders";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.put(apiName, graders, myUpdate)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCodeEdit(response.status_code);
-        setLoading(false);
-        status_code_edit === 200 && alert(status_code_edit);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        alert(error.data);
-        setLoading(false);
-      });
+    // const graders = "/graders";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.put(apiName, graders, myUpdate)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCodeEdit(response.status_code);
+    //     setLoading(false);
+    //     status_code_edit === 200 && alert(status_code_edit);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     alert(error.data);
+    //     setLoading(false);
+    //   });
   });
 
   React.useEffect(() => {
