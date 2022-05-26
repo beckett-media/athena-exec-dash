@@ -134,11 +134,21 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   };
 
-  // myPut.body.monday = 420;
+  // myPut.body.monday = cardsGraded;
 
-  // if (filteredData?.[0]?.[weekday]) {
-  //   myPut.body[weekday] = filteredData?.[0]?.[weekday];
-  // }
+  if (filteredData?.[0]?.[weekday]) {
+    myPut.body[weekday] = cardsGraded;
+  }
+
+  React.useEffect(() => {
+    if (filteredData.length > 0) {
+      setIncludesSaturday(filteredData[0].includes_saturday);
+    }
+  }, [filteredData]);
+
+  if (cardsGraded) {
+    myPost.body[weekday] = cardsGraded;
+  }
 
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
