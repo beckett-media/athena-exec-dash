@@ -27,6 +27,7 @@ const NewGraderForm = ({ className, ...props }) => {
   const [visibleModal, setVisibleModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [newGraderName, setNewGraderName] = useState("");
+  const [confirmGraderName, setConfirmGraderName] = useState("");
   const [editGrader, setEditGrader] = useState("");
   const [editGraderId, setEditGraderId] = useState("");
   const darkMode = useDarkMode(false);
@@ -106,10 +107,6 @@ const NewGraderForm = ({ className, ...props }) => {
     // }
   }, [isLoading, graders]);
 
-  const checkDisableSubmit = () => {
-    if (!newGraderName) return true;
-  };
-
   const checkEditDisableSubmit = () => {
     if (!editGrader || !editGraderId) return true;
   };
@@ -145,6 +142,22 @@ const NewGraderForm = ({ className, ...props }) => {
             setNewGraderName(e.target.value);
           }}
         />
+        <Input
+          focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+          borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+          borderRadius={12}
+          value={confirmGraderName}
+          border={`2px solid transparent`}
+          mb={25}
+          size="lg"
+          label="Cards graded today"
+          placeholder="Confirm entered name"
+          type="string"
+          onChange={(e) => {
+            setConfirmGraderName(e.target.value);
+          }}
+        />
+        {newGraderName !== confirmGraderName && <div>Names must match</div>}
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
             <Button
@@ -161,7 +174,7 @@ const NewGraderForm = ({ className, ...props }) => {
               // eslint-disable-next-line react-hooks/rules-of-hooks
               _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
               color="white"
-              disabled={checkDisableSubmit()}
+              disabled={!newGraderName || newGraderName !== confirmGraderName}
             >
               Save submission
             </Button>
@@ -177,7 +190,7 @@ const NewGraderForm = ({ className, ...props }) => {
             )}
           </Flex>
         </Box>
-        <Box mb={25}>Or edit existing grader</Box>
+        {/* <Box mb={25}>Or edit existing grader</Box>
         <Box mb={25}>
           <FormLabel>Select grader</FormLabel>
           <Select
@@ -188,13 +201,12 @@ const NewGraderForm = ({ className, ...props }) => {
             }}
           >
             <option value="">Select</option>
-            {/* TODO : Add options here */}
             {graders.map((x, index) => (
               <option value={x.newGraderName}>{x.newGraderName}</option>
             ))}
           </Select>
-        </Box>
-        <FormLabel>Enter new name</FormLabel>
+        </Box> */}
+        {/* <FormLabel>Enter new name</FormLabel>
         <Input
           focusBorderColor={useColorModeValue("blue.500", "blue.200")}
           borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
@@ -241,7 +253,7 @@ const NewGraderForm = ({ className, ...props }) => {
               </Text>
             )}
           </Flex>
-        </Box>
+        </Box> */}
       </div>
     </Card>
   );
