@@ -124,7 +124,7 @@ const GraderEntryForm = ({ className, ...props }) => {
       wednesday: 0,
       thursday: 0,
       friday: 0,
-      includes_saturday: false,
+      includes_saturday: includesSaturday,
       start_date_formatted: startWeekFormatted,
       end_date_formatted: weekEndFormatted,
     },
@@ -157,24 +157,28 @@ const GraderEntryForm = ({ className, ...props }) => {
 
   React.useEffect(() => {
     if (filteredData.length > 0) {
-      setIncludesSaturday(filteredData[0].includes_saturday);
+      setIncludesSaturday(filteredData[0].includesSaturday);
     }
-  }, [filteredData]);
+  }, []);
 
   if (cardsGraded) {
     myPost.body[weekday] = cardsGraded - 0;
+  }
+
+  if (includesSaturday !== filteredData?.[0]?.includesSaturday) {
+    myPut.body.includes_saturday = includesSaturday;
   }
 
   console.log(myPut);
 
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
-    const key = "/graderentry";
-    const apiName = "palentirApi";
+    // const key = "/graderentry";
+    // const apiName = "palentirApi";
     // setLoading(true);
     if (filteredData.length === 0) {
       alert("This is a post request:" + JSON.stringify(myPost));
-      addFn("asc", myPost);
+      // addFn("asc", myPost);
       // setLoading(false);
       // API.post(apiName, key, myPost)
       //   .then((response) => {
@@ -209,6 +213,17 @@ const GraderEntryForm = ({ className, ...props }) => {
       //   });
     }
   });
+
+  // (function compareNames() {
+  //   graders.forEach((x) =>
+  //     graderEntry.forEach(
+  //       (i) => x.newGraderName === i.grader && console.log(x.newGraderName)
+  //     )
+  //   );
+  // })();
+
+  console.log(graderEntryLoading);
+  console.log(graderEntryError);
 
   return (
     <Card

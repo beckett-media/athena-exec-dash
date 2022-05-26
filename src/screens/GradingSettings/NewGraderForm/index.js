@@ -126,7 +126,12 @@ const NewGraderForm = ({ className, ...props }) => {
       classTitle="title-green"
     >
       <div className={styles.images}>
-        <FormLabel>Enter grader name</FormLabel>
+        <FormLabel>
+          Enter grader name{" "}
+          <span style={{ opacity: "0.5" }}>
+            (cannot be changed once submitted)
+          </span>
+        </FormLabel>
         <Input
           focusBorderColor={useColorModeValue("blue.500", "blue.200")}
           borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
@@ -205,8 +210,8 @@ const NewGraderForm = ({ className, ...props }) => {
               <option value={x.newGraderName}>{x.newGraderName}</option>
             ))}
           </Select>
-        </Box> */}
-        {/* <FormLabel>Enter new name</FormLabel>
+        </Box>
+        <FormLabel>Enter new name</FormLabel>
         <Input
           focusBorderColor={useColorModeValue("blue.500", "blue.200")}
           borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
