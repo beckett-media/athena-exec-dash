@@ -12,6 +12,7 @@ import Modal from "../../components/Modal";
 import Schedule from "../../components/Schedule";
 import moment from "moment";
 import Loading from "../../components/LottieAnimation/Loading";
+import useGraderEntry from "../../hooks/data/useGraderEntry";
 
 import TablePivots from "./PivotTable";
 
@@ -27,10 +28,16 @@ const GraderSettings = ({ dataCI, className }) => {
     },
   ];
 
+  const {
+    graderEntry,
+    isLoading: graderEntryLoading,
+    isError: graderEntryError,
+  } = useGraderEntry("asc");
+
   const startDateFormatted = moment(startDate).format("YYYY-MM-DD");
   const startWeek = findWeekStart(startDate);
   const startWeekFormatted = moment(startWeek).format("YYYY-MM-DD");
-  const filteredData = dataCI.filter(filterData);
+  const filteredData = graderEntry.filter(filterData);
 
   function filterData(i) {
     return Object.values(i).indexOf(startWeekFormatted) > -1;
