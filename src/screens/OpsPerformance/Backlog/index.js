@@ -6,10 +6,12 @@ import Card from "../../../components/Card";
 import styles from "./Chart.module.sass";
 import useTimeseries from "../../../hooks/data/useTimeseries";
 import useDarkMode from "use-dark-mode";
+import useGraderEntry from "../../../hooks/data/useGraderEntry";
 
 const Backlog = ({ className }) => {
   const backlog = 29000;
-  const { timeseries, isLoading } = useTimeseries();
+  const { timeseries } = useTimeseries();
+  const data = useGraderEntry('asc');
   const darkMode = useDarkMode(false);
 
   let totalGraded = 0;
