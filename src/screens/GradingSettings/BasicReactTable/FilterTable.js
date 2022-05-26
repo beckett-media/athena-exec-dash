@@ -3,6 +3,7 @@ import {
   useGlobalFilter,
   useTable,
   useFilters,
+  useSortBy,
   usePagination,
 } from "react-table";
 import ColumnFilter from "./ColumnFilter";
@@ -60,9 +61,19 @@ export default function FilterTable({ columns, data, className }) {
       columns,
       data,
       defaultColumn,
+      initialState: {
+        sortBy: [
+          {
+            id: "grader",
+            desc: false,
+          },
+        ],
+        pageSize: 20,
+      },
     },
     useFilters,
     useGlobalFilter,
+    useSortBy,
     usePagination
   );
 
@@ -76,8 +87,15 @@ export default function FilterTable({ columns, data, className }) {
           {headerGroups.map((headerGroup) => (
             <Tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <Th {...column.getHeaderProps()}>
+                <Th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
+                  </span>
                   {/* <Text color={"#2A85FF"}>
                     {column.canFilter ? column.render("Filter") : null}
                   </Text> */}

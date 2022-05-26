@@ -85,7 +85,14 @@ export default function TableWithAPI({ cells }) {
       },
       {
         Header: "Includes Saturday",
-        accessor: "includesSaturday",
+        accessor: (row) => row.includesSaturday.toString(),
+        Cell: ({ cell: { value } }) => {
+          return (
+            <Badge size="lg" colorScheme={value === "true" ? "yellow" : ""}>
+              {value}
+            </Badge>
+          );
+        },
         Footer: "",
       },
       // {
