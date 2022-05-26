@@ -23,6 +23,7 @@ import useDarkMode from "use-dark-mode";
 import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
+import useGraders from "../../../hooks/data/useGraders";
 import useGraderEntry from "../../../hooks/data/useGraderEntry";
 import { useUpdateGraderEntry } from "../../../hooks/data/useGraderEntry";
 import { useAddGraderEntry } from "../../../hooks/data/useGraderEntry";
@@ -45,20 +46,22 @@ const GraderEntryForm = ({ className, ...props }) => {
     },
   ];
 
+  const { graders, gradersLoading, gradersError } = useGraders();
+
   const {
     graderEntry,
     isLoading: graderEntryLoading,
     isError: graderEntryError,
   } = useGraderEntry("asc");
 
-  const graders = [];
-
   const updateFn = useUpdateGraderEntry();
   const addFn = useAddGraderEntry();
 
-  (function () {
-    graderEntry.forEach((i) => graders.push(i.grader));
-  })();
+  // const graders = [];
+
+  // (function () {
+  //   graderEntry.forEach((i) => graders.push(i.grader));
+  // })();
 
   console.log(graders);
 
@@ -243,9 +246,8 @@ const GraderEntryForm = ({ className, ...props }) => {
             <FormLabel>Select grader</FormLabel>
             <Select onChange={(e) => setGrader(e.target.value)}>
               <option value="">Select</option>
-              {/* TODO : Add options here */}
               {graders.map((x, index) => (
-                <option value={x}>{x}</option>
+                <option value={x.newGraderName}>{x.newGraderName}</option>
               ))}
             </Select>
           </NumberInput>
