@@ -24,6 +24,8 @@ import Modal from "../../../components/Modal";
 import Schedule from "../../../components/Schedule";
 import Icon from "../../../components/Icon";
 import useGraderEntry from "../../../hooks/data/useGraderEntry";
+import { useUpdateGraderEntry } from "../../../hooks/data/useGraderEntry";
+import { useAddGraderEntry } from "../../../hooks/data/useGraderEntry";
 
 const GraderEntryForm = ({ className, ...props }) => {
   //STATE DECLARATIONS
@@ -50,6 +52,9 @@ const GraderEntryForm = ({ className, ...props }) => {
   } = useGraderEntry("asc");
 
   const graders = [];
+
+  const updateFn = useUpdateGraderEntry();
+  const addFn = useAddGraderEntry();
 
   (function () {
     graderEntry.forEach((i) => graders.push(i.grader));
@@ -130,14 +135,21 @@ const GraderEntryForm = ({ className, ...props }) => {
 
   const myPut = {
     body: {
-      ...filteredData[0],
+      id: filteredData?.[0]?.id,
+      grader: filteredData?.[0]?.grader,
+      monday: filteredData?.[0]?.monday,
+      tuesday: filteredData?.[0]?.tuesday,
+      wednesday: filteredData?.[0]?.wednesday,
+      thursday: filteredData?.[0]?.thursday,
+      friday: filteredData?.[0]?.friday,
+      includes_saturday: filteredData?.[0]?.includesSaturday,
+      start_date_formatted: filteredData?.[0]?.startDateFormatted,
+      end_date_formatted: filteredData?.[0]?.endDateFormatted,
     },
   };
 
-  // myPut.body.monday = cardsGraded;
-
-  if (filteredData?.[0]?.[weekday]) {
-    myPut.body[weekday] = cardsGraded;
+  if (filteredData?.[0]) {
+    myPut.body[weekday] = cardsGraded - 0;
   }
 
   React.useEffect(() => {
@@ -147,16 +159,20 @@ const GraderEntryForm = ({ className, ...props }) => {
   }, [filteredData]);
 
   if (cardsGraded) {
-    myPost.body[weekday] = cardsGraded;
+    myPost.body[weekday] = cardsGraded - 0;
   }
+
+  console.log(myPut);
 
   const handleSubmit = useCallback(async (e) => {
     // alert(JSON.stringify(myInit));
     const key = "/graderentry";
     const apiName = "palentirApi";
-    setLoading(true);
+    // setLoading(true);
     if (filteredData.length === 0) {
       alert("This is a post request:" + JSON.stringify(myPost));
+      addFn("asc", myPost);
+      // setLoading(false);
       // API.post(apiName, key, myPost)
       //   .then((response) => {
       //     console.log("response from post", response);
@@ -173,9 +189,11 @@ const GraderEntryForm = ({ className, ...props }) => {
     }
     if (filteredData.length > 0) {
       alert("This is a put request:" + JSON.stringify(myPut));
+      updateFn("asc", myPut);
+      // setLoading(false);
       // API.put(apiName, key, myPut)
       //   .then((response) => {
-      //     console.log("response from post", response);
+      //     alert("response from post", response);
       //     console.log(response.status_code);
       //     setStatusCodeEdit(response.status_code);
       //     setLoading(false);
