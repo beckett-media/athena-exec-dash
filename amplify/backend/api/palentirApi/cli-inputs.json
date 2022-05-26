@@ -103,6 +103,32 @@
           "delete"
         ]
       }
+    },
+    "/graders": {
+      "name": "/graders",
+      "lambdaFunction": "athenaprodcb5f5078",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/graderentry": {
+      "name": "/graderentry",
+      "lambdaFunction": "athenaprodcb5f5078",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }
