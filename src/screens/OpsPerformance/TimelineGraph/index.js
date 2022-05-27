@@ -7,9 +7,11 @@ import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box } from "@chakra-ui/react";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
+import useTimeseries from "../../../hooks/data/useTimeseries";
 
 const MarketData = ({ className, isLoading }) => {
   const darkMode = useDarkMode(false);
+  const { timeseries } = useTimeseries();
   const { levels } = useServiceLevel();
 
   var dataG = [
