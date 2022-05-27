@@ -237,6 +237,27 @@ function App() {
                 />
               </Route>
             )}
+            <Route
+              path="/financial"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                  }
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  itr
+                  user={user}
+                  title="Restricted"
+                />
+              }
+            >
+              <Route
+                path="/financial/financial-performance"
+                element={<NoMatch restricted={true} />}
+              />
+            </Route>
             {checkPermission(user, ["financial", "dev", "admin"]) && (
               <Route
                 path="financial"
@@ -260,6 +281,27 @@ function App() {
                 />
               </Route>
             )}
+            <Route
+              path="/financial"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                  }
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  itr
+                  user={user}
+                  title="Restricted"
+                />
+              }
+            >
+              <Route
+                path="/financial/roi-performance"
+                element={<NoMatch restricted={true} />}
+              />
+            </Route>
             <Route
               path="grading"
               element={
@@ -300,6 +342,27 @@ function App() {
                 />
               </Route>
             )}
+            <Route
+              path="/grading"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                  }
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  itr
+                  user={user}
+                  title="Restricted"
+                />
+              }
+            >
+              <Route
+                path="/grading/grading-update-data"
+                element={<NoMatch restricted={true} />}
+              />
+            </Route>
             {checkPermission(user, ["grading", "dev", "admin"]) && (
               <Route
                 path="grading"
@@ -322,6 +385,27 @@ function App() {
                 />
               </Route>
             )}
+            <Route
+              path="/grading"
+              element={
+                <Page
+                  imgBg={
+                    "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/624368f205c22422f5fd98e6_shubham-dhage-fQL1DKNUQZw-unsplash.jpeg"
+                  }
+                  color={"black"}
+                  textColor={"#fff"}
+                  signOut={signOut}
+                  itr
+                  user={user}
+                  title="Restricted"
+                />
+              }
+            >
+              <Route
+                path="/grading/grading-settings"
+                element={<NoMatch restricted={true} />}
+              />
+            </Route>
             <Route
               path="/"
               element={
@@ -355,7 +439,7 @@ function App() {
                 />
               }
             >
-              <Route path="*" element={<NoMatch />} />
+              <Route path="*" element={<NoMatch notFound={true} />} />
             </Route>
           </Routes>
         )}
