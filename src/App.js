@@ -214,7 +214,7 @@ function App() {
                 element={<OpsPerformance />}
               />
             </Route>
-            {checkPermission(user, ["test"]) && (
+            {checkPermission(user, ["financial", "admin", "dev"]) && (
               <Route
                 path="financial"
                 element={
