@@ -214,7 +214,7 @@ function App() {
                 element={<OpsPerformance />}
               />
             </Route>
-            {checkPermission(user, ["financial", "admin", "dev"]) && (
+            {checkPermission(user, ["test"]) && (
               <Route
                 path="financial"
                 element={
@@ -340,7 +340,7 @@ function App() {
               <Route path="/settings" element={<Settings />} />
             </Route>
             <Route
-              path="dashboard"
+              path="/"
               element={
                 <Page
                   imgBg={
