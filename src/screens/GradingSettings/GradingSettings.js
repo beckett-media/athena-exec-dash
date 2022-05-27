@@ -87,6 +87,7 @@ const GraderSettings = ({ dataCI, className }) => {
         className={styles.card}
         classCardHead={styles.head}
         title="Cards Graded Per Day"
+        description="Pick a date to view week, search for a specific grader, or sort by clicking on the headers."
         classTitle={cn("title-purple", styles.title)}
       >
         <div className={styles.wrapper}>
