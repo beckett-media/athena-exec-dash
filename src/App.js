@@ -256,7 +256,7 @@ function App() {
               >
                 <Route
                   path="/financial/roi-performance"
-                  element={<ROIPerformance />}
+                  element={<ROIPerformance dataCI={graderData} />}
                 />
               </Route>
             )}
