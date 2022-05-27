@@ -178,7 +178,7 @@ const GraderEntryForm = ({ className, ...props }) => {
     // setLoading(true);
     if (filteredData.length === 0) {
       alert("This is a post request:" + JSON.stringify(myPost));
-      // addFn("asc", myPost);
+      addFn("asc", myPost);
       // setLoading(false);
       // API.post(apiName, key, myPost)
       //   .then((response) => {
