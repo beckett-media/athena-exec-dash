@@ -1,0 +1,1920 @@
+[
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 4870724.1288069477
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 7732078.2915755305
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 8147460.5720773833
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 6857957.8918501046
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 7084378.0935007557
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 2211014.8721299553
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 231770.1346248105
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 276700.1856769884
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 323389.9368408169
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 459139.4129444195
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 554085.7298959985
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 180535.3866175645
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 3375530.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 4648744.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 4144871.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 3884165.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 4474910.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 2037935.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 4802266.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 5117843.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 58429.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 1581001.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 812023.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 1087994.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": -3980881.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 630593.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 1793096.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": -1634705.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 724943.5932352939
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 169209.6252669494
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 2386924.7258238825
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1668981.1997623739
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 2206739.5281045185
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 569292.9885055163
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 995606.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 1581001.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 1512619.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 1087994.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 1358927.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 398582.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 2014484.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 1540558.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 941784.4296666137
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 2640869.4160294947
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 2581708.9502714062
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1871362.0453606723
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 2414714.5781045184
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 626848.5485055163
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": -628742.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 626130.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": -145456.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 351876.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": -4592059.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 125135.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 906778.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": -2355597.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 78615.687957971
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": -1219029.6469782055
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 846223.9996714015
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 262019.1071068521
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 623911.372556119
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": -60978.6300904508
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 3375530.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 4648744.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 4144871.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 3884165.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 4474910.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 2037935.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 4802266.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 5117843.0
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 5102494.2634317577
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 8008778.4772525188
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 8470850.5089181997
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 7317097.3047945239
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 7638463.8233967545
+  },
+  {
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 2391550.2587475199
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 3238715.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 4562960.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 3777096.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 3856243.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 4813943.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 5384699.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 7008450.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 6960145.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 8064912.1799999997
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 11680632.4199999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 10004470.1699999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 10136594.4499999993
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 9701608.9100000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 3280158.7000000002
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 1044184.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 985483.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 961161.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 1118296.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 1018196.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 1420690.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 1584028.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 1640254.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 1616006.5
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 1843899.3999999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 1837102.1400000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1678239.6599999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 1702962.7699999998
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 528387.88
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 871971.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 833120.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 894624.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 873461.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 849033.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 745734.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 1007968.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 1056834.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 1180082.8400000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 1238492.24
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 1363641.3
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1169996.8700000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 1253037.3399999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 292747.79
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 40000.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 113108.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 27105.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 137148.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 189064.81
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 339092.26
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 573154.23
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 236250.33
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 185076.27
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 46488.36
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 1611869.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": -840504.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 1277374.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 1324091.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 2223105.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 2670984.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 4717196.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 4248052.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 4968422.9400000004
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 4327074.8499999996
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 6539243.7499999991
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 6211316.9100000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 4424572.6200000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 624518.58
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 1796082.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 2701045.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 1879594.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 1813970.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 2452139.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 3416041.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 5497753.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 4883902.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 6008919.7600000007
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 8584425.244155094
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 7289251.1548988204
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 7205776.3702624533
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 6001045.9004681632
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 1485409.5800000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 1040593.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": -1450486.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 690664.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 740740.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 1687895.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 2205005.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 4153853.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 3709820.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 4541473.6900000013
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 3979714.1699999995
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 6438028.2299999995
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 6065855.0899999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 4283262.5299999993
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 577211.6699999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 5154870.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 6381563.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 5672881.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 5961108.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 6681173.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 7551123.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 9627549.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 9794382.0
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 11050066.3300000001
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 15102116.3200000003
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 13778367.8399999999
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 13221081.3100000005
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 12842685.2899999991
+  },
+  {
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 4147782.73
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 718676.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 818457.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 726656.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 566213.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 392187.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 337131.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 551394.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 639545.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 647784.26
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 742802.76
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 920590.5
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1057012.6400000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 1091919.1899999999
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 467609.91
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": -1179.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 288878.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": -89513.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": -31216.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": -265812.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": -215548.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": -3237.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": -811.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 31938.9900000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 43610.2799999999
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 71962.6
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": -34139.88
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": -9902.54
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": -39827.4800000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 45070.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 18735.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": -52641.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 2619.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": -223833.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": -174962.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 37182.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 39257.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 65422.9800000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 72769.837092785
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 104905.3092352009
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": -1765.37
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 22690.47
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": -29410.8100000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": -87881.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 202893.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": -175621.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": -114091.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": -341420.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": -290416.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": -78054.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": -70013.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": -24285.0099999999
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": -25173.4000000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": -6623.62
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": -104927.14
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": -67498.78
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": -59652.9900000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q1",
+    "YearTotal": 718676.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q2",
+    "YearTotal": 818457.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q3",
+    "YearTotal": 726656.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2019,
+    "Quarter": "Q4",
+    "YearTotal": 566213.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q1",
+    "YearTotal": 392187.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q2",
+    "YearTotal": 337131.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q3",
+    "YearTotal": 551394.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2020,
+    "Quarter": "Q4",
+    "YearTotal": 639545.0
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q1",
+    "YearTotal": 647784.26
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q2",
+    "YearTotal": 742802.76
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 920590.5
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 1057012.6400000001
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 1091919.1899999999
+  },
+  {
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 467609.91
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 78051847.7600000054
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "409000",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 128088870.3199999928
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "409000",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 119794754.75
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "409000",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 40983781.2899999991
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 6275261.2499999925
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 13057337.789900016
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 10396167.8900000174
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "GAAP_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 4432488.4291269956
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 6523261.2499999925
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 13224337.789900016
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 10563167.8900000174
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Management_EBITDA",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 4432488.4291269956
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 4959212.4658963121
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Net_Income",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 11553743.7430356741
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 8930692.6300000157
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Net_Income",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 3838206.2091269959
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q3",
+    "YearTotal": 78051847.7600000054
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Total_Revenue",
+    "Year": 2021,
+    "Quarter": "Q4",
+    "YearTotal": 128088870.3199999928
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q1",
+    "YearTotal": 119794754.75
+  },
+  {
+    "Company": "Southern_Hobby_Distribution,LLC",
+    "Account": "Total_Revenue",
+    "Year": 2022,
+    "Quarter": "Q2",
+    "YearTotal": 40983781.2899999991
+  }
+]

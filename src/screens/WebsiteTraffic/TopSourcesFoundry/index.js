@@ -48,6 +48,7 @@ const TopSource = ({ className, topSources, isLoading, status }) => {
             value={sortingNum}
             setValue={setSortingNum}
             options={totalQuery}
+            total={total.length}
             small
           />
         </>

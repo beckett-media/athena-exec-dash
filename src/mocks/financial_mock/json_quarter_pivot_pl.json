@@ -1,0 +1,832 @@
+[
+  {
+    "id": 1,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2019,
+    "Account": "GAAP EBITDA",
+    "Q1": 58429.0,
+    "Q2": 1581001.0,
+    "Q3": 812023.0,
+    "Q4": 1087994.0
+  },
+  {
+    "id": 2,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2019,
+    "Account": "Management EBITDA",
+    "Q1": 995606.0,
+    "Q2": 1581001.0,
+    "Q3": 1512619.0,
+    "Q4": 1087994.0
+  },
+  {
+    "id": 3,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2019,
+    "Account": "Net Income",
+    "Q1": -628742.0,
+    "Q2": 626130.0,
+    "Q3": -145456.0,
+    "Q4": 351876.0
+  },
+  {
+    "id": 4,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2019,
+    "Account": "Total Revenue",
+    "Q1": 3375530.0,
+    "Q2": 4648744.0,
+    "Q3": 4144871.0,
+    "Q4": 3884165.0
+  },
+  {
+    "id": 5,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2020,
+    "Account": "409000",
+    "Q1": 4474910.0,
+    "Q2": 2037935.0,
+    "Q3": 4802266.0,
+    "Q4": 5117843.0
+  },
+  {
+    "id": 6,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2020,
+    "Account": "GAAP EBITDA",
+    "Q1": -3980881.0,
+    "Q2": 630593.0,
+    "Q3": 1793096.0,
+    "Q4": -1634705.0
+  },
+  {
+    "id": 7,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2020,
+    "Account": "Management EBITDA",
+    "Q1": 1358927.0,
+    "Q2": 398582.0,
+    "Q3": 2014484.0,
+    "Q4": 1540558.0
+  },
+  {
+    "id": 8,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2020,
+    "Account": "Net Income",
+    "Q1": -4592059.0,
+    "Q2": 125135.0,
+    "Q3": 906778.0,
+    "Q4": -2355597.0
+  },
+  {
+    "id": 9,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2020,
+    "Account": "Total Revenue",
+    "Q1": 4474910.0,
+    "Q2": 2037935.0,
+    "Q3": 4802266.0,
+    "Q4": 5117843.0
+  },
+  {
+    "id": 10,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "400300",
+    "Q1": 4870724.128806948,
+    "Q2": 7732078.291575531,
+    "Q3": 8147460.572077383,
+    "Q4": 6857957.891850104
+  },
+  {
+    "id": 11,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "402000",
+    "Q1": 231770.1346248105,
+    "Q2": 276700.1856769884,
+    "Q3": 323389.9368408169,
+    "Q4": 459139.4129444195
+  },
+  {
+    "id": 12,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "GAAP EBITDA",
+    "Q1": 724943.5932352939,
+    "Q2": 169209.6252669494,
+    "Q3": 2386924.7258238825,
+    "Q4": 1668981.199762374
+  },
+  {
+    "id": 13,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "Management EBITDA",
+    "Q1": 941784.4296666137,
+    "Q2": 2640869.416029495,
+    "Q3": 2581708.950271406,
+    "Q4": 1871362.0453606723
+  },
+  {
+    "id": 14,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "Net Income",
+    "Q1": 78615.6879579711,
+    "Q2": -1219029.6469782055,
+    "Q3": 846223.9996714015,
+    "Q4": 262019.1071068521
+  },
+  {
+    "id": 15,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2021,
+    "Account": "Total Revenue",
+    "Q1": 5102494.263431758,
+    "Q2": 8008778.477252518,
+    "Q3": 8470850.5089182,
+    "Q4": 7317097.304794524
+  },
+  {
+    "id": 16,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "400300",
+    "Q1": 7084378.093500756,
+    "Q2": 2211014.8721299553,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 17,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "402000",
+    "Q1": 554085.7298959985,
+    "Q2": 180535.3866175645,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 18,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "GAAP EBITDA",
+    "Q1": 2206739.5281045185,
+    "Q2": 569292.9885055163,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 19,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "Management EBITDA",
+    "Q1": 2414714.5781045184,
+    "Q2": 626848.5485055163,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 20,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "Net Income",
+    "Q1": 623911.372556119,
+    "Q2": -60978.6300904508,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 21,
+    "Company": "Arcane Tinmen ApS",
+    "Year": 2022,
+    "Account": "Total Revenue",
+    "Q1": 7638463.823396754,
+    "Q2": 2391550.25874752,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 22,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "401450",
+    "Q1": 3238715.0,
+    "Q2": 4562960.0,
+    "Q3": 3777096.0,
+    "Q4": 3856243.0
+  },
+  {
+    "id": 23,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "402000",
+    "Q1": 1044184.0,
+    "Q2": 985483.0,
+    "Q3": 961161.0,
+    "Q4": 1118296.0
+  },
+  {
+    "id": 24,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "402350",
+    "Q1": 871971.0,
+    "Q2": 833120.0,
+    "Q3": 894624.0,
+    "Q4": 873461.0
+  },
+  {
+    "id": 25,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "409000",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 40000.0,
+    "Q4": 113108.0
+  },
+  {
+    "id": 26,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "GAAP EBITDA",
+    "Q1": 1611869.0,
+    "Q2": -840504.0,
+    "Q3": 1277374.0,
+    "Q4": 1324091.0
+  },
+  {
+    "id": 27,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "Management EBITDA",
+    "Q1": 1796082.0,
+    "Q2": 2701045.0,
+    "Q3": 1879594.0,
+    "Q4": 1813970.0
+  },
+  {
+    "id": 28,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "Net Income",
+    "Q1": 1040593.0,
+    "Q2": -1450486.0,
+    "Q3": 690664.0,
+    "Q4": 740740.0
+  },
+  {
+    "id": 29,
+    "Company": "Beckett Collectables",
+    "Year": 2019,
+    "Account": "Total Revenue",
+    "Q1": 5154870.0,
+    "Q2": 6381563.0,
+    "Q3": 5672881.0,
+    "Q4": 5961108.0
+  },
+  {
+    "id": 30,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "401450",
+    "Q1": 4813943.0,
+    "Q2": 5384699.0,
+    "Q3": 7008450.0,
+    "Q4": 6960145.0
+  },
+  {
+    "id": 31,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "402000",
+    "Q1": 1018196.0,
+    "Q2": 1420690.0,
+    "Q3": 1584028.0,
+    "Q4": 1640254.0
+  },
+  {
+    "id": 32,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "402350",
+    "Q1": 849033.0,
+    "Q2": 745734.0,
+    "Q3": 1007968.0,
+    "Q4": 1056834.0
+  },
+  {
+    "id": 33,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "409000",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 27105.0,
+    "Q4": 137148.0
+  },
+  {
+    "id": 34,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "GAAP EBITDA",
+    "Q1": 2223105.0,
+    "Q2": 2670984.0,
+    "Q3": 4717196.0,
+    "Q4": 4248052.0
+  },
+  {
+    "id": 35,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "Management EBITDA",
+    "Q1": 2452139.0,
+    "Q2": 3416041.0,
+    "Q3": 5497753.0,
+    "Q4": 4883902.0
+  },
+  {
+    "id": 36,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "Net Income",
+    "Q1": 1687895.0,
+    "Q2": 2205005.0,
+    "Q3": 4153853.0,
+    "Q4": 3709820.0
+  },
+  {
+    "id": 37,
+    "Company": "Beckett Collectables",
+    "Year": 2020,
+    "Account": "Total Revenue",
+    "Q1": 6681173.0,
+    "Q2": 7551123.0,
+    "Q3": 9627549.0,
+    "Q4": 9794382.0
+  },
+  {
+    "id": 38,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "401450",
+    "Q1": 8064912.18,
+    "Q2": 11680632.42,
+    "Q3": 10004470.17,
+    "Q4": 10136594.45
+  },
+  {
+    "id": 39,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "402000",
+    "Q1": 1616006.5,
+    "Q2": 1843899.4,
+    "Q3": 1837102.1400000001,
+    "Q4": 1678239.66
+  },
+  {
+    "id": 40,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "402350",
+    "Q1": 1180082.84,
+    "Q2": 1238492.24,
+    "Q3": 1363641.3,
+    "Q4": 1169996.87
+  },
+  {
+    "id": 41,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "409000",
+    "Q1": 189064.81,
+    "Q2": 339092.26,
+    "Q3": 573154.23,
+    "Q4": 236250.33
+  },
+  {
+    "id": 42,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "GAAP EBITDA",
+    "Q1": 4968422.94,
+    "Q2": 4327074.849999999,
+    "Q3": 6539243.75,
+    "Q4": 6211316.91
+  },
+  {
+    "id": 43,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "Management EBITDA",
+    "Q1": 6008919.760000001,
+    "Q2": 8584425.244155094,
+    "Q3": 7289251.154898821,
+    "Q4": 7205776.370262453
+  },
+  {
+    "id": 44,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "Net Income",
+    "Q1": 4541473.690000001,
+    "Q2": 3979714.17,
+    "Q3": 6438028.2299999995,
+    "Q4": 6065855.09
+  },
+  {
+    "id": 45,
+    "Company": "Beckett Collectables",
+    "Year": 2021,
+    "Account": "Total Revenue",
+    "Q1": 11050066.33,
+    "Q2": 15102116.32,
+    "Q3": 13778367.84,
+    "Q4": 13221081.309999999
+  },
+  {
+    "id": 46,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "401450",
+    "Q1": 9701608.91,
+    "Q2": 3280158.7,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 47,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "402000",
+    "Q1": 1702962.7699999998,
+    "Q2": 528387.88,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 48,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "402350",
+    "Q1": 1253037.3399999999,
+    "Q2": 292747.79,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 49,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "409000",
+    "Q1": 185076.27,
+    "Q2": 46488.36,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 50,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "GAAP EBITDA",
+    "Q1": 4424572.62,
+    "Q2": 624518.58,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 51,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "Management EBITDA",
+    "Q1": 6001045.900468163,
+    "Q2": 1485409.58,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 52,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "Net Income",
+    "Q1": 4283262.529999999,
+    "Q2": 577211.6699999999,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 53,
+    "Company": "Beckett Collectables",
+    "Year": 2022,
+    "Account": "Total Revenue",
+    "Q1": 12842685.29,
+    "Q2": 4147782.73,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 54,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2019,
+    "Account": "401450",
+    "Q1": 718676.0,
+    "Q2": 818457.0,
+    "Q3": 726656.0,
+    "Q4": 566213.0
+  },
+  {
+    "id": 55,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2019,
+    "Account": "GAAP EBITDA",
+    "Q1": -1179.0,
+    "Q2": 288878.0,
+    "Q3": -89513.0,
+    "Q4": -31216.0
+  },
+  {
+    "id": 56,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2019,
+    "Account": "Management EBITDA",
+    "Q1": 45070.0,
+    "Q2": 18735.0,
+    "Q3": -52641.0,
+    "Q4": 2619.0
+  },
+  {
+    "id": 57,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2019,
+    "Account": "Net Income",
+    "Q1": -87881.0,
+    "Q2": 202893.0,
+    "Q3": -175621.0,
+    "Q4": -114091.0
+  },
+  {
+    "id": 58,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2019,
+    "Account": "Total Revenue",
+    "Q1": 718676.0,
+    "Q2": 818457.0,
+    "Q3": 726656.0,
+    "Q4": 566213.0
+  },
+  {
+    "id": 59,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2020,
+    "Account": "401450",
+    "Q1": 392187.0,
+    "Q2": 337131.0,
+    "Q3": 551394.0,
+    "Q4": 639545.0
+  },
+  {
+    "id": 60,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2020,
+    "Account": "GAAP EBITDA",
+    "Q1": -265812.0,
+    "Q2": -215548.0,
+    "Q3": -3237.0,
+    "Q4": -811.0
+  },
+  {
+    "id": 61,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2020,
+    "Account": "Management EBITDA",
+    "Q1": -223833.0,
+    "Q2": -174962.0,
+    "Q3": 37182.0,
+    "Q4": 39257.0
+  },
+  {
+    "id": 62,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2020,
+    "Account": "Net Income",
+    "Q1": -341420.0,
+    "Q2": -290416.0,
+    "Q3": -78054.0,
+    "Q4": -70013.0
+  },
+  {
+    "id": 63,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2020,
+    "Account": "Total Revenue",
+    "Q1": 392187.0,
+    "Q2": 337131.0,
+    "Q3": 551394.0,
+    "Q4": 639545.0
+  },
+  {
+    "id": 64,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2021,
+    "Account": "401450",
+    "Q1": 647784.26,
+    "Q2": 742802.76,
+    "Q3": 920590.5,
+    "Q4": 1057012.6400000001
+  },
+  {
+    "id": 65,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2021,
+    "Account": "GAAP EBITDA",
+    "Q1": 31938.9900000001,
+    "Q2": 43610.2799999999,
+    "Q3": 71962.6,
+    "Q4": -34139.88
+  },
+  {
+    "id": 66,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2021,
+    "Account": "Management EBITDA",
+    "Q1": 65422.9800000001,
+    "Q2": 72769.837092785,
+    "Q3": 104905.3092352009,
+    "Q4": -1765.37
+  },
+  {
+    "id": 67,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2021,
+    "Account": "Net Income",
+    "Q1": -24285.0099999999,
+    "Q2": -25173.4000000001,
+    "Q3": -6623.62,
+    "Q4": -104927.14
+  },
+  {
+    "id": 68,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2021,
+    "Account": "Total Revenue",
+    "Q1": 647784.26,
+    "Q2": 742802.76,
+    "Q3": 920590.5,
+    "Q4": 1057012.6400000001
+  },
+  {
+    "id": 69,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2022,
+    "Account": "401450",
+    "Q1": 1091919.19,
+    "Q2": 467609.91,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 70,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2022,
+    "Account": "GAAP EBITDA",
+    "Q1": -9902.54,
+    "Q2": -39827.4800000001,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 71,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2022,
+    "Account": "Management EBITDA",
+    "Q1": 22690.47,
+    "Q2": -29410.8100000001,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 72,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2022,
+    "Account": "Net Income",
+    "Q1": -67498.78,
+    "Q2": -59652.9900000001,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 73,
+    "Company": "Comic Book Certification Service LLC",
+    "Year": 2022,
+    "Account": "Total Revenue",
+    "Q1": 1091919.19,
+    "Q2": 467609.91,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 74,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2021,
+    "Account": "409000",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 78051847.76,
+    "Q4": 128088870.32
+  },
+  {
+    "id": 75,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2021,
+    "Account": "GAAP EBITDA",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 6275261.249999993,
+    "Q4": 13057337.789900016
+  },
+  {
+    "id": 76,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2021,
+    "Account": "Management EBITDA",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 6523261.249999993,
+    "Q4": 13224337.789900016
+  },
+  {
+    "id": 77,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2021,
+    "Account": "Net Income",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 4959212.465896312,
+    "Q4": 11553743.743035674
+  },
+  {
+    "id": 78,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2021,
+    "Account": "Total Revenue",
+    "Q1": null,
+    "Q2": null,
+    "Q3": 78051847.76,
+    "Q4": 128088870.32
+  },
+  {
+    "id": 79,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2022,
+    "Account": "409000",
+    "Q1": 119794754.75,
+    "Q2": 40983781.29,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 80,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2022,
+    "Account": "GAAP EBITDA",
+    "Q1": 10396167.890000017,
+    "Q2": 4432488.429126996,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 81,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2022,
+    "Account": "Management EBITDA",
+    "Q1": 10563167.890000017,
+    "Q2": 4432488.429126996,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 82,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2022,
+    "Account": "Net Income",
+    "Q1": 8930692.630000016,
+    "Q2": 3838206.209126996,
+    "Q3": null,
+    "Q4": null
+  },
+  {
+    "id": 83,
+    "Company": "Southern Hobby Distribution,LLC",
+    "Year": 2022,
+    "Account": "Total Revenue",
+    "Q1": 119794754.75,
+    "Q2": 40983781.29,
+    "Q3": null,
+    "Q4": null
+  }
+]

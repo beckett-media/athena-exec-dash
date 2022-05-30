@@ -1,21 +1,36 @@
 import React from "react";
-import styles from "./FinancialPerformance.module.sass";
-import { Box } from "@chakra-ui/react";
-import BudgetGraph from "./BudgetGraph";
-import RevenueGraph from "./RevenueGraph";
-import PnLGraph from "./PnLGraph";
-import ComingSoon from "../CominSoon/ComingSoon";
 import TooltipGlodal from "../../components/TooltipGlodal";
-import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
-import TotalSales from "./TotalSales";
-import TotalSellers from "./TotalSellers";
-import TotalSold from "./TotalSold";
+import BalanceSheet from "./BalanceSheet";
+import RevenueStreams from "./RevenueStreams";
+import ProfitAndLoss from "./ProfitAndLoss";
 
-import SellThrough from "./SellThrough";
+import json_quarter_pivot_pl from "../../mocks/financial_mock/json_quarter_pivot_pl.json";
+import json_monthly_pl from "../../mocks/financial_mock/json_monthly_pl.json";
+import json_quarterly from "../../mocks/financial_mock/json_quarterly.json";
+
+import revenue from "../../mocks/financial_mock/revenue.json";
+import revenue_quarterly from "../../mocks/financial_mock/revenue_quarterly.json";
+import revenue_pivot_quarterly from "../../mocks/financial_mock/revenue_pivot_quarterly.json";
+
+import balance_sheet from "../../mocks/financial_mock/balance_monthly.json";
+import balance_quarterly from "../../mocks/financial_mock/balance_quarterly.json";
+import balance_pivot_quarterly from "../../mocks/financial_mock/balance_pivot_quarterly.json";
 
 const OpsPerformance = ({ data, isLoading }) => {
+  const quartly = json_quarter_pivot_pl;
+  const monthly = json_monthly_pl;
+  const quarterly = json_quarterly;
+
+  const revenueStreams = revenue;
+  const revenueStreamsQuarterly = revenue_quarterly;
+  const revenueStreamsPivotQuarterly = revenue_pivot_quarterly;
+
+  const balanceSheet = balance_sheet;
+  const balanceQuarterly = balance_quarterly;
+  const balancePivotQuarterly = balance_pivot_quarterly;
+
   return (
     <>
       <Tabs
@@ -33,61 +48,61 @@ const OpsPerformance = ({ data, isLoading }) => {
           <Tab
             color={"white"}
             _selected={{
-              color: "black",
-              bg: "#f7b267",
-              borderRadius: 5,
-            }}
-          >
-            Average Selling Price
-          </Tab>
-          <Tab
-            color={"white"}
-            _selected={{
-              color: "black",
-              bg: "#f7b267",
+              color: "gray.700",
+              bg: "#68D391",
               borderRadius: 5,
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Total Sold
+            Balance Sheet
           </Tab>
           <Tab
             color={"white"}
-            _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+            _selected={{
+              color: "gray.700",
+              bg: "#68D391",
+              borderRadius: 5,
+              _focus: { boxShadow: "none", outline: "none" },
+            }}
           >
-            Sell Through
+            Revenue Streams
           </Tab>
           <Tab
             color={"white"}
-            _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+            _selected={{
+              color: "gray.700",
+              bg: "#68D391",
+              borderRadius: 5,
+              _focus: { boxShadow: "none", outline: "none" },
+            }}
           >
-            Total Sellers
-          </Tab>
-          <Tab
-            color={"white"}
-            _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
-          >
-            Total Sales
+            Profit & Loss
           </Tab>
         </TabList>
 
         <TabPanels>
           <TabPanel>
-            <div className={styles.section}>
-              <Table data={data} isLoading={isLoading} />
+            <div>
+              <BalanceSheet
+                balanceQuarterly={balanceQuarterly}
+                balanceSheet={balanceSheet}
+                balancePivotQuarterly={balancePivotQuarterly}
+              />
             </div>
           </TabPanel>
           <TabPanel>
-            <TotalSold data={data} isLoading={isLoading} />
+            <RevenueStreams
+              revenueStreams={revenueStreams}
+              revenueStreamsQuarterly={revenueStreamsQuarterly}
+              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+            />
           </TabPanel>
           <TabPanel>
-            <SellThrough data={data} isLoading={isLoading} />
-          </TabPanel>
-          <TabPanel>
-            <TotalSellers data={data} isLoading={isLoading} />
-          </TabPanel>
-          <TabPanel>
-            <TotalSales data={data} isLoading={isLoading} />
+            <ProfitAndLoss
+              quarterly={quarterly}
+              quartly={quartly}
+              monthly={monthly}
+            />
           </TabPanel>
         </TabPanels>
         <TooltipGlodal />

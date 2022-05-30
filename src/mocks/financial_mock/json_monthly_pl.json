@@ -1,0 +1,6914 @@
+[
+  {
+    "id": 0,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 997208.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 1,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 237654.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 2,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 237654.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 3,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 41255.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 4,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 997208.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 5,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 959882.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 6,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 268572.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 7,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 272760.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 8,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 473086.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 9,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 473085.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 10,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 280604.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 11,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1501214.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 12,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 201469.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 13,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -24853.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 14,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -9437.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 15,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -54188.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 16,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 201469.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 17,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1315217.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 18,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -17078.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 19,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 387641.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 20,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -300898.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 21,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1315217.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 22,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1022932.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 23,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 379824.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 24,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280629.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 25,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 608459.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 26,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 688149.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 27,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 428641.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 28,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1683385.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 29,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 215042.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 30,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -8832.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 31,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 6584.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 32,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -37533.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 33,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 215042.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 34,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1063105.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 35,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -162147.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 36,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 370311.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 37,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -369099.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 38,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1063105.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 39,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1255901.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 40,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 395788.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 41,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 318582.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 42,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 530324.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 43,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 634848.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 44,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 331348.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 45,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1970271.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 46,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 302165.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 47,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 32506.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 48,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 47923.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 49,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 3840.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 50,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 302165.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 51,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1474860.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 52,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 506364.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 53,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 506364.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 54,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 193515.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 55,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1474860.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 56,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1364205.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 57,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 319011.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 58,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 291204.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 59,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": -2151126.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 60,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 776275.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 61,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": -2346193.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 62,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1974419.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 63,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 271288.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 64,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -4839.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 65,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 10577.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 66,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -33515.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 67,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 271288.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 68,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1459945.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 69,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 507026.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 70,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 507026.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 71,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 195624.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 72,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1459945.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 73,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1897749.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 74,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 305435.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 75,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281001.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 76,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1024698.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 77,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1122403.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 78,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 804837.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 79,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2484186.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 80,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 269841.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 81,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 305922.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 82,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 6609.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 83,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 276975.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 84,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 269841.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 85,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1713939.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 86,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 567611.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 87,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 567611.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 88,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 236991.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 89,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1713939.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 90,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1301006.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 91,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 361037.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 92,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 260915.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 93,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 285924.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 94,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 802367.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 95,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 90870.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 96,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1922958.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 97,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 277328.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 98,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -12205.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 99,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 1549.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 100,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -40567.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 101,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 277328.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 102,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1338726.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 103,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 606740.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 104,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 606740.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 105,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 271354.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 106,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1338726.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 107,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1214128.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 108,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 382171.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 109,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 342229.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 110,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 565074.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 111,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 654046.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 112,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 363220.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 113,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1938528.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 114,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 288885.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 115,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -16048.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 116,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -2477.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 117,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -44677.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 118,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 288885.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 119,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1431735.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 120,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 518289.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 121,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 518289.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 122,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 183067.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 123,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1431735.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 124,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1316334.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 125,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 238289.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 126,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 258650.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 127,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": -10106.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 128,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 457854.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 129,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": -211109.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 130,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1813273.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 131,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 209122.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 132,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -59087.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 133,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -47768.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 134,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -87879.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 135,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 209122.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 136,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1374410.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 137,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -313006.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 138,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 387590.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 139,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -599877.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 140,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1374410.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 141,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1246634.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 142,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 340701.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 143,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 293745.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 144,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 40000.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 145,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 722406.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 146,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 767694.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 147,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 538553.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 148,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1921080.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 149,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 228649.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 150,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -14378.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 151,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -2396.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 152,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -43065.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 153,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 228649.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 154,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1670149.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 155,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 366018.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 156,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 366018.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 157,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 85517.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 158,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1670149.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 159,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1337424.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 160,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 499774.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 161,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 283066.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 162,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 113108.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 163,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 963483.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 164,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1028454.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 165,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 775299.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 166,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2233372.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 167,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 198638.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 168,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -43224.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 169,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -31630.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 170,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -71932.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 171,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 198638.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 172,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1167782.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 173,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 455226.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 174,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 455226.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 175,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 179631.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 176,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1167782.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 177,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1224618.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 178,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 287971.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 179,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281914.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 180,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 419381.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 181,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 507287.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 182,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 235593.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 183,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1794503.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 184,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 215680.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 185,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 19901.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 186,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 31333.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 187,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -9382.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 188,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 215680.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 189,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1046234.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 190,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 266750.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 191,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 266750.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 192,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 86728.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 193,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1046234.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 194,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1294201.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 195,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 330551.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 196,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 308481.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 197,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": -58773.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 198,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 278229.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 199,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": -270152.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 200,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1933233.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 201,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 151895.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 202,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -7893.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 203,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 2916.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 204,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -32777.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 205,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 151895.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 206,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1433473.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 207,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 364098.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 208,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 364098.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 209,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 113144.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 210,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1433473.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 211,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1522878.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 212,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 359556.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 213,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281743.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 214,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 716094.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 215,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 823781.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 216,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 530309.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 217,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2164177.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 218,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 137550.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 219,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -76979.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 220,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -63049.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 221,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -101969.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 222,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 137550.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 223,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1389386.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 224,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 457393.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 225,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 545334.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 226,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 343124.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 227,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1389386.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 228,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1676925.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 229,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 322655.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 230,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 286945.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 231,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 805839.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 232,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 860109.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 233,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 633068.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 234,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2286525.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 235,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 155042.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 236,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -66473.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 237,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -52499.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 238,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -92253.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 239,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 155042.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 240,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1652051.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 241,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -4802372.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 242,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 449495.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 243,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -5048327.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 244,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1652051.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 245,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1614140.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 246,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 335985.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 247,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280345.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 248,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 701172.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 249,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 768249.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 250,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 524518.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 251,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2230471.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 252,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 99595.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 253,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -122360.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 254,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -108285.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 255,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -147198.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 256,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 99595.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 257,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 333984.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 258,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 236392.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 259,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": -27325.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 260,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 126239.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 261,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 333984.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 262,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 924085.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 263,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 517197.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 264,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 289185.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 265,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 660763.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 266,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 738442.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 267,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 490886.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 268,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 1730467.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 269,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 81696.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 270,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -82701.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 271,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -69122.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 272,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -106554.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 273,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 81696.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 274,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 579519.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 275,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 35835.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 276,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 63974.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 277,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -124955.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 278,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 579519.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 279,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1846273.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 280,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 412710.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 281,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 189019.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 282,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 732204.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 283,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 949944.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 284,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 587857.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 285,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2448002.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 286,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 106934.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 287,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -88089.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 288,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -74851.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 289,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -114524.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 290,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 106934.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 291,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1124432.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 292,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 358366.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 293,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 361933.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 294,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 123851.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 295,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1124432.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 296,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2614341.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 297,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 490783.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 298,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 267530.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 299,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1278017.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 300,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1727655.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 301,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1126262.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 302,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3372654.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 303,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 148501.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 304,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -44758.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 305,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -30989.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 306,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -69338.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 307,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 148501.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 308,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1379306.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 309,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 440954.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 310,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 654493.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 311,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 182107.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 312,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1379306.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 313,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2389303.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 314,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 551933.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 315,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 320289.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 316,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1599665.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 317,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1773149.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 318,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1446096.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 319,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3261524.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 320,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 197006.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 321,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 7110.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 322,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 20555.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 323,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -17743.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 324,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 197006.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 325,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1485636.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 326,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 567518.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 327,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 593476.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 328,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 278226.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 329,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1485636.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 330,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2606330.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 331,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 487599.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 332,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280461.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 333,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1806818.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 334,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1974864.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 335,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1654398.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 336,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3374390.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 337,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 177681.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 338,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -1670.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 339,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 11849.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 340,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -23068.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 341,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 177681.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 342,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1937324.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 343,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 784624.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 344,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 766515.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 345,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 446445.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 346,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1937324.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 347,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2012817.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 348,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 544496.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 349,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 407218.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 350,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 27105.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 351,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1310713.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 352,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1749740.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 353,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1053359.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 354,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2991635.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 355,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 176707.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 356,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -8677.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 357,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 4778.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 358,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -37243.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 359,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 176707.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 360,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1483284.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 361,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 453297.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 362,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 525081.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 363,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 190877.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 364,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1483284.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 365,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2504487.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 366,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 631883.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 367,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 313302.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 368,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 95085.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 369,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1547307.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 370,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1820384.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 371,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1374429.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 372,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3544757.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 373,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 241956.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 374,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 34714.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 375,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 48101.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 376,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 21888.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 377,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 241956.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 378,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1815098.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 379,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -2350960.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 380,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 622567.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 381,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -2607080.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 382,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1815098.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 383,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2002293.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 384,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 437587.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 385,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 376597.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 386,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 22498.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 387,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1212664.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 388,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1424670.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 389,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1039196.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 390,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 2838975.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 391,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 195429.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 392,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -4584.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 393,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 8765.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 394,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -41911.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 395,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 195429.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 396,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1819461.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 397,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 262958.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 398,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 392910.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 399,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 60606.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 400,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1819461.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 401,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2453365.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 402,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 570784.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 403,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 366935.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 404,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 19565.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 405,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1488081.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 406,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1638848.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 407,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1296195.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 408,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3410650.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 409,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 202160.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 410,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -30941.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 411,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -17609.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 412,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -49990.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 413,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 202160.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 414,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1570086.0832912333,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 415,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 60525.5968713812,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 416,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 495245.9790537392,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 417,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 504380.2753644598,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 418,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 262929.0446198782,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 419,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1630611.6801626144,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 420,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2387196.5,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 421,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 500331.46,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 422,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 350084.5400000001,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 423,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 28298.19,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 424,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1239412.9100000008,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 425,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1695281.490000001,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 426,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1084205.6400000008,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 427,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3265910.69,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 428,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 305202.5,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 429,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 112072.57,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 430,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 123403.74,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 431,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 93118.57,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 432,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 305202.5,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 433,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1201497.244690282,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 434,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 55761.0600684429,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 435,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 167618.1238476136,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 436,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 355634.3212264907,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 437,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 7247.5430927147,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 438,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1257258.304758725,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 439,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2137179.05,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 440,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 472581.7,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 441,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 302547.36,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 442,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 89279.55,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 443,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1428540.8399999994,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 444,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1645832.0899999994,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 445,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1298981.6599999995,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 446,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3001587.6599999997,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 447,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 110675.36,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 448,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -84976.82,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 449,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -73794.15,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 450,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -103796.82,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 451,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 110675.36,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 452,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2099140.8008254324,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 453,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 115483.4776849863,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 454,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 62079.490333941,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 455,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 81769.8330756632,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 456,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -191560.8997546218,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 457,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2214624.2785104187,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 458,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3540536.63,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 459,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 643093.34,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 460,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 527450.94,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 461,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 71487.07,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 462,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2300469.1900000004,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 463,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2667806.1800000006,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 464,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2158286.3900000006,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 465,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4782567.98,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 466,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 231906.4,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 467,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 4843.24,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 468,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 15813.39,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 469,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -13606.76,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 470,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 231906.4,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 471,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2201852.135846129,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 472,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 56804.2690440542,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 473,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 754344.7272799342,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 474,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 785011.2252672205,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 475,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 404164.2394085684,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 476,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2258656.4048901834,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 477,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4008082.8200000003,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 478,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 647938.8600000001,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 479,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 441318.9400000001,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 480,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 114900.69,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 481,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 3063906.95,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 482,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 3279140.9741550954,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 483,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2922644.1400000006,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 484,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 5212241.310000001,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 485,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 194115.35,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 486,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -4735.96,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 487,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 6212.8493587986,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 488,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -22977.96,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 489,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 194115.35,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 490,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2792105.535468167,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 491,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 113330.649939375,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 492,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 806788.8540816548,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 493,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 924100.1260761559,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 494,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 476606.0200942868,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 495,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2905436.185407542,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 496,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3633968.86,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 497,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 566687.69,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 498,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 346968.83,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 499,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 96467.0,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 500,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 845605.05,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 501,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2352377.5,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 502,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 694797.33,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 503,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4644092.38,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 504,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 243862.44,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 505,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -2844.28,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 506,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 8280.86,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 507,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -19932.28,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 508,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 243862.44,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 509,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2738120.6202612338,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 510,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 106565.2666935592,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 511,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": -1391923.9560946396,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 512,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 931758.0646861184,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 513,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -2099799.9064810607,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 514,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2844685.886954793,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 515,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4038580.74,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 516,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 629272.85,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 517,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 450204.47,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 518,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 127724.57,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 519,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 417562.849999999,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 520,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2952906.769999999,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 521,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 362272.6999999991,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 522,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 5245782.63,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 523,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 304824.97,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 524,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 51190.52,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 525,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 58276.1277339864,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 526,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 17736.84,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 527,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 304824.97,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 528,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2850999.6449194634,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 529,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 82001.4478944978,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 530,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 906989.6855992347,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 531,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 926727.253992643,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 532,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 327082.2371504381,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 533,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2933001.092813961,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 534,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3768924.48,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 535,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 649937.78,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 536,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 489968.3900000001,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 537,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 81168.07,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 538,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2613781.0999999996,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 539,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2747495.0999999996,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 540,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2583488.96,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 541,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4989998.72,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 542,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 264918.02,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 543,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 6404.3999999999,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 544,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 17276.9992352008,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 545,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -24924.8600000001,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 546,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 264918.02,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 547,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 8815512.140000014,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 548,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 514585.9700000141,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 549,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 762585.9700000141,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 550,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 199900.7004970149,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 551,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 8815512.140000014,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 552,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2135880.195261591,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 553,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 81406.9843602438,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 554,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 616860.1854709871,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 555,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 763333.659184386,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 556,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 126705.4528390536,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 557,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2217287.179621835,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 558,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2898674.8000000003,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 559,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 556980.3,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 560,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 442047.2699999999,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 561,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 92101.98,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 562,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1667542.9600000004,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 563,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2149084.9600000004,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 564,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1633771.8500000006,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 565,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3989804.3500000006,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 566,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 339759.44,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 567,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 33718.47,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 568,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 44639.51,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 569,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 13389.99,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 570,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 339759.44,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 571,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 38185187.169999994,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 572,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 3095125.1299999845,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 573,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 3095125.1299999845,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 574,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 2598796.8453993034,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 575,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 38185187.169999994,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 576,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 3160580.7318963287,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 577,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 159981.5045860753,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 578,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 863074.8547536606,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 579,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 891648.0370943774,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 580,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 392436.3096819097,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 581,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 3320562.236482404,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 582,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3336870.89,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 583,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 630184.0599999999,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 584,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 431625.6400000001,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 585,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 399884.18,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 586,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2257919.689999999,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 587,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2392671.094898821,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 588,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2220767.419999999,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 589,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4798564.77,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 590,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 315913.04,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 591,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 31839.7300000001,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 592,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 42988.8000000001,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 593,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": 4911.2500000001,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 594,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 315913.04,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 595,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 31051148.449999996,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 596,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2665550.1499999934,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 597,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 2665550.1499999934,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 598,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 2160514.9199999934,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 599,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 31051148.449999996,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 600,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2392177.674100797,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 601,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 109003.9059113106,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 602,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 510874.2219151407,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 603,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 523469.3851469968,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 604,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 24473.5663862673,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 605,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2501181.5800121077,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 606,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3659019.96,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 607,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 566114.1,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 608,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 427480.4999999999,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 609,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 71464.73,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 610,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2246321.94,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 611,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2379657.7901312266,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 612,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2209424.32,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 613,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4724079.29,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 614,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 339277.55,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 615,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -12510.28,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 616,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -1475.61,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 617,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -26960.91,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 618,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 339277.55,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 619,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 27999595.350000005,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 620,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2551942.3538546734,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 621,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 2551942.3538546734,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 622,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 2031078.7130028997,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 623,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 27999595.350000005,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 624,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2037188.731689061,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 625,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 133858.298211952,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 626,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 510832.7293670166,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 627,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 530292.6913168347,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 628,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 136822.641084663,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 629,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2171047.0299010132,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 630,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2978860.16,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 631,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 499376.15,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 632,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 405146.53,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 633,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 65901.41,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 634,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1090965.99,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 635,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1597341.8401312267,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 636,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1058411.85,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 637,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3949284.25,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 638,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 345352.22,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 639,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -23185.07,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 640,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -12249.4,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 641,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -39399.7,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 642,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 345352.22,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 643,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 57224454.730000004,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 644,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 5405419.196145337,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 645,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 5405419.196145337,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 646,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 4913439.0080248,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 647,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 57224454.730000004,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 648,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2428591.486060246,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 649,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 216277.208821157,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 650,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 647274.2484802166,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 651,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 817599.9688968409,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 652,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 100722.8996359218,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 653,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2644868.694881403,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 654,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3498714.33,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 655,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 612749.4099999999,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 656,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 337369.84,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 657,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 98884.19,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 658,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2874028.98,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 659,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 3228776.74,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 660,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 2798018.92,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 661,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4547717.7700000005,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 662,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 372382.8700000001,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 663,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1555.4700000001,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 664,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 11959.6400000001,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 665,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -38566.5299999999,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 666,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 372382.8700000001,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 667,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 42864820.23999997,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 668,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 5099976.239900007,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 669,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 5266976.239900007,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 670,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 4609226.022007976,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 671,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 42864820.23999997,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 672,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1580380.539359887,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 673,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 209661.1615683937,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 674,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 302648.5360314435,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 675,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 395379.5460314435,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 676,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -69948.6136239663,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 677,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 1790041.7009282806,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 678,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2643976.21,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 679,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 539091.72,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 680,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 390827.3500000001,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 681,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 54008.86,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 682,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1546685.4800000002,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 683,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1742182.4200000002,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 684,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1504151.56,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 685,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3627904.1399999997,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 686,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 314337.24,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 687,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -20715.44,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 688,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -9667.77,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 689,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -42221.29,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 690,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 314337.24,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 691,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 29346602.230000008,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 692,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2585279.4800000084,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 693,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 2585279.4800000084,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 694,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 2085792.2000000079,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 695,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 29346602.230000008,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 696,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1995878.5179635077,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 697,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 165734.4865941058,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 698,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 457752.1530837397,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 699,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 515568.6330837397,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 700,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -29160.0048671039,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 701,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2161613.0045576133,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 702,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2841583.54,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 703,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 464072.66,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 704,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 405195.6799999999,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 705,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 68357.02,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 706,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1119630.72,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 707,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1825558.28,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 708,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1075951.38,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 709,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 3779208.9,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 710,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 333330.12,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 711,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -10417.85,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 712,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 710.82,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 713,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -12927.85,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 714,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 333330.12,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 715,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 51066258.29000001,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 716,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 4847219.690000022,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 717,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 4847219.690000022,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 718,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 4380679.510000021,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 719,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 51066258.29000001,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 720,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 3508119.0361773614,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 721,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 178690.081733499,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 722,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1446338.838989335,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 723,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 1503766.3989893352,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 724,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": 723019.9910471891,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 725,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 3686809.1179108606,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 726,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4216049.16,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 727,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 699798.3899999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 728,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 457014.3099999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 729,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 62710.39,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 730,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 1758256.4199999997,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 731,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 2433305.2004681635,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 732,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 1703159.5899999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 733,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 5435572.249999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 734,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 444251.83,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 735,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 21230.75,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 736,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 31647.42,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 737,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -12349.64,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 738,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 444251.83,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 739,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 39381894.23,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 740,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 2963668.719999987,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 741,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 3130668.719999987,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 742,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 2464220.919999987,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 743,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 39381894.23,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 744,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2211014.8721299553,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 745,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 180535.3866175645,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 746,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "GAAP_EBITDA",
+    "Balance": 569292.9885055163,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 747,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Management_EBITDA",
+    "Balance": 626848.5485055163,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 748,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Net_Income",
+    "Balance": -60978.6300904508,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 749,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "Total_Revenue",
+    "Balance": 2391550.25874752,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 750,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3280158.7,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 751,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 528387.88,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 752,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 292747.79,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 753,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 46488.36,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 754,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "GAAP_EBITDA",
+    "Balance": 624518.58,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 755,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Management_EBITDA",
+    "Balance": 1485409.58,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 756,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Net_Income",
+    "Balance": 577211.6699999999,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 757,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "Total_Revenue",
+    "Balance": 4147782.73,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 758,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 467609.91,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 759,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": -39827.4800000001,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 760,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": -29410.8100000001,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 761,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Net_Income",
+    "Balance": -59652.9900000001,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 762,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 467609.91,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 763,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 40983781.29,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 764,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "GAAP_EBITDA",
+    "Balance": 4432488.429126996,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 765,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Management_EBITDA",
+    "Balance": 4432488.429126996,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 766,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Net_Income",
+    "Balance": 3838206.209126996,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 767,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "Total_Revenue",
+    "Balance": 40983781.29,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  }
+]

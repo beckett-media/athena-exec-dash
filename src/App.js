@@ -220,7 +220,7 @@ function App() {
                 element={
                   <Page
                     imgBg={
-                      "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/62435e4726cb4698ebafca80_sebastian-svenson-d2w-_1LJioQ-unsplash.jpeg"
+                      "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/628e3c6160d10a4ff9544603_milad-fakurian-WUtT8cGRPog-unsplash.jpeg"
                     }
                     globe={chat}
                     color={"black"}
@@ -233,7 +233,7 @@ function App() {
               >
                 <Route
                   path="/financial/financial-performance"
-                  element={<FinancialPerformance />}
+                  element={<FinancialPerformance data={dataTable} />}
                 />
               </Route>
             )}
