@@ -1,18 +1,18 @@
-import { S3, GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+const { S3, GetObjectCommand, PutObjectCommand } = require("@aws-sdk/client-s3");
 
-const REGION = "us-east-1";
+const REGION = "us-west-1";
 
-export const s3Client = new S3({
+const s3Client = new S3({
   region: REGION,
 });
 
-export const downloadBucketParams = {
-  Bucket: "BUCKET_NAME",
-  Key: "KEY",
+const downloadBucketParams = {
+  Bucket: "csv-amplifys3uploader112948-dev",
+  Key: "json/average_selling_price.json",
 };
 
 // fileKey: "KEY.json"
-export const download = async (fileKey) => {
+exports.download = async (fileKey) => {
   try {
     // Create a helper function to convert a ReadableStream to a string.
     const streamToString = (stream) =>
@@ -40,17 +40,17 @@ export const download = async (fileKey) => {
 };
 
 // Set the parameters.
-export const uploadBucketParams = {
-  Bucket: "BUCKET_NAME",
+const uploadBucketParams = {
+  Bucket: "csv-amplifys3uploader112948-dev",
   // Specify the name of the new object. For example, 'index.html'.
   // To create a directory for the object, use '/'. For example, 'myApp/package.json'.
-  Key: "OBJECT_NAME",
+  Key: "json/average_selling_price.json",
   // Content of the new object.
-  Body: "BODY",
+  Body: "[\"Hello world\"]",
 };
 
 // Create and upload the object to the S3 bucket.
-export const upload = async () => {
+exports.upload = async () => {
   try {
     const data = await s3Client.send(new PutObjectCommand(uploadBucketParams));
     // return data; // For unit tests.
