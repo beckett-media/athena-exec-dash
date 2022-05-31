@@ -19,6 +19,11 @@
           ]
         }
       ]
+    },
+    "athenaprod24dc5008": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "auth": {
@@ -96,6 +101,23 @@
           "attributes": [
             "Arn",
             "Name"
+          ]
+        }
+      ]
+    }
+  },
+  "storage": {
+    "amplifys3uploader": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "athenaprod24dc5008",
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
           ]
         }
       ]

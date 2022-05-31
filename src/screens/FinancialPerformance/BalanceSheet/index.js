@@ -42,7 +42,9 @@ const BalanceSheet = ({
               borderRadius: 15,
             }}
           >
+
             Balance Sheet
+
           </Tab>
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
