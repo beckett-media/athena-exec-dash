@@ -8,13 +8,14 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
+src/mocks/financial_mock/
 aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplifyconfiguration.dart
 amplify-build-config.json
 amplify-gradle-config.json
-amplifytools.xcconfig
+amplifytools.xcconfig 
 .secret-*
 **.sample
 #amplify-do-not-edit-end

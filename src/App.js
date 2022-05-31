@@ -26,6 +26,7 @@ import Settings from "./screens/Settings/Settings";
 import GradingSettings from "./screens/GradingSettings/GradingSettings";
 import { useApiData } from "./providers/apiData";
 import { API } from "aws-amplify";
+import UploadFiles from "./screens/FinancialPerformance/UploadXLSX";
 
 const components = {
   Header() {
@@ -214,6 +215,7 @@ function App() {
                 element={<OpsPerformance />}
               />
             </Route>
+
             {checkPermission(user, ["financial", "admin", "dev"]) && (
               <Route
                 path="financial"
@@ -257,6 +259,29 @@ function App() {
                 <Route
                   path="/financial/roi-performance"
                   element={<ROIPerformance />}
+                />
+              </Route>
+            )}
+            {checkPermission(user, ["financial", "admin", "dev"]) && (
+              <Route
+                path="financial"
+                element={
+                  <Page
+                    imgBg={
+                      "https://uploads-ssl.webflow.com/5e3335504b445e809f69e502/628e3c5ff43b6b18fd135c46_milad-fakurian-_zSZVxZWhkY-unsplash.jpeg"
+                    }
+                    globe={chat}
+                    color={"black"}
+                    textColor={"#fff"}
+                    signOut={signOut}
+                    user={user}
+                    title="Upload .xlsx Files"
+                  />
+                }
+              >
+                <Route
+                  path="/financial/upload-files"
+                  element={<UploadFiles />}
                 />
               </Route>
             )}

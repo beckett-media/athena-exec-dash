@@ -245,14 +245,6 @@ function TablePivots({ className, revenueStreams }) {
    
     },
     {
-      Header: "Month",
-      accessor: "Month",
-      // Aggregate the average age of visitors
-      aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Unique Months`,
-      
-    },
-    {
       Header: "Company",
       accessor: "Company",
       Cell: ({ value }) => (
@@ -286,7 +278,7 @@ function TablePivots({ className, revenueStreams }) {
     {
       Header: "Year & Month",
       // fomatted date with moment to get the month
-      accessor: "YearMonth",
+      accessor: "StrDate",
       aggregate: "uniqueCount",
       Aggregated: ({ value }) => `${value} Total`,
     },

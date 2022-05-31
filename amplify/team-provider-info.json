@@ -26,6 +26,10 @@
         "AdminQueriesa200cd2e": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
           "s3Key": "amplify-builds/AdminQueriesa200cd2e-47576c69727648535751-build.zip"
+        },
+        "athenaprod24dc5008": {
+          "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
+          "s3Key": "amplify-builds/athenaprod24dc5008-6373652b774c65583054-build.zip"
         }
       }
     }

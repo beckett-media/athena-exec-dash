@@ -124,7 +124,6 @@ const Dropdown = ({
               {x === "Arcane_Tinmen_ApS" && (
                 <div>{x === "Arcane_Tinmen_ApS" ? "Arcane Tinmen ApS" : x}</div>
               )}
-
               {x === "Beckett_Collectables" && (
                 <div>
                   {x === "Beckett_Collectables" ? "Beckett Collectables" : x}
@@ -153,13 +152,13 @@ const Dropdown = ({
               {x === "2020" && <div>{x === "2020" ? "2020" : x}</div>}
               {x === "2019" && <div>{x === "2019" ? "2019" : x}</div>}
               {x === "2018" && <div>{x === "2018" ? "2018" : x}</div>}
-
               {x === 20 && <div>{x === 20 ? 20 : x}</div>}
               {x === 50 && <div>{x === 50 ? 50 : x}</div>}
               {x === 80 && <div>{x === 80 ? 80 : x}</div>}
               {x === 120 && <div>{x === 120 ? 120 : x}</div>}
               {x === total && <div>{x === total ? total : x}</div>}
 
+              {/* social media */}
               {x === "All messages" && (
                 <div>{x === "All messages" ? "All messages" : x}</div>
               )}
@@ -172,6 +171,8 @@ const Dropdown = ({
               {x === "neutral posts" && (
                 <div>{x === "neutral posts" ? "neutral posts" : value}</div>
               )}
+              {/* Account type */}
+              {x === "Cash_and_Cash_Equivalents" && <div>{x}</div>}
             </div>
           ))}
         </div>
@@ -181,3 +182,21 @@ const Dropdown = ({
 };
 
 export default Dropdown;
+// [
+
+//   "Accounts_Receivable_>_90_days",
+//   "Net_Working_Capital",
+//   "Capital_Expenditures",
+//   "Other_Assets",
+//   "Seller_Agreements",
+//   "Other_Long_Term_Liabilities",
+//   "Preferred_Equity",
+//   "Accrued_Interest",
+//   "Intercompany_Loans",
+//   "Intercompany_Receivable",
+//   "Long_Term_Investments",
+//   "Intercompany_Payable",
+//   "Long-Term_Capital_Lease",
+//   "Dividend_Payable",
+//   "Other_Equity",
+// ];

@@ -279,6 +279,7 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
         aggregate: "sum",
         Aggregated: ({ value }) =>
           `${numberWithCommas(value.toFixed(0))} Total`,
+          
         Cell: ({ value }) => (
           <Badge colorScheme={value > 0 ? "green" : "red"}>
             {numberWithCommas(value.toFixed(0))}

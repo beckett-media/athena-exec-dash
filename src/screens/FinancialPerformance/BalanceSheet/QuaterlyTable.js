@@ -234,7 +234,6 @@ function Tables({ columns, data }) {
 }
 
 function QuaterlyTable({ className, balancePivotQuarterly }) {
-  console.log(balancePivotQuarterly);
   const columns = React.useMemo(
     () => [
       {

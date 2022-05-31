@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./MarketAnalysis.module.sass";
 import TooltipGlodal from "../../components/TooltipGlodal";
+import ComingSoon from "../CominSoon/ComingSoon"
 import Table from "./AverageSelling";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
@@ -17,7 +18,7 @@ const MarketAnalysis = ({ data, isLoading }) => {
   } else {
     return (
       <>
-        <Tabs
+        {/* <Tabs
           isManual
           variant="enclosed"
           isFitted
@@ -90,8 +91,8 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs>
-        {/* <ComingSoon /> */}
+        </Tabs> */}
+        <ComingSoon />
       </>
     );
   }
