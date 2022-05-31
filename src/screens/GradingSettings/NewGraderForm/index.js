@@ -17,6 +17,8 @@ import { API } from "aws-amplify";
 // darkmode
 import useDarkMode from "use-dark-mode";
 import useGraders from "../../../hooks/data/useGraders";
+import { useAddGraders } from "../../../hooks/data/useGraders";
+import { useUpdateGraders } from "../../../hooks/data/useGraders";
 
 const NewGraderForm = ({ className, ...props }) => {
   const [status_code, setStatusCode] = useState(0);
@@ -25,6 +27,7 @@ const NewGraderForm = ({ className, ...props }) => {
   const [visibleModal, setVisibleModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [newGraderName, setNewGraderName] = useState("");
+  const [confirmGraderName, setConfirmGraderName] = useState("");
   const [editGrader, setEditGrader] = useState("");
   const [editGraderId, setEditGraderId] = useState("");
   const darkMode = useDarkMode(false);
@@ -37,6 +40,8 @@ const NewGraderForm = ({ className, ...props }) => {
   ];
 
   const { graders, isLoading, isError } = useGraders();
+  const updateFn = useUpdateGraders();
+  const addFn = useAddGraders();
 
   console.log(graders, "data");
 
@@ -54,43 +59,45 @@ const NewGraderForm = ({ className, ...props }) => {
   };
 
   const handleSubmit = useCallback(async (e) => {
+    addFn(myInit);
     // alert(JSON.stringify(myInit));
-    const graders = "/graders";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.post(apiName, graders, myInit)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCode(response.status_code);
-        setLoading(false);
-        status_code === 200 && alert(status_code);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        alert(error.data);
-        setLoading(false);
-      });
+    // const graders = "/graders";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.post(apiName, graders, myInit)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCode(response.status_code);
+    //     setLoading(false);
+    //     status_code === 200 && alert(status_code);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     alert(error.data);
+    //     setLoading(false);
+    //   });
   });
 
   const handleUpdate = useCallback(async (e) => {
+    updateFn(myUpdate).then();
     // alert(JSON.stringify(myUpdate));
-    const graders = "/graders";
-    const apiName = "palentirApi";
-    setLoading(true);
-    API.put(apiName, graders, myUpdate)
-      .then((response) => {
-        console.log("response from post", response);
-        console.log(response.status_code);
-        setStatusCodeEdit(response.status_code);
-        setLoading(false);
-        status_code_edit === 200 && alert(status_code_edit);
-      })
-      .catch((error) => {
-        console.log(error.data, "post error");
-        alert(error.data);
-        setLoading(false);
-      });
+    // const graders = "/graders";
+    // const apiName = "palentirApi";
+    // setLoading(true);
+    // API.put(apiName, graders, myUpdate)
+    //   .then((response) => {
+    //     console.log("response from post", response);
+    //     console.log(response.status_code);
+    //     setStatusCodeEdit(response.status_code);
+    //     setLoading(false);
+    //     status_code_edit === 200 && alert(status_code_edit);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data, "post error");
+    //     alert(error.data);
+    //     setLoading(false);
+    //   });
   });
 
   React.useEffect(() => {
@@ -99,10 +106,6 @@ const NewGraderForm = ({ className, ...props }) => {
     //   setLoading(false);
     // }
   }, [isLoading, graders]);
-
-  const checkDisableSubmit = () => {
-    if (!newGraderName) return true;
-  };
 
   const checkEditDisableSubmit = () => {
     if (!editGrader || !editGraderId) return true;
@@ -123,7 +126,12 @@ const NewGraderForm = ({ className, ...props }) => {
       classTitle="title-green"
     >
       <div className={styles.images}>
-        <FormLabel>Enter grader name</FormLabel>
+        <FormLabel>
+          Enter grader name{" "}
+          <span style={{ opacity: "0.5" }}>
+            (cannot be changed once submitted)
+          </span>
+        </FormLabel>
         <Input
           focusBorderColor={useColorModeValue("blue.500", "blue.200")}
           borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
@@ -139,6 +147,22 @@ const NewGraderForm = ({ className, ...props }) => {
             setNewGraderName(e.target.value);
           }}
         />
+        <Input
+          focusBorderColor={useColorModeValue("blue.500", "blue.200")}
+          borderColor={darkMode.value ? "#272B30" : "#EFEFEF"}
+          borderRadius={12}
+          value={confirmGraderName}
+          border={`2px solid transparent`}
+          mb={25}
+          size="lg"
+          label="Cards graded today"
+          placeholder="Confirm entered name"
+          type="string"
+          onChange={(e) => {
+            setConfirmGraderName(e.target.value);
+          }}
+        />
+        {newGraderName !== confirmGraderName && <div>Names must match</div>}
         <Box bg="bg-surface" borderRadius="lg" flex="1" {...props}>
           <Flex direction="row-reverse" py="4" px={{ base: "4", md: "6" }}>
             <Button
@@ -155,7 +179,7 @@ const NewGraderForm = ({ className, ...props }) => {
               // eslint-disable-next-line react-hooks/rules-of-hooks
               _active={{ bg: useColorModeValue("gray.700", "gray.500") }}
               color="white"
-              disabled={checkDisableSubmit()}
+              disabled={!newGraderName || newGraderName !== confirmGraderName}
             >
               Save submission
             </Button>
@@ -171,7 +195,7 @@ const NewGraderForm = ({ className, ...props }) => {
             )}
           </Flex>
         </Box>
-        <Box mb={25}>Or edit existing grader</Box>
+        {/* <Box mb={25}>Or edit existing grader</Box>
         <Box mb={25}>
           <FormLabel>Select grader</FormLabel>
           <Select
@@ -182,7 +206,6 @@ const NewGraderForm = ({ className, ...props }) => {
             }}
           >
             <option value="">Select</option>
-            {/* TODO : Add options here */}
             {graders.map((x, index) => (
               <option value={x.newGraderName}>{x.newGraderName}</option>
             ))}
@@ -235,7 +258,7 @@ const NewGraderForm = ({ className, ...props }) => {
               </Text>
             )}
           </Flex>
-        </Box>
+        </Box> */}
       </div>
     </Card>
   );

@@ -30,6 +30,7 @@
         "athenaprod24dc5008": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
           "s3Key": "amplify-builds/athenaprod24dc5008-6373652b774c65583054-build.zip"
+
         }
       }
     }

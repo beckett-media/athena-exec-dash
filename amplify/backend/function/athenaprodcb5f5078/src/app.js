@@ -1183,7 +1183,7 @@ app.get("/graderentry/:direction", async function (req, res) {
 });
 
 //POST//
-app.post("/graderentry", async function (req, res) {"
+app.post("/graderentry", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
   const { v4: uuidv4 } = require("uuid");
@@ -1215,6 +1215,7 @@ app.post("/graderentry", async function (req, res) {"
       "Content-Type": "application/json",
     },
     data: {
+
       "parameters": {
         "id": `${uuid}`,
         "grader": req.body.grader,
@@ -1226,6 +1227,7 @@ app.post("/graderentry", async function (req, res) {"
         "includes_saturday": req.body.includes_saturday,
         "start_date_formatted": req.body.start_date_formatted,
         "end_date_formatted": req.body.end_date_formatted,
+
       },
     },
   };
@@ -1284,6 +1286,7 @@ app.put("/graderentry", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
+
       "parameters": {
         "AthenaGraderEntry": req.body.id,
         "grader": req.body.grader,
@@ -1295,6 +1298,7 @@ app.put("/graderentry", async function (req, res) {
         "includes_saturday": req.body.includes_saturday,
         "start_date_formatted": req.body.start_date_formatted,
         "end_date_formatted": req.body.end_date_formatted,
+
       },
     },
   };
