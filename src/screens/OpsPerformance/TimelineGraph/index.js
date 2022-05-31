@@ -19,7 +19,6 @@ const MarketData = ({ className, isLoading }) => {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsReceived),
 
-
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -34,7 +33,6 @@ const MarketData = ({ className, isLoading }) => {
       },
     },
     {
-
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
 

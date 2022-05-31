@@ -3,6 +3,7 @@ import {
   useGlobalFilter,
   useTable,
   useFilters,
+  useSortBy,
   usePagination,
 } from "react-table";
 import ColumnFilter from "./ColumnFilter";
@@ -16,6 +17,7 @@ import {
   Text,
   Th,
   Thead,
+  Tfoot,
   Tr,
   Table,
   Button,
@@ -40,6 +42,7 @@ export default function FilterTable({ columns, data, className }) {
     getTableProps, // table props from react-table
     getTableBodyProps, // table body props from react-table
     headerGroups, // headerGroups, if your table has groupings
+    footerGroups,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
     page, // fetch the current page
     nextPage,
@@ -58,9 +61,19 @@ export default function FilterTable({ columns, data, className }) {
       columns,
       data,
       defaultColumn,
+      initialState: {
+        sortBy: [
+          {
+            id: "grader",
+            desc: false,
+          },
+        ],
+        pageSize: 20,
+      },
     },
     useFilters,
     useGlobalFilter,
+    useSortBy,
     usePagination
   );
 
@@ -74,8 +87,15 @@ export default function FilterTable({ columns, data, className }) {
           {headerGroups.map((headerGroup) => (
             <Tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <Th {...column.getHeaderProps()}>
+                <Th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
+                  </span>
                   {/* <Text color={"#2A85FF"}>
                     {column.canFilter ? column.render("Filter") : null}
                   </Text> */}
@@ -98,6 +118,15 @@ export default function FilterTable({ columns, data, className }) {
             );
           })}
         </Tbody>
+        <Tfoot>
+          {footerGroups.map((group) => (
+            <Tr {...group.getFooterGroupProps()}>
+              {group.headers.map((column) => (
+                <Td {...column.getFooterProps()}>{column.render("Footer")}</Td>
+              ))}
+            </Tr>
+          ))}
+        </Tfoot>
       </Table>
       <Box
         my={5}
