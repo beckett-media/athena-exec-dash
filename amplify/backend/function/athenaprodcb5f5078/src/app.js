@@ -287,13 +287,13 @@ app.post("/athenaform", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        cards_graded_today: req.body.cards_graded_today,
-        cards_shipped_today: req.body.cards_shipped_today,
-        cards_received: req.body.cards_received,
-        type: req.body.type,
-        date: req.body.date,
-        submission_item: req.body.submission_item,
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
       },
     },
   };
@@ -351,14 +351,14 @@ app.put("/athenaform", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaForm: req.body.submission_item,
-        cards_graded_today: req.body.cards_graded_today,
-        cards_shipped_today: req.body.cards_shipped_today,
-        cards_received: req.body.cards_received,
-        type: req.body.type,
-        date: req.body.date,
-        submission_item: req.body.submission_item,
+      "parameters": {
+        "AthenaForm": req.body.submission_item,
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
       },
     },
   };
@@ -591,14 +591,14 @@ app.post("/grading-service-form", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        cards_graded_today: req.body.cards_graded_today,
-        cards_shipped_today: req.body.cards_shipped_today,
-        cards_received: req.body.cards_received,
-        type: req.body.type,
-        date: req.body.date,
-        submission_item: req.body.submission_item,
-        AthenaGradingServiceForm: req.body.submission_item,
+      "parameters": {
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
+        "submission_item": req.body.submission_item,
+        "AthenaGradingServiceForm": req.body.submission_item,
       },
     },
   };
@@ -656,13 +656,13 @@ app.put("/grading-service-form", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaGradingServiceForm: req.body.submission_item,
-        cards_graded_today: req.body.cards_graded_today,
-        cards_shipped_today: req.body.cards_shipped_today,
-        cards_received: req.body.cards_received,
-        type: req.body.type,
-        date: req.body.date,
+      "parameters": {
+        "AthenaGradingServiceForm": req.body.submission_item,
+        "cards_graded_today": req.body.cards_graded_today,
+        "cards_shipped_today": req.body.cards_shipped_today,
+        "cards_received": req.body.cards_received,
+        "type": req.body.type,
+        "date": req.body.date,
       },
     },
   };
@@ -830,20 +830,20 @@ app.post("/servicelevel", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaServiceForm: req.body.submission_item,
-        submission_item: req.body.submission_item,
-        date: req.body.date,
-        ten_day: req.body.ten_day,
-        thirty_day: req.body.thirty_day,
-        total: req.body.total,
-        hidden_1: req.body.hidden_1,
-        recase: req.body.recase,
-        five_day: req.body.five_day,
-        type: "BGS",
-        two_day: req.body.two_day,
-        revenueshipped: req.body.revenueshipped,
-        verified: req.body.verified,
+      "parameters": {
+        "AthenaServiceForm": req.body.submission_item,
+        "submission_item": req.body.submission_item,
+        "date": req.body.date,
+        "ten_day": req.body.ten_day,
+        "thirty_day": req.body.thirty_day,
+        "total": req.body.total,
+        "hidden_1": req.body.hidden_1,
+        "recase": req.body.recase,
+        "five_day": req.body.five_day,
+        "type": "BGS",
+        "two_day": req.body.two_day,
+        "revenueshipped": req.body.revenueshipped,
+        "verified": req.body.verified,
       },
     },
   };
@@ -902,19 +902,19 @@ app.put("/servicelevel", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaServiceForm: req.body.submission_item,
-        date: req.body.date,
-        ten_day: req.body.ten_day,
-        thirty_day: req.body.thirty_day,
-        total: req.body.total,
-        hidden_1: req.body.hidden_1,
-        recase: req.body.recase,
-        five_day: req.body.five_day,
-        type: "BGS",
-        two_day: req.body.two_day,
-        revenueshipped: req.body.revenueshipped,
-        verified: req.body.verified,
+      "parameters": {
+        "AthenaServiceForm": req.body.submission_item,
+        "date": req.body.date,
+        "ten_day": req.body.ten_day,
+        "thirty_day": req.body.thirty_day,
+        "total": req.body.total,
+        "hidden_1": req.body.hidden_1,
+        "recase": req.body.recase,
+        "five_day": req.body.five_day,
+        "type": "BGS",
+        "two_day": req.body.two_day,
+        "revenueshipped": req.body.revenueshipped,
+        "verified": req.body.verified,
       },
     },
   };
@@ -1032,9 +1032,9 @@ app.post("/graders", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        id: `${uuid}`,
-        new_grader_name: req.body.new_grader_name,
+      "parameters": {
+        "id": `${uuid}`,
+        "new_grader_name": req.body.new_grader_name,
       },
     },
   };
