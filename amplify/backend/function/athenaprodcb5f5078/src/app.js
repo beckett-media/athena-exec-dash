@@ -1093,9 +1093,9 @@ app.put("/graders", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaGraders: req.body.id,
-        new_grader_name: req.body.new_grader_name,
+      "parameters": {
+        "AthenaGraders": req.body.id,
+        "new_grader_name": req.body.new_grader_name,
       },
     },
   };
@@ -1215,17 +1215,19 @@ app.post("/graderentry", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        id: `${uuid}`,
-        grader: req.body.grader,
-        monday: req.body.monday,
-        tuesday: req.body.tuesday,
-        wednesday: req.body.wednesday,
-        thursday: req.body.thursday,
-        friday: req.body.friday,
-        includes_saturday: req.body.includes_saturday,
-        start_date_formatted: req.body.start_date_formatted,
-        end_date_formatted: req.body.end_date_formatted,
+
+      "parameters": {
+        "id": `${uuid}`,
+        "grader": req.body.grader,
+        "monday": req.body.monday,
+        "tuesday": req.body.tuesday,
+        "wednesday": req.body.wednesday,
+        "thursday": req.body.thursday,
+        "friday": req.body.friday,
+        "includes_saturday": req.body.includes_saturday,
+        "start_date_formatted": req.body.start_date_formatted,
+        "end_date_formatted": req.body.end_date_formatted,
+
       },
     },
   };
@@ -1284,17 +1286,19 @@ app.put("/graderentry", async function (req, res) {
       "Content-Type": "application/json",
     },
     data: {
-      parameters: {
-        AthenaGraderEntry: req.body.id,
-        grader: req.body.grader,
-        monday: req.body.monday,
-        tuesday: req.body.tuesday,
-        wednesday: req.body.wednesday,
-        thursday: req.body.thursday,
-        friday: req.body.friday,
-        includes_saturday: req.body.includes_saturday,
-        start_date_formatted: req.body.start_date_formatted,
-        end_date_formatted: req.body.end_date_formatted,
+
+      "parameters": {
+        "AthenaGraderEntry": req.body.id,
+        "grader": req.body.grader,
+        "monday": req.body.monday,
+        "tuesday": req.body.tuesday,
+        "wednesday": req.body.wednesday,
+        "thursday": req.body.thursday,
+        "friday": req.body.friday,
+        "includes_saturday": req.body.includes_saturday,
+        "start_date_formatted": req.body.start_date_formatted,
+        "end_date_formatted": req.body.end_date_formatted,
+
       },
     },
   };

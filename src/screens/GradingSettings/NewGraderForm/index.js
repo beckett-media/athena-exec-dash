@@ -43,7 +43,7 @@ const NewGraderForm = ({ className, ...props }) => {
   const updateFn = useUpdateGraders();
   const addFn = useAddGraders();
 
-  console.log(graders);
+  console.log(graders, "data");
 
   const myInit = {
     body: {

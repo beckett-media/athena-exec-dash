@@ -55,6 +55,10 @@ const navigation = [
         title: "ROI",
         url: "/financial/roi-performance",
       },
+      {
+        title: "Upload .xlsx Files",
+        url: "/financial/upload-files",
+      },
     ],
   },
   {
