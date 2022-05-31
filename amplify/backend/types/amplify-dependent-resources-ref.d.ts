@@ -11,12 +11,6 @@ export type AmplifyDependentResourcesAttributes = {
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
-        },
-        "athenaprod24dc5008": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
         }
     },
     "auth": {
@@ -45,12 +39,6 @@ export type AmplifyDependentResourcesAttributes = {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
-        }
-    },
-    "storage": {
-        "amplifys3uploader": {
-            "BucketName": "string",
-            "Region": "string"
         }
     }
 }
