@@ -1,0 +1,2234 @@
+[
+  {
+    "id": 0,
+    "FullDate": 1548892800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 997208.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 1,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 959882.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 2,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 268572.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 3,
+    "FullDate": 1548892800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 272760.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 4,
+    "FullDate": 1548892800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 201469.0,
+    "StrDate": "2019-01-31",
+    "Year": "2019"
+  },
+  {
+    "id": 5,
+    "FullDate": 1551312000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1315217.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 6,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1022932.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 7,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 379824.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 8,
+    "FullDate": 1551312000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280629.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 9,
+    "FullDate": 1551312000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 215042.0,
+    "StrDate": "2019-02-28",
+    "Year": "2019"
+  },
+  {
+    "id": 10,
+    "FullDate": 1553990400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1063105.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 11,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1255901.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 12,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 395788.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 13,
+    "FullDate": 1553990400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 318582.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 14,
+    "FullDate": 1553990400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 302165.0,
+    "StrDate": "2019-03-31",
+    "Year": "2019"
+  },
+  {
+    "id": 15,
+    "FullDate": 1556582400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1474860.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 16,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1364205.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 17,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 319011.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 18,
+    "FullDate": 1556582400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 291204.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 19,
+    "FullDate": 1556582400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 271288.0,
+    "StrDate": "2019-04-30",
+    "Year": "2019"
+  },
+  {
+    "id": 20,
+    "FullDate": 1559260800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1459945.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 21,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1897749.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 22,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 305435.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 23,
+    "FullDate": 1559260800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281001.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 24,
+    "FullDate": 1559260800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 269841.0,
+    "StrDate": "2019-05-31",
+    "Year": "2019"
+  },
+  {
+    "id": 25,
+    "FullDate": 1561852800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1713939.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 26,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1301006.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 27,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 361037.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 28,
+    "FullDate": 1561852800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 260915.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 29,
+    "FullDate": 1561852800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 277328.0,
+    "StrDate": "2019-06-30",
+    "Year": "2019"
+  },
+  {
+    "id": 30,
+    "FullDate": 1564531200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1338726.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 31,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1214128.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 32,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 382171.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 33,
+    "FullDate": 1564531200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 342229.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 34,
+    "FullDate": 1564531200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 288885.0,
+    "StrDate": "2019-07-31",
+    "Year": "2019"
+  },
+  {
+    "id": 35,
+    "FullDate": 1567209600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1431735.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 36,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1316334.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 37,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 238289.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 38,
+    "FullDate": 1567209600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 258650.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 39,
+    "FullDate": 1567209600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 209122.0,
+    "StrDate": "2019-08-31",
+    "Year": "2019"
+  },
+  {
+    "id": 40,
+    "FullDate": 1569801600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1374410.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 41,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1246634.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 42,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 340701.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 43,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 293745.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 44,
+    "FullDate": 1569801600000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 40000.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 45,
+    "FullDate": 1569801600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 228649.0,
+    "StrDate": "2019-09-30",
+    "Year": "2019"
+  },
+  {
+    "id": 46,
+    "FullDate": 1572480000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1670149.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 47,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1337424.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 48,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 499774.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 49,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 283066.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 50,
+    "FullDate": 1572480000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 113108.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 51,
+    "FullDate": 1572480000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 198638.0,
+    "StrDate": "2019-10-31",
+    "Year": "2019"
+  },
+  {
+    "id": 52,
+    "FullDate": 1575072000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1167782.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 53,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1224618.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 54,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 287971.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 55,
+    "FullDate": 1575072000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281914.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 56,
+    "FullDate": 1575072000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 215680.0,
+    "StrDate": "2019-11-30",
+    "Year": "2019"
+  },
+  {
+    "id": 57,
+    "FullDate": 1577750400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1046234.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 58,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1294201.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 59,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 330551.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 60,
+    "FullDate": 1577750400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 308481.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 61,
+    "FullDate": 1577750400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 151895.0,
+    "StrDate": "2019-12-31",
+    "Year": "2019"
+  },
+  {
+    "id": 62,
+    "FullDate": 1580428800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1433473.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 63,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1522878.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 64,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 359556.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 65,
+    "FullDate": 1580428800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 281743.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 66,
+    "FullDate": 1580428800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 137550.0,
+    "StrDate": "2020-01-31",
+    "Year": "2020"
+  },
+  {
+    "id": 67,
+    "FullDate": 1582934400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1389386.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 68,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1676925.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 69,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 322655.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 70,
+    "FullDate": 1582934400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 286945.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 71,
+    "FullDate": 1582934400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 155042.0,
+    "StrDate": "2020-02-29",
+    "Year": "2020"
+  },
+  {
+    "id": 72,
+    "FullDate": 1585612800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1652051.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 73,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1614140.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 74,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 335985.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 75,
+    "FullDate": 1585612800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280345.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 76,
+    "FullDate": 1585612800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 99595.0,
+    "StrDate": "2020-03-31",
+    "Year": "2020"
+  },
+  {
+    "id": 77,
+    "FullDate": 1588204800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 333984.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 78,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 924085.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 79,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 517197.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 80,
+    "FullDate": 1588204800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 289185.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 81,
+    "FullDate": 1588204800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 81696.0,
+    "StrDate": "2020-04-30",
+    "Year": "2020"
+  },
+  {
+    "id": 82,
+    "FullDate": 1590883200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 579519.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 83,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 1846273.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 84,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 412710.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 85,
+    "FullDate": 1590883200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 189019.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 86,
+    "FullDate": 1590883200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 106934.0,
+    "StrDate": "2020-05-31",
+    "Year": "2020"
+  },
+  {
+    "id": 87,
+    "FullDate": 1593475200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1124432.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 88,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2614341.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 89,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 490783.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 90,
+    "FullDate": 1593475200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 267530.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 91,
+    "FullDate": 1593475200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 148501.0,
+    "StrDate": "2020-06-30",
+    "Year": "2020"
+  },
+  {
+    "id": 92,
+    "FullDate": 1596153600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1379306.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 93,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2389303.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 94,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 551933.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 95,
+    "FullDate": 1596153600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 320289.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 96,
+    "FullDate": 1596153600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 197006.0,
+    "StrDate": "2020-07-31",
+    "Year": "2020"
+  },
+  {
+    "id": 97,
+    "FullDate": 1598832000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1485636.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 98,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2606330.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 99,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 487599.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 100,
+    "FullDate": 1598832000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 280461.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 101,
+    "FullDate": 1598832000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 177681.0,
+    "StrDate": "2020-08-31",
+    "Year": "2020"
+  },
+  {
+    "id": 102,
+    "FullDate": 1601424000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1937324.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 103,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2012817.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 104,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 544496.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 105,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 407218.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 106,
+    "FullDate": 1601424000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 27105.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 107,
+    "FullDate": 1601424000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 176707.0,
+    "StrDate": "2020-09-30",
+    "Year": "2020"
+  },
+  {
+    "id": 108,
+    "FullDate": 1604102400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1483284.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 109,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2504487.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 110,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 631883.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 111,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 313302.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 112,
+    "FullDate": 1604102400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 95085.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 113,
+    "FullDate": 1604102400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 241956.0,
+    "StrDate": "2020-10-31",
+    "Year": "2020"
+  },
+  {
+    "id": 114,
+    "FullDate": 1606694400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1815098.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 115,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2002293.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 116,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 437587.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 117,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 376597.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 118,
+    "FullDate": 1606694400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 22498.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 119,
+    "FullDate": 1606694400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 195429.0,
+    "StrDate": "2020-11-30",
+    "Year": "2020"
+  },
+  {
+    "id": 120,
+    "FullDate": 1609372800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "409000",
+    "Balance": 1819461.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 121,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2453365.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 122,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 570784.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 123,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 366935.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 124,
+    "FullDate": 1609372800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 19565.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 125,
+    "FullDate": 1609372800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 202160.0,
+    "StrDate": "2020-12-31",
+    "Year": "2020"
+  },
+  {
+    "id": 126,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1570086.0832912333,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 127,
+    "FullDate": 1612051200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 60525.5968713812,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 128,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2387196.5,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 129,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 500331.46,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 130,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 350084.5400000001,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 131,
+    "FullDate": 1612051200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 28298.19,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 132,
+    "FullDate": 1612051200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 305202.5,
+    "StrDate": "2021-01-31",
+    "Year": "2021"
+  },
+  {
+    "id": 133,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1201497.244690282,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 134,
+    "FullDate": 1614470400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 55761.0600684429,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 135,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2137179.05,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 136,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 472581.7,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 137,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 302547.36,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 138,
+    "FullDate": 1614470400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 89279.55,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 139,
+    "FullDate": 1614470400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 110675.36,
+    "StrDate": "2021-02-28",
+    "Year": "2021"
+  },
+  {
+    "id": 140,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2099140.8008254324,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 141,
+    "FullDate": 1617148800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 115483.4776849863,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 142,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3540536.63,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 143,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 643093.34,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 144,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 527450.94,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 145,
+    "FullDate": 1617148800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 71487.07,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 146,
+    "FullDate": 1617148800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 231906.4,
+    "StrDate": "2021-03-31",
+    "Year": "2021"
+  },
+  {
+    "id": 147,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2201852.135846129,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 148,
+    "FullDate": 1619740800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 56804.2690440542,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 149,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4008082.8200000003,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 150,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 647938.8600000001,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 151,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 441318.9400000001,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 152,
+    "FullDate": 1619740800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 114900.69,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 153,
+    "FullDate": 1619740800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 194115.35,
+    "StrDate": "2021-04-30",
+    "Year": "2021"
+  },
+  {
+    "id": 154,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2792105.535468167,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 155,
+    "FullDate": 1622419200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 113330.649939375,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 156,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3633968.86,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 157,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 566687.69,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 158,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 346968.83,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 159,
+    "FullDate": 1622419200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 96467.0,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 160,
+    "FullDate": 1622419200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 243862.44,
+    "StrDate": "2021-05-31",
+    "Year": "2021"
+  },
+  {
+    "id": 161,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2738120.6202612338,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 162,
+    "FullDate": 1625011200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 106565.2666935592,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 163,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4038580.74,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 164,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 629272.85,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 165,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 450204.47,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 166,
+    "FullDate": 1625011200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 127724.57,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 167,
+    "FullDate": 1625011200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 304824.97,
+    "StrDate": "2021-06-30",
+    "Year": "2021"
+  },
+  {
+    "id": 168,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2850999.6449194634,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 169,
+    "FullDate": 1627689600000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 82001.4478944978,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 170,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3768924.48,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 171,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 649937.78,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 172,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 489968.3900000001,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 173,
+    "FullDate": 1627689600000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 81168.07,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 174,
+    "FullDate": 1627689600000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 264918.02,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 175,
+    "FullDate": 1627689600000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 8815512.140000014,
+    "StrDate": "2021-07-31",
+    "Year": "2021"
+  },
+  {
+    "id": 176,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2135880.195261591,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 177,
+    "FullDate": 1630368000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 81406.9843602438,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 178,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2898674.8000000003,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 179,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 556980.3,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 180,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 442047.2699999999,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 181,
+    "FullDate": 1630368000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 92101.98,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 182,
+    "FullDate": 1630368000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 339759.44,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 183,
+    "FullDate": 1630368000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 38185187.169999994,
+    "StrDate": "2021-08-31",
+    "Year": "2021"
+  },
+  {
+    "id": 184,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 3160580.7318963287,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 185,
+    "FullDate": 1632960000000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 159981.5045860753,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 186,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3336870.89,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 187,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 630184.0599999999,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 188,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 431625.6400000001,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 189,
+    "FullDate": 1632960000000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 399884.18,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 190,
+    "FullDate": 1632960000000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 315913.04,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 191,
+    "FullDate": 1632960000000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 31051148.449999996,
+    "StrDate": "2021-09-30",
+    "Year": "2021"
+  },
+  {
+    "id": 192,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2392177.674100797,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 193,
+    "FullDate": 1635638400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 109003.9059113106,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 194,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3659019.96,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 195,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 566114.1,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 196,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 427480.4999999999,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 197,
+    "FullDate": 1635638400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 71464.73,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 198,
+    "FullDate": 1635638400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 339277.55,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 199,
+    "FullDate": 1635638400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 27999595.350000005,
+    "StrDate": "2021-10-31",
+    "Year": "2021"
+  },
+  {
+    "id": 200,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2037188.731689061,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 201,
+    "FullDate": 1638230400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 133858.298211952,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 202,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2978860.16,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 203,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 499376.15,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 204,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 405146.53,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 205,
+    "FullDate": 1638230400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 65901.41,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 206,
+    "FullDate": 1638230400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 345352.22,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 207,
+    "FullDate": 1638230400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 57224454.730000004,
+    "StrDate": "2021-11-30",
+    "Year": "2021"
+  },
+  {
+    "id": 208,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2428591.486060246,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 209,
+    "FullDate": 1640908800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 216277.208821157,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 210,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3498714.33,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 211,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 612749.4099999999,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 212,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 337369.84,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 213,
+    "FullDate": 1640908800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 98884.19,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 214,
+    "FullDate": 1640908800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 372382.8700000001,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 215,
+    "FullDate": 1640908800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 42864820.23999997,
+    "StrDate": "2021-12-31",
+    "Year": "2021"
+  },
+  {
+    "id": 216,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1580380.539359887,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 217,
+    "FullDate": 1643587200000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 209661.1615683937,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 218,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2643976.21,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 219,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 539091.72,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 220,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 390827.3500000001,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 221,
+    "FullDate": 1643587200000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 54008.86,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 222,
+    "FullDate": 1643587200000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 314337.24,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 223,
+    "FullDate": 1643587200000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 29346602.230000008,
+    "StrDate": "2022-01-31",
+    "Year": "2022"
+  },
+  {
+    "id": 224,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 1995878.5179635077,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 225,
+    "FullDate": 1646006400000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 165734.4865941058,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 226,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 2841583.54,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 227,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 464072.66,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 228,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 405195.6799999999,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 229,
+    "FullDate": 1646006400000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 68357.02,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 230,
+    "FullDate": 1646006400000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 333330.12,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 231,
+    "FullDate": 1646006400000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 51066258.29000001,
+    "StrDate": "2022-02-28",
+    "Year": "2022"
+  },
+  {
+    "id": 232,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 3508119.0361773614,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 233,
+    "FullDate": 1648684800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 178690.081733499,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 234,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 4216049.16,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 235,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 699798.3899999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 236,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 457014.3099999999,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 237,
+    "FullDate": 1648684800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 62710.39,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 238,
+    "FullDate": 1648684800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 444251.83,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 239,
+    "FullDate": 1648684800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 39381894.23,
+    "StrDate": "2022-03-31",
+    "Year": "2022"
+  },
+  {
+    "id": 240,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "400300",
+    "Balance": 2211014.8721299553,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 241,
+    "FullDate": 1651276800000,
+    "Company": "Arcane_Tinmen_ApS",
+    "Account": "402000",
+    "Balance": 180535.3866175645,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 242,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "401450",
+    "Balance": 3280158.7,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 243,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402000",
+    "Balance": 528387.88,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 244,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "402350",
+    "Balance": 292747.79,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 245,
+    "FullDate": 1651276800000,
+    "Company": "Beckett_Collectables",
+    "Account": "409000",
+    "Balance": 46488.36,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 246,
+    "FullDate": 1651276800000,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Account": "401450",
+    "Balance": 467609.91,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  },
+  {
+    "id": 247,
+    "FullDate": 1651276800000,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Account": "409000",
+    "Balance": 40983781.29,
+    "StrDate": "2022-04-30",
+    "Year": "2022"
+  }
+]
