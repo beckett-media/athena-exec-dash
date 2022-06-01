@@ -43,6 +43,7 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
+src/mocks/
 aws-exports.js
 src/mocks/financial_update
 awsconfiguration.json
