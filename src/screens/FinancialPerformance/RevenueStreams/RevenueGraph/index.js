@@ -49,7 +49,6 @@ const TimeserriesGraph = ({ className, revenueStreams }) => {
         width: 4,
         shape: "spline",
         smoothing: 1,
-        dash: "dash",
       },
     },
     {

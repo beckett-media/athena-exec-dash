@@ -189,9 +189,10 @@ const StrDatelyGraph = ({
           gap={3}
           justifyItems={"center"}
           alignItems={"center"}
+          width={"40%"}
         >
           <Box width={"100%"}>
-            <Text flex={1}>Select Account</Text>
+            <Text width={"100%"}>Select Account</Text>
           </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}

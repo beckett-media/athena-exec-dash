@@ -52,7 +52,6 @@ const QuaterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
         width: 4,
         shape: "spline",
         smoothing: 1,
-        dash: "dash",
       },
     },
     {
