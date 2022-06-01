@@ -114,7 +114,7 @@ const TimeserriesGraph = ({ className, revenueStreams }) => {
   ];
   var layout = {
     xaxis: {
-      title: `Balance Sheet for account type: ${removeUnderscore(sorting)}`,
+      title: `Revenue stream for account type: ${removeUnderscore(sorting)}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -123,7 +123,7 @@ const TimeserriesGraph = ({ className, revenueStreams }) => {
     },
 
     yaxis: {
-      title: "Profit & Loss",
+      title: "Revenue",
       showgrid: true,
       zeroline: false,
       showline: true,

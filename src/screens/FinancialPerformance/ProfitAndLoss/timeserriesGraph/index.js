@@ -6,34 +6,38 @@ import Plot from "react-plotly.js";
 
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Select } from "@chakra-ui/react";
 import Dropdown from "../../../../components/Dropdown";
 
-const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
+const TimeserriesGraph = ({ className, title, monthly }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Beckett_Collectables");
-  const [sortingYear, setSortingYear] = React.useState("2022");
+  const [sorting, setSorting] = React.useState("409000");
+  const [year, setYear] = React.useState("2022");
 
-  // get unique values from netIncome array on Year column sort descending
-  // const uniqueYears = [...new Set(quarterly.map((item) => item.Year))].sort(
-  //   (a, b) => b - a
-  // );
+  const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
 
-  const years = ["2022", "2021", "2020", "2019", "2018", "2017"];
-  const uniqueCompanies = [
-    ...new Set(monthly.map((item) => item.Company)),
-  ].sort((a, b) => b - a);
+  const uniqueCompany = [...new Set(monthly.map((item) => item.Company))].sort(
+    (a, b) => b - a
+  );
 
-  const dataFilter = monthly.filter((d) => d?.Company === sorting);
+  const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
+    (a, b) => b - a
+  );
 
-  const dataFilterbyYear = dataFilter.filter((d) => d?.Year === sortingYear);
+  const dataFilter = monthly.filter((d) => d?.Account === sorting);
+
+  const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
+
+  // function to remove underscores from the account name
+  const removeUnderscore = (str) => {
+    return str.replace(/_/g, " ");
+  };
 
   var data = [
     {
-      x: dataFilterbyYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterbyYear.map((d) =>
-        (d.Company === sorting || sortingYear) &
-        (d.Account === "Management_EBITDA")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
           ? d.Balance
           : null
       ),
@@ -42,7 +46,7 @@ const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Management EBITDA",
+      name: "Beckett Collectables",
       line: {
         color: "#2A85FF",
         width: 4,
@@ -51,46 +55,49 @@ const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
       },
     },
     {
-      x: dataFilterbyYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterbyYear.map((d) =>
-        (d.Company === sorting) & (d.Account === "409000") ? d.Balance : null
-      ),
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#68D391", size: 10, opacity: 0.8 },
-      name: "409000",
-      line: {
-        color: "#68D391",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-
-    {
-      x: dataFilterbyYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterbyYear.map((d) =>
-        (d.Company === sorting) & (d.Account === "GAAP_EBITDA")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Comic_Book_Certification_Service_LLC")
           ? d.Balance
           : null
       ),
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "GAAP EBITDA",
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Comic Book Certification Service LLC",
       line: {
-        color: "#DCF341",
+        color: "#FF6A55",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
     {
-      x: dataFilterbyYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterbyYear.map((d) =>
-        (d.Company === sorting) & (d.Account === "Total_Revenue")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+          ? d.Balance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Arcane Tinmen ApS",
+      line: {
+        color: "#FFD700",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution,LLC")
           ? d.Balance
           : null
       ),
@@ -98,28 +105,9 @@ const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
-      name: "Total Revenue",
+      name: "Southern Hobby Distribution, LLC",
       line: {
         color: "#8E59FF",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: dataFilterbyYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterbyYear.map((d) =>
-        (d.Company === sorting) & (d.Account === "Net_Income")
-          ? d.Balance
-          : null
-      ),
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#ff9900", size: 10, opacity: 0.8 },
-      name: "Net Income",
-      line: {
-        color: "#ff9900",
         width: 4,
         shape: "spline",
         smoothing: 1,
@@ -128,7 +116,7 @@ const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
   ];
   var layout = {
     xaxis: {
-      title: "Timeseries",
+      title: `Profit & lost for account type: ${removeUnderscore(sorting)}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -189,24 +177,48 @@ const TimeserriesGraph = ({ className, netIncome, title, monthly }) => {
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <Text mr={3}>Filter by Company</Text>
-          <Dropdown
-            className={styles.dropdown}
-            classDropdownHead={styles.dropdownHead}
-            value={sorting}
-            setValue={setSorting}
-            options={uniqueCompanies}
-            small
-          />
-          <Text mr={3}>Filter by Year</Text>
-          <Dropdown
-            className={styles.dropdown}
-            classDropdownHead={styles.dropdownHead}
-            value={sortingYear}
-            setValue={setSortingYear}
-            options={years}
-            small
-          />
+          <Text mr={3}>Select Account</Text>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setSorting(e.target.value)}
+            value={console.log(sorting)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={14}
+          >
+            {uniqueAccount.map((d) => (
+              <option value={d}>{removeUnderscore(d)}</option>
+            ))}
+          </Select>
+          <Text mr={3}>Year</Text>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setYear(e.target.value)}
+            value={console.log(year)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={14}
+          >
+            {uniqueYear.map((d) => (
+              <option value={d}>{d}</option>
+            ))}
+          </Select>
         </Box>
       }
     >

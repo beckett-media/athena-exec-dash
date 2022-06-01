@@ -53,7 +53,7 @@ const RevenueStreams = ({
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Quaterly Revenue
+            Quarterly Revenue
           </Tab>
         </TabList>
         <TabPanels>
@@ -103,7 +103,7 @@ const RevenueStreams = ({
             <QuaterlyGraph
               revenueStreamsQuarterly={revenueStreamsQuarterly}
               revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
-              title="Quaterly Balance Sheet"
+              title="Quarterly Balance Sheet"
             />
           </TabPanel>
         </TabPanels>

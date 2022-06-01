@@ -100,5 +100,22 @@
         }
       ]
     }
+  },
+  "storage": {
+    "amplifyS3upload": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "athenaprodcb5f5078",
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ]
+        }
+      ]
+    }
   }
 }
