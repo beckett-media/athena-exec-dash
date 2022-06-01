@@ -19,11 +19,6 @@
           ]
         }
       ]
-    },
-    "athenaprod24dc5008": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "auth": {
