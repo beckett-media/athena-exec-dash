@@ -239,62 +239,56 @@ function TimeserriesTable({ className, data, monthly }) {
       {
         Header: "Year",
         accessor: "Year",
-        // Aggregate the average age of visitors
-        // aggregate: "uniqueCount",
-        // Aggregated: ({ value }) => `${value} Unique Names`,
+        Cell: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {value.replace(/_/g, " ")}
+          </Text>
+        ),
       },
       {
         Header: "Company",
         accessor: "Company",
         aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Total`,
-        Cell: ({ cell: { value } }) => {
-          return (
-            <Badge colorScheme={"blue"} marginRight="0.5rem">
-              {value.replace(/_/g, " ")}
-            </Badge>
-          );
-        },
+        Cell: ({ value }) => (
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"blue"}
+          >
+            {value.replace(/_/g, " ")}
+          </Badge>
+        ),
       },
       {
         Header: "Account",
-        // fomatted date with moment to get the month
         accessor: "Account",
+        aggregate: "uniqueCount",
+        Aggregated: ({ value }) => `${value} Accounts`,
         Cell: ({ value }) => (
-          <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
+          <Text fontSize="md" color="gray.500">
+            {value.replace(/_/g, " ")}
+          </Text>
         ),
       },
       {
         Header: "Balance",
-        // fomatted date with moment to get the month
         accessor: "Balance",
         aggregate: "sum",
-        Aggregated: ({ value }) => {
-          return (
-            <Badge
-              colorScheme={
-                value < 0 ? "red" : value > 0 ? "transparent" : "gray"
-              }
-              marginRight="0.5rem"
-            >
-              {numberWithCommas(value.toFixed(0))} Total
-            </Badge>
-          );
-        },
-        Cell: ({ cell: { value } }) => {
-          return (
-            <Badge
-              colorScheme={value < 0 ? "red" : value > 0 ? "green" : "gray"}
-              marginRight="0.5rem"
-            >
-              {numberWithCommas(value.toFixed(0))} $
-            </Badge>
-          );
-        },
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
       },
       {
         Header: "Start Date",
-        // fomatted date with moment to get the month
         accessor: "StrDate",
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Unique Dates`,
@@ -312,7 +306,7 @@ function TimeserriesTable({ className, data, monthly }) {
       title="Profit & Loss"
       // description={`if needed add description here ....`}
     >
-       <Box
+      <Box
         display={"flex"}
         align$={"center"}
         gap="2"

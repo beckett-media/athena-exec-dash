@@ -1,0 +1,13 @@
+{
+  "resourceName": "amplifyS3upload",
+  "policyUUID": "7ea33727",
+  "bucketName": "athenas3upload",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "athenaprodcb5f5078"
+}

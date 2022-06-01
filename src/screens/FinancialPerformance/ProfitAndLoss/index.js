@@ -56,7 +56,7 @@ const ProfitAndLoss = ({
             }}
             borderRadius={15}
           >
-            Quaterly
+            Quarterly
           </Tab>
         </TabList>
         <TabPanels>
@@ -111,7 +111,7 @@ const ProfitAndLoss = ({
               netIncome={netIncome}
               monthly={monthly}
               quartly={quartly}
-              title="Quaterly Profit / Loss"
+              title="Quarterly Profit & Loss"
             />
           </TabPanel>
         </TabPanels>

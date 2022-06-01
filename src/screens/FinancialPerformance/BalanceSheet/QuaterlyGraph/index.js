@@ -11,11 +11,6 @@ import Dropdown from "../../../../components/Dropdown";
 
 const StrDatelyGraph = ({
   className,
-  netIncome,
-  title,
-  monthly,
-  quartly,
-  quarterly,
   balanceQuarterly,
   balancePivotQuarterly,
 }) => {
@@ -33,7 +28,7 @@ const StrDatelyGraph = ({
 
   const dataFilter = balanceQuarterly.filter((d) => d?.Account === sorting);
 
-  const dataFilterYear = balanceQuarterly.filter((d) => d?.Year === year);
+  const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
   // function to remove underscores from the account name
   const removeUnderscore = (str) => {
@@ -42,11 +37,10 @@ const StrDatelyGraph = ({
 
   var data = [
     {
-      x: dataFilter.map((d) => d.Quarter),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Beckett_Collectables") &
-        (d.Year === year)
+        (d.Company === "Beckett_Collectables") 
           ? d.Balance
           : null
       ),
@@ -61,15 +55,35 @@ const StrDatelyGraph = ({
         width: 4,
         shape: "spline",
         smoothing: 1,
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Beckett_Collectables") 
+          ? d.BudgetBalance
+          : null
+      ),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#2A85FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
         dash: "dash",
       },
     },
     {
-      x: dataFilter.map((d) => d.Quarter),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC") &
-        (d.Year === year)
+        (d.Company === "Comic_Book_Certification_Service_LLC") 
           ? d.Balance
           : null
       ),
@@ -86,11 +100,31 @@ const StrDatelyGraph = ({
       },
     },
     {
-      x: dataFilter.map((d) => d.Quarter),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Arcane_Tinmen_ApS") &
-        (d.Year === year)
+        (d.Company === "Comic_Book_Certification_Service_LLC") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FF6A55",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dash",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Arcane_Tinmen_ApS") 
           ? d.Balance
           : null
       ),
@@ -107,11 +141,31 @@ const StrDatelyGraph = ({
       },
     },
     {
-      x: dataFilter.map((d) => d.Quarter),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC") &
-        (d.Year === year)
+        (d.Company === "Arcane_Tinmen_ApS") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FFD700",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dash",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution,LLC") 
           ? d.Balance
           : null
       ),
@@ -120,6 +174,26 @@ const StrDatelyGraph = ({
       connectgaps: true,
       marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
       name: "Southern Hobby Distribution, LLC",
+      line: {
+        color: "#8E59FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution,LLC") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
       line: {
         color: "#8E59FF",
         width: 4,
@@ -139,7 +213,7 @@ const StrDatelyGraph = ({
     },
 
     yaxis: {
-      title: "Revenue",
+      title: "Balance sheet",
       showgrid: true,
       zeroline: false,
       showline: true,

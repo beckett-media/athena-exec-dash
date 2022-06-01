@@ -234,50 +234,65 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, revenueStreams }) {
-
-
-
   const columns = React.useMemo(() => [
     {
       Header: "Year",
       accessor: "Year",
-      // Aggregate the average age of visitors
-   
-    },
-    {
-      Header: "Company",
-      accessor: "Company",
       Cell: ({ value }) => (
-        <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
-      ),
-    },
-    {
-      Header: "Account",
-      // fomatted date with moment to get the month
-      accessor: "Account",
-      aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Account`,
-      Cell: ({ value }) => (
-        <Text fontSize="md" color="gray.500">
+        <Text fontSize={13} px={2} mx={1}>
           {value.replace(/_/g, " ")}
         </Text>
       ),
     },
     {
+      Header: "Company",
+      accessor: "Company",
+      aggregate: "uniqueCount",
+      Cell: ({ value }) => (
+        <Badge
+          fontSize={11}
+          px={2}
+          mx={3}
+          borderRadius={14}
+          colorScheme={"blue"}
+        >
+          {value.replace(/_/g, " ")}
+        </Badge>
+      ),
+    },
+    {
+      Header: "Account",
+      accessor: "Account",
+      aggregate: "uniqueCount",
+      Cell: ({ value }) => (
+        <Badge
+          fontSize={11}
+          px={2}
+          mx={3}
+          borderRadius={14}
+          colorScheme={"cyan"}
+        >
+          {value.replace(/_/g, " ")}
+        </Badge>
+      ),
+    },
+    {
       Header: "Balance",
-      // fomatted date with moment to get the month
       accessor: "Balance",
       aggregate: "sum",
-      Aggregated: ({ value }) => `${numberWithCommas(value.toFixed(0))} Total`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {numberWithCommas(value.toFixed(0))} Total
+        </Text>
+      ),
       Cell: ({ value }) => (
-        <Badge colorScheme={value > 0 ? "green" : "red"}>
-          {numberWithCommas(value.toFixed(0))}
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
         </Badge>
       ),
     },
     {
       Header: "Year & Month",
-      // fomatted date with moment to get the month
       accessor: "StrDate",
       aggregate: "uniqueCount",
       Aggregated: ({ value }) => `${value} Total`,
@@ -293,7 +308,7 @@ function TablePivots({ className, revenueStreams }) {
       title="Revenue Streams"
       // description={`if needed add description here ....`}
     >
-       <Box
+      <Box
         display={"flex"}
         align$={"center"}
         gap="2"

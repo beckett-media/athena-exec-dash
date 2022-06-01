@@ -172,7 +172,7 @@ const QuaterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
   return (
     <Card
       classTitle="title-blue"
-      title={"Revenue Streams Quaterly"}
+      title={"Revenue Streams Quarterly"}
       description={`description if neeeded`}
       className={cn(styles.card, className)}
       head={

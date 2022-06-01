@@ -5,9 +5,8 @@ import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
 
 import useDarkMode from "use-dark-mode";
-import moment from "moment";
-import { Box, Text } from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
+import { Box, Text, Select } from "@chakra-ui/react";
+
 
 const StrDatelyGraph = ({
   className,
@@ -18,38 +17,40 @@ const StrDatelyGraph = ({
   quarterly,
 }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState(
-    "Southern_Hobby_Distribution_LLC"
-  );
-  const [sortingYear, setSortingYear] = React.useState("2022");
+  const [sorting, setSorting] = React.useState("409000");
+  const [year, setYear] = React.useState("2022");
 
-  // get unique values from netIncome array on Year column sort descending
-  // const uniqueYears = [...new Set(quarterly.map((item) => item.Year))].sort(
-  //   (a, b) => b - a
-  // );
+  const uniqueAccount = [
+    ...new Set(quarterly.map((item) => item.Account)),
+  ];
 
-  const years = ["2022", "2021", "2020", "2019", "2018", "2017"];
-
-  const uniqueCompanies = [
-    ...new Set(quarterly.map((item) => item.Company)),
+  const uniqueYears = [
+    ...new Set(quarterly.map((item) => item.Year)),
   ].sort((a, b) => b - a);
 
-  const dataFilter = quarterly.filter((d) => d?.Company === sorting);
+  const dataFilter = quarterly.filter((d) => d?.Account === sorting);
 
-  const dataFilterbyYear = dataFilter.filter((d) => d?.Year === sortingYear);
+  const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
+
+  // function to remove underscores from the account name
+  const removeUnderscore = (str) => {
+    return str.replace(/_/g, " ");
+  };
 
   var data = [
     {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "Management_EBITDA" ? d.Balance : null
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+          ? d.Balance
+          : null
       ),
 
-      type: "line",
+      type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Management EBITDA",
+      name: "Beckett Collectables",
       line: {
         color: "#2A85FF",
         width: 4,
@@ -57,18 +58,22 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
+
     {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "GAAP_EBITDA" ? d.Balance : null
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Comic_Book_Certification_Service_LLC")
+          ? d.Balance
+          : null
       ),
-      type: "line",
+      type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#68D391", size: 10, opacity: 0.8 },
-      name: "GAAP_EBITDA",
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Comic Book Certification Service LLC",
       line: {
-        color: "#68D391",
+        color: "#FF6A55",
         width: 4,
         shape: "spline",
         smoothing: 1,
@@ -76,32 +81,38 @@ const StrDatelyGraph = ({
     },
 
     {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "409000" ? d.Balance : null
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+          ? d.Balance
+          : null
       ),
-      type: "line",
+      type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
-      marker: { color: "#DCF341", size: 10, opacity: 0.8 },
-      name: "409000",
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Arcane Tinmen ApS",
       line: {
-        color: "#DCF341",
+        color: "#FFD700",
         width: 4,
         shape: "spline",
         smoothing: 1,
       },
     },
+
     {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "400300" ? d.Balance : null
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution,LLC")
+          ? d.Balance
+          : null
       ),
-      type: "line",
+      type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
       marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
-      name: "400300",
+      name: "Southern Hobby Distribution, LLC",
       line: {
         color: "#8E59FF",
         width: 4,
@@ -109,78 +120,11 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
-    {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "402000" ? d.Balance : null
-      ),
-      type: "line",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#8E5d", size: 10, opacity: 0.8 },
-      name: "402000",
-      line: {
-        color: "#8E5d",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "Net_Income" ? d.Balance : null
-      ),
-      type: "line",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#aa5513", size: 10, opacity: 0.8 },
-      name: "Net Income",
-      line: {
-        color: "#aa5513",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "Total_Revenue" ? d.Balance : null
-      ),
-      type: "line",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#f83cc6", size: 10, opacity: 0.8 },
-      name: "Total Revenue",
-      line: {
-        color: "#f83cc6",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: dataFilterbyYear.map((d) => d.Quarter),
-      y: dataFilterbyYear.map((d) =>
-        d.Account === "402350" ? d.Balance : null
-      ),
-      type: "line",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#c384fc", size: 10, opacity: 0.8 },
-      name: "402350",
-      line: {
-        color: "#c384fc",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
+
   ];
   var layout = {
     xaxis: {
-      title: "Timeseries",
+      title: `Profit & lost for account type: ${removeUnderscore(sorting)}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -189,28 +133,29 @@ const StrDatelyGraph = ({
     },
 
     yaxis: {
-      title: "Profit & Loss",
+      title: "Profit & Lost",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
-      tickformat: "s",
     },
+
     autosize: true,
     width: 999,
     height: 500,
     display: "flex",
     margin: {
-      l: 70,
+      l: 100,
       r: 50,
       b: 100,
-      t: 100,
+      t: 0,
       pad: 5,
     },
 
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
+
     hovermode: "x",
 
     legend: {
@@ -220,6 +165,10 @@ const StrDatelyGraph = ({
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
       orientation: "h",
+      // hide the legend when the graph is empty (no data)
+      // this is done by adding the "trace" to the legend
+
+      traceorder: "reversed",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -230,8 +179,8 @@ const StrDatelyGraph = ({
   return (
     <Card
       classTitle="title-blue"
-      title={title}
-      // description={`BGS sell through has dropped under 10% for the first time. It peaked at 33.2% in March 2021.`}
+      title={"Profit & Lost Quarterly"}
+      description={`description if neeeded`}
       className={cn(styles.card, className)}
       head={
         <Box
@@ -241,35 +190,59 @@ const StrDatelyGraph = ({
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <Text mr={3}>Filter by Company</Text>
-          <Dropdown
-            className={styles.dropdown}
-            classDropdownHead={styles.dropdownHead}
-            value={sorting}
-            setValue={setSorting}
-            options={uniqueCompanies}
-            small
-          />
-          <Text mr={3}>Filter by Year</Text>
-          <Dropdown
-            className={styles.dropdown}
-            classDropdownHead={styles.dropdownHead}
-            value={sortingYear}
-            setValue={setSortingYear}
-            options={years}
-            small
-          />
+          <Box width={"100%"}>
+            <Text flex={1}>Select Account</Text>
+          </Box>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setSorting(e.target.value)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={12}
+          >
+            {uniqueAccount.map((d) => (
+              <option value={d}>{removeUnderscore(d)}</option>
+            ))}
+          </Select>
+          <Box width={"10%"}>
+            <Text flex={1}>Year</Text>
+          </Box>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setYear(e.target.value)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={12}
+          >
+            {uniqueYears.map((d) => (
+              <option value={d}>{removeUnderscore(d)}</option>
+            ))}
+          </Select>
         </Box>
       }
     >
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
-          style={{
-            width: "100%",
-          }}
           data={data}
           layout={layout}
           useResizeHandler={true}
+          style={{ width: "100%", height: "100%" }}
         />
       </Box>
     </Card>

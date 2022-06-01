@@ -48,7 +48,27 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
         width: 4,
         shape: "spline",
         smoothing: 1,
-        dash: "dash",
+      },
+    },
+    {
+      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
+      y: dataFilter.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+          ? d.BudgetBalance
+          : null
+      ),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#2A85FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
       },
     },
     {
@@ -74,6 +94,27 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     {
       x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
       y: dataFilter.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Comic_Book_Certification_Service_LLC")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FF6A55",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
+      },
+    },
+    {
+      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
+      y: dataFilter.map((d) =>
         (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
           ? d.Balance
           : null
@@ -88,6 +129,26 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
         width: 4,
         shape: "spline",
         smoothing: 1,
+      },
+    },
+    {
+      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
+      y: dataFilter.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FFD700",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
       },
     },
     {
@@ -110,6 +171,27 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
         smoothing: 1,
       },
     },
+    {
+      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
+      y: dataFilter.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution,LLC")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#8E59FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
+      },
+    },
   ];
   var layout = {
     xaxis: {
@@ -122,7 +204,7 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     },
 
     yaxis: {
-      title: "Profit & Loss",
+      title: "Balance Sheet",
       showgrid: true,
       zeroline: false,
       showline: true,

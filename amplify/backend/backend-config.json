@@ -107,13 +107,13 @@
     }
   },
   "storage": {
-    "amplifys3uploader": {
+    "amplifyS3upload": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "athenaprod24dc5008",
+          "resourceName": "athenaprodcb5f5078",
           "attributes": [
             "Name",
             "Arn",

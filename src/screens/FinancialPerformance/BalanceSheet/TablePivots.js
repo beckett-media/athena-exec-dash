@@ -48,7 +48,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company", "YearMonth"],
+        groupBy: ["Year", "Company"],
       },
     },
     useGroupBy,
@@ -238,15 +238,26 @@ function TablePivots({ className, data, balanceSheet }) {
     {
       Header: "Year",
       accessor: "Year",
-      // Aggregate the average age of visitors
-      // aggregate: "uniqueCount",
-      // Aggregated: ({ value }) => `${value} Unique Names`,
+      Cell: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {value.replace(/_/g, " ")}
+        </Text>
+      ),
     },
     {
       Header: "Company",
       accessor: "Company",
+      aggregate: "uniqueCount",
       Cell: ({ value }) => (
-        <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
+        <Badge
+          fontSize={11}
+          px={2}
+          mx={3}
+          borderRadius={14}
+          colorScheme={"blue"}
+        >
+          {value.replace(/_/g, " ")}
+        </Badge>
       ),
     },
     {
@@ -254,7 +265,7 @@ function TablePivots({ className, data, balanceSheet }) {
       // fomatted date with moment to get the month
       accessor: "Account",
       aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Account`,
+      Aggregated: ({ value }) => `${value} Accounts`,
       Cell: ({ value }) => (
         <Text fontSize="md" color="gray.500">
           {value.replace(/_/g, " ")}
@@ -262,23 +273,36 @@ function TablePivots({ className, data, balanceSheet }) {
       ),
     },
     {
-      Header: "Balance",
+      Header: "Budget Balance",
       // fomatted date with moment to get the month
-      accessor: "Balance",
+      accessor: "BudgetBalance",
       aggregate: "sum",
-      Aggregated: ({ value }) => `${numberWithCommas(value.toFixed(0))} Total`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {numberWithCommas(value.toFixed(0))} Total
+        </Text>
+      ),
       Cell: ({ value }) => (
-        <Badge colorScheme={value > 0 ? "green" : "red"}>
-          {numberWithCommas(value.toFixed(0))}
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
         </Badge>
       ),
     },
     {
-      Header: "Year & Month",
+      Header: "Balance",
       // fomatted date with moment to get the month
-      accessor: "YearMonth",
-      aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Total`,
+      accessor: "Balance",
+      aggregate: "sum",
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {numberWithCommas(value.toFixed(0))} Total
+        </Text>
+      ),
+      Cell: ({ value }) => (
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+        </Badge>
+      ),
     },
   ]);
 

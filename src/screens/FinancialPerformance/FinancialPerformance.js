@@ -6,28 +6,29 @@ import BalanceSheet from "./BalanceSheet";
 import RevenueStreams from "./RevenueStreams";
 import ProfitAndLoss from "./ProfitAndLoss";
 
-import json_quarter_pivot_pl from "../../mocks/financial_mock/json_quarter_pivot_pl.json";
-import json_monthly_pl from "../../mocks/financial_mock/json_monthly_pl.json";
-import json_quarterly from "../../mocks/financial_mock/json_quarterly.json";
+// update json version
+import profit_monthly from "../../mocks/financial_update/data_monthly.json";
+import profit_quarterly from "../../mocks/financial_update/data_quarterly.json";
+import profit_pivot_quarterly from "../../mocks/financial_update/data_pivot_quarterly.json";
 
-import revenue from "../../mocks/financial_mock/revenue.json";
-import revenue_quarterly from "../../mocks/financial_mock/revenue_quarterly.json";
-import revenue_pivot_quarterly from "../../mocks/financial_mock/revenue_pivot_quarterly.json";
+import revenue_monthly from "../../mocks/financial_update/revenue_monthly.json";
+import revenue_quarterly from "../../mocks/financial_update/revenue_quarterly.json";
+import revenue_pivot_quarterly from "../../mocks/financial_update/revenue_pivot_quarterly.json";
 
-import balance_sheet from "../../mocks/financial_mock/balance_monthly.json";
-import balance_quarterly from "../../mocks/financial_mock/balance_quarterly.json";
-import balance_pivot_quarterly from "../../mocks/financial_mock/balance_pivot_quarterly.json";
+import balance_monthly from "../../mocks/financial_update/balance_monthly.json";
+import balance_quarterly from "../../mocks/financial_update/balance_quarterly.json";
+import balance_pivot_quarterly from "../../mocks/financial_update/balance_pivot_quarterly.json";
 
-const OpsPerformance = ({ data, isLoading }) => {
-  const quartly = json_quarter_pivot_pl;
-  const monthly = json_monthly_pl;
-  const quarterly = json_quarterly;
+const OpsPerformance = () => {
+  const quartly = profit_pivot_quarterly;
+  const monthly = profit_monthly;
+  const quarterly = profit_quarterly;
 
-  const revenueStreams = revenue;
+  const revenueStreams = revenue_monthly;
   const revenueStreamsQuarterly = revenue_quarterly;
   const revenueStreamsPivotQuarterly = revenue_pivot_quarterly;
 
-  const balanceSheet = balance_sheet;
+  const balanceSheet = balance_monthly;
   const balanceQuarterly = balance_quarterly;
   const balancePivotQuarterly = balance_pivot_quarterly;
 

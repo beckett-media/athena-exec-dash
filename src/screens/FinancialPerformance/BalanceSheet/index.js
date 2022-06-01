@@ -56,7 +56,7 @@ const BalanceSheet = ({
               borderRadius: 15,
             }}
           >
-            Quaterly
+            Quarterly
           </Tab>
         </TabList>
         <TabPanels>
@@ -105,10 +105,9 @@ const BalanceSheet = ({
 
             <Box my={20} />
             <QuaterlyGraph
-              balanceSheet={balanceSheet}
               balancePivotQuarterly={balancePivotQuarterly}
               balanceQuarterly={balanceQuarterly}
-              title="Quaterly Balance Sheet"
+              title="Quarterly Balance Sheet"
             />
           </TabPanel>
         </TabPanels>

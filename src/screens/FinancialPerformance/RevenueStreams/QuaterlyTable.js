@@ -234,81 +234,107 @@ function Tables({ columns, data }) {
 }
 
 function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
-  console.log("rqp", revenueStreamsPivotQuarterly);
+
   const columns = React.useMemo(
     () => [
       {
         Header: "Year",
         accessor: "Year",
-        // Aggregate the average age of visitors
-        // aggregate: "uniqueCount",
-        // Aggregated: ({ value }) => `${value} Unique Names`,
+        Cell: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {value.replace(/_/g, " ")}
+          </Text>
+        ),
       },
       {
         Header: "Company",
         accessor: "Company",
+        aggregate: "uniqueCount",
         Cell: ({ value }) => (
-          <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"blue"}
+          >
+            {value.replace(/_/g, " ")}
+          </Badge>
         ),
       },
       {
         Header: "Account",
-        // fomatted date with moment to get the month
         accessor: "Account",
+        aggregate: "uniqueCount",
         Cell: ({ value }) => (
-          <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"cyan"}
+          >
+            {value.replace(/_/g, " ")}
+          </Badge>
         ),
       },
       {
         Header: "Q1",
-        // fomatted date with moment to get the month
         accessor: "Q1",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
       {
         Header: "Q2",
-        // fomatted date with moment to get the month
         accessor: "Q2",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
-          
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
       {
         Header: "Q3",
-        // fomatted date with moment to get the month
         accessor: "Q3",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
       {
         Header: "Q4",
-        // fomatted date with moment to get the month
         accessor: "Q4",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
@@ -322,7 +348,7 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Revenue Streams Quaterly"
+      title="Revenue Streams Quarterly"
       // description={`if needed add description here ....`}
     >
       <Box

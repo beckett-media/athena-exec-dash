@@ -111,7 +111,7 @@ function Tables({ columns, data }) {
                         paddingLeft: `${row.depth * 2}rem`,
                         display: "flex",
                         align$: "center",
-                        gap: "0.8rem",
+                        gap: "0.2rem",
                       },
                     })}
                   >
@@ -151,42 +151,6 @@ function Tables({ columns, data }) {
                     {column.canFilter ? column.render("Filter") : null}
                   </Text>
                 </Th>
-                // <Th
-                //   style={{ color: "transparent" }}
-                //   {...column.getHeaderProps()}
-
-                // >
-                //   {column.canGroupBy ? (
-                //     // If the column can be grouped, let's add a toggle
-
-                //     <Box {...column.getGroupByToggleProps()}>
-                //       {column.isGrouped ? (
-                //         <p fontSize="md">
-                //           <Text fontSize="md">Grouped By: </Text>
-                //           {state.groupBy.map((d) => (
-                //             <Badge
-                //               key={d}
-                //               colorScheme="transparent"
-                //               marginRight="0.5rem"
-                //             >
-                //               {d}
-                //             </Badge>
-                //           ))}
-                //         </p>
-                //       ) : (
-                //         <Button
-                //           leftIcon={<AiOutlineGroup />}
-                //           colorScheme="twitter"
-                //           variant="solid"
-                //           size={"sm"}
-                //         >
-                //           group {column.render("Header")}
-                //         </Button>
-                //       )}
-                //     </Box>
-                //   ) : null}
-                //   {column.render("Header")}
-                // </Th>
               ))}
             </Tr>
           ))}
@@ -239,74 +203,102 @@ function QuaterlyTable({ className, balancePivotQuarterly }) {
       {
         Header: "Year",
         accessor: "Year",
-        // Aggregate the average age of visitors
-        // aggregate: "uniqueCount",
-        // Aggregated: ({ value }) => `${value} Unique Names`,
+        Cell: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {value.replace(/_/g, " ")}
+          </Text>
+        ),
       },
       {
         Header: "Company",
         accessor: "Company",
+        aggregate: "uniqueCount",
         Cell: ({ value }) => (
-          <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"blue"}
+          >
+            {value.replace(/_/g, " ")}
+          </Badge>
         ),
       },
       {
         Header: "Account",
-        // fomatted date with moment to get the month
         accessor: "Account",
+        aggregate: "uniqueCount",
         Cell: ({ value }) => (
-          <Text fontSize="md">{value.replace(/_/g, " ")}</Text>
-        ),
-      },
-      {
-        Header: "Q1",
-        // fomatted date with moment to get the month
-        accessor: "Q1",
-        aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
-        Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"cyan"}
+          >
+            {value.replace(/_/g, " ")}
           </Badge>
         ),
       },
       {
         Header: "Q2",
-        // fomatted date with moment to get the month
         accessor: "Q2",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
       {
-        Header: "Q3",
-        // fomatted date with moment to get the month
-        accessor: "Q3",
+        Header: "Budget Q2",
+        accessor: "BudgetQ2",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
+
       {
         Header: "Q4",
-        // fomatted date with moment to get the month
         accessor: "Q4",
         aggregate: "sum",
-        Aggregated: ({ value }) =>
-          `${numberWithCommas(value.toFixed(0))} Total`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
         Cell: ({ value }) => (
-          <Badge colorScheme={value > 0 ? "green" : "red"}>
-            {numberWithCommas(value.toFixed(0))}
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Budget Q4",
+        accessor: "BudgetQ4",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
           </Badge>
         ),
       },
@@ -320,7 +312,7 @@ function QuaterlyTable({ className, balancePivotQuarterly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Quaterly Balance Sheet"
+      title="Quarterly Balance Sheet"
       // description={`if needed add description here ....`}
     >
       <Box

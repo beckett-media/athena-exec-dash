@@ -1,0 +1,282 @@
+[
+  {
+    "id": 0,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2019",
+    "Account": "409000",
+    "Q1": 3375530.0,
+    "Q2": 4648744.0,
+    "Q3": 4144871.0,
+    "Q4": 3884165.0
+  },
+  {
+    "id": 1,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2020",
+    "Account": "409000",
+    "Q1": 4474910.0,
+    "Q2": 2037935.0,
+    "Q3": 4802266.0,
+    "Q4": 5117843.0
+  },
+  {
+    "id": 2,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2021",
+    "Account": "400300",
+    "Q1": 4870724.128806948,
+    "Q2": 7732078.291575531,
+    "Q3": 8147460.572077383,
+    "Q4": 6857957.891850104
+  },
+  {
+    "id": 3,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2021",
+    "Account": "402000",
+    "Q1": 231770.1346248105,
+    "Q2": 276700.1856769884,
+    "Q3": 323389.9368408169,
+    "Q4": 459139.4129444195
+  },
+  {
+    "id": 4,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2022",
+    "Account": "400300",
+    "Q1": 7084378.093500756,
+    "Q2": 2211014.8721299553,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 5,
+    "Company": "Arcane_Tinmen_ApS",
+    "Year": "2022",
+    "Account": "402000",
+    "Q1": 554085.7298959985,
+    "Q2": 180535.3866175645,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 6,
+    "Company": "Beckett_Collectables",
+    "Year": "2019",
+    "Account": "401450",
+    "Q1": 3238715.0,
+    "Q2": 4562960.0,
+    "Q3": 3777096.0,
+    "Q4": 3856243.0
+  },
+  {
+    "id": 7,
+    "Company": "Beckett_Collectables",
+    "Year": "2019",
+    "Account": "402000",
+    "Q1": 1044184.0,
+    "Q2": 985483.0,
+    "Q3": 961161.0,
+    "Q4": 1118296.0
+  },
+  {
+    "id": 8,
+    "Company": "Beckett_Collectables",
+    "Year": "2019",
+    "Account": "402350",
+    "Q1": 871971.0,
+    "Q2": 833120.0,
+    "Q3": 894624.0,
+    "Q4": 873461.0
+  },
+  {
+    "id": 9,
+    "Company": "Beckett_Collectables",
+    "Year": "2019",
+    "Account": "409000",
+    "Q1": 0.0,
+    "Q2": 0.0,
+    "Q3": 40000.0,
+    "Q4": 113108.0
+  },
+  {
+    "id": 10,
+    "Company": "Beckett_Collectables",
+    "Year": "2020",
+    "Account": "401450",
+    "Q1": 4813943.0,
+    "Q2": 5384699.0,
+    "Q3": 7008450.0,
+    "Q4": 6960145.0
+  },
+  {
+    "id": 11,
+    "Company": "Beckett_Collectables",
+    "Year": "2020",
+    "Account": "402000",
+    "Q1": 1018196.0,
+    "Q2": 1420690.0,
+    "Q3": 1584028.0,
+    "Q4": 1640254.0
+  },
+  {
+    "id": 12,
+    "Company": "Beckett_Collectables",
+    "Year": "2020",
+    "Account": "402350",
+    "Q1": 849033.0,
+    "Q2": 745734.0,
+    "Q3": 1007968.0,
+    "Q4": 1056834.0
+  },
+  {
+    "id": 13,
+    "Company": "Beckett_Collectables",
+    "Year": "2020",
+    "Account": "409000",
+    "Q1": 0.0,
+    "Q2": 0.0,
+    "Q3": 27105.0,
+    "Q4": 137148.0
+  },
+  {
+    "id": 14,
+    "Company": "Beckett_Collectables",
+    "Year": "2021",
+    "Account": "401450",
+    "Q1": 8064912.18,
+    "Q2": 11680632.42,
+    "Q3": 10004470.17,
+    "Q4": 10136594.45
+  },
+  {
+    "id": 15,
+    "Company": "Beckett_Collectables",
+    "Year": "2021",
+    "Account": "402000",
+    "Q1": 1616006.5,
+    "Q2": 1843899.4,
+    "Q3": 1837102.1400000001,
+    "Q4": 1678239.66
+  },
+  {
+    "id": 16,
+    "Company": "Beckett_Collectables",
+    "Year": "2021",
+    "Account": "402350",
+    "Q1": 1180082.84,
+    "Q2": 1238492.24,
+    "Q3": 1363641.3,
+    "Q4": 1169996.87
+  },
+  {
+    "id": 17,
+    "Company": "Beckett_Collectables",
+    "Year": "2021",
+    "Account": "409000",
+    "Q1": 189064.81,
+    "Q2": 339092.26,
+    "Q3": 573154.23,
+    "Q4": 236250.33
+  },
+  {
+    "id": 18,
+    "Company": "Beckett_Collectables",
+    "Year": "2022",
+    "Account": "401450",
+    "Q1": 9701608.91,
+    "Q2": 3280158.7,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 19,
+    "Company": "Beckett_Collectables",
+    "Year": "2022",
+    "Account": "402000",
+    "Q1": 1702962.7699999998,
+    "Q2": 528387.88,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 20,
+    "Company": "Beckett_Collectables",
+    "Year": "2022",
+    "Account": "402350",
+    "Q1": 1253037.3399999999,
+    "Q2": 292747.79,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 21,
+    "Company": "Beckett_Collectables",
+    "Year": "2022",
+    "Account": "409000",
+    "Q1": 185076.27,
+    "Q2": 46488.36,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 22,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Year": "2019",
+    "Account": "401450",
+    "Q1": 718676.0,
+    "Q2": 818457.0,
+    "Q3": 726656.0,
+    "Q4": 566213.0
+  },
+  {
+    "id": 23,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Year": "2020",
+    "Account": "401450",
+    "Q1": 392187.0,
+    "Q2": 337131.0,
+    "Q3": 551394.0,
+    "Q4": 639545.0
+  },
+  {
+    "id": 24,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Year": "2021",
+    "Account": "401450",
+    "Q1": 647784.26,
+    "Q2": 742802.76,
+    "Q3": 920590.5,
+    "Q4": 1057012.6400000001
+  },
+  {
+    "id": 25,
+    "Company": "Comic_Book_Certification_Service_LLC",
+    "Year": "2022",
+    "Account": "401450",
+    "Q1": 1091919.19,
+    "Q2": 467609.91,
+    "Q3": 0.0,
+    "Q4": 0.0
+  },
+  {
+    "id": 26,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Year": "2021",
+    "Account": "409000",
+    "Q1": 0.0,
+    "Q2": 0.0,
+    "Q3": 78051847.76,
+    "Q4": 128088870.32
+  },
+  {
+    "id": 27,
+    "Company": "Southern_Hobby_Distribution_LLC",
+    "Year": "2022",
+    "Account": "409000",
+    "Q1": 119794754.75,
+    "Q2": 40983781.29,
+    "Q3": 0.0,
+    "Q4": 0.0
+  }
+]
