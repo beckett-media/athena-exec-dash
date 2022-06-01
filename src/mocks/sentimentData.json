@@ -1,0 +1,55 @@
+[
+  {
+    "data": {
+      "03/04/2022": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 25,
+        "numPosts": 25
+      },
+      "03/05/2022": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 12,
+        "numPosts": 13
+      },
+      "03/06/2022": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 3,
+        "numPosts": 4
+      },
+      "03/07/2022": {
+        "positive": 0,
+        "negative": 2,
+        "neutral": 23,
+        "numPosts": 25
+      },
+      "03/08/2022": {
+        "positive": 1,
+        "negative": 6,
+        "neutral": 22,
+        "numPosts": 29
+      },
+      "03/09/2022": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 18,
+        "numPosts": 18
+      },
+      "03/10/2022": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 6,
+        "numPosts": 7
+      }
+    },
+    "indicators": {
+      "perc_inc": -0.72,
+      "weekly_neutral": 109,
+      "weekly_positive": 2,
+      "weekly_negative": 10,
+      "weekly_total": 121
+    }
+  }
+]
