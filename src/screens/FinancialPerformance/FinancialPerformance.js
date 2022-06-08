@@ -1,5 +1,6 @@
 import React from "react";
 import TooltipGlodal from "../../components/TooltipGlodal";
+import ComingSoon from "../CominSoon/ComingSoon";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 import BalanceSheet from "./BalanceSheet";
@@ -7,6 +8,7 @@ import RevenueStreams from "./RevenueStreams";
 import ProfitAndLoss from "./ProfitAndLoss";
 
 // update json version
+import ComingSoon from "../CominSoon/ComingSoon";
 import profit_monthly from "../../mocks/financial_update/data_monthly.json";
 import profit_quarterly from "../../mocks/financial_update/data_quarterly.json";
 import profit_pivot_quarterly from "../../mocks/financial_update/data_pivot_quarterly.json";
@@ -34,7 +36,8 @@ const OpsPerformance = () => {
 
   return (
     <>
-      <Tabs
+      <ComingSoon />
+      {/* <Tabs
         isManual
         variant="enclosed"
         isFitted
@@ -107,7 +110,7 @@ const OpsPerformance = () => {
           </TabPanel>
         </TabPanels>
         <TooltipGlodal />
-      </Tabs>
+      </Tabs> */}
     </>
   );
 };

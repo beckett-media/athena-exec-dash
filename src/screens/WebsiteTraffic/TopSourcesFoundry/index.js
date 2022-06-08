@@ -27,7 +27,7 @@ const TopSource = ({ className, topSources, isLoading, status }) => {
   return (
     <Card
       className={cn(styles.card, className)}
-      title={`Top ${topSourcesData.length} sources of website visitors out of ${total.length}`}
+      title={`Top ${topSourcesData.length} Sources of Website Visitors out of ${total.length}`}
       description="The graph below highlights the top sources of website traffic (by total, non-unique users) for Beckett's website."
       classTitle="title-purple"
       head={

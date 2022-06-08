@@ -43,7 +43,7 @@ const PageTraffics = ({ data }) => {
       ) : (
         <Card
           className={styles.card}
-          title={`Page traffic`}
+          title={`Page Traffic`}
           classTitle={cn("title-purple", styles.title)}
           description={
             "The traffic reports are all about seeing what visitors are actually doing on Beckett's website. By using these user traffic reports, you can assess the performance of your website content and determine if your visitors are taking the actions you need."

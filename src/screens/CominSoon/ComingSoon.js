@@ -70,7 +70,7 @@ const ComingSoon = () => {
         </Flex>
         <Box>
           <Text color={mode("gray.600", "gray.400")} fontWeight="medium">
-            The Most trusted Source in the Industry.
+            The Most Trusted Source in the Industry.
           </Text>
         </Box>
       </Box>
