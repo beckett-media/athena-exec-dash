@@ -1,6 +1,5 @@
 import React from "react";
 import TooltipGlodal from "../../components/TooltipGlodal";
-import ComingSoon from "../CominSoon/ComingSoon";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 import BalanceSheet from "./BalanceSheet";
