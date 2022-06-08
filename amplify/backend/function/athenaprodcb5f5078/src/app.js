@@ -262,6 +262,8 @@ app.get("/athenaform/:yesterday", async function (req, res) {
 app.post("/athenaform", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
   const riWrtAthena =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -293,7 +295,7 @@ app.post("/athenaform", async function (req, res) {
         "cards_received": req.body.cards_received,
         "type": req.body.type,
         "date": req.body.date,
-        "submission_item": req.body.submission_item,
+        "submission_item": `${uuid}`,
       },
     },
   };
@@ -566,6 +568,8 @@ app.get("/grading-service-form/:yesterday", async function (req, res) {
 app.post("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
   const riWrtAthena =
     "ri.ontology.main.ontology.b034a691-27e9-4959-9bcc-bc99b1552c97";
@@ -597,8 +601,8 @@ app.post("/grading-service-form", async function (req, res) {
         "cards_received": req.body.cards_received,
         "type": req.body.type,
         "date": req.body.date,
-        "submission_item": req.body.submission_item,
-        "AthenaGradingServiceForm": req.body.submission_item,
+        "submission_item": `${uuid}`,
+        "AthenaGradingServiceForm": `${uuid}`,
       },
     },
   };
@@ -626,7 +630,6 @@ app.post("/grading-service-form", async function (req, res) {
   }
 });
 //PUT UPDATE
-
 app.put("/grading-service-form", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
@@ -802,6 +805,8 @@ app.get("/servicelevel/:yesterday", async function (req, res) {
 app.post("/servicelevel", async function (req, res) {
   const axios = require("axios");
   const aws = require("aws-sdk");
+  const { v4: uuidv4 } = require("uuid");
+  const uuid = uuidv4();
 
   // ######################  CRUD Palantir ######################
   const riWrt =
@@ -831,8 +836,8 @@ app.post("/servicelevel", async function (req, res) {
     },
     data: {
       "parameters": {
-        "AthenaServiceForm": req.body.submission_item,
-        "submission_item": req.body.submission_item,
+        "AthenaServiceForm": `${uuid}`,
+        "submission_item": `${uuid}`,
         "date": req.body.date,
         "ten_day": req.body.ten_day,
         "thirty_day": req.body.thirty_day,
@@ -941,6 +946,7 @@ app.put("/servicelevel", async function (req, res) {
       });
   }
 });
+
 
 // ########################################################################################
 // #################### [[[END]]] - Servive Level, Verified, revenue Shipped [Prod] #####
@@ -1302,7 +1308,6 @@ app.put("/graderentry", async function (req, res) {
       },
     },
   };
-
   if (token[0].Value.length === 0) {
     res.status(500).send("No API key found");
   } else {

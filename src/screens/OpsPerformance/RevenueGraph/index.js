@@ -17,6 +17,7 @@ const RevenueGraph = ({ className, serviceLevel, isLoading }) => {
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.revenueshipped),
 
+
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,

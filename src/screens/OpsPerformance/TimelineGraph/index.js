@@ -38,6 +38,7 @@ const MarketData = ({ className, isLoading }) => {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsGradedToday),
 
+
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -58,6 +59,7 @@ const MarketData = ({ className, isLoading }) => {
     {
       x: timeseries.map((d) => moment(d.date).format("MMM DD YY")),
       y: timeseries.map((d) => d.cardsShippedToday),
+
 
       type: "scatter",
       mode: "lines+markers",
@@ -150,6 +152,7 @@ const MarketData = ({ className, isLoading }) => {
       // description={`For the first time, SGC ($149.96) has surpassed PSA ($140.81)`}
       classTitle={cn("title-blue", styles.cardTitle)}
     >
+
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
           style={{

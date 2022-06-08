@@ -8,6 +8,7 @@ import ServicesGraph from "./ServicesGraph";
 import RevenueGraph from "./RevenueGraph";
 import GradingGraph from "./GradingGraph";
 import Backlog from "./Backlog";
+
 import Loading from "../../components/LottieAnimation/Loading";
 import useTimeseries from "../../hooks/data/useTimeseries";
 import useServiceLevel from "../../hooks/data/useServiceLevel";
@@ -17,6 +18,7 @@ const OpsPerformance = () => {
   const { isLoading: levelsLoading } = useServiceLevel();
 
   if (timeseriesLoading || levelsLoading) {
+
     return <Loading loadingG={"loadingG"} marginTop={0} width={"15rem"} />;
   }
 
@@ -29,9 +31,9 @@ const OpsPerformance = () => {
         <Box my={"2rem"} /> */}
         <MarketData />
         <Box my={"2rem"} />
-        <ServicesGraph />
+        <ServicesGraph isLoading={isLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
-        <RevenueGraph />
+        <RevenueGraph isLoading={isLoading} serviceLevel={serviceLevel} />
         <Box my={"2rem"} />
         {/* <GradingGraph /> */}
         <Box my={"2rem"} />
