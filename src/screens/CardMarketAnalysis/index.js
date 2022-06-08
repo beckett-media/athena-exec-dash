@@ -18,7 +18,7 @@ const MarketAnalysis = ({ data, isLoading }) => {
   } else {
     return (
       <>
-        {/* <Tabs
+        {<Tabs
           isManual
           variant="enclosed"
           isFitted
@@ -91,7 +91,7 @@ const MarketAnalysis = ({ data, isLoading }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs> */}
+        </Tabs>}
         <ComingSoon />
       </>
     );
