@@ -8,7 +8,7 @@ import useTimeseries from "../../../hooks/data/useTimeseries";
 import useDarkMode from "use-dark-mode";
 import useGraderEntry from "../../../hooks/data/useGraderEntry";
 
-// const Backlog = ({ className }) => {
+const Backlog = ({ className }) => {
 //   const backlog = 29000;
 //   const { timeseries } = useTimeseries();
 //   const data = useGraderEntry('asc');
@@ -42,6 +42,6 @@ import useGraderEntry from "../../../hooks/data/useGraderEntry";
 //       </Stack>
 //     </Card>
 //   );
-// };
+};
 
-// export default Backlog;
+export default Backlog;
