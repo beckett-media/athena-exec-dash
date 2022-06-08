@@ -92,7 +92,6 @@ const MarketAnalysis = ({ data, isLoading }) => {
           </TabPanels>
           <TooltipGlodal />
         </Tabs>}
-        <ComingSoon />
       </>
     );
   }
