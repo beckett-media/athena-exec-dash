@@ -44,10 +44,6 @@ function ApiDataProvider(props) {
   const [socialData, setSocialData] = React.useState([]);
   const [socialDataMessage, setSocialDataMessage] = React.useState([]);
   const [comicIndexing, setComicIndexing] = React.useState([]);
-  const [timeseries, setTimeseries] = React.useState([]);
-  const [serviceLevel, setServiceLevel] = React.useState([]);
-  const [loadingTimeseries, setLoadingTimeseries] = React.useState(false);
-
 
   //############################# MARKET ANALYSIS QUERY ########################################
   async function MarketAnalysisAPI() {
@@ -147,7 +143,6 @@ function ApiDataProvider(props) {
     );
   }
 
-
   React.useEffect(() => {
     const fetch = async () => {
       setIsLoading(true);
@@ -187,7 +182,6 @@ function ApiDataProvider(props) {
           socialIndicators,
           socialData,
           socialMessage,
-
         ]) => {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#return_value
           // Each promise return value is  `{value: <value>, status: "fulfilled"|"rejected"}`
@@ -195,6 +189,8 @@ function ApiDataProvider(props) {
           setSocialDataIndicators(socialIndicators.value);
           setSocialData(socialData.value);
           setSocialDataMessage(socialMessage.value);
+        }
+      );
     };
 
     Hub.listen("auth", (data) => {
@@ -227,9 +223,6 @@ function ApiDataProvider(props) {
         socialData,
         socialDataMessage,
         comicIndexing,
-        timeseries,
-        serviceLevel,
-
       }}
       {...props}
     />

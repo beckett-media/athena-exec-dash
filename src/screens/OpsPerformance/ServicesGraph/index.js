@@ -5,16 +5,11 @@ import Card from "../../../components/Card";
 import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-
-import { Box, Text } from "@chakra-ui/react";
-import { API } from "aws-amplify";
-
 import { Box } from "@chakra-ui/react";
 import useServiceLevel from "../../../hooks/data/useServiceLevel";
 
 const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
   const darkMode = useDarkMode(true);
-
   const { levels } = useServiceLevel();
 
   var dataG = [
@@ -42,7 +37,6 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.fiveDay),
 
-
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
@@ -57,10 +51,8 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.tenDay),
-
 
       type: "scatter",
       mode: "lines+markers",
@@ -76,7 +68,6 @@ const ServicesGraph = ({ className, isLoading, serviceLevel }) => {
       },
     },
     {
-
       x: levels.map((d) => moment(d.date).format("MMM DD YY")),
       y: levels.map((d) => d.thirtyDay),
 
