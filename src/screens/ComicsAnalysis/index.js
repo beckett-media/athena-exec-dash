@@ -20,7 +20,7 @@ const ComicAnalysis = ({ dataCI }) => {
   return (
     <>
       <div className={styles.section}>
-        <Tabs
+        {/* <Tabs
           isManual
           variant="enclosed"
           isFitted
@@ -67,8 +67,12 @@ const ComicAnalysis = ({ dataCI }) => {
             </TabPanel>
           </TabPanels>
           <TooltipGlodal />
-        </Tabs>
+        </Tabs> */}
+        <div className={styles.section}>
+        <TablePivots dataCI={dataCI} />
+        </div>
       </div>
+
       <TooltipGlodal />
     </>
   );
