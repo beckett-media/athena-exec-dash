@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "Company": "Placeholder",
+    "Year": "2022",
+    "Account": "Placeholder",
+    "Q2": 0.0,
+    "Q4": 100.0,
+    "BudgetQ2": 0,
+    "BudgetQ3": 0,
+    "BudgetQ1": 0,
+    "Q1": 0,
+    "Q3": 0,
+    "BudgetQ4": 0.0
+  }
+]
