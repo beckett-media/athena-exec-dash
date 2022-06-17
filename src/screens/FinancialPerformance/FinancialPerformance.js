@@ -32,11 +32,12 @@ const OpsPerformance = () => {
   const balanceSheet = balance_monthly;
   const balanceQuarterly = balance_quarterly;
   const balancePivotQuarterly = balance_pivot_quarterly;
+  console.log('nasserquarterly', quarterly)
 
   return (
     <>
-      <ComingSoon />
-      {/* <Tabs
+      {/* <ComingSoon /> */}
+      <Tabs
         isManual
         variant="enclosed"
         isFitted
@@ -109,7 +110,7 @@ const OpsPerformance = () => {
           </TabPanel>
         </TabPanels>
         <TooltipGlodal />
-      </Tabs> */}
+      </Tabs>
     </>
   );
 };
