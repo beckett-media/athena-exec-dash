@@ -75,6 +75,7 @@ const ComicAnalysis = ({ dataCI }) => {
 
       <TooltipGlodal />
     </>
+    // <ComingSoon />
   );
 };
 

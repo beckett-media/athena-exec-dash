@@ -93,7 +93,8 @@ const MarketAnalysis = ({ data, isLoading }) => {
           <TooltipGlodal />
         </Tabs>}
       </>
-    );
+      // <ComingSoon />
+      );
   }
 };
 
