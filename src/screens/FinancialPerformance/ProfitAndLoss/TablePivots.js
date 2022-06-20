@@ -51,7 +51,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company"],
+        groupBy: ["Year"],
       },
     },
     useGroupBy,
@@ -123,7 +123,7 @@ function Tables({ columns, data }) {
                     ) : (
                       <BsArrowRightSquareFill />
                     )}{" "}
-                    {groupedCell.render("Cell")} ({row.subRows.length})
+                    {groupedCell.render("Cell")}
                   </span>
                 );
               }
@@ -245,8 +245,6 @@ function TablePivots({ className, data, quartly }) {
     return Object.values(i).indexOf(filter) > -1;
   }
 
-  console.log(quartly);
-
   const columns = React.useMemo(
     () => [
       {
@@ -270,7 +268,7 @@ function TablePivots({ className, data, quartly }) {
             borderRadius={14}
             colorScheme={"blue"}
           >
-            {value.replace(/_/g, " ")}
+            {value}
           </Badge>
         ),
       },
