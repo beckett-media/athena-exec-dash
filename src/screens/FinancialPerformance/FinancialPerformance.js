@@ -58,6 +58,17 @@ const OpsPerformance = () => {
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
+            Profit & Loss
+          </Tab>
+          <Tab
+            color={"white"}
+            _selected={{
+              color: "gray.700",
+              bg: "#68D391",
+              borderRadius: 5,
+              _focus: { boxShadow: "none", outline: "none" },
+            }}
+          >
             Balance Sheet
           </Tab>
           <Tab
@@ -71,20 +82,17 @@ const OpsPerformance = () => {
           >
             Revenue Streams
           </Tab>
-          <Tab
-            color={"white"}
-            _selected={{
-              color: "gray.700",
-              bg: "#68D391",
-              borderRadius: 5,
-              _focus: { boxShadow: "none", outline: "none" },
-            }}
-          >
-            Profit & Loss
-          </Tab>
+          
         </TabList>
 
         <TabPanels>
+          <TabPanel>
+            <ProfitAndLoss
+              quarterly={quarterly}
+              quartly={quartly}
+              monthly={monthly}
+            />
+          </TabPanel>
           <TabPanel>
             <div>
               <BalanceSheet
@@ -99,13 +107,6 @@ const OpsPerformance = () => {
               revenueStreams={revenueStreams}
               revenueStreamsQuarterly={revenueStreamsQuarterly}
               revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
-            />
-          </TabPanel>
-          <TabPanel>
-            <ProfitAndLoss
-              quarterly={quarterly}
-              quartly={quartly}
-              monthly={monthly}
             />
           </TabPanel>
         </TabPanels>
