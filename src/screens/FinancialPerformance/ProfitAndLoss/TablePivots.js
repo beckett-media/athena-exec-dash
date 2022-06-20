@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Badge,
   Box,
@@ -10,6 +10,9 @@ import {
   Tr,
   Table,
   Button,
+  Stack,
+  Radio,
+  RadioGroup,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
@@ -48,7 +51,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company"],
+        groupBy: ["Year"],
       },
     },
     useGroupBy,
@@ -120,7 +123,7 @@ function Tables({ columns, data }) {
                     ) : (
                       <BsArrowRightSquareFill />
                     )}{" "}
-                    {groupedCell.render("Cell")} ({row.subRows.length})
+                    {groupedCell.render("Cell")}
                   </span>
                 );
               }
@@ -234,6 +237,14 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, data, quartly }) {
+  const [filter, setFilter] = useState("Net_Income");
+
+  const filteredData = quartly.filter(filterData);
+
+  function filterData(i) {
+    return Object.values(i).indexOf(filter) > -1;
+  }
+
   const columns = React.useMemo(
     () => [
       {
@@ -257,22 +268,22 @@ function TablePivots({ className, data, quartly }) {
             borderRadius={14}
             colorScheme={"blue"}
           >
-            {value.replace(/_/g, " ")}
+            {value}
           </Badge>
         ),
       },
-      {
-        Header: "Account",
-        // fomatted date with moment to get the month
-        accessor: "Account",
-        aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Accounts`,
-        Cell: ({ value }) => (
-          <Text fontSize="md" color="gray.500">
-            {value.replace(/_/g, " ")}
-          </Text>
-        ),
-      },
+      // {
+      //   Header: "Account",
+      //   // fomatted date with moment to get the month
+      //   accessor: "Account",
+      //   aggregate: "uniqueCount",
+      //   Aggregated: ({ value }) => `${value} Accounts`,
+      //   Cell: ({ value }) => (
+      //     <Text fontSize="md" color="gray.500">
+      //       {value.replace(/_/g, " ")}
+      //     </Text>
+      //   ),
+      // },
       {
         Header: "Q1",
         // fomatted date with moment to get the month
@@ -377,7 +388,16 @@ function TablePivots({ className, data, quartly }) {
           to group.
         </Text> */}
       </Box>
-      <Tables columns={columns} data={quartly} />
+      <Box>
+        <RadioGroup onChange={setFilter} value={filter}>
+          <Stack direction="row">
+            <Radio value="Net_Income">Net Income</Radio>
+            <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
+            <Radio value="Management_EBITDA">Management EBITDA</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Tables columns={columns} data={filteredData} />
     </Card>
   );
 }
