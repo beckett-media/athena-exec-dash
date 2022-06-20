@@ -33,7 +33,7 @@ const BalanceSheet = ({
         mt={20}
       >
         <TabList my={8}>
-          <Tab
+          {/* <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             borderRadius={15}
             _selected={{
@@ -43,10 +43,8 @@ const BalanceSheet = ({
               borderRadius: 15,
             }}
           >
-
             Balance Sheet
-
-          </Tab>
+          </Tab> */}
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             borderRadius={15}
@@ -61,7 +59,7 @@ const BalanceSheet = ({
           </Tab>
         </TabList>
         <TabPanels>
-          <TabPanel>
+          {/* <TabPanel>
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -83,7 +81,7 @@ const BalanceSheet = ({
             <Stack spacing="5">
               <BalanceGraph balanceSheet={balanceSheet} />
             </Stack>
-          </TabPanel>
+          </TabPanel> */}
           <TabPanel>
             <Box
               bg="bg-surface"
