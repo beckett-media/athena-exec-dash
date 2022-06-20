@@ -31,7 +31,7 @@ const RevenueStreams = ({
         mt={20}
       >
         <TabList my={8}>
-          {/* <Tab
+          <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             borderRadius={15}
             _selected={{
@@ -41,8 +41,8 @@ const RevenueStreams = ({
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Revenue Streams
-          </Tab> */}
+            Monthly
+          </Tab>
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             borderRadius={15}
@@ -57,7 +57,7 @@ const RevenueStreams = ({
           </Tab>
         </TabList>
         <TabPanels>
-          {/* <TabPanel>
+          <TabPanel>
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -79,7 +79,7 @@ const RevenueStreams = ({
             <Stack spacing="5">
               <RevenueGraph revenueStreams={revenueStreams} />
             </Stack>
-          </TabPanel> */}
+          </TabPanel>
           <TabPanel>
             <Box
               bg="bg-surface"
