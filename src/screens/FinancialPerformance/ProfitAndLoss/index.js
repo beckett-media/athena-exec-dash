@@ -34,7 +34,7 @@ const ProfitAndLoss = ({
         mt={20}
       >
         <TabList my={8}>
-          {/* <Tab
+          <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             borderRadius={15}
             _selected={{
@@ -44,8 +44,8 @@ const ProfitAndLoss = ({
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Profit & Loss
-          </Tab> */}
+            Monthly
+          </Tab>
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
             _selected={{
@@ -60,7 +60,7 @@ const ProfitAndLoss = ({
           </Tab>
         </TabList>
         <TabPanels>
-          {/* <TabPanel>
+          <TabPanel>
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -84,7 +84,7 @@ const ProfitAndLoss = ({
               monthly={monthly}
               title="Timeseries Profit / Loss"
             />
-          </TabPanel> */}
+          </TabPanel>
           <TabPanel>
             <Box
               bg="bg-surface"
