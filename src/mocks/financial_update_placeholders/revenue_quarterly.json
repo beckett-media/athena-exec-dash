@@ -1,0 +1,13 @@
+[
+  {
+    "id": 0,
+    "FullDate": 1553990400000,
+    "Company": "Placeholder",
+    "Account": "Placeholder",
+    "Balance": 100.0,
+    "Quarter": "Q1",
+    "StrDate": "2022-01-01",
+    "Year": "2022",
+    "Total": 100.0
+  }
+]
