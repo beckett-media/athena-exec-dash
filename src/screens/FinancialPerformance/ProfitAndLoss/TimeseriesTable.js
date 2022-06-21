@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import {
   Badge,
   Box,
@@ -10,6 +10,9 @@ import {
   Tr,
   Table,
   Button,
+  Radio,
+  RadioGroup,
+  Stack,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
@@ -48,7 +51,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company", "Account"],
+        groupBy: ["Year", "Company"],
       },
     },
     useGroupBy,
@@ -120,7 +123,7 @@ function Tables({ columns, data }) {
                     ) : (
                       <BsArrowRightSquareFill />
                     )}{" "}
-                    {groupedCell.render("Cell")} ({row.subRows.length})
+                    {groupedCell.render("Cell")}
                   </span>
                 );
               }
@@ -234,6 +237,17 @@ function Tables({ columns, data }) {
 }
 
 function TimeserriesTable({ className, data, monthly }) {
+  const [filter, setFilter] = useState("Net_Income");
+
+  const filterData = useCallback(
+    (i) => {
+      return Object.values(i).indexOf(filter) > -1;
+    },
+    [filter]
+  );
+
+  const filteredData = monthly.filter(filterData);
+
   const columns = React.useMemo(
     () => [
       {
@@ -261,17 +275,17 @@ function TimeserriesTable({ className, data, monthly }) {
           </Badge>
         ),
       },
-      {
-        Header: "Account",
-        accessor: "Account",
-        aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Accounts`,
-        Cell: ({ value }) => (
-          <Text fontSize="md" color="gray.500">
-            {value.replace(/_/g, " ")}
-          </Text>
-        ),
-      },
+      // {
+      //   Header: "Account",
+      //   accessor: "Account",
+      //   aggregate: "uniqueCount",
+      //   Aggregated: ({ value }) => `${value} Accounts`,
+      //   Cell: ({ value }) => (
+      //     <Text fontSize="md" color="gray.500">
+      //       {value.replace(/_/g, " ")}
+      //     </Text>
+      //   ),
+      // },
       {
         Header: "Balance",
         accessor: "Balance",
@@ -333,7 +347,16 @@ function TimeserriesTable({ className, data, monthly }) {
           to group.
         </Text> */}
       </Box>
-      <Tables columns={columns} data={monthly} />
+      <Box>
+        <RadioGroup onChange={setFilter} value={filter}>
+          <Stack direction="row">
+            <Radio value="Net_Income">Net Income</Radio>
+            <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
+            <Radio value="Management_EBITDA">Management EBITDA</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Tables columns={columns} data={filteredData} />
     </Card>
   );
 }
