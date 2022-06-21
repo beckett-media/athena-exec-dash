@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useCallback } from "react";
 import {
   Badge,
   Box,
@@ -23,7 +23,6 @@ import cn from "classnames";
 import styles from "./Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
-import { useCallback } from "react";
 
 function useControlledState(state) {
   return React.useMemo(() => {
