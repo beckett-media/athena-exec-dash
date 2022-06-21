@@ -9,7 +9,9 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuaterlyTable from "./QuaterlyTable";
+import AnnualTable from "./AnnualTable";
 import BalanceGraph from "./BalanceGraph/index";
+import AnnualGraph from "./AnnualGraph/index";
 import QuaterlyGraph from "./QuaterlyGraph";
 import TablePivots from "./TablePivots";
 
@@ -20,7 +22,7 @@ const BalanceSheet = ({
   balancePivotQuarterly,
 }) => {
   const darkMode = useDarkMode();
-  console.log('nasserbs', balanceSheet)
+  console.log("nasserbs", balanceSheet);
 
   return (
     <>
@@ -56,6 +58,18 @@ const BalanceSheet = ({
             }}
           >
             Quarterly
+          </Tab>
+          <Tab
+            color={darkMode.value ? "gray.100" : "gray.700"}
+            borderRadius={15}
+            _selected={{
+              color: darkMode.value ? "white" : "white",
+              bg: darkMode.value ? "#2A85FF" : "#2A85FF",
+              _focus: { boxShadow: "none", outline: "none" },
+              borderRadius: 15,
+            }}
+          >
+            Annual
           </Tab>
         </TabList>
         <TabPanels>
@@ -108,6 +122,29 @@ const BalanceSheet = ({
               balanceQuarterly={balanceQuarterly}
               title="Quarterly Balance Sheet"
             />
+          </TabPanel>
+          <TabPanel>
+            <Box
+              bg="bg-surface"
+              boxShadow={{
+                base: "none",
+                md: useColorModeValue("sm", "sm-dark"),
+              }}
+              borderRadius={useBreakpointValue({
+                base: "none",
+                md: "lg",
+              })}
+            >
+              <Stack spacing="5">
+                <AnnualTable balanceSheet={balanceSheet} />
+              </Stack>
+            </Box>
+
+            <Box my={20} />
+
+            <Stack spacing="5">
+              <AnnualGraph balanceSheet={balanceSheet} />
+            </Stack>
           </TabPanel>
         </TabPanels>
       </Tabs>
