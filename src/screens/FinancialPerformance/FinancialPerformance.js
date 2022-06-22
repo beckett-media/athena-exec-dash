@@ -17,7 +17,6 @@ function OpsPerformance() {
 
     // usage
     async function downloadJSONs() {
-      console.log('downloadJSONs');
       setIsLoading(true);
 
       const dataDict ={};
