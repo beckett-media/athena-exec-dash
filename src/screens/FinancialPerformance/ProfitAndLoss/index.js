@@ -10,7 +10,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 
 import TimeSeriesGraph from "./TimeSeriesGraph";
-import QuaterlyGraph from "./QuaterlyGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
 
@@ -105,7 +105,7 @@ const ProfitAndLoss = ({
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               quarterly={quarterly}
               isLoading={isLoading}
               netIncome={netIncome}

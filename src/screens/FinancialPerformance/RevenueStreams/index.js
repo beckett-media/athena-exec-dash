@@ -11,7 +11,7 @@ import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
 import QuarterlyTable from "./QuarterlyTable";
 import RevenueGraph from "./RevenueGraph/index";
-import QuaterlyGraph from "./QuaterlyGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 
 const RevenueStreams = ({
   revenueStreams,
@@ -100,7 +100,7 @@ const RevenueStreams = ({
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               revenueStreamsQuarterly={revenueStreamsQuarterly}
               revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
               title="Quarterly Balance Sheet"
