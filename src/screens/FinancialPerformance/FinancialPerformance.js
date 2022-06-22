@@ -2,6 +2,8 @@ import React from "react";
 import TooltipGlodal from "../../components/TooltipGlodal";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
+import { Storage, StorageProvider } from 'aws-amplify';
+
 import BalanceSheet from "./BalanceSheet";
 import RevenueStreams from "./RevenueStreams";
 import ProfitAndLoss from "./ProfitAndLoss";
@@ -31,9 +33,21 @@ const OpsPerformance = () => {
 
   const balanceSheet = balance_monthly;
   const balanceQuarterly = balance_quarterly;
-  const balancePivotQuarterly = balance_pivot_quarterly;
-  console.log('nasserquarterly', quarterly)
+  const balancePivotQuarterly = balance_pivot_quarterly;  
+  
+  // const quartly = download('data_pivot_quarterly').then((result) => {return result});
+  downloadJSONs().then((results) => {
+    return opsPerformance(results);
+  });
+  // const dictionary = {'data_pivot_quarterly': quartly, 'data_monthly': monthly, 'data_quarterly': quarterly, 
+  //                        'revenue_monthly': revenueStreams, 'revenue_quarterly': revenueStreamsQuarterly, 
+  //                        'revenue_pivot_quarterly': revenueStreamsPivotQuarterly,
+  //                        'balance_monthly': balanceSheet, 'balance_quarterly': balanceQuarterly, 
+  //                        'balance_pivot_quarterly': balancePivotQuarterly}
+  // return opsPerformance(dictionary)
+};
 
+function opsPerformance(opsDictionary) {
   return (
     <>
       {/* <ComingSoon /> */}
@@ -84,29 +98,28 @@ const OpsPerformance = () => {
           </Tab>
           
         </TabList>
-
         <TabPanels>
           <TabPanel>
             <ProfitAndLoss
-              quarterly={quarterly}
-              quartly={quartly}
-              monthly={monthly}
+              quarterly={opsDictionary['data_quarterly']}
+              quartly={opsDictionary['data_pivot_quarterly']}
+              monthly={opsDictionary['data_monthly']}
             />
           </TabPanel>
           <TabPanel>
             <div>
               <BalanceSheet
-                balanceQuarterly={balanceQuarterly}
-                balanceSheet={balanceSheet}
-                balancePivotQuarterly={balancePivotQuarterly}
+                balanceQuarterly={opsDictionary['balance_quarterly']}
+                balanceSheet={opsDictionary['balance_monthly']}
+                balancePivotQuarterly={opsDictionary['balance_pivot_quarterly']}
               />
             </div>
           </TabPanel>
           <TabPanel>
             <RevenueStreams
-              revenueStreams={revenueStreams}
-              revenueStreamsQuarterly={revenueStreamsQuarterly}
-              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+              revenueStreams={opsDictionary['revenue_monthly']}
+              revenueStreamsQuarterly={opsDictionary['revenue_quarterly']}
+              revenueStreamsPivotQuarterly={opsDictionary['revenue_pivot_quarterly']}
             />
           </TabPanel>
         </TabPanels>
@@ -114,6 +127,32 @@ const OpsPerformance = () => {
       </Tabs>
     </>
   );
-};
+}
+
+function isLoading() {
+  return "Loading..."
+}
+
+const fileNames = ['finance-data/balance_monthly.json', 'finance-data/balance_pivot_quarterly.json', 'finance-data/balance_quarterly.json', 'finance-data/data_monthly.json', 'finance-data/data_pivot_quarterly.json', 'finance-data/data_quarterly.json', 'finance-data/revenue_monthly.json', 'finance-data/revenue_pivot_quarterly.json', 'finance-data/revenue_quarterly.json']
+
+function validateStorage() {
+  const storageList = Storage.list('').then((result) => {
+    const storedFolders = result.map((x) => (x['key']));
+    return fileNames.every(fileName => {return storedFolders.includes(fileName)});
+  });
+  return storageList;
+}
 
 export default OpsPerformance;
+
+const dataNames = ['data_monthly','data_quarterly','data_pivot_quarterly','revenue_monthly','revenue_quarterly','revenue_pivot_quarterly','balance_monthly','balance_quarterly','balance_pivot_quarterly']
+// usage
+async function downloadJSONs() {
+  const dataDict = {};
+  await Promise.all(dataNames.map(async (key) => {
+    const fileKey = 'finance-data/' + key + '.json'
+    const result = await Storage.get(fileKey, { download: true });
+    dataDict[key] = (JSON.parse(await result.Body.text()));
+  }))
+  return dataDict;
+}
