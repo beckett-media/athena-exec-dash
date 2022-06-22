@@ -18,7 +18,7 @@ const ProfitAndLoss = ({
   data,
   isLoading,
   netIncome,
-  quartly,
+  pivot_quarterly,
   monthly,
   quarterly,
 }) => {
@@ -99,7 +99,7 @@ const ProfitAndLoss = ({
             >
               <Stack spacing="5">
                 <Stack spacing="5">
-                  <TablePivots data={data} quartly={quartly} />
+                  <TablePivots data={data} pivot_quarterly={pivot_quarterly} />
                 </Stack>
               </Stack>
             </Box>
@@ -110,7 +110,7 @@ const ProfitAndLoss = ({
               isLoading={isLoading}
               netIncome={netIncome}
               monthly={monthly}
-              quartly={quartly}
+              pivot_quarterly={pivot_quarterly}
               title="Quarterly Profit & Loss"
             />
           </TabPanel>

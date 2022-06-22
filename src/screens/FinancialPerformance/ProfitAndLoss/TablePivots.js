@@ -236,10 +236,10 @@ function Tables({ columns, data }) {
   );
 }
 
-function TablePivots({ className, data, quartly }) {
+function TablePivots({ className, data, pivot_quarterly }) {
   const [filter, setFilter] = useState("Net_Income");
 
-  const filteredData = quartly.filter(filterData);
+  const filteredData = pivot_quarterly.filter(filterData);
 
   function filterData(i) {
     return Object.values(i).indexOf(filter) > -1;
