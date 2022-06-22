@@ -17,7 +17,7 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
   const uniqueCompany = [
     ...new Set(balanceSheet.map((item) => item.Company)),
   ].sort((a, b) => b - a);
-  // ['Beckett_Collectables', 'Comic_Book_Certification_Service_LLC', 'Arcane_Tinmen_ApS', 'Southern_Hobby_Distribution,LLC']
+  // ['Beckett_Collectables', 'Comic_Book_Certification_Service_LLC', 'Arcane_Tinmen_ApS', 'Southern_Hobby_Distribution_LLC']
 
   // console.log("uniqueAccount", uniqueAccount);
   // console.log("uniqueCompany", uniqueCompany);
@@ -155,7 +155,7 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
       y: dataFilter.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.Balance
           : null
       ),
@@ -175,7 +175,7 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
       y: dataFilter.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.BudgetBalance
           : null
       ),

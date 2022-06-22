@@ -97,7 +97,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.Balance
           : null
       ),
