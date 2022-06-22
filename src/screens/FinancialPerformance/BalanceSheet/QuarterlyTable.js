@@ -197,7 +197,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function QuaterlyTable({ className, balancePivotQuarterly }) {
+function QuarterlyTable({ className, balancePivotQuarterly }) {
   const columns = React.useMemo(
     () => [
       {
@@ -347,4 +347,4 @@ function QuaterlyTable({ className, balancePivotQuarterly }) {
   );
 }
 
-export default QuaterlyTable;
+export default QuarterlyTable;
