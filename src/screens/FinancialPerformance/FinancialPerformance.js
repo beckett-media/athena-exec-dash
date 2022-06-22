@@ -2,67 +2,23 @@ import React, { useEffect, useState } from "react";
 import TooltipGlodal from "../../components/TooltipGlodal";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
-import { Storage, StorageProvider } from 'aws-amplify';
+import { Storage } from 'aws-amplify';
 
 import BalanceSheet from "./BalanceSheet";
 import RevenueStreams from "./RevenueStreams";
 import ProfitAndLoss from "./ProfitAndLoss";
 
-// update json version
-import ComingSoon from "../CominSoon/ComingSoon";
-import profit_monthly from "../../mocks/financial_update/data_monthly.json";
-import profit_quarterly from "../../mocks/financial_update/data_quarterly.json";
-import profit_pivot_quarterly from "../../mocks/financial_update/data_pivot_quarterly.json";
-
-import revenue_monthly from "../../mocks/financial_update/revenue_monthly.json";
-import revenue_quarterly from "../../mocks/financial_update/revenue_quarterly.json";
-import revenue_pivot_quarterly from "../../mocks/financial_update/revenue_pivot_quarterly.json";
-
-import balance_monthly from "../../mocks/financial_update/balance_monthly.json";
-import balance_quarterly from "../../mocks/financial_update/balance_quarterly.json";
-import balance_pivot_quarterly from "../../mocks/financial_update/balance_pivot_quarterly.json";
-
-// const OpsPerformance = () => {
-  
-  
-//   // const quartly = download('data_pivot_quarterly').then((result) => {return result});
-  
-//   // const dictionary = {'data_pivot_quarterly': quartly, 'data_monthly': monthly, 'data_quarterly': quarterly, 
-//   //                        'revenue_monthly': revenueStreams, 'revenue_quarterly': revenueStreamsQuarterly, 
-//   //                        'revenue_pivot_quarterly': revenueStreamsPivotQuarterly,
-//   //                        'balance_monthly': balanceSheet, 'balance_quarterly': balanceQuarterly, 
-//   //                        'balance_pivot_quarterly': balancePivotQuarterly}
-//   // return opsPerformance(dictionary)
-// };
-
-
-
-
-
 function OpsPerformance() {
+  const [opsDictionary, setOpsDictionary] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
-  // const quartly = profit_pivot_quarterly;
-  // const monthly = profit_monthly;
-  // const quarterly = profit_quarterly;
-
-  // const revenueStreams = revenue_monthly;
-  // const revenueStreamsQuarterly = revenue_quarterly;
-  // const revenueStreamsPivotQuarterly = revenue_pivot_quarterly;
-
-  // const balanceSheet = balance_monthly;
-  // const balanceQuarterly = balance_quarterly;
-  // const balancePivotQuarterly = balance_pivot_quarterly;  
-
-  const [opsDictionary, setOpsDictionary] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
-
-  
   useEffect(() => {
     const dataNames = ['data_monthly','data_quarterly','data_pivot_quarterly','revenue_monthly','revenue_quarterly','revenue_pivot_quarterly','balance_monthly','balance_quarterly','balance_pivot_quarterly'];
 
     // usage
     async function downloadJSONs() {
       console.log('downloadJSONs');
+      setIsLoading(true);
 
       const dataDict ={};
       await Promise.all(dataNames.map(async (key) => {
@@ -80,7 +36,11 @@ function OpsPerformance() {
 
   if (isLoading) {
     return <div>Loading...</div>;
-  } else {
+  }
+
+  if (!opsDictionary) {
+    return null;
+  }
 
   return (
     <>
@@ -140,18 +100,9 @@ function OpsPerformance() {
           <TabPanel>
             <ProfitAndLoss
               quarterly={opsDictionary['data_quarterly']}
-              quartly={opsDictionary['data_pivot_quarterly']}
+              pivot_quarterly={opsDictionary['data_pivot_quarterly']}
               monthly={opsDictionary['data_monthly']}
             />
-          </TabPanel>
-          <TabPanel>
-            <div>
-              <BalanceSheet
-                balanceQuarterly={opsDictionary['balance_quarterly']}
-                balanceSheet={opsDictionary['balance_monthly']}
-                balancePivotQuarterly={opsDictionary['balance_pivot_quarterly']}
-              />
-            </div>
           </TabPanel>
           <TabPanel>
             <RevenueStreams
@@ -160,15 +111,18 @@ function OpsPerformance() {
               revenueStreamsPivotQuarterly={opsDictionary['revenue_pivot_quarterly']}
             />
           </TabPanel>
-          
+          <TabPanel>
+            <BalanceSheet
+              balanceQuarterly={opsDictionary['balance_quarterly']}
+              balanceSheet={opsDictionary['balance_monthly']}
+              balancePivotQuarterly={opsDictionary['balance_pivot_quarterly']}
+            />
+          </TabPanel>
         </TabPanels>
         <TooltipGlodal />
       </Tabs>
     </>
   );
-          }
 }
 
-
 export default OpsPerformance;
-

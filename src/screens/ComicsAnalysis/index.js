@@ -15,8 +15,11 @@ import {
 } from "@chakra-ui/react";
 import ComicsGraphs from "./scatterPlot";
 import HistogramGraph from "./histogram";
+import { useApiData } from "../../providers/apiData";
 
-const ComicAnalysis = ({ dataCI }) => {
+const ComicAnalysis = () => {
+  const { comicIndexing: dataCI } = useApiData();
+
   return (
     <>
       <div className={styles.section}>
