@@ -10,7 +10,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
 import BalanceGraph from "./BalanceGraph/index";
-import QuaterlyGraph from "./QuaterlyGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 
 const BalanceSheet = ({
@@ -103,7 +103,7 @@ const BalanceSheet = ({
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               balancePivotQuarterly={balancePivotQuarterly}
               balanceQuarterly={balanceQuarterly}
               title="Quarterly Balance Sheet"

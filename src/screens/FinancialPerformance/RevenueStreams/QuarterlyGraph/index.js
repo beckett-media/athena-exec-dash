@@ -8,7 +8,7 @@ import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
 
-const QuaterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
+const QuarterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("409000");
   const [year, setYear] = React.useState("2022");
@@ -241,4 +241,4 @@ const QuaterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
   );
 };
 
-export default QuaterlyGraph;
+export default QuarterlyGraph;
