@@ -97,7 +97,7 @@ const QuaterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.Balance
           : null
       ),
