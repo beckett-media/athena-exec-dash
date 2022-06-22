@@ -10,7 +10,7 @@ import { Box, Text, Select } from "@chakra-ui/react";
 
 const TimeSeriesGraph = ({ className, revenueStreams }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net_Income");
+  const [sorting, setSorting] = React.useState("Other_Revenue");
   const [year, setYear] = React.useState("2022");
 
   const uniqueAccount = [

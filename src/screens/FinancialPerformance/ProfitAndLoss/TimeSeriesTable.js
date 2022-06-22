@@ -246,7 +246,7 @@ function TimeSeriesTable({ className, data, monthly }) {
     [filter]
   );
  // nasser commiting
- 
+
   const filteredData = monthly.filter(filterData);
 
   const columns = React.useMemo(
@@ -307,7 +307,7 @@ function TimeSeriesTable({ className, data, monthly }) {
         ),
       },
       {
-        Header: "Start Date",
+        Header: "Date",
         accessor: "StrDate",
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Unique Dates`,
@@ -352,9 +352,9 @@ function TimeSeriesTable({ className, data, monthly }) {
           to group.
         </Text> */}
       </Box>
-      <Box>
+      <Box mb={10} mx={'auto'}>
         <RadioGroup onChange={setFilter} value={filter}>
-          <Stack direction="row">
+          <Stack direction="row" spacing='50px'>
             <Radio value="Net_Income">Net Income</Radio>
             <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
             <Radio value="Management_EBITDA">Management EBITDA</Radio>

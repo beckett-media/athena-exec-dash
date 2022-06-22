@@ -290,22 +290,7 @@ function TablePivots({ className, data, balanceSheet }) {
         </Text>
       ),
     },
-    {
-      Header: "Budget Balance",
-      // fomatted date with moment to get the month
-      accessor: "BudgetBalance",
-      aggregate: "sum",
-      Aggregated: ({ value }) => (
-        <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
-        </Text>
-      ),
-      Cell: ({ value }) => (
-        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
-          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
-        </Badge>
-      ),
-    },
+    
     {
       Header: "Balance",
       // fomatted date with moment to get the month
@@ -322,6 +307,22 @@ function TablePivots({ className, data, balanceSheet }) {
         </Badge>
       ),
     },
+    {
+      Header: "Budget",
+      // fomatted date with moment to get the month
+      accessor: "BudgetBalance",
+      aggregate: "sum",
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {numberWithCommas(value.toFixed(0))} Total
+        </Text>
+      ),
+      Cell: ({ value }) => (
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+        </Badge>
+      ),
+    }
   ]);
 
   const darkMode = useDarkMode();

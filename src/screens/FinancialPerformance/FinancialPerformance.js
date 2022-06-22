@@ -59,17 +59,7 @@ const OpsPerformance = () => {
           >
             Profit & Loss
           </Tab>
-          <Tab
-            color={"white"}
-            _selected={{
-              color: "gray.700",
-              bg: "#68D391",
-              borderRadius: 5,
-              _focus: { boxShadow: "none", outline: "none" },
-            }}
-          >
-            Balance Sheet
-          </Tab>
+
           <Tab
             color={"white"}
             _selected={{
@@ -81,6 +71,19 @@ const OpsPerformance = () => {
           >
             Revenue Streams
           </Tab>
+
+          <Tab
+            color={"white"}
+            _selected={{
+              color: "gray.700",
+              bg: "#68D391",
+              borderRadius: 5,
+              _focus: { boxShadow: "none", outline: "none" },
+            }}
+          >
+            Balance Sheet
+          </Tab>
+          
           
         </TabList>
 
@@ -92,6 +95,18 @@ const OpsPerformance = () => {
               monthly={monthly}
             />
           </TabPanel>
+          
+          <TabPanel>
+            <RevenueStreams
+              // revenueStreams={revenueStreams}
+              // revenueStreamsQuarterly={revenueStreamsQuarterly}
+              // revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+              revenueStreams={monthly}
+              revenueStreamsQuarterly={quarterly}
+              revenueStreamsPivotQuarterly={pivot_quarterly}
+            />
+          </TabPanel>
+
           <TabPanel>
             <div>
               <BalanceSheet
@@ -101,13 +116,7 @@ const OpsPerformance = () => {
               />
             </div>
           </TabPanel>
-          <TabPanel>
-            <RevenueStreams
-              revenueStreams={revenueStreams}
-              revenueStreamsQuarterly={revenueStreamsQuarterly}
-              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
-            />
-          </TabPanel>
+          
         </TabPanels>
         <TooltipGlodal />
       </Tabs>
