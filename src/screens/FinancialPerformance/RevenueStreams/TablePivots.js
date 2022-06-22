@@ -283,7 +283,7 @@ function TablePivots({ className, revenueStreams }) {
       aggregate: "sum",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          ${numberWithCommas(value.toFixed(0))} Total
         </Text>
       ),
       Cell: ({ value }) => (
@@ -298,7 +298,7 @@ function TablePivots({ className, revenueStreams }) {
       aggregate: "sum",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          ${numberWithCommas(value.toFixed(0))} Total
         </Text>
       ),
       Cell: ({ value }) => (
@@ -311,7 +311,12 @@ function TablePivots({ className, revenueStreams }) {
       Header: "Date",
       accessor: "StrDate",
       aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Total`,
+      // Aggregated: ({ value }) => `${value} Total`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {value} dates
+        </Text>
+      ),
     },
   ]);
 
