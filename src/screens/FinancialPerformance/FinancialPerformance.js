@@ -103,9 +103,12 @@ const OpsPerformance = () => {
           </TabPanel>
           <TabPanel>
             <RevenueStreams
-              revenueStreams={revenueStreams}
-              revenueStreamsQuarterly={revenueStreamsQuarterly}
-              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+              // revenueStreams={revenueStreams}
+              // revenueStreamsQuarterly={revenueStreamsQuarterly}
+              // revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+              revenueStreams={monthly}
+              revenueStreamsQuarterly={quarterly}
+              revenueStreamsPivotQuarterly={pivot_quarterly}
             />
           </TabPanel>
         </TabPanels>

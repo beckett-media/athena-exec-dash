@@ -246,7 +246,7 @@ function TimeSeriesTable({ className, data, monthly }) {
     [filter]
   );
  // nasser commiting
- 
+
   const filteredData = monthly.filter(filterData);
 
   const columns = React.useMemo(
@@ -307,7 +307,7 @@ function TimeSeriesTable({ className, data, monthly }) {
         ),
       },
       {
-        Header: "Start Date",
+        Header: "Date",
         accessor: "StrDate",
         aggregate: "uniqueCount",
         Aggregated: ({ value }) => `${value} Unique Dates`,

@@ -18,6 +18,16 @@ const RevenueStreams = ({
   revenueStreamsQuarterly,
   revenueStreamsPivotQuarterly,
 }) => {
+
+
+  const removeAccounts = ['GAAP_EBITDA', 'Management_EBITDA', 'Net_Income']
+  const filteredData = revenueStreams.filter(function(itm){
+    return removeAccounts.indexOf(itm.Account) == -1;
+  });
+
+  console.log('nqrevstre', filteredData);
+
+
   const darkMode = useDarkMode();
 
   return (
@@ -70,14 +80,14 @@ const RevenueStreams = ({
               })}
             >
               <Stack spacing="5">
-                <TablePivots revenueStreams={revenueStreams} />
+                <TablePivots revenueStreams={filteredData} />
               </Stack>
             </Box>
 
             <Box my={20} />
 
             <Stack spacing="5">
-              <RevenueGraph revenueStreams={revenueStreams} />
+              <RevenueGraph revenueStreams={filteredData} />
             </Stack>
           </TabPanel>
           <TabPanel>
