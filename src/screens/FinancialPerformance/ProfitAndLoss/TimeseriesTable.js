@@ -236,7 +236,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function TimeserriesTable({ className, data, monthly }) {
+function TimeSeriesTable({ className, data, monthly }) {
   const [filter, setFilter] = useState("Net_Income");
 
   const filterData = useCallback(
@@ -361,4 +361,4 @@ function TimeserriesTable({ className, data, monthly }) {
   );
 }
 
-export default TimeserriesTable;
+export default TimeSeriesTable;
