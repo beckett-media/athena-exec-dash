@@ -152,22 +152,29 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
   };
 
   return (
-    <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
-      <Box display={"flex"} flexDirection={"column"} position={"relative"}>
+    <Box
+      justifyItems={"center"}
+      alignCenter={"center"}
+      justifyContent={"center"}
+      display={"flex"}
+    >
+      <Box
+        display={"flex"}
+        width={"33%"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
         <Text
           position={"absolute"}
           left={"50%"}
           top={"4"}
           transform={"auto"}
-          translateX={"-50%"}
+          // translateX={"-50%"}
           zIndex={"1"}
         >
           Net Income
         </Text>
         <Plot
-          style={{
-            width: "33%",
-          }}
           data={sortByType("Net_Income")}
           layout={layout}
           useResizeHandler={true}
@@ -175,21 +182,23 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
         />
       </Box>
 
-      <Box display={"flex"} flexDirection={"column"} position={"relative"}>
+      <Box
+        display={"flex"}
+        width={"33%"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
         <Text
           position={"absolute"}
           top={"4"}
           left={"50%"}
           transform={"auto"}
-          translateX={"-50%"}
+          // translateX={"-50%"}
           zIndex={"1"}
         >
           GAAP EBITDA
         </Text>
         <Plot
-          style={{
-            width: "33%",
-          }}
           data={sortByType("GAAP_EBITDA")}
           layout={layout}
           useResizeHandler={true}
@@ -197,21 +206,23 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
         />
       </Box>
 
-      <Box display={"flex"} flexDirection={"column"} position={"relative"}>
+      <Box
+        width={"33%"}
+        display={"flex"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
         <Text
           position={"absolute"}
           top={"4"}
           left={"50%"}
           transform={"auto"}
-          translateX={"-50%"}
+          // translateX={"-50%"}
           zIndex={"1"}
         >
           Management EBITDA
         </Text>
         <Plot
-          style={{
-            width: "33%",
-          }}
           data={sortByType("Management_EBITDA")}
           layout={layout}
           useResizeHandler={true}
