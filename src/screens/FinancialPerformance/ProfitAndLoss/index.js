@@ -13,6 +13,7 @@ import TimeSeriesGraph from "./TimeSeriesGraph";
 import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
+import CompanyGraphs from "./CompanyGraphs";
 
 const ProfitAndLoss = ({
   data,
@@ -61,6 +62,13 @@ const ProfitAndLoss = ({
         </TabList>
         <TabPanels>
           <TabPanel>
+            <CompanyGraphs
+              isLoading={isLoading}
+              netIncome={netIncome}
+              monthly={monthly}
+              title="Profit & Loss Company Graphs"
+            />
+            <Box my={20} />
             <Box
               bg="bg-surface"
               boxShadow={{

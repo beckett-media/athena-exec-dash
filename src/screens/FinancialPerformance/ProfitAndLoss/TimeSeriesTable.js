@@ -245,7 +245,7 @@ function TimeSeriesTable({ className, data, monthly }) {
     },
     [filter]
   );
- // nasser commiting
+  // nasser commiting
 
   const filteredData = monthly.filter(filterData);
 
@@ -322,7 +322,7 @@ function TimeSeriesTable({ className, data, monthly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Profit & Loss"
+      title="Profit & Loss Table"
       // description={`if needed add description here ....`}
     >
       <Box
@@ -352,9 +352,9 @@ function TimeSeriesTable({ className, data, monthly }) {
           to group.
         </Text> */}
       </Box>
-      <Box mb={10} mx={'auto'}>
+      <Box mb={10} mx={"auto"}>
         <RadioGroup onChange={setFilter} value={filter}>
-          <Stack direction="row" spacing='50px'>
+          <Stack direction="row" spacing="50px">
             <Radio value="Net_Income">Net Income</Radio>
             <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
             <Radio value="Management_EBITDA">Management EBITDA</Radio>
