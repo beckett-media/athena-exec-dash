@@ -8,7 +8,7 @@ import {
 import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-import QuaterlyTable from "./QuaterlyTable";
+import QuarterlyTable from "./QuarterlyTable";
 import BalanceGraph from "./BalanceGraph/index";
 import QuaterlyGraph from "./QuaterlyGraph";
 import TablePivots from "./TablePivots";
@@ -95,7 +95,7 @@ const BalanceSheet = ({
               })}
             >
               <Stack spacing="5">
-                <QuaterlyTable
+                <QuarterlyTable
                   balancePivotQuarterly={balancePivotQuarterly}
                   balanceQuarterly={balanceQuarterly}
                 />
