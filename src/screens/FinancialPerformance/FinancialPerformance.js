@@ -21,7 +21,7 @@ import balance_quarterly from "../../mocks/financial_update/balance_quarterly.js
 import balance_pivot_quarterly from "../../mocks/financial_update/balance_pivot_quarterly.json";
 
 const OpsPerformance = () => {
-  const quartly = profit_pivot_quarterly;
+  const pivot_quarterly = profit_pivot_quarterly;
   const monthly = profit_monthly;
   const quarterly = profit_quarterly;
 
@@ -32,7 +32,6 @@ const OpsPerformance = () => {
   const balanceSheet = balance_monthly;
   const balanceQuarterly = balance_quarterly;
   const balancePivotQuarterly = balance_pivot_quarterly;
-  console.log('nasserquarterly', quarterly)
 
   return (
     <>
@@ -89,7 +88,7 @@ const OpsPerformance = () => {
           <TabPanel>
             <ProfitAndLoss
               quarterly={quarterly}
-              quartly={quartly}
+              pivot_quarterly={pivot_quarterly}
               monthly={monthly}
             />
           </TabPanel>

@@ -8,11 +8,11 @@ import {
 import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-import QuaterlyTable from "./QuaterlyTable";
+import QuarterlyTable from "./QuarterlyTable";
 import AnnualTable from "./AnnualTable";
 import BalanceGraph from "./BalanceGraph/index";
 import AnnualGraph from "./AnnualGraph/index";
-import QuaterlyGraph from "./QuaterlyGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 
 const BalanceSheet = ({
@@ -22,7 +22,6 @@ const BalanceSheet = ({
   balancePivotQuarterly,
 }) => {
   const darkMode = useDarkMode();
-  console.log("nasserbs", balanceSheet);
 
   return (
     <>
@@ -109,7 +108,7 @@ const BalanceSheet = ({
               })}
             >
               <Stack spacing="5">
-                <QuaterlyTable
+                <QuarterlyTable
                   balancePivotQuarterly={balancePivotQuarterly}
                   balanceQuarterly={balanceQuarterly}
                 />
@@ -117,7 +116,7 @@ const BalanceSheet = ({
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               balancePivotQuarterly={balancePivotQuarterly}
               balanceQuarterly={balanceQuarterly}
               title="Quarterly Balance Sheet"

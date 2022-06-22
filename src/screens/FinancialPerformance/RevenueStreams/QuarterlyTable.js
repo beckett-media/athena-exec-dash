@@ -233,7 +233,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
+function QuarterlyTable({ className, revenueStreamsPivotQuarterly }) {
 
   const columns = React.useMemo(
     () => [
@@ -383,4 +383,4 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
   );
 }
 
-export default QuaterlyTable;
+export default QuarterlyTable;

@@ -5,30 +5,28 @@ import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
 
 import useDarkMode from "use-dark-mode";
+import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
-
+import Dropdown from "../../../../components/Dropdown";
 
 const StrDatelyGraph = ({
   className,
-  netIncome,
-  title,
-  monthly,
-  quartly,
-  quarterly,
+  balanceQuarterly,
+  balancePivotQuarterly,
 }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("409000");
   const [year, setYear] = React.useState("2022");
 
   const uniqueAccount = [
-    ...new Set(quarterly.map((item) => item.Account)),
+    ...new Set(balanceQuarterly.map((item) => item.Account)),
   ];
 
   const uniqueYears = [
-    ...new Set(quarterly.map((item) => item.Year)),
+    ...new Set(balanceQuarterly.map((item) => item.Year)),
   ].sort((a, b) => b - a);
 
-  const dataFilter = quarterly.filter((d) => d?.Account === sorting);
+  const dataFilter = balanceQuarterly.filter((d) => d?.Account === sorting);
 
   const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
@@ -41,7 +39,8 @@ const StrDatelyGraph = ({
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+        (d.Account === sorting) &
+        (d.Company === "Beckett_Collectables") 
           ? d.Balance
           : null
       ),
@@ -58,12 +57,33 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
-
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Beckett_Collectables") 
+          ? d.BudgetBalance
+          : null
+      ),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#2A85FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dash",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Comic_Book_Certification_Service_LLC") 
           ? d.Balance
           : null
       ),
@@ -79,11 +99,32 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
-
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+        (d.Account === sorting) &
+        (d.Company === "Comic_Book_Certification_Service_LLC") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FF6A55",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dash",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Arcane_Tinmen_ApS") 
           ? d.Balance
           : null
       ),
@@ -99,12 +140,32 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
-
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Arcane_Tinmen_ApS") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FFD700",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dash",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution_LLC") 
           ? d.Balance
           : null
       ),
@@ -120,11 +181,30 @@ const StrDatelyGraph = ({
         smoothing: 1,
       },
     },
-
+    {
+      x: dataFilterYear.map((d) => d.Quarter),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern_Hobby_Distribution_LLC") 
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#8E59FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+      },
+    },
   ];
   var layout = {
     xaxis: {
-      title: `Profit & lost for account type: ${removeUnderscore(sorting)}`,
+      title: `Balance Sheet for account type: ${removeUnderscore(sorting)}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -133,7 +213,7 @@ const StrDatelyGraph = ({
     },
 
     yaxis: {
-      title: "Profit & Lost",
+      title: "Balance sheet",
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -141,7 +221,7 @@ const StrDatelyGraph = ({
     },
 
     autosize: true,
-    width: 999,
+    width: 809,
     height: 500,
     display: "flex",
     margin: {
@@ -179,7 +259,7 @@ const StrDatelyGraph = ({
   return (
     <Card
       classTitle="title-blue"
-      title={"Profit & Lost Quarterly"}
+      title={"Balance Sheet Quarterly"}
       description={`description if neeeded`}
       className={cn(styles.card, className)}
       head={
@@ -189,10 +269,9 @@ const StrDatelyGraph = ({
           gap={3}
           justifyItems={"center"}
           alignItems={"center"}
-          width={"40%"}
         >
           <Box width={"100%"}>
-            <Text width={"100%"}>Select Account</Text>
+            <Text flex={1}>Select Account</Text>
           </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}

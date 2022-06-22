@@ -9,9 +9,9 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
-import QuaterlyTable from "./QuaterlyTable";
+import QuarterlyTable from "./QuarterlyTable";
 import RevenueGraph from "./RevenueGraph/index";
-import QuaterlyGraph from "./QuaterlyGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 
 const RevenueStreams = ({
   revenueStreams,
@@ -93,14 +93,14 @@ const RevenueStreams = ({
               })}
             >
               <Stack spacing="5">
-                <QuaterlyTable
+                <QuarterlyTable
                   revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
                 />
               </Stack>
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               revenueStreamsQuarterly={revenueStreamsQuarterly}
               revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
               title="Quarterly Balance Sheet"

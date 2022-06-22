@@ -8,21 +8,29 @@ import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
 
-const TimeserriesGraph = ({ className, title, balanceSheet }) => {
+const TimeSeriesGraph = ({ className, title, balanceSheet }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("Cash_and_Cash_Equivalents");
+  const [year, setYear] = React.useState("2022");
 
   const uniqueAccount = [...new Set(balanceSheet.map((item) => item.Account))];
+
+  const uniqueYear = [...new Set(balanceSheet.map((item) => item.Year))].sort(
+    (a, b) => b - a
+  );
+
 
   const uniqueCompany = [
     ...new Set(balanceSheet.map((item) => item.Company)),
   ].sort((a, b) => b - a);
-  // ['Beckett_Collectables', 'Comic_Book_Certification_Service_LLC', 'Arcane_Tinmen_ApS', 'Southern_Hobby_Distribution,LLC']
+  // ['Beckett_Collectables', 'Comic_Book_Certification_Service_LLC', 'Arcane_Tinmen_ApS', 'Southern_Hobby_Distribution_LLC']
 
   // console.log("uniqueAccount", uniqueAccount);
   // console.log("uniqueCompany", uniqueCompany);
 
   const dataFilter = balanceSheet.filter((d) => d?.Account === sorting);
+
+  const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
   // function to remove underscores from the account name
   const removeUnderscore = (str) => {
@@ -31,8 +39,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
 
   var data = [
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Beckett_Collectables")
           ? d.Balance
           : null
@@ -51,8 +59,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Beckett_Collectables")
           ? d.BudgetBalance
           : null
@@ -72,8 +80,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
         (d.Company === "Comic_Book_Certification_Service_LLC")
           ? d.Balance
@@ -92,8 +100,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
         (d.Company === "Comic_Book_Certification_Service_LLC")
           ? d.BudgetBalance
@@ -113,8 +121,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
           ? d.Balance
           : null
@@ -132,8 +140,8 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
           ? d.BudgetBalance
           : null
@@ -152,10 +160,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.Balance
           : null
       ),
@@ -172,10 +180,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.BudgetBalance
           : null
       ),
@@ -285,6 +293,27 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
               <option value={d}>{removeUnderscore(d)}</option>
             ))}
           </Select>
+          <Text mr={3}>Year</Text>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setYear(e.target.value)}
+            value={console.log(year)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={14}
+          >
+            {uniqueYear.map((d) => (
+              <option value={d}>{d}</option>
+            ))}
+          </Select>
         </Box>
       }
     >
@@ -300,4 +329,4 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
   );
 };
 
-export default TimeserriesGraph;
+export default TimeSeriesGraph;

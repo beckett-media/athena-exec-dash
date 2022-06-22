@@ -7,26 +7,23 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
 
-const StrDatelyGraph = ({
-  className,
-  balanceQuarterly,
-  balancePivotQuarterly,
-}) => {
+const QuarterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("409000");
   const [year, setYear] = React.useState("2022");
 
   const uniqueAccount = [
-    ...new Set(balanceQuarterly.map((item) => item.Account)),
+    ...new Set(revenueStreamsQuarterly.map((item) => item.Account)),
   ];
 
   const uniqueYears = [
-    ...new Set(balanceQuarterly.map((item) => item.Year)),
+    ...new Set(revenueStreamsQuarterly.map((item) => item.Year)),
   ].sort((a, b) => b - a);
 
-  const dataFilter = balanceQuarterly.filter((d) => d?.Account === sorting);
+  const dataFilter = revenueStreamsQuarterly.filter(
+    (d) => d?.Account === sorting
+  );
 
   const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
@@ -39,8 +36,7 @@ const StrDatelyGraph = ({
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Beckett_Collectables") 
+        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
           ? d.Balance
           : null
       ),
@@ -48,6 +44,7 @@ const StrDatelyGraph = ({
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
+
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "Beckett Collectables",
       line: {
@@ -61,29 +58,7 @@ const StrDatelyGraph = ({
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Beckett_Collectables") 
-          ? d.BudgetBalance
-          : null
-      ),
-
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-      name: "Budget Balance",
-      line: {
-        color: "#2A85FF",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-        dash: "dash",
-      },
-    },
-    {
-      x: dataFilterYear.map((d) => d.Quarter),
-      y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC") 
+        (d.Company === "Comic_Book_Certification_Service_LLC")
           ? d.Balance
           : null
       ),
@@ -102,29 +77,7 @@ const StrDatelyGraph = ({
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC") 
-          ? d.BudgetBalance
-          : null
-      ),
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
-      name: "Budget Balance",
-      line: {
-        color: "#FF6A55",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-        dash: "dash",
-      },
-    },
-    {
-      x: dataFilterYear.map((d) => d.Quarter),
-      y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Arcane_Tinmen_ApS") 
+        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
           ? d.Balance
           : null
       ),
@@ -144,28 +97,7 @@ const StrDatelyGraph = ({
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Arcane_Tinmen_ApS") 
-          ? d.BudgetBalance
-          : null
-      ),
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
-      name: "Budget Balance",
-      line: {
-        color: "#FFD700",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-        dash: "dash",
-      },
-    },
-    {
-      x: dataFilterYear.map((d) => d.Quarter),
-      y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC") 
+        (d.Company === "Southern_Hobby_Distribution_LLC")
           ? d.Balance
           : null
       ),
@@ -174,26 +106,6 @@ const StrDatelyGraph = ({
       connectgaps: true,
       marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
       name: "Southern Hobby Distribution, LLC",
-      line: {
-        color: "#8E59FF",
-        width: 4,
-        shape: "spline",
-        smoothing: 1,
-      },
-    },
-    {
-      x: dataFilterYear.map((d) => d.Quarter),
-      y: dataFilterYear.map((d) =>
-        (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC") 
-          ? d.BudgetBalance
-          : null
-      ),
-      type: "scatter",
-      mode: "lines+markers",
-      connectgaps: true,
-      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
-      name: "Budget Balance",
       line: {
         color: "#8E59FF",
         width: 4,
@@ -213,7 +125,7 @@ const StrDatelyGraph = ({
     },
 
     yaxis: {
-      title: "Balance sheet",
+      title: "Revenue",
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -259,7 +171,7 @@ const StrDatelyGraph = ({
   return (
     <Card
       classTitle="title-blue"
-      title={"Balance Sheet Quarterly"}
+      title={"Revenue Streams Quarterly"}
       description={`description if neeeded`}
       className={cn(styles.card, className)}
       head={
@@ -329,4 +241,4 @@ const StrDatelyGraph = ({
   );
 };
 
-export default StrDatelyGraph;
+export default QuarterlyGraph;

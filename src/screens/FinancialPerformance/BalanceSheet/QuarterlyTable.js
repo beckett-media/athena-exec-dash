@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import {
   Badge,
   Box,
@@ -10,9 +10,6 @@ import {
   Tr,
   Table,
   Button,
-  Radio,
-  RadioGroup,
-  Stack,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
@@ -51,7 +48,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company"],
+        groupBy: ["Year", "Company", "Account"],
       },
     },
     useGroupBy,
@@ -114,7 +111,7 @@ function Tables({ columns, data }) {
                         paddingLeft: `${row.depth * 2}rem`,
                         display: "flex",
                         align$: "center",
-                        gap: "0.8rem",
+                        gap: "0.2rem",
                       },
                     })}
                   >
@@ -123,7 +120,7 @@ function Tables({ columns, data }) {
                     ) : (
                       <BsArrowRightSquareFill />
                     )}{" "}
-                    {groupedCell.render("Cell")}
+                    {groupedCell.render("Cell")} ({row.subRows.length})
                   </span>
                 );
               }
@@ -154,42 +151,6 @@ function Tables({ columns, data }) {
                     {column.canFilter ? column.render("Filter") : null}
                   </Text>
                 </Th>
-                // <Th
-                //   style={{ color: "transparent" }}
-                //   {...column.getHeaderProps()}
-
-                // >
-                //   {column.canGroupBy ? (
-                //     // If the column can be grouped, let's add a toggle
-
-                //     <Box {...column.getGroupByToggleProps()}>
-                //       {column.isGrouped ? (
-                //         <p fontSize="md">
-                //           <Text fontSize="md">Grouped By: </Text>
-                //           {state.groupBy.map((d) => (
-                //             <Badge
-                //               key={d}
-                //               colorScheme="transparent"
-                //               marginRight="0.5rem"
-                //             >
-                //               {d}
-                //             </Badge>
-                //           ))}
-                //         </p>
-                //       ) : (
-                //         <Button
-                //           leftIcon={<AiOutlineGroup />}
-                //           colorScheme="twitter"
-                //           variant="solid"
-                //           size={"sm"}
-                //         >
-                //           group {column.render("Header")}
-                //         </Button>
-                //       )}
-                //     </Box>
-                //   ) : null}
-                //   {column.render("Header")}
-                // </Th>
               ))}
             </Tr>
           ))}
@@ -236,18 +197,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function TimeserriesTable({ className, data, monthly }) {
-  const [filter, setFilter] = useState("Net_Income");
-
-  const filterData = useCallback(
-    (i) => {
-      return Object.values(i).indexOf(filter) > -1;
-    },
-    [filter]
-  );
-
-  const filteredData = monthly.filter(filterData);
-
+function QuarterlyTable({ className, balancePivotQuarterly }) {
   const columns = React.useMemo(
     () => [
       {
@@ -275,20 +225,25 @@ function TimeserriesTable({ className, data, monthly }) {
           </Badge>
         ),
       },
-      // {
-      //   Header: "Account",
-      //   accessor: "Account",
-      //   aggregate: "uniqueCount",
-      //   Aggregated: ({ value }) => `${value} Accounts`,
-      //   Cell: ({ value }) => (
-      //     <Text fontSize="md" color="gray.500">
-      //       {value.replace(/_/g, " ")}
-      //     </Text>
-      //   ),
-      // },
       {
-        Header: "Balance",
-        accessor: "Balance",
+        Header: "Account",
+        accessor: "Account",
+        aggregate: "uniqueCount",
+        Cell: ({ value }) => (
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"cyan"}
+          >
+            {value.replace(/_/g, " ")}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Q2",
+        accessor: "Q2",
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
@@ -302,10 +257,50 @@ function TimeserriesTable({ className, data, monthly }) {
         ),
       },
       {
-        Header: "Start Date",
-        accessor: "StrDate",
-        aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Unique Dates`,
+        Header: "Budget Q2",
+        accessor: "BudgetQ2",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+
+      {
+        Header: "Q4",
+        accessor: "Q4",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Budget Q4",
+        accessor: "BudgetQ4",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
       },
     ],
     []
@@ -317,7 +312,7 @@ function TimeserriesTable({ className, data, monthly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Profit & Loss"
+      title="Quarterly Balance Sheet"
       // description={`if needed add description here ....`}
     >
       <Box
@@ -336,29 +331,20 @@ function TimeserriesTable({ className, data, monthly }) {
           to drill down by Year for example
         </Text>
         {/* {AiOutlineUngroup()}
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          to ungroup.
-        </Text>
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          and
-        </Text>
-        {AiOutlineGroup()}
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          to group.
-        </Text> */}
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      to ungroup.
+    </Text>
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      and
+    </Text>
+    {AiOutlineGroup()}
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      to group.
+    </Text> */}
       </Box>
-      <Box>
-        <RadioGroup onChange={setFilter} value={filter}>
-          <Stack direction="row">
-            <Radio value="Net_Income">Net Income</Radio>
-            <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
-            <Radio value="Management_EBITDA">Management EBITDA</Radio>
-          </Stack>
-        </RadioGroup>
-      </Box>
-      <Tables columns={columns} data={filteredData} />
+      <Tables columns={columns} data={balancePivotQuarterly} />
     </Card>
   );
 }
 
-export default TimeserriesTable;
+export default QuarterlyTable;
