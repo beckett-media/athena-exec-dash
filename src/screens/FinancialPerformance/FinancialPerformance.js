@@ -56,23 +56,26 @@ function OpsPerformance() {
   const [opsDictionary, setOpsDictionary] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
-
-  const dataNames = ['data_monthly','data_quarterly','data_pivot_quarterly','revenue_monthly','revenue_quarterly','revenue_pivot_quarterly','balance_monthly','balance_quarterly','balance_pivot_quarterly']
-  // usage
-  async function downloadJSONs() {
-    const dataDict ={};
-    await Promise.all(dataNames.map(async (key) => {
-      const fileKey = 'finance-data/' + key + '.json'
-      const result = await Storage.get(fileKey, { download: true });
-      dataDict[key] = (JSON.parse(await result.Body.text()))
-    }))
-    setOpsDictionary(dataDict);
-    setIsLoading(false);
-  }
   
   useEffect(() => {
+    const dataNames = ['data_monthly','data_quarterly','data_pivot_quarterly','revenue_monthly','revenue_quarterly','revenue_pivot_quarterly','balance_monthly','balance_quarterly','balance_pivot_quarterly'];
+
+    // usage
+    async function downloadJSONs() {
+      console.log('downloadJSONs');
+
+      const dataDict ={};
+      await Promise.all(dataNames.map(async (key) => {
+        const fileKey = 'finance-data/' + key + '.json'
+        const result = await Storage.get(fileKey, { download: true });
+        dataDict[key] = (JSON.parse(await result.Body.text()))
+      }))
+      setOpsDictionary(dataDict);
+      setIsLoading(false);
+    }
+
     downloadJSONs()
-  }, [isLoading])
+  }, [])
 
 
   if (isLoading) {
@@ -164,19 +167,4 @@ function OpsPerformance() {
 
 
 export default OpsPerformance;
-
-function isLoading() {
-  return "Loading..."
-}
-
-// const fileNames = ['finance-data/balance_monthly.json', 'finance-data/balance_pivot_quarterly.json', 'finance-data/balance_quarterly.json', 'finance-data/data_monthly.json', 'finance-data/data_pivot_quarterly.json', 'finance-data/data_quarterly.json', 'finance-data/revenue_monthly.json', 'finance-data/revenue_pivot_quarterly.json', 'finance-data/revenue_quarterly.json']
-
-// function validateStorage() {
-//   const storageList = Storage.list('').then((result) => {
-//     const storedFolders = result.map((x) => (x['key']));
-//     return fileNames.every(fileName => {return storedFolders.includes(fileName)});
-//   });
-//   return storageList;
-// }
-
 
