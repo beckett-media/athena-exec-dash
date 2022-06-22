@@ -12,7 +12,7 @@ import useDarkMode from "use-dark-mode";
 import TimeSeriesGraph from "./TimeSeriesGraph";
 import QuaterlyGraph from "./QuaterlyGraph";
 import TablePivots from "./TablePivots";
-import TimeserriesTable from "./TimeseriesTable";
+import TimeSeriesTable from "./TimeSeriesTable";
 
 const ProfitAndLoss = ({
   data,
@@ -73,7 +73,7 @@ const ProfitAndLoss = ({
               })}
             >
               <Stack spacing="5">
-                <TimeserriesTable data={netIncome} monthly={monthly} />
+                <TimeSeriesTable data={netIncome} monthly={monthly} />
               </Stack>
             </Box>
 

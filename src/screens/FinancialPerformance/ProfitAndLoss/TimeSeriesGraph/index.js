@@ -9,7 +9,7 @@ import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
 import Dropdown from "../../../../components/Dropdown";
 
-const TimeserriesGraph = ({ className, title, monthly }) => {
+const TimeSeriesGraph = ({ className, title, monthly }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("409000");
   const [year, setYear] = React.useState("2022");
@@ -236,4 +236,4 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
   );
 };
 
-export default TimeserriesGraph;
+export default TimeSeriesGraph;
