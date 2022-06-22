@@ -283,7 +283,11 @@ function TablePivots({ className, data, balanceSheet }) {
       // fomatted date with moment to get the month
       accessor: "Account",
       aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Accounts`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {value} accounts
+        </Text>
+      ),
       Cell: ({ value }) => (
         <Text fontSize="md" color="gray.500">
           {value.replace(/_/g, " ")}
@@ -295,10 +299,10 @@ function TablePivots({ className, data, balanceSheet }) {
       Header: "Balance",
       // fomatted date with moment to get the month
       accessor: "Balance",
-      aggregate: "sum",
+      aggregate: "uniqueCount",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          {numberWithCommas(value.toFixed(0))} records
         </Text>
       ),
       Cell: ({ value }) => (
@@ -311,10 +315,10 @@ function TablePivots({ className, data, balanceSheet }) {
       Header: "Budget",
       // fomatted date with moment to get the month
       accessor: "BudgetBalance",
-      aggregate: "sum",
+      aggregate: "uniqueCount",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          {numberWithCommas(value.toFixed(0))} records
         </Text>
       ),
       Cell: ({ value }) => (
