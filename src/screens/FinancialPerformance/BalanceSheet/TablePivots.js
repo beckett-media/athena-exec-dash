@@ -48,7 +48,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company"],
+        groupBy: ["Year", "Company", "StrDate"],
       },
     },
     useGroupBy,
@@ -234,6 +234,7 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, data, balanceSheet }) {
+  console.log('bsnas', balanceSheet)
   const columns = React.useMemo(() => [
     {
       Header: "Year",
@@ -260,6 +261,23 @@ function TablePivots({ className, data, balanceSheet }) {
         </Badge>
       ),
     },
+    {
+      Header: "StrDate",
+      accessor: "StrDate",
+      aggregate: "uniqueCount",
+      Cell: ({ value }) => (
+        <Badge
+          fontSize={11}
+          px={2}
+          mx={3}
+          borderRadius={14}
+          colorScheme={"blue"}
+        >
+          {value.replace(/_/g, " ")}
+        </Badge>
+      ),
+    },
+    
     {
       Header: "Account",
       // fomatted date with moment to get the month
