@@ -20,7 +20,6 @@ const BalanceSheet = ({
   balancePivotQuarterly,
 }) => {
   const darkMode = useDarkMode();
-  console.log('nasserbs', balanceSheet)
 
   return (
     <>
