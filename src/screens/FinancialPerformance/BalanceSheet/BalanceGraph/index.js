@@ -8,7 +8,7 @@ import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
 
-const TimeserriesGraph = ({ className, title, balanceSheet }) => {
+const TimeSeriesGraph = ({ className, title, balanceSheet }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("Cash_and_Cash_Equivalents");
 
@@ -300,4 +300,4 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
   );
 };
 
-export default TimeserriesGraph;
+export default TimeSeriesGraph;

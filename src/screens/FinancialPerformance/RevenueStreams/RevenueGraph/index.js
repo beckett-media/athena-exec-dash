@@ -8,7 +8,7 @@ import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
 
-const TimeserriesGraph = ({ className, revenueStreams }) => {
+const TimeSeriesGraph = ({ className, revenueStreams }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("Net_Income");
   const [year, setYear] = React.useState("2022");
@@ -240,4 +240,4 @@ const TimeserriesGraph = ({ className, revenueStreams }) => {
   );
 };
 
-export default TimeserriesGraph;
+export default TimeSeriesGraph;
