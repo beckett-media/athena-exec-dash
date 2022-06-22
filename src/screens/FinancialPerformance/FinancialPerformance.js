@@ -109,17 +109,7 @@ function OpsPerformance() {
           >
             Profit & Loss
           </Tab>
-          <Tab
-            color={"white"}
-            _selected={{
-              color: "gray.700",
-              bg: "#68D391",
-              borderRadius: 5,
-              _focus: { boxShadow: "none", outline: "none" },
-            }}
-          >
-            Balance Sheet
-          </Tab>
+
           <Tab
             color={"white"}
             _selected={{
@@ -131,6 +121,19 @@ function OpsPerformance() {
           >
             Revenue Streams
           </Tab>
+
+          <Tab
+            color={"white"}
+            _selected={{
+              color: "gray.700",
+              bg: "#68D391",
+              borderRadius: 5,
+              _focus: { boxShadow: "none", outline: "none" },
+            }}
+          >
+            Balance Sheet
+          </Tab>
+          
           
         </TabList>
         <TabPanels>
@@ -157,6 +160,7 @@ function OpsPerformance() {
               revenueStreamsPivotQuarterly={opsDictionary['revenue_pivot_quarterly']}
             />
           </TabPanel>
+          
         </TabPanels>
         <TooltipGlodal />
       </Tabs>
