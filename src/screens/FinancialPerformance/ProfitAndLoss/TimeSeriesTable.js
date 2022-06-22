@@ -282,7 +282,7 @@ function TimeSeriesTable({ className, data, monthly }) {
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
-            {numberWithCommas(value.toFixed(0))} Total
+            ${numberWithCommas(value.toFixed(0))} total
           </Text>
         ),
         Cell: ({ value }) => (
@@ -297,7 +297,7 @@ function TimeSeriesTable({ className, data, monthly }) {
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
-            {numberWithCommas(value.toFixed(0))} Total
+            ${numberWithCommas(value.toFixed(0))} total
           </Text>
         ),
         Cell: ({ value }) => (
@@ -310,7 +310,11 @@ function TimeSeriesTable({ className, data, monthly }) {
         Header: "Date",
         accessor: "StrDate",
         aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Unique Dates`,
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {value} dates
+          </Text>
+        ),
       },
     ],
     []
