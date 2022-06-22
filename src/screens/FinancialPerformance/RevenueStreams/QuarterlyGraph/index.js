@@ -7,24 +7,23 @@ import Plot from "react-plotly.js";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
 
-const TimeserriesGraph = ({ className, title, monthly }) => {
+const QuarterlyGraph = ({ className, title, revenueStreamsQuarterly }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState("409000");
   const [year, setYear] = React.useState("2022");
 
-  const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
+  const uniqueAccount = [
+    ...new Set(revenueStreamsQuarterly.map((item) => item.Account)),
+  ];
 
-  const uniqueCompany = [...new Set(monthly.map((item) => item.Company))].sort(
-    (a, b) => b - a
+  const uniqueYears = [
+    ...new Set(revenueStreamsQuarterly.map((item) => item.Year)),
+  ].sort((a, b) => b - a);
+
+  const dataFilter = revenueStreamsQuarterly.filter(
+    (d) => d?.Account === sorting
   );
-
-  const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
-    (a, b) => b - a
-  );
-
-  const dataFilter = monthly.filter((d) => d?.Account === sorting);
 
   const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
@@ -35,7 +34,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
 
   var data = [
     {
-      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Beckett_Collectables")
           ? d.Balance
@@ -45,6 +44,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       type: "scatter",
       mode: "lines+markers",
       connectgaps: true,
+
       marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
       name: "Beckett Collectables",
       line: {
@@ -55,7 +55,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       },
     },
     {
-      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
         (d.Company === "Comic_Book_Certification_Service_LLC")
@@ -75,7 +75,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       },
     },
     {
-      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
           ? d.Balance
@@ -94,7 +94,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       },
     },
     {
-      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
         (d.Company === "Southern_Hobby_Distribution_LLC")
@@ -116,7 +116,7 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
   ];
   var layout = {
     xaxis: {
-      title: `Profit & lost for account type: ${removeUnderscore(sorting)}`,
+      title: `Balance Sheet for account type: ${removeUnderscore(sorting)}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -125,28 +125,29 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
     },
 
     yaxis: {
-      title: "Profit & Loss",
+      title: "Revenue",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
-      tickformat: "s",
     },
+
     autosize: true,
-    width: 999,
+    width: 809,
     height: 500,
     display: "flex",
     margin: {
-      l: 70,
+      l: 100,
       r: 50,
       b: 100,
-      t: 100,
+      t: 0,
       pad: 5,
     },
 
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
+
     hovermode: "x",
 
     legend: {
@@ -156,6 +157,10 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
       orientation: "h",
+      // hide the legend when the graph is empty (no data)
+      // this is done by adding the "trace" to the legend
+
+      traceorder: "reversed",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -166,8 +171,8 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
   return (
     <Card
       classTitle="title-blue"
-      title={title}
-      // description={`BGS sell through has dropped under 10% for the first time. It peaked at 33.2% in March 2021.`}
+      title={"Revenue Streams Quarterly"}
+      description={`description if neeeded`}
       className={cn(styles.card, className)}
       head={
         <Box
@@ -177,7 +182,9 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <Text mr={3}>Select Account</Text>
+          <Box width={"100%"}>
+            <Text flex={1}>Select Account</Text>
+          </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}
             borderRadius={14}
@@ -187,18 +194,19 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setSorting(e.target.value)}
-            value={console.log(sorting)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
             }}
-            fontSize={14}
+            fontSize={12}
           >
             {uniqueAccount.map((d) => (
               <option value={d}>{removeUnderscore(d)}</option>
             ))}
           </Select>
-          <Text mr={3}>Year</Text>
+          <Box width={"10%"}>
+            <Text flex={1}>Year</Text>
+          </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}
             borderRadius={14}
@@ -208,15 +216,14 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setYear(e.target.value)}
-            value={console.log(year)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
             }}
-            fontSize={14}
+            fontSize={12}
           >
-            {uniqueYear.map((d) => (
-              <option value={d}>{d}</option>
+            {uniqueYears.map((d) => (
+              <option value={d}>{removeUnderscore(d)}</option>
             ))}
           </Select>
         </Box>
@@ -224,16 +231,14 @@ const TimeserriesGraph = ({ className, title, monthly }) => {
     >
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
-          style={{
-            width: "100%",
-          }}
           data={data}
           layout={layout}
           useResizeHandler={true}
+          style={{ width: "100%", height: "100%" }}
         />
       </Box>
     </Card>
   );
 };
 
-export default TimeserriesGraph;
+export default QuarterlyGraph;

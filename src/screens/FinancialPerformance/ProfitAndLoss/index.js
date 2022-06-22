@@ -9,16 +9,16 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 
-import TimeSeriesGraph from "./timeserriesGraph";
-import QuaterlyGraph from "./QuaterlyGraph";
+import TimeSeriesGraph from "./TimeSeriesGraph";
+import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
-import TimeserriesTable from "./TimeseriesTable";
+import TimeSeriesTable from "./TimeSeriesTable";
 
 const ProfitAndLoss = ({
   data,
   isLoading,
   netIncome,
-  quartly,
+  pivot_quarterly,
   monthly,
   quarterly,
 }) => {
@@ -73,7 +73,7 @@ const ProfitAndLoss = ({
               })}
             >
               <Stack spacing="5">
-                <TimeserriesTable data={netIncome} monthly={monthly} />
+                <TimeSeriesTable data={netIncome} monthly={monthly} />
               </Stack>
             </Box>
 
@@ -99,18 +99,18 @@ const ProfitAndLoss = ({
             >
               <Stack spacing="5">
                 <Stack spacing="5">
-                  <TablePivots data={data} quartly={quartly} />
+                  <TablePivots data={data} pivot_quarterly={pivot_quarterly} />
                 </Stack>
               </Stack>
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
+            <QuarterlyGraph
               quarterly={quarterly}
               isLoading={isLoading}
               netIncome={netIncome}
               monthly={monthly}
-              quartly={quartly}
+              pivot_quarterly={pivot_quarterly}
               title="Quarterly Profit & Loss"
             />
           </TabPanel>

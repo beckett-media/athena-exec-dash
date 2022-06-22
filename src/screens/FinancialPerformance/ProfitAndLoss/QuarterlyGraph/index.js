@@ -13,7 +13,7 @@ const StrDatelyGraph = ({
   netIncome,
   title,
   monthly,
-  quartly,
+  pivot_quarterly,
   quarterly,
 }) => {
   const darkMode = useDarkMode(false);
