@@ -275,20 +275,24 @@ function TimeSeriesTable({ className, data, monthly }) {
           </Badge>
         ),
       },
-      // {
-      //   Header: "Account",
-      //   accessor: "Account",
-      //   aggregate: "uniqueCount",
-      //   Aggregated: ({ value }) => `${value} Accounts`,
-      //   Cell: ({ value }) => (
-      //     <Text fontSize="md" color="gray.500">
-      //       {value.replace(/_/g, " ")}
-      //     </Text>
-      //   ),
-      // },
       {
         Header: "Balance",
         accessor: "Balance",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Budget",
+        accessor: "BudgetBalance",
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>

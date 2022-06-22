@@ -11,14 +11,11 @@ import Dropdown from "../../../../components/Dropdown";
 
 const TimeSeriesGraph = ({ className, title, monthly }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("409000");
+  const [sorting, setSorting] = React.useState("Net_Income");
   const [year, setYear] = React.useState("2022");
 
-  const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
-
-  const uniqueCompany = [...new Set(monthly.map((item) => item.Company))].sort(
-    (a, b) => b - a
-  );
+  //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
+  const uniqueAccount = ['Net_Income', 'GAAP_EBITDA','Management_EBITDA']
 
   const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
     (a, b) => b - a
