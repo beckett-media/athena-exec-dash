@@ -80,10 +80,7 @@ const ProfitAndLoss = ({
               })}
             >
               <Stack spacing="5">
-                <TimeSeriesTable 
-                  data={netIncome} 
-                  monthly={pl_monthly} 
-                />
+                <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
               </Stack>
             </Box>
 
@@ -92,7 +89,7 @@ const ProfitAndLoss = ({
               isLoading={isLoading}
               data={pl_monthly}
               title="Profit and Loss Monthly"
-              accountsToUse={['Net Income', 'GAAP EBITDA','Management EBITDA']}
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA"]}
             />
           </TabPanel>
           <TabPanel>
@@ -109,21 +106,22 @@ const ProfitAndLoss = ({
             >
               <Stack spacing="5">
                 <Stack spacing="5">
-                  <TablePivots data={data} pivot_quarterly={pl_pivot_quarterly} />
+                  <TablePivots
+                    data={data}
+                    pivot_quarterly={pl_pivot_quarterly}
+                  />
                 </Stack>
               </Stack>
             </Box>
 
             <Box my={20} />
 
-
             <TimeSeriesGraph
               isLoading={isLoading}
               data={pl_quarterly}
               title="Profit and Loss Quarterly"
-              accountsToUse={['Net Income', 'GAAP EBITDA','Management EBITDA']}
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA"]}
             />
-
           </TabPanel>
         </TabPanels>
       </Tabs>

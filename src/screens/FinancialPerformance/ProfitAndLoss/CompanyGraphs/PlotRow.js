@@ -1,30 +1,12 @@
 import React from "react";
-import styles from "./Chart.module.sass";
-import cn from "classnames";
-import Card from "../../../../components/Card";
 import Plot from "react-plotly.js";
 
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import {
-  Box,
-  Text,
-  Select,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-} from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
+import { Box, Text } from "@chakra-ui/react";
 
 const PlotRow = ({ className, title, monthly, company, data }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net Income");
-  const [year, setYear] = React.useState("2022");
-
-  //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
-  const uniqueAccount = ["Net Income", "GAAP EBITDA", "Management EBITDA"];
 
   const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
     (a, b) => b - a
@@ -34,6 +16,8 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
   const removeUnderscore = (str) => {
     return str.replace(/_/g, " ");
   };
+
+  console.log(data);
 
   function sortByType(type) {
     const dataFilterYear = data.filter((d) => d?.Account === type);
@@ -71,37 +55,6 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
     ];
   }
 
-  console.log(sortByType("Management EBITDA"));
-
-  // var data = [
-  //   {
-  //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-  //     y: dataFilterYear.map((d) =>
-  //       (d.Account === sorting) & (d.Company === company) ? d.Balance : null
-  //     ),
-
-  //     type: "bar",
-  //     marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
-  //     name: "Budgeted",
-  //   },
-  //   {
-  //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-  //     y: dataFilterYear.map((d) =>
-  //       (d.Account === sorting) & (d.Company === company) ? d.Balance : null
-  //     ),
-  //     type: "scatter",
-  //     mode: "lines+markers",
-  //     connectgaps: true,
-  //     marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
-  //     name: "Actual",
-  //     line: {
-  //       color: "#FF6A55",
-  //       width: 4,
-  //       shape: "spline",
-  //       smoothing: 1,
-  //     },
-  //   },
-  // ];
   var layout = {
     xaxis: {
       title: `Month`,
@@ -121,8 +74,8 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
       tickformat: "s",
     },
     autosize: true,
-    width: 350,
-    height: 400,
+    width: 250,
+    height: 350,
     display: "flex",
     margin: {
       l: 70,
@@ -160,14 +113,16 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
     >
       <Box
         display={"flex"}
-        width={"33%"}
+        width={"25%"}
         flexDirection={"column"}
         position={"relative"}
       >
         <Text
+          fontSize={"xs"}
+          width={"100%"}
           position={"absolute"}
-          left={"50%"}
           top={"4"}
+          // left={"50%"}
           transform={"auto"}
           // translateX={"-50%"}
           zIndex={"1"}
@@ -184,14 +139,16 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
 
       <Box
         display={"flex"}
-        width={"33%"}
+        width={"25%"}
         flexDirection={"column"}
         position={"relative"}
       >
         <Text
+          fontSize={"xs"}
+          width={"100%"}
           position={"absolute"}
           top={"4"}
-          left={"50%"}
+          // left={"50%"}
           transform={"auto"}
           // translateX={"-50%"}
           zIndex={"1"}
@@ -207,15 +164,17 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
       </Box>
 
       <Box
-        width={"33%"}
+        width={"25%"}
         display={"flex"}
         flexDirection={"column"}
         position={"relative"}
       >
         <Text
+          fontSize={"xs"}
+          width={"100%"}
           position={"absolute"}
           top={"4"}
-          left={"50%"}
+          // left={"50%"}
           transform={"auto"}
           // translateX={"-50%"}
           zIndex={"1"}
@@ -224,6 +183,31 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
         </Text>
         <Plot
           data={sortByType("Management EBITDA")}
+          layout={layout}
+          useResizeHandler={true}
+          config={{ displayModeBar: false }}
+        />
+      </Box>
+      <Box
+        width={"25%"}
+        display={"flex"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
+        <Text
+          fontSize={"xs"}
+          width={"100%"}
+          position={"absolute"}
+          top={"4"}
+          // left={"50%"}
+          transform={"auto"}
+          // translateX={"-50%"}
+          zIndex={"1"}
+        >
+          Total Revenue
+        </Text>
+        <Plot
+          data={sortByType("Total Revenue")}
           layout={layout}
           useResizeHandler={true}
           config={{ displayModeBar: false }}
