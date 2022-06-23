@@ -35,8 +35,7 @@ const TimeSeriesGraph = ({
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & 
-        (d.Company === "Beckett Collectables")
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
           ? d.Balance
           : null
       ),
@@ -51,6 +50,27 @@ const TimeSeriesGraph = ({
         width: 4,
         shape: "spline",
         smoothing: 1,
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
+          ? d.BudgetBalance
+          : null
+      ),
+
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#2A85FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#2A85FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
       },
     },
     {
@@ -76,8 +96,28 @@ const TimeSeriesGraph = ({
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & 
-        (d.Company === "Arcane Tinmen ApS")
+        (d.Account === sorting) &
+        (d.Company === "Comic Book Certification Service LLC")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FF6A55", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FF6A55",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
           ? d.Balance
           : null
       ),
@@ -91,6 +131,26 @@ const TimeSeriesGraph = ({
         width: 4,
         shape: "spline",
         smoothing: 1,
+      },
+    },
+    {
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#FFD700", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#FFD700",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
       },
     },
     {
@@ -113,11 +173,32 @@ const TimeSeriesGraph = ({
         smoothing: 1,
       },
     },
+    {
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) &
+        (d.Company === "Southern Hobby Distribution,LLC")
+          ? d.BudgetBalance
+          : null
+      ),
+      type: "scatter",
+      mode: "lines+markers",
+      connectgaps: true,
+      marker: { color: "#8E59FF", size: 10, opacity: 0.8 },
+      name: "Budget Balance",
+      line: {
+        color: "#8E59FF",
+        width: 4,
+        shape: "spline",
+        smoothing: 1,
+        dash: "dot",
+      },
+    },
   ];
 
   var layout = {
     xaxis: {
-      title: '',
+      title: `Balance Sheet for account type: ${sorting}`,
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -126,28 +207,30 @@ const TimeSeriesGraph = ({
     },
 
     yaxis: {
-      title: `${sorting} ($)`,
+      title: "Balance Sheet",
       showgrid: true,
       zeroline: false,
       showline: true,
       showticklabels: true,
       tickformat: "s",
     },
+
     autosize: true,
-    width: 999,
+    width: 809,
     height: 500,
     display: "flex",
     margin: {
-      l: 70,
+      l: 0,
       r: 50,
       b: 100,
-      t: 100,
+      t: 0,
       pad: 5,
     },
 
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
+
     hovermode: "x",
 
     legend: {
@@ -157,6 +240,10 @@ const TimeSeriesGraph = ({
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
       orientation: "h",
+      // hide the legend when the graph is empty (no data)
+      // this is done by adding the "trace" to the legend
+
+      traceorder: "reversed",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -178,7 +265,9 @@ const TimeSeriesGraph = ({
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <Text mr={3}>Select Account</Text>
+          <Box width={"100%"}>
+            <Text flex={1}>Select Account</Text>
+          </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}
             borderRadius={14}
@@ -227,12 +316,15 @@ const TimeSeriesGraph = ({
         <Plot
           style={{
             width: "100%",
+            height: "100%",
           }}
           data={graphData}
           layout={layout}
           useResizeHandler={true}
         />
       </Box>
+
+      
     </Card>
   );
 };

@@ -9,17 +9,19 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
-import BalanceGraph from "./BalanceGraph/index";
 import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
+import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
+
 
 const BalanceSheet = ({
-  balanceSheet,
-  className,
-  balanceQuarterly,
-  balancePivotQuarterly,
+  bs_monthly,
+  bs_quarterly,
+  bs_pivoted_quarterly,
 }) => {
   const darkMode = useDarkMode();
+
+  const accountsToUse = [...new Set(bs_monthly.map((item) => item.Account))]
 
   return (
     <>
@@ -71,15 +73,16 @@ const BalanceSheet = ({
               })}
             >
               <Stack spacing="5">
-                <TablePivots balanceSheet={balanceSheet} />
+                <TablePivots balanceSheet={bs_monthly} />
               </Stack>
             </Box>
 
             <Box my={20} />
-
-            <Stack spacing="5">
-              <BalanceGraph balanceSheet={balanceSheet} />
-            </Stack>
+            <TimeSeriesGraph
+              data={bs_monthly}
+              title="Balance Sheet Monthly"
+              accountsToUse={accountsToUse}
+            />
           </TabPanel>
           <TabPanel>
             <Box
@@ -95,16 +98,16 @@ const BalanceSheet = ({
             >
               <Stack spacing="5">
                 <QuarterlyTable
-                  balancePivotQuarterly={balancePivotQuarterly}
-                  balanceQuarterly={balanceQuarterly}
+                  balancePivotQuarterly={bs_pivoted_quarterly}
+                  balanceQuarterly={bs_quarterly}
                 />
               </Stack>
             </Box>
 
             <Box my={20} />
             <QuarterlyGraph
-              balancePivotQuarterly={balancePivotQuarterly}
-              balanceQuarterly={balanceQuarterly}
+              balancePivotQuarterly={bs_pivoted_quarterly}
+              balanceQuarterly={bs_quarterly}
               title="Quarterly Balance Sheet"
             />
           </TabPanel>

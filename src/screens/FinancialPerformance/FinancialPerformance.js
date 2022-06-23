@@ -112,9 +112,9 @@ function OpsPerformance() {
           </TabPanel>
           <TabPanel>
             <BalanceSheet
-              balanceQuarterly={opsDictionary['balance_quarterly']}
-              balanceSheet={opsDictionary['balance_monthly']}
-              balancePivotQuarterly={opsDictionary['balance_pivot_quarterly']}
+              bs_quarterly={opsDictionary['balance_quarterly']}
+              bs_monthly={opsDictionary['balance_monthly']}
+              bs_pivoted_quarterly={opsDictionary['balance_pivot_quarterly']}
             />
           </TabPanel>
         </TabPanels>
