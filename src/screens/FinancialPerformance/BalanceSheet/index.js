@@ -10,6 +10,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
 import TablePivots from "./TablePivots";
+import CompareTable from "./CompareTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 
 
@@ -71,9 +72,12 @@ const BalanceSheet = ({
                 md: "lg",
               })}
             >
+              
+              
               <Stack spacing="5">
-                <TablePivots balanceSheet={bs_monthly} />
+                <CompareTable data={bs_monthly} />
               </Stack>
+
             </Box>
 
             <Box my={20} />
