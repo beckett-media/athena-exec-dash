@@ -93,6 +93,13 @@ const ProfitAndLoss = ({
             />
           </TabPanel>
           <TabPanel>
+            <CompanyGraphs
+              isLoading={isLoading}
+              netIncome={netIncome}
+              monthly={pl_quarterly}
+              title="Profit & Loss Company Graphs"
+            />
+            <Box my={20} />
             <Box
               bg="bg-surface"
               boxShadow={{
