@@ -1,40 +1,42 @@
 import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
-import Card from "../../../../components/Card";
+import Card from "../../../components/Card";
 import Plot from "react-plotly.js";
 
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Select } from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
+import Dropdown from "../../../components/Dropdown";
 
-const TimeSeriesGraph = ({ className, title, monthly }) => {
+const TimeSeriesGraph = ({ 
+  className,
+  title, 
+  data, 
+  accountsToUse
+}) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net_Income");
-  const [year, setYear] = React.useState("2022");
-
+  const [sorting, setSorting] = React.useState(accountsToUse[0]);
+  const [year, setYear] = React.useState([...new Set(data.map((item) => item.Year))].at(-1));
+  console.log('nqdata', data);
   //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
-  const uniqueAccount = ['Net_Income', 'GAAP_EBITDA','Management_EBITDA']
-
-  const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
+  
+  const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(
     (a, b) => b - a
   );
-
-  const dataFilter = monthly.filter((d) => d?.Account === sorting);
+  
+  const dataFilter = data.filter((d) => d?.Account === sorting);
 
   const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
 
   // function to remove underscores from the account name
-  const removeUnderscore = (str) => {
-    return str.replace(/_/g, " ");
-  };
-
-  var data = [
+  
+  var graphData = [
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+        (d.Account === sorting) & 
+        (d.Company === "Beckett Collectables")
           ? d.Balance
           : null
       ),
@@ -55,7 +57,7 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Comic Book Certification Service LLC")
           ? d.Balance
           : null
       ),
@@ -74,7 +76,8 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+        (d.Account === sorting) & 
+        (d.Company === "Arcane Tinmen ApS")
           ? d.Balance
           : null
       ),
@@ -94,7 +97,7 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution_LLC")
+        (d.Company === "Southern Hobby Distribution,LLC")
           ? d.Balance
           : null
       ),
@@ -111,9 +114,10 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
       },
     },
   ];
+
   var layout = {
     xaxis: {
-      title: `Profit & lost for account type: ${removeUnderscore(sorting)}`,
+      title: '',
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -122,7 +126,7 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
     },
 
     yaxis: {
-      title: "Profit & Loss",
+      title: `${sorting} ($)`,
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -184,15 +188,15 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setSorting(e.target.value)}
-            value={console.log(sorting)}
+            // value={console.log(sorting)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
             }}
             fontSize={14}
           >
-            {uniqueAccount.map((d) => (
-              <option value={d}>{removeUnderscore(d)}</option>
+            {accountsToUse.map((d) => (
+              <option value={d}>{d}</option>
             ))}
           </Select>
           <Text mr={3}>Year</Text>
@@ -205,7 +209,7 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setYear(e.target.value)}
-            value={console.log(year)}
+            // value={console.log(year)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
@@ -224,7 +228,7 @@ const TimeSeriesGraph = ({ className, title, monthly }) => {
           style={{
             width: "100%",
           }}
-          data={data}
+          data={graphData}
           layout={layout}
           useResizeHandler={true}
         />

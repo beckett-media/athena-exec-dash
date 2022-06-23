@@ -20,12 +20,10 @@ const RevenueStreams = ({
 }) => {
 
 
-  const removeAccounts = ['GAAP_EBITDA', 'Management_EBITDA', 'Net_Income']
+  const removeAccounts = ['GAAP EBITDA', 'Management EBITDA', 'NetIncome']
   const filteredData = revenueStreams.filter(function(itm){
     return removeAccounts.indexOf(itm.Account) == -1;
   });
-
-  console.log('nqrevstre', filteredData);
 
 
   const darkMode = useDarkMode();

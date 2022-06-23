@@ -20,11 +20,11 @@ import Dropdown from "../../../../components/Dropdown";
 
 const PlotRow = ({ className, title, monthly, company, data }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net_Income");
+  const [sorting, setSorting] = React.useState("Net Income");
   const [year, setYear] = React.useState("2022");
 
   //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
-  const uniqueAccount = ["Net_Income", "GAAP_EBITDA", "Management_EBITDA"];
+  const uniqueAccount = ["Net Income", "GAAP EBITDA", "Management EBITDA"];
 
   const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
     (a, b) => b - a
@@ -71,7 +71,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
     ];
   }
 
-  console.log(sortByType("Management_EBITDA"));
+  console.log(sortByType("Management EBITDA"));
 
   // var data = [
   //   {
@@ -175,7 +175,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
           Net Income
         </Text>
         <Plot
-          data={sortByType("Net_Income")}
+          data={sortByType("Net Income")}
           layout={layout}
           useResizeHandler={true}
           config={{ displayModeBar: false }}
@@ -199,7 +199,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
           GAAP EBITDA
         </Text>
         <Plot
-          data={sortByType("GAAP_EBITDA")}
+          data={sortByType("GAAP EBITDA")}
           layout={layout}
           useResizeHandler={true}
           config={{ displayModeBar: false }}
@@ -223,7 +223,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
           Management EBITDA
         </Text>
         <Plot
-          data={sortByType("Management_EBITDA")}
+          data={sortByType("Management EBITDA")}
           layout={layout}
           useResizeHandler={true}
           config={{ displayModeBar: false }}

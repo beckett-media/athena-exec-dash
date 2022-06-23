@@ -237,7 +237,7 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, data, pivot_quarterly }) {
-  const [filter, setFilter] = useState("Net_Income");
+  const [filter, setFilter] = useState("Net Income");
 
   const filteredData = pivot_quarterly.filter(filterData);
 
@@ -391,9 +391,9 @@ function TablePivots({ className, data, pivot_quarterly }) {
       <Box>
         <RadioGroup onChange={setFilter} value={filter}>
           <Stack direction="row">
-            <Radio value="Net_Income">Net Income</Radio>
-            <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
-            <Radio value="Management_EBITDA">Management EBITDA</Radio>
+            <Radio value="Net Income">Net Income</Radio>
+            <Radio value="GAAP EBITDA">GAAP EBITDA</Radio>
+            <Radio value="Management EBITDA">Management EBITDA</Radio>
           </Stack>
         </RadioGroup>
       </Box>

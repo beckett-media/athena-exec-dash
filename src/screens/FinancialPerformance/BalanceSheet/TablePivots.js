@@ -234,7 +234,6 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, data, balanceSheet }) {
-  console.log('bsnas', balanceSheet)
   const columns = React.useMemo(() => [
     {
       Header: "Year",

@@ -10,7 +10,7 @@ import { Box, Text, Select } from "@chakra-ui/react";
 
 const TimeSeriesGraph = ({ className, revenueStreams }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Other_Revenue");
+  const [sorting, setSorting] = React.useState("Other Revenue");
   const [year, setYear] = React.useState("2022");
 
   const uniqueAccount = [
@@ -34,7 +34,7 @@ const TimeSeriesGraph = ({ className, revenueStreams }) => {
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
           ? d.Balance
           : null
       ),
@@ -55,7 +55,7 @@ const TimeSeriesGraph = ({ className, revenueStreams }) => {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Comic Book Certification Service LLC")
           ? d.Balance
           : null
       ),
@@ -74,7 +74,7 @@ const TimeSeriesGraph = ({ className, revenueStreams }) => {
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
           ? d.Balance
           : null
       ),
@@ -94,7 +94,7 @@ const TimeSeriesGraph = ({ className, revenueStreams }) => {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution_LLC")
+        (d.Company === "Southern Hobby Distribution,LLC")
           ? d.Balance
           : null
       ),
@@ -192,7 +192,7 @@ const TimeSeriesGraph = ({ className, revenueStreams }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setSorting(e.target.value)}
-            value={console.log(sorting)}
+            // value={console.log(sorting)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",

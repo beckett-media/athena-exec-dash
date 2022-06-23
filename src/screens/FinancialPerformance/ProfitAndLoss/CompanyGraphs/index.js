@@ -21,11 +21,11 @@ import Dropdown from "../../../../components/Dropdown";
 
 const CompanyGraphs = ({ className, title, monthly }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net_Income");
+  const [sorting, setSorting] = React.useState("Net Income");
   const [year, setYear] = React.useState("2022");
 
   //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
-  const uniqueAccount = ["Net_Income", "GAAP_EBITDA", "Management_EBITDA"];
+  const uniqueAccount = ["Net Income", "GAAP EBITDA", "Management EBITDA"];
 
   const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
     (a, b) => b - a
@@ -44,7 +44,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
   //   {
   //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
   //     y: dataFilterYear.map((d) =>
-  //       (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+  //       (d.Account === sorting) & (d.Company === "Beckett Collectables")
   //         ? d.Balance
   //         : null
   //     ),
@@ -57,7 +57,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
   //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
   //     y: dataFilterYear.map((d) =>
   //       (d.Account === sorting) &
-  //       (d.Company === "Comic_Book_Certification_Service_LLC")
+  //       (d.Company === "Comic Book Certification Service LLC")
   //         ? d.Balance
   //         : null
   //     ),
@@ -76,7 +76,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
   //   {
   //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
   //     y: dataFilterYear.map((d) =>
-  //       (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+  //       (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
   //         ? d.Balance
   //         : null
   //     ),
@@ -96,7 +96,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
   //     x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
   //     y: dataFilterYear.map((d) =>
   //       (d.Account === sorting) &
-  //       (d.Company === "Southern_Hobby_Distribution_LLC")
+  //       (d.Company === "Southern Hobby Distribution,LLC")
   //         ? d.Balance
   //         : null
   //     ),
@@ -186,7 +186,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setYear(e.target.value)}
-            value={console.log(year)}
+            // value={console.log(year)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
@@ -214,7 +214,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
             <PlotRow
               monthly={monthly}
               data={dataFilterYear}
-              company={"Beckett_Collectables"}
+              company={"Beckett Collectables"}
             />
           </AccordionPanel>
         </AccordionItem>
@@ -232,7 +232,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
             <PlotRow
               monthly={monthly}
               data={dataFilterYear}
-              company={"Arcane_Tinmen_ApS"}
+              company={"Arcane Tinmen ApS"}
             />
           </AccordionPanel>
         </AccordionItem>
@@ -249,7 +249,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
             <PlotRow
               monthly={monthly}
               data={dataFilterYear}
-              company={"Comic_Book_Certification_Service_LLC"}
+              company={"Comic Book Certification Service LLC"}
             />
           </AccordionPanel>
         </AccordionItem>
@@ -266,7 +266,7 @@ const CompanyGraphs = ({ className, title, monthly }) => {
             <PlotRow
               monthly={monthly}
               data={dataFilterYear}
-              company={"Southern_Hobby_Distribution_LLC"}
+              company={"Southern Hobby Distribution,LLC"}
             />
           </AccordionPanel>
         </AccordionItem>

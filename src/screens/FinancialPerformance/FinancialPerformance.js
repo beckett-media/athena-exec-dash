@@ -98,9 +98,9 @@ function OpsPerformance() {
         <TabPanels>
           <TabPanel>
             <ProfitAndLoss
-              quarterly={opsDictionary['data_quarterly']}
-              pivot_quarterly={opsDictionary['data_pivot_quarterly']}
-              monthly={opsDictionary['data_monthly']}
+              pl_quarterly={opsDictionary['data_quarterly']}
+              pl_pivot_quarterly={opsDictionary['data_pivot_quarterly']}
+              pl_monthly={opsDictionary['data_monthly']}
             />
           </TabPanel>
           <TabPanel>

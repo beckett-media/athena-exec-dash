@@ -55,29 +55,29 @@ const Dropdown = ({
           onClick={() => setVisible(!visible)}
         >
           <div className={styles.selection}>
-            {value === "Arcane_Tinmen_ApS" && (
+            {value === "Arcane Tinmen ApS" && (
               <div>
-                {value === "Arcane_Tinmen_ApS" ? "Arcane Tinmen ApS" : value}
+                {value === "Arcane Tinmen ApS" ? "Arcane Tinmen ApS" : value}
               </div>
             )}
 
-            {value === "Beckett_Collectables" && (
+            {value === "Beckett Collectables" && (
               <div>
-                {value === "Beckett_Collectables"
+                {value === "Beckett Collectables"
                   ? "Beckett Collectables"
                   : value}
               </div>
             )}
-            {value === "Comic_Book_Certification_Service_LLC" && (
+            {value === "Comic Book Certification Service LLC" && (
               <div>
-                {value === "Comic_Book_Certification_Service_LLC"
+                {value === "Comic Book Certification Service LLC"
                   ? "Comic Book Certification Service LLC"
                   : value}
               </div>
             )}
-            {value === "Southern_Hobby_Distribution_LLC" && (
+            {value === "Southern Hobby Distribution,LLC" && (
               <div>
-                {value === "Southern_Hobby_Distribution_LLC"
+                {value === "Southern Hobby Distribution,LLC"
                   ? "Southern Hobby Distribution LLC"
                   : value}
               </div>
@@ -121,24 +121,24 @@ const Dropdown = ({
               onClick={() => handleClick(x, index)}
               key={index}
             >
-              {x === "Arcane_Tinmen_ApS" && (
-                <div>{x === "Arcane_Tinmen_ApS" ? "Arcane Tinmen ApS" : x}</div>
+              {x === "Arcane Tinmen ApS" && (
+                <div>{x === "Arcane Tinmen ApS" ? "Arcane Tinmen ApS" : x}</div>
               )}
-              {x === "Beckett_Collectables" && (
+              {x === "Beckett Collectables" && (
                 <div>
-                  {x === "Beckett_Collectables" ? "Beckett Collectables" : x}
+                  {x === "Beckett Collectables" ? "Beckett Collectables" : x}
                 </div>
               )}
-              {x === "Comic_Book_Certification_Service_LLC" && (
+              {x === "Comic Book Certification Service LLC" && (
                 <div>
-                  {x === "Comic_Book_Certification_Service_LLC"
+                  {x === "Comic Book Certification Service LLC"
                     ? "Comic Book Certification"
                     : x}
                 </div>
               )}
-              {x === "Southern_Hobby_Distribution_LLC" && (
+              {x === "Southern Hobby Distribution,LLC" && (
                 <div>
-                  {x === "Southern_Hobby_Distribution_LLC"
+                  {x === "Southern Hobby Distribution,LLC"
                     ? "Southern Hobby Distribution"
                     : x}
                 </div>
