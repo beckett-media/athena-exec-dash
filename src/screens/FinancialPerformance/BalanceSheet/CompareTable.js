@@ -10,15 +10,16 @@ import {
   Tr,
   Table,
   Button,
+  Select,
+  Input
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
-import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
 import styles from "./Table.module.sass";
-import { numberWithCommas } from "../../../utils.js";
+import { formatMoneyWithCommas } from "../../../utils.js";
 import moment from "moment";
 import * as dfd from "danfojs";
 
@@ -163,10 +164,15 @@ function Tables({ columns, data }) {
 }
 
 function CompareTable({ className, data }) {
-  console.log('comptable', data);
-  const beckett = data.filter((d) => d?.Company === "Beckett Collectables");
-  const series1 = beckett.filter((d) => d?.StrDate === "2021-12-31");
-  const series2 = beckett.filter((d) => d?.StrDate === "2020-12-31");
+  const companies = React.useMemo(() => [...new Set(data.map(d => d.Company))], [data]);
+  const [filteredCompany, setFilteredCompany] = React.useState(companies?.[0] || "");
+  console.log('comptable', companies);
+  const [seriesDate1, setSeriesDate1] = React.useState("2021-12-31");
+  const [seriesDate2, setSeriesDate2] = React.useState("2020-12-31");
+
+  const beckett = data.filter((d) => d?.Company === filteredCompany);
+  const series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
+  const series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
   
   let df1 = new dfd.DataFrame(series1);
   let df2 = new dfd.DataFrame(series2);
@@ -200,10 +206,11 @@ function CompareTable({ className, data }) {
       Cell: ({ value }) => (
         <span>
           <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
-            {/*value === 0 ? "0" : numberWithCommas(value.toFixed(0)) */}  {value[0]}
+            {formatMoneyWithCommas(value[0])}
           </Badge>
-          <Badge fontSize={13} colorScheme={"gray"}>
-            ({value[1]})
+          <br />
+          <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
+            {formatMoneyWithCommas(value[1])}
           </Badge>
         </span>
       ),
@@ -215,10 +222,11 @@ function CompareTable({ className, data }) {
       Cell: ({ value }) => (
         <span>
           <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
-            {/*value === 0 ? "0" : numberWithCommas(value.toFixed(0)) */}  {value[0]}
+            {formatMoneyWithCommas(value[0])}
           </Badge>
-          <Badge fontSize={13} colorScheme={"gray"}>
-            ({value[1]})
+          <br />
+          <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
+            {formatMoneyWithCommas(value[1])}
           </Badge>
         </span>
       ),
@@ -230,7 +238,7 @@ function CompareTable({ className, data }) {
       accessor: "Diff",
       Cell: ({ value }) => (
         <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
-          {/* {value === 0 ? "0" : numberWithCommas(value.toFixed(0))} */ value}
+          {formatMoneyWithCommas(value)}
         </Badge>
       ),
     }
@@ -243,7 +251,50 @@ function CompareTable({ className, data }) {
       className={cn(styles.card, className)}
       classTitle="title-blue"
       title="Balance Sheets"
-      // description={`if needed add description here ....`}
+      head={
+        <Box
+          flexDirection={"row"}
+          display={"flex"}
+          gap={3}
+          justifyItems={"center"}
+          alignItems={"center"}
+        >
+          <Box width={"100%"}>
+            <Text flex={1}>Company</Text>
+          </Box>
+          <Select
+            colorScheme={darkMode.value ? "dark" : "light"}
+            borderRadius={14}
+            boxShadow="sm"
+            color={"#6F767E"}
+            size="md"
+            variant="outline"
+            borderColor="#272B30"
+            onChange={(e) => setFilteredCompany(e.target.value)}
+            _focusVisible={{
+              borderColor: "#272B30",
+              boxShadow: "0 0 0 2px #272B30",
+            }}
+            fontSize={14}
+          >
+            {companies.map((d) => (
+              <option value={d}>{d}</option>
+            ))}
+          </Select>
+          <Text mr={2} ml={2} as="span">Series_1</Text>
+          <Input type="date" name="series1-date"
+            value={seriesDate1} onChange={e => {
+              setSeriesDate1(e.target.value);
+            }}
+            min="2018-01-01" max="2022-12-31" />
+          <Text mr={2} ml={2} as="span">Series_2</Text>
+          <Input type="date" name="series2-date"
+            value={seriesDate2} onChange={e => {
+              setSeriesDate2(e.target.value);
+            }}
+            min="2018-01-01" max="2022-12-31" />
+        </Box>
+      }
     >
       <Box
         display={"flex"}

@@ -33,3 +33,25 @@ export const ellipsisText = (text) => {
     return text;
   }
 };
+
+// currency
+export const formatMoneyWithCommas = (money) => {
+  const num = Number(money);
+
+  if (isNaN(num))
+    return ' - ';
+  
+  const str = (num > 0 ? num : -1 * num).toFixed(2)
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+
+  if (num > 0) {
+    return `$${str}`;
+  }
+
+  if (num < 0) {
+    return `-$${str}`;
+  }
+
+  return '0'
+}
