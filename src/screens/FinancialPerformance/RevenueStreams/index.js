@@ -10,23 +10,22 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
 import QuarterlyTable from "./QuarterlyTable";
-import RevenueGraph from "./RevenueGraph/index";
 import QuarterlyGraph from "./QuarterlyGraph";
+import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
+
 
 const RevenueStreams = ({
-  revenueStreams,
-  revenueStreamsQuarterly,
-  revenueStreamsPivotQuarterly,
+  pl_quarterly,
+  pl_pivot_quarterly,
+  pl_monthly
 }) => {
-
-
-  const removeAccounts = ['GAAP_EBITDA', 'Management_EBITDA', 'Net_Income']
-  const filteredData = revenueStreams.filter(function(itm){
+  
+  const removeAccounts = ['GAAP EBITDA', 'Management EBITDA', 'Net Income']
+  const filteredData = pl_monthly.filter(function(itm){
     return removeAccounts.indexOf(itm.Account) == -1;
   });
 
-  console.log('nqrevstre', filteredData);
-
+  const accountsToUse = [...new Set(filteredData.map((item) => item.Account))]
 
   const darkMode = useDarkMode();
 
@@ -85,10 +84,12 @@ const RevenueStreams = ({
             </Box>
 
             <Box my={20} />
-
-            <Stack spacing="5">
-              <RevenueGraph revenueStreams={filteredData} />
-            </Stack>
+            
+            <TimeSeriesGraph
+              data={filteredData}
+              title="Revenue Sheet Monthly"
+              accountsToUse={accountsToUse}
+            />
           </TabPanel>
           <TabPanel>
             <Box
@@ -104,15 +105,15 @@ const RevenueStreams = ({
             >
               <Stack spacing="5">
                 <QuarterlyTable
-                  revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+                  revenueStreamsPivotQuarterly={pl_pivot_quarterly}
                 />
               </Stack>
             </Box>
 
             <Box my={20} />
             <QuarterlyGraph
-              revenueStreamsQuarterly={revenueStreamsQuarterly}
-              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+              revenueStreamsQuarterly={pl_quarterly}
+              revenueStreamsPivotQuarterly={pl_pivot_quarterly}
               title="Quarterly Balance Sheet"
             />
           </TabPanel>

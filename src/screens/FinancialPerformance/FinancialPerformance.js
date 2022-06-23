@@ -98,23 +98,23 @@ function OpsPerformance() {
         <TabPanels>
           <TabPanel>
             <ProfitAndLoss
-              quarterly={opsDictionary['data_quarterly']}
-              pivot_quarterly={opsDictionary['data_pivot_quarterly']}
-              monthly={opsDictionary['data_monthly']}
+              pl_quarterly={opsDictionary['data_quarterly']}
+              pl_pivot_quarterly={opsDictionary['data_pivot_quarterly']}
+              pl_monthly={opsDictionary['data_monthly']}
             />
           </TabPanel>
           <TabPanel>
             <RevenueStreams
-              revenueStreams={opsDictionary['revenue_monthly']}
-              revenueStreamsQuarterly={opsDictionary['revenue_quarterly']}
-              revenueStreamsPivotQuarterly={opsDictionary['revenue_pivot_quarterly']}
+              pl_quarterly={opsDictionary['data_quarterly']}
+              pl_pivot_quarterly={opsDictionary['data_pivot_quarterly']}
+              pl_monthly={opsDictionary['data_monthly']}
             />
           </TabPanel>
           <TabPanel>
             <BalanceSheet
-              balanceQuarterly={opsDictionary['balance_quarterly']}
-              balanceSheet={opsDictionary['balance_monthly']}
-              balancePivotQuarterly={opsDictionary['balance_pivot_quarterly']}
+              bs_quarterly={opsDictionary['balance_quarterly']}
+              bs_monthly={opsDictionary['balance_monthly']}
+              bs_pivoted_quarterly={opsDictionary['balance_pivot_quarterly']}
             />
           </TabPanel>
         </TabPanels>

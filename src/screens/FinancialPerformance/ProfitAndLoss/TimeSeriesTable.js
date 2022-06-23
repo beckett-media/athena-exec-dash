@@ -237,7 +237,7 @@ function Tables({ columns, data }) {
 }
 
 function TimeSeriesTable({ className, data, monthly }) {
-  const [filter, setFilter] = useState("Net_Income");
+  const [filter, setFilter] = useState("Net Income");
 
   const filterData = useCallback(
     (i) => {
@@ -359,9 +359,9 @@ function TimeSeriesTable({ className, data, monthly }) {
       <Box mb={10} mx={"auto"}>
         <RadioGroup onChange={setFilter} value={filter}>
           <Stack direction="row" spacing="50px">
-            <Radio value="Net_Income">Net Income</Radio>
-            <Radio value="GAAP_EBITDA">GAAP EBITDA</Radio>
-            <Radio value="Management_EBITDA">Management EBITDA</Radio>
+            <Radio value="Net Income">Net Income</Radio>
+            <Radio value="GAAP EBITDA">GAAP EBITDA</Radio>
+            <Radio value="Management EBITDA">Management EBITDA</Radio>
           </Stack>
         </RadioGroup>
       </Box>

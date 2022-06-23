@@ -41,7 +41,7 @@ const StrDatelyGraph = ({
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
           ? d.Balance
           : null
       ),
@@ -63,7 +63,7 @@ const StrDatelyGraph = ({
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Comic Book Certification Service LLC")
           ? d.Balance
           : null
       ),
@@ -83,7 +83,7 @@ const StrDatelyGraph = ({
     {
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
           ? d.Balance
           : null
       ),
@@ -104,7 +104,7 @@ const StrDatelyGraph = ({
       x: dataFilterYear.map((d) => d.Quarter),
       y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution_LLC")
+        (d.Company === "Southern Hobby Distribution,LLC")
           ? d.Balance
           : null
       ),
