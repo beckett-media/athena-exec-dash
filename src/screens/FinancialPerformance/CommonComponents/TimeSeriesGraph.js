@@ -18,7 +18,6 @@ const TimeSeriesGraph = ({
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState(accountsToUse[0]);
   const [year, setYear] = React.useState([...new Set(data.map((item) => item.Year))].at(-1));
-  console.log('nqdata', data);
   //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
   
   const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(

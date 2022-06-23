@@ -24,7 +24,6 @@ const RevenueStreams = ({
   const filteredData = pl_monthly.filter(function(itm){
     return removeAccounts.indexOf(itm.Account) == -1;
   });
-  console.log('nasfd', filteredData);
 
   const accountsToUse = [...new Set(filteredData.map((item) => item.Account))]
 
