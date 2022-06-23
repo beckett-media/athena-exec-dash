@@ -195,9 +195,11 @@ const TimeSeriesGraph = ({
     },
   ];
 
+
+  
   var layout = {
     xaxis: {
-      title: `Balance Sheet for account type: ${sorting}`,
+      title: '',
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -206,7 +208,7 @@ const TimeSeriesGraph = ({
     },
 
     yaxis: {
-      title: "Balance Sheet",
+      title: `${sorting}`,
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -214,19 +216,18 @@ const TimeSeriesGraph = ({
       tickformat: "s",
     },
 
-    autosize: true,
+      autosize: true,
     width: 809,
     height: 500,
     display: "flex",
     margin: {
-      l: 0,
+      l: 70,
       r: 50,
       b: 100,
       t: 0,
       pad: 5,
     },
-
-    paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+   paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
 
@@ -242,7 +243,7 @@ const TimeSeriesGraph = ({
       // hide the legend when the graph is empty (no data)
       // this is done by adding the "trace" to the legend
 
-      traceorder: "reversed",
+      //traceorder: "reversed",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
