@@ -121,8 +121,8 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
       tickformat: "s",
     },
     autosize: true,
-    width: 350,
-    height: 400,
+    width: 250,
+    height: 350,
     display: "flex",
     margin: {
       l: 70,
@@ -160,7 +160,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
     >
       <Box
         display={"flex"}
-        width={"33%"}
+        width={"25%"}
         flexDirection={"column"}
         position={"relative"}
       >
@@ -184,7 +184,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
 
       <Box
         display={"flex"}
-        width={"33%"}
+        width={"25%"}
         flexDirection={"column"}
         position={"relative"}
       >
@@ -207,7 +207,7 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
       </Box>
 
       <Box
-        width={"33%"}
+        width={"25%"}
         display={"flex"}
         flexDirection={"column"}
         position={"relative"}
@@ -221,6 +221,29 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
           zIndex={"1"}
         >
           Management EBITDA
+        </Text>
+        <Plot
+          data={sortByType("Management EBITDA")}
+          layout={layout}
+          useResizeHandler={true}
+          config={{ displayModeBar: false }}
+        />
+      </Box>
+      <Box
+        width={"25%"}
+        display={"flex"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
+        <Text
+          position={"absolute"}
+          top={"4"}
+          left={"50%"}
+          transform={"auto"}
+          // translateX={"-50%"}
+          zIndex={"1"}
+        >
+          Total Revenue
         </Text>
         <Plot
           data={sortByType("Management EBITDA")}
