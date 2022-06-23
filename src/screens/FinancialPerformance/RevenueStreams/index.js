@@ -11,19 +11,32 @@ import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
 import QuarterlyTable from "./QuarterlyTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
-
+import CompanyGraphs from "./CompanyGraphs";
 
 const RevenueStreams = ({
   pl_quarterly,
   pl_pivot_quarterly,
-  pl_monthly
+  pl_monthly,
+  isLoading,
 }) => {
-  
-  const removeAccounts = ['GAAP EBITDA', 'Management EBITDA', 'Net Income']
+  const removeAccounts = ["GAAP EBITDA", "Management EBITDA", "Net Income"];
 
-  const accountsToUse = [...new Set(pl_monthly.filter(function(itm){
-    return removeAccounts.indexOf(itm.Account) == -1;
-  }).map((item) => item.Account))]
+  const accountsToUse = [
+    ...new Set(
+      pl_monthly
+        .filter(function (itm) {
+          return removeAccounts.indexOf(itm.Account) == -1;
+        })
+        .map((item) => item.Account)
+    ),
+  ];
+
+  const companies = [
+    "Beckett Collectables",
+    "Arcane Tinmen ApS",
+    "Comic Book Certification Service LLC",
+    "Southern Hobby Distribution,LLC",
+  ];
 
   const darkMode = useDarkMode();
 
@@ -65,6 +78,14 @@ const RevenueStreams = ({
         </TabList>
         <TabPanels>
           <TabPanel>
+            <CompanyGraphs
+              isLoading={isLoading}
+              monthly={pl_monthly}
+              accountsToUse={accountsToUse}
+              companies={companies}
+              title="Revenue Streams Company Graphs"
+            />
+            <Box my={20} />
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -82,7 +103,7 @@ const RevenueStreams = ({
             </Box>
 
             <Box my={20} />
-            
+
             <TimeSeriesGraph
               data={pl_monthly}
               title="Revenue Sheet Monthly"
@@ -90,6 +111,14 @@ const RevenueStreams = ({
             />
           </TabPanel>
           <TabPanel>
+            <CompanyGraphs
+              isLoading={isLoading}
+              monthly={pl_quarterly}
+              accountsToUse={accountsToUse}
+              companies={companies}
+              title="Revenue Streams Company Graphs"
+            />
+            <Box my={20} />
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -115,7 +144,6 @@ const RevenueStreams = ({
               title="Revenue Sheet Quarterly"
               accountsToUse={accountsToUse}
             />
-            
           </TabPanel>
         </TabPanels>
       </Tabs>

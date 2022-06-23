@@ -17,8 +17,6 @@ const PlotRow = ({ className, title, monthly, company, data }) => {
     return str.replace(/_/g, " ");
   };
 
-  console.log(data);
-
   function sortByType(type) {
     const dataFilterYear = data.filter((d) => d?.Account === type);
 
