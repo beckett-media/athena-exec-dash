@@ -10,7 +10,6 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
-import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
 import CompanyGraphs from "./CompanyGraphs";
@@ -91,7 +90,6 @@ const ProfitAndLoss = ({
             <Box my={20} />
             <TimeSeriesGraph
               isLoading={isLoading}
-              netIncome={netIncome}
               data={pl_monthly}
               title="Profit and Loss Monthly"
               accountsToUse={['Net Income', 'GAAP EBITDA','Management EBITDA']}
@@ -117,14 +115,15 @@ const ProfitAndLoss = ({
             </Box>
 
             <Box my={20} />
-            <QuarterlyGraph
-              quarterly={pl_quarterly}
+
+
+            <TimeSeriesGraph
               isLoading={isLoading}
-              netIncome={netIncome}
-              monthly={pl_monthly}
-              pivot_quarterly={pl_pivot_quarterly}
-              title="Quarterly Profit & Loss"
+              data={pl_quarterly}
+              title="Profit and Loss Quarterly"
+              accountsToUse={['Net Income', 'GAAP EBITDA','Management EBITDA']}
             />
+
           </TabPanel>
         </TabPanels>
       </Tabs>

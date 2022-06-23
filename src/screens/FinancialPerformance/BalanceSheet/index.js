@@ -9,7 +9,6 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
-import QuarterlyGraph from "./QuarterlyGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 
@@ -105,10 +104,11 @@ const BalanceSheet = ({
             </Box>
 
             <Box my={20} />
-            <QuarterlyGraph
-              balancePivotQuarterly={bs_pivoted_quarterly}
-              balanceQuarterly={bs_quarterly}
-              title="Quarterly Balance Sheet"
+
+            <TimeSeriesGraph
+              data={bs_quarterly}
+              title="Balance Sheet Quarterly"
+              accountsToUse={accountsToUse}
             />
           </TabPanel>
         </TabPanels>

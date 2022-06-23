@@ -10,7 +10,6 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
 import QuarterlyTable from "./QuarterlyTable";
-import QuarterlyGraph from "./QuarterlyGraph";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 
 
@@ -21,11 +20,10 @@ const RevenueStreams = ({
 }) => {
   
   const removeAccounts = ['GAAP EBITDA', 'Management EBITDA', 'Net Income']
-  const filteredData = pl_monthly.filter(function(itm){
-    return removeAccounts.indexOf(itm.Account) == -1;
-  });
 
-  const accountsToUse = [...new Set(filteredData.map((item) => item.Account))]
+  const accountsToUse = [...new Set(pl_monthly.filter(function(itm){
+    return removeAccounts.indexOf(itm.Account) == -1;
+  }).map((item) => item.Account))]
 
   const darkMode = useDarkMode();
 
@@ -79,14 +77,14 @@ const RevenueStreams = ({
               })}
             >
               <Stack spacing="5">
-                <TablePivots revenueStreams={filteredData} />
+                <TablePivots revenueStreams={pl_monthly} />
               </Stack>
             </Box>
 
             <Box my={20} />
             
             <TimeSeriesGraph
-              data={filteredData}
+              data={pl_monthly}
               title="Revenue Sheet Monthly"
               accountsToUse={accountsToUse}
             />
@@ -111,11 +109,13 @@ const RevenueStreams = ({
             </Box>
 
             <Box my={20} />
-            <QuarterlyGraph
-              revenueStreamsQuarterly={pl_quarterly}
-              revenueStreamsPivotQuarterly={pl_pivot_quarterly}
-              title="Quarterly Balance Sheet"
+
+            <TimeSeriesGraph
+              data={pl_quarterly}
+              title="Revenue Sheet Quarterly"
+              accountsToUse={accountsToUse}
             />
+            
           </TabPanel>
         </TabPanels>
       </Tabs>
