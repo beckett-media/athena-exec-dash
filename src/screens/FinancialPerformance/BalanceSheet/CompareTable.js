@@ -165,30 +165,45 @@ function Tables({ columns, data }) {
 
 function CompareTable({ className, data }) {
   const companies = React.useMemo(() => [...new Set(data.map(d => d.Company))], [data]);
-  const [filteredCompany, setFilteredCompany] = React.useState(companies?.[0] || "");
+  const [filteredCompany, setFilteredCompany] = React.useState(companies?.[3] || "");
   console.log('comptable', companies);
-  const [seriesDate1, setSeriesDate1] = React.useState("2021-12-31");
-  const [seriesDate2, setSeriesDate2] = React.useState("2020-12-31");
+  const [seriesDate1, setSeriesDate1] = React.useState("2020-12-31");
+  const [seriesDate2, setSeriesDate2] = React.useState("2021-12-31");
 
   const beckett = data.filter((d) => d?.Company === filteredCompany);
-  const series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
-  const series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
+  let series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
+  let series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
   
-  let df1 = new dfd.DataFrame(series1);
-  let df2 = new dfd.DataFrame(series2);
-  df1.rename({ "Balance":"Balance1", "BudgetBalance":"BudgetBalance1"}, {inplace: true});
-  df2.rename({ "Balance":"Balance2", "BudgetBalance":"BudgetBalance2"}, {inplace: true});
+  const series1Exists = (series1.length > 0);
+  const series2Exists = (series2.length > 0);
   
-  let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
-  
-  df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
-  
-  const compareData = dfd.toJSON(df_merged,{format:'column'});
-
+  console.log('series1Exists', series1Exists);
+  console.log('series2Exists', series2Exists);
+  let compareData = {};
+  if (series1Exists || series2Exists) {
+    series1 = (series1Exists ? series1 : series2);
+    series2 = (series2Exists ? series2 : series1);
+    
+    console.log('series1', series1);
+    console.log('series2', series2)
+    
+    let df1 = new dfd.DataFrame(series1);
+    let df2 = new dfd.DataFrame(series2);
+    
+    df1.rename({ "Balance":"Balance1", "BudgetBalance":"BudgetBalance1"}, {inplace: true});
+    df2.rename({ "Balance":"Balance2", "BudgetBalance":"BudgetBalance2"}, {inplace: true});
+    
+    // Create merged column
+    let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
+    df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
+    
+    compareData = dfd.toJSON(df_merged,{format:'column'});
+    
+  } 
   console.log('compareData', compareData)
   
-  const columns = React.useMemo(() => [   
-    {
+  const columns =  [   
+    ...(series1Exists || series2Exists ? [{
       Header: "Account",
       // fomatted date with moment to get the month
       accessor: d => [d.Account, d.order],
@@ -197,25 +212,25 @@ function CompareTable({ className, data }) {
           {value[0]}
         </Text>
       ),
-    },
+    }] : []),
+    ...(series1Exists ? [{
+        Header: "Series 1",
+        // fomatted date with moment to get the month
+        accessor: d => [d.Balance1, d.BudgetBalance1],
+        Cell: ({ value }) => (
+          <span>
+            <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
+              {formatMoneyWithCommas(value[0])}
+            </Badge>
+            <br />
+            <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
+              {formatMoneyWithCommas(value[1])}
+            </Badge>
+          </span>
+        ),
+      }] : []),
     
-    {
-      Header: "Series 1",
-      // fomatted date with moment to get the month
-      accessor: d => [d.Balance1, d.BudgetBalance1],
-      Cell: ({ value }) => (
-        <span>
-          <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
-            {formatMoneyWithCommas(value[0])}
-          </Badge>
-          <br />
-          <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
-            {formatMoneyWithCommas(value[1])}
-          </Badge>
-        </span>
-      ),
-    },
-    {
+    ...(series2Exists ? [{
       Header: "Series 2",
       // fomatted date with moment to get the month
       accessor: d => [d.Balance2, d.BudgetBalance2],
@@ -230,8 +245,8 @@ function CompareTable({ className, data }) {
           </Badge>
         </span>
       ),
-    },
-    {
+    }] : []),
+    ...(series2Exists && series1Exists ? [{
       Header: "Variance",
       // fomatted date with moment to get the month
       // accessor: "Diff",
@@ -241,9 +256,9 @@ function CompareTable({ className, data }) {
           {formatMoneyWithCommas(value)}
         </Badge>
       ),
-    }
-  ]);
-
+    }] : [])
+  ];
+  console.log('columns', columns);
   const darkMode = useDarkMode();
 
   return (
@@ -281,13 +296,13 @@ function CompareTable({ className, data }) {
               <option value={d}>{d}</option>
             ))}
           </Select>
-          <Text mr={2} ml={2} as="span">Series_1</Text>
+          <Text mr={2} ml={2} as="span">Series 1</Text>
           <Input type="date" name="series1-date"
             value={seriesDate1} onChange={e => {
               setSeriesDate1(e.target.value);
             }}
             min="2018-01-01" max="2022-12-31" />
-          <Text mr={2} ml={2} as="span">Series_2</Text>
+          <Text mr={2} ml={2} as="span">Series 2</Text>
           <Input type="date" name="series2-date"
             value={seriesDate2} onChange={e => {
               setSeriesDate2(e.target.value);
