@@ -12,7 +12,7 @@ import useDarkMode from "use-dark-mode";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
-import CompanyGraphs from "./CompanyGraphs";
+import CompanyGraphs from "../CommonComponents/CompanyGraphs";
 
 const ProfitAndLoss = ({
   data,
@@ -23,6 +23,21 @@ const ProfitAndLoss = ({
   pl_quarterly,
 }) => {
   const darkMode = useDarkMode();
+
+  const companies = [
+    "Beckett Collectables",
+    "Arcane Tinmen ApS",
+    "Comic Book Certification Service LLC",
+    "Southern Hobby Distribution,LLC",
+  ];
+
+  const accountsToUse = [
+    "Net Income",
+    "GAAP EBITDA",
+    "Management EBITDA",
+    "Total Revenue",
+  ];
+
   return (
     <>
       <Tabs
@@ -62,6 +77,8 @@ const ProfitAndLoss = ({
         <TabPanels>
           <TabPanel>
             <CompanyGraphs
+              companies={companies}
+              accountsToUse={accountsToUse}
               isLoading={isLoading}
               netIncome={netIncome}
               monthly={pl_monthly}
@@ -94,6 +111,8 @@ const ProfitAndLoss = ({
           </TabPanel>
           <TabPanel>
             <CompanyGraphs
+              companies={companies}
+              accountsToUse={accountsToUse}
               isLoading={isLoading}
               netIncome={netIncome}
               monthly={pl_quarterly}

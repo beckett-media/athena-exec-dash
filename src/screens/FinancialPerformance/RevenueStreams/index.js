@@ -11,7 +11,7 @@ import useDarkMode from "use-dark-mode";
 import TablePivots from "./TablePivots";
 import QuarterlyTable from "./QuarterlyTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
-import CompanyGraphs from "./CompanyGraphs";
+import CompanyGraphs from "../CommonComponents/CompanyGraphs";
 
 const RevenueStreams = ({
   pl_quarterly,
