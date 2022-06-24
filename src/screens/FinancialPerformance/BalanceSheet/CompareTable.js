@@ -11,7 +11,12 @@ import {
   Table,
   Button,
   Select,
-  Input
+  Radio,
+  RadioGroup,
+  Input,
+  useRadio,
+  HStack,
+  useRadioGroup
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
@@ -22,7 +27,26 @@ import styles from "./Table.module.sass";
 import { formatMoneyWithCommas } from "../../../utils.js";
 import moment from "moment";
 import * as dfd from "danfojs";
+import RadioCard from '../CommonComponents/RadioCard'
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css";
 
+function padLeadingZeros(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
+
+function formatMonthDate(date) {
+  const tempDate = new Date(date.setDate(date.getDate(date.setMonth(date.getMonth()+1))-1))
+  console.log(tempDate);
+  let newDateString = String(tempDate.getFullYear()) + '-' 
+                    + padLeadingZeros(String(tempDate.getMonth()+1),2) + '-' 
+                    + String(tempDate.getDate());
+  console.log(newDateString);
+  return newDateString
+}
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -140,6 +164,7 @@ function Tables({ columns, data }) {
                           : darkMode.value
                           ? "#272B30"
                           : "#CBD5E0",
+                        padding:'4px 24px'
                       }}
                     >
                       {cell.isAggregated
@@ -163,9 +188,12 @@ function Tables({ columns, data }) {
   );
 }
 
+
+
+
 function CompareTable({ className, data }) {
   const companies = React.useMemo(() => [...new Set(data.map(d => d.Company))], [data]);
-  const [filteredCompany, setFilteredCompany] = React.useState(companies?.[3] || "");
+  const [filteredCompany, setFilteredCompany] = React.useState(companies?.[1] || "");
   console.log('comptable', companies);
   const [seriesDate1, setSeriesDate1] = React.useState("2020-12-31");
   const [seriesDate2, setSeriesDate2] = React.useState("2021-12-31");
@@ -205,7 +233,6 @@ function CompareTable({ className, data }) {
   const columns =  [   
     ...(series1Exists || series2Exists ? [{
       Header: "Account",
-      // fomatted date with moment to get the month
       accessor: d => [d.Account, d.order],
       Cell: ({ value }) => (
         <Text fontSize="md" color="gray.500">
@@ -214,58 +241,91 @@ function CompareTable({ className, data }) {
       ),
     }] : []),
     ...(series1Exists ? [{
-        Header: "Series 1",
-        // fomatted date with moment to get the month
+      Header: () => (
+        <div
+          style={{
+            textAlign:"right"
+          }}
+        >Series 1</div>),
+      id: "Series 1",
         accessor: d => [d.Balance1, d.BudgetBalance1],
         Cell: ({ value }) => (
           <span>
-            <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
+            <Text fontSize={13} textAlign='right' color={value[0] >= 0 ? "#48BB78" : "#F56565"}>
               {formatMoneyWithCommas(value[0])}
-            </Badge>
-            <br />
-            <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
+            </Text>
+            <Text fontSize={13} textAlign='right' color={"gray"} marginTop={2}>
               {formatMoneyWithCommas(value[1])}
-            </Badge>
+            </Text>
           </span>
         ),
       }] : []),
     
     ...(series2Exists ? [{
-      Header: "Series 2",
+      Header: () => (
+        <div
+          style={{
+            textAlign:"right"
+          }}
+        >Series 2</div>),
+      id: "Series 2",
       // fomatted date with moment to get the month
       accessor: d => [d.Balance2, d.BudgetBalance2],
       Cell: ({ value }) => (
         <span>
-          <Badge fontSize={13} colorScheme={value[0] >= 0 ? "green" : "red"}>
-            {formatMoneyWithCommas(value[0])}
-          </Badge>
-          <br />
-          <Badge fontSize={13} colorScheme={"gray"} marginTop={2}>
+          <Text fontSize={13} textAlign='right' color={value[0] >= 0 ? "#48BB78" : "#F56565"}>
+              {formatMoneyWithCommas(value[0])}
+          </Text>
+          <Text fontSize={13} textAlign='right' color={"gray"} marginTop={2}>
             {formatMoneyWithCommas(value[1])}
-          </Badge>
+          </Text>
         </span>
       ),
     }] : []),
     ...(series2Exists && series1Exists ? [{
-      Header: "Variance",
-      // fomatted date with moment to get the month
-      // accessor: "Diff",
       accessor: "Diff",
+      Header: () => (
+        <div
+          style={{
+            textAlign:"right"
+          }}
+        >Variance</div>),
       Cell: ({ value }) => (
-        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
-          {formatMoneyWithCommas(value)}
-        </Badge>
+        <Text fontSize={13} textAlign='right' color={value[0] >= 0 ? "#48BB78" : "#F56565"}>
+              {formatMoneyWithCommas(value)}
+          </Text>
       ),
     }] : [])
   ];
   console.log('columns', columns);
   const darkMode = useDarkMode();
 
+  // const handleCompanyChange = (value) => {
+  //   setFilteredCompany(value);
+  // }
+  const { getRootProps, getRadioProps } = useRadioGroup({
+    name: 'company',
+    defaultValue: 'Beckett Collectables',
+    onChange: setFilteredCompany,
+  })
+  const group = getRootProps()
+
+
+  const [startDate, setStartDate] = React.useState(new Date());
+      const ExampleCustomInput =  React.forwardRef(({ value, onClick }, ref) => (
+        <Button onClick={onClick} ref={ref} fontSize='sm' px={1}>
+          {value}
+        </Button>
+      ));
+
+
+  
+
   return (
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Balance Sheets"
+      title="Balance Sheets Comparison Table"
       head={
         <Box
           flexDirection={"row"}
@@ -274,59 +334,79 @@ function CompareTable({ className, data }) {
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <Box width={"100%"}>
-            <Text flex={1}>Company</Text>
-          </Box>
-          <Select
-            colorScheme={darkMode.value ? "dark" : "light"}
-            borderRadius={14}
-            boxShadow="sm"
-            color={"#6F767E"}
-            size="md"
-            variant="outline"
-            borderColor="#272B30"
-            onChange={(e) => setFilteredCompany(e.target.value)}
-            _focusVisible={{
-              borderColor: "#272B30",
-              boxShadow: "0 0 0 2px #272B30",
-            }}
-            fontSize={14}
-          >
-            {companies.map((d) => (
-              <option value={d}>{d}</option>
-            ))}
-          </Select>
-          <Text mr={2} ml={2} as="span">Series 1</Text>
-          <Input type="date" name="series1-date"
-            value={seriesDate1} onChange={e => {
-              setSeriesDate1(e.target.value);
-            }}
-            min="2018-01-01" max="2022-12-31" />
-          <Text mr={2} ml={2} as="span">Series 2</Text>
-          <Input type="date" name="series2-date"
-            value={seriesDate2} onChange={e => {
-              setSeriesDate2(e.target.value);
-            }}
-            min="2018-01-01" max="2022-12-31" />
         </Box>
       }
     >
       <Box
+        flexDirection={"row"}
         display={"flex"}
-        align$={"center"}
-        gap="2"
-        marginBottom={10}
-        justifyContent={"center"}
-        bg={darkMode.value ? "#272B30" : "#CBD5E0"}
+        gap={1}
+        justifyItems={"center"}
+        alignItems={"center"}
       >
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          Click on the
-        </Text>
-        {BsArrowRightSquareFill()}
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          to drill down by Year for example
-        </Text>
+        <Box width={"100%"}>
+
+
+          <HStack {...group}>
+            {companies.map((value) => {
+              const radio = getRadioProps({ value })
+              return (
+                <RadioCard key={value} {...radio}>
+                  {value.replace('LLC', '').replace(',','')}
+                </RadioCard>
+              )
+            })}
+          </HStack>
+              
+             
+            </Box>
+            
+            <Text fontSize='xs' mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 1 Date:</Text>
+              
+            <DatePicker
+                selected={new Date(seriesDate1)}
+                dateFormat="MM/yyyy"
+                showMonthYearPicker
+                onChange={(date) => setSeriesDate1(formatMonthDate(date))}
+                customInput={<ExampleCustomInput />}
+              />
+
+
+              {/* <Input type="month" name="series1-date"
+              fontSize='sm' 
+              value={seriesDate1} onChange={e => {
+                setSeriesDate1(e.target.value);
+              }}
+              min="2018-01-01" max="2022-12-31" /> */}
+            <Text fontSize='xs' mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 2 Date:</Text>
+            
+            <DatePicker
+                selected={new Date(seriesDate2)}
+                dateFormat="MM/yyyy"
+                showMonthYearPicker
+                onChange={(date) => setSeriesDate2(formatMonthDate(date))}
+                customInput={<ExampleCustomInput />}
+              />
+            {/* <Input 
+              fontSize='sm' type="month" name="series2-date"
+              value={seriesDate2} onChange={e => {
+                console.log(e.target.value);
+              }}
+              min="2018-01-01" max="2022-12-31" /> */}
+              
+
       </Box>
+
+      
+     
+       
+      <Box
+        marginBottom={10}
+      />
+
+
+     
+
       <Tables columns={columns} data={compareData} />
     </Card>
   );
