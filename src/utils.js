@@ -39,7 +39,7 @@ export const formatMoneyWithCommas = (money) => {
   const num = Number(money);
 
   if (isNaN(num))
-    return ' - ';
+    return '-';
   
   const str = (num > 0 ? num : -1 * num).toFixed(2)
   .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -53,5 +53,5 @@ export const formatMoneyWithCommas = (money) => {
     return `-$${str}`;
   }
 
-  return '0'
+  return '-'
 }
