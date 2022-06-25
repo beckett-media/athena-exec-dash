@@ -2,11 +2,8 @@ import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../../components/Card";
-import Plot from "react-plotly.js";
 import PlotRow from "./PlotRow";
-
 import useDarkMode from "use-dark-mode";
-import moment from "moment";
 import {
   Box,
   Text,
@@ -17,29 +14,27 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import Dropdown from "../../../../components/Dropdown";
 
 const CompanyGraphs = ({
   className,
   title,
-  monthly,
+  data,
   accountsToUse,
   companies,
 }) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Net Income");
   const [year, setYear] = React.useState("2022");
 
   //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
   const uniqueAccount = ["Net Income", "GAAP EBITDA", "Management EBITDA"];
 
-  const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
+  const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(
     (a, b) => b - a
   );
 
   console.log(accountsToUse);
 
-  const dataFilterYear = monthly.filter((d) => d?.Year === year);
+  const dataFilteredByYear = data.filter((d) => d?.Year === year);
 
   return (
     <Card
@@ -96,8 +91,8 @@ const CompanyGraphs = ({
                 </h2>
                 <AccordionPanel pb={4}>
                   <PlotRow
-                    monthly={monthly}
-                    data={dataFilterYear}
+                    data={data}
+                    dataFilteredByYear={dataFilteredByYear}
                     company={item}
                     accountsToUse={accountsToUse}
                   />
@@ -105,75 +100,7 @@ const CompanyGraphs = ({
               </AccordionItem>
             );
           })}
-        {/* <AccordionItem>
-          <h2>
-            <AccordionButton bg="gray.700">
-              <Box flex="1" textAlign="center">
-                Beckett Collectables
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <PlotRow
-              monthly={monthly}
-              data={dataFilterYear}
-              company={"Beckett Collectables"}
-            />
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <h2>
-            <AccordionButton bg="gray.700">
-              <Box flex="1" textAlign="center">
-                Arcane Tinmen
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <PlotRow
-              monthly={monthly}
-              data={dataFilterYear}
-              company={"Arcane Tinmen ApS"}
-            />
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <h2>
-            <AccordionButton bg="gray.700">
-              <Box flex="1" textAlign="center">
-                Comic Book Certification Service LLC
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <PlotRow
-              monthly={monthly}
-              data={dataFilterYear}
-              company={"Comic Book Certification Service LLC"}
-            />
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <h2>
-            <AccordionButton bg="gray.700">
-              <Box flex="1" textAlign="center">
-                Southern Hobby Distribution LLC
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <PlotRow
-              monthly={monthly}
-              data={dataFilterYear}
-              company={"Southern Hobby Distribution,LLC"}
-            />
-          </AccordionPanel>
-        </AccordionItem> */}
+        
       </Accordion>
     </Card>
   );

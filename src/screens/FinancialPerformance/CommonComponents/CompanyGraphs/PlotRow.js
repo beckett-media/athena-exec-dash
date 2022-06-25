@@ -8,14 +8,14 @@ import { Box, Text, Grid } from "@chakra-ui/react";
 const PlotRow = ({
   className,
   title,
-  monthly,
-  company,
   data,
+  company,
+  dataFilteredByYear,
   accountsToUse,
 }) => {
   const darkMode = useDarkMode(false);
 
-  const uniqueYear = [...new Set(monthly.map((item) => item.Year))].sort(
+  const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(
     (a, b) => b - a
   );
 
@@ -25,7 +25,7 @@ const PlotRow = ({
   };
 
   function sortByType(type) {
-    const dataFilterYear = data.filter((d) => d?.Account === type);
+    const dataFilterYear = dataFilteredByYear.filter((d) => d?.Account === type);
 
     return [
       {
