@@ -80,7 +80,7 @@ const RevenueStreams = ({
           <TabPanel>
             <CompanyGraphs
               isLoading={isLoading}
-              monthly={pl_monthly}
+              data={pl_monthly}
               accountsToUse={accountsToUse}
               companies={companies}
               title="Revenue Streams Company Graphs"
@@ -113,7 +113,7 @@ const RevenueStreams = ({
           <TabPanel>
             <CompanyGraphs
               isLoading={isLoading}
-              monthly={pl_quarterly}
+              data={pl_quarterly}
               accountsToUse={accountsToUse}
               companies={companies}
               title="Revenue Streams Company Graphs"

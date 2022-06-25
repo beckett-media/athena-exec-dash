@@ -81,7 +81,7 @@ const ProfitAndLoss = ({
               accountsToUse={accountsToUse}
               isLoading={isLoading}
               netIncome={netIncome}
-              monthly={pl_monthly}
+              data={pl_monthly}
               title="Profit & Loss Company Graphs"
             />
             <Box my={20} />
@@ -115,7 +115,7 @@ const ProfitAndLoss = ({
               accountsToUse={accountsToUse}
               isLoading={isLoading}
               netIncome={netIncome}
-              monthly={pl_quarterly}
+              data={pl_quarterly}
               title="Profit & Loss Company Graphs"
             />
             <Box my={20} />
