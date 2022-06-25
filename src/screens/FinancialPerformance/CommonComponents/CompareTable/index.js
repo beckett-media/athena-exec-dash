@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Badge,
   Box,
   Tbody,
   Td,
@@ -10,26 +9,22 @@ import {
   Tr,
   Table,
   Button,
-  Select,
-  Radio,
-  RadioGroup,
-  Input,
-  useRadio,
   HStack,
   useRadioGroup
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
-import Card from "../../../components/Card";
+import Card from "../../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
-import { formatMoneyWithCommas } from "../../../utils.js";
+import styles from "../Table.module.sass";
+import { formatMoneyWithCommas } from "../../../../utils.js";
 import moment from "moment";
 import * as dfd from "danfojs";
-import RadioCard from '../CommonComponents/RadioCard'
+import RadioCard from '../RadioCard'
 import DatePicker from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css";
+//import "react-datepicker/dist/react-datepicker.css";
+import "../CompareTable/compare-table-styles.css";
 
 function padLeadingZeros(num, size) {
   var s = num+"";
@@ -75,7 +70,6 @@ function Tables({ columns, data }) {
     {
       columns,
       data,
-      
     },
     useGroupBy,
     useExpanded,
@@ -93,7 +87,6 @@ function Tables({ columns, data }) {
             Cell: ({ row }) => {
               if (row.canExpand) {
                 const groupedCell = row.allCells.find((d) => d.isGrouped);
-
                 return (
                   <span
                     {...row.getToggleRowExpandedProps({
@@ -114,11 +107,9 @@ function Tables({ columns, data }) {
                   </span>
                 );
               }
-
               return null;
             },
           },
-
           ...columns,
         ];
       });
@@ -194,7 +185,7 @@ function Tables({ columns, data }) {
 function CompareTable({ className, data }) {
   const companies = React.useMemo(() => [...new Set(data.map(d => d.Company))], [data]);
   const [filteredCompany, setFilteredCompany] = React.useState(companies?.[1] || "");
-  console.log('comptable', companies);
+  
   const [seriesDate1, setSeriesDate1] = React.useState("2020-12-31");
   const [seriesDate2, setSeriesDate2] = React.useState("2021-12-31");
 
@@ -205,8 +196,6 @@ function CompareTable({ className, data }) {
   const series1Exists = (series1.length > 0);
   const series2Exists = (series2.length > 0);
   
-  console.log('series1Exists', series1Exists);
-  console.log('series2Exists', series2Exists);
   let compareData = {};
   if (series1Exists || series2Exists) {
     series1 = (series1Exists ? series1 : series2);
@@ -224,7 +213,7 @@ function CompareTable({ className, data }) {
     // Create merged column
     let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
     df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
-    
+
     compareData = dfd.toJSON(df_merged,{format:'column'});
     
   } 
@@ -297,7 +286,6 @@ function CompareTable({ className, data }) {
       ),
     }] : [])
   ];
-  console.log('columns', columns);
   const darkMode = useDarkMode();
 
   // const handleCompanyChange = (value) => {
@@ -312,14 +300,12 @@ function CompareTable({ className, data }) {
 
 
   const [startDate, setStartDate] = React.useState(new Date());
-      const ExampleCustomInput =  React.forwardRef(({ value, onClick }, ref) => (
-        <Button onClick={onClick} ref={ref} fontSize='sm' px={1}>
-          {value}
-        </Button>
-      ));
+  const ExampleCustomInput =  React.forwardRef(({ value, onClick }, ref) => (
+    <Button onClick={onClick} ref={ref} fontSize='sm' px={1}>
+      {value}
+    </Button>
+  ));
 
-
-  
 
   return (
     <Card
@@ -366,46 +352,29 @@ function CompareTable({ className, data }) {
             <DatePicker
                 selected={new Date(seriesDate1)}
                 dateFormat="MM/yyyy"
+                minDate={new Date("01-01-2019")}
+                maxDate={new Date("07-31-2022")}
                 showMonthYearPicker
                 onChange={(date) => setSeriesDate1(formatMonthDate(date))}
                 customInput={<ExampleCustomInput />}
               />
 
-
-              {/* <Input type="month" name="series1-date"
-              fontSize='sm' 
-              value={seriesDate1} onChange={e => {
-                setSeriesDate1(e.target.value);
-              }}
-              min="2018-01-01" max="2022-12-31" /> */}
             <Text fontSize='xs' mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 2 Date:</Text>
             
             <DatePicker
                 selected={new Date(seriesDate2)}
                 dateFormat="MM/yyyy"
+                minDate={new Date("01-01-2019")}
+                maxDate={new Date("07-31-2022")}
                 showMonthYearPicker
                 onChange={(date) => setSeriesDate2(formatMonthDate(date))}
                 customInput={<ExampleCustomInput />}
               />
-            {/* <Input 
-              fontSize='sm' type="month" name="series2-date"
-              value={seriesDate2} onChange={e => {
-                console.log(e.target.value);
-              }}
-              min="2018-01-01" max="2022-12-31" /> */}
-              
-
       </Box>
-
-      
-     
        
       <Box
         marginBottom={10}
       />
-
-
-     
 
       <Tables columns={columns} data={compareData} />
     </Card>
