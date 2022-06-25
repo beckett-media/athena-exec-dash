@@ -96,9 +96,9 @@ const ProfitAndLoss = ({
                 md: "lg",
               })}
             >
-              <Stack spacing="5">
+              {/* <Stack spacing="5">
                 <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
-              </Stack>
+              </Stack> */}
             </Box>
 
             <Box my={20} />

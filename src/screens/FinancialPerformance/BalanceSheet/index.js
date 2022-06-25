@@ -9,8 +9,7 @@ import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
-import TablePivots from "./TablePivots";
-import CompareTable from "./CompareTable";
+import CompareTable from "../CommonComponents/CompareTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 
 
