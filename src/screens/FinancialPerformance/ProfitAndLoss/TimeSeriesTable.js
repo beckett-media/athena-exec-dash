@@ -20,7 +20,7 @@ import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
+import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
 
