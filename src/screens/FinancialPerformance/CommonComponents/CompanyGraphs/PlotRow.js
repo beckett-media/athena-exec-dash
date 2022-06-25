@@ -79,7 +79,7 @@ const PlotRow = ({
       tickformat: "s",
     },
     autosize: true,
-    width: 250,
+    width: 280,
     height: 350,
     display: "flex",
     margin: {
@@ -114,9 +114,10 @@ const PlotRow = ({
       <Grid
         width={"100%"}
         templateColumns={
-          accountsToUse.length < 5 ? "repeat(4, 1fr)" : "repeat(3, 1fr)"
+          accountsToUse.length < 5 ? "repeat(2, 1fr)" : "repeat(3, 1fr)"
         }
         gap={6}
+        justifyItems={"center"}
       >
         {accountsToUse &&
           accountsToUse.map((item) => (
