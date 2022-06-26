@@ -8,17 +8,16 @@ import {
 import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-import CompareTable from "../CommonComponents/CompareTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
 import CompanyGraphs from "../CommonComponents/CompanyGraphs";
+import CompareTable from "../CommonComponents/CompareTable";
+
 
 const ProfitAndLoss = ({
-  data,
   isLoading,
-  netIncome,
-  pl_pivot_quarterly,
+  // pl_pivot_quarterly,
   pl_monthly,
   pl_quarterly,
 }) => {
@@ -80,7 +79,6 @@ const ProfitAndLoss = ({
               companies={companies}
               accountsToUse={accountsToUse}
               isLoading={isLoading}
-              netIncome={netIncome}
               data={pl_monthly}
               title="Profit & Loss Company Graphs"
             />
@@ -140,7 +138,6 @@ const ProfitAndLoss = ({
               companies={companies}
               accountsToUse={accountsToUse}
               isLoading={isLoading}
-              netIncome={netIncome}
               data={pl_quarterly}
               title="Profit & Loss Company Graphs"
             />
