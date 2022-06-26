@@ -20,7 +20,7 @@ import cn from "classnames";
 import styles from "./Table.module.sass";
 import { formatMoneyWithCommas, formatMonthDate } from "../../../utils.js";
 import moment from "moment";
-import * as dfd from "danfojs";
+// import * as dfd from "danfojs";
 import RadioCard from './RadioCard'
 import DatePicker from 'react-datepicker'
 //import "react-datepicker/dist/react-datepicker.css";
@@ -191,31 +191,104 @@ function CompareTable({ className, data, title, timeUnit}) {
   
   const series1Exists = (series1.length > 0);
   const series2Exists = (series2.length > 0);
+  console.log('series1',series1);
+  console.log('series2',series2);
   
-  let compareData = {};
+  // let compareData = {};
+  // let availableAccounts = [];
+
+  // if (series1Exists || series2Exists) {
+  //   series1 = (series1Exists ? series1 : series2);
+  //   series2 = (series2Exists ? series2 : series1);
+    
+  //   let df1 = new dfd.DataFrame(series1);
+  //   let df2 = new dfd.DataFrame(series2);
+    
+  //   df1.rename({ "Balance":"Balance1", "BudgetBalance":"BudgetBalance1"}, {inplace: true});
+  //   df2.rename({ "Balance":"Balance2", "BudgetBalance":"BudgetBalance2"}, {inplace: true});
+    
+  //   // Create merged column
+  //   let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
+  //   df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
+
+  //   compareData = dfd.toJSON(df_merged,{format:'column'});
+  //   console.log('compCompData', compareData)
+
+  //   /* START Logic for Account Selector */
+  //   const uniqueAccounts = [
+  //     ...new Set(compareData.map(d => d.Account))
+  //   ]
+    
+  //   availableAccounts = (uniqueAccounts.map(d => ({ value: d, label: d})))
+  //   console.log('availableAccounts',availableAccounts);
+
+  //   if (accountFilter.length > 0){
+  //     const accountsToFilter = accountFilter.map(d => d.value);
+  //     compareData = compareData.filter(
+  //       (d) => accountsToFilter.indexOf(d.Account) > -1
+      
+  //       );
+  //   }
+  //   /* END Logic for Account Selector */
+  // } 
+
+  let compareData = [];
   let availableAccounts = [];
 
   if (series1Exists || series2Exists) {
     series1 = (series1Exists ? series1 : series2);
     series2 = (series2Exists ? series2 : series1);
     
+    /********************* START Faking an outer merge ********************/
     
-    let df1 = new dfd.DataFrame(series1);
-    let df2 = new dfd.DataFrame(series2);
-    
-    df1.rename({ "Balance":"Balance1", "BudgetBalance":"BudgetBalance1"}, {inplace: true});
-    df2.rename({ "Balance":"Balance2", "BudgetBalance":"BudgetBalance2"}, {inplace: true});
-    
-    // Create merged column
-    let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
-    df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
+    let s1Accounts = []
+    // First, go through DF1 
+    for (var i = 0; i < series1.length; i++) { 
+      let thisObj = {...series1[i]};
+      thisObj['Balance1'] = thisObj['Balance']
+      thisObj['BudgetBalance1'] = thisObj['BudgetBalance']
+      thisObj['Balance2'] = null
+      thisObj['BudgetBalance2'] = null
+      
+      let s1Account = series1[i]['Account'];
+      
+      for (var j=0; j< series2.length; j++) {
+        if (series2[j]['Account']==s1Account){
+          thisObj['Balance2'] = series2[j]['Balance']
+          thisObj['BudgetBalance2'] = series2[j]['BudgetBalance']
+        }
+      }
+      thisObj['Diff'] = thisObj['Balance1'] - thisObj['Balance2']
+      
+      s1Accounts.push(s1Account);
+      compareData.push(thisObj);
+      
+    }
 
-    compareData = dfd.toJSON(df_merged,{format:'column'});
+    // Second, go through DF2
+    for (var i = 0; i < series2.length; i++) { 
+      
+      let s2Account = series2[i]['Account'];
+      if (s1Accounts.indexOf(s2Account) === -1) {
+        let thisObj = {...series2[i]};
+        // Let's set  the Balance1, BudgetBalance1 and Diff to null; since we know now that this
+        // doesn't exist in DF1
+        thisObj['Balance1'] = null
+        thisObj['BudgetBalance1'] = null
+        thisObj['Diff'] = null
+        thisObj['Balance2'] = thisObj['Balance']
+        thisObj['BudgetBalance2'] = thisObj['BudgetBalance']
+        
+        compareData.push(thisObj);
+      }
+    }
+    /********************* END Faking an outer merge ********************/
 
     /* START Logic for Account Selector */
     const uniqueAccounts = [
       ...new Set(compareData.map(d => d.Account))
     ]
+    console.log('compareDAta', compareData);
     
     availableAccounts = (uniqueAccounts.map(d => ({ value: d, label: d})))
     console.log('availableAccounts',availableAccounts);
@@ -227,30 +300,8 @@ function CompareTable({ className, data, title, timeUnit}) {
       
         );
     }
+    /* END Logic for Account Selector */
   } 
-  
-  // React.useEffect(() => {
-  //   setLoading(true);
-  //   (async () => {
-  //     const apiName = "palentirApi";
-  //     const path = `/grading-service-form`;
-
-  //     API.get(apiName, path)
-  //       .then((response) => {
-  //         const formdata = response.data?.data;
-  //         setData(formdata);
-  //         setLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error.response);
-  //         setLoading(false);
-  //       });
-  //   })();
-  // }, []);
-  
-
-  /* END Logic for Account Selector */
-  
 
   const columns =  [   
     ...(series1Exists || series2Exists ? [{
@@ -313,7 +364,7 @@ function CompareTable({ className, data, title, timeUnit}) {
           }}
         >Variance</div>),
       Cell: ({ value }) => (
-        <Text fontSize={13} textAlign='right' color={value[0] >= 0 ? "#48BB78" : "#F56565"}>
+        <Text fontSize={13} textAlign='right' color={value >= 0 ? "#48BB78" : "#F56565"}>
               {formatMoneyWithCommas(value)}
           </Text>
       ),
@@ -457,8 +508,6 @@ function CompareTable({ className, data, title, timeUnit}) {
           />        
 
       </Box>
-      
-
       <Box
         marginBottom={10}
       />
