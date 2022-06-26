@@ -5,7 +5,6 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
@@ -16,7 +15,7 @@ import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 const BalanceSheet = ({
   bs_monthly,
   bs_quarterly,
-  bs_pivoted_quarterly,
+  // bs_pivoted_quarterly,
 }) => {
   const darkMode = useDarkMode();
 
@@ -102,12 +101,12 @@ const BalanceSheet = ({
                 md: "lg",
               })}
             >
-              <Stack spacing="5">
+              {/* <Stack spacing="5">
                 <QuarterlyTable
                   balancePivotQuarterly={bs_pivoted_quarterly}
                   balanceQuarterly={bs_quarterly}
                 />
-              </Stack>
+              </Stack> */}
             </Box>
 
             <Box my={20} />
