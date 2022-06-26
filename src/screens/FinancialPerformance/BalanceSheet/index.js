@@ -59,6 +59,7 @@ const BalanceSheet = ({
         </TabList>
         <TabPanels>
           <TabPanel>
+            
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -70,12 +71,10 @@ const BalanceSheet = ({
                 md: "lg",
               })}
             >
-              
-              
               <Stack spacing="5">
                 <CompareTable 
                   data={bs_monthly} 
-                  title={'Balance Sheet Comparison Table'}
+                  title={'Balance Sheet Comparison Table (Monthly)'}
                   timeUnit='m'
                 />
               </Stack>
@@ -87,6 +86,7 @@ const BalanceSheet = ({
               data={bs_monthly}
               title="Balance Sheet Monthly"
               accountsToUse={accountsToUse}
+              timeUnit='m'
             />
           </TabPanel>
           <TabPanel>
@@ -101,6 +101,14 @@ const BalanceSheet = ({
                 md: "lg",
               })}
             >
+              <Stack spacing="5">
+                <CompareTable 
+                  data={bs_quarterly} 
+                  title='Balance Sheet Comparison Table (Quarterly)'
+                  timeUnit='q'
+                />
+              </Stack>
+
               {/* <Stack spacing="5">
                 <QuarterlyTable
                   balancePivotQuarterly={bs_pivoted_quarterly}
@@ -115,6 +123,7 @@ const BalanceSheet = ({
               data={bs_quarterly}
               title="Balance Sheet Quarterly"
               accountsToUse={accountsToUse}
+              timeUnit='q'
             />
           </TabPanel>
         </TabPanels>

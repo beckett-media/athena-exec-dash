@@ -106,29 +106,19 @@ const RevenueStreams = ({
                   data={pl_monthly.filter(function(itm){
                     return accountsToUse.indexOf(itm.Account) > -1;
                   })} 
-                  title='Revenue Streams Comparison Table'
+                  title='Revenue Streams Comparison Table (Monthly)'
                   timeUnit='m'
                 />
               </Stack>
 
-            </Box>
-
-            {/* <Box my={20} />
-            <Box
-              bg="bg-surface"
-              boxShadow={{
-                base: "none",
-                md: useColorModeValue("sm", "sm-dark"),
-              }}
-              borderRadius={useBreakpointValue({
-                base: "none",
-                md: "lg",
-              })}
-            >
+{/*               
               <Stack spacing="5">
                 <TablePivots revenueStreams={pl_monthly} />
-              </Stack>
-            </Box> */}
+              </Stack> */}
+
+            </Box>
+
+          
 
             <Box my={20} />
 
@@ -168,33 +158,20 @@ const RevenueStreams = ({
                   data={pl_quarterly.filter(function(itm){
                     return accountsToUse.indexOf(itm.Account) > -1;
                   })} 
-                  title='Revenue Streams Comparison Table'
+                  title='Revenue Streams Comparison Table (Quarterly)'
                   timeUnit='q'
                 />
               </Stack>
 
-            </Box>
-
-
-{/* 
-            <Box my={20} />
-            <Box
-              bg="bg-surface"
-              boxShadow={{
-                base: "none",
-                md: useColorModeValue("sm", "sm-dark"),
-              }}
-              borderRadius={useBreakpointValue({
-                base: "none",
-                md: "lg",
-              })}
-            >
-              <Stack spacing="5">
+              {/* <Stack spacing="5">
                 <QuarterlyTable
                   revenueStreamsPivotQuarterly={pl_pivot_quarterly}
                 />
-              </Stack>
-            </Box> */}
+              </Stack> */}
+
+            </Box>
+
+
 
             <Box my={20} />
 
