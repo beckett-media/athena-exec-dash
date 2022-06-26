@@ -74,7 +74,11 @@ const BalanceSheet = ({
               
               
               <Stack spacing="5">
-                <CompareTable data={bs_monthly} />
+                <CompareTable 
+                  data={bs_monthly} 
+                  title={'Balance Sheet Comparison Table'}
+                  timeUnit='m'
+                />
               </Stack>
 
             </Box>

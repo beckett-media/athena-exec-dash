@@ -3,22 +3,25 @@ import styles from "./Chart.module.sass";
 import cn from "classnames";
 import Card from "../../../components/Card";
 import Plot from "react-plotly.js";
-
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import { Box, Text, Select } from "@chakra-ui/react";
-import Dropdown from "../../../components/Dropdown";
+import { Button, Box, Text, Select } from "@chakra-ui/react";
+import DatePicker from 'react-datepicker'
+import "./datepicker-styles.css";
+import "./chart-styles.css";
 
 const TimeSeriesGraph = ({ 
   className,
   title, 
   data, 
-  accountsToUse
+  accountsToUse,
+  timeUnit
 }) => {
   const darkMode = useDarkMode(false);
   const [sorting, setSorting] = React.useState(accountsToUse[0]);
   const [year, setYear] = React.useState([...new Set(data.map((item) => item.Year))].at(-1));
-  //const uniqueAccount = [...new Set(monthly.map((item) => item.Account))];
+  const [startDate, setStartDate] = React.useState(new Date([...new Set(data.map((item) => item.FullDate))].at(0)));
+  const [endDate, setEndDate] = React.useState(new Date([...new Set(data.map((item) => item.FullDate))].at(-1)));
   
   const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(
     (a, b) => b - a
@@ -26,7 +29,12 @@ const TimeSeriesGraph = ({
   
   const dataFilter = data.filter((d) => d?.Account === sorting);
 
-  const dataFilterYear = dataFilter.filter((d) => d?.Year === year);
+  const dataFilterYear = dataFilter.filter((item) => {
+    let tempEndDate = new Date(endDate);
+    tempEndDate.setMonth(tempEndDate.getMonth() +  (timeUnit=='m' ? 1 : 3));
+    return new Date(item.FullDate) >= startDate &&
+            new Date(item.FullDate) <= tempEndDate;
+  });
 
   // function to remove underscores from the account name
   
@@ -234,12 +242,13 @@ const TimeSeriesGraph = ({
     hovermode: "x",
 
     legend: {
-      x: 0,
+      x: 0.5,
       y: 10,
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
       orientation: "h",
+      xanchor:'center',
       // hide the legend when the graph is empty (no data)
       // this is done by adding the "trace" to the legend
 
@@ -251,6 +260,12 @@ const TimeSeriesGraph = ({
     },
   };
 
+  const ExampleCustomInput =  React.forwardRef(({ value, onClick }, ref) => (
+    <Button onClick={onClick} ref={ref} fontSize='sm' px={1}>
+      {value}
+    </Button>
+  ));
+
   return (
     <Card
       classTitle="title-blue"
@@ -261,16 +276,16 @@ const TimeSeriesGraph = ({
         <Box
           flexDirection={"row"}
           display={"flex"}
-          gap={3}
-          justifyItems={"center"}
+          gap={4}
           alignItems={"center"}
         >
           <Box width={"100%"}>
-            <Text flex={1}>Select Account</Text>
+            <Text flex={1}>Account</Text>
           </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}
             borderRadius={14}
+            minWidth={'150px'}
             boxShadow="sm"
             color={"#6F767E"}
             size="md"
@@ -288,27 +303,29 @@ const TimeSeriesGraph = ({
               <option value={d}>{d}</option>
             ))}
           </Select>
-          <Text mr={3}>Year</Text>
-          <Select
-            colorScheme={darkMode.value ? "dark" : "light"}
-            borderRadius={14}
-            boxShadow="sm"
-            color={"#6F767E"}
-            size="md"
-            variant="outline"
-            borderColor="#272B30"
-            onChange={(e) => setYear(e.target.value)}
-            // value={console.log(year)}
-            _focusVisible={{
-              borderColor: "#272B30",
-              boxShadow: "0 0 0 2px #272B30",
-            }}
-            fontSize={14}
-          >
-            {uniqueYear.map((d) => (
-              <option value={d}>{d}</option>
-            ))}
-          </Select>
+          <Text  width={'100%'}>Start Date</Text>
+          <DatePicker
+                selected={new Date(startDate)}
+                dateFormat = {(timeUnit=='q' )  ? "yyyy QQQ" : "MM/yyyy" }
+                minDate={new Date("01-01-2019")}
+                maxDate={new Date("05-31-2022")}
+                showMonthYearPicker = {(timeUnit=='m' ) ? true : false }
+                showQuarterYearPicker = {(timeUnit=='q' )  ? true : false}
+                onChange={(date) => setStartDate(date)}
+                customInput={<ExampleCustomInput />}
+              />
+          <Text  width={'100%'}>End Date</Text>
+          <DatePicker
+                selected={new Date(endDate)}
+                dateFormat = {(timeUnit=='q' )  ? "yyyy QQQ" : "MM/yyyy" }
+                minDate={new Date("01-01-2019")}
+                maxDate={new Date("05-31-2022")}
+                showMonthYearPicker = {(timeUnit=='m' ) ? true : false }
+                showQuarterYearPicker = {(timeUnit=='q' )  ? true : false}
+                onChange={(date) => setEndDate(date)}
+                customInput={<ExampleCustomInput />}
+              />
+          
         </Box>
       }
     >
