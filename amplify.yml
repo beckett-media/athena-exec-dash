@@ -9,12 +9,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - export NODE_OPTIONS=--max-old-space-size=8192
-        - yarn install
+        - export NODE_OPTIONS=--max-old-space-size=4096
+        - npm install
     build:
       commands:
-        - export NODE_OPTIONS=--max-old-space-size=8192
-        - yarn build
+        - export NODE_OPTIONS=--max-old-space-size=4096
+        - npm run build
   artifacts:
     baseDirectory: build
     files:
