@@ -8,8 +8,8 @@ import {
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
 import QuarterlyTable from "./QuarterlyTable";
-import CompareTable from "../CommonComponents/CompareTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
+import CompareTable from "../CommonComponents/CompareTable";
 
 
 const BalanceSheet = ({

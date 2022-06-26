@@ -14,17 +14,21 @@ import {
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
-import Card from "../../../../components/Card";
+import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "../Table.module.sass";
-import { formatMoneyWithCommas, formatMonthDate } from "../../../../utils.js";
+import styles from "./Table.module.sass";
+import { formatMoneyWithCommas, formatMonthDate } from "../../../utils.js";
 import moment from "moment";
 import * as dfd from "danfojs";
-import RadioCard from '../RadioCard'
+import RadioCard from './RadioCard'
 import DatePicker from 'react-datepicker'
 //import "react-datepicker/dist/react-datepicker.css";
-import "../datepicker-styles.css";
+import "./datepicker-styles.css";
+import "./react-select-styles.css";
+import Select from 'react-select';
+
+
 
 
 function useControlledState(state) {
@@ -173,7 +177,15 @@ function CompareTable({ className, data, title, timeUnit}) {
   const [seriesDate1, setSeriesDate1] = React.useState("2020-12-31");
   const [seriesDate2, setSeriesDate2] = React.useState("2021-12-31");
 
-  const beckett = data.filter((d) => d?.Company === filteredCompany);
+  const [accountFilter, setAccountFilter] = React.useState([]);
+
+  const beckett = data.filter((d) => d?.Company === filteredCompany );
+  
+
+  // data={pl_monthly.filter(function(itm){
+  //   return accountsToUse.indexOf(itm.Account) > -1;
+  // })} 
+
   let series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
   let series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
   
@@ -181,6 +193,8 @@ function CompareTable({ className, data, title, timeUnit}) {
   const series2Exists = (series2.length > 0);
   
   let compareData = {};
+  let availableAccounts = [];
+
   if (series1Exists || series2Exists) {
     series1 = (series1Exists ? series1 : series2);
     series2 = (series2Exists ? series2 : series1);
@@ -197,9 +211,47 @@ function CompareTable({ className, data, title, timeUnit}) {
     df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
 
     compareData = dfd.toJSON(df_merged,{format:'column'});
+
+    /* START Logic for Account Selector */
+    const uniqueAccounts = [
+      ...new Set(compareData.map(d => d.Account))
+    ]
     
+    availableAccounts = (uniqueAccounts.map(d => ({ value: d, label: d})))
+    console.log('availableAccounts',availableAccounts);
+
+    if (accountFilter.length > 0){
+      const accountsToFilter = accountFilter.map(d => d.value);
+      compareData = compareData.filter(
+        (d) => accountsToFilter.indexOf(d.Account) > -1
+      
+        );
+    }
   } 
   
+  // React.useEffect(() => {
+  //   setLoading(true);
+  //   (async () => {
+  //     const apiName = "palentirApi";
+  //     const path = `/grading-service-form`;
+
+  //     API.get(apiName, path)
+  //       .then((response) => {
+  //         const formdata = response.data?.data;
+  //         setData(formdata);
+  //         setLoading(false);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error.response);
+  //         setLoading(false);
+  //       });
+  //   })();
+  // }, []);
+  
+
+  /* END Logic for Account Selector */
+  
+
   const columns =  [   
     ...(series1Exists || series2Exists ? [{
       Header: "Account",
@@ -280,12 +332,39 @@ function CompareTable({ className, data, title, timeUnit}) {
   const group = getRootProps()
 
 
+  function handleSelectChange(data) {
+
+    console.log('handleSelectChnge', data);
+    setAccountFilter(data);
+  }
+
+
   const [startDate, setStartDate] = React.useState(new Date());
   const ExampleCustomInput =  React.forwardRef(({ value, onClick }, ref) => (
     <Button onClick={onClick} ref={ref} fontSize='sm' px={1}>
       {value}
     </Button>
   ));
+
+  const multiSelectStyles = {
+    menu: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px dotted pink',
+      color: state.selectProps.menuColor,
+      padding: 20,
+    }),
+  
+    control: (_, { selectProps: { width }}) => ({
+      width: width
+    }),
+  
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+  
+      return { ...provided, opacity, transition };
+    }
+  }
 
 
   return (
@@ -326,10 +405,12 @@ function CompareTable({ className, data, title, timeUnit}) {
           </HStack>
               
              
-            </Box>
-            
-            <Text fontSize='xs' mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 1 Date:</Text>
-              
+          </Box>
+                
+            <Text mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 1 Date:</Text>
+
+             
+
             <DatePicker
                 selected={new Date(seriesDate1)}
                 dateFormat = {(timeUnit=='q' )  ? "yyyy QQQ" : "MM/yyyy" }
@@ -341,7 +422,7 @@ function CompareTable({ className, data, title, timeUnit}) {
                 customInput={<ExampleCustomInput />}
               />
 
-            <Text fontSize='xs' mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 2 Date:</Text>
+            <Text mr={2} ml={2} as="div" width='100%' textAlign={'right'}>Series 2 Date:</Text>
             
             <DatePicker
                 selected={new Date(seriesDate2)}
@@ -354,7 +435,30 @@ function CompareTable({ className, data, title, timeUnit}) {
                 customInput={<ExampleCustomInput />}
               />
       </Box>
-       
+          
+      <Box 
+        flexDirection={"row"}
+        display={"flex"}
+        gap={1}
+        mt={4}
+        // justifyItems={"center"}
+        alignItems={"center"}
+      >
+        <Text mr={2} ml={2} as="div" textAlign={'right'}>Accounts:</Text>
+        <Select
+              className={'react-select-container'}
+              classNamePrefix={"react-select"}
+              closeMenuOnSelect={false}
+              defaultValue={availableAccounts}
+              isMulti
+              
+              options={availableAccounts}
+              onChange={(data) => handleSelectChange(data)}
+          />        
+
+      </Box>
+      
+
       <Box
         marginBottom={10}
       />
