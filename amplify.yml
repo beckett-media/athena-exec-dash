@@ -10,11 +10,11 @@ frontend:
     preBuild:
       commands:
         - export NODE_OPTIONS=--max-old-space-size=4096
-        - npm install
+        - yarn install
     build:
       commands:
         - export NODE_OPTIONS=--max-old-space-size=4096
-        - npm run build
+        - yarn build
   artifacts:
     baseDirectory: build
     files:
