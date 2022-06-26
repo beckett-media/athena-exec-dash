@@ -101,28 +101,15 @@ const ProfitAndLoss = ({
                   data={pl_monthly.filter(function(itm){
                     return accountsToUse.indexOf(itm.Account) > -1;
                   })} 
-                  title='Profit and Loss Comparison Table'
+                  title='Profit and Loss Comparison Table (Monthly)'
                   timeUnit='m'
                 />
               </Stack>
 
-            </Box>
-
-            {/* <Box
-              bg="bg-surface"
-              boxShadow={{
-                base: "none",
-                md: useColorModeValue("sm", "sm-dark"),
-              }}
-              borderRadius={useBreakpointValue({
-                base: "none",
-                md: "lg",
-              })}
-            >
-              <Stack spacing="5">
+              {/* <Stack spacing="5">
                 <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
-              </Stack>
-            </Box> */}
+              </Stack> */}
+            </Box>
 
             <Box my={20} />
             <TimeSeriesGraph
@@ -161,37 +148,19 @@ const ProfitAndLoss = ({
                   data={pl_quarterly.filter(function(itm){
                     return accountsToUse.indexOf(itm.Account) > -1;
                   })} 
-                  title='Profit and Loss Comparison Table'
+                  title='Profit and Loss Comparison Table (Quarterly)'
                   timeUnit='q'
                 />
               </Stack>
 
+              {/* <Stack spacing="5">
+                <TablePivots
+                  data={data}
+                  pivot_quarterly={pl_pivot_quarterly}
+                />
+              </Stack> */}
+
             </Box>
-
-
-
-            {/* <Box my={20} />
-            <Box
-              bg="bg-surface"
-              boxShadow={{
-                base: "none",
-                md: useColorModeValue("sm", "sm-dark"),
-              }}
-              borderRadius={useBreakpointValue({
-                base: "none",
-                md: "lg",
-              })}
-            >
-              <Stack spacing="5">
-                <Stack spacing="5">
-                  <TablePivots
-                    data={data}
-                    pivot_quarterly={pl_pivot_quarterly}
-                  />
-                </Stack>
-              </Stack>
-            </Box> */}
-
             <Box my={20} />
 
             <TimeSeriesGraph
