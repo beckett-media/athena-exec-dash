@@ -23,6 +23,6 @@
   text-align:left;
 }
 
-.react-datepicker__month--disabled { 
+.react-datepicker__month--disabled, .react-datepicker__quarter--disabled { 
   color:#555;
 }

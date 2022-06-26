@@ -1,6 +1,6 @@
 import React from "react";
 import Plot from "react-plotly.js";
-import "./financial-styles.css";
+import "../chart-styles.css";
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
 import { Box, Text, Grid } from "@chakra-ui/react";

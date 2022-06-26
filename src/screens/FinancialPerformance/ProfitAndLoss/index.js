@@ -8,7 +8,7 @@ import {
 import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-
+import CompareTable from "../CommonComponents/CompareTable";
 import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 import TablePivots from "./TablePivots";
 import TimeSeriesTable from "./TimeSeriesTable";
@@ -85,6 +85,7 @@ const ProfitAndLoss = ({
               title="Profit & Loss Company Graphs"
             />
             <Box my={20} />
+
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -96,17 +97,42 @@ const ProfitAndLoss = ({
                 md: "lg",
               })}
             >
-              {/* <Stack spacing="5">
-                <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
-              </Stack> */}
+              
+              <Stack spacing="5">
+                <CompareTable 
+                  data={pl_monthly.filter(function(itm){
+                    return accountsToUse.indexOf(itm.Account) > -1;
+                  })} 
+                  title='Profit and Loss Comparison Table'
+                  timeUnit='m'
+                />
+              </Stack>
+
             </Box>
+
+            {/* <Box
+              bg="bg-surface"
+              boxShadow={{
+                base: "none",
+                md: useColorModeValue("sm", "sm-dark"),
+              }}
+              borderRadius={useBreakpointValue({
+                base: "none",
+                md: "lg",
+              })}
+            >
+              <Stack spacing="5">
+                <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
+              </Stack>
+            </Box> */}
 
             <Box my={20} />
             <TimeSeriesGraph
               isLoading={isLoading}
               data={pl_monthly}
               title="Profit and Loss Monthly"
-              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA"]}
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA", "Total Revenue"]}
+              timeUnit='m'
             />
           </TabPanel>
           <TabPanel>
@@ -118,7 +144,36 @@ const ProfitAndLoss = ({
               data={pl_quarterly}
               title="Profit & Loss Company Graphs"
             />
+
             <Box my={20} />
+
+            <Box
+              bg="bg-surface"
+              boxShadow={{
+                base: "none",
+                md: useColorModeValue("sm", "sm-dark"),
+              }}
+              borderRadius={useBreakpointValue({
+                base: "none",
+                md: "lg",
+              })}
+            >
+              
+              <Stack spacing="5">
+                <CompareTable 
+                  data={pl_quarterly.filter(function(itm){
+                    return accountsToUse.indexOf(itm.Account) > -1;
+                  })} 
+                  title='Profit and Loss Comparison Table'
+                  timeUnit='q'
+                />
+              </Stack>
+
+            </Box>
+
+
+
+            {/* <Box my={20} />
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -138,7 +193,7 @@ const ProfitAndLoss = ({
                   />
                 </Stack>
               </Stack>
-            </Box>
+            </Box> */}
 
             <Box my={20} />
 
@@ -146,7 +201,8 @@ const ProfitAndLoss = ({
               isLoading={isLoading}
               data={pl_quarterly}
               title="Profit and Loss Quarterly"
-              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA"]}
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA", "Total Revenue"]}
+              timeUnit='q'
             />
           </TabPanel>
         </TabPanels>

@@ -18,30 +18,14 @@ import Card from "../../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
 import styles from "../Table.module.sass";
-import { formatMoneyWithCommas } from "../../../../utils.js";
+import { formatMoneyWithCommas, formatMonthDate } from "../../../../utils.js";
 import moment from "moment";
 import * as dfd from "danfojs";
 import RadioCard from '../RadioCard'
 import DatePicker from 'react-datepicker'
 //import "react-datepicker/dist/react-datepicker.css";
-import "../CompareTable/compare-table-styles.css";
+import "../datepicker-styles.css";
 
-function padLeadingZeros(num, size) {
-  var s = num+"";
-  while (s.length < size) s = "0" + s;
-  return s;
-}
-
-
-function formatMonthDate(date) {
-  const tempDate = new Date(date.setDate(date.getDate(date.setMonth(date.getMonth()+1))-1))
-  console.log(tempDate);
-  let newDateString = String(tempDate.getFullYear()) + '-' 
-                    + padLeadingZeros(String(tempDate.getMonth()+1),2) + '-' 
-                    + String(tempDate.getDate());
-  console.log(newDateString);
-  return newDateString
-}
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -182,7 +166,7 @@ function Tables({ columns, data }) {
 
 
 
-function CompareTable({ className, data }) {
+function CompareTable({ className, data, title, timeUnit}) {
   const companies = React.useMemo(() => [...new Set(data.map(d => d.Company))], [data]);
   const [filteredCompany, setFilteredCompany] = React.useState(companies?.[1] || "");
   
@@ -201,8 +185,6 @@ function CompareTable({ className, data }) {
     series1 = (series1Exists ? series1 : series2);
     series2 = (series2Exists ? series2 : series1);
     
-    console.log('series1', series1);
-    console.log('series2', series2)
     
     let df1 = new dfd.DataFrame(series1);
     let df2 = new dfd.DataFrame(series2);
@@ -217,7 +199,6 @@ function CompareTable({ className, data }) {
     compareData = dfd.toJSON(df_merged,{format:'column'});
     
   } 
-  console.log('compareData', compareData)
   
   const columns =  [   
     ...(series1Exists || series2Exists ? [{
@@ -311,7 +292,7 @@ function CompareTable({ className, data }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Balance Sheets Comparison Table"
+      title= {title || 'Comparison Table' }
       head={
         <Box
           flexDirection={"row"}
@@ -351,11 +332,12 @@ function CompareTable({ className, data }) {
               
             <DatePicker
                 selected={new Date(seriesDate1)}
-                dateFormat="MM/yyyy"
+                dateFormat = {(timeUnit=='q' )  ? "yyyy QQQ" : "MM/yyyy" }
                 minDate={new Date("01-01-2019")}
                 maxDate={new Date("07-31-2022")}
-                showMonthYearPicker
-                onChange={(date) => setSeriesDate1(formatMonthDate(date))}
+                showMonthYearPicker = {(timeUnit=='m' ) ? true : false }
+                showQuarterYearPicker = {(timeUnit=='q' )  ? true : false}
+                onChange={(date) => setSeriesDate1(formatMonthDate(date, timeUnit))}
                 customInput={<ExampleCustomInput />}
               />
 
@@ -363,11 +345,12 @@ function CompareTable({ className, data }) {
             
             <DatePicker
                 selected={new Date(seriesDate2)}
-                dateFormat="MM/yyyy"
+                dateFormat = {(timeUnit=='q' )  ? "yyyy QQQ" : "MM/yyyy" }
                 minDate={new Date("01-01-2019")}
                 maxDate={new Date("07-31-2022")}
-                showMonthYearPicker
-                onChange={(date) => setSeriesDate2(formatMonthDate(date))}
+                showMonthYearPicker = {(timeUnit=='m' ) ? true : false }
+                showQuarterYearPicker = {(timeUnit=='q' )  ? true : false}
+                onChange={(date) => setSeriesDate2(formatMonthDate(date, timeUnit))}
                 customInput={<ExampleCustomInput />}
               />
       </Box>

@@ -55,3 +55,24 @@ export const formatMoneyWithCommas = (money) => {
 
   return '-'
 }
+
+
+function padLeadingZeros(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
+
+export const formatMonthDate = (date, timeUnit) => {
+  //This function is used in TimeSeriesGraphs in FinDash to adjust the datepicker value
+  console.log('formatMonthDate', date);
+  const monthAdder = (timeUnit =='q' ? 3 : 1)
+  const tempDate = new Date(date.setDate(date.getDate(date.setMonth(date.getMonth()+monthAdder))-1))
+  console.log(tempDate);
+  let newDateString = String(tempDate.getFullYear()) + '-' 
+                    + padLeadingZeros(String(tempDate.getMonth()+1),2) + '-' 
+                    + String(tempDate.getDate());
+  console.log(newDateString);
+  return newDateString
+}
