@@ -186,7 +186,7 @@ const RevenueStreams = ({
 
             <TimeSeriesGraph
               data={pl_quarterly}
-              title="Revenue Sheet Quarterly"
+              title="Revenue Streams Quarterly"
               accountsToUse={accountsToUse}
               timeUnit='q'
             />
