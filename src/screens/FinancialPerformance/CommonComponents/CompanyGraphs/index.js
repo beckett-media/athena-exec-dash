@@ -21,6 +21,7 @@ const CompanyGraphs = ({
   data,
   accountsToUse,
   companies,
+  hideNoData
 }) => {
   const darkMode = useDarkMode(false);
   const [year, setYear] = React.useState("2022");
@@ -95,6 +96,7 @@ const CompanyGraphs = ({
                     dataFilteredByYear={dataFilteredByYear}
                     company={item}
                     accountsToUse={accountsToUse}
+                    hideNoData={hideNoData}
                   />
                 </AccordionPanel>
               </AccordionItem>

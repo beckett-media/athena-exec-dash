@@ -12,6 +12,7 @@ const PlotRow = ({
   company,
   dataFilteredByYear,
   accountsToUse,
+  hideNoData
 }) => {
   const darkMode = useDarkMode(false);
 
@@ -148,6 +149,10 @@ const PlotRow = ({
       >
         {accountsToUse &&
           accountsToUse.map((account) => (
+
+            ( hideNoData && !sortByType(account)['hasData']   ? 
+            ''
+            :
             <Box
               display={"flex"}
               // width={"min-content"}
@@ -156,7 +161,7 @@ const PlotRow = ({
               position={"relative"}
             >
               {
-                (!sortByType(account)['hasData'] ? 
+                (!sortByType(account)['hasData'] && !hideNoData ? 
                   <Box
                     display={'flex'}
                     height={'100%'}
@@ -171,11 +176,12 @@ const PlotRow = ({
                     data={sortByType(account)['chartData']}
                     layout={getLayout(account)}
                     useResizeHandler={true}
-                    //config={{ displayModeBar: false }}
+                    config={{ displayModeBar: false }}
                   />
                 )
               }
             </Box>
+            )
           ))}
       </Grid>
     </>
