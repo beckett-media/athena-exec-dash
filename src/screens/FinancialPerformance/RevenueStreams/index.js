@@ -21,17 +21,24 @@ const RevenueStreams = ({
   pl_monthly,
   isLoading,
 }) => {
-  const removeAccounts = ["GAAP EBITDA", "Management EBITDA", "Net Income"];
+  // const removeAccounts = ["GAAP EBITDA", "Management EBITDA", "Net Income"];
 
-  const accountsToUse = [
-    ...new Set(
-      pl_monthly
-        .filter(function (itm) {
-          return removeAccounts.indexOf(itm.Account) == -1;
-        })
-        .map((item) => item.Account)
-    ),
-  ];
+  // const accountsToUse = [
+  //   ...new Set(
+  //     pl_monthly
+  //       .filter(function (itm) {
+  //         return removeAccounts.indexOf(itm.Account) == -1;
+  //       })
+  //       .map((item) => item.Account)
+  //   ),
+  // ];
+
+  const accountsToUse = ['Total Revenue', 'Other Revenue', 'Grading and Authentication',
+  'GAAP EBITDA', 'Net Income', 'Management EBITDA', 'Online & E-Commerce',
+  'Print & Publications', 'Sports Cards', 'CCGs', 'Supplies',
+  'Board Games', 'Toys and Collectibles', 'Business to Business',
+  'Beckett Shield', 'Sleevecrafter', 'Dragon Shield Sleeves',
+  'Boxes/Albums/Japanese/Others', 'Standard', 'Board Game Sleeves']
 
   const companies = [
     "Beckett Collectables",
@@ -86,6 +93,7 @@ const RevenueStreams = ({
               accountsToUse={accountsToUse}
               companies={companies}
               title="Revenue Streams Company Graphs"
+              hideNoData={true}
             />
 
             <Box my={20} />
@@ -103,9 +111,10 @@ const RevenueStreams = ({
               
               <Stack spacing="5">
                 <CompareTable 
-                  data={pl_monthly.filter(function(itm){
-                    return accountsToUse.indexOf(itm.Account) > -1;
-                  })} 
+                  // data={pl_monthly.filter(function(itm){
+                  //   return accountsToUse.indexOf(itm.Account) > -1;
+                  // })} 
+                  data = {pl_monthly}
                   title='Revenue Streams Comparison Table (Monthly)'
                   timeUnit='m'
                 />
@@ -124,7 +133,7 @@ const RevenueStreams = ({
 
             <TimeSeriesGraph
               data={pl_monthly}
-              title="Revenue Sheet Monthly"
+              title="Revenue Streams Monthly"
               accountsToUse={accountsToUse}
               timeUnit='m'
             />
@@ -136,6 +145,7 @@ const RevenueStreams = ({
               accountsToUse={accountsToUse}
               companies={companies}
               title="Revenue Streams Company Graphs"
+              hideNoData={true}
             />
 
 
@@ -155,9 +165,10 @@ const RevenueStreams = ({
               
               <Stack spacing="5">
                 <CompareTable 
-                  data={pl_quarterly.filter(function(itm){
-                    return accountsToUse.indexOf(itm.Account) > -1;
-                  })} 
+                  // data={pl_quarterly.filter(function(itm){
+                  //   return accountsToUse.indexOf(itm.Account) > -1;
+                  // })}
+                  data = {pl_monthly} 
                   title='Revenue Streams Comparison Table (Quarterly)'
                   timeUnit='q'
                 />
@@ -171,13 +182,11 @@ const RevenueStreams = ({
 
             </Box>
 
-
-
             <Box my={20} />
 
             <TimeSeriesGraph
               data={pl_quarterly}
-              title="Revenue Sheet Quarterly"
+              title="Revenue Streams Quarterly"
               accountsToUse={accountsToUse}
               timeUnit='q'
             />
