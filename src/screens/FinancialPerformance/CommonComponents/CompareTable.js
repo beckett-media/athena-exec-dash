@@ -26,7 +26,9 @@ import DatePicker from 'react-datepicker'
 //import "react-datepicker/dist/react-datepicker.css";
 import "./datepicker-styles.css";
 import "./react-select-styles.css";
-import Select from 'react-select';
+// import Select from 'react-select';
+import MultiSelectAll from './MultiSelectAll';
+
 
 
 
@@ -191,8 +193,6 @@ function CompareTable({ className, data, title, timeUnit}) {
   
   const series1Exists = (series1.length > 0);
   const series2Exists = (series2.length > 0);
-  console.log('series1',series1);
-  console.log('series2',series2);
   
   // let compareData = {};
   // let availableAccounts = [];
@@ -288,11 +288,9 @@ function CompareTable({ className, data, title, timeUnit}) {
     const uniqueAccounts = [
       ...new Set(compareData.map(d => d.Account))
     ]
-    console.log('compareDAta', compareData);
     
     availableAccounts = (uniqueAccounts.map(d => ({ value: d, label: d})))
-    console.log('availableAccounts',availableAccounts);
-
+    
     if (accountFilter.length > 0){
       const accountsToFilter = accountFilter.map(d => d.value);
       compareData = compareData.filter(
@@ -372,9 +370,6 @@ function CompareTable({ className, data, title, timeUnit}) {
   ];
   const darkMode = useDarkMode();
 
-  // const handleCompanyChange = (value) => {
-  //   setFilteredCompany(value);
-  // }
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'company',
     defaultValue: 'Beckett Collectables',
@@ -383,11 +378,9 @@ function CompareTable({ className, data, title, timeUnit}) {
   const group = getRootProps()
 
 
-  function handleSelectChange(data) {
-
-    console.log('handleSelectChnge', data);
-    setAccountFilter(data);
-  }
+  // function handleSelectChange(data) {
+  //   setAccountFilter(data);
+  // }
 
 
   const [startDate, setStartDate] = React.useState(new Date());
@@ -487,7 +480,7 @@ function CompareTable({ className, data, title, timeUnit}) {
               />
       </Box>
           
-      <Box 
+      {/* <Box 
         flexDirection={"row"}
         display={"flex"}
         gap={1}
@@ -507,7 +500,28 @@ function CompareTable({ className, data, title, timeUnit}) {
               onChange={(data) => handleSelectChange(data)}
           />        
 
+      </Box> */}
+      <Box
+        marginBottom={5}
+      />
+      <Box
+        flexDirection={"row"}
+        display={"flex"}
+        gap={1}
+        width={'100%'}
+        mt={4}
+        // justifyItems={"center"}
+        alignItems={"center"}
+      >
+         <MultiSelectAll 
+           className={'react-select-container'}
+           classNamePrefix={"react-select"}  
+           options={availableAccounts}
+           setAccountFilter = {setAccountFilter}
+          />
+
       </Box>
+     
       <Box
         marginBottom={10}
       />
