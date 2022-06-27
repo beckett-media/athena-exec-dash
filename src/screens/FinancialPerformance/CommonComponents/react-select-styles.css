@@ -17,7 +17,7 @@
 
 .react-select__option  {
   font-weight:normal !important;
-
+  text-align:left;
 }
 
 .react-select__option--is-focused {
