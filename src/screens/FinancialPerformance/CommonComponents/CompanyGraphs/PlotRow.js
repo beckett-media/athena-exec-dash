@@ -106,7 +106,7 @@ const PlotRow = ({
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
-    hovermode: "x",
+    hovermode: "closest",
     title: {
       text:account,
       font: {
