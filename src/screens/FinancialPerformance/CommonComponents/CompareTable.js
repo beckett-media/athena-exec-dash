@@ -55,6 +55,9 @@ function Tables({ columns, data }) {
     {
       columns,
       data,
+      initialState: {
+        groupBy: ["Account"],
+      },
     },
     useGroupBy,
     useExpanded,
@@ -178,7 +181,7 @@ function combineCompaniesData(data, companies) {
     }
   }
 
-  console.log('combined', combined);
+  
 
   return combined;
 }
@@ -218,43 +221,6 @@ function CompareTable({ className, data, title, timeUnit }) {
   const series1Exists = series1.length > 0;
   const series2Exists = series2.length > 0;
 
-  // let compareData = {};
-  // let availableAccounts = [];
-
-  // if (series1Exists || series2Exists) {
-  //   series1 = (series1Exists ? series1 : series2);
-  //   series2 = (series2Exists ? series2 : series1);
-
-  //   let df1 = new dfd.DataFrame(series1);
-  //   let df2 = new dfd.DataFrame(series2);
-
-  //   df1.rename({ "Balance":"Balance1", "BudgetBalance":"BudgetBalance1"}, {inplace: true});
-  //   df2.rename({ "Balance":"Balance2", "BudgetBalance":"BudgetBalance2"}, {inplace: true});
-
-  //   // Create merged column
-  //   let df_merged = dfd.merge({ "left": df1, "right": df2, "on": ["Account"], how: "outer" })
-  //   df_merged.addColumn("Diff", df_merged['Balance1'].sub(df_merged['Balance2']), { inplace: true });
-
-  //   compareData = dfd.toJSON(df_merged,{format:'column'});
-  //   console.log('compCompData', compareData)
-
-  //   /* START Logic for Account Selector */
-  //   const uniqueAccounts = [
-  //     ...new Set(compareData.map(d => d.Account))
-  //   ]
-
-  //   availableAccounts = (uniqueAccounts.map(d => ({ value: d, label: d})))
-  //   console.log('availableAccounts',availableAccounts);
-
-  //   if (accountFilter.length > 0){
-  //     const accountsToFilter = accountFilter.map(d => d.value);
-  //     compareData = compareData.filter(
-  //       (d) => accountsToFilter.indexOf(d.Account) > -1
-
-  //       );
-  //   }
-  //   /* END Logic for Account Selector */
-  // }
 
   let compareData = [];
   let availableAccounts = [];
@@ -273,6 +239,10 @@ function CompareTable({ className, data, title, timeUnit }) {
       thisObj["BudgetBalance1"] = thisObj["BudgetBalance"];
       thisObj["Balance2"] = null;
       thisObj["BudgetBalance2"] = null;
+      thisObj['Series1'] = [];
+      thisObj['Series2'] = [];
+      thisObj['Series1']["Balance1"] = thisObj["Balance"];
+      thisObj['Series1']["BudgetBalance1"] = thisObj["BudgetBalance"];
 
       let s1Account = series1[i]["Account"];
 
@@ -280,6 +250,8 @@ function CompareTable({ className, data, title, timeUnit }) {
         if (series2[j]["Account"] == s1Account) {
           thisObj["Balance2"] = series2[j]["Balance"];
           thisObj["BudgetBalance2"] = series2[j]["BudgetBalance"];
+          thisObj['Series2']["Balance2"] = series2[j]["Balance"];
+          thisObj['Series2']["BudgetBalance2"] = series2[j]["BudgetBalance"];
         }
       }
       thisObj["Diff"] = thisObj["Balance1"] - thisObj["Balance2"];
@@ -297,9 +269,13 @@ function CompareTable({ className, data, title, timeUnit }) {
         // doesn't exist in DF1
         thisObj["Balance1"] = null;
         thisObj["BudgetBalance1"] = null;
+        thisObj["Series1"] = [];
         thisObj["Diff"] = null;
         thisObj["Balance2"] = thisObj["Balance"];
         thisObj["BudgetBalance2"] = thisObj["BudgetBalance"];
+        thisObj['Series2'] = [];
+        thisObj['Series2']["Balance2"] = thisObj["Balance"];
+        thisObj['Series2']["BudgetBalance2"] = thisObj["BudgetBalance"];
 
         compareData.push(thisObj);
       }
@@ -336,6 +312,22 @@ function CompareTable({ className, data, title, timeUnit }) {
           },
         ]
       : []),
+      {
+        Header: "Company",
+        accessor: "Company",
+        aggregate: "uniqueCount",
+        Cell: ({ value }) => (
+          <Text
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"blue"}
+          >
+            {value}
+          </Text>
+        ),
+      },
     ...(series1Exists
       ? [
           {
@@ -349,15 +341,40 @@ function CompareTable({ className, data, title, timeUnit }) {
               </div>
             ),
             id: "Series 1",
-            accessor: (d) => [d.Balance1, d.BudgetBalance1],
-            Cell: ({ value }) => (
-              <span>
+            // accessor: ({d}) => {
+            //   console.log('nqBrokeValue-d', d);
+            //   return ([d.Balance1, d.BudgetBalance1]);
+            // },
+            accessor: "Series1",
+            aggregate: d => {
+              return {
+                'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => prev + curr, 0),
+                'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => prev + curr, 0) 
+              }
+            }, 
+            Aggregated: ({ value }) => {
+
+              return (
                 <Text
                   fontSize={13}
                   textAlign="right"
-                  color={value[0] >= 0 ? "#48BB78" : "#F56565"}
+                  color={value.Balance1 >= 0 ? "#48BB78" : "#F56565"}
                 >
-                  {formatMoneyWithCommas(value[0])}
+                  {formatMoneyWithCommas(value.Balance1)}
+                </Text>
+              ) 
+            },
+                  
+            // aggregate: vals => vals[0],
+            Cell: ({ value }) =>  {
+              return (
+                <span>
+                <Text
+                  fontSize={13}
+                  textAlign="right"
+                  color={value.Balance1 >= 0 ? "#48BB78" : "#F56565"}
+                >
+                  {formatMoneyWithCommas(value.Balance1)}
                 </Text>
                 <Text
                   fontSize={13}
@@ -365,55 +382,121 @@ function CompareTable({ className, data, title, timeUnit }) {
                   color={"gray"}
                   marginTop={2}
                 >
-                  {formatMoneyWithCommas(value[1])}
+                  {formatMoneyWithCommas(value.BudgetBalance1)}
                 </Text>
               </span>
-            ),
+              )
+            },
           },
+          
         ]
       : []),
+      
 
     ...(series2Exists
       ? [
-          {
-            Header: () => (
-              <div
-                style={{
-                  textAlign: "right",
-                }}
+
+        {
+          Header: () => (
+            <div
+              style={{
+                textAlign: "right",
+              }}
+            >
+              Series 2
+            </div>
+          ),
+          id: "Series 2",
+          // accessor: ({d}) => {
+          //   console.log('nqBrokeValue-d', d);
+          //   return ([d.Balance1, d.BudgetBalance1]);
+          // },
+          accessor: "Series2",
+          aggregate: d => {
+            const sumBalance =d.map(item => item.Balance2).reduce((prev, curr) => prev + curr, 0);
+            const sumBudget =d.map(item => item.BudgetBalance2).reduce((prev, curr) => prev + curr, 0);
+            return {
+              'Balance2':sumBalance,
+              'BudgetBalance2': sumBudget
+            }
+          }, 
+          Aggregated: ({ value }) => {
+            
+            return (
+              <Text
+                fontSize={13}
+                textAlign="right"
+                color={value.Balance2 >= 0 ? "#48BB78" : "#F56565"}
               >
-                Series 2
-              </div>
-            ),
-            id: "Series 2",
-            // fomatted date with moment to get the month
-            accessor: (d) => [d.Balance2, d.BudgetBalance2],
-            Cell: ({ value }) => (
-              <span>
-                <Text
-                  fontSize={13}
-                  textAlign="right"
-                  color={value[0] >= 0 ? "#48BB78" : "#F56565"}
-                >
-                  {formatMoneyWithCommas(value[0])}
-                </Text>
-                <Text
-                  fontSize={13}
-                  textAlign="right"
-                  color={"gray"}
-                  marginTop={2}
-                >
-                  {formatMoneyWithCommas(value[1])}
-                </Text>
-              </span>
-            ),
+                {formatMoneyWithCommas(value.Balance2)}
+              </Text>
+            ) 
           },
+                
+          // aggregate: vals => vals[0],
+          Cell: ({ value }) =>  {
+            
+            return (
+              <span>
+              <Text
+                fontSize={13}
+                textAlign="right"
+                color={value.Balance2 >= 0 ? "#48BB78" : "#F56565"}
+              >
+                {formatMoneyWithCommas(value.Balance2)}
+              </Text>
+              <Text
+                fontSize={13}
+                textAlign="right"
+                color={"gray"}
+                marginTop={2}
+              >
+                {formatMoneyWithCommas(value.BudgetBalance2)}
+              </Text>
+            </span>
+            )
+          },
+        },
+          // {
+          //   Header: () => (
+          //     <div
+          //       style={{
+          //         textAlign: "right",
+          //       }}
+          //     >
+          //       Series 2
+          //     </div>
+          //   ),
+          //   id: "Series 2",
+          //   // fomatted date with moment to get the month
+          //   accessor: (d) => [d.Balance2, d.BudgetBalance2],
+          //   Cell: ({ value }) => (
+          //     <span>
+          //       <Text
+          //         fontSize={13}
+          //         textAlign="right"
+          //         // color={value[0] >= 0 ? "#48BB78" : "#F56565"}
+          //       >
+          //         {/* {formatMoneyWithCommas(value[0])} */}
+          //       </Text>
+          //       <Text
+          //         fontSize={13}
+          //         textAlign="right"
+          //         color={"gray"}
+          //         marginTop={2}
+          //       >
+          //         {/* {formatMoneyWithCommas(value[1])} */}
+          //       </Text>
+          //     </span>
+          //   ),
+          // },
         ]
       : []),
     ...(series2Exists && series1Exists
       ? [
           {
             accessor: "Diff",
+            
             Header: () => (
               <div
                 style={{
@@ -423,6 +506,7 @@ function CompareTable({ className, data, title, timeUnit }) {
                 Variance
               </div>
             ),
+            aggregate: "sum",
             Cell: ({ value }) => (
               <Text
                 fontSize={13}
@@ -483,7 +567,7 @@ function CompareTable({ className, data, title, timeUnit }) {
   //   },
   // };
 
-  console.log('availableAccounts', availableAccounts, defaultAccountsToShow);
+  //console.log('availableAccounts', availableAccounts, defaultAccountsToShow);
 
   return (
     <Card
