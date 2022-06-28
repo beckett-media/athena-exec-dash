@@ -278,6 +278,8 @@ function CompareTable({ className, data, title, timeUnit }) {
     }
     /********************* END Faking an outer merge ********************/
 
+    compareData.sort((a, b) => (a.order > b.order) ? 1 : -1);
+
     /* START Logic for Account Selector */
     const uniqueAccounts = [...new Set(compareData.map((d) => d.Account))];
 
