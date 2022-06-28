@@ -83,7 +83,7 @@ const CompanyGraphs = ({
             return (
               <AccordionItem>
                 <h2>
-                  <AccordionButton bg="gray.700">
+                  <AccordionButton bg="gray.500">
                     <Box flex="1" textAlign="center">
                       {item}
                     </Box>
