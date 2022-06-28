@@ -269,8 +269,8 @@ const TimeSeriesGraph = ({
   const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
     <Button
       onClick={onClick}
-      bg={"teal"}
-      _hover={{ bg: "teal.500" }}
+      bg={"none"}
+      _hover={{ bg: "none" }}
       ref={ref}
       fontSize="sm"
       px={1}
