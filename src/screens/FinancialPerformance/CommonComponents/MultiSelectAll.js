@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactMultiSelectCheckboxes from "react-multiselect-checkboxes";
 import "./react-select-styles.css";
 
-const MultiSelectAll = ({ options, setAccountFilter}) => {
-  
+const MultiSelectAll = ({ options, setAccountFilter }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   useEffect(() => {
@@ -40,55 +39,51 @@ const MultiSelectAll = ({ options, setAccountFilter}) => {
       setAccountFilter(value);
     }
   }
-  
+
   const customStyles = {
     menu: (provided, state) => ({
       ...provided,
       width: state.selectProps.width,
       color: state.selectProps.menuColor,
       padding: 5,
-      fontSize:13,
-      backgroundColor:'#1A202C'
+      fontSize: 13,
+      backgroundColor: "#1A202C",
     }),
-    
+
     dropdownButton: (provided, state) => ({
       ...provided,
-      width: '200px',
-      border: '1px solid #ccc',
-      backgroundColor:'#2D3748 !important',
-      color: '#ccc',
-      fontWeight: '500',
+      width: "200px",
+      border: "1px solid #ccc",
+      backgroundColor: "#2D3748 !important",
+      color: "#ccc",
+      fontWeight: "500",
       padding: 10,
     }),
-  
-    control: (_, { selectProps: { width }}) => ({
+
+    control: (_, { selectProps: { width } }) => ({
       width: width,
     }),
 
     option: (provided, state) => ({
       ...provided,
-      borderBottom: '1px dotted pink',
-      color: state.isFocused ? 'black' : 'white',
+      borderBottom: "1px dotted pink",
+      color: state.isFocused ? "black" : "white",
       padding: 5,
-      fontWeight:'normal',
-      textAlign:'left',
-      backgroundColor: state.isSelected  ? '#2A85FF' : '#2D3748',
+      fontWeight: "normal",
+      textAlign: "left",
+      backgroundColor: state.isSelected ? "#4D5E7A" : "#2D3748",
     }),
-  
-  
+
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
-      return { ...provided,
-         opacity, 
-         transition,
-      };
-    }
-  }
-  
+      const transition = "opacity 300ms";
+      return { ...provided, opacity, transition };
+    },
+  };
+
   return (
     <ReactMultiSelectCheckboxes
-      styles={customStyles}  
+      styles={customStyles}
       options={[{ label: "All", value: "*" }, ...options]}
       placeholderButtonLabel="Accounts"
       getDropdownButtonLabel={getDropdownButtonLabel}
@@ -96,7 +91,7 @@ const MultiSelectAll = ({ options, setAccountFilter}) => {
       onChange={onChange}
       setState={setSelectedOptions}
       // className={'react-select-container'}
-      // classNamePrefix={"react-select"}  
+      // classNamePrefix={"react-select"}
     />
   );
 };
