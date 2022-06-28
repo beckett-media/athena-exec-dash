@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactMultiSelectCheckboxes from "react-multiselect-checkboxes";
 import "./react-select-styles.css";
 
-const MultiSelectAll = ({ options, setAccountFilter }) => {
+const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, defaultValue }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   useEffect(() => {
@@ -20,23 +20,23 @@ const MultiSelectAll = ({ options, setAccountFilter }) => {
   function onChange(value, event) {
     if (event.action === "select-option" && event.option.value === "*") {
       this.setState(this.options);
-      setAccountFilter(this.options);
+      setValue(this.options);
     } else if (
       event.action === "deselect-option" &&
       event.option.value === "*"
     ) {
       //deselect all
       this.setState([]);
-      setAccountFilter(this.options);
+      setValue(this.options);
     } else if (event.action === "deselect-option") {
       this.setState(value.filter((o) => o.value !== "*"));
-      setAccountFilter(value);
+      setValue(value);
     } else if (value.length === this.options.length - 1) {
       this.setState(this.options);
-      setAccountFilter(value);
+      setValue(value);
     } else {
       this.setState(value);
-      setAccountFilter(value);
+      setValue(value);
     }
   }
 
@@ -85,11 +85,12 @@ const MultiSelectAll = ({ options, setAccountFilter }) => {
     <ReactMultiSelectCheckboxes
       styles={customStyles}
       options={[{ label: "All", value: "*" }, ...options]}
-      placeholderButtonLabel="Accounts"
+      placeholderButtonLabel={placeholderButtonLabel}
       getDropdownButtonLabel={getDropdownButtonLabel}
       value={selectedOptions}
       onChange={onChange}
       setState={setSelectedOptions}
+      defaultValue={defaultValue}
       // className={'react-select-container'}
       // classNamePrefix={"react-select"}
     />

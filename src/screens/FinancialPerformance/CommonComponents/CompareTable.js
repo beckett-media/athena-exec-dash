@@ -164,25 +164,53 @@ function Tables({ columns, data }) {
   );
 }
 
+function combineCompaniesData(data, companies) {
+  const companyCheck = {};
+
+  for (const company of companies) {
+    companyCheck[company.value] = true;
+  }
+
+  const combined = [];
+  for (const row of data) {
+    if (companyCheck[row.Company]) {
+      combined.push(row);
+    }
+  }
+
+  console.log('combined', combined);
+
+  return combined;
+}
+
 function CompareTable({ className, data, title, timeUnit }) {
   const companies = React.useMemo(
     () => [...new Set(data.map((d) => d.Company))],
     [data]
   );
-  const [filteredCompany, setFilteredCompany] = React.useState(
-    companies?.[1] || ""
-  );
+  // const [filteredCompany, setFilteredCompany] = React.useState(
+  //   companies?.[1] || ""
+  // );
 
   const [seriesDate1, setSeriesDate1] = React.useState("2020-12-31");
   const [seriesDate2, setSeriesDate2] = React.useState("2021-12-31");
 
   const [accountFilter, setAccountFilter] = React.useState([]);
+  const [companyFilter, setCompanyFilter] = React.useState([]);
 
-  const beckett = data.filter((d) => d?.Company === filteredCompany);
+  const companyFilterValues = React.useMemo(() => companies.map(c => ({ value: c, label: c.replace("LLC", "").replace(",", "")})), [companies]);
+
+  // const beckett = data.filter((d) => d?.Company === filteredCompany);
+  const beckett = combineCompaniesData(data, companyFilter);
 
   // data={pl_monthly.filter(function(itm){
   //   return accountsToUse.indexOf(itm.Account) > -1;
   // })}
+
+  const defaultAccountsToShow = React.useMemo(
+    () => [...new Set(beckett.map((d) => d.Account))],
+    [beckett]
+  );
 
   let series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
   let series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
@@ -410,18 +438,18 @@ function CompareTable({ className, data, title, timeUnit }) {
   ];
   const darkMode = useDarkMode();
 
-  const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "company",
-    defaultValue: "Beckett Collectables",
-    onChange: setFilteredCompany,
-  });
-  const group = getRootProps();
+  // const { getRootProps, getRadioProps } = useRadioGroup({
+  //   name: "company",
+  //   defaultValue: "Beckett Collectables",
+  //   onChange: setFilteredCompany,
+  // });
+  // const group = getRootProps();
 
   // function handleSelectChange(data) {
   //   setAccountFilter(data);
   // }
 
-  const [startDate, setStartDate] = React.useState(new Date());
+  // const [startDate, setStartDate] = React.useState(new Date());
   const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
     <Button
       onClick={onClick}
@@ -435,25 +463,27 @@ function CompareTable({ className, data, title, timeUnit }) {
     </Button>
   ));
 
-  const multiSelectStyles = {
-    menu: (provided, state) => ({
-      ...provided,
-      borderBottom: "1px dotted pink",
-      color: state.selectProps.menuColor,
-      padding: 20,
-    }),
+  // const multiSelectStyles = {
+  //   menu: (provided, state) => ({
+  //     ...provided,
+  //     borderBottom: "1px dotted pink",
+  //     color: state.selectProps.menuColor,
+  //     padding: 20,
+  //   }),
 
-    control: (_, { selectProps: { width } }) => ({
-      width: width,
-    }),
+  //   control: (_, { selectProps: { width } }) => ({
+  //     width: width,
+  //   }),
 
-    singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = "opacity 300ms";
+  //   singleValue: (provided, state) => {
+  //     const opacity = state.isDisabled ? 0.5 : 1;
+  //     const transition = "opacity 300ms";
 
-      return { ...provided, opacity, transition };
-    },
-  };
+  //     return { ...provided, opacity, transition };
+  //   },
+  // };
+
+  console.log('availableAccounts', availableAccounts, defaultAccountsToShow);
 
   return (
     <Card
@@ -477,7 +507,7 @@ function CompareTable({ className, data, title, timeUnit }) {
         justifyItems={"center"}
         alignItems={"center"}
       >
-        <Box width={"100%"}>
+        {/* <Box width={"100%"}>
           <HStack {...group}>
             {companies.map((value) => {
               const radio = getRadioProps({ value });
@@ -488,7 +518,24 @@ function CompareTable({ className, data, title, timeUnit }) {
               );
             })}
           </HStack>
-        </Box>
+        </Box> */}
+
+        <MultiSelectAll
+          className={"react-select-container"}
+          classNamePrefix={"react-select"}
+          options={companyFilterValues}
+          placeholderButtonLabel="Companies"
+          setValue={setCompanyFilter}
+        />
+
+        <MultiSelectAll
+          className={"react-select-container"}
+          classNamePrefix={"react-select"}
+          options={availableAccounts}
+          placeholderButtonLabel="Accounts"
+          setValue={setAccountFilter}
+          defaultValue={defaultAccountsToShow}
+        />
 
         <Text mr={2} ml={2} as="div" width="100%" textAlign={"right"}>
           Series 1 Date:
@@ -552,12 +599,7 @@ function CompareTable({ className, data, title, timeUnit }) {
         // justifyItems={"center"}
         alignItems={"center"}
       >
-        <MultiSelectAll
-          className={"react-select-container"}
-          classNamePrefix={"react-select"}
-          options={availableAccounts}
-          setAccountFilter={setAccountFilter}
-        />
+        
       </Box>
 
       <Box marginBottom={10} />
