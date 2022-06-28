@@ -20,7 +20,15 @@
 }
 
 .react-datepicker__input-container {
-  text-align:left;
+  text-align:center;
+  outline: #272B30 solid 1px;
+  color: #6F767E;
+  border-radius: 16px;
+  transition: all 0.2s;
+}
+
+.react-datepicker__input-container:hover {
+  outline: #CBD5E0 solid 1px;
 }
 
 .react-datepicker__month--disabled, .react-datepicker__quarter--disabled { 
