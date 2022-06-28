@@ -204,19 +204,24 @@ function CompareTable({ className, data, title, timeUnit }) {
   const companyFilterValues = React.useMemo(() => companies.map(c => ({ value: c, label: c.replace("LLC", "").replace(",", "")})), [companies]);
 
   // const beckett = data.filter((d) => d?.Company === filteredCompany);
-  const beckett = combineCompaniesData(data, companyFilter);
+  // const beckett = combineCompaniesData(data, companyFilter);
+
+  const filteredData = [...data];
+  // const filteredData = data.filter(function(itm){
+  //     return companies.indexOf(itm.Company) > -1;
+  //   })
 
   // data={pl_monthly.filter(function(itm){
   //   return accountsToUse.indexOf(itm.Account) > -1;
   // })}
 
   const defaultAccountsToShow = React.useMemo(
-    () => [...new Set(beckett.map((d) => d.Account))],
-    [beckett]
+    () => [...new Set(filteredData.map((d) => d.Account))],
+    [filteredData]
   );
 
-  let series1 = beckett.filter((d) => d?.StrDate === seriesDate1);
-  let series2 = beckett.filter((d) => d?.StrDate === seriesDate2);
+  let series1 = filteredData.filter((d) => d?.StrDate === seriesDate1);
+  let series2 = filteredData.filter((d) => d?.StrDate === seriesDate2);
 
   const series1Exists = series1.length > 0;
   const series2Exists = series2.length > 0;
@@ -296,6 +301,19 @@ function CompareTable({ className, data, title, timeUnit }) {
       );
     }
     /* END Logic for Account Selector */
+
+    
+  /* START Logic for Company Selector */
+  
+  if (companyFilter.length > 0) {
+    const companiesToFilter = companyFilter.map((d) => d.value);
+    compareData = compareData.filter(
+      (d) => companiesToFilter.indexOf(d.Company) > -1
+    );
+  }
+  /* END Logic for Company Selector */
+
+
   }
 
   const columns = [
@@ -618,7 +636,7 @@ function CompareTable({ className, data, title, timeUnit }) {
           options={availableAccounts}
           placeholderButtonLabel="Accounts"
           setValue={setAccountFilter}
-          defaultValue={defaultAccountsToShow}
+          // defaultValue={defaultAccountsToShow}
         />
 
         <Text mr={2} ml={2} as="div" width="100%" textAlign={"right"}>
