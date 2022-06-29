@@ -43,7 +43,16 @@ function useControlledState(state) {
   }, [state]);
 }
 
-function Tables({ columns, data }) {
+function Tables({ columns, data,selectedCompanies }) {
+  const allCompanies = selectedCompanies.map(d => d.value);
+  
+  let doGroupBy = true;
+  if (allCompanies.length == 1 ) {
+    if (allCompanies[0]!='*' ) {
+      doGroupBy=false;
+    }
+  }
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -55,9 +64,9 @@ function Tables({ columns, data }) {
     {
       columns,
       data,
-      initialState: {
+      initialState: (doGroupBy ? {
         groupBy: ["Account"],
-      },
+      } : {}),
     },
     useGroupBy,
     useExpanded,
@@ -726,7 +735,7 @@ function CompareTable({ className, data, title, timeUnit }) {
 
       <Box marginBottom={10} />
 
-      <Tables columns={columns} data={compareData} />
+      <Tables columns={columns} data={compareData} selectedCompanies={selectedOptionsCompanies} />
     </Card>
   );
 }
