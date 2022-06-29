@@ -259,19 +259,18 @@ function CompareTable({ className, data, title, timeUnit }) {
     series2 = series2Exists ? series2 : series1;
 
     /********************* START Faking an outer merge ********************/
-
     let s1AccountCompanies = [];
     // First, go through DF1
     for (var i = 0; i < series1.length; i++) {
       let thisObj = { ...series1[i] };
-      thisObj["Balance1"] = thisObj["Balance"];
-      thisObj["BudgetBalance1"] = thisObj["BudgetBalance"];
-      thisObj["Balance2"] = null;
-      thisObj["BudgetBalance2"] = null;
+      thisObj["Balance1"] = thisObj["Balance"] || NaN;
+      thisObj["BudgetBalance1"] = thisObj["BudgetBalance"] || NaN;
+      thisObj["Balance2"] = NaN;
+      thisObj["BudgetBalance2"] = NaN;
       thisObj['Series1'] = [];
       thisObj['Series2'] = [];
-      thisObj['Series1']["Balance1"] = thisObj["Balance"];
-      thisObj['Series1']["BudgetBalance1"] = thisObj["BudgetBalance"];
+      thisObj['Series1']["Balance1"] = thisObj["Balance"] || NaN;
+      thisObj['Series1']["BudgetBalance1"] = thisObj["BudgetBalance"]  || NaN;
 
       let s1Account = series1[i]["Account"];
       let s1Company = series1[i]["Company"];
@@ -300,21 +299,21 @@ function CompareTable({ className, data, title, timeUnit }) {
         let thisObj = { ...series2[i] };
         // Let's set  the Balance1, BudgetBalance1 and Diff to null; since we know now that this
         // doesn't exist in DF1
-        thisObj["Balance1"] = null;
-        thisObj["BudgetBalance1"] = null;
+        thisObj["Balance1"] = NaN;
+        thisObj["BudgetBalance1"] = NaN;
         thisObj["Series1"] = [];
-        thisObj["Diff"] = null;
+        thisObj["Diff"] = NaN;
         thisObj["Balance2"] = thisObj["Balance"];
         thisObj["BudgetBalance2"] = thisObj["BudgetBalance"];
         thisObj['Series2'] = [];
-        thisObj['Series2']["Balance2"] = thisObj["Balance"];
-        thisObj['Series2']["BudgetBalance2"] = thisObj["BudgetBalance"];
+        thisObj['Series2']["Balance2"] = thisObj["Balance"]  || NaN;
+        thisObj['Series2']["BudgetBalance2"] = thisObj["BudgetBalance"]  || NaN;
 
         compareData.push(thisObj);
       }
     }
     /********************* END Faking an outer merge ********************/
-
+    
     compareData.sort((a, b) => (a.order > b.order) ? 1 : -1);
 
     /* START Logic for Account Selector */
@@ -396,8 +395,10 @@ function CompareTable({ className, data, title, timeUnit }) {
             accessor: "Series1",
             aggregate: d => {
               return {
-                'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => (prev ? prev : 0) + (curr ? curr :0) , 0),
-                'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => (prev ? prev : 0)  + (curr ? curr :0), 0) 
+                // 'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => (prev ? prev : 0) + (curr ? curr :0) , 0),
+                // 'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => (prev ? prev : 0)  + (curr ? curr :0), 0) 
+                'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => prev + curr , 0),
+                'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => prev  + curr , 0) 
               }
             }, 
             Aggregated: ({ value }) => {
@@ -560,6 +561,7 @@ function CompareTable({ className, data, title, timeUnit }) {
                 color={value >= 0 ? "#48BB78" : "#F56565"}
               >
                 {formatMoneyWithCommas(value)}
+                {/* {value} */}
               </Text>
             ),
           },
