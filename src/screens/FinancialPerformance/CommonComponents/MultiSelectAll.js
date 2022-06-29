@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import ReactMultiSelectCheckboxes from "react-multiselect-checkboxes";
 import "./react-select-styles.css";
 
-const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, defaultValue }) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, selectedOptions, setSelectedOptions }) => {
 
   useEffect(() => {
-    setSelectedOptions([{ label: "All", value: "*" }, ...options]);
+    if (selectedOptions.length == 0) {
+      setSelectedOptions([{ label: " All", value: "*" }, ...selectedOptions]);
+    }
+    
   }, []);
 
   function getDropdownButtonLabel({ placeholderButtonLabel, value }) {
@@ -90,9 +92,6 @@ const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, defaultValu
       value={selectedOptions}
       onChange={onChange}
       setState={setSelectedOptions}
-      defaultValue={defaultValue}
-      // className={'react-select-container'}
-      // classNamePrefix={"react-select"}
     />
   );
 };
