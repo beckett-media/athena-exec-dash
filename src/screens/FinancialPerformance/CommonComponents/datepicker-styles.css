@@ -9,6 +9,10 @@
   width: 2.5rem;
 }
 
+.react-datepicker__month-text {
+  color: #fff;
+}
+
 .react-datepicker__month-text:hover, .react-datepicker__quarter-text:hover {
   background-color: #272B30;
   color:#FCFCFC;
