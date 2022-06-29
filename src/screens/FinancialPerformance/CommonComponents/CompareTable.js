@@ -260,7 +260,7 @@ function CompareTable({ className, data, title, timeUnit }) {
 
     /********************* START Faking an outer merge ********************/
 
-    let s1Accounts = [];
+    let s1AccountCompanies = [];
     // First, go through DF1
     for (var i = 0; i < series1.length; i++) {
       let thisObj = { ...series1[i] };
@@ -274,9 +274,11 @@ function CompareTable({ className, data, title, timeUnit }) {
       thisObj['Series1']["BudgetBalance1"] = thisObj["BudgetBalance"];
 
       let s1Account = series1[i]["Account"];
+      let s1Company = series1[i]["Company"];
+      let s1AccountCompany = series1[i]["Account"] + series1[i]["Company"];
 
       for (var j = 0; j < series2.length; j++) {
-        if (series2[j]["Account"] == s1Account) {
+        if ((series2[j]["Account"] == s1Account) && (series2[j]["Company"] == s1Company)) {
           thisObj["Balance2"] = series2[j]["Balance"];
           thisObj["BudgetBalance2"] = series2[j]["BudgetBalance"];
           thisObj['Series2']["Balance2"] = series2[j]["Balance"];
@@ -285,14 +287,16 @@ function CompareTable({ className, data, title, timeUnit }) {
       }
       thisObj["Diff"] = thisObj["Balance1"] - thisObj["Balance2"];
 
-      s1Accounts.push(s1Account);
+      s1AccountCompanies.push(s1AccountCompany);
       compareData.push(thisObj);
     }
 
     // Second, go through DF2
     for (var i = 0; i < series2.length; i++) {
       let s2Account = series2[i]["Account"];
-      if (s1Accounts.indexOf(s2Account) === -1) {
+      let s2Company = series2[i]["Company"];
+      let s2AccountCompany = s2Account+s2Company;
+      if (s1AccountCompanies.indexOf(s2AccountCompany) === -1) {
         let thisObj = { ...series2[i] };
         // Let's set  the Balance1, BudgetBalance1 and Diff to null; since we know now that this
         // doesn't exist in DF1
@@ -392,8 +396,8 @@ function CompareTable({ className, data, title, timeUnit }) {
             accessor: "Series1",
             aggregate: d => {
               return {
-                'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => prev + curr, 0),
-                'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => prev + curr, 0) 
+                'Balance1':d.map(item => item.Balance1).reduce((prev, curr) => (prev ? prev : 0) + (curr ? curr :0) , 0),
+                'BudgetBalance1':  d.map(item => item.BudgetBalance1).reduce((prev, curr) => (prev ? prev : 0)  + (curr ? curr :0), 0) 
               }
             }, 
             Aggregated: ({ value }) => {
