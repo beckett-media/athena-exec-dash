@@ -428,7 +428,6 @@ function CompareTable({ className, data, title, timeUnit }) {
                   fontSize={13}
                   textAlign="right"
                   color={"gray"}
-                  marginTop={2}
                 >
                   {formatMoneyWithCommas(value.BudgetBalance1)}
                 </Text>
