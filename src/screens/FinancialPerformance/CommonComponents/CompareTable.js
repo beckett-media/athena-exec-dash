@@ -215,10 +215,25 @@ function CompareTable({ className, data, title, timeUnit }) {
   //   return accountsToUse.indexOf(itm.Account) > -1;
   // })}
 
-  const defaultAccountsToShow = React.useMemo(
-    () => [...new Set(filteredData.map((d) => d.Account))],
-    [filteredData]
+  // const defaultAccountsToShow = React.useMemo(
+  //   () => [...new Set(filteredData.map((d) => d.Account))],
+  //   [filteredData]
+  // );
+
+  let defaultAccountsToShow = filteredData.filter(
+    (d) => d.default_show
   );
+  defaultAccountsToShow = [...new Set(defaultAccountsToShow.map(c => c.Account))];
+  React.useEffect(() => {
+    setAccountFilter(defaultAccountsToShow);
+  }, []);
+
+  defaultAccountsToShow = defaultAccountsToShow.map(c => ({ value: c, label: c}));
+  
+  const [selectedOptionsCompanies, setSelectedOptionsCompanies] = React.useState([]);
+  const [selectedOptionsAccounts, setSelectedOptionsAccounts] = React.useState(defaultAccountsToShow);
+  
+  
 
   let series1 = filteredData.filter((d) => d?.StrDate === seriesDate1);
   let series2 = filteredData.filter((d) => d?.StrDate === seriesDate2);
@@ -313,6 +328,8 @@ function CompareTable({ className, data, title, timeUnit }) {
   }
   /* END Logic for Company Selector */
 
+  
+  
 
   }
 
@@ -628,6 +645,8 @@ function CompareTable({ className, data, title, timeUnit }) {
           options={companyFilterValues}
           placeholderButtonLabel="Companies"
           setValue={setCompanyFilter}
+          selectedOptions={selectedOptionsCompanies}
+          setSelectedOptions={setSelectedOptionsCompanies}
         />
 
         <MultiSelectAll
@@ -636,7 +655,8 @@ function CompareTable({ className, data, title, timeUnit }) {
           options={availableAccounts}
           placeholderButtonLabel="Accounts"
           setValue={setAccountFilter}
-          // defaultValue={defaultAccountsToShow}
+          selectedOptions={selectedOptionsAccounts}
+          setSelectedOptions={setSelectedOptionsAccounts}
         />
 
         <Text mr={2} ml={2} as="div" width="100%" textAlign={"right"}>
