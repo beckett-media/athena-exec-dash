@@ -12,7 +12,7 @@ const PlotRow = ({
   company,
   dataFilteredByYear,
   accountsToUse,
-  hideNoData
+  hideNoData,
 }) => {
   const darkMode = useDarkMode(false);
 
@@ -26,21 +26,21 @@ const PlotRow = ({
   };
 
   function sortByType(type) {
-    const dataFilterYear = dataFilteredByYear.filter((d) => d?.Account === type);
-      
+    const dataFilterYear = dataFilteredByYear.filter(
+      (d) => d?.Account === type
+    );
+
     const budgetData = dataFilterYear.map((d) =>
-      (d.Account === type) & (d.Company === company)
-        ? d.BudgetBalance
-        : null
+      (d.Account === type) & (d.Company === company) ? d.BudgetBalance : null
     );
     const actualsData = dataFilterYear.map((d) =>
       (d.Account === type) & (d.Company === company) ? d.Balance : null
     );
 
-    const hasBudgetData = !budgetData.every(element => element === null);
-    const hasActualsData = !actualsData.every(element => element === null);
+    const hasBudgetData = !budgetData.every((element) => element === null);
+    const hasActualsData = !actualsData.every((element) => element === null);
 
-    const chartData =  [
+    const chartData = [
       {
         x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
         y: budgetData,
@@ -65,77 +65,76 @@ const PlotRow = ({
         },
       },
     ];
-    
+
     return {
       chartData: chartData,
-      hasData: (hasBudgetData || hasActualsData)
+      hasData: hasBudgetData || hasActualsData,
     };
   }
 
   const getLayout = (account) => {
-  return {
-    xaxis: {
-      // title: `Month`,
-      showgrid: false,
-      zeroline: false,
-      showline: true,
-      showticklabels: true,
-      tickcolor: "#e5eaf0",
-    },
-
-    yaxis: {
-      title: "USD",
-      showgrid: true,
-      zeroline: false,
-      showline: true,
-      showticklabels: true,
-      tickformat: "s",
-    },
-    autosize: true,
-    width: accountsToUse.length < 5 ? 500 : 320,
-    height: 350,
-    display: "flex",
-    margin: {
-      l: 70,
-      r: 50,
-      b: 100,
-      t: 100,
-      pad: 5,
-    },
-
-    paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
-    plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
-    showlegend: true,
-    hovermode: "closest",
-    title: {
-      text:account,
-      font: {
-        color:darkMode.value ? "#ffffff" : "#1A1D1F",
-        //family: 'Courier New, monospace',
-        //size: 24
+    return {
+      xaxis: {
+        // title: `Month`,
+        showgrid: false,
+        zeroline: false,
+        showline: true,
+        showticklabels: true,
+        tickcolor: "#e5eaf0",
       },
-      xref: 'paper',
-      x: 0.5,
-    },  
-    //title: account,
-    legend: {
-      
-      x: 0.5,
-      y: 10,
-      bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
-      bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
-      borderwidth: 6,
-      orientation: "h",
-      xanchor:'center',
 
-      font: {
-        color: darkMode.value ? "#ffffff" : "#1A1D1F",
-        size: 11,
-        weight:100
+      yaxis: {
+        title: "USD",
+        showgrid: true,
+        zeroline: false,
+        showline: true,
+        showticklabels: true,
+        tickformat: "s",
       },
-    },
+      autosize: true,
+      width: accountsToUse.length < 5 ? 400 : 280,
+      height: 350,
+      display: "flex",
+      margin: {
+        l: 70,
+        r: 50,
+        b: 100,
+        t: 100,
+        pad: 5,
+      },
+
+      paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+      plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+      showlegend: true,
+      hovermode: "closest",
+      title: {
+        text: account,
+        font: {
+          color: darkMode.value ? "#ffffff" : "#1A1D1F",
+          //family: 'Courier New, monospace',
+          //size: 24
+        },
+        xref: "paper",
+        x: 0.5,
+      },
+      //title: account,
+      legend: {
+        x: 0.5,
+        y: 10,
+        bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+        bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
+        borderwidth: 6,
+        orientation: "h",
+        xanchor: "center",
+
+        font: {
+          color: darkMode.value ? "#ffffff" : "#1A1D1F",
+          size: 11,
+          weight: 100,
+        },
+      },
+    };
   };
-}
 
   return (
     <>
@@ -148,41 +147,40 @@ const PlotRow = ({
         justifyItems={"center"}
       >
         {accountsToUse &&
-          accountsToUse.map((account) => (
-
-            ( hideNoData && !sortByType(account)['hasData']   ? 
-            ''
-            :
-            <Box
-              display={"flex"}
-              // width={"min-content"}
-              width={'100%'}
-              flexDirection={"column"}
-              position={"relative"}
-            >
-              {
-                (!sortByType(account)['hasData'] && !hideNoData ? 
+          accountsToUse.map((account) =>
+            hideNoData && !sortByType(account)["hasData"] ? (
+              ""
+            ) : (
+              <Box
+                display={"flex"}
+                // width={"min-content"}
+                width={"100%"}
+                flexDirection={"column"}
+                position={"relative"}
+              >
+                {!sortByType(account)["hasData"] && !hideNoData ? (
                   <Box
-                    display={'flex'}
-                    height={'100%'}
-                    width={'100%'}
-                    alignItems={'center'}
-                    justifyContent={'center'}
-                    color={'gray.500'}
-                    fontSize={'sm'}
-                    >{`No data available for ${account}`}
-                  </Box> : 
+                    display={"flex"}
+                    height={"100%"}
+                    width={"100%"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    color={"gray.500"}
+                    fontSize={"sm"}
+                  >
+                    {`No data available for ${account}`}
+                  </Box>
+                ) : (
                   <Plot
-                    data={sortByType(account)['chartData']}
+                    data={sortByType(account)["chartData"]}
                     layout={getLayout(account)}
                     useResizeHandler={true}
                     config={{ displayModeBar: false }}
                   />
-                )
-              }
-            </Box>
+                )}
+              </Box>
             )
-          ))}
+          )}
       </Grid>
     </>
   );
