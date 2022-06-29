@@ -37,7 +37,7 @@ const TimeSeriesGraph = ({
 
   const dataFilterYear = dataFilter.filter((item) => {
     let tempEndDate = new Date(endDate);
-    tempEndDate.setMonth(tempEndDate.getMonth() + (timeUnit == "m" ? 1 : 3));
+    tempEndDate.setMonth(tempEndDate.getMonth() + (timeUnit === "m" ? 1 : 3));
     return (
       new Date(item.FullDate) >= startDate &&
       new Date(item.FullDate) <= tempEndDate
@@ -189,8 +189,8 @@ const TimeSeriesGraph = ({
       },
     },
     {
-      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
-      y: dataFilterYear.map((d) =>
+      x: dataFilterYear.filter(d => !!d.BudgetBalance).map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.filter(d => !!d.BudgetBalance).map((d) =>
         (d.Account === sorting) &
         (d.Company === "Southern Hobby Distribution,LLC")
           ? d.BudgetBalance
@@ -319,22 +319,22 @@ const TimeSeriesGraph = ({
           <Text width={"100%"}>Start Date</Text>
           <DatePicker
             selected={new Date(startDate)}
-            dateFormat={timeUnit == "q" ? "yyyy QQQ" : "MM/yyyy"}
+            dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
             minDate={new Date("01-01-2019")}
             maxDate={new Date("05-31-2022")}
-            showMonthYearPicker={timeUnit == "m" ? true : false}
-            showQuarterYearPicker={timeUnit == "q" ? true : false}
+            showMonthYearPicker={timeUnit === "m" ? true : false}
+            showQuarterYearPicker={timeUnit === "q" ? true : false}
             onChange={(date) => setStartDate(date)}
             customInput={<ExampleCustomInput />}
           />
           <Text width={"100%"}>End Date</Text>
           <DatePicker
             selected={new Date(endDate)}
-            dateFormat={timeUnit == "q" ? "yyyy QQQ" : "MM/yyyy"}
+            dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
             minDate={new Date("01-01-2019")}
             maxDate={new Date("05-31-2022")}
-            showMonthYearPicker={timeUnit == "m" ? true : false}
-            showQuarterYearPicker={timeUnit == "q" ? true : false}
+            showMonthYearPicker={timeUnit === "m" ? true : false}
+            showQuarterYearPicker={timeUnit === "q" ? true : false}
             onChange={(date) => setEndDate(date)}
             customInput={<ExampleCustomInput />}
           />
