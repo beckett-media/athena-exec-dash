@@ -52,6 +52,10 @@ export const formatMoneyWithCommas = (money) => {
   if (num < 0) {
     return `-$${str}`;
   }
+  
+  if (num == 0) {
+    return `$${str}`;
+  }
 
   return '-'
 }
