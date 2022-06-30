@@ -34,8 +34,6 @@ const CompanyGraphs = ({
     (a, b) => b - a
   );
 
-  console.log(accountsToUse);
-
   const dataFilteredByYear = data.filter((d) => d?.Year === year);
 
   return (

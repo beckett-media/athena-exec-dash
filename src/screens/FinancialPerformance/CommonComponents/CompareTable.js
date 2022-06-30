@@ -9,8 +9,6 @@ import {
   Tr,
   Table,
   Button,
-  HStack,
-  useRadioGroup,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
@@ -19,12 +17,23 @@ import useDarkMode from "use-dark-mode";
 import cn from "classnames";
 import styles from "./Table.module.sass";
 import { formatMoneyWithCommas, formatMonthDate, getCorrectZeroOrNan } from "../../../utils.js";
-import moment from "moment";
-import RadioCard from "./RadioCard";
 import DatePicker from "react-datepicker";
 import "./datepicker-styles.css";
 import "./react-select-styles.css";
 import MultiSelectAll from "./MultiSelectAll";
+
+const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
+  <Button
+    onClick={onClick}
+    bg={"none"}
+    _hover={{ bg: "none" }}
+    ref={ref}
+    fontSize="sm"
+    px={1}
+  >
+    {value}
+  </Button>
+));
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -41,11 +50,12 @@ function useControlledState(state) {
 }
 
 function Tables({ columns, data,selectedCompanies }) {
+  const darkMode = useDarkMode();
   const allCompanies = selectedCompanies.map(d => d.value);
   
   let doGroupBy = true;
-  if (allCompanies.length == 1 ) {
-    if (allCompanies[0]!='*' ) {
+  if (allCompanies.length === 1 ) {
+    if (allCompanies[0] !== '*' ) {
       doGroupBy=false;
     }
   }
@@ -111,7 +121,6 @@ function Tables({ columns, data,selectedCompanies }) {
   );
 
   const firstPageRows = rows.slice(0, 100);
-  const darkMode = useDarkMode();
 
   return (
     <>
@@ -291,7 +300,7 @@ function CompareTable({ className, data, title, timeUnit }) {
     }
 
     // Second, go through DF2
-    for (var i = 0; i < series2.length; i++) {
+    for (let i = 0; i < series2.length; i ++) {
       let s2Account = series2[i]["Account"];
       let s2Company = series2[i]["Company"];
       let s2AccountCompany = s2Account+s2Company;
@@ -570,52 +579,7 @@ function CompareTable({ className, data, title, timeUnit }) {
   ];
   const darkMode = useDarkMode();
 
-  // const { getRootProps, getRadioProps } = useRadioGroup({
-  //   name: "company",
-  //   defaultValue: "Beckett Collectables",
-  //   onChange: setFilteredCompany,
-  // });
-  // const group = getRootProps();
 
-  // function handleSelectChange(data) {
-  //   setAccountFilter(data);
-  // }
-
-  // const [startDate, setStartDate] = React.useState(new Date());
-  const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
-    <Button
-      onClick={onClick}
-      bg={"none"}
-      _hover={{ bg: "none" }}
-      ref={ref}
-      fontSize="sm"
-      px={1}
-    >
-      {value}
-    </Button>
-  ));
-
-  // const multiSelectStyles = {
-  //   menu: (provided, state) => ({
-  //     ...provided,
-  //     borderBottom: "1px dotted pink",
-  //     color: state.selectProps.menuColor,
-  //     padding: 20,
-  //   }),
-
-  //   control: (_, { selectProps: { width } }) => ({
-  //     width: width,
-  //   }),
-
-  //   singleValue: (provided, state) => {
-  //     const opacity = state.isDisabled ? 0.5 : 1;
-  //     const transition = "opacity 300ms";
-
-  //     return { ...provided, opacity, transition };
-  //   },
-  // };
-
-  //console.log('availableAccounts', availableAccounts, defaultAccountsToShow);
 
   return (
     <Card
@@ -639,18 +603,6 @@ function CompareTable({ className, data, title, timeUnit }) {
         justifyItems={"center"}
         alignItems={"center"}
       >
-        {/* <Box width={"100%"}>
-          <HStack {...group}>
-            {companies.map((value) => {
-              const radio = getRadioProps({ value });
-              return (
-                <RadioCard key={value} {...radio}>
-                  {value.replace("LLC", "").replace(",", "")}
-                </RadioCard>
-              );
-            })}
-          </HStack>
-        </Box> */}
 
         <MultiSelectAll
           className={"react-select-container"}
@@ -678,11 +630,11 @@ function CompareTable({ className, data, title, timeUnit }) {
 
         <DatePicker
           selected={new Date(seriesDate1)}
-          dateFormat={timeUnit == "q" ? "yyyy QQQ" : "MM/yyyy"}
+          dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
           minDate={new Date("01-01-2019")}
           maxDate={new Date("07-31-2022")}
-          showMonthYearPicker={timeUnit == "m" ? true : false}
-          showQuarterYearPicker={timeUnit == "q" ? true : false}
+          showMonthYearPicker={timeUnit === "m" ? true : false}
+          showQuarterYearPicker={timeUnit === "q" ? true : false}
           onChange={(date) => setSeriesDate1(formatMonthDate(date, timeUnit))}
           customInput={<ExampleCustomInput />}
         />
@@ -693,11 +645,11 @@ function CompareTable({ className, data, title, timeUnit }) {
 
         <DatePicker
           selected={new Date(seriesDate2)}
-          dateFormat={timeUnit == "q" ? "yyyy QQQ" : "MM/yyyy"}
+          dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
           minDate={new Date("01-01-2019")}
           maxDate={new Date("07-31-2022")}
-          showMonthYearPicker={timeUnit == "m" ? true : false}
-          showQuarterYearPicker={timeUnit == "q" ? true : false}
+          showMonthYearPicker={timeUnit === "m" ? true : false}
+          showQuarterYearPicker={timeUnit === "q" ? true : false}
           onChange={(date) => setSeriesDate2(formatMonthDate(date, timeUnit))}
           customInput={<ExampleCustomInput />}
         />

@@ -9,17 +9,14 @@ import {
   Thead,
   Tr,
   Table,
-  Button,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
-import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
 import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
-import moment from "moment";
 
 function useControlledState(state) {
   return React.useMemo(() => {
@@ -326,7 +323,7 @@ function TablePivots({ className, data, balanceSheet }) {
         </Badge>
       ),
     }
-  ]);
+  ], []);
 
   const darkMode = useDarkMode();
 
