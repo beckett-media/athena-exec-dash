@@ -9,14 +9,12 @@ import {
   Thead,
   Tr,
   Table,
-  Button,
 } from "@chakra-ui/react";
 import { useTable, useGroupBy, useExpanded } from "react-table";
 import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
-import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
-import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
+import Card from "../../../components/Card";
 import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
@@ -36,6 +34,7 @@ function useControlledState(state) {
 }
 
 function Tables({ columns, data }) {
+  const darkMode = useDarkMode();
   const {
     getTableProps,
     getTableBodyProps,
@@ -136,7 +135,6 @@ function Tables({ columns, data }) {
   );
 
   const firstPageRows = rows.slice(0, 100);
-  const darkMode = useDarkMode();
 
   return (
     <>
@@ -198,6 +196,8 @@ function Tables({ columns, data }) {
 }
 
 function QuarterlyTable({ className, balancePivotQuarterly }) {
+  const darkMode = useDarkMode();
+
   const columns = React.useMemo(
     () => [
       {
@@ -305,8 +305,6 @@ function QuarterlyTable({ className, balancePivotQuarterly }) {
     ],
     []
   );
-
-  const darkMode = useDarkMode();
 
   return (
     <Card

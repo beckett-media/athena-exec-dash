@@ -10,6 +10,19 @@ import DatePicker from "react-datepicker";
 import "./datepicker-styles.css";
 import "./chart-styles.css";
 
+const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
+  <Button
+    onClick={onClick}
+    bg={"none"}
+    _hover={{ bg: "none" }}
+    ref={ref}
+    fontSize="sm"
+    px={1}
+  >
+    {value}
+  </Button>
+));
+
 const TimeSeriesGraph = ({
   className,
   title,
@@ -49,7 +62,7 @@ const TimeSeriesGraph = ({
 
   // function to remove underscores from the account name
 
-  var graphData = [
+  const graphData = [
     {
       x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
       y: dataFilterYear.map((d) =>
@@ -214,7 +227,7 @@ const TimeSeriesGraph = ({
     },
   ];
 
-  var layout = {
+  const layout = {
     xaxis: {
       title: "",
       showgrid: false,
@@ -268,19 +281,6 @@ const TimeSeriesGraph = ({
       },
     },
   };
-
-  const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
-    <Button
-      onClick={onClick}
-      bg={"none"}
-      _hover={{ bg: "none" }}
-      ref={ref}
-      fontSize="sm"
-      px={1}
-    >
-      {value}
-    </Button>
-  ));
 
   return (
     <Card

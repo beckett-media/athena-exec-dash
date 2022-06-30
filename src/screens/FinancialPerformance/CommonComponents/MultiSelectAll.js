@@ -1,23 +1,63 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactMultiSelectCheckboxes from "react-multiselect-checkboxes";
 import "./react-select-styles.css";
+
+function getDropdownButtonLabel({ placeholderButtonLabel, value }) {
+  if (value && value.some((o) => o.value === "*")) {
+    return `${placeholderButtonLabel}: All`;
+  } else {
+    return `${placeholderButtonLabel}: ${value.length} selected`;
+  }
+}
+
+const customStyles = {
+  menu: (provided, state) => ({
+    ...provided,
+    width: state.selectProps.width,
+    color: state.selectProps.menuColor,
+    padding: 5,
+    fontSize: 13,
+    backgroundColor: "#1A202C",
+  }),
+
+  dropdownButton: (provided, state) => ({
+    ...provided,
+    width: "200px",
+    border: "1px solid #ccc",
+    backgroundColor: "#2D3748 !important",
+    color: "#ccc",
+    fontWeight: "500",
+    padding: 10,
+  }),
+
+  control: (_, { selectProps: { width } }) => ({
+    width: width,
+  }),
+
+  option: (provided, state) => ({
+    ...provided,
+    borderBottom: "1px dotted pink",
+    color: state.isFocused ? "black" : "white",
+    padding: 5,
+    fontWeight: "normal",
+    textAlign: "left",
+    backgroundColor: state.isSelected ? "#4D5E7A" : "#2D3748",
+  }),
+
+  singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = "opacity 300ms";
+    return { ...provided, opacity, transition };
+  },
+};
 
 const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, selectedOptions, setSelectedOptions }) => {
 
   useEffect(() => {
-    if (selectedOptions.length == 0) {
+    if (selectedOptions.length === 0) {
       setSelectedOptions([{ label: " All", value: "*" }, ...selectedOptions]);
     }
-    
   }, []);
-
-  function getDropdownButtonLabel({ placeholderButtonLabel, value }) {
-    if (value && value.some((o) => o.value === "*")) {
-      return `${placeholderButtonLabel}: All`;
-    } else {
-      return `${placeholderButtonLabel}: ${value.length} selected`;
-    }
-  }
 
   function onChange(value, event) {
     if (event.action === "select-option" && event.option.value === "*") {
@@ -41,47 +81,6 @@ const MultiSelectAll = ({ options, setValue, placeholderButtonLabel, selectedOpt
       setValue(value);
     }
   }
-
-  const customStyles = {
-    menu: (provided, state) => ({
-      ...provided,
-      width: state.selectProps.width,
-      color: state.selectProps.menuColor,
-      padding: 5,
-      fontSize: 13,
-      backgroundColor: "#1A202C",
-    }),
-
-    dropdownButton: (provided, state) => ({
-      ...provided,
-      width: "200px",
-      border: "1px solid #ccc",
-      backgroundColor: "#2D3748 !important",
-      color: "#ccc",
-      fontWeight: "500",
-      padding: 10,
-    }),
-
-    control: (_, { selectProps: { width } }) => ({
-      width: width,
-    }),
-
-    option: (provided, state) => ({
-      ...provided,
-      borderBottom: "1px dotted pink",
-      color: state.isFocused ? "black" : "white",
-      padding: 5,
-      fontWeight: "normal",
-      textAlign: "left",
-      backgroundColor: state.isSelected ? "#4D5E7A" : "#2D3748",
-    }),
-
-    singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = "opacity 300ms";
-      return { ...provided, opacity, transition };
-    },
-  };
 
   return (
     <ReactMultiSelectCheckboxes
