@@ -734,9 +734,12 @@ function CompareTable({ className, data, title, timeUnit }) {
         gap={1}
         width={"100%"}
         mt={4}
+        fontWeight={500}
         // justifyItems={"center"}
         alignItems={"center"}
       >
+        Actual values are shown in <Text color='#48BB78'>green (positive)</Text> and <Text color='#F56565'>red (negative)</Text>. 
+        Budget values are in <Text color='gray'>gray</Text>. 
         
       </Box>
 
