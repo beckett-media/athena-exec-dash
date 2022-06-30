@@ -284,7 +284,7 @@ function CompareTable({ className, data, title, timeUnit }) {
           thisObj['Series2']["BudgetBalance2"] = getCorrectZeroOrNan(series2[j]["BudgetBalance"]);
         }
       }
-      thisObj["Diff"] = thisObj["Balance1"] - thisObj["Balance2"];
+      thisObj["Diff"] = thisObj["Balance2"] - thisObj["Balance1"];
 
       s1AccountCompanies.push(s1AccountCompany);
       compareData.push(thisObj);
