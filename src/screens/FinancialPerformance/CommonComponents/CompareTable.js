@@ -300,7 +300,7 @@ function CompareTable({ className, data, title, timeUnit }) {
     }
 
     // Second, go through DF2
-    for (const i = 0; i < series2.length; i++) {
+    for (let i = 0; i < series2.length; i ++) {
       let s2Account = series2[i]["Account"];
       let s2Company = series2[i]["Company"];
       let s2AccountCompany = s2Account+s2Company;
