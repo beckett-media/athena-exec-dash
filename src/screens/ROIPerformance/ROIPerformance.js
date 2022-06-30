@@ -11,15 +11,15 @@ const ROIPerformance = (dataCI) => {
   return (
     <>
       <div className={styles.col}>
-        <Card
+        {/* <Card
           className={styles.card}
           classCardHead={styles.head}
           title="ROI Table"
           classTitle={cn("title-purple", styles.title)}
         >
           <TablePivots dataCI={roiData} />
-        </Card>
-        {/* <ComingSoon /> */}
+        </Card> */}
+        <ComingSoon />
       </div>
     </>
   );
