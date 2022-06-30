@@ -20,13 +20,10 @@ import cn from "classnames";
 import styles from "./Table.module.sass";
 import { formatMoneyWithCommas, formatMonthDate, getCorrectZeroOrNan } from "../../../utils.js";
 import moment from "moment";
-// import * as dfd from "danfojs";
 import RadioCard from "./RadioCard";
 import DatePicker from "react-datepicker";
-//import "react-datepicker/dist/react-datepicker.css";
 import "./datepicker-styles.css";
 import "./react-select-styles.css";
-// import Select from 'react-select';
 import MultiSelectAll from "./MultiSelectAll";
 
 function useControlledState(state) {
@@ -727,23 +724,29 @@ function CompareTable({ className, data, title, timeUnit }) {
           />        
 
       </Box> */}
-      <Box marginBottom={5} />
-      <Box
-        flexDirection={"row"}
-        display={"flex"}
-        gap={1}
-        width={"100%"}
-        mt={4}
-        fontWeight={500}
-        // justifyItems={"center"}
-        alignItems={"center"}
-      >
-        Actual values are shown in <Text color='#48BB78'>green (positive)</Text> and <Text color='#F56565'>red (negative)</Text>. 
-        Budget values are in <Text color='gray'>gray</Text>. 
-        
-      </Box>
+      <Box marginBottom={15} />
 
-      <Box marginBottom={10} />
+      <Box
+        // className={'directions-container'}
+        padding={3}
+        borderRadius={8}
+        marginTop={10}
+        marginBottom={10}
+        bg={darkMode.value ? "#272B30" : "#CBD5E0"}
+        textAlign={'left'}
+        color={'#a0aec0'}
+      >
+        
+        <Text marginBottom={3}>
+          Use the controls above to filter the data.
+        </Text>
+
+        <Text>Click on the {BsArrowRightSquareFill()}   to drill down on the account. Actual values are shown in 
+        <Text color='#48BB78' as='span'> green (positive)</Text>, and <Text as='span'  color='#F56565'>red (negative)</Text>. 
+        Budget values are in <Text color='gray' as='span' >gray</Text>.
+         
+         </Text>
+      </Box>
 
       <Tables columns={columns} data={compareData} selectedCompanies={selectedOptionsCompanies} />
     </Card>
