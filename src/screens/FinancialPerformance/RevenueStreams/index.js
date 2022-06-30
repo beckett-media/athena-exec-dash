@@ -168,7 +168,7 @@ const RevenueStreams = ({
                   // data={pl_quarterly.filter(function(itm){
                   //   return accountsToUse.indexOf(itm.Account) > -1;
                   // })}
-                  data = {pl_monthly} 
+                  data = {pl_quarterly} 
                   title='Revenue Streams Comparison Table (Quarterly)'
                   timeUnit='q'
                 />
