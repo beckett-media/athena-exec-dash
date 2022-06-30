@@ -11,89 +11,92 @@ import TotalSellers from "./TotalSellers";
 import TotalSold from "./TotalSold";
 
 import SellThrough from "./SellThrough";
+import { useApiData } from "../../providers/apiData";
 
-const MarketAnalysis = ({ data, isLoading }) => {
+const MarketAnalysis = ({ isLoading }) => {
+  const { dataTable: data } = useApiData();
+
   if (isLoading) {
     return <div>Loading...</div>;
   } else {
     return (
-      // <>
-      //   {<Tabs
-      //     isManual
-      //     variant="enclosed"
-      //     isFitted
-      //     borderRadius={0}
-      //     lazyBehavior="mount"
-      //     variantColor="blue"
-      //     defaultIndex={0}
-      //     isLazy={false}
-      //     size="md"
-      //   >
-      //     <TabList my={8}>
-      //       <Tab
-      //         color={"white"}
-      //         _selected={{
-      //           color: "black",
-      //           bg: "#f7b267",
-      //           borderRadius: 5,
-      //         }}
-      //       >
-      //         Average Selling Price
-      //       </Tab>
-      //       <Tab
-      //         color={"white"}
-      //         _selected={{
-      //           color: "black",
-      //           bg: "#f7b267",
-      //           borderRadius: 5,
-      //           _focus: { boxShadow: "none", outline: "none" },
-      //         }}
-      //       >
-      //         Total Sold
-      //       </Tab>
-      //       <Tab
-      //         color={"white"}
-      //         _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
-      //       >
-      //         Sell Through
-      //       </Tab>
-      //       <Tab
-      //         color={"white"}
-      //         _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
-      //       >
-      //         Total Sellers
-      //       </Tab>
-      //       <Tab
-      //         color={"white"}
-      //         _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
-      //       >
-      //         Total Sales
-      //       </Tab>
-      //     </TabList>
+      <>
+        {<Tabs
+          isManual
+          variant="enclosed"
+          isFitted
+          borderRadius={0}
+          lazyBehavior="mount"
+          variantColor="blue"
+          defaultIndex={0}
+          isLazy={false}
+          size="md"
+        >
+          <TabList my={8}>
+            <Tab
+              color={"white"}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+              }}
+            >
+              Average Selling Price
+            </Tab>
+            <Tab
+              color={"white"}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+                _focus: { boxShadow: "none", outline: "none" },
+              }}
+            >
+              Total Sold
+            </Tab>
+            <Tab
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+            >
+              Sell Through
+            </Tab>
+            <Tab
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+            >
+              Total Sellers
+            </Tab>
+            <Tab
+              color={"white"}
+              _selected={{ color: "black", bg: "#f7b267", borderRadius: 5 }}
+            >
+              Total Sales
+            </Tab>
+          </TabList>
 
-      //     <TabPanels>
-      //       <TabPanel>
-      //         <div className={styles.section}>
-      //           <Table data={data} isLoading={isLoading} />
-      //         </div>
-      //       </TabPanel>
-      //       <TabPanel>
-      //         <TotalSold data={data} isLoading={isLoading} />
-      //       </TabPanel>
-      //       <TabPanel>
-      //         <SellThrough data={data} isLoading={isLoading} />
-      //       </TabPanel>
-      //       <TabPanel>
-      //         <TotalSellers data={data} isLoading={isLoading} />
-      //       </TabPanel>
-      //       <TabPanel>
-      //         <TotalSales data={data} isLoading={isLoading} />
-      //       </TabPanel>
-      //     </TabPanels>
-      //     <TooltipGlodal />
-      //   </Tabs>}
-      // </>
-      <ComingSoon />
+          <TabPanels>
+            <TabPanel>
+              <div className={styles.section}>
+                <Table data={data} isLoading={isLoading} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <TotalSold data={data} isLoading={isLoading} />
+            </TabPanel>
+            <TabPanel>
+              <SellThrough data={data} isLoading={isLoading} />
+            </TabPanel>
+            <TabPanel>
+              <TotalSellers data={data} isLoading={isLoading} />
+            </TabPanel>
+            <TabPanel>
+              <TotalSales data={data} isLoading={isLoading} />
+            </TabPanel>
+          </TabPanels>
+          <TooltipGlodal />
+        </Tabs>}
+      </>
+      // <ComingSoon />
       );
   }
 };

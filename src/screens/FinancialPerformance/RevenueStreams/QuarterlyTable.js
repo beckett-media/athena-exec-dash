@@ -17,7 +17,7 @@ import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
+import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
 
@@ -233,7 +233,8 @@ function Tables({ columns, data }) {
   );
 }
 
-function TimeserriesTable({ className, data, monthly }) {
+function QuarterlyTable({ className, revenueStreamsPivotQuarterly }) {
+
   const columns = React.useMemo(
     () => [
       {
@@ -265,16 +266,21 @@ function TimeserriesTable({ className, data, monthly }) {
         Header: "Account",
         accessor: "Account",
         aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Accounts`,
         Cell: ({ value }) => (
-          <Text fontSize="md" color="gray.500">
+          <Badge
+            fontSize={11}
+            px={2}
+            mx={3}
+            borderRadius={14}
+            colorScheme={"cyan"}
+          >
             {value.replace(/_/g, " ")}
-          </Text>
+          </Badge>
         ),
       },
       {
-        Header: "Balance",
-        accessor: "Balance",
+        Header: "Q1",
+        accessor: "Q1",
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
@@ -288,10 +294,49 @@ function TimeserriesTable({ className, data, monthly }) {
         ),
       },
       {
-        Header: "Start Date",
-        accessor: "StrDate",
-        aggregate: "uniqueCount",
-        Aggregated: ({ value }) => `${value} Unique Dates`,
+        Header: "Q2",
+        accessor: "Q2",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Q3",
+        accessor: "Q3",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+      {
+        Header: "Q4",
+        accessor: "Q4",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
       },
     ],
     []
@@ -303,7 +348,7 @@ function TimeserriesTable({ className, data, monthly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Profit & Loss"
+      title="Revenue Streams Quarterly"
       // description={`if needed add description here ....`}
     >
       <Box
@@ -322,20 +367,20 @@ function TimeserriesTable({ className, data, monthly }) {
           to drill down by Year for example
         </Text>
         {/* {AiOutlineUngroup()}
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          to ungroup.
-        </Text>
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          and
-        </Text>
-        {AiOutlineGroup()}
-        <Text fontSize={"small"} fontStyle={"italic"}>
-          to group.
-        </Text> */}
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      to ungroup.
+    </Text>
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      and
+    </Text>
+    {AiOutlineGroup()}
+    <Text fontSize={"small"} fontStyle={"italic"}>
+      to group.
+    </Text> */}
       </Box>
-      <Tables columns={columns} data={monthly} />
+      <Tables columns={columns} data={revenueStreamsPivotQuarterly} />
     </Card>
   );
 }
 
-export default TimeserriesTable;
+export default QuarterlyTable;

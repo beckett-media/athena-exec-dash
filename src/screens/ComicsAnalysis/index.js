@@ -15,67 +15,70 @@ import {
 } from "@chakra-ui/react";
 import ComicsGraphs from "./scatterPlot";
 import HistogramGraph from "./histogram";
+import { useApiData } from "../../providers/apiData";
 
-const ComicAnalysis = ({ dataCI }) => {
+const ComicAnalysis = () => {
+  const { comicIndexing: dataCI } = useApiData();
+
   return (
-    // <>
-    //   <div className={styles.section}>
-    //     {/* <Tabs
-    //       isManual
-    //       variant="enclosed"
-    //       isFitted
-    //       borderRadius={0}
-    //       lazyBehavior="mount"
-    //       variantColor="blue"
-    //       defaultIndex={0}
-    //       isLazy={false}
-    //       size="md"
-    //     >
-    //       <TabList my={8}>
-    //         <Tab
-    //           color={"white"}
-    //           _selected={{
-    //             color: "black",
-    //             bg: "#f7b267",
-    //             borderRadius: 5,
-    //           }}
-    //         >
-    //           Graphs
-    //         </Tab>
-    //         <Tab
-    //           color={"white"}
-    //           _selected={{
-    //             color: "black",
-    //             bg: "#f7b267",
-    //             borderRadius: 5,
-    //             _focus: { boxShadow: "none", outline: "none" },
-    //           }}
-    //         >
-    //           Searchable Table
-    //         </Tab>
-    //       </TabList>
-    //       <TabPanels>
-    //         <TabPanel>
-    //           <div className={styles.section}>
-    //             <ComicsGraphs data={dataCI} />
-    //             <Box h={"3rem"} />
-    //             <HistogramGraph data={dataCI} />
-    //           </div>
-    //         </TabPanel>
-    //         <TabPanel>
-    //           <TablePivots dataCI={dataCI} />
-    //         </TabPanel>
-    //       </TabPanels>
-    //       <TooltipGlodal />
-    //     </Tabs> */}
-    //     <div className={styles.section}>
-    //     <TablePivots dataCI={dataCI} />
-    //     </div>
-    //   </div>
+    <>
+      <div className={styles.section}>
+        {/* <Tabs
+          isManual
+          variant="enclosed"
+          isFitted
+          borderRadius={0}
+          lazyBehavior="mount"
+          variantColor="blue"
+          defaultIndex={0}
+          isLazy={false}
+          size="md"
+        >
+          <TabList my={8}>
+            <Tab
+              color={"white"}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+              }}
+            >
+              Graphs
+            </Tab>
+            <Tab
+              color={"white"}
+              _selected={{
+                color: "black",
+                bg: "#f7b267",
+                borderRadius: 5,
+                _focus: { boxShadow: "none", outline: "none" },
+              }}
+            >
+              Searchable Table
+            </Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <div className={styles.section}>
+                <ComicsGraphs data={dataCI} />
+                <Box h={"3rem"} />
+                <HistogramGraph data={dataCI} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <TablePivots dataCI={dataCI} />
+            </TabPanel>
+          </TabPanels>
+          <TooltipGlodal />
+        </Tabs> */}
+        <div className={styles.section}>
+        <TablePivots dataCI={dataCI} />
+        </div>
+      </div>
 
-    //   <TooltipGlodal />
-    // </>
-    <ComingSoon />
+      <TooltipGlodal />
+    </>
+    // <ComingSoon />
   );
 };
 

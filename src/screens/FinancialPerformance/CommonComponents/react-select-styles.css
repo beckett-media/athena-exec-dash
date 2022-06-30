@@ -1,0 +1,45 @@
+.react-select-container, .react-select__control, .react-select__value-container{
+  background-color: #111315 !important; 
+  width:100%;
+}
+
+.react-select__control  {
+  border:1px solid #444 !important;
+}
+
+.react-select__control:hover {
+  border:1px solid #888 !important;
+}
+
+.react-select__menu {
+  background-color: #111315 !important;
+}
+
+.react-select__option  {
+  font-weight:normal !important;
+  text-align:left;
+}
+
+.react-select__option--is-focused {
+  color:#111315;
+  background-color: #2A85FF !important;
+  font-weight:bold !important;
+}
+
+.react-select__multi-value {
+  background-color:rgb(39, 43, 48) !important;
+  color: #718096 !important;
+}
+
+.react-select__multi-value__label {
+  color: #718096 !important;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color:rgb(192, 133, 133) !important;
+  color:rgb(117, 40, 40)(184, 113, 113) !important;
+}
+
+p.chakra-text svg {
+  display: inline !important;
+}

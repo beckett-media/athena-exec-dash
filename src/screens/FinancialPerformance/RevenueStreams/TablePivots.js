@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import {
   Badge,
   Box,
@@ -17,7 +17,7 @@ import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
+import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
 
@@ -234,6 +234,7 @@ function Tables({ columns, data }) {
 }
 
 function TablePivots({ className, revenueStreams }) {
+
   const columns = React.useMemo(() => [
     {
       Header: "Year",
@@ -282,7 +283,7 @@ function TablePivots({ className, revenueStreams }) {
       aggregate: "sum",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          ${numberWithCommas(value.toFixed(0))} Total
         </Text>
       ),
       Cell: ({ value }) => (
@@ -292,10 +293,30 @@ function TablePivots({ className, revenueStreams }) {
       ),
     },
     {
-      Header: "Year & Month",
+      Header: "Budget",
+      accessor: "BudgetBalance",
+      aggregate: "sum",
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          ${numberWithCommas(value.toFixed(0))} Total
+        </Text>
+      ),
+      Cell: ({ value }) => (
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+        </Badge>
+      ),
+    },
+    {
+      Header: "Date",
       accessor: "StrDate",
       aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Total`,
+      // Aggregated: ({ value }) => `${value} Total`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {value} dates
+        </Text>
+      ),
     },
   ]);
 

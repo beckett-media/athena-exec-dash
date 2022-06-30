@@ -1,42 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TooltipGlodal from "../../components/TooltipGlodal";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+
+import { Storage } from 'aws-amplify';
 
 import BalanceSheet from "./BalanceSheet";
 import RevenueStreams from "./RevenueStreams";
 import ProfitAndLoss from "./ProfitAndLoss";
 
-// update json version
-import ComingSoon from "../CominSoon/ComingSoon";
-import profit_monthly from "../../mocks/financial_update/data_monthly.json";
-import profit_quarterly from "../../mocks/financial_update/data_quarterly.json";
-import profit_pivot_quarterly from "../../mocks/financial_update/data_pivot_quarterly.json";
+function OpsPerformance() {
+  const [opsDictionary, setOpsDictionary] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
-import revenue_monthly from "../../mocks/financial_update/revenue_monthly.json";
-import revenue_quarterly from "../../mocks/financial_update/revenue_quarterly.json";
-import revenue_pivot_quarterly from "../../mocks/financial_update/revenue_pivot_quarterly.json";
+  useEffect(() => {
+    const dataNames = [
+      'data_monthly',
+      'data_quarterly',
+      // 'data_pivot_quarterly',
+      // 'revenue_monthly',
+      // 'revenue_quarterly',
+      // 'revenue_pivot_quarterly',
+      'balance_monthly',
+      'balance_quarterly',
+      // 'balance_pivot_quarterly'
+    ];
 
-import balance_monthly from "../../mocks/financial_update/balance_monthly.json";
-import balance_quarterly from "../../mocks/financial_update/balance_quarterly.json";
-import balance_pivot_quarterly from "../../mocks/financial_update/balance_pivot_quarterly.json";
+    // usage
+    async function downloadJSONs() {
+      setIsLoading(true);
 
-const OpsPerformance = () => {
-  const quartly = profit_pivot_quarterly;
-  const monthly = profit_monthly;
-  const quarterly = profit_quarterly;
+      const dataDict ={};
+      await Promise.all(dataNames.map(async (key) => {
+        const fileKey = 'finance-data/' + key + '.json'
+        const result = await Storage.get(fileKey, { download: true });
+        dataDict[key] = (JSON.parse(await result.Body.text()))
+      }))
+      setOpsDictionary(dataDict);
+      setIsLoading(false);
+    }
 
-  const revenueStreams = revenue_monthly;
-  const revenueStreamsQuarterly = revenue_quarterly;
-  const revenueStreamsPivotQuarterly = revenue_pivot_quarterly;
+    downloadJSONs()
+  }, [])
 
-  const balanceSheet = balance_monthly;
-  const balanceQuarterly = balance_quarterly;
-  const balancePivotQuarterly = balance_pivot_quarterly;
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!opsDictionary) {
+    return null;
+  }
 
   return (
     <>
-      <ComingSoon />
-      {/* <Tabs
+    
+      {/* <ComingSoon /> */}
+      <Tabs
         isManual
         variant="enclosed"
         isFitted
@@ -57,8 +76,9 @@ const OpsPerformance = () => {
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Balance Sheet
+            Profit & Loss
           </Tab>
+
           <Tab
             color={"white"}
             _selected={{
@@ -70,6 +90,7 @@ const OpsPerformance = () => {
           >
             Revenue Streams
           </Tab>
+
           <Tab
             color={"white"}
             _selected={{
@@ -79,39 +100,38 @@ const OpsPerformance = () => {
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Profit & Loss
+            Balance Sheet
           </Tab>
+          
+          
         </TabList>
-
         <TabPanels>
           <TabPanel>
-            <div>
-              <BalanceSheet
-                balanceQuarterly={balanceQuarterly}
-                balanceSheet={balanceSheet}
-                balancePivotQuarterly={balancePivotQuarterly}
-              />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <RevenueStreams
-              revenueStreams={revenueStreams}
-              revenueStreamsQuarterly={revenueStreamsQuarterly}
-              revenueStreamsPivotQuarterly={revenueStreamsPivotQuarterly}
+            <ProfitAndLoss
+              pl_monthly={opsDictionary['data_monthly']}
+              pl_quarterly={opsDictionary['data_quarterly']}
+              // pl_pivot_quarterly={opsDictionary['data_pivot_quarterly']}
             />
           </TabPanel>
           <TabPanel>
-            <ProfitAndLoss
-              quarterly={quarterly}
-              quartly={quartly}
-              monthly={monthly}
+            <RevenueStreams
+              pl_monthly={opsDictionary['data_monthly']}
+              pl_quarterly={opsDictionary['data_quarterly']}
+              // pl_pivot_quarterly={opsDictionary['data_pivot_quarterly']}
+            />
+          </TabPanel>
+          <TabPanel>
+            <BalanceSheet
+              bs_monthly={opsDictionary['balance_monthly']}
+              bs_quarterly={opsDictionary['balance_quarterly']}
+              // bs_pivoted_quarterly={opsDictionary['balance_pivot_quarterly']}
             />
           </TabPanel>
         </TabPanels>
         <TooltipGlodal />
-      </Tabs> */}
+      </Tabs>
     </>
   );
-};
+}
 
 export default OpsPerformance;

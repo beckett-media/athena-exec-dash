@@ -8,21 +8,35 @@ import {
 import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-
-import TimeSeriesGraph from "./timeserriesGraph";
-import QuaterlyGraph from "./QuaterlyGraph";
+import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
 import TablePivots from "./TablePivots";
-import TimeserriesTable from "./TimeseriesTable";
+import TimeSeriesTable from "./TimeSeriesTable";
+import CompanyGraphs from "../CommonComponents/CompanyGraphs";
+import CompareTable from "../CommonComponents/CompareTable";
+
 
 const ProfitAndLoss = ({
-  data,
   isLoading,
-  netIncome,
-  quartly,
-  monthly,
-  quarterly,
+  // pl_pivot_quarterly,
+  pl_monthly,
+  pl_quarterly,
 }) => {
   const darkMode = useDarkMode();
+
+  const companies = [
+    "Beckett Collectables",
+    "Arcane Tinmen ApS",
+    "Comic Book Certification Service LLC",
+    "Southern Hobby Distribution,LLC",
+  ];
+
+  const accountsToUse = [
+    "Net Income",
+    "GAAP EBITDA",
+    "Management EBITDA",
+    "Total Revenue",
+  ];
+
   return (
     <>
       <Tabs
@@ -44,7 +58,7 @@ const ProfitAndLoss = ({
               _focus: { boxShadow: "none", outline: "none" },
             }}
           >
-            Profit & Loss
+            Monthly
           </Tab>
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
@@ -61,6 +75,15 @@ const ProfitAndLoss = ({
         </TabList>
         <TabPanels>
           <TabPanel>
+            <CompanyGraphs
+              companies={companies}
+              accountsToUse={accountsToUse}
+              isLoading={isLoading}
+              data={pl_monthly}
+              title="Profit & Loss Company Graphs"
+            />
+            <Box my={20} />
+
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -72,20 +95,42 @@ const ProfitAndLoss = ({
                 md: "lg",
               })}
             >
+              
               <Stack spacing="5">
-                <TimeserriesTable data={netIncome} monthly={monthly} />
+                <CompareTable 
+                  data={pl_monthly.filter(function(itm){
+                    return accountsToUse.indexOf(itm.Account) > -1;
+                  })} 
+                  title='Profit and Loss Comparison Table (Monthly)'
+                  timeUnit='m'
+                />
               </Stack>
+
+              {/* <Stack spacing="5">
+                <TimeSeriesTable data={netIncome} monthly={pl_monthly} />
+              </Stack> */}
             </Box>
 
             <Box my={20} />
             <TimeSeriesGraph
               isLoading={isLoading}
-              netIncome={netIncome}
-              monthly={monthly}
-              title="Timeseries Profit / Loss"
+              data={pl_monthly}
+              title="Profit and Loss Monthly"
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA", "Total Revenue"]}
+              timeUnit='m'
             />
           </TabPanel>
           <TabPanel>
+            <CompanyGraphs
+              companies={companies}
+              accountsToUse={accountsToUse}
+              isLoading={isLoading}
+              data={pl_quarterly}
+              title="Profit & Loss Company Graphs"
+            />
+
+            <Box my={20} />
+
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -97,21 +142,33 @@ const ProfitAndLoss = ({
                 md: "lg",
               })}
             >
+              
               <Stack spacing="5">
-                <Stack spacing="5">
-                  <TablePivots data={data} quartly={quartly} />
-                </Stack>
+                <CompareTable 
+                  data={pl_quarterly.filter(function(itm){
+                    return accountsToUse.indexOf(itm.Account) > -1;
+                  })} 
+                  title='Profit and Loss Comparison Table (Quarterly)'
+                  timeUnit='q'
+                />
               </Stack>
-            </Box>
 
+              {/* <Stack spacing="5">
+                <TablePivots
+                  data={data}
+                  pivot_quarterly={pl_pivot_quarterly}
+                />
+              </Stack> */}
+
+            </Box>
             <Box my={20} />
-            <QuaterlyGraph
-              quarterly={quarterly}
+
+            <TimeSeriesGraph
               isLoading={isLoading}
-              netIncome={netIncome}
-              monthly={monthly}
-              quartly={quartly}
-              title="Quarterly Profit & Loss"
+              data={pl_quarterly}
+              title="Profit and Loss Quarterly"
+              accountsToUse={["Net Income", "GAAP EBITDA", "Management EBITDA", "Total Revenue"]}
+              timeUnit='q'
             />
           </TabPanel>
         </TabPanels>
