@@ -35,7 +35,7 @@ const TimeSeriesGraph = ({
 
   const dataFilter = data.filter((d) => d?.Account === sorting);
 
-  const dataFilterYear = dataFilter.filter((item) => {
+  let dataFilterYear = dataFilter.filter((item) => {
     let tempEndDate = new Date(endDate);
     tempEndDate.setMonth(tempEndDate.getMonth() + (timeUnit === "m" ? 1 : 3));
     return (
@@ -43,6 +43,9 @@ const TimeSeriesGraph = ({
       new Date(item.FullDate) <= tempEndDate
     );
   });
+
+  
+  dataFilterYear.sort((a, b) => (a.FullDate > b.FullDate) ? 1 : -1);
 
   // function to remove underscores from the account name
 
