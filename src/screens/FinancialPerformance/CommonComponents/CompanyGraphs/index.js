@@ -14,6 +14,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
+import { BsArrowRightSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 
 const CompanyGraphs = ({
   className,
@@ -75,31 +76,52 @@ const CompanyGraphs = ({
         </Box>
       }
     >
+
+    <Box
+        // className={'directions-container'}
+        padding={3}
+        borderRadius={8}
+        marginTop={10}
+        marginBottom={10}
+        bg={darkMode.value ? "#272B30" : "#CBD5E0"}
+        textAlign={'left'}
+        color={'#a0aec0'}
+      >
+        
+        <Text marginBottom={3}>
+          Choose the year above to filter the data below. Click on gray bars below to expand/contract companies. 
+        </Text>
+      </Box>
       <Accordion allowMultiple allowToggle defaultIndex={[0]}>
         {companies &&
           companies.map((item) => {
             console.log(item);
 
             return (
-              <AccordionItem>
-                <h2>
-                  <AccordionButton bg="gray.500">
-                    <Box flex="1" textAlign="center">
-                      {item}
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <PlotRow
-                    data={data}
-                    dataFilteredByYear={dataFilteredByYear}
-                    company={item}
-                    accountsToUse={accountsToUse}
-                    hideNoData={hideNoData}
-                  />
-                </AccordionPanel>
-              </AccordionItem>
+              <Box>
+                <Box marginBottom={2}>
+
+                </Box>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton bg="gray.600">
+                      <Box flex="1" textAlign="center">
+                      <AccordionIcon />  {item}
+                      </Box>
+                      
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    <PlotRow
+                      data={data}
+                      dataFilteredByYear={dataFilteredByYear}
+                      company={item}
+                      accountsToUse={accountsToUse}
+                      hideNoData={hideNoData}
+                    />
+                  </AccordionPanel>
+                </AccordionItem>
+              </Box>
             );
           })}
         
