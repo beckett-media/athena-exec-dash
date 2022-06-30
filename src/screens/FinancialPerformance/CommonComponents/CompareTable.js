@@ -18,7 +18,7 @@ import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
 import styles from "./Table.module.sass";
-import { formatMoneyWithCommas, formatMonthDate } from "../../../utils.js";
+import { formatMoneyWithCommas, formatMonthDate, getCorrectZeroOrNan } from "../../../utils.js";
 import moment from "moment";
 // import * as dfd from "danfojs";
 import RadioCard from "./RadioCard";
@@ -258,19 +258,22 @@ function CompareTable({ className, data, title, timeUnit }) {
     series1 = series1Exists ? series1 : series2;
     series2 = series2Exists ? series2 : series1;
 
+    // console.log('series1', series1)
+    // console.log('series2', series2)
+
     /********************* START Faking an outer merge ********************/
     let s1AccountCompanies = [];
     // First, go through DF1
     for (var i = 0; i < series1.length; i++) {
       let thisObj = { ...series1[i] };
-      thisObj["Balance1"] = thisObj["Balance"] || NaN;
-      thisObj["BudgetBalance1"] = thisObj["BudgetBalance"] || NaN;
+      thisObj["Balance1"] = getCorrectZeroOrNan(thisObj["Balance"]);
+      thisObj["BudgetBalance1"] = getCorrectZeroOrNan(thisObj["BudgetBalance"]);
       thisObj["Balance2"] = NaN;
       thisObj["BudgetBalance2"] = NaN;
       thisObj['Series1'] = [];
       thisObj['Series2'] = [];
-      thisObj['Series1']["Balance1"] = thisObj["Balance"] || NaN;
-      thisObj['Series1']["BudgetBalance1"] = thisObj["BudgetBalance"]  || NaN;
+      thisObj['Series1']["Balance1"] = getCorrectZeroOrNan(thisObj["Balance"]);
+      thisObj['Series1']["BudgetBalance1"] = getCorrectZeroOrNan(thisObj["BudgetBalance"]);
 
       let s1Account = series1[i]["Account"];
       let s1Company = series1[i]["Company"];
@@ -278,10 +281,10 @@ function CompareTable({ className, data, title, timeUnit }) {
 
       for (var j = 0; j < series2.length; j++) {
         if ((series2[j]["Account"] == s1Account) && (series2[j]["Company"] == s1Company)) {
-          thisObj["Balance2"] = series2[j]["Balance"];
-          thisObj["BudgetBalance2"] = series2[j]["BudgetBalance"];
-          thisObj['Series2']["Balance2"] = series2[j]["Balance"];
-          thisObj['Series2']["BudgetBalance2"] = series2[j]["BudgetBalance"];
+          thisObj["Balance2"] = getCorrectZeroOrNan(series2[j]["Balance"]);
+          thisObj["BudgetBalance2"] = getCorrectZeroOrNan(series2[j]["BudgetBalance"]);
+          thisObj['Series2']["Balance2"] = getCorrectZeroOrNan(series2[j]["Balance"]);
+          thisObj['Series2']["BudgetBalance2"] = getCorrectZeroOrNan(series2[j]["BudgetBalance"]);
         }
       }
       thisObj["Diff"] = thisObj["Balance1"] - thisObj["Balance2"];
@@ -303,11 +306,11 @@ function CompareTable({ className, data, title, timeUnit }) {
         thisObj["BudgetBalance1"] = NaN;
         thisObj["Series1"] = [];
         thisObj["Diff"] = NaN;
-        thisObj["Balance2"] = thisObj["Balance"];
-        thisObj["BudgetBalance2"] = thisObj["BudgetBalance"];
+        thisObj["Balance2"] = getCorrectZeroOrNan(thisObj["Balance"]);
+        thisObj["BudgetBalance2"] = getCorrectZeroOrNan(thisObj["BudgetBalance"]);
         thisObj['Series2'] = [];
-        thisObj['Series2']["Balance2"] = thisObj["Balance"]  || NaN;
-        thisObj['Series2']["BudgetBalance2"] = thisObj["BudgetBalance"]  || NaN;
+        thisObj['Series2']["Balance2"] = getCorrectZeroOrNan(thisObj["Balance"]);
+        thisObj['Series2']["BudgetBalance2"] = getCorrectZeroOrNan(thisObj["BudgetBalance"]  );
 
         compareData.push(thisObj);
       }
@@ -315,7 +318,7 @@ function CompareTable({ className, data, title, timeUnit }) {
     /********************* END Faking an outer merge ********************/
     
     compareData.sort((a, b) => (a.order > b.order) ? 1 : -1);
-
+    // console.log('seriesCompreData', compareData)
     /* START Logic for Account Selector */
     const uniqueAccounts = [...new Set(compareData.map((d) => d.Account))];
 

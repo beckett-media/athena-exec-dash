@@ -60,6 +60,16 @@ export const formatMoneyWithCommas = (money) => {
   return '-'
 }
 
+export const getCorrectZeroOrNan = (value) => {
+  // This function returns dollar value (even if zero), or NaN if it's null, undefined or NaN
+  if ( (value == NaN) || (value == null) || (value == undefined))
+    return NaN
+  else 
+    return value
+
+
+}
+
 
 function padLeadingZeros(num, size) {
   var s = num+"";
