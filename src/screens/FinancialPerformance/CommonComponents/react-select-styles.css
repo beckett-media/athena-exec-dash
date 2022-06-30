@@ -39,3 +39,7 @@
   background-color:rgb(192, 133, 133) !important;
   color:rgb(117, 40, 40)(184, 113, 113) !important;
 }
+
+p.chakra-text svg {
+  display: inline !important;
+}
