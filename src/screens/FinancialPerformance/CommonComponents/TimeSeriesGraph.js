@@ -1,39 +1,59 @@
 import React from "react";
 import styles from "./Chart.module.sass";
 import cn from "classnames";
-import Card from "../../../../components/Card";
+import Card from "../../../components/Card";
 import Plot from "react-plotly.js";
-
 import useDarkMode from "use-dark-mode";
 import moment from "moment";
-import { Box, Text, Select } from "@chakra-ui/react";
+import { Button, Box, Text, Select } from "@chakra-ui/react";
+import DatePicker from "react-datepicker";
+import "./datepicker-styles.css";
+import "./chart-styles.css";
 
-const TimeserriesGraph = ({ className, title, balanceSheet }) => {
+const TimeSeriesGraph = ({
+  className,
+  title,
+  data,
+  accountsToUse,
+  timeUnit,
+}) => {
   const darkMode = useDarkMode(false);
-  const [sorting, setSorting] = React.useState("Cash_and_Cash_Equivalents");
+  const [sorting, setSorting] = React.useState(accountsToUse[0]);
+  const [year, setYear] = React.useState(
+    [...new Set(data.map((item) => item.Year))].at(-1)
+  );
+  const [startDate, setStartDate] = React.useState(
+    new Date([...new Set(data.map((item) => item.FullDate))].at(0))
+  );
+  const [endDate, setEndDate] = React.useState(
+    new Date([...new Set(data.map((item) => item.FullDate))].at(-1))
+  );
 
-  const uniqueAccount = [...new Set(balanceSheet.map((item) => item.Account))];
+  const uniqueYear = [...new Set(data.map((item) => item.Year))].sort(
+    (a, b) => b - a
+  );
 
-  const uniqueCompany = [
-    ...new Set(balanceSheet.map((item) => item.Company)),
-  ].sort((a, b) => b - a);
-  // ['Beckett_Collectables', 'Comic_Book_Certification_Service_LLC', 'Arcane_Tinmen_ApS', 'Southern_Hobby_Distribution,LLC']
+  const dataFilter = data.filter((d) => d?.Account === sorting);
 
-  // console.log("uniqueAccount", uniqueAccount);
-  // console.log("uniqueCompany", uniqueCompany);
+  let dataFilterYear = dataFilter.filter((item) => {
+    let tempEndDate = new Date(endDate);
+    tempEndDate.setMonth(tempEndDate.getMonth() + (timeUnit === "m" ? 1 : 3));
+    return (
+      new Date(item.FullDate) >= startDate &&
+      new Date(item.FullDate) <= tempEndDate
+    );
+  });
 
-  const dataFilter = balanceSheet.filter((d) => d?.Account === sorting);
+  
+  dataFilterYear.sort((a, b) => (a.FullDate > b.FullDate) ? 1 : -1);
 
   // function to remove underscores from the account name
-  const removeUnderscore = (str) => {
-    return str.replace(/_/g, " ");
-  };
 
-  var data = [
+  var graphData = [
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
           ? d.Balance
           : null
       ),
@@ -51,9 +71,9 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
-        (d.Account === sorting) & (d.Company === "Beckett_Collectables")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Beckett Collectables")
           ? d.BudgetBalance
           : null
       ),
@@ -72,10 +92,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Comic Book Certification Service LLC")
           ? d.Balance
           : null
       ),
@@ -92,10 +112,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Comic_Book_Certification_Service_LLC")
+        (d.Company === "Comic Book Certification Service LLC")
           ? d.BudgetBalance
           : null
       ),
@@ -113,9 +133,9 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
           ? d.Balance
           : null
       ),
@@ -132,9 +152,9 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
-        (d.Account === sorting) & (d.Company === "Arcane_Tinmen_ApS")
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
+        (d.Account === sorting) & (d.Company === "Arcane Tinmen ApS")
           ? d.BudgetBalance
           : null
       ),
@@ -152,10 +172,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern Hobby Distribution,LLC")
           ? d.Balance
           : null
       ),
@@ -172,10 +192,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
     {
-      x: dataFilter.map((d) => moment(d.Year).format("MMM YYYY")),
-      y: dataFilter.map((d) =>
+      x: dataFilterYear.filter(d => !!d.BudgetBalance).map((d) => moment(d.StrDate).format("MMM YYYY")),
+      y: dataFilterYear.filter(d => !!d.BudgetBalance).map((d) =>
         (d.Account === sorting) &
-        (d.Company === "Southern_Hobby_Distribution,LLC")
+        (d.Company === "Southern Hobby Distribution,LLC")
           ? d.BudgetBalance
           : null
       ),
@@ -193,9 +213,10 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
       },
     },
   ];
+
   var layout = {
     xaxis: {
-      title: `Balance Sheet for account type: ${removeUnderscore(sorting)}`,
+      title: "",
       showgrid: false,
       zeroline: false,
       showline: true,
@@ -204,7 +225,7 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     },
 
     yaxis: {
-      title: "Balance Sheet",
+      title: `${sorting}`,
       showgrid: true,
       zeroline: false,
       showline: true,
@@ -217,13 +238,12 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     height: 500,
     display: "flex",
     margin: {
-      l: 0,
+      l: 70,
       r: 50,
       b: 100,
       t: 0,
       pad: 5,
     },
-
     paper_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     plot_bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
     showlegend: true,
@@ -231,16 +251,17 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     hovermode: "x",
 
     legend: {
-      x: 0,
+      x: 0.5,
       y: 10,
       bgcolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       bordercolor: darkMode.value ? "#1A1D1F" : "#e5eaf0",
       borderwidth: 6,
       orientation: "h",
+      xanchor: "center",
       // hide the legend when the graph is empty (no data)
       // this is done by adding the "trace" to the legend
 
-      traceorder: "reversed",
+      //traceorder: "reversed",
 
       font: {
         color: darkMode.value ? "#ffffff" : "#1A1D1F",
@@ -248,56 +269,94 @@ const TimeserriesGraph = ({ className, title, balanceSheet }) => {
     },
   };
 
+  const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
+    <Button
+      onClick={onClick}
+      bg={"none"}
+      _hover={{ bg: "none" }}
+      ref={ref}
+      fontSize="sm"
+      px={1}
+    >
+      {value}
+    </Button>
+  ));
+
   return (
     <Card
       classTitle="title-blue"
-      title={"Balance Sheet"}
-      description={`The graph below shows the balance sheet for the selected account type and the companies that have contributed to that account type.`}
+      title={title}
+      // description={`BGS sell through has dropped under 10% for the first time. It peaked at 33.2% in March 2021.`}
       className={cn(styles.card, className)}
       head={
         <Box
           flexDirection={"row"}
           display={"flex"}
-          gap={3}
-          justifyItems={"center"}
+          gap={4}
           alignItems={"center"}
         >
           <Box width={"100%"}>
-            <Text flex={1}>Select Account</Text>
+            <Text flex={1}>Account</Text>
           </Box>
           <Select
             colorScheme={darkMode.value ? "dark" : "light"}
             borderRadius={14}
+            minWidth={"150px"}
             boxShadow="sm"
             color={"#6F767E"}
             size="md"
             variant="outline"
             borderColor="#272B30"
             onChange={(e) => setSorting(e.target.value)}
-            value={console.log(sorting)}
+            // value={console.log(sorting)}
             _focusVisible={{
               borderColor: "#272B30",
               boxShadow: "0 0 0 2px #272B30",
             }}
             fontSize={14}
           >
-            {uniqueAccount.map((d) => (
-              <option value={d}>{removeUnderscore(d)}</option>
+            {accountsToUse.map((d) => (
+              <option value={d}>{d}</option>
             ))}
           </Select>
+          <Text width={"100%"}>Start Date</Text>
+          <DatePicker
+            selected={new Date(startDate)}
+            dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
+            minDate={new Date("01-01-2019")}
+            maxDate={new Date("05-31-2022")}
+            showMonthYearPicker={timeUnit === "m" ? true : false}
+            showQuarterYearPicker={timeUnit === "q" ? true : false}
+            onChange={(date) => setStartDate(date)}
+            customInput={<ExampleCustomInput />}
+          />
+          <Text width={"100%"}>End Date</Text>
+          <DatePicker
+            selected={new Date(endDate)}
+            dateFormat={timeUnit === "q" ? "yyyy QQQ" : "MM/yyyy"}
+            minDate={new Date("01-01-2019")}
+            maxDate={new Date("05-31-2022")}
+            showMonthYearPicker={timeUnit === "m" ? true : false}
+            showQuarterYearPicker={timeUnit === "q" ? true : false}
+            onChange={(date) => setEndDate(date)}
+            customInput={<ExampleCustomInput />}
+          />
         </Box>
       }
     >
       <Box justifyItems={"center"} alignCenter={"center"} display={"flex"}>
         <Plot
-          data={data}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+          data={graphData}
           layout={layout}
           useResizeHandler={true}
-          style={{ width: "100%", height: "100%" }}
         />
       </Box>
     </Card>
   );
 };
 
-export default TimeserriesGraph;
+export default TimeSeriesGraph;

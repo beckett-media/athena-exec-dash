@@ -7,8 +7,15 @@ import TopCountry from "./TopCountry";
 import SocialMessages from "./SocialMessage";
 import KPI from "./KPI";
 import ComingSoon from "../CominSoon/ComingSoon";
+import { useApiData } from "../../providers/apiData";
 
-const SocialMediaMetric = ({ dataI, socialData, socialMessage }) => {
+const SocialMediaMetric = () => {
+  const {
+    socialDataIndicators: dataI,
+    socialData,
+    socialDataMessage: socialMessage,
+  } = useApiData();
+
   return (
     <>
       <div className={styles.row}>

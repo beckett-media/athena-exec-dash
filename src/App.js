@@ -80,24 +80,17 @@ const apiName = "palentirApi";
 const fetcher = (path) =>
   API.get(apiName, path).then((response) => response.data);
 
-function App() {
-  const {
-    dataTable,
-    socialDataIndicators,
-    socialData,
-    socialDataMessage,
-    comicIndexing,
-  } = useApiData();
+const checkPermission = (user, array) => {
+  if (user.signInUserSession.idToken.payload["cognito:groups"]) {
+    const userPermissions =
+      user.signInUserSession.idToken.payload["cognito:groups"];
+    return compareArrays(userPermissions, array);
+  } else {
+    return false;
+  }
+};
 
-  const checkPermission = (user, array) => {
-    if (user.signInUserSession.idToken.payload["cognito:groups"]) {
-      const userPermissions =
-        user.signInUserSession.idToken.payload["cognito:groups"];
-      return compareArrays(userPermissions, array);
-    } else {
-      return false;
-    }
-  };
+function App() {
 
   return (
     <SWRConfig value={{ fetcher }}>
@@ -144,7 +137,7 @@ function App() {
             >
               <Route
                 path="/dashboard/market-analysis"
-                element={<MarketAnalysis data={dataTable} />}
+                element={<MarketAnalysis />}
               />
             </Route>
             <Route
@@ -164,7 +157,7 @@ function App() {
             >
               <Route
                 path="/dashboard/comic-market-analysis"
-                element={<ComicAnalysis dataCI={comicIndexing} />}
+                element={<ComicAnalysis />}
               />
             </Route>
             <Route
@@ -186,11 +179,7 @@ function App() {
               <Route
                 path="/dashboard/social-media-analysis"
                 element={
-                  <SocialMediaMetric
-                    dataI={socialDataIndicators}
-                    socialData={socialData}
-                    socialMessage={socialDataMessage}
-                  />
+                  <SocialMediaMetric />
                 }
               />
             </Route>
@@ -235,7 +224,7 @@ function App() {
               >
                 <Route
                   path="/financial/financial-performance"
-                  element={<FinancialPerformance data={dataTable} />}
+                  element={<FinancialPerformance />}
                 />
               </Route>
             )}

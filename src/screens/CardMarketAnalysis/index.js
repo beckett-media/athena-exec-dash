@@ -11,8 +11,11 @@ import TotalSellers from "./TotalSellers";
 import TotalSold from "./TotalSold";
 
 import SellThrough from "./SellThrough";
+import { useApiData } from "../../providers/apiData";
 
-const MarketAnalysis = ({ data, isLoading }) => {
+const MarketAnalysis = ({ isLoading }) => {
+  const { dataTable: data } = useApiData();
+
   if (isLoading) {
     return <div>Loading...</div>;
   } else {
@@ -93,7 +96,8 @@ const MarketAnalysis = ({ data, isLoading }) => {
           <TooltipGlodal />
         </Tabs>}
       </>
-    );
+      // <ComingSoon />
+      );
   }
 };
 

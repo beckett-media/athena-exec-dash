@@ -17,7 +17,7 @@ import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
+import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
 
@@ -111,7 +111,7 @@ function Tables({ columns, data }) {
                         paddingLeft: `${row.depth * 2}rem`,
                         display: "flex",
                         align$: "center",
-                        gap: "0.8rem",
+                        gap: "0.2rem",
                       },
                     })}
                   >
@@ -151,42 +151,6 @@ function Tables({ columns, data }) {
                     {column.canFilter ? column.render("Filter") : null}
                   </Text>
                 </Th>
-                // <Th
-                //   style={{ color: "transparent" }}
-                //   {...column.getHeaderProps()}
-
-                // >
-                //   {column.canGroupBy ? (
-                //     // If the column can be grouped, let's add a toggle
-
-                //     <Box {...column.getGroupByToggleProps()}>
-                //       {column.isGrouped ? (
-                //         <p fontSize="md">
-                //           <Text fontSize="md">Grouped By: </Text>
-                //           {state.groupBy.map((d) => (
-                //             <Badge
-                //               key={d}
-                //               colorScheme="transparent"
-                //               marginRight="0.5rem"
-                //             >
-                //               {d}
-                //             </Badge>
-                //           ))}
-                //         </p>
-                //       ) : (
-                //         <Button
-                //           leftIcon={<AiOutlineGroup />}
-                //           colorScheme="twitter"
-                //           variant="solid"
-                //           size={"sm"}
-                //         >
-                //           group {column.render("Header")}
-                //         </Button>
-                //       )}
-                //     </Box>
-                //   ) : null}
-                //   {column.render("Header")}
-                // </Th>
               ))}
             </Tr>
           ))}
@@ -233,8 +197,7 @@ function Tables({ columns, data }) {
   );
 }
 
-function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
-
+function QuarterlyTable({ className, balancePivotQuarterly }) {
   const columns = React.useMemo(
     () => [
       {
@@ -279,21 +242,6 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
         ),
       },
       {
-        Header: "Q1",
-        accessor: "Q1",
-        aggregate: "sum",
-        Aggregated: ({ value }) => (
-          <Text fontSize={13} px={2} mx={1}>
-            {numberWithCommas(value.toFixed(0))} Total
-          </Text>
-        ),
-        Cell: ({ value }) => (
-          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
-            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
-          </Badge>
-        ),
-      },
-      {
         Header: "Q2",
         accessor: "Q2",
         aggregate: "sum",
@@ -309,8 +257,24 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
         ),
       },
       {
-        Header: "Q3",
-        accessor: "Q3",
+        Header: "Budget Q2",
+        accessor: "BudgetQ2",
+        aggregate: "sum",
+        Aggregated: ({ value }) => (
+          <Text fontSize={13} px={2} mx={1}>
+            {numberWithCommas(value.toFixed(0))} Total
+          </Text>
+        ),
+        Cell: ({ value }) => (
+          <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+            {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+          </Badge>
+        ),
+      },
+
+      {
+        Header: "Q4",
+        accessor: "Q4",
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
@@ -324,8 +288,8 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
         ),
       },
       {
-        Header: "Q4",
-        accessor: "Q4",
+        Header: "Budget Q4",
+        accessor: "BudgetQ4",
         aggregate: "sum",
         Aggregated: ({ value }) => (
           <Text fontSize={13} px={2} mx={1}>
@@ -348,7 +312,7 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
     <Card
       className={cn(styles.card, className)}
       classTitle="title-blue"
-      title="Revenue Streams Quarterly"
+      title="Quarterly Balance Sheet"
       // description={`if needed add description here ....`}
     >
       <Box
@@ -378,9 +342,9 @@ function QuaterlyTable({ className, revenueStreamsPivotQuarterly }) {
       to group.
     </Text> */}
       </Box>
-      <Tables columns={columns} data={revenueStreamsPivotQuarterly} />
+      <Tables columns={columns} data={balancePivotQuarterly} />
     </Card>
   );
 }
 
-export default QuaterlyTable;
+export default QuarterlyTable;

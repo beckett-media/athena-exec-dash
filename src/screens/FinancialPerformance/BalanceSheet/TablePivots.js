@@ -17,7 +17,7 @@ import { AiOutlineGroup, AiOutlineUngroup } from "react-icons/ai";
 import Card from "../../../components/Card";
 import useDarkMode from "use-dark-mode";
 import cn from "classnames";
-import styles from "./Table.module.sass";
+import styles from "../CommonComponents/Table.module.sass";
 import { numberWithCommas } from "../../../utils.js";
 import moment from "moment";
 
@@ -48,7 +48,7 @@ function Tables({ columns, data }) {
       columns,
       data,
       initialState: {
-        groupBy: ["Year", "Company"],
+        groupBy: ["Year", "Company", "StrDate"],
       },
     },
     useGroupBy,
@@ -261,41 +261,47 @@ function TablePivots({ className, data, balanceSheet }) {
       ),
     },
     {
+      Header: "StrDate",
+      accessor: "StrDate",
+      aggregate: "uniqueCount",
+      Cell: ({ value }) => (
+        <Badge
+          fontSize={11}
+          px={2}
+          mx={3}
+          borderRadius={14}
+          colorScheme={"blue"}
+        >
+          {value.replace(/_/g, " ")}
+        </Badge>
+      ),
+    },
+    
+    {
       Header: "Account",
       // fomatted date with moment to get the month
       accessor: "Account",
       aggregate: "uniqueCount",
-      Aggregated: ({ value }) => `${value} Accounts`,
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {value} accounts
+        </Text>
+      ),
       Cell: ({ value }) => (
         <Text fontSize="md" color="gray.500">
           {value.replace(/_/g, " ")}
         </Text>
       ),
     },
-    {
-      Header: "Budget Balance",
-      // fomatted date with moment to get the month
-      accessor: "BudgetBalance",
-      aggregate: "sum",
-      Aggregated: ({ value }) => (
-        <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
-        </Text>
-      ),
-      Cell: ({ value }) => (
-        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
-          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
-        </Badge>
-      ),
-    },
+    
     {
       Header: "Balance",
       // fomatted date with moment to get the month
       accessor: "Balance",
-      aggregate: "sum",
+      aggregate: "uniqueCount",
       Aggregated: ({ value }) => (
         <Text fontSize={13} px={2} mx={1}>
-          {numberWithCommas(value.toFixed(0))} Total
+          {numberWithCommas(value.toFixed(0))} records
         </Text>
       ),
       Cell: ({ value }) => (
@@ -304,6 +310,22 @@ function TablePivots({ className, data, balanceSheet }) {
         </Badge>
       ),
     },
+    {
+      Header: "Budget",
+      // fomatted date with moment to get the month
+      accessor: "BudgetBalance",
+      aggregate: "uniqueCount",
+      Aggregated: ({ value }) => (
+        <Text fontSize={13} px={2} mx={1}>
+          {numberWithCommas(value.toFixed(0))} records
+        </Text>
+      ),
+      Cell: ({ value }) => (
+        <Badge fontSize={13} colorScheme={value >= 0 ? "green" : "red"}>
+          {value === 0 ? "0" : numberWithCommas(value.toFixed(0))}
+        </Badge>
+      ),
+    }
   ]);
 
   const darkMode = useDarkMode();

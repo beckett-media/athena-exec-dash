@@ -33,3 +33,60 @@ export const ellipsisText = (text) => {
     return text;
   }
 };
+
+// currency
+export const formatMoneyWithCommas = (money) => {
+  const num = Number(money);
+
+  if (isNaN(num))
+    return '-';
+  
+  const str = (num > 0 ? num : -1 * num).toFixed(2)
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+
+  if (num > 0) {
+    return `$${str}`;
+  }
+
+  if (num < 0) {
+    return `-$${str}`;
+  }
+  
+  if (num == 0) {
+    return `$${str}`;
+  }
+
+  return '-'
+}
+
+export const getCorrectZeroOrNan = (value) => {
+  // This function returns dollar value (even if zero), or NaN if it's null, undefined or NaN
+  if ( (value == NaN) || (value == null) || (value == undefined))
+    return NaN
+  else 
+    return value
+
+
+}
+
+
+function padLeadingZeros(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
+
+export const formatMonthDate = (date, timeUnit) => {
+  //This function is used in TimeSeriesGraphs in FinDash to adjust the datepicker value
+  console.log('formatMonthDate', date);
+  const monthAdder = (timeUnit =='q' ? 3 : 1)
+  const tempDate = new Date(date.setDate(date.getDate(date.setMonth(date.getMonth()+monthAdder))-1))
+  console.log(tempDate);
+  let newDateString = String(tempDate.getFullYear()) + '-' 
+                    + padLeadingZeros(String(tempDate.getMonth()+1),2) + '-' 
+                    + String(tempDate.getDate());
+  console.log(newDateString);
+  return newDateString
+}

@@ -5,21 +5,21 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Card from "../../../components/Card";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import useDarkMode from "use-dark-mode";
-import QuaterlyTable from "./QuaterlyTable";
-import BalanceGraph from "./BalanceGraph/index";
-import QuaterlyGraph from "./QuaterlyGraph";
-import TablePivots from "./TablePivots";
+import QuarterlyTable from "./QuarterlyTable";
+import TimeSeriesGraph from "../CommonComponents/TimeSeriesGraph";
+import CompareTable from "../CommonComponents/CompareTable";
+
 
 const BalanceSheet = ({
-  balanceSheet,
-  className,
-  balanceQuarterly,
-  balancePivotQuarterly,
+  bs_monthly,
+  bs_quarterly,
+  // bs_pivoted_quarterly,
 }) => {
   const darkMode = useDarkMode();
+
+  const accountsToUse = [...new Set(bs_monthly.map((item) => item.Account))]
 
   return (
     <>
@@ -42,9 +42,7 @@ const BalanceSheet = ({
               borderRadius: 15,
             }}
           >
-
-            Balance Sheet
-
+            Monthly
           </Tab>
           <Tab
             color={darkMode.value ? "gray.100" : "gray.700"}
@@ -61,6 +59,7 @@ const BalanceSheet = ({
         </TabList>
         <TabPanels>
           <TabPanel>
+            
             <Box
               bg="bg-surface"
               boxShadow={{
@@ -73,15 +72,22 @@ const BalanceSheet = ({
               })}
             >
               <Stack spacing="5">
-                <TablePivots balanceSheet={balanceSheet} />
+                <CompareTable 
+                  data={bs_monthly} 
+                  title={'Balance Sheet Comparison Table (Monthly)'}
+                  timeUnit='m'
+                />
               </Stack>
+
             </Box>
 
             <Box my={20} />
-
-            <Stack spacing="5">
-              <BalanceGraph balanceSheet={balanceSheet} />
-            </Stack>
+            <TimeSeriesGraph
+              data={bs_monthly}
+              title="Balance Sheet Monthly"
+              accountsToUse={accountsToUse}
+              timeUnit='m'
+            />
           </TabPanel>
           <TabPanel>
             <Box
@@ -96,18 +102,28 @@ const BalanceSheet = ({
               })}
             >
               <Stack spacing="5">
-                <QuaterlyTable
-                  balancePivotQuarterly={balancePivotQuarterly}
-                  balanceQuarterly={balanceQuarterly}
+                <CompareTable 
+                  data={bs_quarterly} 
+                  title='Balance Sheet Comparison Table (Quarterly)'
+                  timeUnit='q'
                 />
               </Stack>
+
+              {/* <Stack spacing="5">
+                <QuarterlyTable
+                  balancePivotQuarterly={bs_pivoted_quarterly}
+                  balanceQuarterly={bs_quarterly}
+                />
+              </Stack> */}
             </Box>
 
             <Box my={20} />
-            <QuaterlyGraph
-              balancePivotQuarterly={balancePivotQuarterly}
-              balanceQuarterly={balanceQuarterly}
-              title="Quarterly Balance Sheet"
+
+            <TimeSeriesGraph
+              data={bs_quarterly}
+              title="Balance Sheet Quarterly"
+              accountsToUse={accountsToUse}
+              timeUnit='q'
             />
           </TabPanel>
         </TabPanels>
