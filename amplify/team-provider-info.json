@@ -20,12 +20,43 @@
       "function": {
         "athenaprodcb5f5078": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/athenaprodcb5f5078-6d6e6b3251677a584956-build.zip",
+          "s3Key": "amplify-builds/athenaprodcb5f5078-496e48762b3161363339-build.zip",
           "secretsPathAmplifyAppId": "dwonjf8sejc3s"
         },
         "AdminQueriesa200cd2e": {
           "deploymentBucketName": "amplify-athenaprod-dev-112948-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa200cd2e-4b6b68355079772f5334-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa200cd2e-44354d71446759684346-build.zip"
+        }
+      }
+    }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-athenaprod-production-115336-authRole",
+      "UnauthRoleArn": "arn:aws:iam::548281136650:role/amplify-athenaprod-production-115336-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::548281136650:role/amplify-athenaprod-production-115336-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-athenaprod-production-115336-deployment",
+      "UnauthRoleName": "amplify-athenaprod-production-115336-unauthRole",
+      "StackName": "amplify-athenaprod-production-115336",
+      "StackId": "arn:aws:cloudformation:us-west-1:548281136650:stack/amplify-athenaprod-production-115336/f9ce5c70-f955-11ec-9ea0-06b06645d341",
+      "AmplifyAppId": "dwonjf8sejc3s",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-athenaprod-production-115336-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "athenaprod": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "athenaprodcb5f5078": {
+          "secretsPathAmplifyAppId": "dwonjf8sejc3s",
+          "deploymentBucketName": "amplify-athenaprod-production-115336-deployment",
+          "s3Key": "amplify-builds/athenaprodcb5f5078-496e48762b3161363339-build.zip"
+        },
+        "AdminQueriesa200cd2e": {
+          "deploymentBucketName": "amplify-athenaprod-production-115336-deployment",
+          "s3Key": "amplify-builds/AdminQueriesa200cd2e-44354d71446759684346-build.zip"
         }
       }
     }
