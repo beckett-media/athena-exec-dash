@@ -44,7 +44,6 @@ build/
 dist/
 node_modules/
 aws-exports.js
-src/mocks/financial_update
 awsconfiguration.json
 amplifyconfiguration.json
 amplifyconfiguration.dart
