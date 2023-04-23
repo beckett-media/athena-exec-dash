@@ -10,7 +10,7 @@
     "axios": "^0.26.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "moment": "^2.29.3",
+    "moment": "^2.29.4",
     "node-localstorage": "^2.2.1",
     "react-datepicker": "^4.7.0",
     "request": "^2.88.2"
